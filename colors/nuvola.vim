@@ -1,22 +1,18 @@
-" Vim color file
-" A version of nuvola.vim colorscheme, original by Dr. J. Pfefferl
-" I changed some colors and added some highlights for C and Vim 7
-
+" local syntax file - set colors on a per-machine basis:
 " vim: tw=0 ts=4 sw=4
-" Maintainer:  Christian Habermann
-" Email:       christian( at )habermann-net( point )de
-" Version:     1.2
-" History:     1.2: nicer colors for paren matching
-"              1.1: Vim 7 support added (completion, spell checker, paren, tabs)
-"              1.0: initial version
-"
+" Vim color file
+" Maintainer:   Dr. J. Pfefferl <johann.pfefferl@agfa.com>
+" Source:   $Source: /MISC/projects/cvsroot/user/pfefferl/vim/colors/nuvola.vim,v $
+" Id:   $Id: nuvola.vim,v 1.14 2003/08/11 14:03:28 pfefferl Exp $
+" Last Change:  $Date: 2003/08/11 14:03:28 $
+
 " Intro {{{1
 set background=light
 hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let g:colors_name = "habiLight"
+let g:colors_name = "nuvola"
 
 " Normal {{{1
 hi Normal ctermfg=black ctermbg=NONE guifg=black guibg=#F9F5F9
@@ -64,7 +60,7 @@ hi Visual term=reverse ctermfg=yellow ctermbg=black gui=NONE guifg=Black guibg=#
 hi VisualNOS term=reverse ctermfg=yellow ctermbg=black gui=UNDERLINE guifg=Black guibg=#BDDFFF
 
 " Syntax group {{{1
-hi Comment term=BOLD ctermfg=darkgray guifg=darkcyan
+hi Comment term=BOLD ctermfg=darkgray guifg=#3F6B5B
 hi Constant term=UNDERLINE ctermfg=red guifg=#B91F49
 hi Error term=REVERSE ctermfg=15 ctermbg=9 guibg=Red guifg=White
 hi Identifier term=UNDERLINE ctermfg=Blue guifg=Blue
@@ -82,7 +78,7 @@ hi! link Float      Number
 hi! link Function   Identifier
 hi! link Conditional    Statement
 hi! link Repeat Statement
-hi! link Label      Statement
+hi! link Label      Statemengreen
 hi! link Operator   Statement
 hi! link Keyword    Statement
 hi! link Exception  Statement
@@ -107,32 +103,5 @@ hi htmlBoldUnderlineItalic  gui=BOLD,UNDERLINE,ITALIC
 hi htmlItalic               gui=ITALIC
 hi htmlUnderline            gui=UNDERLINE
 hi htmlUnderlineItalic      gui=UNDERLINE,ITALIC
-
-" Tabs {{{1
-highlight TabLine     term=underline cterm=underline ctermfg=0 ctermbg=7 gui=underline guibg=LightGrey
-highlight TabLineFill term=reverse cterm=reverse gui=reverse
-highlight TabLineSel  term=bold cterm=bold gui=bold
-
-" Spell Checker {{{1
-if v:version >= 700
-    highlight SpellBad    term=reverse   ctermbg=12 gui=undercurl guisp=Red
-    highlight SpellCap    term=reverse   ctermbg=9  gui=undercurl guisp=Blue
-    highlight SpellRare   term=reverse   ctermbg=13 gui=undercurl guisp=Magenta
-    highlight SpellLocale term=underline ctermbg=11 gui=undercurl guisp=DarkCyan
-endif 
-
-" Completion {{{1
-highlight Pmenu      ctermbg=13  guifg=Black   guibg=#BDDFFF
-highlight PmenuSel   ctermbg=7   guifg=Black   guibg=Orange
-highlight PmenuSbar  ctermbg=7   guifg=#CCCCCC guibg=#CCCCCC
-highlight PmenuThumb cterm=reverse  gui=reverse guifg=Black   guibg=#AAAAAA
-
-" Misc {{{1
-highlight KDE              guifg=magenta gui=NONE
-highlight mySpecialSymbols guifg=magenta gui=NONE 
-
-
-highlight MatchParen  term=reverse ctermbg=11 gui=bold guibg=#B5EEB5 guifg=black
-
 
 " vim600:foldmethod=marker

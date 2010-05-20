@@ -5,11 +5,11 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
-colorscheme simplewhite
+colorscheme molokai " cleanphp
 
 silent! call pathogen#runtime_append_all_bundles()
 
-runtime macros/matchit.vim        " Load the matchit plugin.
+" runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -78,6 +78,10 @@ func! StripTrailingWS()
 endfunc
 command! StripTrailingWS call StripTrailingWS()
 
+" YAML
+
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
+
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
@@ -96,6 +100,10 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 " CTAGS
 map <C-h> <C-T>
 map <C-l> <C-]>
+
+" FuzzyFinder
+let g:fuzzy_ceiling = 20000
+let g:fuzzy_matching_limit = 50 
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>

@@ -31,7 +31,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
+set scrolloff=5                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -45,7 +45,7 @@ set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" Tabs and indentation. Yes, I like 2-space tabs.
+" Tabs and indentation.
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -78,10 +78,6 @@ func! StripTrailingWS()
 endfunc
 command! StripTrailingWS call StripTrailingWS()
 
-" YAML
-
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
-
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
@@ -91,7 +87,7 @@ inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR> 
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
-let g:pdv_cfg_License = "MIT {@link http://www.opensource.org/licenses/lgpl-3.0.html}"
+let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
 
 " TagList
 let Tlist_Show_One_File = 1
@@ -104,9 +100,11 @@ map <C-l> <C-]>
 
 " FuzzyFinder
 let g:fuzzy_ceiling = 20000
-let g:fuzzy_matching_limit = 50 
+let g:fuzzy_matching_limit = 20 
+map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>tr :FuzzyFinderTextMateRefreshFiles<Enter>
 
-" Tab mappings.
+" Tabs
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
@@ -117,5 +115,5 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-map <Leader>t :FuzzyFinderTextMate<Enter>
+" Nerd Tree
 map <Leader>n :NERDTree<Enter>

@@ -95,6 +95,7 @@ let g:pdv_cfg_License = "MIT {@link http://www.opensource.org/licenses/lgpl-3.0.
 
 " TagList
 let Tlist_Show_One_File = 1
+let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
 
 " CTAGS

@@ -5,7 +5,7 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
-colorscheme molokai " cleanphp
+colorscheme ornicar
 
 silent! call pathogen#runtime_append_all_bundles()
 

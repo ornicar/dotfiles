@@ -35,7 +35,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=5                   " Show 3 lines of context around the cursor.
+set scrolloff=5                   " Show 5 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -47,7 +47,6 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                  " Show the status line all the time
-" Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " When editing a file, always jump to the last known cursor position.
@@ -143,10 +142,3 @@ let g:syntastic_quiet_warnings=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-" Nerd Commenter
-" map <Leader>c ,c<space>
-
-" Fugitive
-map <Leader>gs :Gstatus<CR>
-map <Leader>gc :Gcommit<CR>

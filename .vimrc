@@ -12,6 +12,9 @@ silent! call pathogen#runtime_append_all_bundles()
 
 " runtime macros/matchit.vim        " Load the matchit plugin.
 
+" Sets how many lines of history VIM has to remember
+set history=800
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 

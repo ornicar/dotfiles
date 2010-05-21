@@ -35,7 +35,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=5                   " Show 5 lines of context around the cursor.
+set scrolloff=7                   " Show 5 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -47,7 +47,7 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                  " Show the status line all the time
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -131,6 +131,13 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+
+" Buffers
+" Close the current buffer
+map <leader>bd :bdelete<cr>
+
+" When pressing <leader>cd switch to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>
 
 " Nerd Tree
 map <Leader>n :NERDTree<Enter>

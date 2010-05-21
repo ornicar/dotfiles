@@ -1,5 +1,4 @@
 " Vim configuration - Thibault Duplessis.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set nocompatible                  " Must come first because it changes other options.
 
@@ -46,6 +45,16 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+" Also don't do it when the mark is in the first line, that is the default
+" position when opening a file.
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
 
 " Tabs and indentation.
 set tabstop=2
@@ -129,7 +138,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Nerd Commenter
-map <Leader>c ,c<space>
+" map <Leader>c ,c<space>
 
 " Fugitive
 map <Leader>gs :Gstatus<CR>

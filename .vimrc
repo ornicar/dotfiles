@@ -7,6 +7,8 @@ let mapleader = ","
 
 colorscheme ornicar
 
+set langmenu=en_US.UTF-8
+
 silent! call pathogen#runtime_append_all_bundles()
 
 " runtime macros/matchit.vim        " Load the matchit plugin.
@@ -119,9 +121,16 @@ map <leader>tm :tabmove
 map <Leader>n :NERDTree<Enter>
 
 " Syntastic
-" SyntasticEnable
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_quiet_warnings=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" Nerd Commenter
+map <Leader>c ,c<space>
+
+" Fugitive
+map <Leader>gs :Gstatus<CR>
+map <Leader>gc :Gcommit<CR>

@@ -105,6 +105,7 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
+let g:pdv_cfg_Copyright = ""
 
 " TagList
 let Tlist_Show_One_File = 1

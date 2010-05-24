@@ -105,7 +105,7 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
-let g:pdv_cfg_Copyright = ""
+let g:pdv_cfg_Copyright = "2010"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 
 " TagList

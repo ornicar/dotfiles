@@ -118,8 +118,7 @@ map <C-l> <C-]>
 " FuzzyFinder
 let g:fuzzy_ceiling = 20000
 let g:fuzzy_matching_limit = 20 
-map <Leader>t :FuzzyFinderTextMate<Enter>
-map <Leader>tr :FuzzyFinderTextMateRefreshFiles<Enter>
+map <Leader>f :FuzzyFinderTextMate<Enter>
 
 " Tabs
 map <leader>tt :tabnew<cr>

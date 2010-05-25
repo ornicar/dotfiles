@@ -78,9 +78,9 @@ let g:pdv_cfg_CommentSingle = "//"
 let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = "$id$"
-let g:pdv_cfg_Author = "Vincent Jousse <vincent.jousse@devorigin.fr>"
-let g:pdv_cfg_Copyright = "2010 Devorigin"
-let g:pdv_cfg_License = "LGPL 3.0 {@link http://www.opensource.org/licenses/lgpl-3.0.html}"
+let g:pdv_cfg_Author = ""
+let g:pdv_cfg_Copyright = ""
+let g:pdv_cfg_License = ""
 
 let g:pdv_cfg_ReturnVal = "void"
 

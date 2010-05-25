@@ -35,7 +35,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=7                   " Show 5 lines of context around the cursor.
+set scrolloff=7                   " Show 7 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -102,6 +102,8 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
+let g:pdv_cfg_Copyright = "2010"
+let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 
 " TagList
 let Tlist_Show_One_File = 1

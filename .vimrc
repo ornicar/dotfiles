@@ -146,3 +146,6 @@ let g:syntastic_quiet_warnings=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" Snipmate
+let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'

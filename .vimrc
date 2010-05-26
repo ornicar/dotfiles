@@ -113,14 +113,12 @@ let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
 
+" Lusty
+source bundle/lusty/lusty-explorer.vim
+
 " CTAGS
 map <C-h> <C-T>
 map <C-l> <C-]>
-
-" FuzzyFinder
-let g:fuzzy_ceiling = 20000
-let g:fuzzy_matching_limit = 20 
-map <Leader>f :FuzzyFinderTextMate<Enter>
 
 " Tabs
 map <leader>tt :tabnew<cr>

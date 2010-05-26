@@ -92,6 +92,10 @@ func! StripTrailingWS()
 endfunc
 command! StripTrailingWS call StripTrailingWS()
 
+" Change current dir (http://vim.wikia.com/wiki/VimTip1185)
+nmap <Leader>cd :cd %:p:h<CR><leader>n
+nmap <Leader>sp :sp <c-r>=expand('%:p:h')<CR>/
+
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
@@ -132,9 +136,6 @@ map <leader>tm :tabmove
 " Buffers
 " Close the current buffer
 map <leader>bd :bdelete<cr>
-
-" When pressing <leader>cd switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
 
 " Nerd Tree
 map <Leader>n :NERDTree<Enter>

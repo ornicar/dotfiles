@@ -16,3 +16,6 @@
 [submodule "bundle/fuzzyfinder"]
 	path = bundle/fuzzyfinder
 	url = git://github.com/namedpipe/fuzzyfinder_textmate.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = git://github.com/esukram/taglist.vim.git

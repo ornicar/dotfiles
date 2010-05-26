@@ -93,8 +93,7 @@ endfunc
 command! StripTrailingWS call StripTrailingWS()
 
 " Change current dir (http://vim.wikia.com/wiki/VimTip1185)
-nmap <Leader>cd :cd %:p:h<CR><leader>n
-nmap <Leader>sp :sp <c-r>=expand('%:p:h')<CR>/
+nmap <Leader>cd :cd %:p:h<CR>
 
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL

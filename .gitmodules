@@ -19,3 +19,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/esukram/taglist.vim.git
+[submodule "autoload"]
+	path = autoload
+	url = git://github.com/paulnicholson/vim-pathogen.git

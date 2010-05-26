@@ -22,3 +22,6 @@
 [submodule "autoload"]
 	path = autoload
 	url = git://github.com/paulnicholson/vim-pathogen.git
+[submodule "symfony"]
+	path = symfony
+	url = git://github.com/soh335/vim-symfony.git

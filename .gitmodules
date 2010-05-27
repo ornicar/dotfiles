@@ -28,3 +28,6 @@
 [submodule "bundle/conque"]
 	path = bundle/conque
 	url = git://github.com/ornicar/vim-conque.git
+[submodule "bundle/ack"]
+	path = bundle/ack
+	url = git://github.com/mileszs/ack.vim.git

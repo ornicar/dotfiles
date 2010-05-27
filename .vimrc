@@ -160,3 +160,6 @@ set statusline+=%*
 
 " Snipmate
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
+
+" Ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"

@@ -146,7 +146,8 @@ map <leader>tm :tabmove
 map <leader>bd :bdelete<cr>
 
 " Nerd Tree
-map <Leader>n :NERDTree<Enter>
+map <Leader>nf :NERDTree<Enter>
+map <Leader>nr :NERDTree %:p:h<Enter>
 let NERDTreeQuitOnOpen=1
 
 " Syntastic

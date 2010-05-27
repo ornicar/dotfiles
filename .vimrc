@@ -144,6 +144,7 @@ map <leader>bd :bdelete<cr>
 
 " Nerd Tree
 map <Leader>n :NERDTree<Enter>
+let NERDTreeQuitOnOpen=1
 
 " Syntastic
 let g:syntastic_enable_signs = 1

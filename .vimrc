@@ -97,8 +97,11 @@ nmap <Leader>cd :cd %:p:h<CR>
 
 " MRU (recently opened files)
 let MRU_Auto_Close = 1
-nmap <leader>m :MRU<cr>
 let MRU_Max_Menu_Entries = 20
+nmap <leader>m :MRU<cr>
+
+" Conque (shell in vim)
+nmap <leader>c :ConqueTermVSplit bash<cr>
 
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL

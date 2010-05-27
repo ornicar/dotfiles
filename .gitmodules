@@ -13,9 +13,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/fuzzyfinder"]
-	path = bundle/fuzzyfinder
-	url = git://github.com/namedpipe/fuzzyfinder_textmate.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/esukram/taglist.vim.git
@@ -25,3 +22,6 @@
 [submodule "symfony"]
 	path = symfony
 	url = git://github.com/soh335/vim-symfony.git
+[submodule "bundle/lusty"]
+	path = bundle/lusty
+	url = git://github.com/sjbach/lusty.git

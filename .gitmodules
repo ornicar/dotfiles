@@ -22,3 +22,6 @@
 [submodule "bundle/lusty"]
 	path = bundle/lusty
 	url = git://github.com/sjbach/lusty.git
+[submodule "bundle/mru"]
+	path = bundle/mru
+	url = git://github.com/ornicar/vim-mru.git

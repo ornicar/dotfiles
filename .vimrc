@@ -95,6 +95,11 @@ command! StripTrailingWS call StripTrailingWS()
 " Change current dir (http://vim.wikia.com/wiki/VimTip1185)
 nmap <Leader>cd :cd %:p:h<CR>
 
+" MRU (recently opened files)
+let MRU_Auto_Close = 1
+nmap <leader>m :MRU<cr>
+let MRU_Max_Menu_Entries = 20
+
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML

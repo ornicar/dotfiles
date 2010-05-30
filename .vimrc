@@ -5,7 +5,7 @@ set nocompatible                  " Must come first because it changes other opt
 let mapleader = ","
 
 if has("gui_running")
-  colorscheme peaksea
+  colorscheme moria
 else
   colorscheme ornicar
 endif

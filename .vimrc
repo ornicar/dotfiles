@@ -4,7 +4,11 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
-colorscheme ornicar
+if has("gui_running")
+  colorscheme peaksea
+else
+  colorscheme ornicar
+endif
 
 set langmenu=en_US.UTF-8
 

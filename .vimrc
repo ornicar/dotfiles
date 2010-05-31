@@ -40,6 +40,7 @@ set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.
+set sidescrolloff=7
 
 set title                         " Set the terminal's title
 
@@ -67,8 +68,13 @@ autocmd BufReadPost *
 set expandtab
 set autoindent
 
+set tabstop=2
+set shiftwidth=2
+
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
+set shiftround
 
 "Syntax
 syntax enable                     " Turn on syntax highlighting.

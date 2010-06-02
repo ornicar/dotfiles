@@ -177,3 +177,5 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap <silent> <leader>t :<cr>
 " Map to <leader>f
 nmap <silent> <leader>f :CommandT<CR>
+" Increase cache size
+let g:CommandTMaxFiles = 30000

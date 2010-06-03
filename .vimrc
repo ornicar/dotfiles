@@ -138,6 +138,7 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 source $HOME/.vim/bundle/lusty/lusty-explorer.vim
 source $HOME/.vim/bundle/lusty/lusty-juggler.vim
 map <leader>lp :LustyJugglePrevious<cr>
+let g:LustyJugglerShowKeys = 1
 
 " CTAGS
 map <C-h> <C-T>

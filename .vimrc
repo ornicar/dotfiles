@@ -105,8 +105,8 @@ func! StripTrailingWS()
 endfunc
 command! StripTrailingWS call StripTrailingWS()
 
-" Change current dir (http://vim.wikia.com/wiki/VimTip1185)
-nmap <Leader>cd :cd %:p:h<CR>
+" Fast save
+nmap <Leader>w :w<CR>
 
 " MRU (recently opened files)
 let MRU_Auto_Close = 1

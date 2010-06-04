@@ -10,7 +10,7 @@
 
 command! -nargs=* -complete=file -bang Rename :call Rename("<args>", "<bang>")
 
-function! rename(name, bang)
+function! Rename(name, bang)
 	let l:curfile = expand("%:p")
 	let v:errmsg = ""
 	silent! exe "saveas" . a:bang . " " . a:name

@@ -113,9 +113,6 @@ let MRU_Auto_Close = 1
 let MRU_Max_Menu_Entries = 20
 nmap <leader>m :MRU<cr>
 
-" Conque (shell in vim)
-nmap <leader>c :ConqueTermVSplit bash<cr>
-
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 

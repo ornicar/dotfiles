@@ -17,7 +17,7 @@ silent! call pathogen#runtime_append_all_bundles()
 " runtime macros/matchit.vim        " Load the matchit plugin.
 
 " Sets how many lines of history VIM has to remember
-set history=800
+set history=200
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -108,15 +108,8 @@ command! StripTrailingWS call StripTrailingWS()
 " Fast save
 nmap <Leader>w :w<CR>
 
-" MRU (recently opened files)
-let MRU_Auto_Close = 1
-let MRU_Max_Menu_Entries = 20
-nmap <leader>m :MRU<cr>
-
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
-" Indent and back to line
-nmap <leader>==: mhgg=G'h
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
@@ -166,10 +159,6 @@ map <leader>to :tabonly<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
-
-" Buffers
-" Close the current buffer
-map <leader>bd :bdelete<cr>
 
 " Nerd Tree
 map <Leader>nf :NERDTree<Enter>

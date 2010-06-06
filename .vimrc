@@ -52,7 +52,7 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                  " Show the status line all the time
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -115,6 +115,8 @@ nmap <leader>m :MRU<cr>
 
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
+" Indent and back to line
+nmap <leader>==: mhgg=G'h
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

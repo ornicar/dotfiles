@@ -2,3 +2,4 @@
 .VimballRecord
 *.so
 bundle/commandt/ruby/command-t/Makefile
+private

@@ -124,6 +124,13 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+" TwitVim
+source $HOME/.vim/private/twitvim.vim " twitter password
+nnoremap <F8> :FriendsTwitter<cr>
+
+" Web browser
+let twitvim_browser_cmd="firefox"
+
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML

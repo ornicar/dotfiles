@@ -54,6 +54,12 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
+" now set it up to change the status line based on mode
+if version >= 700
+  au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
+  au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
+endif
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).

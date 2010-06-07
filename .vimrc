@@ -110,6 +110,9 @@ nmap <Leader>w :w<CR>
 
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
+" Indent whole PHP file
+nmap <C-i> <Esc>mygg=G'y
+imap <C-i> <Esc>mygg=G'y
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

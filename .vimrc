@@ -60,6 +60,9 @@ if version >= 700
   au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
 endif
 
+" Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
+set cursorline
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).

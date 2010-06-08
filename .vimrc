@@ -155,20 +155,21 @@ let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.h
 let g:pdv_cfg_Copyright = "2010"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 
+" CTAGS
+map <C-h> <C-T>
+map <C-l> <C-]>
+
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
+nnoremap <silent> <C-F7> :!ctags -R --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP<CR>
 
 " Lusty
 source $HOME/.vim/bundle/lusty/lusty-explorer.vim
 source $HOME/.vim/bundle/lusty/lusty-juggler.vim
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 1
-
-" CTAGS
-map <C-h> <C-T>
-map <C-l> <C-]>
 
 " Tabs
 map <leader>tt :tabnew<cr>

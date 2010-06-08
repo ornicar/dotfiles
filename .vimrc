@@ -54,6 +54,9 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
+" Reload this file
+nmap <leader>s :source $MYVIMRC<cr>
+
 " now set it up to change the status line based on mode
 if version >= 700
   au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
@@ -138,8 +141,6 @@ vnoremap <silent> # :<C-U>
 " TwitVim
 source $HOME/.vim/private/twitvim.vim " twitter password
 nnoremap <F8> :FriendsTwitter<cr>
-
-" Web browser
 let twitvim_browser_cmd="firefox"
 
 " PHP
@@ -163,7 +164,7 @@ map <C-l> <C-]>
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
-nnoremap <silent> <C-F7> :!ctags -R --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP<CR>
+nnoremap <silent> <C-F7> :silent !ctags -R --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP &<cr>
 
 " Lusty
 source $HOME/.vim/bundle/lusty/lusty-explorer.vim

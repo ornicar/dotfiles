@@ -142,6 +142,7 @@ vnoremap <silent> # :<C-U>
 source $HOME/.vim/private/twitvim.vim " twitter password
 nnoremap <F8> :FriendsTwitter<cr>
 let twitvim_browser_cmd="firefox"
+let twitvim_count = 50
 
 " PHP
 let php_sql_query = 1 "Coloration des requetes SQL
@@ -164,7 +165,7 @@ map <C-l> <C-]>
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
-nnoremap <silent> <C-F7> :silent !ctags -R --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP &<cr>
+nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP &<cr>
 
 " Lusty
 source $HOME/.vim/bundle/lusty/lusty-explorer.vim

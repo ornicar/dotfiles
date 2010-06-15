@@ -160,12 +160,13 @@ let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 " CTAGS
 map <C-h> <C-T>
 map <C-l> <C-]>
+let g:Tlist_Ctags_Cmd = 'ctags'
+nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP &<cr>
 
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
-nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --languages=PHP &<cr>
 
 " Lusty
 source $HOME/.vim/bundle/lusty/lusty-explorer.vim

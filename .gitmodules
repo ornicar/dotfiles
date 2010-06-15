@@ -13,9 +13,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/esukram/taglist.vim.git
-[submodule "autoload"]
-	path = autoload
-	url = git://github.com/paulnicholson/vim-pathogen.git
 [submodule "bundle/lusty"]
 	path = bundle/lusty
 	url = git://github.com/sjbach/lusty.git

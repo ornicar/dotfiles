@@ -208,6 +208,3 @@ nmap <silent> <leader>t :<cr>
 nmap <silent> <leader>f :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000
-
-" Ignore wildcards
-:set wildignore+=*/cache/*,*/data/*,*/log/*,*/logs/*

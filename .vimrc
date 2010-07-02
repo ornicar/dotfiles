@@ -169,8 +169,6 @@ let Tlist_Sort_Type = "name"
 nnoremap <silent> <F7> :TlistToggle<CR>
 
 " Lusty
-source $HOME/.vim/bundle/lusty/lusty-explorer.vim
-source $HOME/.vim/bundle/lusty/lusty-juggler.vim
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 1
 

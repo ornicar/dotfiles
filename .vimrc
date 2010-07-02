@@ -172,14 +172,6 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 1
 
-" Tabs
-map <leader>tt :tabnew<cr>
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
 " Nerd Tree
 map <Leader>nf :NERDTree<Enter>
 map <Leader>nr :NERDTree %:p:h<Enter>

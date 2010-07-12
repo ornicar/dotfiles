@@ -17,7 +17,7 @@ silent! call pathogen#runtime_append_all_bundles()
 " runtime macros/matchit.vim        " Load the matchit plugin.
 
 " Sets how many lines of history VIM has to remember
-set history=200
+set history=1000
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -120,6 +120,13 @@ command! StripTrailingWS call StripTrailingWS()
 " Fast save
 nmap <Leader>w :w<CR>
 
+" Jump to line AND col
+nnoremap ' `
+
+" Faster viewport scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 " Indent whole PHP file
@@ -161,7 +168,7 @@ let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 map <C-h> <C-T>
 map <C-l> <C-]>
 let g:Tlist_Ctags_Cmd = 'ctags'
-nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>
+nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/*  --exclude=*/Zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>
 
 " TagList
 let Tlist_Show_One_File = 1

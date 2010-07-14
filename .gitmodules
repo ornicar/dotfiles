@@ -28,3 +28,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/tsaleh/vim-supertab.git
+[submodule "bundle/dirdo"]
+	path = bundle/dirdo
+	url = git://github.com/ornicar/vim-dirdo.git

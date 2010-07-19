@@ -31,3 +31,6 @@
 [submodule "bundle/dirdo"]
 	path = bundle/dirdo
 	url = git://github.com/ornicar/vim-dirdo.git
+[submodule "bundle/commandt"]
+	path = bundle/commandt
+	url = git://github.com/wincent/Command-T.git

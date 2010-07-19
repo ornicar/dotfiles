@@ -199,3 +199,4 @@ nmap <silent> <leader>t :<cr>
 nmap <silent> <leader>f :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000
+let g:CommandTMatchWindowAtTop = 1

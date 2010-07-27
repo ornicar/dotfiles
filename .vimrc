@@ -162,7 +162,7 @@ let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 map <C-h> <C-T>
 map <C-l> <C-]>
 let g:Tlist_Ctags_Cmd = 'ctags'
-nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/*  --exclude=*/Zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>
+nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/Zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>:CommandTFlush<cr>
 
 " TagList
 let Tlist_Show_One_File = 1

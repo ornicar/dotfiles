@@ -159,9 +159,18 @@ let g:pdv_cfg_Copyright = "2010"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 
 " CTAGS
-map <C-h> <C-T>
+" Explore tags for the word under the cursor
 map <C-l> <C-]>
+" Back to previous location after browsing tags
+map <C-h> <C-T>
+" Jump to next tag match
+map ]t :tnext<CR>
+" Jump to previous tag match
+map [t :tprevious<CR>
+" Open tag command
+map <C-T> :tag 
 let g:Tlist_Ctags_Cmd = 'ctags'
+" Rebuild tag index
 nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/Zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>:CommandTFlush<cr>
 
 " TagList

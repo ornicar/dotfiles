@@ -34,3 +34,6 @@
 [submodule "bundle/commandt"]
 	path = bundle/commandt
 	url = git://github.com/wincent/Command-T.git
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git

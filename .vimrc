@@ -4,6 +4,7 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
+" Colorsheme
 if has("gui_running")
   colorscheme moria
 else
@@ -212,3 +213,8 @@ nmap <silent> <leader>f :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1
+
+" Colorsheme switcher
+source $HOME/.vim/bundle/scrollcolor/ScrollColor.vim
+map <silent><F3> :NEXTCOLOR<cr> 
+map <silent><F2> :PREVCOLOR<cr>

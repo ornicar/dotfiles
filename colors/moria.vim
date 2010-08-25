@@ -23,7 +23,7 @@ if s:moria_style == "black" || s:moria_style == "dark"
 elseif s:moria_style == "light" || s:moria_style == "white"
     set background=light
 else
-    let s:moria_style = &background 
+    set background=dark
 endif
 
 hi clear

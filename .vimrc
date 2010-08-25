@@ -172,7 +172,7 @@ map [t :tprevious<CR>
 map <C-T> :tag 
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
-nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/zend/* --exclude=*/Zend/* --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>:CommandTFlush<cr>
+nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>:CommandTFlush<cr>
 
 " TagList
 let Tlist_Show_One_File = 1

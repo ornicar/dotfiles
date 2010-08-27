@@ -203,7 +203,7 @@ set statusline+=%*
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs"
 
 " Command-T
 " Unmap the default mapping (<leader>t)

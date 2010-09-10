@@ -6,6 +6,7 @@ let mapleader = ","
 
 " Colorsheme
 if has("gui_running")
+  let g:moria_style="dark"
   colorscheme moria
 else
   colorscheme ornicar
@@ -127,11 +128,8 @@ nnoremap ' `
 " Faster viewport scrolling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-
-" Indent PHP templates as HTML files
-nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
-" Indent whole PHP file
-nmap <leader>i <Esc>mygg=G'y
+nnoremap <C-j> 3j
+nnoremap <C-k> 3k
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
@@ -153,6 +151,11 @@ au BufNewFile,BufRead *.twig			setf htmljinja
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
 
+" Indent PHP templates as HTML files
+nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
+" Indent whole PHP file
+nmap <leader>i <Esc>mygg=G'y
+
 " phpdoc
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 nnoremap <C-P> :call PhpDocSingle()<CR> 
@@ -161,6 +164,9 @@ let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
 let g:pdv_cfg_Copyright = "2010"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
+
+" lowercase to modulized
+nnoremap _ bf_x~
 
 " CTAGS
 " Explore tags for the word under the cursor
@@ -175,8 +181,7 @@ map [t :tprevious<CR>
 map <C-T> :tag 
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
-nnoremap <silent> <C-F7> :silent !ctags --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --languages=PHP &<cr>:CommandTFlush<cr>
-
+nnoremap <silent> <C-F7>:silent !ctags-exuberant -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
@@ -184,7 +189,7 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 
 " Lusty
 map <leader>lp :LustyJugglePrevious<cr>
-let g:LustyJugglerShowKeys = 1
+let g:LustyJugglerShowKeys = 0
 
 " Nerd Tree
 map <Leader>nf :NERDTree<Enter>
@@ -203,7 +208,7 @@ set statusline+=%*
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 
 " Ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs --ignore-dir=tmp"
 
 " Command-T
 " Unmap the default mapping (<leader>t)

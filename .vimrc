@@ -14,6 +14,7 @@ endif
 
 set langmenu=en_US.UTF-8
 
+silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 
 " runtime macros/matchit.vim        " Load the matchit plugin.

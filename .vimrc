@@ -121,6 +121,9 @@ command! StripTrailingWS call StripTrailingWS()
 " Fast save
 nmap <Leader>w :w<CR>
 
+" CLear search highlight
+nmap <silent> <leader>/ :let @/=""<CR>
+
 " Jump to line AND col
 nnoremap ' `
 

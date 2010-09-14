@@ -58,9 +58,6 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
-" Reload this file
-nmap <leader>s :source $MYVIMRC<cr>
-
 " now set it up to change the status line based on mode
 if version >= 700
   au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111

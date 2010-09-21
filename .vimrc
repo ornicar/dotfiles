@@ -5,12 +5,9 @@ set nocompatible                  " Must come first because it changes other opt
 let mapleader = ","
 
 " Colorsheme
-if has("gui_running")
-  let g:moria_style="dark"
-  colorscheme moria
-else
-  colorscheme ornicar
-endif
+set t_Co=256
+let g:moria_style="dark"
+colorscheme moria
 
 set langmenu=en_US.UTF-8
 

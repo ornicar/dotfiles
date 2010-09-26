@@ -4,6 +4,9 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
+" Close edit mode wit jj
+inoremap jj <ESC>
+
 " Colorsheme
 set t_Co=256
 let g:moria_style="dark"

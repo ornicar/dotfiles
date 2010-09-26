@@ -40,3 +40,6 @@
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
+[submodule "bundle/debug"]
+	path = bundle/debug
+	url = git://github.com/jabapyth/vim-debug.git

@@ -41,6 +41,7 @@ set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+set showmatch                     " Show matching char (like {})
 
 set wrap                          " Turn on line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.

@@ -7,7 +7,6 @@
 
 " Do not source this script when python is not compiled in.
 if !has("python")
-    echo 'apa python'
     finish
 endif
 

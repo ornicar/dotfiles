@@ -46,3 +46,6 @@
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = git://github.com/ornicar/vim-yankring.git
+[submodule "bundle/ragtag"]
+	path = bundle/ragtag
+	url = git://github.com/tpope/vim-ragtag.git

@@ -4,6 +4,11 @@ set nocompatible                  " Must come first because it changes other opt
 
 let mapleader = ","
 
+" Source local settings
+if filereadable("~/.vimlocalrc")
+    source ~/.vimlocalrc
+endif
+
 " Colorsheme
 set t_Co=256
 let g:moria_style="dark"

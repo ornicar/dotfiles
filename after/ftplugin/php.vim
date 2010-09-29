@@ -4,7 +4,6 @@ if exists("b:php_ftplugin_loaded")
 endif
 let b:php_ftplugin_loaded = 1
 
-
 let PHP_autoformatcomment = 1
 
 let php_sql_query = 1 "Coloration des requetes SQL
@@ -24,9 +23,6 @@ setlocal keywordprg=pman
 " }}} Settings
 
 " {{{ Command mappings
-
-" Map ; to "add ; to the end of the line, when missing"
-noremap <buffer> ; :s/\([^;]\)$/\1;/<cr>
 
 " Map <ctrl>+p to single line mode documentation (in insert and command mode)
 inoremap <buffer> <C-P> :call PhpDocSingle()<CR>i

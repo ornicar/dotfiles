@@ -61,6 +61,19 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
+" Tabs and indentation.
+set expandtab
+set autoindent
+set smartindent
+
+" Configure tabstyle...
+set tabstop=4
+set shiftwidth=4
+
+" But make it easy to switch it
+nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
+nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
 " Use perl regex style
 nnoremap / /\v
 vnoremap / /\v
@@ -86,16 +99,6 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
-
-" Tabs and indentation.
-set expandtab
-set autoindent
-
-set tabstop=4
-set shiftwidth=4
-
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
 
 set shiftround
 
@@ -159,24 +162,6 @@ vnoremap <silent> # :<C-U>
 " Detect twig filetype
 au BufNewFile,BufRead *.twig			setf htmljinja
 
-" PHP
-let php_sql_query = 1 "Coloration des requetes SQL
-let php_htmlInStrings = 1 "Coloration des balises HTML
-
-" Indent PHP templates as HTML files
-nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
-" Indent whole PHP file
-nmap <leader>i <Esc>mygg=G'y
-
-" phpdoc
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
-let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
-let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
-let g:pdv_cfg_Copyright = "2010"
-let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
-
 " lowercase to modulized
 nnoremap _ bf_x~
 
@@ -236,3 +221,6 @@ let g:CommandTMatchWindowAtTop = 1
 source $HOME/.vim/bundle/scrollcolor/ScrollColor.vim
 map <silent><F3> :NEXTCOLOR<cr> 
 map <silent><F2> :PREVCOLOR<cr>
+
+" Gist
+let g:gist_open_browser_after_post = 1

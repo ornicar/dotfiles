@@ -14,6 +14,12 @@ set t_Co=256
 let g:moria_style="dark"
 colorscheme moria
 
+" Remove menu bar
+set guioptions-=m
+
+" Remove toolbar
+set guioptions-=T
+
 set langmenu=en_US.UTF-8
 
 silent! call pathogen#helptags()

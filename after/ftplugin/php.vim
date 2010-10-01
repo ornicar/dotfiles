@@ -41,7 +41,7 @@ vnoremap <buffer> <C-a> :call PhpAlign()<CR>
 " More common in PEAR coding standard
 " inoremap <buffer>  { {<CR>}<C-O>O
 " Maybe this way in other coding standards
-inoremap  { {<CR>}<C-O>O
+"inoremap  { {<CR>}<C-O>O
 
 " }}} Automatic close char mapping
 

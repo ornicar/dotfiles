@@ -1,10 +1,12 @@
-if exists("g:moria_fontface")
-    let s:moria_fontface = g:moria_fontface
+" Dark theme forked from moria
+
+if exists("g:amonsul_fontface")
+    let s:amonsul_fontface = g:amonsul_fontface
 else
-    let s:moria_fontface = "plain"
+    let s:amonsul_fontface = "plain"
 endif
 
-execute "command! -nargs=1 Colo let g:moria_style = \"<args>\" | colo moria"
+execute "command! -nargs=1 Colo let g:amonsul_style = \"<args>\" | colo amonsul"
 
 set background=dark
 
@@ -34,7 +36,7 @@ hi StatusLineNC ctermbg=DarkGray ctermfg=Black guibg=#25365a guifg=fg gui=none
 hi TabLine guibg=#41609e guifg=fg gui=underline
 hi TabLineFill guibg=#41609e guifg=fg gui=underline
 hi VertSplit ctermbg=LightGray ctermfg=Black guibg=#25365a guifg=fg gui=none
-if s:moria_fontface == "mixed"
+if s:amonsul_fontface == "mixed"
     hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=bold
 else
     hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=none
@@ -82,7 +84,7 @@ hi Special guibg=bg guifg=#e8b87e gui=none
 hi Todo guibg=#e0e000 guifg=#000000 gui=none
 hi Underlined ctermbg=Black ctermfg=White guibg=bg guifg=#00a0ff gui=underline    
 
-if s:moria_fontface == "mixed"
+if s:amonsul_fontface == "mixed"
     hi Statement guibg=bg guifg=#7ec0ee gui=bold
     hi Type guibg=bg guifg=#f09479 gui=bold
 else

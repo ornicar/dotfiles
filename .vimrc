@@ -11,8 +11,7 @@ endif
 
 " Colorsheme
 set t_Co=256
-let g:moria_style="dark"
-colorscheme moria
+colorscheme amonsul
 
 " Remove menu bar
 set guioptions-=m

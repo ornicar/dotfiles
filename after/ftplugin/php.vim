@@ -9,6 +9,11 @@ let PHP_autoformatcomment = 1
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
 
+"Folding
+map <F5> <Esc>:EnableFastPHPFolds<Cr>
+map <C-F5> <Esc>:EnablePHPFolds<Cr>
+map <F6> <Esc>:DisablePHPFolds<Cr>
+
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 " Indent whole PHP file

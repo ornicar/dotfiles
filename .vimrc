@@ -15,9 +15,10 @@ colorscheme amonsul
 
 " Remove menu bar
 set guioptions-=m
-
 " Remove toolbar
 set guioptions-=T
+" Remove scrollbar
+set guioptions-=r
 
 set langmenu=en_US.UTF-8
 

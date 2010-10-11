@@ -52,3 +52,6 @@
 [submodule "bundle/phpfolding"]
 	path = bundle/phpfolding
 	url = git://github.com/vim-scripts/phpfolding.vim.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git

@@ -10,9 +10,9 @@ let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
 
 "Folding
-map <F5> <Esc>:EnableFastPHPFolds<Cr>
-map <C-F5> <Esc>:EnablePHPFolds<Cr>
-map <F6> <Esc>:DisablePHPFolds<Cr>
+nmap <buffer> <F5> <Esc>:EnableFastPHPFolds<Cr>
+nmap <buffer> <C-F5> <Esc>:EnablePHPFolds<Cr>
+nmap <buffer> <F6> <Esc>:DisablePHPFolds<Cr>
 
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>

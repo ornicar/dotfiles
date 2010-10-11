@@ -49,3 +49,6 @@
 [submodule "bundle/gist"]
 	path = bundle/gist
 	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/phpfolding"]
+	path = bundle/phpfolding
+	url = git://github.com/vim-scripts/phpfolding.vim.git

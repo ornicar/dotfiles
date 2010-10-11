@@ -13,6 +13,7 @@ let php_htmlInStrings = 1 "Coloration des balises HTML
 nmap <buffer> <F5> <Esc>:EnableFastPHPFolds<Cr>
 nmap <buffer> <C-F5> <Esc>:EnablePHPFolds<Cr>
 nmap <buffer> <F6> <Esc>:DisablePHPFolds<Cr>
+let g:DisableAutoPHPFolding = 1
 
 " Indent PHP templates as HTML files
 nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>

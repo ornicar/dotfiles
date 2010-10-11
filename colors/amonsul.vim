@@ -37,9 +37,9 @@ hi TabLine guibg=#41609e guifg=fg gui=underline
 hi TabLineFill guibg=#41609e guifg=fg gui=underline
 hi VertSplit ctermbg=LightGray ctermfg=Black guibg=#25365a guifg=fg gui=none
 if s:amonsul_fontface == "mixed"
-    hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=bold
+    hi Folded guibg=#181818 guifg=#bdcae3 gui=bold
 else
-    hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=none
+    hi Folded guibg=#181818 guifg=#bdcae3 gui=none
 endif            
 
 hi Cursor guibg=#ffa500 guifg=bg gui=none

@@ -87,7 +87,7 @@ vnoremap / /\v
 " Always replace all occurences of a line
 set gdefault
 
-" now set it up to change the status line based on mode
+" Change the status line color based on mode
 if version >= 700
   au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
   au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
@@ -107,6 +107,9 @@ autocmd BufReadPost *
   \ endif
 
 set shiftround
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
 syntax enable                     " Turn on syntax highlighting.

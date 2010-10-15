@@ -67,6 +67,8 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ (%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
+set shortmess+=I                  " Don't show splash screen
+
 " Tabs and indentation.
 set expandtab
 set autoindent

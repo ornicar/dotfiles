@@ -9,6 +9,9 @@ let PHP_autoformatcomment = 1
 let php_sql_query = 1 "Coloration des requetes SQL
 let php_htmlInStrings = 1 "Coloration des balises HTML
 
+" Because I write it so often
+imap ² ->
+
 "Folding
 nmap <buffer> <F5> <Esc>:EnableFastPHPFolds<Cr>
 nmap <buffer> <C-F5> <Esc>:EnablePHPFolds<Cr>

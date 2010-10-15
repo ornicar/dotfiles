@@ -67,6 +67,8 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{fugitive#statusline()}(%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
+set shortmess+=I                  " Don't show splash screen
+
 " Tabs and indentation.
 set expandtab
 set autoindent
@@ -87,7 +89,7 @@ vnoremap / /\v
 " Always replace all occurences of a line
 set gdefault
 
-" now set it up to change the status line based on mode
+" Change the status line color based on mode
 if version >= 700
   au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
   au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
@@ -107,6 +109,9 @@ autocmd BufReadPost *
   \ endif
 
 set shiftround
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
 syntax enable                     " Turn on syntax highlighting.

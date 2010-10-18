@@ -13,15 +13,15 @@ let php_htmlInStrings = 1 "Coloration des balises HTML
 imap ² ->
 
 "Folding
-nmap <buffer> <F5> <Esc>:EnableFastPHPFolds<Cr>
-nmap <buffer> <C-F5> <Esc>:EnablePHPFolds<Cr>
+nmap <buffer> <C-F5> <Esc>:EnableFastPHPFolds<Cr>
+nmap <buffer> <F5> <Esc>:EnablePHPFolds<Cr>
 nmap <buffer> <F6> <Esc>:DisablePHPFolds<Cr>
 let g:DisableAutoPHPFolding = 1
 
-" Indent PHP templates as HTML files
-nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 " Indent whole PHP file
 nmap <leader>i <Esc>mygg=G'y
+" Indent PHP templates as HTML files
+nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
@@ -34,10 +34,10 @@ setlocal keywordprg=pman
 " {{{ Command mappings
 
 " Map <ctrl>+p to single line mode documentation (in insert and command mode)
-inoremap <buffer> <C-P> :call PhpDocSingle()<CR>i
-nnoremap <buffer> <C-P> :call PhpDocSingle()<CR>
+inoremap <buffer> <C-D> :call PhpDocSingle()<CR>i
+nnoremap <buffer> <C-D> :call PhpDocSingle()<CR>
 " Map <ctrl>+p to multi line mode documentation (in visual mode)
-vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
+vnoremap <buffer> <C-D> :call PhpDocRange()<CR>
 
 " Map <CTRL>-H to search phpm for the function name currently under the cursor (insert mode only)
 inoremap <buffer> <C-H> <ESC>:!phpm <C-R>=expand("<cword>")<CR><CR>

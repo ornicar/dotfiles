@@ -12,6 +12,7 @@ endif
 " Colorsheme
 set t_Co=256
 colorscheme amonsul
+set guifont=Monospace\ 11
 
 " Remove menu bar
 set guioptions-=m

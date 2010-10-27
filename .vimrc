@@ -12,7 +12,7 @@ endif
 " Colorsheme
 set t_Co=256
 colorscheme amonsul
-set guifont=Monospace\ 13
+set guifont=Monospace\ 12
 
 " Change the status line color based on mode
 au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111

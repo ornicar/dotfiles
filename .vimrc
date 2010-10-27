@@ -12,6 +12,11 @@ endif
 " Colorsheme
 set t_Co=256
 colorscheme amonsul
+set guifont=Monospace\ 13
+
+" Change the status line color based on mode
+au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
+au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
 
 " Remove menu bar
 set guioptions-=m
@@ -88,12 +93,6 @@ vnoremap / /\v
 
 " Always replace all occurences of a line
 set gdefault
-
-" Change the status line color based on mode
-if version >= 700
-  au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
-  au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
-endif
 
 " Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
 set cursorline

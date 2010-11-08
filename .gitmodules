@@ -55,3 +55,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/renamer"]
+	path = bundle/renamer
+	url = git://github.com/vim-scripts/renamer.vim.git

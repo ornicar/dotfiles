@@ -173,7 +173,7 @@ vnoremap <silent> # :<C-U>
 au BufNewFile,BufRead *.twig			setf htmljinja
 
 " lowercase to modulized
-nnoremap _ bf_x~
+nnoremap <leader>_ bf_x~
 
 " CTAGS
 " Explore tags for the word under the cursor

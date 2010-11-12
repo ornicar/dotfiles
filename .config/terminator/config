@@ -1,0 +1,24 @@
+[global_config]
+  window_state = maximise
+  handle_size = 1
+  borderless = True
+[keybindings]
+  full_screen = <Ctrl><Shift>F11
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    background_darkness = 0.83
+    background_type = transparent
+    foreground_color = "#ffffff"
+    icon_bell = False
+    show_titlebar = False
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

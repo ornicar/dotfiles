@@ -223,11 +223,6 @@ nmap <silent> <leader>f :CommandT<CR>
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1
 
-" Colorsheme switcher
-source $HOME/.vim/bundle/scrollcolor/ScrollColor.vim
-map <silent><F3> :NEXTCOLOR<cr> 
-map <silent><F2> :PREVCOLOR<cr>
-
 " Gist
 let g:gist_open_browser_after_post = 1
 

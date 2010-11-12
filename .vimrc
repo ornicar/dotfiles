@@ -11,12 +11,8 @@ endif
 
 " Colorsheme
 set t_Co=256
-colorscheme amonsul
+colorscheme aldmeris
 set guifont=Monospace\ 12
-
-" Change the status line color based on mode
-au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
-au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
 
 " Remove menu bar
 set guioptions-=m
@@ -234,3 +230,13 @@ map <silent><F2> :PREVCOLOR<cr>
 
 " Gist
 let g:gist_open_browser_after_post = 1
+
+" Show syntax highlighting groups for word under cursor
+" see vimcast.org/episodes/creating-colorschemes-for-vim/
+nmap <S-M-p> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+if !exists("*synstack")
+return
+endif
+echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

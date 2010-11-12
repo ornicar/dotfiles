@@ -55,3 +55,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/hexhighlight/plugin"]
+	path = bundle/hexhighlight/plugin
+	url = git://github.com/yurifury/hexHighlight.git

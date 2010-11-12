@@ -11,12 +11,8 @@ endif
 
 " Colorsheme
 set t_Co=256
-colorscheme amonsul
+colorscheme aldmeris
 set guifont=Monospace\ 12
-
-" Change the status line color based on mode
-au InsertEnter * hi StatusLine guibg=#EED365 guifg=#111111
-au InsertLeave * hi StatusLine guibg=#334b7d guifg=#FFFFFF
 
 " Remove menu bar
 set guioptions-=m
@@ -173,7 +169,7 @@ vnoremap <silent> # :<C-U>
 au BufNewFile,BufRead *.twig			setf htmljinja
 
 " lowercase to modulized
-nnoremap _ bf_x~
+nnoremap <leader>_ bf_x~
 
 " CTAGS
 " Explore tags for the word under the cursor
@@ -227,10 +223,15 @@ nmap <silent> <leader>f :CommandT<CR>
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1
 
-" Colorsheme switcher
-source $HOME/.vim/bundle/scrollcolor/ScrollColor.vim
-map <silent><F3> :NEXTCOLOR<cr> 
-map <silent><F2> :PREVCOLOR<cr>
-
 " Gist
 let g:gist_open_browser_after_post = 1
+
+" Show syntax highlighting groups for word under cursor
+" see vimcast.org/episodes/creating-colorschemes-for-vim/
+nmap <S-M-p> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+if !exists("*synstack")
+return
+endif
+echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

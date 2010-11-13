@@ -50,7 +50,7 @@ alias subpull='git submodule foreach git pull'
 alias subdiff='git submodule foreach --recursive git diff'
 
 # Git completion
-source ~/.git-completion.sh
+source ~/bin/git-completion.sh
 #Git branch in the prompt
 PS1='\W$(__git_ps1 " (%s)")\$ '
 
@@ -73,9 +73,6 @@ if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is
   }
   ackw(){
     ack-grep "$*" --color-match=green --color-filename=blue --word-regexp --smart-case
-  }
-  ackf(){
-    ack-grep -i -g ".*$*[^\/]*$" | highlight blue ".*/" green "$*[^/]"
   }
 fi
 

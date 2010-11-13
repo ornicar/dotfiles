@@ -7,7 +7,7 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    background_darkness = 0.83
+    background_darkness = 0.63
     background_type = transparent
     foreground_color = "#ffffff"
     icon_bell = False

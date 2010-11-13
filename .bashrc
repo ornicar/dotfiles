@@ -1,4 +1,6 @@
 export EDITOR='vim'
+export GIT_EDITOR='vim'
+alias v='vim'
 
 # Use vi mode when typing bash commands
 set -o vi
@@ -14,6 +16,8 @@ alias ...='cd .. ; cd ..'
 
 # Ignores dupes in the history
 export HISTCONTROL=ignoredups
+export HISTIGNORE="ls:cd:[bf]g:exit:..:...:ll"
+alias h='history'
 
 # After each command, checks the windows size and changes lines and columns
 shopt -s checkwinsize
@@ -28,7 +32,7 @@ alias ducks='du -cksh * | sort -rn|head -10'
 
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
  
-#Git shortcuts
+#Git aliases
 alias g="git" # so lazy
 alias s='git status'
 alias d='git diff'
@@ -58,7 +62,7 @@ if [ ! -f ~/.dirs ]; then  # if doesn't exist, create it
 fi
 alias show='cat ~/.dirs'
 save (){
-    command sed "/!$/d" ~/.dirss > ~/.dirs1; \mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ; 
+    command sed "/!$/d" ~/.dirs > ~/.dirs1; \mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ;
 }
 source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file
 shopt -s cdable_vars # set the bash option so that no '$' is required when using the above facility

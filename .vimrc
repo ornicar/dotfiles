@@ -194,11 +194,6 @@ nnoremap <silent> <F7> :TlistToggle<CR>
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 0
 
-" Nerd Tree
-map <Leader>nf :NERDTree<Enter>
-map <Leader>nr :NERDTree %:p:h<Enter>
-let NERDTreeQuitOnOpen=1
-
 " Syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1

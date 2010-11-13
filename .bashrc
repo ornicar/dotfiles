@@ -33,6 +33,7 @@ alias g="git" # so lazy
 alias s='git status'
 alias d='git diff'
 alias c="git commit"
+alias cm="git commit -m"
 alias a="git add -Av"
 alias p="git add -p"
 alias co="git checkout"

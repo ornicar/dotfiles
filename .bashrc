@@ -56,6 +56,28 @@ PS1='\W$(__git_ps1 " (%s)")\$ '
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 
+# Clear the swap
+alias swap='sudo swapoff -a && sudo swapon -a'
+
+# Upgrade with APT
+alias apt-hop='sudo apt-get update && sudo apt-get upgrade'
+
+# Tar aliases
+alias untar="tar xvzf"
+
+# Search
+if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available
+  ack(){
+    ack-grep "$*" --color-match=green --color-filename=blue --smart-case
+  }
+  ackw(){
+    ack-grep "$*" --color-match=green --color-filename=blue --word-regexp --smart-case
+  }
+  ackf(){
+    ack-grep -i -g ".*$*[^\/]*$" | highlight blue ".*/" green "$*[^/]"
+  }
+fi
+
 # Bookmark dirs
 if [ ! -f ~/.dirs ]; then  # if doesn't exist, create it
     touch ~/.dirs
@@ -67,8 +89,7 @@ save (){
 source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file
 shopt -s cdable_vars # set the bash option so that no '$' is required when using the above facility
 
-# Clear the swap
-alias swap='sudo swapoff -a && sudo swapon -a'
-
-# Upgrade with APT
-alias apt-hop='sudo apt-get update && sudo apt-get upgrade'
+# Local config
+if [ -f ~/.bashrc_local ]; then
+	source ~/.bashrc_local
+fi

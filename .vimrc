@@ -1,32 +1,28 @@
 " Vim configuration - Thibault Duplessis.
 
-set nocompatible                  " Must come first because it changes other options.
-
+set nocompatible
 let mapleader = ","
 
-" Source local settings
-if filereadable("~/.vimlocalrc")
-    source ~/.vimlocalrc
-endif
-
-" Colorsheme
-set t_Co=256
-colorscheme aldmeris
-set guifont=Monospace\ 12
-
+" Do not source $VIMRUNTIME/menu.vim
+set guioptions+=M
 " Remove menu bar
 set guioptions-=m
 " Remove toolbar
 set guioptions-=T
 " Remove scrollbar
 set guioptions-=r
+" Use console dialogs instead of popup dialogs
+set guioptions+=c
 
-set langmenu=en_US.UTF-8
+" Colorsheme
+set t_Co=256
+colorscheme aldmeris
+set guifont=Monospace\ 12
 
+" Load bundles help
 silent! call pathogen#helptags()
+" Load bundles code
 silent! call pathogen#runtime_append_all_bundles()
-
-" runtime macros/matchit.vim        " Load the matchit plugin.
 
 " Sets how many lines of history VIM has to remember
 set history=1000
@@ -42,12 +38,11 @@ set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
 set wildignore=*/cache/**,*/logs/** " Ignore certain files
 
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
-
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set showmatch                     " Show matching char (like {})
@@ -68,7 +63,7 @@ set noswapfile                    " Use an SCM instead of swap files
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{fugitive#statusline()}(%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
-set shortmess+=I                  " Don't show splash screen
+"set shortmess+=I                  " Don't show splash screen
 
 " Tabs and indentation.
 set expandtab
@@ -139,6 +134,9 @@ command! StripTrailingWS call StripTrailingWS()
 
 " Fast save
 nmap <Leader>w :w<CR>
+
+" Fast open vertical buffer
+nmap <Leader>v :vsp^M^W^W<cr>
 
 " CLear search highlight
 nmap <silent> <leader>/ :let @/=""<CR>
@@ -230,3 +228,8 @@ return
 endif
 echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Source local settings
+if filereadable("~/.vimrc.local")
+    source ~/.vimrc.local
+endif

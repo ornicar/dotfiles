@@ -45,8 +45,9 @@ alias co="git checkout"
 # Git submodule shortcuts
 alias subupdate='git submodule sync && git submodule update --init --recursive'
 alias subcheckout='git submodule foreach git checkout master'
-alias subreset='git submodule foreach git checkout -- . && git submodule foreach git clean -f'
+alias subreset='git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f'
 alias subpull='git submodule foreach git pull'
+alias subdiff='git submodule foreach --recursive git diff'
 
 # Git completion
 source ~/.git-completion.sh

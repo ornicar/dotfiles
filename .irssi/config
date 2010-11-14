@@ -218,7 +218,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -268,9 +267,26 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
-  core = { real_name = "Thibault Duplessis"; user_name = "ornicar"; nick = "ornicar"; };
+  core = {
+    real_name = "Thibault Duplessis";
+    user_name = "ornicar";
+    nick = "ornicar";
+    timestamp_format = "%H:%M:%S";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = {
+    awl_display_key = "$Q%K%n$H$C$S";
+    awl_block = "0";
+  };
 };
+hilights = ( { text = "ornicar"; nick = "yes"; word = "yes"; } );

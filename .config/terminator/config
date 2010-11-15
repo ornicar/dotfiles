@@ -6,12 +6,14 @@
   full_screen = <Ctrl><Shift>F11
 [profiles]
   [[default]]
-    scrollbar_position = hidden
+    use_system_font = False
     background_darkness = 0.63
     background_type = transparent
+    scrollbar_position = hidden
     foreground_color = "#ffffff"
     icon_bell = False
     show_titlebar = False
+    font = Monospace 11
     scrollback_infinite = True
 [layouts]
   [[default]]

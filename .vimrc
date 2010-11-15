@@ -120,6 +120,11 @@ highlight Folded ctermfg=red
 highlight FoldColumn ctermfg=white
 set fillchars=fold:⋯
 
+if &term =~ "xterm"
+    "let &t_SI = "\<Esc>]12;orange\x7"
+    "let &t_EI = "\<Esc>]12;white\x7"
+endif
+
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
 iab xname Thibault Duplessis

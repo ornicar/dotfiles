@@ -49,9 +49,6 @@
 [submodule "bundle/renamer"]
 	path = bundle/renamer
 	url = git://github.com/vim-scripts/renamer.vim.git
-[submodule "bundle/hexhighlight/plugin"]
-	path = bundle/hexhighlight/plugin
-	url = git://github.com/yurifury/hexHighlight.git
 [submodule "bundle/colorsupport"]
 	path = bundle/colorsupport
 	url = git://github.com/vim-scripts/colorsupport.vim

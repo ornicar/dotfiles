@@ -5,7 +5,7 @@ let mapleader = ","
 
 " Colorsheme
 set t_Co=256
-colorscheme aldmeris
+colorscheme aldmeris255
 
 " Load bundles help
 silent! call pathogen#helptags()
@@ -48,7 +48,6 @@ set visualbell                    " No beeping.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                  " Show the status line all the time
@@ -80,10 +79,6 @@ set gdefault
 set cursorline
 
 " When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-" Also don't do it when the mark is in the first line, that is the default
-" position when opening a file.
 autocmd BufReadPost *
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
@@ -107,14 +102,15 @@ set encoding=utf-8
 " Use: zc, zo, zC, zO, zR, zM
 " Ctrl-K .3 for ⋯
 " set foldmethod=indent
-highlight Folded ctermfg=red
-highlight FoldColumn ctermfg=white
 set fillchars=fold:⋯
 
 if &term =~ "xterm"
-    "let &t_SI = "\<Esc>]12;orange\x7"
-    "let &t_EI = "\<Esc>]12;white\x7"
+    let &t_SI = "\<Esc>]12;orange\x7"
+    let &t_EI = "\<Esc>]12;white\x7"
 endif
+
+au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
+au InsertLeave * hi StatusLine ctermfg=0 ctermfg=7
 
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")

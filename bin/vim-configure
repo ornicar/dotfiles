@@ -1,2 +1,16 @@
 #! /bin/sh
-./configure --enable-rubyinterp --enable-gui=gtk2 --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.6/config --with-features=huge --prefix=/home/thib/data/bin/vim --disable-netbeans
+./configure \
+--with-python-config-dir=/usr/lib/python2.6/config \
+--with-features=huge \
+--prefix=/home/thib/data/bin/vim \
+--enable-rubyinterp \
+--enable-pythoninterp \
+--disable-netbeans \
+--disable-darwin \
+--disable-selinux \
+--disable-workshop \
+--disable-gui \
+--disable-gtk2-check \
+--disable-gnome-check \
+--disable-gtktest \
+--without-gnome

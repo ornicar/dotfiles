@@ -3,21 +3,9 @@
 set nocompatible
 let mapleader = ","
 
-" Do not source $VIMRUNTIME/menu.vim
-set guioptions+=M
-" Remove menu bar
-set guioptions-=m
-" Remove toolbar
-set guioptions-=T
-" Remove scrollbar
-set guioptions-=r
-" Use console dialogs instead of popup dialogs
-set guioptions+=c
-
 " Colorsheme
 set t_Co=256
 colorscheme aldmeris
-set guifont=Monospace\ 12
 
 " Load bundles help
 silent! call pathogen#helptags()

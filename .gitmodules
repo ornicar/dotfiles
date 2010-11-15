@@ -34,9 +34,6 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/csapprox"]
-	path = bundle/csapprox
-	url = git://github.com/godlygeek/csapprox.git
 [submodule "bundle/debug"]
 	path = bundle/debug
 	url = git://github.com/ornicar/vim-debug.git
@@ -58,3 +55,6 @@
 [submodule "bundle/hexhighlight/plugin"]
 	path = bundle/hexhighlight/plugin
 	url = git://github.com/yurifury/hexHighlight.git
+[submodule "bundle/colorsupport"]
+	path = bundle/colorsupport
+	url = git://github.com/vim-scripts/colorsupport.vim

@@ -1,7 +1,7 @@
 " Vim color file
 " Maintainer:   Jonathan Filip <jfilip1024@gmail.com>
-" Last Modified: Wed Oct 21, 2009  11:39AM
-" Version: 3.1
+" Last Modified: Mon Apr 19, 2010  10:24AM
+" Version: 3.5
 "
 " GUI / 256 color terminal
 "
@@ -65,11 +65,11 @@ hi Float            ctermfg=116                                     cterm=none
 " Identifier Group
 " ----------------
 " any variable name
-hi Identifier       guifg=#efaf7f                                   gui=none
-hi Identifier       ctermfg=216                                     cterm=none
+hi Identifier       guifg=#e6c080                                   gui=none
+hi Identifier       ctermfg=180                                     cterm=none
 " function, method, class
-hi Function         guifg=#efaf7f                                   gui=none
-hi Function         ctermfg=216                                     cterm=none
+hi Function         guifg=#e6c080                                   gui=none
+hi Function         ctermfg=180                                     cterm=none
 
 
 " Statement Group
@@ -100,20 +100,20 @@ hi Keyword          ctermfg=150                                     cterm=none
 " Preprocessor Group
 " ------------------
 " generic preprocessor
-hi PreProc          guifg=#f0dfaf                                   gui=none
-hi PreProc          ctermfg=223                                     cterm=none
+hi PreProc          guifg=#e9dfaf                                   gui=none
+hi PreProc          ctermfg=187                                     cterm=none
 " #include
-hi Include          guifg=#f0dfaf                                   gui=none
-hi Include          ctermfg=223                                     cterm=none
+hi Include          guifg=#e9dfaf                                   gui=none
+hi Include          ctermfg=187                                     cterm=none
 " #define
-hi Define           guifg=#f0dfaf                                   gui=none
-hi Define           ctermfg=223                                     cterm=none
+hi Define           guifg=#e9dfaf                                   gui=none
+hi Define           ctermfg=187                                     cterm=none
 " same as define
-hi Macro            guifg=#f0dfaf                                   gui=none
-hi Macro            ctermfg=223                                     cterm=none
+hi Macro            guifg=#e9dfaf                                   gui=none
+hi Macro            ctermfg=187                                     cterm=none
 " #if, #else, #endif
-hi PreCondit        guifg=#f0dfaf                                   gui=none
-hi PreCondit        ctermfg=223                                     cterm=none
+hi PreCondit        guifg=#e9dfaf                                   gui=none
+hi PreCondit        ctermfg=187                                     cterm=none
 
 
 " Type Group
@@ -186,16 +186,16 @@ hi Todo             ctermfg=228             ctermbg=NONE            cterm=underl
 " --------
 " word not recognized
 hi SpellBad         guisp=#ee0000                                   gui=undercurl
-hi SpellBad                                 ctermbg=9               cterm=undercurl
+hi SpellBad                                 ctermbg=196             cterm=undercurl
 " word not capitalized
 hi SpellCap         guisp=#eeee00                                   gui=undercurl
-hi SpellCap                                 ctermbg=12              cterm=undercurl
+hi SpellCap                                 ctermbg=226             cterm=undercurl
 " rare word
 hi SpellRare        guisp=#ffa500                                   gui=undercurl
-hi SpellRare                                ctermbg=13              cterm=undercurl
+hi SpellRare                                ctermbg=214             cterm=undercurl
 " wrong spelling for selected region
 hi SpellLocal       guisp=#ffa500                                   gui=undercurl
-hi SpellLocal                               ctermbg=14              cterm=undercurl
+hi SpellLocal                               ctermbg=214             cterm=undercurl
 
 
 " Cursor
@@ -207,10 +207,10 @@ hi Cursor           ctermfg=bg              ctermbg=153
 hi CursorIM         guifg=bg                guibg=#96cdcd
 hi CursorIM         ctermfg=bg              ctermbg=116
 " cursor column
-hi CursorColumn     guifg=NONE              guibg=#202438           gui=none
+hi CursorColumn     guifg=NONE              guibg=#404448           gui=none
 hi CursorColumn     ctermfg=NONE            ctermbg=236             cterm=none
 " cursor line/row
-hi CursorLine       gui=NONE                guibg=#202438           gui=none
+hi CursorLine       gui=NONE                guibg=#404448           gui=none
 hi CursorLine       cterm=NONE              ctermbg=236             cterm=none
 
 
@@ -230,7 +230,7 @@ hi SignColumn       guifg=#9fafaf           guibg=#181818           gui=none
 hi SignColumn       ctermfg=145             ctermbg=233             cterm=none
 " line numbers
 hi LineNr           guifg=#818698           guibg=#363946
-hi LineNr           ctermfg=102             ctermbg=237
+hi LineNr           ctermfg=245             ctermbg=237
 " match parenthesis, brackets
 hi MatchParen       guifg=#00ff00           guibg=NONE              gui=bold
 hi MatchParen       ctermfg=46              ctermbg=NONE            cterm=bold
@@ -242,13 +242,13 @@ hi ModeMsg          guifg=#76d5f8           guibg=NONE              gui=none
 hi ModeMsg          ctermfg=117             ctermbg=NONE            cterm=none
 " the '~' and '@' and showbreak, '>' double wide char doesn't fit on line
 hi NonText          guifg=#404040                                   gui=none
-hi NonText          ctermfg=235                                     cterm=none
+hi NonText          ctermfg=238                                     cterm=none
 " the hit-enter prompt (show more output) and yes/no questions
 hi Question         guifg=fg                                        gui=none
 hi Question         ctermfg=fg                                      cterm=none
 " meta and special keys used with map, unprintable characters
-hi SpecialKey       guifg=#404040
-hi SpecialKey       ctermfg=237
+hi SpecialKey       guifg=#405060
+hi SpecialKey       ctermfg=239
 " titles for output from :set all, :autocmd, etc
 hi Title            guifg=#62bdde                                   gui=none
 hi Title            ctermfg=74                                      cterm=none
@@ -259,31 +259,37 @@ hi WarningMsg       ctermfg=173                                     cterm=none
 " current match in the wildmenu completion
 hi WildMenu         guifg=#cae682           guibg=#363946           gui=bold,underline
 hi WildMenu         ctermfg=16              ctermbg=186             cterm=bold
+" color column highlighting
+hi ColorColumn      guifg=NONE              guibg=#403630           gui=none
+hi ColorColumn      ctermfg=NONE            ctermbg=94              cterm=none
 
 
 " Diff
 " ----
 " added line
 hi DiffAdd          guifg=#80a090           guibg=#313c36           gui=none
-hi DiffAdd          ctermfg=108             ctermbg=22              cterm=none
+hi DiffAdd          ctermfg=fg             ctermbg=22              cterm=none
 " changed line
 hi DiffChange       guifg=NONE              guibg=#4a343a           gui=none
 hi DiffChange       ctermfg=fg              ctermbg=52              cterm=none
 " deleted line
 hi DiffDelete       guifg=#6c6661           guibg=#3c3631           gui=none
-hi DiffDelete       ctermfg=59              ctermbg=58              cterm=none
+hi DiffDelete       ctermfg=fg              ctermbg=58              cterm=none
 " changed text within line
 hi DiffText         guifg=#f05060           guibg=#4a343a           gui=bold
-hi DiffText         ctermfg=203             ctermbg=52             cterm=bold
+hi DiffText         ctermfg=203             ctermbg=52              cterm=bold
 
 
 " Folds
 " -----
 " line used for closed folds
-hi Folded           guifg=#91d6f8           guibg=#363946           gui=none
-hi Folded           ctermfg=117             ctermbg=238             cterm=none
+"hi Folded           guifg=#91d6f8           guibg=#363946           gui=none
+"hi Folded           ctermfg=117             ctermbg=238             cterm=none
+hi Folded           guifg=#d0e0f0           guibg=#202020           gui=none
+hi Folded           ctermfg=117             ctermbg=235             cterm=none
 " column on side used to indicated open and closed folds
 hi FoldColumn       guifg=#91d6f8           guibg=#363946           gui=none
+hi FoldColumn       guifg=#c0c0d0           guibg=#363946           gui=none
 hi FoldColumn       ctermfg=117             ctermbg=238             cterm=none
 
 
@@ -344,3 +350,4 @@ hi Visual           ctermfg=NONE            ctermbg=24
 " visual mode selection when vim is not owning the selection (x11 only)
 hi VisualNOS        guifg=fg                                        gui=underline
 hi VisualNOS        ctermfg=fg                                      cterm=underline
+

@@ -1,0 +1,2 @@
+#! /bin/sh
+./configure --enable-rubyinterp --enable-gui=gtk2 --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.6/config --with-features=huge --prefix=/home/thib/data/bin/vim --disable-netbeans

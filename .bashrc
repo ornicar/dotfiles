@@ -48,6 +48,7 @@ alias subcheckout='git submodule foreach git checkout master'
 alias subreset='git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f'
 alias subpull='git submodule foreach git pull'
 alias subdiff='git submodule foreach --recursive git diff'
+alias subecho="git submodule foreach 'echo \$name \$sha1:`git rev-parse HEAD`'"
 
 # Git completion
 source ~/bin/git-completion.sh

@@ -34,9 +34,6 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/debug"]
-	path = bundle/debug
-	url = git://github.com/ornicar/vim-debug.git
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git

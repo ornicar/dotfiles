@@ -6,8 +6,11 @@ let b:php_ftplugin_loaded = 1
 
 let PHP_autoformatcomment = 1
 
-let php_sql_query = 1 "Coloration des requetes SQL
-let php_htmlInStrings = 1 "Coloration des balises HTML
+" PHP syntax options
+let php_sql_query = 0 "Coloration des requetes SQL
+let php_htmlInStrings = 0 "Coloration des balises HTML
+let php_no_shorttags = 1
+let php_folding = 0
 
 " Because I write it so often
 imap ² ->

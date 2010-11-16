@@ -18,6 +18,9 @@ set history=1000
 " Do NOT fucking wait when I press <Esc>
 set noesckeys
 
+" Disable spell checking
+set nospell
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -38,11 +41,11 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set showmatch                     " Show matching char (like {})
 
-set wrap                          " Turn on line wrapping.
+set nowrap                        " Turn off line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.
 set sidescrolloff=7
 
-set title                         " Set the terminal's title
+set notitle                       " Do not set the terminal's title
 
 set visualbell                    " No beeping.
 
@@ -52,8 +55,6 @@ set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\%{fugitive#statusline()}(%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
-
-"set shortmess+=I                  " Don't show splash screen
 
 " Tabs and indentation.
 set expandtab
@@ -210,16 +211,6 @@ let g:CommandTMatchWindowAtTop = 1
 
 " Gist
 let g:gist_open_browser_after_post = 1
-
-" Show syntax highlighting groups for word under cursor
-" see vimcast.org/episodes/creating-colorschemes-for-vim/
-nmap <S-M-p> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-if !exists("*synstack")
-return
-endif
-echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 
 " Source local settings
 if filereadable("~/.vimrc.local")

@@ -5,7 +5,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let g:colors_name = "aldmeris255"
-hi Normal guibg=#141616 guifg=#d3d7cf ctermfg=7 ctermbg=233
+hi Normal guibg=#1d1f1f guifg=#d3d7cf ctermfg=7 ctermbg=234
 hi link htmlTag Normal
 hi link htmlEndTag Normal
 hi link htmlTagName Normal

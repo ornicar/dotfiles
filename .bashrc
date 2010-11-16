@@ -1,6 +1,5 @@
 export EDITOR='vim'
 export GIT_EDITOR='vim'
-alias v='vim'
 
 # Use vi mode when typing bash commands
 set -o vi
@@ -13,6 +12,9 @@ alias l='ls -CF'
 # Moving around
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
+
+# Show current dir basename
+alias pwdn="basename `pwd`"
 
 # Ignores dupes in the history
 export HISTCONTROL=ignoredups
@@ -41,6 +43,7 @@ alias cm="git commit -m"
 alias a="git add -Av"
 alias p="git add -p"
 alias co="git checkout"
+alias c-="git checkout -- ."
 
 # Git submodule shortcuts
 alias subupdate='git submodule sync && git submodule update --init --recursive'
@@ -66,6 +69,11 @@ alias apt-hop='sudo apt-get update && sudo apt-get upgrade'
 
 # Tar aliases
 alias untar="tar xvzf"
+
+# Vim aliases
+alias v='vim'
+# Run vim in a new terminator instance
+alias vv="terminator --title 'VIM `pwdn`' --execute 'vim' 2> /dev/null &"
 
 # Search
 if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available

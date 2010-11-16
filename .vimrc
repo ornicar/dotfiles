@@ -15,12 +15,6 @@ silent! call pathogen#runtime_append_all_bundles()
 " Sets how many lines of history VIM has to remember
 set history=1000
 
-" Do NOT fucking wait when I press <Esc>
-set noesckeys
-vmap <Esc> 
-omap <Esc> 
-cmap <Esc> 
-
 " Disable spell checking
 set nospell
 
@@ -81,6 +75,18 @@ set gdefault
 
 " Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
 set cursorline
+
+" Do NOT fucking wait when I press <Esc>
+map <Esc> 
+imap <Esc> 
+cmap <Esc> 
+nmap <Esc> <nop>
+
+" Use HJKL to move in command line
+cmap <C-h> <left>
+cmap <C-j> <C-n>
+cmap <C-k> <C-p>
+cmap <C-l> <right>
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *

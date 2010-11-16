@@ -17,6 +17,9 @@ set history=1000
 
 " Do NOT fucking wait when I press <Esc>
 set noesckeys
+vmap <Esc> 
+omap <Esc> 
+cmap <Esc> 
 
 " Disable spell checking
 set nospell
@@ -111,7 +114,7 @@ if &term =~ "xterm"
 endif
 
 au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=0 ctermfg=7
+au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
 
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
@@ -130,6 +133,9 @@ nmap <Leader>w :w<CR>
 
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>
+
+" Fast open vertical help
+nmap <Leader>h <Esc>:vert help 
 
 " CLear search highlight
 nmap <silent> <leader>/ :let @/=""<CR>

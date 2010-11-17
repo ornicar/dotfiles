@@ -76,17 +76,8 @@ set gdefault
 " Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
 set cursorline
 
-" Do NOT fucking wait when I press <Esc>
-map <Esc> 
-imap <Esc> 
-cmap <Esc> 
-nmap <Esc> <nop>
-
-" Use HJKL to move in command line
-cmap <C-h> <left>
-cmap <C-j> <C-n>
-cmap <C-k> <C-p>
-cmap <C-l> <right>
+" Disable key combinations starting with  in insert mode
+set noesckeys
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -100,7 +91,7 @@ set shiftround
 autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
-syntax enable                     " Turn on syntax highlighting.
+syntax enable
 filetype on
 filetype plugin on
 filetype indent on
@@ -114,13 +105,18 @@ set encoding=utf-8
 " set foldmethod=indent
 set fillchars=fold:⋯
 
+" Change cursor color
 if &term =~ "xterm"
     let &t_SI = "\<Esc>]12;orange\x7"
     let &t_EI = "\<Esc>]12;white\x7"
 endif
 
+" Change statusbar color
 au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
 au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
+
+" Redraw screen
+nmap <leader>r :redraw!<cr>
 
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")

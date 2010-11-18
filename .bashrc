@@ -62,6 +62,9 @@ source ~/bin/git-completion.sh
 #Git branch in the prompt
 PS1='\W$(__git_ps1 " (%s)")\$ '
 
+# Ctags
+alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude='\.git' --exclude='\.svn' --languages=PHP &"
+
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 
@@ -78,6 +81,9 @@ alias untar="tar xvzf"
 alias v='vim'
 # Run vim in a new terminator instance
 alias vv="terminator --title 'VIM `pwdn`' --execute 'vim' 2> /dev/null &"
+
+# Resource this file
+alias ba="source ~/.bashrc"
 
 # Search
 if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available

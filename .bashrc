@@ -41,6 +41,7 @@ alias s='git status'
 alias d='git diff'
 alias c="git commit"
 alias cm="git commit -m"
+alias ca="git commit --amend"
 alias a="git add -Av"
 alias p="git add -p"
 alias co="git checkout"

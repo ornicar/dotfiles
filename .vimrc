@@ -118,6 +118,12 @@ au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
 " Redraw screen
 nmap <leader>r :redraw!<cr>
 
+" Delete buffer
+nmap <leader>d :bd<cr>
+
+" Delete buffer and file
+nmap <leader>D :!rm %<cr>:bd<cr>
+
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
 iab xname Thibault Duplessis

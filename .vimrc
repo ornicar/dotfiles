@@ -88,7 +88,7 @@ autocmd BufReadPost *
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,twig,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
 syntax enable
@@ -130,12 +130,6 @@ iab xname Thibault Duplessis
 iab xsigp Thibault Duplessis
 iab xsigw Thibault Duplessis
 
-" Strip trailing whitespace in whole file
-func! StripTrailingWS()
-%s/\s\+$//
-endfunc
-command! StripTrailingWS call StripTrailingWS()
-
 " Fast save
 nmap <Leader>w :w<CR>
 
@@ -143,7 +137,7 @@ nmap <Leader>w :w<CR>
 nmap <Leader>v :vsp^M^W^W<cr>
 
 " Fast open vertical help
-nmap <Leader>h <Esc>:vert help 
+nmap <Leader>h <Esc>:vert help<space>
 
 " CLear search highlight
 nmap <silent> <leader>/ :let @/=""<CR>
@@ -186,7 +180,7 @@ map ]t :tnext<CR>
 " Jump to previous tag match
 map [t :tprevious<CR>
 " Open tag command
-map <C-T> :tag 
+map <C-T> :tag<space>
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
 nnoremap <silent> <C-F7> :silent !ctags-exuberant -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
@@ -212,7 +206,7 @@ let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 
 " Ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs"
-nmap <leader>a :Ack 
+nmap <leader>a :Ack<space>
 
 " Command-T
 " Unmap the default mapping (<leader>t)

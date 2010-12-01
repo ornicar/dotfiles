@@ -31,7 +31,7 @@ bind "set bell-style none"
 bind "set show-all-if-ambiguous On"
 
 # Lists the size of all the folders and files
-alias ducks='du -cksh * | sort -rn|head -10'
+alias ducks='du -cms * | sort -rn|head -10'
 
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
  
@@ -111,3 +111,6 @@ shopt -s cdable_vars # set the bash option so that no '$' is required when using
 if [ -f ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
+
+alias liga="ssh admin@95.142.171.194"
+alias liov="ssh -i ~/.ssh/lichess.pem root@lichess.org"

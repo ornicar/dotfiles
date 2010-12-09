@@ -4,6 +4,8 @@ export GIT_EDITOR='vim'
 # Use vi mode when typing bash commands
 set -o vi
 
+fortune | cowsay
+
 # ls aliases
 alias ll='ls -hl --color=always'
 alias la='ls -A'

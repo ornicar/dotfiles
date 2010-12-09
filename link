@@ -15,3 +15,4 @@ link ~/.dotfiles/.config/terminator ~/.config/terminator
 link ~/.dotfiles/.irssi ~/.irssi
 link ~/.dotfiles/.git ~/.git
 link ~/.dotfiles/bin ~/bin
+link ~/.dotfiles/.screenrc ~/.screenrc

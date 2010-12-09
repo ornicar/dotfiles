@@ -81,7 +81,7 @@ alias untar="tar xvzf"
 # Vim aliases
 alias v='vim'
 # Run vim in a new terminator instance
-alias vv="terminator --title 'VIM `pwdn`' --execute 'vim' 2> /dev/null &"
+alias vv="terminator --execute 'vim' 2> /dev/null &"
 
 # Resource this file
 alias ba="source ~/.bashrc"

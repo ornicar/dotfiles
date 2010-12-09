@@ -11,7 +11,7 @@ fi
 }
 
 link ~/.dotfiles/.bashrc ~/.bashrc
-link ~/.dotfiles/.config/terminator ~/.config/terminator
-link ~/.dotfiles/.irssi ~/.irssi
+link ~/.dotfiles/.byobu ~/.byobu
 link ~/.dotfiles/bin ~/bin
-link ~/.dotfiles/.screenrc ~/.screenrc
+link ~/.dotfiles/.irssi ~/.irssi
+link ~/.dotfiles/.config/terminator ~/.config/terminator

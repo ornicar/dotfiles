@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf "\005{= bw}%sp\005{-}" $(curl -L http://lichess.org/how-many-players-now)

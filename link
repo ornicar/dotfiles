@@ -3,7 +3,9 @@
 link (){
 if [ -e $1 ]; then
     if [ -e $2 ]; then
-    rm $2
+        rm $2
+    elif [ -d $2 ]; then
+        rm -r $2
     fi
 
     ln -s $1 $2

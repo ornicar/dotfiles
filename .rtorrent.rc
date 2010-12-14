@@ -1,0 +1,24 @@
+# The settings of torrents will be saved in this directory;
+# and a file, which will prevent rTorrent running more than once;
+session = ~/data/download/torrents
+# where the downloaded files will be saved;
+directory = ~/data/download
+# Default upload speed (0 means No Limit);
+upload_rate = 40
+# Default download speed (0 means No Limit);
+download_rate = 200
+# if rTorrent should use UDP;
+use_udp_trackers = yes
+# Max. number of upload slots per torrent;
+max_uploads = 15
+# Port range from where rTorrent will try to connect;
+port_range = 6890-6999
+# Min. and max. connections to one torrent;
+min_peers=20
+max_peers=100
+# Stops downloading when there is less than 200MB diskspace;
+schedule = low_diskspace,5,60,close_low_diskspace=200M
+# Torrents will be automatically added to the download list from this directory ;
+schedule = watch_directory,5,5,load_start=~/data/download/torrents/*.torrent
+# After deleting torrents from that list .torrent files will be deleted too;
+schedule = untied_directory,5,5,stop_untied=

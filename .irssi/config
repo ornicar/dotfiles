@@ -1,4 +1,12 @@
 servers = (
+  {
+    address = "localhost";
+    chatnet = "Bitlbee";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
   { address = "irc.ubuntu.com"; chatnet = "Ubuntu"; port = "8001"; },
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -35,6 +43,7 @@ servers = (
 );
 
 chatnets = {
+  Bitlbee = { type = "IRC"; autosendcmd = "identify yourpassword"; };
   freenode = { type = "IRC"; };
   Ubuntu = { type = "IRC"; };
   IRCnet = { type = "IRC"; };

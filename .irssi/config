@@ -53,7 +53,7 @@ chatnets = {
 channels = (
   { name = "#symfony-dev"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#symfony-cmf"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#diem"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#knplabs"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {

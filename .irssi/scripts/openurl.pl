@@ -26,7 +26,7 @@ use vars qw(@urls %urltypes $recent);
 $recent = 1;
 
 # RegExp & defaultcommands
-%urltypes = ( http => { regexp => qr#((?:https?://[^\s<>"]+|www\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'w3m "$1"' },
+%urltypes = ( http => { regexp => qr#((?:https?://[^\s<>"]+|www\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'chromium-browser "$1"' },
               ftp  => { regexp => qr#((?:ftp://[^\s<>"]+|ftp\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'ncftp "$1"' },
 	      mail => { regexp => qr#([-_a-z0-9.]+\@[-a-z0-9.]+\.[-a-z0-9.]+)#, cmd => 'mutt "$1" -s "$2"' },
 	    );
@@ -44,17 +44,17 @@ sub draw_box ($$$$) {
 
 sub show_help() {
     my $help=$IRSSI{name}." ".$VERSION."
-/openurl
+/url
     List the saved URLs
-/openurl <number> <number>...
+/url <number> <number>...
     Load the corresponding URLs in your browser/mailer
-/openurl paste <number> <number>...
+/url paste <number> <number>...
     Paste the selected URLs to the current channel/query
-/openurl topics
+/url topics
     Look for URLs in channel topics
-/openurl clear
+/url clear
     Clear all URLs
-/openurl help
+/url help
     Display this help
 ";
     my $text = '';
@@ -71,7 +71,7 @@ sub list_urls {
     foreach (@urls) {
 	my $text = $_->{url};
 	my $url = $_->{url};
-	$text = $_->{text} if Irssi::settings_get_bool('openurl_display_context');
+	$text = $_->{text} if Irssi::settings_get_bool('url_display_context');
 	$url =~ s/%/%%/g;
 	$text =~ s/%/%%/g;
 	$text =~ s/\Q$url/%U$url%U/;
@@ -108,7 +108,7 @@ sub process_line ($$$$) {
     my $url = get_url($line);
     if ($url) {
 	my $type = url_type($url);
-	return unless Irssi::settings_get_bool('openurl_watch_'.$type);
+	return unless Irssi::settings_get_bool('url_watch_'.$type);
 	new_url($server, $target, $nick, $line, $url);
     }
 }
@@ -136,7 +136,7 @@ sub launch_url ($) {
 	$address = $1 if $url =~ /(.*?@.*?)($|\?)/;
 	$suffix = $2 if $url =~ /(.*?@.*?)\?subject=(.*)/;
     }
-    my $command = Irssi::settings_get_str("openurl_app_".$type);
+    my $command = Irssi::settings_get_str("url_app_".$type);
     $command =~ s/\$1/$address/;
     $command =~ s/\$2/$suffix/;
     system($command);
@@ -144,7 +144,7 @@ sub launch_url ($) {
 
 sub new_url ($$$$$) {
     my ($server, $channel, $nick, $text, $url) = @_;
-    $recent = 1 if ($recent > Irssi::settings_get_int('openurl_max_urls'));
+    $recent = 1 if ($recent > Irssi::settings_get_int('url_max_urls'));
     # Check for existance of URL
     my $i = 1;
     foreach (@urls) {
@@ -200,8 +200,8 @@ sub add_note ($$$) {
 	$witem->print("%R>>%n OpenURL ".$num, MSGLEVEL_CLIENTCRAP);
 	# create a unique ID for the mark
 	my $foo = time().'-'.int(rand()*1000);
-	$witem->window()->view()->set_bookmark_bottom("openurl_".$num.'-'.$foo);
-	return("openurl_".$num.'-'.$foo);
+	$witem->window()->view()->set_bookmark_bottom("url_".$num.'-'.$foo);
+	return("url_".$num.'-'.$foo);
     }
     return(undef);
 }
@@ -213,7 +213,7 @@ sub clear_urls {
     print CLIENTCRAP '%R>>%n URLs cleared';
 }
 
-sub cmd_openurl ($$$) {
+sub cmd_url ($$$) {
     my ($arg, $server, $witem) = @_;
     my @args = split(/ /, $arg);
     if (scalar(@args) == 0) {
@@ -248,11 +248,11 @@ sub cmd_openurl ($$$) {
 }
 
 foreach (keys %urltypes) {
-    Irssi::settings_add_str($IRSSI{'name'}, 'openurl_app_'.$_, "screen ".$urltypes{$_}->{cmd});
-    Irssi::settings_add_bool($IRSSI{'name'}, 'openurl_watch_'.$_, 1);
+    Irssi::settings_add_str($IRSSI{'name'}, 'url_app_'.$_, "screen ".$urltypes{$_}->{cmd});
+    Irssi::settings_add_bool($IRSSI{'name'}, 'url_watch_'.$_, 1);
 }
-Irssi::settings_add_int($IRSSI{'name'}, 'openurl_max_urls', 20);
-Irssi::settings_add_bool($IRSSI{'name'}, 'openurl_display_context', 1);
+Irssi::settings_add_int($IRSSI{'name'}, 'url_max_urls', 20);
+Irssi::settings_add_bool($IRSSI{'name'}, 'url_display_context', 1);
 
 Irssi::signal_add_last("message private", "event_private_message");
 Irssi::signal_add_last("message public", "event_public_message");
@@ -261,9 +261,9 @@ Irssi::signal_add_last("channel topic changed", "event_topic_changed");
 #Irssi::signal_add('open url', \&launch_url);
 
 foreach my $cmd ('topics', 'clear', 'paste', 'help') {
-    Irssi::command_bind('openurl '.$cmd => sub {
-	cmd_openurl("$cmd ".$_[0], $_[1], $_[2]); });
+    Irssi::command_bind('url '.$cmd => sub {
+	cmd_url("$cmd ".$_[0], $_[1], $_[2]); });
 }
-Irssi::command_bind('openurl', 'cmd_openurl');
+Irssi::command_bind('url', 'cmd_url');
 
-print CLIENTCRAP '%B>>%n '.$IRSSI{name}.' '.$VERSION.' loaded: /openurl help for help';
+print CLIENTCRAP '%B>>%n '.$IRSSI{name}.' '.$VERSION.' loaded: /url help for help';

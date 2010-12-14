@@ -247,4 +247,66 @@ settings = {
   };
   "fe-common/core" = { theme = "ornicar"; };
 };
-hilights = ( { text = "ornicar"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "ornicar"; nick = "yes"; word = "yes"; },
+  { text = "thibault"; nick = "yes"; word = "yes"; }
+  { text = "thib"; nick = "yes"; word = "yes"; }
+);
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&bitlbee";
+        tag = "Bitlbee";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "twitter";
+        tag = "Bitlbee";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#symfony-dev";
+        tag = "freenode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#symfony-cmf";
+        tag = "freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#knplabs";
+        tag = "freenode";
+      }
+    );
+  };
+};
+mainwindows = {
+  3 = { first_line = "8"; lines = "33"; };
+  2 = { first_line = "1"; lines = "9"; };
+};

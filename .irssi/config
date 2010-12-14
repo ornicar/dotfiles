@@ -242,6 +242,8 @@ settings = {
   "perl/core/scripts" = {
     awl_display_key = "$Q%K%n$H$C$S";
     awl_block = "0";
+    nicklist_automode = "screen";
+    nicklist_width = "15";
   };
   "fe-common/core" = { theme = "ornicar"; };
 };

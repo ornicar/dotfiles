@@ -1,0 +1,1 @@
+../nicklist.pl

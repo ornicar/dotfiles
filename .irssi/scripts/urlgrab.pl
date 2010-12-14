@@ -33,7 +33,7 @@ sub url_cmd{
 	  Irssi::print("No url captured yet");
 	  return;
    }
-   system("netscape-remote -remote 'openURL($lasturl)' &>/dev/null");
+   system("chromium-browser $lasturl");
 }
 
 sub find_url {

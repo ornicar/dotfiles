@@ -43,7 +43,7 @@ servers = (
 );
 
 chatnets = {
-  Bitlbee = { type = "IRC"; autosendcmd = "identify yourpassword"; };
+  Bitlbee = { type = "IRC"; };
   freenode = { type = "IRC"; };
   Ubuntu = { type = "IRC"; };
   IRCnet = { type = "IRC"; };
@@ -242,18 +242,15 @@ settings = {
   "perl/core/scripts" = {
     awl_display_key = "$Q%K%n$H$C$S";
     awl_block = "0";
-    nicklist_automode = "screen";
     nicklist_width = "15";
   };
   "fe-common/core" = { theme = "ornicar"; };
 };
 hilights = (
-  { text = "ornicar"; nick = "yes"; word = "yes"; },
-  { text = "thibault"; nick = "yes"; word = "yes"; }
-  { text = "thib"; nick = "yes"; word = "yes"; }
+  { text = "ornicar"; nick = "yes"; word = "yes"; }
 );
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  1 = { immortal = "yes"; name = "(o)"; level = "ALL"; };
   2 = { name = "hilight"; sticky = "yes"; };
   3 = {
     items = (
@@ -307,6 +304,6 @@ windows = {
   };
 };
 mainwindows = {
-  3 = { first_line = "8"; lines = "33"; };
-  2 = { first_line = "1"; lines = "9"; };
+  3 = { first_line = "9"; lines = "32"; };
+  2 = { first_line = "1"; lines = "8"; };
 };

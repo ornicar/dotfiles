@@ -39,8 +39,7 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
  
 #Git aliases
 alias g="git" # so lazy
-alias s='git status'
-alias d='git diff'
+alias s='tig status'
 alias c="git commit"
 alias cm="git commit -m"
 alias ca="git commit --amend"

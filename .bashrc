@@ -62,7 +62,7 @@ alias subdiff='git submodule foreach --recursive git diff'
 # Git completion
 source ~/bin/git-completion.sh
 #Git branch in the prompt
-#PS1='\W$(__git_ps1 " (%s)")\$ '
+PS1='\W$(__git_ps1 " (%s)")\$ '
 
 # Ctags
 alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude='\.git' --exclude='\.svn' --languages=PHP &"

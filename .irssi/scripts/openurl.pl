@@ -26,10 +26,7 @@ use vars qw(@urls %urltypes $recent);
 $recent = 1;
 
 # RegExp & defaultcommands
-%urltypes = ( http => { regexp => qr#((?:https?://[^\s<>"]+|www\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'chromium-browser "$1"' },
-              ftp  => { regexp => qr#((?:ftp://[^\s<>"]+|ftp\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'ncftp "$1"' },
-	      mail => { regexp => qr#([-_a-z0-9.]+\@[-a-z0-9.]+\.[-a-z0-9.]+)#, cmd => 'mutt "$1" -s "$2"' },
-	    );
+%urltypes = ( http => { regexp => qr#((?:https?://[^\s<>"]+|www\.[-a-z0-9.]+)[^\s.,;<">\):])#, cmd => 'chromium-browser "$1"' });
 
 sub draw_box ($$$$) {
     my ($title, $text, $footer, $colour) = @_;

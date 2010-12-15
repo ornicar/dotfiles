@@ -125,6 +125,7 @@ statusbar = {
     # start/end text in statusbars
     barstart = "{sbstart}";
     barend = "{sbend}";
+    usercount = { };
 
     topicbarstart = "{topicsbstart}";
     topicbarend = "{topicsbend}";
@@ -257,7 +258,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "&bitlbee";
+        name = "&im";
         tag = "Bitlbee";
       }
     );

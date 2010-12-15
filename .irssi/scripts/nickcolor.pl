@@ -19,7 +19,7 @@ Irssi::theme_register([
 
 my %saved_colors;
 my %session_colors = {};
-my @colors = qw/2 3 4 5 6 7 9 10 11 12 13/;
+my @colors = qw/ 2 3 4 5 6 7 9 10 11 12 13 14 15/;
 
 sub load_colors {
   open COLORS, "$ENV{HOME}/.irssi/saved_colors";
@@ -105,7 +105,8 @@ sub sig_public {
   }
 
   $color = "0".$color if ($color < 10);
-  $server->command('/^format pubmsg {pubmsgnick $2 {pubnick '.chr(3).$color.'$0}}$1');
+  $server->command('/^format pubmsg %b<%w$2'.chr(3).$color.'$[-11]0%b> %K|%n $1');
+ # $server->command('/^format action_public {pubaction '.chr(3).$color.'$0}$1');
 }
 
 sub cmd_color {

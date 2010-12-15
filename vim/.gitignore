@@ -1,0 +1,8 @@
+*.swp
+.VimballRecord
+*.so
+bundle/commandt/ruby/command-t/Makefile
+private
+.netrwhist
+tags
+vim_phpdebug.sess

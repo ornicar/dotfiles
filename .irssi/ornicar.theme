@@ -274,7 +274,7 @@ abstracts = {
 
 formats = {
   "fe-common/core" = {
-    pubmsg = "{pubmsgnick $2 {pubnick \00307$0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick \00303$0}}$1";
     join = "  %K>%g>%G>%n {nick %W$0%n}!%n{chanhost_hilight %K$1%n}";
     part = "  %r<%n   {nick %w$0%n}!%n{chanhost_hilight %K$1%n} {reason %K$3%n}%n";
     kick = "  %R<%r<%K<%n {nick %w$0%n} {reason %w$3%n} %rkicked%n by {nick $2}";

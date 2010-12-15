@@ -244,12 +244,11 @@ settings = {
     awl_display_key = "$Q%K%n$H$C$S";
     awl_block = "0";
     nicklist_width = "15";
+    notify_types = "PRIVATE HILIGHT";
   };
   "fe-common/core" = { theme = "ornicar"; };
 };
-hilights = (
-  { text = "ornicar"; nick = "yes"; word = "yes"; }
-);
+hilights = ( { text = "ornicar"; nick = "yes"; word = "yes"; } );
 windows = {
   1 = { immortal = "yes"; name = "(o)"; level = "ALL"; };
   2 = { name = "hilight"; sticky = "yes"; };
@@ -258,7 +257,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "&im";
+        name = "&Bitlbee";
         tag = "Bitlbee";
       }
     );

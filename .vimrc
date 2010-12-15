@@ -88,7 +88,7 @@ autocmd BufReadPost *
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,twig,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,css,twig,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
 syntax enable
@@ -132,6 +132,8 @@ iab xsigw Thibault Duplessis
 
 " Fast save
 nmap <Leader>w :w<CR>
+" Fast save and quit
+nmap <Leader>q :wq<CR>
 
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>

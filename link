@@ -10,11 +10,11 @@ if [ -e $1 ]; then
 fi
 }
 
-link ~/.dotfiles/.bashrc ~/.bashrc
-link ~/.dotfiles/.tigrc ~/.tigrc
-link ~/.dotfiles/bin ~/bin
-link ~/.dotfiles/.irssi ~/.irssi
-link ~/.dotfiles/.moc ~/.moc
-link ~/.dotfiles/.rtorrent.rc ~/.rtorrent.rc
+link ~/.dotfiles/bashrc ~/.bashrc
+link ~/.dotfiles/tigrc ~/.tigrc
+link ~/.dotfiles/scripts ~/.scripts
+link ~/.dotfiles/irssi ~/.irssi
+link ~/.dotfiles/moc ~/.moc
+link ~/.dotfiles/rtorrent.rc ~/.rtorrent.rc
 link ~/.dotfiles/bin/byobu ~/.byobu/bin
-link ~/.dotfiles/.config/terminator ~/.config/terminator
+link ~/.dotfiles/config/terminator ~/.config/terminator

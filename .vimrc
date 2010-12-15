@@ -124,6 +124,9 @@ nmap <leader>d :bd<cr>
 " Delete buffer and file
 nmap <leader>D :!rm %<cr>:bd<cr>
 
+" Copy current file path to register "+
+nmap <leader>cp :let @+=@%<cr>
+
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
 iab xname Thibault Duplessis

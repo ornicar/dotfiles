@@ -138,6 +138,14 @@ nmap <Leader>w :w<CR>
 " Fast save and quit
 nmap <Leader>q :wq<CR>
 
+" Diff only config
+if &diff
+    nmap <leader>do :diffget<space>
+    nmap <leader>dp :diffput<space>
+    nmap <Leader>q :wqa<CR>
+    nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
+endif
+
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>
 

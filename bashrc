@@ -4,7 +4,11 @@ export GIT_EDITOR='vim'
 # Use vi mode when typing bash commands
 set -o vi
 
+# Show a gentle cow
 fortune | cowsay
+
+# Reload this file
+alias so=". ~/.bashrc"
 
 # ls aliases
 alias ll='ls -hl --color=always'
@@ -60,7 +64,7 @@ alias subpull='git submodule foreach git pull'
 alias subdiff='git submodule foreach --recursive git diff'
 
 # Git completion
-source ~/bin/git-completion.sh
+source ~/.scripts/git-completion.sh
 #Git branch in the prompt
 PS1='\W$(__git_ps1 " (%s)")\$ '
 

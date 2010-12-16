@@ -5,27 +5,22 @@ SCRIPT=`readlink -f $0`
 # Absolute path this script is in
 SCRIPTPATH=`dirname $SCRIPT`
 
-echo "Linking config files..."
+echo "Linking config files from $SCRIPTPATH"
 
 link (){
-if [ -e $1 ]; then
-    FROM="$SCRIPTPATH/$1"
+    FROM="$SCRIPTPATH/../$1"
     TO=$2
 
-    printf "Linking %s to %s\n" $FROM $TO
+    printf "ln -s %s %s\n" $FROM $TO
 
-    if [ -e $TO ]; then
-        rm -r $TO
-    fi
-
+    rm $TO
     ln -s $FROM $TO
-fi
 }
 
 link bashrc ~/.bashrc
 link scripts ~/.scripts
 link screenrc ~/.screenrc
-link bin/byobu ~/.byobu/bin
+link scripts/byobu ~/.byobu/bin
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc

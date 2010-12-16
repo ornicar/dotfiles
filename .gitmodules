@@ -1,54 +1,54 @@
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
 	url = git://github.com/ornicar/snipmate.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/taglist"]
-	path = bundle/taglist
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
 	url = git://github.com/esukram/taglist.vim.git
-[submodule "bundle/lusty"]
-	path = bundle/lusty
+[submodule "vim/bundle/lusty"]
+	path = vim/bundle/lusty
 	url = git://github.com/sjbach/lusty.git
-[submodule "bundle/ack"]
-	path = bundle/ack
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "bundle/surround"]
-	path = bundle/surround
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/matchit"]
-	path = bundle/matchit
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
 	url = git://github.com/tsaleh/vim-supertab.git
-[submodule "bundle/dirdo"]
-	path = bundle/dirdo
+[submodule "vim/bundle/dirdo"]
+	path = vim/bundle/dirdo
 	url = git://github.com/ornicar/vim-dirdo.git
-[submodule "bundle/commandt"]
-	path = bundle/commandt
+[submodule "vim/bundle/commandt"]
+	path = vim/bundle/commandt
 	url = git://github.com/wincent/Command-T.git
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/ragtag"]
-	path = bundle/ragtag
+[submodule "vim/bundle/ragtag"]
+	path = vim/bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git
-[submodule "bundle/gist"]
-	path = bundle/gist
+[submodule "vim/bundle/gist"]
+	path = vim/bundle/gist
 	url = git://github.com/mattn/gist-vim.git
-[submodule "bundle/phpfolding"]
-	path = bundle/phpfolding
+[submodule "vim/bundle/phpfolding"]
+	path = vim/bundle/phpfolding
 	url = git://github.com/vim-scripts/phpfolding.vim.git
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/renamer"]
-	path = bundle/renamer
+[submodule "vim/bundle/renamer"]
+	path = vim/bundle/renamer
 	url = git://github.com/vim-scripts/renamer.vim.git
-[submodule "bundle/colorsupport"]
-	path = bundle/colorsupport
+[submodule "vim/bundle/colorsupport"]
+	path = vim/bundle/colorsupport
 	url = git://github.com/vim-scripts/colorsupport.vim

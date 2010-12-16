@@ -1,20 +1,35 @@
 #!/usr/bin/env bash
 
+# Absolute path to this script
+SCRIPT=`readlink -f $0`
+# Absolute path this script is in
+SCRIPTPATH=`dirname $SCRIPT`
+
+echo "Linking config files..."
+
 link (){
 if [ -e $1 ]; then
-    if [ -e $2 ]; then
-        rm -r $2
+    FROM="$SCRIPTPATH/$1"
+    TO=$2
+
+    printf "Linking %s to %s\n" $FROM $TO
+
+    if [ -e $TO ]; then
+        rm -r $TO
     fi
 
-    ln -s $1 $2
+    ln -s $FROM $TO
 fi
 }
 
-link ~/.dotfiles/bashrc ~/.bashrc
-link ~/.dotfiles/tigrc ~/.tigrc
-link ~/.dotfiles/scripts ~/.scripts
-link ~/.dotfiles/irssi ~/.irssi
-link ~/.dotfiles/moc ~/.moc
-link ~/.dotfiles/rtorrent.rc ~/.rtorrent.rc
-link ~/.dotfiles/bin/byobu ~/.byobu/bin
-link ~/.dotfiles/config/terminator ~/.config/terminator
+link bashrc ~/.bashrc
+link scripts ~/.scripts
+link screenrc ~/.screenrc
+link bin/byobu ~/.byobu/bin
+link vimrc ~/.vimrc
+link vim ~/.vim
+link tigrc ~/.tigrc
+link irssi ~/.irssi
+link moc ~/.moc
+link rtorrent.rc ~/.rtorrent.rc
+link config/terminator ~/.config/terminator

@@ -1,1 +1,2 @@
 bind status A !git commit --amend
+bind status P !git push

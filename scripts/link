@@ -20,7 +20,8 @@ link (){
 link bashrc ~/.bashrc
 link scripts ~/.scripts
 link screenrc ~/.screenrc
-link scripts/byobu ~/.byobu/bin
+link byobu/bin ~/.byobu/bin
+link byobu/keybindings ~/.byobu/keybindings
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc

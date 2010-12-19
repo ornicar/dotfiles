@@ -22,6 +22,7 @@ link scripts ~/.scripts
 link screenrc ~/.screenrc
 link byobu/bin ~/.byobu/bin
 link byobu/keybindings ~/.byobu/keybindings
+link muttrc ~/.muttrc
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc

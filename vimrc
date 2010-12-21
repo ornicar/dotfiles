@@ -138,6 +138,13 @@ nmap <Leader>w :w<CR>
 " Fast save and quit
 nmap <Leader>q :wq<CR>
 
+if &diff
+    nmap <leader>q :wqa<cr>
+    nmap <leader>do :diffget<space>
+    nmap <leader>dp :diffput<space>
+    nmap <leader><space> <c-w>l<c-w>q<c-w>j<c-w>L<c-w>h
+endif
+
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>
 

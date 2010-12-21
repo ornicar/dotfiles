@@ -116,6 +116,3 @@ shopt -s cdable_vars # set the bash option so that no '$' is required when using
 if [ -f ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
-
-alias liga="ssh admin@95.142.171.194"
-alias liov="ssh -i ~/.ssh/lichess.pem root@lichess.org"

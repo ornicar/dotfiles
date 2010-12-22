@@ -26,7 +26,11 @@ link byobu/windows.im ~/.byobu/windows.im
 link byobu/windows.do ~/.byobu/windows.do
 link byobu/windows.me ~/.byobu/windows.me
 link byobu/windows.li ~/.byobu/windows.li
+link byobu/windows.ex ~/.byobu/windows.ex
 link muttrc ~/.muttrc
+link mutt/colours ~/.mutt/colours
+link mutt/colours ~/.mutt/macros
+link mailcap ~/.mailcap
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc

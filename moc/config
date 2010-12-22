@@ -4,7 +4,7 @@ ReadTags		= yes
 # Directory in which you store music files. If you specify it you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
 # This can also point to a playlist.
-MusicDir		= "/home/thib/data"
+MusicDir		= "/home/thib/data/Musique"
 
 # How to sort? FileName is the only option for now.
 Sort			= FileName
@@ -430,7 +430,7 @@ CanStartInPlaylist	= yes
 #
 # Example:
 #
-#OnSongChange = "/home/jack/.moc/myscript %a %r"
+OnSongChange = "/usr/bin/notify-send 'Now playing %a %r %t'"
 
 # OnStop.
 # Run the following command (full path, no arguments) when MOC changes state

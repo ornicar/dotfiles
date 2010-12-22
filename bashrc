@@ -68,6 +68,15 @@ source ~/.scripts/git-completion.sh
 #Git branch in the prompt
 PS1='\W$(__git_ps1 " (%s)")\$ '
 
+# Byobu presets
+alias blichess="echo 'cd src/Bundle/LichessBundle && git status && bash' > /tmp/livendor \
+&& cd ~/data/workspace/lichess \
+&& BYOBU_WINDOWS='li' byobu -S lichess"
+alias bdotfiles="cd ~/data/workspace/dotfiles \
+&& BYOBU_WINDOWS='do' byobu -S dotfiles"
+alias bim="BYOBU_WINDOWS='im' byobu -S im"
+alias bmedia="cd ~/data && BYOBU_WINDOWS='me' byobu -S media"
+
 # Ctags
 alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude='\.git' --exclude='\.svn' --languages=PHP &"
 
@@ -116,6 +125,3 @@ shopt -s cdable_vars # set the bash option so that no '$' is required when using
 if [ -f ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
-
-alias liga="ssh admin@95.142.171.194"
-alias liov="ssh -i ~/.ssh/lichess.pem root@lichess.org"

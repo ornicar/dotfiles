@@ -142,7 +142,7 @@ nmap <Leader>q :wq<CR>
 if &diff
     nmap <leader>do :diffget<space>
     nmap <leader>dp :diffput<space>
-    nmap <Leader>q :wqa<CR>
+    nmap <leader>q :wqa<CR>
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 

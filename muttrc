@@ -19,7 +19,7 @@ set sort_aux = 'last-date-received'
 
 bind editor <space> noop
 
-source ~/.mutt/colours
+source ~/.mutt/themes/first
 source ~/.mutt/macros
 
 auto_view text/html

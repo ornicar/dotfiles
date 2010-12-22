@@ -1,0 +1,3 @@
+screen -t irssi irssi
+screen -t mutt mutt
+select 0

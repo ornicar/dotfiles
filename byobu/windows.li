@@ -1,0 +1,6 @@
+screen -t vim vim
+screen -t vendor bash /tmp/livendor
+screen -t git tig
+screen -t bash bash
+screen -t test bash
+select 0

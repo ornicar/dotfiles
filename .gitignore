@@ -1,3 +1,5 @@
 irssi/config.autosave
 moc
 !moc/config
+mutt/cache
+mutt/certificates

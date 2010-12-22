@@ -30,7 +30,7 @@ link byobu/windows.ex ~/.byobu/windows.ex
 link muttrc ~/.muttrc
 link mutt/colours ~/.mutt/colours
 link mutt/colours ~/.mutt/macros
-link mailcap ~/.mailcap
+link mutt/mailcap ~/.mutt/mailcap
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc

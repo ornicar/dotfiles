@@ -1,0 +1,86 @@
+# Derived from: ataualpa.altervista.org (Il nirvana con mutt)
+# COLORS FOR BLACK BACKGROUND
+
+# colors:
+
+# white
+# brightwhite
+# black
+# green
+# magenta
+# blue
+# cyan
+# yellow
+# brightyellow
+# red
+# brightred
+# default (transparent)
+# colorx
+# color0 = black
+# color1 = red
+# color2 = green
+# color3 = black
+# color4 = blue
+# color5 = violet
+# color6 = cyan
+# color7 = gray
+# color8 = none
+# color9 = none
+
+
+# text colors - general functions
+color normal	white		default				# normal text
+color status	brightgreen	blue				# status bar, last and first row
+color search	brightyellow	red				# search results
+color message	brightyellow	default				# information messages, last row
+color error	brightred	default				# error messages, last row
+color markers	brightred	default				# the + sign at the start of broken lines
+
+# text colors - message index and attachment menu
+color indicator	brightwhite	red				# current message selected
+color tree	brightred	default				# Threads' arrow
+color index	brightwhite	default ~F			# important messages 	! flag - command "F"
+color index	green		default ~N			# new messages		N flag - command "N"
+color index	magenta		default ~T			# tagged messages	* flag - command "t"
+color index	green		default ~U			# unread messages
+color index	brightblue	default ~D			# deleted messages      D flag - commands "d"/"u"
+
+# Score colors
+#color index	magenta		default '(~n 1-4)'		# score 1-4
+#color index	green		default '(~n 5-7)'		# score 5-7
+#color index	brightblue	default '(~n 8-10)'		# score 8-10
+#color index	white		default '(~n 11-50)'		# score 11-50
+#color index	brightred	default '(~n 51-100)'		# score 51-100
+
+# text colors - pager
+color hdrdefault green		default				# headers
+#color header	yellow		default "^(from|subject|to):"	# header from: subject: to:
+color bold	green		default				# bold on mails' body
+color underline	yellow		default				# underlined
+color attachment color5		default				# attachments
+color signature	red		default				# signature
+color tilde	blue		default				# ~ at the end of messages
+color quoted	red		default				# quoted text 1st level
+color quoted1	green		default				# quoted text 2nd level
+color quoted2	magenta		default				# quoted text 3rd level
+color quoted3	yellow		default
+color quoted4	red		default
+color quoted5	red		default
+color quoted6	red		default
+color quoted7	red		default
+color quoted8	red		default
+color quoted9	red		default
+#color body       brightgreen    default  "((ftp|http|https)://|(file|mailto|news):|www\\.)[-a-zA-Z0-9_.:]\
+#*[a-zA-Z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:!])?/?"
+
+# Ronald J Kimball's url regexp. mutt-user 04/05/28
+color body	brightyellow	default	"(https?|ftp|gopher|finger)://([^"'"'"' \t\r\n)>.,!?&]\
+|[.,!?][^"'"'"' \t\r\n)>.,!?&]|&([^g]|$)|&g([^t]|$)|&gt([^;]|$))+"
+color body       brightred      default  "[-a-zA-Z_0-9.+]+@[-a-zA-Z_0-9.]+"
+color body       green          default  "(^| )_[-a-zA-Z0-9_]+_[,.?]?[ \n]"
+
+# enphasized text
+color body	green		default		"[*][-[:alnum:]]+[*]"
+color body	green		default		"[ ]_[-[:alnum:]]+_([ ]|\.)"
+
+# vim: syntax=muttrc

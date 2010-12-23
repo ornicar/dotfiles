@@ -85,6 +85,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+" Round indent to shiftwidth
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
@@ -199,7 +200,7 @@ map [t :tprevious<CR>
 map <C-T> :tag<space>
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
-nnoremap <silent> <C-F7> :silent !ctags-exuberant -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+nnoremap <SILENT> <C-F7> :silent !ctags-exuberant -h ".php" --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"

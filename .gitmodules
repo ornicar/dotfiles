@@ -43,9 +43,6 @@
 [submodule "vim/bundle/phpfolding"]
 	path = vim/bundle/phpfolding
 	url = git://github.com/vim-scripts/phpfolding.vim.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/renamer"]
 	path = vim/bundle/renamer
 	url = git://github.com/vim-scripts/renamer.vim.git

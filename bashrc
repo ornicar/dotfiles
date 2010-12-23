@@ -7,9 +7,6 @@ set -o vi
 # Show a gentle cow
 fortune | cowsay
 
-# Reload this file
-alias so=". ~/.bashrc"
-
 # ls aliases
 alias ll='ls -hl --color=always'
 alias la='ls -A'
@@ -19,9 +16,6 @@ alias l='ls -CF'
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 alias ....='cd .. ; cd .. ; cd ..'
-
-# Show current dir basename
-alias pwdn="basename `pwd`"
 
 # Ignores dupes in the history
 export HISTCONTROL=ignoredups
@@ -37,7 +31,7 @@ bind "set bell-style none"
 bind "set show-all-if-ambiguous On"
 
 # Lists the size of all the folders and files
-alias ducks='du -cms * | sort -rn|head -10'
+alias ducks='du -cks * | sort -rn|head -10'
 
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
  
@@ -78,16 +72,11 @@ alias swap='sudo swapoff -a && sudo swapon -a'
 # Upgrade with APT
 alias apt-hop='sudo apt-get update && sudo apt-get upgrade'
 
-# Tar aliases
-alias untar="tar xvzf"
-
 # Vim aliases
 alias v='vim'
-# Run vim in a new terminator instance
-alias vv="terminator --execute 'vim' 2> /dev/null &"
 
 # Resource this file
-alias ba="source ~/.bashrc"
+alias ba=". ~/.bashrc"
 
 # Search
 if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available

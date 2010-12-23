@@ -15,7 +15,9 @@ set markers=no # don't put '+' at the beginning of wrapped lines
 set pager_index_lines= 9 # how large is the index window?
 set sort = 'threads'
 set sort_aux = 'last-date-received'
+set query_command = "goobook query '%s'"
 
+bind editor <Tab> complete-query
 bind editor <space> noop
 
 source ~/.mutt/themes/first

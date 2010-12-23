@@ -1,4 +1,9 @@
 #! /bin/sh
 
-cd ~/.vim
-git submodule foreach 'echo "doc" > ~/.vim/$path/.git/info/exclude'
+# Loop over vim bundles
+for BUNDLE in "$HOME/.vim/bundle/"*; do
+    if [ -d "$BUNDLE/doc" ]; then
+        echo "Ignore /doc in $BUNDLE"
+        echo "doc" > "$BUNDLE/.git/info/exclude"
+    fi
+done

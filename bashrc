@@ -42,29 +42,18 @@ alias ducks='du -cms * | sort -rn|head -10'
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
  
 #Git aliases
-alias g="git" # so lazy
 alias s='git status'
-alias d='tig status'
+alias t='tig'
 alias c="git commit"
 alias cm="git commit -m"
 alias ca="git commit --amend"
-alias a="git add -Av"
-alias p="git add -p"
 alias co="git checkout"
 alias c-="git checkout -- ."
 alias pu="git pull"
 alias pur="git pull --rebase"
-alias b="git branch"
-
-# Git submodule shortcuts
-alias subupdate='git submodule sync && git submodule update --init --recursive'
-alias subcheckout='git submodule foreach git checkout master'
-alias subreset='git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f'
-alias subpull='git submodule foreach git pull'
-alias subdiff='git submodule foreach --recursive git diff'
 
 # Git completion
-source ~/.scripts/git-completion.sh
+source ~/.scripts/git/completion
 #Git branch in the prompt
 PS1='\W$(__git_ps1 " (%s)")\$ '
 

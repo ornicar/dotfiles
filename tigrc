@@ -1,2 +1,33 @@
+set show-date = relative
+set show-rev-graph = yes
+set line-graphics = yes
+
+# Unbind git gc
+bind generic G none
+# Unbind toggle date
+bind generic D none
+# Unbind toggle author
+bind generic A none
+# Unbind toggle graph
+bind generic g none
+# Unbind toggle ref
+bind generic F none
+# Unbind toggle sort order
+bind generic I none
+# Unbind toggle sort field
+bind generic i none
+# Unbind scroll page down
+bind generic s none
+# Unbind view-status
+bind generic S none
+# Unbind refresh
+bind generic R none
+
+bind generic s view-status
+bind generic r refresh
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic space enter
 bind status A !git commit --amend
 bind status P !git push
+bind status p !git pull

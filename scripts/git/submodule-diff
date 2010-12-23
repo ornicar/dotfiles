@@ -1,4 +1,0 @@
-#! /bin/sh
-
-# Show status and diff of dirty submodules
-git submodule foreach --recursive --quiet '[ "$(git status -s)" ] && echo "--- $name ---" && git status -s && git diff --unified=1 || :'

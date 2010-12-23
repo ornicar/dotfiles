@@ -78,6 +78,11 @@ alias v='vim'
 # Resource this file
 alias ba=". ~/.bashrc"
 
+# Man inside vim
+man() {
+    vim -c "Man $*" -c "only"
+}
+
 # Search
 if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available
   ack(){

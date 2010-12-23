@@ -85,6 +85,9 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+" Open man pages
+runtime! ftplugin/man.vim
+
 " Round indent to shiftwidth
 set shiftround
 

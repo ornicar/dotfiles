@@ -8,3 +8,11 @@
 [alias]
     # Show status and diff of dirty submodules
     subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"
+    # Pull all submodules
+    subpull = !"git submodule foreach git pull"
+    # Update all submodules
+    subupdate = !"git submodule sync && git submodule update --init --recursive"
+    # Checkout master branch of all submodules
+    subcheckout = !"git submodule foreach git checkout master"
+    # Reset all submodules
+    subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"

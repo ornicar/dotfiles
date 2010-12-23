@@ -27,6 +27,7 @@ link byobu/windows.do ~/.byobu/windows.do
 link byobu/windows.me ~/.byobu/windows.me
 link byobu/windows.li ~/.byobu/windows.li
 link byobu/windows.ex ~/.byobu/windows.ex
+link gitconfig ~/.gitconfig
 link muttrc ~/.muttrc
 link mutt ~/.mutt
 link vimrc ~/.vimrc

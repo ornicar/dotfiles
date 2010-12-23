@@ -1,0 +1,7 @@
+[user]
+	name = ornicar
+	email = thibault.duplessis@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim

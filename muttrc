@@ -1,7 +1,6 @@
 source ~/.muttrc.private
 set from = "thibault.duplessis@gmail.com"
 set realname = "Thibault Duplessis"
-set imap_user = "thibault.duplessis@gmail.com"
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed ="+[Gmail]/Drafts"

@@ -1,6 +1,6 @@
 screen -t vim zsh
 screen -t git zsh
 screen -t zsh zsh
-screen -t vendor zsh /tmp/livendor
+screen -t vendor zsh
 screen -t test zsh
 select 0

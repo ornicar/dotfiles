@@ -17,7 +17,6 @@ link (){
     ln -s $FROM $TO
 }
 
-link bashrc ~/.bashrc
 link zshrc ~/.zshrc
 link oh-my-zsh ~/.oh-my-zsh
 link scripts ~/.scripts

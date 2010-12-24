@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-projects=(dotfiles lichess exercise symfony2bundles symfony symfony-docs Twig zf2 vimium DoctrineUserBundle ForumBundle doctrine2 mongodb-odm jquery jquery-ui)
+projects=(dotfiles lichess exercise symfony2bundles symfony symfony-docs Twig zf2 vimium UserBundle ForumBundle doctrine2 mongodb-odm jquery jquery-ui)
 currentdir=$(pwd)
 workspace=~/data/workspace
 

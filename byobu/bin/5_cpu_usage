@@ -16,7 +16,7 @@ if [ -f "/tmp/cpu_usage" ]; then
     let "DIFF_IDLE=$IDLE-$1"
     let "DIFF_TOTAL=$TOTAL-$2"
     let "DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"
-    echo -en "$DIFF_USAGE"
+    printf "%s%s" $DIFF_USAGE "%%"
 fi
 
 # Remember the total and idle CPU times for the next check.

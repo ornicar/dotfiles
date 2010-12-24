@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+CPU=($(cat /proc/stat | grep '^cpu ')) # Get the total CPU statistics.
+shift CPU
+IDLE=${CPU[4]}                        # Get the idle CPU time.
+
+# Calculate the total CPU time.
+TOTAL=0
+for VALUE in "${CPU[@]}"; do
+    let "TOTAL=$TOTAL+$VALUE"
+done
+
+if [ -f "/tmp/cpu_usage" ]; then
+    set -- $(cat /tmp/cpu_usage)
+    # Calculate the CPU usage since we last checked.
+    let "DIFF_IDLE=$IDLE-$1"
+    let "DIFF_TOTAL=$TOTAL-$2"
+    let "DIFF_USAGE=(1000*($DIFF_TOTAL-$DIFF_IDLE)/$DIFF_TOTAL+5)/10"
+    echo -en "$DIFF_USAGE"
+fi
+
+# Remember the total and idle CPU times for the next check.
+echo "$IDLE $TOTAL" > /tmp/cpu_usage

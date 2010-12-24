@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Loop over vim bundles
 for BUNDLE in "$HOME/.vim/bundle/"*; do

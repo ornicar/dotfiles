@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="ornicar"
 export DISABLE_AUTO_UPDATE="true"

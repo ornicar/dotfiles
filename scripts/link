@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Absolute path to this script
 SCRIPT=`readlink -f $0`

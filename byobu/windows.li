@@ -1,6 +1,6 @@
-screen -t vim vim
-screen -t vendor bash /tmp/livendor
+screen -t vim bash
 screen -t git bash
 screen -t bash bash
+screen -t vendor bash /tmp/livendor
 screen -t test bash
 select 0

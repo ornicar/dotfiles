@@ -1,6 +1,6 @@
 screen -t vim vim
-screen -t vendor bash
-screen -t git bash
-screen -t bash bash
-screen -t test bash
+screen -t vendor zsh
+screen -t git zsh
+screen -t zsh zsh
+screen -t test zsh
 select 0

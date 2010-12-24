@@ -49,3 +49,6 @@
 [submodule "vim/bundle/colorsupport"]
 	path = vim/bundle/colorsupport
 	url = git://github.com/vim-scripts/colorsupport.vim
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git://github.com/ornicar/oh-my-zsh

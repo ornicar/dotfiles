@@ -4,7 +4,7 @@
 [color]
 	ui = true
 [core]
-	editor = vim
+	editor = vim -X
 [alias]
     # Show status and diff of dirty submodules
     subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"

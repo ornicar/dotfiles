@@ -80,7 +80,7 @@ alias ba=". ~/.bashrc"
 
 # Man inside vim
 man() {
-    vim -R -c "Man $*" -c "only"
+    vim -X -R -c "Man $*" -c "only"
 }
 
 # Search

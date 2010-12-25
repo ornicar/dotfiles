@@ -1,3 +1,4 @@
 screen -t irssi irssi
 screen -t mutt mutt
+screen -t sh zsh
 select 0

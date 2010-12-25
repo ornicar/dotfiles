@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/zsh
 
 projects=(dotfiles lichess exercise symfony2bundles symfony symfony-docs Twig zf2 vimium UserBundle ForumBundle doctrine2 mongodb-odm jquery jquery-ui)
 currentdir=$(pwd)
 workspace=~/data/workspace
+git="/usr/bin/git"
 
 for name in ${projects[@]}
 do
@@ -10,14 +11,14 @@ do
     if [ -d $path ]; then
         printf "\n#%s - " $name
         cd $path
-        status=$(git status -s)
-        if [ "$status" == "" ]; then
+        GITSTATUS=$($git status -s)
+        if [ -z "$GITSTATUS" ]; then
             echo "Pulling $name to $path"
-            git pull
-            git submodule update --init --recursive
+            $git pull
+            $git submodule update --init --recursive
         else
             echo "$path is dirty, will only fetch"
-            git fetch
+            $git fetch
         fi
     else
         echo "$path does not exist"

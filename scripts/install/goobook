@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo pip install goobook
+goobook reload

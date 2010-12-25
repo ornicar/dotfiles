@@ -1,3 +1,4 @@
 [DEFAULT]
 email: thibault.duplessis@gmail.com
 password: secret
+filter_groupless_contacts: no

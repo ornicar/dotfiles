@@ -1,4 +1,4 @@
-" Only do this when not done yet for this buffer                                                                                                             
+" Only do this when not done yet for this buffer
 if exists("b:php_ftplugin_loaded")
     finish
 endif
@@ -45,8 +45,7 @@ vnoremap <buffer> <C-D> :call PhpDocRange()<CR>
 " Map <CTRL>-H to search phpm for the function name currently under the cursor (insert mode only)
 inoremap <buffer> <C-H> <ESC>:!phpm <C-R>=expand("<cword>")<CR><CR>
 
-" Map <CTRL>-a to alignment function
-vnoremap <buffer> <C-a> :call PhpAlign()<CR>
+vnoremap <buffer> <leader>pa :call PhpAlign()<CR>
 
 " {{{ Automatic close char mapping
 
@@ -78,15 +77,15 @@ func! PhpAlign() range
 			continue
 		endif
 		" \{-\} matches ungreed *
-        let l:index = substitute (getline (l:line), '^\s*\(.\{-\}\)\s*\S\{0,1}=\S\{0,1\}\s.*$', '\1', "") 
+        let l:index = substitute (getline (l:line), '^\s*\(.\{-\}\)\s*\S\{0,1}=\S\{0,1\}\s.*$', '\1', "")
         let l:indexlength = strlen (l:index)
         let l:maxlength = l:indexlength > l:maxlength ? l:indexlength : l:maxlength
         let l:line = l:line + 1
     endwhile
-    
+
 	let l:line = a:firstline
 	let l:format = "%s%-" . l:maxlength . "s %s %s"
-    
+
 	while l:line <= l:endline
 		if getline (l:line) =~ '^\s*\/\/.*$'
 			let l:line = l:line + 1
@@ -104,4 +103,4 @@ func! PhpAlign() range
     let &g:paste = l:paste
 endfunc
 
-" }}}   
+" }}}

@@ -16,3 +16,5 @@
     subcheckout = !"git submodule foreach git checkout master"
     # Reset all submodules
     subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"
+[merge]
+	tool = vimdiff

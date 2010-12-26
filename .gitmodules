@@ -33,7 +33,7 @@
 	url = git://github.com/wincent/Command-T.git
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
+	url = git://github.com/ornicar/vim-unimpaired.git
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = git://github.com/tpope/vim-ragtag.git

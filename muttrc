@@ -20,6 +20,9 @@ set query_command = "goobook query '%s'"
 bind editor <Tab> complete-query
 bind editor <space> noop
 
+# Fetch mail
+bind index G imap-fetch-mail
+
 source ~/.mutt/themes/first
 source ~/.mutt/macros
 

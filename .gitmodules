@@ -36,7 +36,7 @@
 	url = git://github.com/ornicar/vim-unimpaired.git
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
-	url = git://github.com/tpope/vim-ragtag.git
+	url = git://github.com/ornicar/vim-ragtag.git
 [submodule "vim/bundle/gist"]
 	path = vim/bundle/gist
 	url = git://github.com/mattn/gist-vim.git

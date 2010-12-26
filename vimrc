@@ -76,8 +76,8 @@ set gdefault
 " Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
 set cursorline
 
-" Reduce timeout for key codes (starting with <esc> to 1ms)
-set ttimeoutlen=1
+" Reduce timeout for key codes
+set timeout timeoutlen=200 ttimeoutlen=100
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *

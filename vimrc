@@ -154,9 +154,9 @@ if &diff
 endif
 
 " Quit insert mode with fj and jf
-imap fj <C-c>
-imap jf <C-c>
-imap <esc> <nop>
+map! fj <C-c>
+map! jf <C-c>
+map! <esc> <nop>
 
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>

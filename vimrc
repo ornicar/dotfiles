@@ -153,14 +153,22 @@ if &diff
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 
+" Quit insert mode with fj and jf
+imap fj <C-c>
+imap jf <C-c>
+imap <esc> <nop>
+
 " Fast open vertical buffer
 nmap <Leader>v :vsp^M^W^W<cr>
 
 " Fast open vertical help
 nmap <Leader>h <Esc>:vert help<space>
 
-" CLear search highlight
-nmap <silent> <leader>/ :let @/=""<CR>
+" Clear search highlight
+nmap <silent> <leader>: :let @/=""<CR>
+
+" Close last html tag open
+imap <leader>/ </<Plug>ragtagHtmlComplete
 
 " Jump to line AND col
 nnoremap ' `

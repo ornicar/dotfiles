@@ -46,9 +46,6 @@
 [submodule "vim/bundle/renamer"]
 	path = vim/bundle/renamer
 	url = git://github.com/vim-scripts/renamer.vim.git
-[submodule "vim/bundle/colorsupport"]
-	path = vim/bundle/colorsupport
-	url = git://github.com/vim-scripts/colorsupport.vim
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/ornicar/oh-my-zsh

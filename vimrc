@@ -140,11 +140,6 @@ iab xname Thibault Duplessis
 iab xsigp Thibault Duplessis
 iab xsigw Thibault Duplessis
 
-" Fast save
-nmap <Leader>w :w<CR>
-" Fast save and quit
-nmap <Leader>q :wq<CR>
-
 " Diff only config
 if &diff
     nmap <leader>do :diffget<space>
@@ -178,6 +173,9 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
+
+" Fast save, also clears the search register
+nmap <Leader>s :let @/=""<cr>:w<CR>
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

@@ -177,6 +177,9 @@ nnoremap <C-k> 3k
 " Fast save, also clears the search register
 nmap <Leader>s :let @/=""<cr>:w<CR>
 
+" Fast save from insert mode!
+imap <Leader>s <C-c>:let @/=""<cr>:w<CR>
+
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>

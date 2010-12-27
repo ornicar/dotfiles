@@ -77,7 +77,7 @@ set gdefault
 set cursorline
 
 " Reduce timeout for key codes
-set timeout timeoutlen=200 ttimeoutlen=100
+set timeout timeoutlen=300 ttimeoutlen=100
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -174,11 +174,11 @@ nnoremap <C-y> 3<C-y>
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 
-" Fast save, also clears the search register
-nmap <Leader>s :let @/=""<cr>:w<CR>
+" Fast save
+nmap <Leader>s :w<CR>
 
 " Fast save from insert mode!
-imap <Leader>s <C-c>:let @/=""<cr>:w<CR>
+imap <Leader>s <C-c>:w<CR>
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

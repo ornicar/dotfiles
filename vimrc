@@ -217,6 +217,10 @@ au BufNewFile,BufRead *.twig			setf htmljinja
 " lowercase to modulized
 nnoremap <leader>_ bf_x~
 
+" Navigate in quickfix window
+nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
+nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
+
 " CTAGS
 " Explore tags for the word under the cursor
 map <C-l> <C-]>

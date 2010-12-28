@@ -168,9 +168,6 @@ nmap <Leader>h <Esc>:vert help<space>
 " Clear search highlight
 nmap <silent> <leader>: :let @/=""<CR>
 
-" Close last html tag open
-imap <leader>/ </<Plug>ragtagHtmlComplete
-
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 

@@ -164,22 +164,28 @@ nmap <Leader>v :vsp^M^W^W<cr>
 nmap <Leader>h <Esc>:vert help<space>
 
 " Clear search highlight
-nmap <silent> <leader>: :let @/=""<CR>
+map <silent> <leader>: :let @/=""<CR>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+nmap <leader>z/ :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
+" Pull word under cursor into Ack for a global search
+map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
+
+" Pull word under cursor into tag for a ctag search
+map <leader>zc :tag <C-r>=expand("<cword>")<CR>
 
 " Jump to line AND col
 nnoremap ' `
 
 " Faster viewport scrolling
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-nnoremap <C-j> 3j
-nnoremap <C-k> 3k
+noremap <C-e> 3<C-e>
+noremap <C-y> 3<C-y>
+noremap <C-j> 3j
+noremap <C-k> 3k
 
 " Fast save
-nmap <Leader>w :w<CR>
+map <Leader>w :w<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null

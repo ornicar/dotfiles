@@ -3,3 +3,4 @@ moc
 !moc/config
 mutt/cache
 mutt/certificates
+vim/undo

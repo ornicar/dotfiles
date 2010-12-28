@@ -3,17 +3,27 @@
 set nocompatible
 let mapleader = ","
 
-" Colorsheme
-set t_Co=256
-colorscheme aldmeris255
-
+filetype off                    " force reloading *after* pathogen loaded
+"
 " Load bundles help
 silent! call pathogen#helptags()
 " Load bundles code
 silent! call pathogen#runtime_append_all_bundles()
 
+filetype plugin indent on       " enable detection, plugins and indenting in one step
+
+" Colorsheme
+set t_Co=256
+colorscheme aldmeris255
+
 " Sets how many lines of history VIM has to remember
 set history=1000
+
+set undolevels=1000             " use many levels of undo
+if v:version >= 730
+    set undofile                " keep a persistent backup file
+    set undodir=~/.vim/.undo,~/tmp,/tmp
+endif
 
 " Disable spell checking
 set nospell
@@ -96,9 +106,6 @@ autocmd FileType c,cpp,java,php,js,css,twig,xml,yml,vim autocmd BufWritePre <buf
 
 "Syntax
 syntax enable
-filetype on
-filetype plugin on
-filetype indent on
 
 " Allow extended digraphs
 set encoding=utf-8

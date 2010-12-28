@@ -4,7 +4,7 @@ set nocompatible
 let mapleader = ","
 
 filetype off                    " force reloading *after* pathogen loaded
-"
+
 " Load bundles help
 silent! call pathogen#helptags()
 " Load bundles code
@@ -34,7 +34,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=*/cache/**,*/logs/** " Ignore certain files
+set wildignore=*/cache/**,*/logs/**,*/zend/** " Ignore certain files
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -76,6 +76,8 @@ nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
 " Use perl regex style
 nnoremap / /\v
 vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 " Always replace all occurences of a line
 set gdefault
@@ -84,7 +86,7 @@ set gdefault
 set cursorline
 
 " Reduce timeout for key codes
-set timeout timeoutlen=300 ttimeoutlen=100
+set timeout timeoutlen=400 ttimeoutlen=0
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -110,7 +112,7 @@ set encoding=utf-8
 " Enable folding by indentation
 " Use: zc, zo, zC, zO, zR, zM
 " Ctrl-K .3 for ⋯
-" set foldmethod=indent
+set foldmethod=indent
 set fillchars=fold:⋯
 
 " Change cursor color
@@ -152,11 +154,9 @@ if &diff
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 
-" Use fj and jf to escape all modes
+" Use fj to escape all modes
 map fj <C-c>:w<cr>
-map jf <C-c>:w<cr>
 map! fj <C-c>:w<cr>
-map! jf <C-c>:w<cr>
 map! <esc> <nop>
 
 " Fast open vertical buffer
@@ -185,9 +185,6 @@ nnoremap <C-k> 3k
 
 " Fast save
 nmap <Leader>w :w<CR>
-
-" Fast save from insert mode!
-imap <Leader>w <C-c>:w<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
@@ -221,17 +218,13 @@ nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 " CTAGS
 " Explore tags for the word under the cursor
 map <C-l> <C-]>
-" Back to previous location after browsing tags
-map <C-h> <C-T>
 " Jump to next tag match
 map ]t :tnext<CR>
 " Jump to previous tag match
 map [t :tprevious<CR>
 " Open tag command
-map <C-T> :tag<space>
+nmap <leader>t :tag<space>
 let g:Tlist_Ctags_Cmd = 'ctags'
-" Rebuild tag index
-nnoremap <SILENT> <C-F7> :silent !ctags-exuberant -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
@@ -257,9 +250,6 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-add html=twig --ig
 nmap <leader>a :Ack<space>
 
 " Command-T
-" Unmap the default mapping (<leader>t)
-nmap <silent> <leader>t :<cr>
-" Map to <leader>f
 nmap <silent> <leader>f :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000

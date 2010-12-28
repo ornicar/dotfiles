@@ -22,7 +22,7 @@ set history=1000
 set undolevels=1000             " use many levels of undo
 if v:version >= 730
     set undofile                " keep a persistent backup file
-    set undodir=~/.vim/.undo,~/tmp,/tmp
+    set undodir=~/.vim/.undo
 endif
 
 " Disable spell checking
@@ -133,7 +133,7 @@ nmap <leader>r :redraw!<cr>
 nmap <leader>d :bd<cr>
 
 " Delete buffer and file
-nmap <leader>D :!rm %<cr>:bd<cr>
+nmap <leader>D :!rm %<cr>:bd!<cr>
 
 " Copy current file path to register "+
 nmap <leader>cp :let @+=@%<cr>
@@ -155,7 +155,9 @@ if &diff
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 
-" Quit insert mode with fj and jf
+" Use fj and jf to escape all modes
+map fj <C-c>:w<cr>
+map jf <C-c>:w<cr>
 map! fj <C-c>:w<cr>
 map! jf <C-c>:w<cr>
 map! <esc> <nop>
@@ -172,6 +174,9 @@ nmap <silent> <leader>: :let @/=""<CR>
 " Close last html tag open
 imap <leader>/ </<Plug>ragtagHtmlComplete
 
+" Pull word under cursor into LHS of a substitute (for quick search and replace)
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
 " Jump to line AND col
 nnoremap ' `
 
@@ -186,6 +191,12 @@ nmap <Leader>w :w<CR>
 
 " Fast save from insert mode!
 imap <Leader>w <C-c>:w<CR>
+
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
+
+" Reselect text that was just pasted with ,v
+nnoremap <leader>v V`]
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

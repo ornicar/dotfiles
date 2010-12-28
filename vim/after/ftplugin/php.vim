@@ -23,8 +23,6 @@ let g:DisableAutoPHPFolding = 1
 
 " Indent whole PHP file
 nmap <leader>i <Esc>mygg=G'y
-" Indent PHP templates as HTML files
-nmap <leader>= :set ft=html<cr>mhgg=G'h:set ft=php<cr>
 
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l

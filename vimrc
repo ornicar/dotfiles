@@ -45,7 +45,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set showmatch                     " Show matching char (like {})
 
-set wrap                        " Turn off line wrapping.
+set wrap                          " Turn on line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.
 set sidescrolloff=7
 
@@ -82,7 +82,7 @@ vnoremap ? ?\v
 " Always replace all occurences of a line
 set gdefault
 
-" Highlight current line http://vim.wikia.com/wiki/Highlight_current_line
+" Highlight current line
 set cursorline
 
 " Reduce timeout for key codes
@@ -110,8 +110,6 @@ syntax enable
 set encoding=utf-8
 
 " Enable folding by indentation
-" Use: zc, zo, zC, zO, zR, zM
-" Ctrl-K .3 for ⋯
 set foldmethod=indent
 set fillchars=fold:⋯
 

@@ -16,4 +16,5 @@
 --disable-gtk2-check \
 --disable-gnome-check \
 --disable-gtktest \
+--disable-persistent_undo
 --without-gnome

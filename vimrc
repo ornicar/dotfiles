@@ -20,10 +20,7 @@ colorscheme aldmeris255
 set history=1000
 
 set undolevels=1000             " use many levels of undo
-if v:version >= 730
-    set undofile                " keep a persistent backup file
-    set undodir=~/.vim/.undo
-endif
+set noundofile                  " Don't keep a persistent undofile
 
 " Disable spell checking
 set nospell

@@ -156,8 +156,8 @@ if &diff
 endif
 
 " Quit insert mode with fj and jf
-map! fj <C-c>
-map! jf <C-c>
+map! fj <C-c>:w<cr>
+map! jf <C-c>:w<cr>
 map! <esc> <nop>
 
 " Fast open vertical buffer
@@ -182,10 +182,10 @@ nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 
 " Fast save
-nmap <Leader>s :w<CR>
+nmap <Leader>w :w<CR>
 
 " Fast save from insert mode!
-imap <Leader>s <C-c>:w<CR>
+imap <Leader>w <C-c>:w<CR>
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

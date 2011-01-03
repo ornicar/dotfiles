@@ -152,13 +152,8 @@ if &diff
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 
-" Use fj to escape all modes
-map fj <C-c>:w<cr>
-map! fj <C-c>:w<cr>
-map! <esc> <nop>
-
 " Fast open vertical buffer
-nmap <Leader>v :vsp^M^W^W<cr>
+nmap <Leader>vb :vsp^M^W^W<cr>
 
 " Fast open vertical help
 nmap <Leader>h <Esc>:vert help<space>

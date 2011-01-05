@@ -30,9 +30,7 @@ setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 " Use pman for manual pages
 setlocal keywordprg=pman
 
-" }}} Settings
-
-" {{{ Command mappings
+" Command mappings
 
 " Map <ctrl>+p to single line mode documentation (in insert and command mode)
 inoremap <buffer> <C-D> :call PhpDocSingle()<CR>i
@@ -45,21 +43,10 @@ inoremap <buffer> <C-H> <ESC>:!phpm <C-R>=expand("<cword>")<CR><CR>
 
 vnoremap <buffer> <leader>pa :call PhpAlign()<CR>
 
-" {{{ Automatic close char mapping
-
-" More common in PEAR coding standard
-" inoremap <buffer>  { {<CR>}<C-O>O
-" Maybe this way in other coding standards
-"inoremap  { {<CR>}<C-O>O
-
-" }}} Automatic close char mapping
-
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
 let g:pdv_cfg_Copyright = "2010"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
-
-" {{{ Alignment
 
 func! PhpAlign() range
     let l:paste = &g:paste
@@ -100,5 +87,3 @@ func! PhpAlign() range
     endwhile
     let &g:paste = l:paste
 endfunc
-
-" }}}

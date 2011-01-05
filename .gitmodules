@@ -46,6 +46,3 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "awesome/vicious"]
-	path = awesome/vicious
-	url = http://git.sysphere.org/vicious

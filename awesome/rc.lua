@@ -6,6 +6,8 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+-- Widgets
+require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -26,19 +28,17 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.floating,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
+    awful.layout.suit.floating,
     awful.layout.suit.magnifier
 }
 -- }}}
 
 -- {{{ Tags
 tags = {
-   names  = { "im", "www", "dev", "dot", "serv", "media", 7, 8, 9 },
-   layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1],
-              layouts[1], layouts[1], layouts[1], layouts[1]
-}}
+   names  = { "im", "web", "dev", "sys", "serv", "media", "tmp" },
+   layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -47,20 +47,20 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
+--myawesomemenu = {
+   --{ "manual", terminal .. " -e man awesome" },
+   --{ "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+   --{ "restart", awesome.restart },
+   --{ "quit", awesome.quit }
+--}
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+--mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    --{ "open terminal", terminal }
+                                  --}
+                        --})
 
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
+--mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
+                                     --menu = mymainmenu })
 -- }}}
 
 -- {{{ Wibox
@@ -128,19 +128,36 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
+    -- Configure widgets
+
+    separator = widget({ type = "textbox" })
+    separator.text = "   "
+
+    -- Memory
+    memwidget = widget({ type = "textbox" })
+    vicious.cache(vicious.widgets.mem)
+    vicious.register(memwidget, vicious.widgets.mem, "$1% ($2MB/$3MB)", 13)
+
+    -- Battery
+    batwidget = widget({ type = "textbox" })
+    vicious.register(batwidget, vicious.widgets.bat, "$1$2%", 61, "BAT0")
+
+    -- CPU
+
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            mylauncher,
+            --mylauncher,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
         mytextclock,
-        s == 1 and mysystray or nil,
+        separator, memwidget,
+        separator, batwidget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }

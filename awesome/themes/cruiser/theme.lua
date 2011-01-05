@@ -1,7 +1,3 @@
----------------------------
--- Default awesome theme --
----------------------------
-
 theme = {}
 
 theme.font          = "sans 8"

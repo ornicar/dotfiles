@@ -38,3 +38,4 @@ link irssi ~/.irssi
 link moc ~/.moc
 link rtorrent.rc ~/.rtorrent.rc
 link config/terminator ~/.config/terminator
+link Xmodmap ~/.Xmodmap

@@ -28,5 +28,4 @@ source ~/.mutt/themes/first
 source ~/.mutt/macros
 
 auto_view text/html
-alternative_order text/enriched text/plain text/html 
 push <show-version>

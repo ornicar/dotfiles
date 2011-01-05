@@ -1,2 +1,1 @@
-text/html;                      links %s; nametemplate=%s.html
-text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
+text/html; elinks -dump -dump-charset iso-8859-15 -default-mime-type text/html %s; needsterminal; copiousoutput;

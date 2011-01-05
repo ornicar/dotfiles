@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F430BBA5
-sudo add-apt-repository ppa:byobu/ppa
-sudo apt-get update
-sudo apt-get install byobu

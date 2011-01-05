@@ -430,7 +430,7 @@ CanStartInPlaylist	= yes
 #
 # Example:
 #
-OnSongChange = "/usr/bin/notify-send 'Now playing %a %r %t'"
+#OnSongChange = "/usr/bin/notify-send 'Now playing %a %r %t'"
 
 # OnStop.
 # Run the following command (full path, no arguments) when MOC changes state

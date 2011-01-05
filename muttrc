@@ -8,7 +8,7 @@ set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
 set header_cache =~/.mutt/cache/headers
 set message_cachedir =~/.mutt/cache/bodies
 set certificate_file =~/.mutt/certificates
-set mailcap_path = ~/.mutt/mailcap_path
+set mailcap_path = ~/.mutt/mailcap
 set smtp_url = "smtp://thibault.duplessis@smtp.gmail.com:587/"
 set editor = "vim  -c 'set tw=72' -c 'set filetype=mail'"
 set markers=no # don't put '+' at the beginning of wrapped lines
@@ -16,6 +16,7 @@ set pager_index_lines= 9 # how large is the index window?
 set sort = 'threads'
 set sort_aux = 'last-date-received'
 set query_command = "goobook query '%s'"
+set implicit_autoview
 
 bind editor <Tab> complete-query
 bind editor <space> noop

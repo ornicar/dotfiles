@@ -112,6 +112,7 @@ set encoding=utf-8
 " Enable folding by indentation
 set foldmethod=indent
 set fillchars=fold:⋯
+map zz zjzo
 
 " Change cursor color
 if &term =~ "xterm"
@@ -159,7 +160,7 @@ nmap <Leader>vb :vsp^M^W^W<cr>
 nmap <Leader>h <Esc>:vert help<space>
 
 " Clear search highlight
-map <silent> <leader>: :let @/=""<CR>
+map <silent> <leader>: :let @/=""<CR>:echo "Cleared search register."<cr>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>z/ :%s#\<<C-r>=expand("<cword>")<CR>\>#

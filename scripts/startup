@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-touch ~/started
-
-# Remap caps lock
-xmodmap ~/.xmodmaprc
-
-# Don't beep
-/usr/bin/xset b off

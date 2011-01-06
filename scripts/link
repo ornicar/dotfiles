@@ -37,6 +37,6 @@ link tigrc ~/.tigrc
 link irssi ~/.irssi
 link moc ~/.moc
 link rtorrent.rc ~/.rtorrent.rc
-link config/terminator ~/.config/terminator
+link terminator ~/.config/terminator
 link xmodmaprc ~/.xmodmaprc
 link awesome ~/.config/awesome

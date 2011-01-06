@@ -1,1 +1,3 @@
 yaourt -S pmount
+yaourt -S source-highlight
+yaourt -S keychain

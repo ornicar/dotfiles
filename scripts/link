@@ -40,3 +40,4 @@ link rtorrent.rc ~/.rtorrent.rc
 link terminator ~/.config/terminator
 link xmodmaprc ~/.xmodmaprc
 link awesome ~/.config/awesome
+link Xdefaults ~/.Xdefaults

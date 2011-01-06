@@ -6,8 +6,6 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
--- Widgets
-require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -127,23 +125,6 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(function(c)
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
-
-    -- Configure widgets
-
-    separator = widget({ type = "textbox" })
-    separator.text = "   "
-
-    -- Memory
-    memwidget = widget({ type = "textbox" })
-    vicious.cache(vicious.widgets.mem)
-    vicious.register(memwidget, vicious.widgets.mem, "$1% ($2MB/$3MB)", 13)
-
-    -- Battery
-    batwidget = widget({ type = "textbox" })
-    vicious.register(batwidget, vicious.widgets.bat, "$1$2%", 61, "BAT0")
-
-    -- CPU
-
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
@@ -156,9 +137,8 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        separator, memwidget,
-        separator, batwidget,
         mytasklist[s],
+        mysystray,
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

@@ -244,9 +244,14 @@ settings = {
     awl_display_key = "$Q%K%n$H$C$S";
     awl_block = "0";
     nicklist_width = "15";
+    nicklist_automode = "screen";
     notify_types = "PRIVATE HILIGHT";
   };
-  "fe-common/core" = { theme = "ornicar"; };
+  "fe-common/core" = {
+    theme = "ornicar";
+    bell_beeps = "yes";
+    beep_msg_level = "MSGS NOTICES INVITES DCC DCCMSGS HILIGHT";
+  };
 };
 hilights = ( { text = "ornicar"; nick = "yes"; word = "yes"; } );
 windows = {

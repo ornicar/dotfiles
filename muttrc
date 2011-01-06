@@ -23,6 +23,9 @@ bind editor <space> noop
 # Fetch mail
 bind index G imap-fetch-mail
 
+# Reply to all
+bind pager R group-reply
+
 source ~/.mutt/themes/first
 source ~/.mutt/macros
 

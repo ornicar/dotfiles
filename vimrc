@@ -113,6 +113,7 @@ set encoding=utf-8
 set foldmethod=indent
 set fillchars=fold:⋯
 map zz zjzo
+set nofoldenable
 
 " Change cursor color
 if &term =~ "xterm"

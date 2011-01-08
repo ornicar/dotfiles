@@ -12,7 +12,7 @@
     foreground_color = "#ffffff"
     icon_bell = False
     show_titlebar = False
-    font = Monospace 10
+    font = Inconsolata Medium 12
     background_color = "#1c1c1c"
     scrollback_infinite = True
 [layouts]

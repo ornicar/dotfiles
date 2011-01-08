@@ -139,8 +139,8 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        mytasklist[s],
         mysystray,
+        mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

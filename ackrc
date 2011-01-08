@@ -1,0 +1,15 @@
+# Always sort the files                                                                                                                                            
+--sort-files                                                                                                                                                       
+                                                                                                                                                                    
+# Use "less -r" as my pager                                                                                                                                        
+--pager=less -r
+
+# Add twig to html group
+--type-add html=twig
+
+# Ignore some dirs
+--ignore-dir=cache
+--ignore-dir=logs
+
+# Vim like case sensitivity
+---smart-case

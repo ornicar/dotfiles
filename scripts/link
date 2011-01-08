@@ -38,6 +38,7 @@ link irssi ~/.irssi
 link moc ~/.moc
 link rtorrent.rc ~/.rtorrent.rc
 link terminator ~/.config/terminator
-link xmodmaprc ~/.xmodmaprc
+link xmodmaprc ~/.Xmodmap
 link awesome ~/.config/awesome
 link Xdefaults ~/.Xdefaults
+link ackrc ~/.ackrc

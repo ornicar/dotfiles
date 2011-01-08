@@ -244,7 +244,7 @@ set statusline+=%*
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs"
+let g:ackprg="ack -H --nocolor --nogroup --column"
 nmap <leader>a :Ack<space>
 
 " Command-T

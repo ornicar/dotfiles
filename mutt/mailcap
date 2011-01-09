@@ -1,1 +1,1 @@
-text/html; elinks -dump -dump-charset iso-8859-15 -default-mime-type text/html %s; needsterminal; copiousoutput;
+text/html; elinks -dump -dump-charset utf-8 -default-mime-type text/html %s; needsterminal; copiousoutput;

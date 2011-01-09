@@ -1,5 +1,6 @@
 # Follow urls
-macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 # Fast navigation
 macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"

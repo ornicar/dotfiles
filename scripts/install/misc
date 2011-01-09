@@ -5,3 +5,4 @@ yaourt -S source-highlight
 yaourt -S keychain
 yaourt -S ctags
 yaourt -S ttf-inconsolata
+yaourt -S urlscan-git

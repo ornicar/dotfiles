@@ -3,6 +3,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="ornicar"
 export DISABLE_AUTO_UPDATE="true"
+export PATH=${PATH}:${HOME}/.bin
+export BROWSER="chromium-browser"
 
 plugins=(git vi-mode)
 
@@ -13,6 +15,3 @@ export GIT_EDITOR='vim -X'
 
 # Show a gentle cow
 fortune | cowsay
-
-# Remember SSH keys
-eval `keychain --eval --agents ssh id_rsa`

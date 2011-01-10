@@ -1,5 +1,0 @@
-! rxvt-unicode
-URxvt.urgentOnBell:  true
-
-! xterm
-XTerm*bellIsUrgent:  true

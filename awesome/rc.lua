@@ -29,8 +29,7 @@ modkey = "Mod4"
 layouts =
 {
     awful.layout.suit.max,
-    awful.layout.suit.floating,
-    awful.layout.suit.magnifier
+    awful.layout.suit.fair
 }
 -- }}}
 

@@ -1,5 +1,5 @@
 [global_config]
-  window_state = fullscreen
+  dbus = True
   handle_size = 1
   borderless = True
 [keybindings]

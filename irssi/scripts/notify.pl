@@ -18,9 +18,9 @@ sub notify {
     my ($title, $text) = @_;
 
     my %replacements = (
-        '<' => '<',
-        '>' => '>',
-        '&' => '&',
+        '<' => '[',
+        '>' => ']',
+        '&' => '&amp;',
         '\"' => '"',
         '`' => '', # added for security purposes
     );

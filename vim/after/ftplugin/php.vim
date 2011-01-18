@@ -12,9 +12,6 @@ let php_htmlInStrings = 0 "Coloration des balises HTML
 let php_no_shorttags = 1
 let php_folding = 0
 
-" Because I write it so often
-imap ² ->
-
 "Folding
 nmap <buffer> <C-F5> <Esc>:EnableFastPHPFolds<Cr>
 nmap <buffer> <F5> <Esc>:EnablePHPFolds<Cr>

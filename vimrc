@@ -161,7 +161,7 @@ nmap <Leader>vb :vsp^M^W^W<cr>
 nmap <Leader>h <Esc>:vert help<space>
 
 " Clear search highlight
-map <silent> <leader>: :let @/=""<CR>:echo "Cleared search register."<cr>
+map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>z/ :%s#\<<C-r>=expand("<cword>")<CR>\>#
@@ -189,6 +189,12 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
+
+" Because I write it so often
+imap ` ->
+
+" Easier access to command line
+nmap ; :
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

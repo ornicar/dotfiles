@@ -10,6 +10,9 @@
 # Kill X
 setxkbmap -option terminate:ctrl_alt_bksp &
 
+# Disable system bell
+xset -b
+
 # Rebind caps to escape
 xmodmap $HOME/.Xmodmap &&
 

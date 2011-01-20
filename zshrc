@@ -15,3 +15,6 @@ export GIT_EDITOR='vim -X'
 
 # Show a gentle cow
 fortune | cowsay
+
+# Prepare keychain
+alias kc="eval `keychain --eval --agents ssh id_rsa`"

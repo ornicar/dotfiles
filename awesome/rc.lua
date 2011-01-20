@@ -135,11 +135,15 @@ root.buttons(awful.util.table.join(
 ))
 -- }}}
 
+function notifytagname()
+    awful.util.spawn('notify-send -t 300 "' .. awful.tag.selected().name .. '"')
+end
+
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "k",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "j",  awful.tag.viewnext       ),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
+    awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
+    awful.key({ modkey,           }, "Escape", function() awful.tag.history.restore() notifytagname() end),
 
     awful.key({ modkey,           }, "h",
         function ()

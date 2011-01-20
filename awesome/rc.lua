@@ -35,8 +35,8 @@ layouts =
 
 -- {{{ Tags
 tags = {
-   names  = { "im", "web", "dev", "sys", "serv", "media", "tmp" },
-   layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+   names  = { "im", "web", "dev", "sys", "serv", "media" },
+   layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.

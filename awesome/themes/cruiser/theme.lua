@@ -70,7 +70,7 @@ theme.titlebar_maximized_button_normal_active = "/home/thib/.config/awesome/them
 theme.titlebar_maximized_button_focus_active  = "/home/thib/.config/awesome/themes/cruiser/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg /home/thib/data/Images/spider.jpg" }
+theme.wallpaper_cmd = { "awsetbg -a /home/thib/data/Images/cc-wallpaper-desktop.png" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/home/thib/.config/awesome/themes/cruiser/layouts/fairhw.png"

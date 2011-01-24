@@ -101,7 +101,7 @@ runtime! ftplugin/man.vim
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,twig,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 "Syntax
 syntax enable
@@ -207,7 +207,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " Detect twig filetype
-au BufNewFile,BufRead *.twig			setf htmljinja
+au BufNewFile,BufRead *.html set filetype=htmljinja
 
 " lowercase to modulized
 nnoremap <leader>_ bf_x~
@@ -247,7 +247,7 @@ set statusline+=%*
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column --type-add html=twig"
+let g:ackprg="ack -H --nocolor --nogroup --column"
 nmap <leader>a :Ack<space>
 
 " Command-T

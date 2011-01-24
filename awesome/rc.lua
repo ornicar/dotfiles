@@ -85,7 +85,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
     awful.key({ modkey }, "s", function () scratch.pad.toggle() end),
-    awful.key({ modkey }, "F12", function () scratch.drop("terminator", "bottom") end),
+    awful.key({ modkey }, "F12", function () scratch.drop(terminal, "bottom") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     --awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),

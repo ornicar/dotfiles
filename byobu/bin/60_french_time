@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-$fd = function($a) { return $a > 9 ? $a : '0'.$a; };
+$d = 9;
 
-print sprintf('%s:%s', $fd((date('H') + 9) % 24), $fd(date('i')));
+$fd = function($a) { return $a >= 10 ? $a : '0'.$a; };
+
+print sprintf('%s:%s', $fd((date('H') + $d) % 24), date('i'));

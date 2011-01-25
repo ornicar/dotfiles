@@ -51,6 +51,7 @@ end
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey, "Shift"   }, "h", function() naughty.notify({title = os.date("%H:%M"), text = os.date("%a %b %d"), timeout = 2}) end),
     awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
     awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
     awful.key({ modkey,           }, "Escape", function() awful.tag.history.restore() notifytagname() end),

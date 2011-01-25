@@ -1,3 +1,4 @@
+## Modified by Thibault Duplessis to always notify queries
 ## Modified notify script.. edited for Awesome window manager
 ## Put me in ~/.irssi/scripts/autorun
 ##
@@ -32,14 +33,12 @@ sub notify {
     $title =~ s/([\Q$replacement_string\E])/$replacements{$1}/g;
     $text =~ s/([\Q$replacement_string\E])/$replacements{$1}/g;
 
-    system("notify-send -t 7500 \"<span color='#ffffff'>".$title."</span>\""." \"".$text."\"");
+    system("notify-send -t 7500 \"".$title."\" \"".$text."\"");
 }
 
 
 sub highlight {
     my ($dest, $msg, $stripped) = @_;
-
-    my $window = Irssi::active_win();
 
     if (($dest->{level} & MSGLEVEL_HILIGHT) && ($dest->{level} & MSGLEVEL_PUBLIC)) {
         notify($dest->{target}, $stripped);
@@ -49,13 +48,7 @@ sub highlight {
 
 sub query {
     my ($server, $msg, $nick, $addr) = @_;
-
-    my $window = Irssi::active_win();
-
-    my $itemwindow = $server->window_find_item($nick);
-    if ($window->{refnum} != $itemwindow->{refnum}) {
-        notify($nick, $msg);
-    }
+    notify($nick, $msg);
 }
 
 Irssi::signal_add('print text', 'highlight');

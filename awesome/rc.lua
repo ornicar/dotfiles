@@ -9,14 +9,15 @@ require("naughty")
 -- scratch console
 require("scratch")
 
--- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
-beautiful.init("/home/thib/.config/awesome/themes/cruiser/theme.lua")
-
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+home = os.getenv("HOME")
+
+-- {{{ Variable definitions
+-- Themes define colours, icons, and wallpapers
+beautiful.init(home .. "/.config/awesome/themes/cruiser/theme.lua")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.

@@ -270,16 +270,6 @@ windows = {
   4 = {
     items = (
       {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "twitter";
-        tag = "Bitlbee";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#symfony-dev";
@@ -287,7 +277,7 @@ windows = {
       }
     );
   };
-  6 = {
+  5 = {
     items = (
       {
         type = "CHANNEL";
@@ -297,7 +287,7 @@ windows = {
       }
     );
   };
-  7 = {
+  6 = {
     items = (
       {
         type = "CHANNEL";
@@ -309,6 +299,6 @@ windows = {
   };
 };
 mainwindows = {
-  3 = { first_line = "9"; lines = "32"; };
   2 = { first_line = "1"; lines = "8"; };
+  1 = { first_line = "9"; lines = "32"; };
 };

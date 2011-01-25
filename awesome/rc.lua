@@ -46,7 +46,7 @@ end
 -- }}}
 
 function notifytagname()
-    awful.util.spawn('notify-send -t 300 "' .. awful.tag.selected().name .. '"')
+    naughty.notify({text = awful.tag.selected().name, timeout = 0.3})
 end
 
 -- {{{ Key bindings

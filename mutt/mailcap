@@ -1,1 +1,2 @@
 text/html; elinks -dump -dump-charset utf-8 -default-mime-type text/html %s; needsterminal; copiousoutput;
+application/pdf; xpdf %s &

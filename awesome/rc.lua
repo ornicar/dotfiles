@@ -51,7 +51,7 @@ end
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey, "Shift"   }, "h", function() naughty.notify({title = os.date("%H:%M"), text = os.date("%a %b %d"), timeout = 2}) end),
+    awful.key({ modkey,           }, "s", function() awful.util.spawn(home .. "/.scripts/notifystatus") end),
     awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
     awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
     awful.key({ modkey,           }, "Escape", function() awful.tag.history.restore() notifytagname() end),
@@ -86,7 +86,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-    awful.key({ modkey }, "s", function () scratch.pad.toggle() end),
     awful.key({ modkey }, "F12", function () scratch.drop(terminal, "bottom") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
@@ -120,7 +119,6 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
-    awful.key({ modkey }, "d", function (c) scratch.pad.set(c, 0.60, 0.60, true) end),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal

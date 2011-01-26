@@ -1,6 +1,6 @@
 irssi/config.autosave
-moc
-!moc/config
+mpd/*
+!mpd/mpd.conf
 mutt/cache
 mutt/certificates
 vim/undo

@@ -43,3 +43,4 @@ link xinitrc ~/.xinitrc
 link awesome ~/.config/awesome
 link Xdefaults ~/.Xdefaults
 link ackrc ~/.ackrc
+link mpd ~/.mpd

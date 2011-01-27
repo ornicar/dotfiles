@@ -42,6 +42,7 @@ link xmodmaprc ~/.Xmodmap
 link xinitrc ~/.xinitrc
 link awesome ~/.config/awesome
 link Xdefaults ~/.Xdefaults
+link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd
 link offlineimaprc ~/.offlineimaprc

@@ -1,0 +1,31 @@
+!black
+*color0:  #222222
+*color8:  #554444
+
+!red
+*color1:  #884422
+*color9:  #cc5533
+
+!green
+*color2:  #778800
+*color10: #88aa22
+
+!yellow
+*color3:  #887733
+*color11: #aa9955
+
+!blue
+*color4:  #8866cc
+*color12: #9977dd
+
+!magneta
+*color5:  #885500
+*color13: #996600
+
+!cyan
+*color6:  #5555aa
+*color14: #7777aa
+
+!white
+*color7:  #bbaa99
+*color15: #ddccaa

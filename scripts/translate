@@ -1,0 +1,243 @@
+#!/usr/bin/env python
+
+# translate
+# http://perigee.tremby.net/utils/translate
+#
+# Patches are welcome
+# Python script making use of Google's translation API to translate text from 
+# the commandline
+# See http://code.google.com/apis/ajaxlanguage/documentation/#fonje
+#
+# Copyright 2009 Bart Nagel (bart@tremby.net)
+#
+# This program is free software: you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation, either version 3 of the License, or (at your option) any later 
+# version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT 
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS 
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with 
+# this program. If not, see <http://www.gnu.org/licenses/>.
+
+import urllib
+import urllib2
+import sys
+import os
+import re
+import htmlentitydefs
+import json
+
+# json decoding function -- if Python < 2.6 assume python-json
+if sys.version_info >= (2, 6):
+	jsondecode = json.loads
+else:
+	jsondecode = json.read
+
+#translateurl = "http://www.google.com/uds/Gtranslate" # used in the documentation's example code, possibly not meant for general usage
+translateurl = "http://ajax.googleapis.com/ajax/services/language/translate"
+
+def usage(stdout = False):
+	stream = sys.stdout if stdout else sys.stderr
+
+	bin = os.path.basename(progname)
+	indent = " " * (len(bin) + len("Usage: "))
+
+	print >> stream, "Usage: " + os.path.basename(progname) + " [--help|-h]"
+	print >> stream, indent + " [--verbose|-v]"
+	print >> stream, indent + " [(--source|-s) <source language>]"
+	print >> stream, indent + " [(--destination|--dest|-d) <destination language>]"
+	print >> stream, indent + " [(--filename|--file|-f) <filename>|<text to translate> ...]"
+	print >> stream, """
+Translate some text from one language to another, giving the result on standard 
+output.
+
+By default, translate runs as a filter (accepting text to translate on standard 
+input and outputting the result to standard output).
+
+Source language defaults to auto-detection (which can be specified with "-s -") 
+and destination language defaults to English. Languages should be entered as 
+language codes, for instance en, de, es. Inspect http://translate.google.com for 
+a full list of supported languages. If auto-detection is used, the language 
+detected will be shown on stderr.
+
+You can set the environment variable "TRANSLATE_DEST_LANG" to your preferred
+destination language to omit the "-d" parameter. For example (bash):
+export TRANSLATE_DEST_LANG=de
+
+If there are no non-option arguments the text to translate is taken from stdin 
+by default (which is the same as giving "-f -"). If there are non-option 
+arguments these are instead taken as the source text. If you want to use it this 
+way, it's best to give the argument "--" to show that no more options will 
+appear. Alternatively a file can be used as input by using the -f option.
+
+All information and error messages go to standard error and so quiet operation 
+is possible by redirecting stderr to /dev/null, for example
+translate -d de -f story_en.txt 2>/dev/null
+
+The --verbose or -v switch enables verbose output (to stderr)."""
+
+# unescape HTML entities
+def htmlentities_decode(s):
+	def htmlentities_decode_single(e):
+		s = e.group(0)
+		if s[:2] == "&#":
+			try:
+				if s[:3] == "&#x":
+					return unichr(int(s[3:-1], 16))
+				else:
+					return unichr(int(s[2:-1]))
+			except ValueError: pass
+		else:
+			try:
+				s = unichr(htmlentitydefs.name2codepoint[s[1:-1]])
+			except KeyError: pass
+		return s
+	return re.sub("&#?\w+;", htmlentities_decode_single, s)
+
+# get and handle commandline arguments
+verbose = False
+langsource = None
+langdest = "en"
+nomoreoptions = False
+sourcetext = None
+file = None
+progname = sys.argv.pop(0)
+envlangdest = os.getenv("TRANSLATE_DEST_LANG")
+if envlangdest is not None:
+	langdest = envlangdest
+while len(sys.argv):
+	arg = sys.argv.pop(0)
+	if arg == "--":
+		nomoreoptions = True
+		continue
+	if not nomoreoptions and arg[0] == "-":
+		if arg == "--verbose" or arg == "-v":
+			verbose = True
+			continue
+		elif arg == "--help" or arg == "-h":
+			usage(True)
+			sys.exit(0)
+		elif arg == "--source" or arg == "-s":
+			try:
+				langsource = sys.argv.pop(0)
+				if langsource == "-":
+					langsource = None
+				continue
+			except:
+				print >> sys.stderr, "Option \"%s\" requires a parameter" % arg
+		elif arg == "--destination" or arg == "--dest" or arg == "-d":
+			try:
+				langdest = sys.argv.pop(0)
+				continue
+			except:
+				print >> sys.stderr, "Option \"%s\" requires a parameter" % arg
+		elif arg == "--filename" or arg == "--file" or arg == "-f":
+			if file is None:
+				try:
+					file = sys.argv.pop(0)
+					if file == "-":
+						file = sys.stdin
+					continue
+				except:
+					print >> sys.stderr, "Option \"%s\" requires a parameter" % arg
+			else:
+				print >> sys.stderr, "Duplicate file argument"
+		else:
+			print >> sys.stderr, "Unknown option \"%s\"" % arg
+	elif file is None:
+		if sourcetext is None:
+			sourcetext = arg
+		else:
+			sourcetext += " " + arg
+		continue
+	else:
+		print >> sys.stderr, "Unexpected argument \"%s\" since we are reading from a file or stdin" % arg
+
+	# problem with arguments
+	usage()
+	sys.exit(1)
+
+# final error checking and setup
+if file is not None and sourcetext is not None:
+	print >> sys.stderr, "Unexpected non-option argument since we are reading from a file or stdin"
+	usage()
+	sys.exit(1)
+if file is None and sourcetext is None:
+	file = sys.stdin
+
+# get source text if we don't already have it
+if file is None:
+	if verbose: print >> sys.stderr, "Reading from non-option commandline arguments"
+else:
+	if file == sys.stdin:
+		if verbose: print >> sys.stderr, "Reading from stdin"
+	else:
+		if verbose: print >> sys.stderr, "Reading from file \"%s\"" % file
+		try:
+			fileobject = open(file)
+		except:
+			print >> sys.stderr, "Could not open file \"%s\"" % file
+			sys.exit(2)
+		file = fileobject
+	try:
+		sourcetext = file.read()
+		file.close()
+	except:
+		print >> sys.stderr, "Could not read from file \"%s\"" % file.name
+		sys.exit(3)
+
+# say what we're doing
+if verbose:
+	print >> sys.stderr, "input text:\n-----\n%s\n-----" % sourcetext
+	if langsource is None:
+		print >> sys.stderr, "Auto-detecting input language, translating to %s" % langdest
+	else:
+		print >> sys.stderr, "Translating from %s to %s" % (langsource, langdest)
+
+# collect data together for Google
+data = [
+		("v", "1.0"),
+		("langpair", (langsource if langsource is not None else "") + "|" + langdest),
+		("q", sourcetext)
+	]
+
+# send request to Google
+if verbose: print >> sys.stderr, "Sending data to Google, waiting for response..."
+try:
+	request = urllib2.Request(translateurl)
+	request.add_data(urllib.urlencode(data))
+	request.add_header("Referer", "http://perigee.tremby.net/utils/translate")
+	response = jsondecode(urllib2.urlopen(request).read())
+except:
+	print >> sys.stderr, "Error getting response from Google or parsing response:"
+	print >> sys.stderr, sys.exc_info()
+	sys.exit(4)
+
+# deal with response
+if response["responseStatus"] == 400:
+	print >> sys.stderr, "Translation failed: %s" % response["responseDetails"]
+	sys.exit(5)
+elif response["responseStatus"] == 200:
+	if response["responseDetails"] is not None:
+		print >> sys.stderr, "Response details: %s" % response["responseDetails"]
+	if "detectedSourceLanguage" in response["responseData"]:
+		print >> sys.stderr, "Detected source language: %s" % response["responseData"]["detectedSourceLanguage"]
+	decodedresponse = htmlentities_decode(response["responseData"]["translatedText"])
+	try:
+		print decodedresponse
+	except UnicodeEncodeError:
+		print decodedresponse.encode("UTF-8")
+	except:
+		print >> sys.stderr, "Error printing response to stdout:"
+		print >> sys.stderr, sys.exc_info()
+		sys.exit(6)
+	sys.exit(0)
+else:
+	print >> sys.stderr, "Unexpected response:"
+	print >> sys.stderr, response
+	sys.exit(128)
+
+# vi: set ts=4 sts=4 sw=4 tw=80

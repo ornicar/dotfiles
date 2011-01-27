@@ -79,12 +79,15 @@ alias bsystem="cd ~/data/workspace/dotfiles && BYOBU_WINDOWS='sy' byobu -S syste
 alias bim="BYOBU_WINDOWS='im' byobu -S im"
 alias bmedia="cd ~/data && BYOBU_WINDOWS='me' byobu -S media"
 
-# go to google for anything
+# Use google for translation
+alias trans="python2 ~/.scripts/translate"
+alias enfr="python2 ~/.scripts/translate -s en -d fr"
+alias fren="python2 ~/.scripts/translate -s fr -d en"
+
+# go to google for search
 search() {
   [[ -z "$BROWSER" ]] && return 1
-
   local term="${*:-$(xclip -o)}"
-
   $BROWSER "http://www.google.com/search?q=${term// /+}" &>/dev/null &
 }
 

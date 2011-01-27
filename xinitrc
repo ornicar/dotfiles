@@ -1,19 +1,21 @@
 #!/bin/sh
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
 
 # Start data collector daemon (used by byobu)
-~/.scripts/collector_daemon &
+$HOME/.scripts/collector_daemon &
 
-# Kill X
+# Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp &
 
 # Disable system bell
 xset -b
 
-# Rebind caps to escape
+xrdb $HOME/.Xdefaults &                     # load Xdefaults
+xset fp+ /usr/share/fonts/local &           # add local fonts
+xset s 300 300 &                            # set monitor to sleep 5 mins
+xset s off &                                # disable screensaver
+urxvtd -q -f -o &                           # start urxvt daemon
+
+# Remap keys
 xmodmap $HOME/.Xmodmap &&
 
 # Run window manager

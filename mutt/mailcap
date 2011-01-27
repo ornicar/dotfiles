@@ -1,3 +1,3 @@
-text/html; elinks -dump -dump-charset utf-8 -default-mime-type text/html %s; needsterminal; copiousoutput;
+text/html; elinks -dump -eval "set document.codepage.assume = %{charset}" %s; copiousoutput
 application/pdf; xpdf %s &
 image/jpeg; feh %s &

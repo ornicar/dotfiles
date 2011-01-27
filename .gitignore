@@ -5,3 +5,6 @@ mutt/cache
 mutt/certificates
 vim/undo
 weechat/logs
+weechat/weechat.log
+weechat/weeget
+weechat/xfer

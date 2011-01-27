@@ -3,7 +3,7 @@
 Xcursor.theme: CG
 
 ! Colors
-#include "/home/thib/.xcolors/jasonwryan.xcolors"
+#include "/home/thib/.xcolors/xabbot.xcolors"
 
 ! Fonts {{{
 Xft.antialias: true

@@ -63,6 +63,9 @@ exercisehardware() {
     xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
 }
 
+# Increase urxvt font size
+alias bigger="printf '\33]50;%s\007' \"xft:Inconsolata:size=19\""
+
 # Launch music player daemon and client
 music() {
     [ ! -f ~/.mpd/mpd.pid ] && mpd ~/.mpd/mpd.conf

@@ -63,6 +63,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s", function() awful.util.spawn(home .. "/.scripts/notifystatus") end),
     awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
     awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
+    -- all minimized clients are restored 
+    awful.key({ modkey, "Shift"   }, "n", function()
+            local tag = awful.tag.selected()
+                for i=1, #tag:clients() do
+                    tag:clients()[i].minimized=false
+                    tag:clients()[i]:redraw()
+            end
+        end),
     awful.key({ modkey,           }, "Escape", function() awful.tag.history.restore() notifytagname() end),
 
     awful.key({ modkey,           }, "h",

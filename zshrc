@@ -3,6 +3,7 @@
 # Show a gentle cow
 fortune | cowsay
 
+export PATH="$PATH:~/.bin"
 export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim -X'
@@ -70,17 +71,6 @@ music() {
 
 # radios are in ~/data/radio
 alias radio="mplayer -playlist"
-
-# add directories to $PATH
-_add_to_path() {
-  local path
-  for path in "$@"; do
-    [[ -d "$path" ]] && [[ ! ":${PATH}:" =~ :${path}: ]] && export PATH=${path}:$PATH
-  done
-}
-
-# Path
-_add_to_path "~/.bin"
 
 # Byobu presets
 alias blichess="cd ~/data/workspace/lichess && BYOBU_WINDOWS='li' byobu -S lichess"

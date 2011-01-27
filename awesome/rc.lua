@@ -10,7 +10,7 @@ require("naughty")
 require("scratch")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 home = os.getenv("HOME")

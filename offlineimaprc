@@ -1,0 +1,491 @@
+# Sample configuration file
+# Copyright (C) 2002-2005 John Goerzen
+# <jgoerzen@complete.org>
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, write to the Free Software
+#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# Looking for a quick start?  Take a look at offlineimap.conf.minimal.
+
+
+##################################################
+# General definitions
+##################################################
+
+[general]
+
+# This specifies where offlineimap is to store its metadata.
+# This directory will be created if it does not already exist.
+
+metadata = ~/.offlineimap
+
+# This variable specifies which accounts are defined.  Separate them
+# with commas.  Account names should be alphanumeric only.
+# You will need to specify one section per account below.  You may
+# not use "general" for an account name.
+#
+
+accounts = gmail
+
+# Offlineimap can synchronize more the one account at a time.  If you
+# want to enable this feature, set the below value to something
+# greater than 1.  To force it to synchronize only one account at a
+# time, set it to 1.
+#
+# Note: if you are using autorefresh and have more than one account,
+# you must set this number to be >= to the number of accounts you have;
+# since any given sync run never "finishes" due to a timer, you will never
+# sync your additional accounts if this is 1.
+
+maxsyncaccounts = 1
+
+# You can specify one or more user interface modules for OfflineIMAP
+# to use.  OfflineIMAP will try the first in the list, and if it
+# fails, the second, and so forth.
+#
+# The pre-defined options are:
+# Curses.Blinkenlights -- A text-based (terminal) interface similar to
+# Tk.Blinkenlights
+# TTY.TTYUI -- a text-based (terminal) interface
+# Noninteractive.Basic -- Noninteractive interface suitable for cronning
+# Noninteractive.Quiet -- Noninteractive interface, generates no output
+#                         except for errors.
+# Machine.MachineUI -- Interactive interface suitable for machine
+#                      parsing.
+#
+# You can override this with a command-line option -u.
+
+ui = Curses.Blinkenlights, TTY.TTYUI,
+     Noninteractive.Basic, Noninteractive.Quiet
+
+# If you try to synchronize messages to a read-only folder,
+# OfflineIMAP will generate a warning.  If you want to suppress these
+# warnings, set ignore-readonly to yes.  Read-only IMAP folders allow
+# reading but not modification, so if you try to change messages in
+# the local copy of such a folder, the IMAP server will prevent
+# OfflineIMAP from propagating those changes to the IMAP server.
+
+ignore-readonly = no
+
+########## Advanced settings
+
+# You can give a Python source filename here and all config file
+# python snippets will be evaluated in the context of that file.
+# This allows you to e.g. define helper functions in the Python
+# source file and call them from this config file.  You can find
+# an example of this in the manual.
+#
+# pythonfile = ~/.offlineimap.py
+#
+
+# By default, OfflineIMAP will not exit due to a network error until
+# the operating system returns an error code.  Operating systems can sometimes
+# take forever to notice this.  Here you can activate a timeout on the
+# socket.  This timeout applies to individual socket reads and writes,
+# not to an overall sync operation.  You could perfectly well have a 30s
+# timeout here and your sync still take minutes.
+#
+# Values in the 30-120 second range are reasonable.
+#
+# The default is to have no timeout beyond the OS.  Times are given in seconds.
+#
+# socktimeout = 60
+
+# By default, OfflineIMAP will use fsync() to force data out to disk at
+# opportune times to ensure consistency.  This can, however, reduce
+# performance.  Users where /home is on SSD (Flash) may also wish to reduce
+# write cycles.  Therefore, you can disable OfflineIMAP's use of fsync().
+# Doing so will come at the expense of greater risk of message duplication
+# in the event of a system crash or power loss.  Default is fsync = true.
+# Set fsync = false ot disable fsync.
+#
+# fsync = true
+
+##################################################
+# Mailbox name recorder
+##################################################
+
+[mbnames]
+
+# offlineimap can record your mailbox names in a format you specify.
+# You can define the header, each mailbox item, the separator,
+# and the footer.  Here is an example for Mutt.
+# If enabled is yes, all six setting must be specified, even if they
+# are just the empty string "".
+#
+# The header, peritem, sep, and footer are all Python expressions passed
+# through eval, so you can (and must) use Python quoting.
+
+enabled = no
+filename = ~/Mutt/muttrc.mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+# You can also specify a folderfilter.  It will apply to the
+# *translated* folder name here, and it takes TWO arguments:
+# accountname and foldername.  In all other ways, it will
+# behave identically to the folderfilter for accounts.  Please see
+# that section for more information and examples.
+#
+# Note that this filter can be used only to further restrict mbnames
+# to a subset of folders that pass the account's folderfilter.
+
+[ui.Curses.Blinkenlights]
+# Character used to indicate thread status.
+
+statuschar = .
+
+##################################################
+# Accounts
+##################################################
+
+# This is an account definition clause.  You'll have one of these
+# for each account listed in general/accounts above.
+
+[Account gmail]
+########## Basic settings
+
+# These settings specify the two folders that you will be syncing.
+# You'll need to have a "Repository ..." section for each one.
+
+localrepository = gmail-local
+remoterepository = gmail-remote
+
+########## Advanced settings
+
+# You can have offlineimap continue running indefinitely, automatically
+# syncing your mail periodically.  If you want that, specify how
+# frequently to do that (in minutes) here.  You can also specify
+# fractional minutes (ie, 3.25).
+
+# autorefresh = 5
+
+# You can tell offlineimap to do a number of quicker synchronizations
+# between full updates.  A quick synchronization only synchronizes
+# if a Maildir folder has changed, or if an IMAP folder has received
+# new messages or had messages deleted.  It does not update if the
+# only changes were to IMAP flags.  Specify 0 to never do quick updates,
+# -1 to always do quick updates, or a positive integer to do that many
+# quick updates between each full synchronization (requires autorefresh).
+
+# quick = 10
+
+# You can specify a pre and post sync hook to execute a external command.
+# in this case a call to imapfilter to filter mail before the sync process
+# starts and a custom shell script after the sync completes.
+# The pre sync script has to complete before a sync to the account will
+# start. 
+
+# presynchook = imapfilter
+# postsynchook = notifysync.sh
+
+# You can also specify parameters to the commands
+# presynchook = imapfilter -c someotherconfig.lua
+
+# If you have a limited amount of bandwidth available you can exclude larger
+# messages (e.g. those with large attachments etc).  If you do this it
+# will appear to offlineimap that these messages do not exist at all.  They
+# will not be copied, have flags changed etc.  For this to work on an IMAP
+# server the server must have server side search enabled.  This works with gmail
+# and most imap servers (e.g. cyrus etc)
+# The maximum size should be specified in bytes - e.g. 2000000 for approx 2MB
+
+# maxsize = 2000000
+
+
+# When you are starting to sync an already existing account yuo can tell offlineimap
+# to sync messages from only the last x days.  When you do this messages older than x
+# days will be completely ignored.  This can be useful for importing existing accounts
+# when you do not want to download large amounts of archive email.
+
+# Messages older than maxage days will not be synced, their flags will
+# not be changed, they will not be deleted etc.  For offlineimap it will be like these
+# messages do not exist.  This will perform an IMAP search in the case of IMAP or Gmail
+# and therefor requires that the server support server side searching.  This will
+# calculate the earliest day that would be included in the search and include all 
+# messages from that day until today.   e.g. maxage = 3 to sync only the last 3 days mail
+
+# maxage = 3
+
+[Repository gmail-local]
+
+# This is one of the two repositories that you'll work with given the
+# above example.  Each repository requires a "type" declaration.
+#
+# The types supported are Maildir and IMAP.
+#
+
+type = Maildir
+
+# Specify local repository.  Your IMAP folders will be synchronized
+# to maildirs created under this path.  OfflineIMAP will create the
+# maildirs for you as needed.
+
+localfolders = ~/data/gmail
+
+# You can specify the "path separator character" used for your Maildir
+# folders.  This is inserted in-between the components of the tree.
+# It defaults to ".".  If you want your Maildir folders to be nested,
+# set it to "/".
+
+sep = .
+
+# Some users on *nix platforms may not want the atime (last access
+# time) to be modified by OfflineIMAP.  In these cases, they would
+# want to set restoreatime to yes.  OfflineIMAP will make an effort
+# to not touch the atime if you do that.
+#
+# In most cases, the default of no should be sufficient.
+
+restoreatime = no
+
+[Repository gmail-remote]
+
+# And this is the remote repository.  We only support IMAP or Gmail here.
+
+type = Gmail
+
+# The following can fetch the account credentials via a python expression that
+# is parsed from the pythonfile parameter. For example, a function called
+# "getcredentials" that parses a file "filename" and returns the account
+# details for "hostname".
+# remotehosteval = getcredentials("filename", "hostname", "hostname")
+# remoteusereval = getcredentials("filename", "hostname", "user")
+# remotepasseval = getcredentials("filename", "hostname", "passwd")
+
+# Specify the remote hostname.
+#remotehost = examplehost
+
+# Whether or not to use SSL.
+ssl = yes
+
+# SSL Client certificate (optional)
+# sslclientcert = /path/to/file.crt
+
+# SSL Client key (optional)
+# sslclientkey = /path/to/file.key
+
+# Specify the port.  If not specified, use a default port.
+# remoteport = 993
+
+# Specify the remote user name.
+remoteuser = thibault.duplessis@gmail.com
+
+# There are five ways to give the password for the remote IMAP
+# server:
+#
+# 1. No password at all specified in the config file. If a matching entry is
+#    found in ~/.netrc (see netrc (5) for information) the password from the
+#    matching entry will be used. If there is no ~/.netrc file but there is an
+#    /etc/netrc file, the password will instead be taken from there. Otherwise 
+#    you will be prompted for the password when OfflineIMAP starts.
+#
+# 2. The remote password stored in this file with the remotepass
+#    option. Example:
+#
+# remotepass = mypassword
+#
+# 3. The remote password stored as a single line in an external
+#    file, which is referenced by the remotefile option.  Example:
+#
+remotepassfile = ~/.offlineimap.private.pw
+#
+# 4. With a preauth tunnel.  With this method, you invoke an external
+# program that is guaranteed *NOT* to ask for a password, but rather
+# to read from stdin and write to stdout an IMAP procotol stream
+# that begins life in the PREAUTH state.  When you use a tunnel,
+# you do NOT specify a user or password (if you do, they'll be
+# ignored.)  Instead, you specify a preauthtunnel, as this
+# example illustrates for Courier IMAP on Debian:
+#
+# preauthtunnel = ssh -q imaphost '/usr/bin/imapd ./Maildir'
+#
+# 5. If you are using Kerberos and have the Python Kerberos package installed,
+# you should not specify a remotepass.  If the user has a valid
+# Kerberos TGT, OfflineIMAP will figure out the rest all by itself, and
+# fall back to password authentication if needed.
+
+########## Advanced settings
+
+# Some IMAP servers need a "reference" which often refers to the
+# "folder root".  This is most commonly needed with UW IMAP, where
+# you might need to specify the directory in which your mail is
+# stored.  Most users will not need this.
+#
+# reference = Mail
+
+# OfflineIMAP can use multiple connections to the server in order
+# to perform multiple synchronization actions simultaneously.
+# This may place a higher burden on the server.  In most cases,
+# setting this value to 2 or 3 will speed up the sync, but in some
+# cases, it may slow things down.  The safe answer is 1.  You should
+# probably never set it to a value more than 5.
+
+maxconnections = 1
+
+# OfflineIMAP normally closes IMAP server connections between refreshes if
+# the global option autorefresh is specified.  If you wish it to keep the
+# connection open, set this to true.  If not specified, the default is
+# false.  Keeping the connection open means a faster sync start the
+# next time and may use fewer server resources on connection, but uses
+# more server memory.  This setting has no effect if autorefresh is not set.
+
+holdconnectionopen = no
+
+# If you want to have "keepalives" sent while waiting between syncs,
+# specify the amount of time IN SECONDS between keepalives here.  Note that
+# sometimes more than this amount of time might pass, so don't make it
+# tight.  This setting has no effect if autorefresh and holdconnectionopen
+# are not both set.
+
+# keepalive = 60
+
+# Normally, OfflineIMAP will expunge deleted messages from the server.
+# You can disable that if you wish.  This means that OfflineIMAP will
+# mark them deleted on the server, but not actually delete them.
+# You must use some other IMAP client to delete them if you use this
+# setting; otherwise, the messgaes will just pile up there forever.
+# Therefore, this setting is definately NOT recommended.
+#
+# expunge = no
+
+# Specify whether to process all mail folders on the server, or only
+# those listed as "subscribed".
+subscribedonly = no
+
+# You can specify a folder translator.  This must be a eval-able
+# Python expression that takes a foldername arg and returns the new
+# value.  I suggest a lambda.  This example below will remove "INBOX." from
+# the leading edge of folders (great for Courier IMAP users)
+#
+# WARNING: you MUST construct this such that it NEVER returns
+# the same value for two folders, UNLESS the second values are
+# filtered out by folderfilter below.  Failure to follow this rule
+# will result in undefined behavior
+#
+# nametrans = lambda foldername: re.sub('^INBOX\.', '', foldername)
+
+# Using Courier remotely and want to duplicate its mailbox naming
+# locally?  Try this:
+#
+# nametrans = lambda foldername: re.sub('^INBOX\.*', '.', foldername)
+
+# You can specify which folders to sync.  You can do it several ways.
+# I'll provide some examples.  The folderfilter operates on the
+# *UNTRANSLATED* name, if you specify nametrans.  It should return
+# true if the folder is to be included; false otherwise.
+#
+# Example 1: synchronizing only INBOX and Sent.
+#
+# folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
+#
+# Example 2: synchronizing everything except Trash.
+#
+# folderfilter = lambda foldername: foldername not in ['Trash']
+#
+# Example 3: Using a regular expression to exclude Trash and all folders
+# containing the characters "Del".
+#
+# folderfilter = lambda foldername: not re.search('(^Trash$|Del)', foldername)
+#
+# If folderfilter is not specified, ALL remote folders will be
+# synchronized.
+#
+# You can span multiple lines by indenting the others.  (Use backslashes
+# at the end when required by Python syntax)  For instance:
+#
+# folderfilter = lambda foldername: foldername in
+#        ['INBOX', 'Sent Mail', 'Deleted Items',
+#         'Received']
+#
+# FYI, you could also include every folder with:
+#
+# folderfilter = lambda foldername: 1
+#
+# And exclude every folder with:
+#
+# folderfilter = lambda foldername: 0
+
+# You can specify folderincludes to include additional folders.
+# It should return a Python list.  This might be used to include a
+# folder that was excluded by your folderfilter rule, to include a
+# folder that your server does not specify with its LIST option, or
+# to include a folder that is outside your basic reference.  Some examples:
+#
+# To include debian.user and debian.personal:
+#
+# folderincludes = ['debian.user', 'debian.personal']
+#
+# To include your INBOX (UW IMAPd users will find this useful if they
+# specify a reference):
+#
+# folderincludes = ['INBOX']
+#
+# To specify a long list:
+#
+# folderincludes = ['box1', 'box2', 'box3', 'box4',
+#                   'box5', 'box6']
+
+# You can specify foldersort to determine how folders are sorted.
+# This affects order of synchronization and mbnames. The expression
+# should return -1, 0, or 1, as the default Python cmp() does.  The
+# two arguments, x and y, are strings representing the names of the folders
+# to be sorted.  The sorting is applied *AFTER* nametrans, if any.
+#
+# To reverse the sort:
+#
+# foldersort = lambda x, y: -cmp(x, y)
+
+
+[Repository GmailExample]
+
+# A repository using Gmail's IMAP interface.  Any configuration
+# parameter of `IMAP` type repositories can be used here.  Only
+# `remoteuser` (or `remoteusereval` ) is mandatory.  Default values
+# for other parameters are OK, and you should not need fiddle with
+# those.
+#
+# The Gmail repository will use hard-coded values for `remotehost`,
+# `remoteport`, `tunnel` and `ssl`.  (See
+# http://mail.google.com/support/bin/answer.py?answer=78799&topic=12814)
+# Any attempt to set those parameters will be silently ignored.
+#
+
+type = Gmail
+
+# Specify the Gmail user name. This is the only mandatory parameter.
+remoteuser = username@gmail.com
+
+# Deleting a message from a Gmail folder via the IMAP interface will
+# just remove that folder's label from the message: the message will
+# continue to exist in the '[Gmail]/All Mail' folder.  If `realdelete`
+# is set to `True`, then deleted messages will really be deleted
+# during `offlineimap` sync, by moving them to the '[Gmail]/Trash'
+# folder.  BEWARE: this will delete a messages from *all folders* it
+# belongs to!
+#
+# See http://mail.google.com/support/bin/answer.py?answer=77657&topic=12815
+realdelete = no
+
+# The trash folder name may be different from [Gmail]/Trash
+# for example on german googlemail, this setting should be
+#
+# trashfolder = [Google Mail]/Papierkorb
+#
+# The same is valid for the spam folder
+#
+# spamfolder = [Google Mail]/Spam
+

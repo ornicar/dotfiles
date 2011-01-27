@@ -26,6 +26,15 @@ beautiful.init(home .. "/.config/awesome/themes/cruiser/theme.lua")
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+-- Configure naughty
+naughty.config.default_preset.position         = "bottom_left"
+naughty.config.default_preset.fg               = '#000000'
+naughty.config.default_preset.bg               = '#c4c4c4'
+naughty.config.presets.normal.border_color     = '#888888'
+naughty.config.default_preset.border_width     = 3
+naughty.config.default_preset.gap              = 5
+naughty.config.default_preset.timeout          = 8
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {

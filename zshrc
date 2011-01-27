@@ -3,7 +3,6 @@
 # Show a gentle cow
 fortune | cowsay
 
-export PATH=${PATH}:${HOME}/.bin
 export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim -X'
@@ -80,9 +79,46 @@ _add_to_path() {
   done
 }
 
+# Path
+_add_to_path "~/.bin"
+
 # Byobu presets
 alias blichess="cd ~/data/workspace/lichess && BYOBU_WINDOWS='li' byobu -S lichess"
 alias bexercise="cd ~/data/workspace/exercise && BYOBU_WINDOWS='ex' byobu -S exercise"
 alias bsystem="cd ~/data/workspace/dotfiles && BYOBU_WINDOWS='sy' byobu -S system"
 alias bim="BYOBU_WINDOWS='im' byobu -S im"
 alias bmedia="cd ~/data && BYOBU_WINDOWS='me' byobu -S media"
+
+# go to google for anything
+search() {
+  [[ -z "$BROWSER" ]] && return 1
+
+  local term="${*:-$(xclip -o)}"
+
+  $BROWSER "http://www.google.com/search?q=${term// /+}" &>/dev/null &
+}
+
+# use google for a definition 
+define() {
+  local lang charset tmp
+
+  lang="${LANG%%_*}"
+  charset="${LANG##*.}"
+  tmp='/tmp/define'
+  
+  lynx -accept_all_cookies \
+       -dump \
+       -hiddenlinks=ignore \
+       -nonumbers \
+       -assume_charset="$charset" \
+       -display_charset="$charset" \
+       "http://www.google.com/search?hl=$lang&q=define%3A+$1&btnG=Google+Search" | grep -m 5 -C 2 -A 5 -w "*" > "$tmp"
+
+  if [[ ! -s "$tmp" ]]; then
+    echo -e "No definition found.\n"
+  else
+    echo -e "$(grep -v Search "$tmp" | sed "s/$1/\\\e[1;32m&\\\e[0m/g")\n"
+  fi
+
+  rm -f "$tmp"
+}

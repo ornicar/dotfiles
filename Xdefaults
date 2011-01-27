@@ -1,0 +1,44 @@
+! Cursor theme
+!Xcursor.theme: Obsidian
+Xcursor.theme: CG
+
+! Colors
+#include "/home/thib/.xcolors/jasonwryan.xcolors"
+
+! Fonts {{{
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+
+! }}}
+
+! Urxvt {{{
+urxvt.font:  xft:Inconsolata:size=13
+
+URxvt*scrollBar:  false
+URxvt*jumpScroll: true
+URxvt*skipScroll: true
+URxvt*saveLines:  32767
+URxvt*visualBell: false
+
+URxvt*depth:       24
+URxvt*buffered:    true
+URxvt*foreground:  #dcdccc
+URxvt*background:  rgba:0000/0000/0000/dddd
+URxvt*transparent: false
+URxvt*shading:     100
+
+URxvt*intensityStyles: true
+URxvt*termName:        rxvt-256color
+URxvt*urgentOnBell:    true
+
+URxvt*cursorBlink:     true
+
+! URLs in rxvt
+URxvt*perl-ext-common: default,matcher
+URxvt*urlLauncher:     browser
+URxvt*keysym.C-o:      perl:matcher
+URxvt*matcher.button:  1
+
+! }}}

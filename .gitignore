@@ -4,3 +4,4 @@ mpd/*
 mutt/cache
 mutt/certificates
 vim/undo
+weechat/logs

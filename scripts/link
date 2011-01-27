@@ -45,3 +45,4 @@ link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd
 link offlineimaprc ~/.offlineimaprc
+link weechat ~/.weechat

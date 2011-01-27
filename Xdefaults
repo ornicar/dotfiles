@@ -24,8 +24,8 @@ URxvt*visualBell: false
 
 URxvt*depth:       24
 URxvt*buffered:    true
-URxvt*foreground:  #dcdccc
-URxvt*background:  rgba:0000/0000/0000/dddd
+URxvt*foreground:  #f0f0f0
+URxvt*background:  #101010
 URxvt*transparent: false
 URxvt*shading:     100
 
@@ -36,9 +36,9 @@ URxvt*urgentOnBell:    true
 URxvt*cursorBlink:     true
 
 ! URLs in rxvt
-URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher:     browser
-URxvt*keysym.C-o:      perl:matcher
-URxvt*matcher.button:  1
+URxvt*perl-ext-common: default,selection,url-select
+URxvt*urlLauncher:     chromium-browser
+URxvt.keysym.M-u:      perl:url-select:select_next
+URxvt.underlineURLs:   true
 
 ! }}}

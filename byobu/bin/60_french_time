@@ -1,8 +1,4 @@
-#!/usr/bin/env php
-<?php
+#!/bin/sh
 
-$d = 9;
-
-$fd = function($a) { return $a >= 10 ? $a : '0'.$a; };
-
-print sprintf('%s:%s', $fd((date('H') + $d) % 24), date('i'));
+export TZ="Europe/Paris"
+date +"%H:%M"

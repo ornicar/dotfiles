@@ -8,3 +8,5 @@ weechat/logs
 weechat/weechat.log
 weechat/weeget
 weechat/xfer
+weechat/irc.conf
+weechat/jabber.conf

@@ -1,4 +1,4 @@
-screen -t irssi irssi
+screen -t irc weechat-curses
 screen -t mutt mutt
-screen -t sh zsh
+screen -t zsh zsh
 select 0

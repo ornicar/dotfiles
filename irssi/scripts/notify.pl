@@ -33,7 +33,7 @@ sub notify {
     $title =~ s/([\Q$replacement_string\E])/$replacements{$1}/g;
     $text =~ s/([\Q$replacement_string\E])/$replacements{$1}/g;
 
-    system("notify-send -t 7500 \"".$title."\" \"".$text."\"");
+    system("notify-send -t 10000 \"".$title."\" \"".$text."\"");
 }
 
 

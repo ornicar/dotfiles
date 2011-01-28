@@ -60,7 +60,7 @@ end
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "s", function() awful.util.spawn(home .. "/.scripts/notifystatus") end),
+    --awful.key({ modkey,           }, "s", function() awful.util.spawn(home .. "/.scripts/notifystatus") end),
     awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
     awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
     -- all minimized clients are restored 
@@ -103,7 +103,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-    awful.key({ modkey }, "F12", function () scratch.drop(terminal, "bottom") end),
+    awful.key({ modkey            }, "s", function () scratch.drop(terminal, "top") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     --awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),

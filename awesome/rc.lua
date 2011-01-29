@@ -27,11 +27,11 @@ beautiful.init(home .. "/.config/awesome/themes/cruiser/theme.lua")
 modkey = "Mod4"
 
 -- Configure naughty
-naughty.config.default_preset.position         = "bottom_left"
+naughty.config.default_preset.position         = "top_right"
 naughty.config.default_preset.fg               = '#000000'
-naughty.config.default_preset.bg               = '#c4c4c4'
+naughty.config.default_preset.bg               = '#ffffff'
 naughty.config.presets.normal.border_color     = '#ff0000'
-naughty.config.default_preset.border_width     = 5
+naughty.config.default_preset.border_width     = 3
 naughty.config.default_preset.timeout          = 8
 naughty.config.default_preset.font             = "Inconsolata 14"
 

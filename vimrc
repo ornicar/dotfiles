@@ -154,6 +154,8 @@ if &diff
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 endif
 
+set diffopt=filler,vertical
+
 " Fast open vertical buffer
 nmap <Leader>vb :vsp^M^W^W<cr>
 

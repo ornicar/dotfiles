@@ -7,7 +7,7 @@ $HOME/.scripts/collector_daemon &
 setxkbmap -option terminate:ctrl_alt_bksp &
 
 # Disable system bell
-xset -b
+xset -b off
 
 xrdb $HOME/.Xdefaults &                     # load Xdefaults
 xset fp+ /usr/share/fonts/local &           # add local fonts

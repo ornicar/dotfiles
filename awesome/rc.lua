@@ -63,6 +63,11 @@ globalkeys = awful.util.table.join(
     --awful.key({ modkey,           }, "s", function() awful.util.spawn(home .. "/.scripts/notifystatus") end),
     awful.key({ modkey,           }, "k", function() awful.tag.viewprev() notifytagname() end),
     awful.key({ modkey,           }, "j", function() awful.tag.viewnext() notifytagname() end),
+    -- music control
+    awful.key({ modkey,           }, "m", function() awful.util.spawn(home .. '/.scripts/music status') end),
+    awful.key({ modkey,           }, "p", function() awful.util.spawn(home .. '/.scripts/music toggle') end),
+    awful.key({ modkey,           }, "Left", function() awful.util.spawn(home .. '/.scripts/music down') end),
+    awful.key({ modkey,           }, "Right", function() awful.util.spawn(home .. '/.scripts/music up') end),
     -- all minimized clients are restored 
     awful.key({ modkey, "Shift"   }, "n", function()
             local tag = awful.tag.selected()
@@ -244,5 +249,5 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 -- Launch default programs!
-awful.tag.viewonly(tags[mouse.screen][4])
-awful.util.spawn(terminal)
+--awful.tag.viewonly(tags[mouse.screen][4])
+--awful.util.spawn(terminal)

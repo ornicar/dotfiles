@@ -1,17 +1,9 @@
 #!/bin/zsh
 
 case $1 in
-    "status")
-        mpc status | xargs -0 notify-send -t 5000
-        ;;
-    "toggle")
-        mpc toggle | xargs -0 notify-send -t 1000
-        ;;
-    "up")
-        mpc volume +5 && mpc volume | xargs -0 notify-send -t 400
-        ;;
-    "down")
-        mpc volume -5 && mpc volume | xargs -0 notify-send -t 400
-        ;;
+    "status") mpc status | xargs -0 notify-send -t 5000;;
+    "toggle") mpc toggle | xargs -0 notify-send -t 1000;;
+    "up")     mpc volume +5 && mpc volume | xargs -0 notify-send -t 400;;
+    "down")   mpc volume -5 && mpc volume | xargs -0 notify-send -t 400;;
     *)
 esac

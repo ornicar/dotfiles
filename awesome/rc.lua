@@ -9,10 +9,8 @@ require("naughty")
 -- scratch console
 require("scratch")
 
--- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+byobu = "urxvtc -e byobu"
 home = os.getenv("HOME")
 
 -- {{{ Variable definitions
@@ -108,7 +106,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-    awful.key({ modkey            }, "s", function () scratch.drop(terminal, "top") end),
+    awful.key({ modkey            }, "s", function () scratch.drop(byobu, "top") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     --awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),

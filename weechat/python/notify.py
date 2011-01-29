@@ -49,6 +49,9 @@ for option, default_value in settings.items():
 
 # Hook privmsg/hilights
 weechat.hook_print("", "irc_privmsg", "", 1, "notify_show", "")
+weechat.hook_print("", "notify_message", "", 1, "notify_show", "");
+weechat.hook_print("", "notify_private", "", 1, "notify_show", "");
+weechat.hook_print("", "notify_highlight", "", 1, "notify_show", "");
 
 # Functions
 def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed,

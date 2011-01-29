@@ -1,6 +1,7 @@
 # Author: lavaramano <lavaramano AT gmail DOT com>
 # Improved by: BaSh - <bash.lnx AT gmail DOT com>
 # Ported to Weechat 0.3.0 by: Sharn - <sharntehnub AT gmail DOT com)
+# Hack by ornicar to notify all jabber messages and remove dependency to pynotify
 # This Plugin Calls the libnotify bindings via python when somebody says your nickname, sends you a query, etc.
 # To make it work, you may need to download: python-notify (and libnotify - libgtk)
 # Requires Weechat 0.3.0
@@ -22,7 +23,7 @@
 # 2009-05-02, FlashCode <flashcode@flashtux.org>:
 #     version 0.0.2.1: sync with last API changes
 
-import weechat, pynotify, string
+import weechat, string, os
 
 weechat.register("notify", "lavaramano", "0.0.5", "GPL", "notify: A real time notification system for weechat", "", "")
 
@@ -31,15 +32,7 @@ settings = {
     "show_hilights"      : "on",
     "show_priv_msg"      : "on",
     "nick_separator"     : ": ",
-    "icon"               : "/usr/share/pixmaps/weechat.xpm",
-    "urgency"            : "normal",
     "smart_notification" : "off",
-}
-
-urgencies = {
-    "low"      : pynotify.URGENCY_LOW,
-    "critical" : pynotify.URGENCY_CRITICAL,
-    "normal"   : pynotify.URGENCY_NORMAL,
 }
 
 # Init everything
@@ -76,10 +69,11 @@ def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed,
     return weechat.WEECHAT_RC_OK
 
 def show_notification(chan,message):
-    pynotify.init("wee-notifier")
-    wn = pynotify.Notification(chan, message, weechat.config_get_plugin('icon'))
-    wn.set_urgency(urgencies[weechat.config_get_plugin('urgency')] or
-            pynotify.URGENCY_NORMAL)
-    wn.show()
+    if(chan != ""):
+        command = 'notify-send "%s" "%s"' % (chan.replace('"', '\''), message.replace('"', '\''))
+    else:
+        command = 'notify-send "%s"' % (message.replace('"', '\''))
+
+    os.system(command)
 
 # vim: autoindent expandtab smarttab shiftwidth=4

@@ -30,10 +30,10 @@ modkey = "Mod4"
 naughty.config.default_preset.position         = "bottom_left"
 naughty.config.default_preset.fg               = '#000000'
 naughty.config.default_preset.bg               = '#c4c4c4'
-naughty.config.presets.normal.border_color     = '#888888'
-naughty.config.default_preset.border_width     = 3
-naughty.config.default_preset.gap              = 5
+naughty.config.presets.normal.border_color     = '#ff0000'
+naughty.config.default_preset.border_width     = 5
 naughty.config.default_preset.timeout          = 8
+naughty.config.default_preset.font             = "Inconsolata 14"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -55,7 +55,7 @@ end
 -- }}}
 
 function notifytagname()
-    naughty.notify({text = awful.tag.selected().name, timeout = 0.3})
+    naughty.notify({text = awful.tag.selected().name, timeout = 0.3, screen = mouse.screen})
 end
 
 -- {{{ Key bindings

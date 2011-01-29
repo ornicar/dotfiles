@@ -4,6 +4,9 @@ if exists("b:php_ftplugin_loaded")
 endif
 let b:php_ftplugin_loaded = 1
 
+" Because I write it so often
+imap ` ->
+
 let PHP_autoformatcomment = 1
 
 " PHP syntax options

@@ -87,12 +87,11 @@ alias trans="python2 ~/.scripts/translate"
 alias enfr="python2 ~/.scripts/translate -s en -d fr"
 alias fren="python2 ~/.scripts/translate -s fr -d en"
 
-# go to google for search
-search() {
-  [[ -z "$BROWSER" ]] && return 1
-  local term="${*:-$(xclip -o)}"
-  $BROWSER "http://www.google.com/search?q=${term// /+}" &>/dev/null &
-}
+# Search using surfraw
+alias gg="surfraw google"
+alias dd="surfraw duckduckgo"
+alias search-urban="surfraw urban"
+alias search-acronym="surfraw acronym"
 
 # use google for a definition 
 define() {

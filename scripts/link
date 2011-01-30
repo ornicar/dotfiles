@@ -46,3 +46,4 @@ link ackrc ~/.ackrc
 link mpd ~/.mpd
 link offlineimaprc ~/.offlineimaprc
 link weechat ~/.weechat
+link surfraw ~/.config/surfraw/conf

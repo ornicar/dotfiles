@@ -1,0 +1,3 @@
+SURFRAW_graphical=yes
+SURFRAW_graphical_browser=chromium-browser
+SURFRAW_graphical_remote=no

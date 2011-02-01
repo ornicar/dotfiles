@@ -10,7 +10,7 @@ require("naughty")
 require("scratch")
 
 terminal = "urxvtc"
-byobu = "urxvtc -e byobu"
+tmux = "urxvtc -e tmux"
 home = os.getenv("HOME")
 
 -- {{{ Variable definitions
@@ -106,7 +106,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-    awful.key({                   }, "F12", function () scratch.drop(byobu, "top") end),
+    awful.key({                   }, "F12", function () scratch.drop(tmux, "top") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     --awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),

@@ -58,6 +58,9 @@ man() { vim -X -M -c "Man $*" -c "only" }
 # Calculator
 calc(){ awk "BEGIN{ print $* }" ;}
 
+# Python2
+alias p="python2"
+
 # Switch to exercise.com hardware
 exercisehardware() {
     xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
@@ -92,6 +95,9 @@ alias gg="surfraw google"
 alias dd="surfraw duckduckgo"
 alias search-urban="surfraw urban"
 alias search-acronym="surfraw acronym"
+
+# Connect using 3G usb dialer, and notify when connection is lost
+alias dial='sudo wvdial && notify-send "wvdial" "Connection lost"'
 
 # use google for a definition 
 define() {

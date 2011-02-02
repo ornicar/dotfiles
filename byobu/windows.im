@@ -1,4 +1,0 @@
-screen -t irc weechat-curses
-screen -t mutt mutt
-screen -t zsh zsh
-select 0

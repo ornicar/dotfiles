@@ -1,7 +1,0 @@
-#!/bin/sh
-
-DATAFILE="/tmp/cpu_usage"
-
-if [ -f $DATAFILE ]; then
-    printf "\005{= kw}%s%s\005{-}" $(cat $DATAFILE) "%%"
-fi

@@ -84,13 +84,6 @@ music() {
 # radios are in ~/data/radio
 alias radio="mplayer -playlist"
 
-# Byobu presets
-alias blichess="cd ~/data/workspace/lichess && BYOBU_WINDOWS='li' byobu -S lichess"
-alias bexercise="cd ~/data/workspace/exercise && BYOBU_WINDOWS='ex' byobu -S exercise"
-alias bsystem="cd ~/data/workspace/dotfiles && BYOBU_WINDOWS='sy' byobu -S system"
-alias bim="BYOBU_WINDOWS='im' byobu -S im"
-alias bmedia="cd ~/data && BYOBU_WINDOWS='me' byobu -S media"
-
 # Use google for translation
 alias trans="python2 ~/.scripts/translate"
 alias enfr="python2 ~/.scripts/translate -s en -d fr"

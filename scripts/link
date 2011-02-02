@@ -20,14 +20,6 @@ link (){
 link zshrc ~/.zshrc
 link oh-my-zsh ~/.oh-my-zsh
 link scripts ~/.scripts
-link screenrc ~/.screenrc
-link byobu/bin ~/.byobu/bin
-link byobu/keybindings ~/.byobu/keybindings
-link byobu/windows.im ~/.byobu/windows.im
-link byobu/windows.do ~/.byobu/windows.do
-link byobu/windows.me ~/.byobu/windows.me
-link byobu/windows.li ~/.byobu/windows.li
-link byobu/windows.ex ~/.byobu/windows.ex
 link gitconfig ~/.gitconfig
 link muttrc ~/.muttrc
 link mutt ~/.mutt

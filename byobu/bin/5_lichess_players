@@ -1,7 +1,0 @@
-#!/bin/sh
-
-DATAFILE="/tmp/lichess_players"
-
-if [ -f $DATAFILE ]; then
-    printf "\005{= bw}%sp\005{-}" $(cat $DATAFILE)
-fi

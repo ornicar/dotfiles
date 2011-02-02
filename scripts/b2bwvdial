@@ -1,0 +1,6 @@
+#!/bin/sh
+
+LOGFILE=/var/log/b2bwvdial
+sleep 3
+date >> $LOGFILE
+wvdial &>> $LOGFILE &

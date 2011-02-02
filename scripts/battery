@@ -1,0 +1,52 @@
+#!/bin/sh -e
+
+#echo "#[bright]$(acpi -b|sed 's/.*, \(.*\),.*/\1/')#[default]"
+
+search () {
+	local str expr
+	str="$1"
+	expr="$2"
+	echo "$str" | sed -n "s/${expr}/\1/p"
+}
+for bat in $BATTERY /proc/acpi/battery/*; do
+	# make sure that this battery is present
+	infofile=$(cat "$bat/info")
+	present=$(search "$infofile" "present: *\(.*\)")
+	[ "${present}" = "no" ] && continue
+
+	# obtain full and remaining battery values
+	statefile=$(cat "$bat/state")
+	full=$(search "$infofile" "last full capacity: *\(.*\) m[AW]h")
+	rem=$(search "$statefile" "remaining capacity: *\(.*\) m[AW]h")
+
+	percent=$( echo "$rem" "$full" | awk '{printf "%.0f",  100*$1/$2}')
+	if [ "$percent" -lt 5 ]; then
+        modifier="#[bg=red,fg=white,bright]"
+	elif [ "$percent" -lt 33 ]; then
+        modifier="#[bg=yellow,fg=black,bright]"
+	elif [ "$percent" -lt 67 ]; then
+        modifier="#[fg=yellow,bright]"
+	else
+        modifier="#[fg=green]"
+	fi
+	percent="$percent%"
+
+	state=$(search "$statefile" "charging state: *\(.*\)")
+	case $state in
+		charging)
+			sign="+"
+		;;
+		discharging)
+			sign="-"
+		;;
+		charged)
+			sign="="
+			percent=
+		;;
+		*)
+			sign="$state"
+		;;
+	esac
+    printf "$modifier%s|%s|#[default]" "$percent" "$sign"
+	break
+done

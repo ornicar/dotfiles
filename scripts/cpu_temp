@@ -1,0 +1,18 @@
+DIR="/proc/acpi/thermal_zone"
+
+i=/sys/class/hwmon/hwmon0/temp1_input
+[ -s "$i" ] && t=$(awk '{printf "%0.f",$1/1000}' "$i")
+if [ -n "$t" ]; then
+	if [ "$t" -gt 65 ]; then
+        modifier="#[bg=red,fg=white,bright]"
+	elif [ "$t" -gt 60 ]; then
+        modifier="#[fg=red,bright]"
+	elif [ "$t" -gt 55 ]; then
+        modifier="#[fg=white,bright]"
+	elif [ "$t" -gt 50 ]; then
+        modifier="#[fg=cyan]"
+	else
+        modifier="#[fg=cyan]"
+	fi
+    echo "$modifier$t°C#[default]"
+fi

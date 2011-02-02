@@ -36,6 +36,12 @@ alias glr='git pull --rebase'
 alias gco='git checkout'
 alias gmt='git mergetool'
 alias gca='git commit --amend'
+# Push to a remote wich has no write url defined :)
+gpw()
+{
+    [ -z $1 ] && 1=origin
+    git push $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
+}
 
 # Ctags
 alias ct="rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --languages=PHP &"

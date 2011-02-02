@@ -43,8 +43,8 @@ layouts =
 
 -- {{{ Tags
 tags = {
-   names  = { "im", "web", "dev", "sys", "serv", "media" },
-   layout = { layouts[1], layouts[1], layouts[1], layouts[1], layouts[1], layouts[1] }
+   names  = { "media", "web", "dev", "sys" },
+   layout = { layouts[1], layouts[1], layouts[1], layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -162,6 +162,7 @@ for i = 1, keynumber do
                         local screen = mouse.screen
                         if tags[screen][i] then
                             awful.tag.viewonly(tags[screen][i])
+                            notifytagname()
                         end
                   end),
         awful.key({ modkey, "Control" }, "#" .. i + 9,

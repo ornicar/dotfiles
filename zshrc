@@ -26,6 +26,16 @@ alias ducks='du -cks * | sort -rn|head -10'
 # History alias
 alias h='history'
 
+# Set tmux default path
+tmux_cd()
+{
+    tmux set default-path $1
+    cd $1
+}
+alias texercise='tmux_cd ~/data/workspace/exercise'
+alias tdotfiles='tmux_cd ~/data/workspace/dotfiles'
+alias tvulug='tmux_cd ~/data/workspace/vulug'
+
 # Vim
 alias v="vim"
 

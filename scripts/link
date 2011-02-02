@@ -48,3 +48,4 @@ link offlineimaprc ~/.offlineimaprc
 link weechat ~/.weechat
 link surfraw ~/.config/surfraw/conf
 link tmux.conf ~/.tmux.conf
+link bash_profile ~/.bash_profile

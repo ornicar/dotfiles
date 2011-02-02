@@ -53,11 +53,25 @@ set notitle                       " Do not set the terminal's title
 
 set visualbell                    " No beeping.
 
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup                 " And again.
-set noswapfile                    " Use an SCM instead of swap files
+set shortmess+=filmnrxoOtT     	  " abbrev. of messages (avoids 'hit enter')
 
-set laststatus=2                  " Show the status line all the time
+"set nobackup                      " Don't make a backup before overwriting a file.
+"set nowritebackup                 " And again.
+"set noswapfile                    " Use an SCM instead of swap files
+
+set backup 						   " backups are nice ...
+set backupdir=$HOME/.vimbackup//   " but not when they clog .
+set directory=$HOME/.vimswap// 	   " Same for swap files
+set viewdir=$HOME/.vimviews// 	   " same for view files
+
+" Creating directories if they don't exist
+silent execute '!mkdir -p $HOME/.vimbackup'
+silent execute '!mkdir -p $HOME/.vimswap'
+silent execute '!mkdir -p $HOME/.vimviews'
+au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
+
+set laststatus=2                   " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\(%{getcwd()})%=%-16(\ %l,%c-%v\ %)%P
 
 " Tabs and indentation.
@@ -72,6 +86,9 @@ set shiftwidth=4
 " But make it easy to switch it
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
 
 " Use perl regex style
 nnoremap / /\v

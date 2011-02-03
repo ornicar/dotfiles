@@ -83,7 +83,7 @@ exercisehardware() {
 }
 
 # Increase urxvt font size
-alias bigger="printf '\33]50;%s\007' \"xft:Inconsolata:size=19\""
+alias bigger="printf '\33]50;%s\007' \"xft:Inconsolata:size=16\""
 
 # Launch music player daemon and client
 music() {

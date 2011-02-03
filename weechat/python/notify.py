@@ -70,10 +70,13 @@ def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed,
 
 def show_notification(chan,message):
     if(chan != ""):
-        command = 'notify-send "%s" "%s"' % (chan.replace('"', '\''), message.replace('"', '\''))
+        command = 'notify-send "%s" "%s"' % (encode_string(chan), encode_string(message))
     else:
-        command = 'notify-send "%s"' % (message.replace('"', '\''))
+        command = 'notify-send "%s"' % (encode_string(message))
 
     os.system(command)
+
+def encode_string(string):
+    return string.replace('"', '\\"').replace('`', '\\`')
 
 # vim: autoindent expandtab smarttab shiftwidth=4

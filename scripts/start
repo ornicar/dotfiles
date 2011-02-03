@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+startcommands=()
+
+echo "1 - New tmux session"
+startcommands[1]="tmux"
+
+it=2
+for i in "$HOME/.tmuxinator/"[a-z]*.tmux; do
+	script=$(basename "$i")
+    printf "%d - %s\n" $it $(echo "$script" | sed "s/.tmux//")
+    startcommands[$it]="$SHELL $script"
+    it=$(expr $it + 1)
+done
+
+echo "-----------------------------"
+read -n 1 choice
+
+c=
+startcommand=$startcommands[1]
+printf "Running $startcommand\n"

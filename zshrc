@@ -46,11 +46,19 @@ alias glr='git pull --rebase'
 alias gco='git checkout'
 alias gmt='git mergetool'
 alias gca='git commit --amend'
+alias gd='git diff'
 # Push to a remote wich has no write url defined :)
-gpw()
+git-push-write()
 {
     [ -z $1 ] && 1=origin
     git push $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
+}
+# Create a write remote from a readonly remote
+git-create-write()
+{
+    [ -z $1 ] && 1=origin
+    git remote add "write-$1" $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
+    git remote -v
 }
 
 # Ctags

@@ -3,17 +3,16 @@
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp &
 
-# Disable system bell
-xset -b
+# Remap keys
+xmodmap $HOME/.Xmodmap &&
 
 xrdb $HOME/.Xdefaults &                     # load Xdefaults
 xset fp+ /usr/share/fonts/local &           # add local fonts
-xset s 300 300 &                            # set monitor to sleep 5 mins
+xset s 300 300 &                            # set monitor to sleep after 5 mins
 xset s off &                                # disable screensaver
-urxvtd -q -f -o &                           # start urxvt daemon
-
-# Remap keys
-xmodmap $HOME/.Xmodmap &&
+xset -b                                     # Disable system bell
+urxvtd -q -f -o &                           # start urxvt server
+tmux new-session -d -s scratch              # start tmux server with the scratch session
 
 # Run window manager
 exec awesome

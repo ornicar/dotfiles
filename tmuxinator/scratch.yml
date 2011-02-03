@@ -1,0 +1,6 @@
+# ~/.tmuxinator/scratch.yml
+
+project_name: scratch
+project_root: ~/
+tabs:
+  - scratch: 

@@ -1,0 +1,7 @@
+# ~/.tmuxinator/exercise.yml
+
+project_name: exercise
+project_root: ~/data/workspace/exercise
+tabs:
+  - vim: vim
+  - exercise: tig

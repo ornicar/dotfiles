@@ -40,5 +40,6 @@ link offlineimaprc ~/.offlineimaprc
 link weechat ~/.weechat
 link surfraw ~/.config/surfraw/conf
 link tmux.conf ~/.tmux.conf
-link .tmux ~/.tmux
+link tmux ~/.tmux
+link tmuxinator ~/.tmuxinator
 link bash_profile ~/.bash_profile

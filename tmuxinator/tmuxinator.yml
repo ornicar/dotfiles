@@ -1,0 +1,7 @@
+# ~/.tmuxinator/tmuxinator.yml
+
+project_name: tmuxinator
+project_root: ~/data/workspace/tmuxinator
+tabs:
+  - vim: vim
+  - tmuxinator: 

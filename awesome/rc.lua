@@ -10,8 +10,9 @@ require("naughty")
 require("scratch")
 
 -- default terminal is urxvt client with tmux in utf-8 and 256 colors
-terminal = "urxvtc -e tmux -2 -u"
 home = os.getenv("HOME")
+terminal = "urxvtc"
+scratchterm = "urxvtc -e zsh " .. home .. "/.scripts/scratch"
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -106,7 +107,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
-    awful.key({                   }, "F12", function () scratch.drop(terminal, "top") end),
+    awful.key({                   }, "F12", function () scratch.drop(scratchterm, "top") end),
 
     --awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     --awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
@@ -247,7 +248,4 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Launch default programs!
-scratch.drop(terminal, "top")
---awful.tag.viewonly(tags[mouse.screen][4])
---awful.util.spawn(terminal)
+naughty.notify({text = awful.tag.selected().name, timeout = 2, screen = mouse.screen})

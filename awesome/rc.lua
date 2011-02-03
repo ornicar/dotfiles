@@ -248,5 +248,6 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 -- Launch default programs!
+scratch.drop(terminal, "top")
 --awful.tag.viewonly(tags[mouse.screen][4])
 --awful.util.spawn(terminal)

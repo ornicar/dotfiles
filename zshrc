@@ -6,7 +6,7 @@ fortune | cowsay
 export PATH="$PATH:~/.bin"
 export BROWSER="chromium-browser"
 export EDITOR='vim'
-export GIT_EDITOR='vim -X'
+export GIT_EDITOR='vim'
 
 # Configure oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh

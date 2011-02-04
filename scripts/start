@@ -1,26 +1,31 @@
 #!/bin/zsh
 
+fortune | cowsay
+
 startcommands=()
 
-echo "1 - Raw shell"
+separator="--------------------------------"
+lines=$separator
+
+lines="$lines\n1 - Raw shell"
 startcommands[1]="zsh"
 
-echo "2 - New session"
+lines="$lines\n2 - New session"
 startcommands[2]="tmux"
 
 it=3
 tmuxinatorpath="$HOME/.tmuxinator/"
 for scriptpath in "$tmuxinatorpath"[a-z]*.tmux; do
-	script=$(basename "$scriptpath")
-    name=$(echo "$script" | sed "s/.tmux//")
-    printf "%d - %s\n" $it "${(C)name}"
+    name=$(basename $scriptpath | sed "s/.tmux//")
+    lines="$lines\n$it - ${(C)name}"
     startcommands[$it]="$scriptpath"
     it=$(expr $it + 1)
 done
 
-echo "------------------"
-read choice
+lines="$lines\n$separator"
+echo -e "$lines"
 
+read choice
 startcommand=$startcommands[$choice]
 
 clear

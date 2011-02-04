@@ -24,4 +24,8 @@ tmux select-window -t vulug:1
 
 fi
 
-tmux -u attach-session -t vulug
+if [ -z $TMUX ]; then
+    tmux -u attach-session -t vulug
+else
+    tmux -u switch-client -t vulug
+fi

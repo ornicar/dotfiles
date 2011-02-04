@@ -24,4 +24,8 @@ tmux select-window -t tmuxinator:1
 
 fi
 
-tmux -u attach-session -t tmuxinator
+if [ -z $TMUX ]; then
+    tmux -u attach-session -t tmuxinator
+else
+    tmux -u switch-client -t tmuxinator
+fi

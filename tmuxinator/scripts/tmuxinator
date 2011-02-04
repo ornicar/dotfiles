@@ -1,6 +1,5 @@
 alias start_exercise='$SHELL /home/thib/.tmuxinator/exercise.tmux'
 alias start_vulug='$SHELL /home/thib/.tmuxinator/vulug.tmux'
 alias start_media='$SHELL /home/thib/.tmuxinator/media.tmux'
-alias start_scratch='$SHELL /home/thib/.tmuxinator/scratch.tmux'
 alias start_tmuxinator='$SHELL /home/thib/.tmuxinator/tmuxinator.tmux'
 alias start_system='$SHELL /home/thib/.tmuxinator/system.tmux'

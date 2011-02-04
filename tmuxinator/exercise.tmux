@@ -24,4 +24,8 @@ tmux select-window -t exercise:1
 
 fi
 
-tmux -u attach-session -t exercise
+if [ -z $TMUX ]; then
+    tmux -u attach-session -t exercise
+else
+    tmux -u switch-client -t exercise
+fi

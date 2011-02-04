@@ -36,4 +36,8 @@ tmux select-window -t system:1
 
 fi
 
-tmux -u attach-session -t system
+if [ -z $TMUX ]; then
+    tmux -u attach-session -t system
+else
+    tmux -u switch-client -t system
+fi

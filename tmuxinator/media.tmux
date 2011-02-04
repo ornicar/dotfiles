@@ -30,4 +30,8 @@ tmux select-window -t media:1
 
 fi
 
-tmux -u attach-session -t media
+if [ -z $TMUX ]; then
+    tmux -u attach-session -t media
+else
+    tmux -u switch-client -t media
+fi

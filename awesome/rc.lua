@@ -11,7 +11,7 @@ require("scratch")
 
 -- default terminal is urxvt client with tmux in utf-8 and 256 colors
 home = os.getenv("HOME")
-terminal = "urxvtc"
+terminal = "urxvtc -e zsh " .. home .. "/.scripts/start"
 scratchterm = "urxvtc -e zsh " .. home .. "/.scripts/scratch"
 
 -- {{{ Variable definitions

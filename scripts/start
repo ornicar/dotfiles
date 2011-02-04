@@ -2,20 +2,30 @@
 
 startcommands=()
 
-echo "1 - New tmux session"
-startcommands[1]="tmux"
+echo "1 - Raw shell"
+startcommands[1]="zsh"
 
-it=2
-for i in "$HOME/.tmuxinator/"[a-z]*.tmux; do
-	script=$(basename "$i")
-    printf "%d - %s\n" $it $(echo "$script" | sed "s/.tmux//")
-    startcommands[$it]="$SHELL $script"
+echo "2 - New session"
+startcommands[2]="tmux"
+
+it=3
+tmuxinatorpath="$HOME/.tmuxinator/"
+for scriptpath in "$tmuxinatorpath"[a-z]*.tmux; do
+	script=$(basename "$scriptpath")
+    name=$(echo "$script" | sed "s/.tmux//")
+    printf "%d - %s\n" $it "${(C)name}"
+    startcommands[$it]="$scriptpath"
     it=$(expr $it + 1)
 done
 
-echo "-----------------------------"
-read -n 1 choice
+echo "------------------"
+read choice
 
-c=
-startcommand=$startcommands[1]
-printf "Running $startcommand\n"
+startcommand=$startcommands[$choice]
+
+clear
+if [ -f $startcommand ] && [ ! -x $startcommand ]; then
+    source $startcommand
+else
+    $startcommand
+fi

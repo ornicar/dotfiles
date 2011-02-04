@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-fortune | cowsay
-
 startcommands=()
 
 separator="--------------------------------"

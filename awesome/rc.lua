@@ -2,7 +2,6 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
--- Theme handling library
 -- Notification library
 require("naughty")
 -- scratch console
@@ -13,14 +12,7 @@ home = os.getenv("HOME")
 terminal = "urxvtc -e zsh " .. home .. "/.scripts/start"
 scratchterm = "urxvtc -e zsh " .. home .. "/.scripts/scratch"
 
--- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
-
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Configure naughty
@@ -42,8 +34,8 @@ layouts =
 
 -- {{{ Tags
 tags = {
-   names  = { "media", "web", "dev", "sys" },
-   layout = { layouts[1], layouts[1], layouts[1], layouts[1] }
+   names  = { "ascii", "web" },
+   layout = { layouts[1], layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -117,32 +109,22 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end),
+    --awful.key({ modkey }, "x",
+              --function ()
+                  --awful.prompt.run({ prompt = "Run Lua code: " },
+                  --mypromptbox[mouse.screen].widget,
+                  --awful.util.eval, nil,
+                  --awful.util.getdir("cache") .. "/history_eval")
+              --end),
     awful.key({ modkey }, "c", function () awful.util.spawn('chromium-browser') end)
 )
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
-    awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-    awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c.maximized_vertical   = not c.maximized_vertical
-        end)
+    awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        )
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -184,11 +166,6 @@ for i = 1, keynumber do
                       end
                   end))
 end
-
-clientbuttons = awful.util.table.join(
-    awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-    awful.button({ modkey }, 1, awful.mouse.client.move),
-    awful.button({ modkey }, 3, awful.mouse.client.resize))
 
 -- Set keys
 root.keys(globalkeys)

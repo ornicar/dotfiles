@@ -3,7 +3,6 @@ require("awful")
 require("awful.autofocus")
 require("awful.rules")
 -- Theme handling library
-require("beautiful")
 -- Notification library
 require("naughty")
 -- scratch console
@@ -16,7 +15,6 @@ scratchterm = "urxvtc -e zsh " .. home .. "/.scripts/scratch"
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(home .. "/.config/awesome/themes/cruiser/theme.lua")
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -200,8 +198,8 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
+      properties = { border_width = 0,
+                     border_color = "#000000",
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
@@ -244,8 +242,6 @@ client.add_signal("manage", function (c, startup)
     end
 end)
 
-client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 naughty.notify({text = awful.tag.selected().name, timeout = 2, screen = mouse.screen})

@@ -3,7 +3,7 @@
 Xcursor.theme: CG
 
 ! Colors
-#include "/home/thib/.xcolors/xabbot.xcolors"
+#include "/home/thib/.xcolors/ornicar.xcolors"
 
 ! Fonts {{{
 Xft.antialias: true

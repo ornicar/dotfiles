@@ -19,9 +19,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
-[submodule "vim/bundle/dirdo"]
-	path = vim/bundle/dirdo
-	url = git://github.com/ornicar/vim-dirdo.git
 [submodule "vim/bundle/commandt"]
 	path = vim/bundle/commandt
 	url = git://github.com/wincent/Command-T.git

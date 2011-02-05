@@ -1,0 +1,83 @@
+#!/bin/sh -e
+
+# BATTERY
+
+infos=$(acpi -b)
+percent=$(echo $infos|sed "s/Battery .: [a-z]*, \([0-9]*\)%\(,.*\|$\)/\1/i")
+state=$(echo $infos|sed "s/Battery .: \([a-z]*\),.*/\1/i")
+if [ "$percent" -lt 5 ]; then modifier="#[bg=red,fg=white,bright]"
+elif [ "$percent" -lt 33 ]; then modifier="#[bg=yellow,fg=black,bright]"
+elif [ "$percent" -lt 67 ]; then modifier="#[fg=yellow,bright]"
+else modifier="#[fg=green]"
+fi
+percent="$percent%"
+case $state in
+    "Charging") sign="+" ;;
+    "Discharging") sign="-" ;;
+    "Full") sign="="; percent= ;;
+    *) sign="$state" ;;
+esac
+printf "$modifier%s|%s|#[default]" "$percent" "$sign"
+break
+
+# TEMPERATURE
+
+input=/sys/class/hwmon/hwmon0/temp1_input
+[ -s "$input" ] && temperature=$(awk '{printf "%0.f",$1/1000}' "$input")
+if [ -n "$temperature" ]; then
+	if [ "$temperature" -gt 64 ]; then modifier="#[bg=red,fg=white,bright]"
+	elif [ "$temperature" -gt 59 ]; then modifier="#[fg=red,bright]"
+	elif [ "$temperature" -gt 54 ]; then modifier="#[fg=magenta,bright]"
+	elif [ "$temperature" -gt 49 ]; then modifier="#[fg=cyan]"
+	else modifier="#[fg=blue]"
+	fi
+    printf " %s%s°C#[default]" "$modifier" "$temperature"
+fi
+
+# MEMORY
+
+memory=$(free | awk '/buffers\/cache:/ {printf "%.0f", 100*$3/($3 + $4)}')
+if [ "$memory" -gt 90 ]; then modifier="#[bg=red,fg=white,bright]"
+elif [ "$memory" -gt 70 ]; then modifier="#[bg=yellow,fg=black,bright]"
+elif [ "$memory" -gt 50 ]; then modifier="#[fg=yellow,bright]"
+else modifier="#[fg=yellow,dim]"
+fi
+printf " %s%s%%#[default]" "$modifier" "$memory"
+
+# CPU BAR
+
+nbcores=4
+bars=('          ' '|         ' '||        ' '|||       ' '||||      ' '|||||     ' '||||||    ' '|||||||   ' '||||||||  ' '||||||||||')
+usage=$(cat /tmp/cpu_usage)
+(( index = (15 + usage * $nbcores) / 10 ))
+[ $index -gt 10 ] && index=10
+if [ "$usage" -lt 10 ]; then showusage=" $usage"; else showusage=$usage; fi
+if [ "$index" -gt 8 ]; then modifier="#[fg=red,bright]"
+elif [ "$index" -gt 5 ]; then modifier="#[fg=yellow,bright]"
+elif [ "$index" -gt 3 ]; then modifier="#[fg=white, bright]"
+else modifier="#[fg=black, bright]"
+fi
+#printf " %s[%s%s%%]#[default]" "$modifier" "${bars[(($index-1))]}" "$showusage"
+printf " %s[%s]#[default]" "$modifier" "${bars[(($index-1))]}"
+
+# LOAD AVERAGE
+
+load=$(awk '{print $1}' /proc/loadavg)
+printf " %s%.01f#[default]" "#[fg=white]" "$load"
+
+# SEPARATOR
+
+printf " #[fg=magenta]•#[default]"
+
+# LICHESS PLAYERS
+
+printf " #[fg=magenta,dim](%dp)#[default]" "$(cat /tmp/lichess_players)"
+
+# LOCAL DATE
+
+printf " #[fg=blue]$(date +"%b %m") #[bright]$(date +"%H:%M")#[default]"
+
+# FRENCH DATE
+
+export TZ="Europe/Paris"
+printf " #[fg=magenta]$(date +"%H:%M")#[default]"

@@ -1,4 +1,0 @@
-#!/bin/sh
-
-export TZ="Europe/Paris"
-date +"%H:%M"

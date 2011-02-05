@@ -43,6 +43,3 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "tmux/memcpuload"]
-	path = tmux/memcpuload
-	url = git://github.com/ornicar/tmux-mem-cpu-load.git

@@ -260,6 +260,16 @@ nmap <silent> <leader>f :CommandT<CR>
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1
 
+" Processing results in quickfix http://efiquest.org/2009-02-19/32/
+com! -nargs=1 Qfdo try | sil cfirst |
+\ while 1 | exec <q-args> | sil cn | endwhile |
+\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+\ endtry
+com! -nargs=1 Qfdofile try | sil cfirst |
+\ while 1 | exec <q-args> | sil cnf | endwhile |
+\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+\ endtry
+
 " Gist
 let g:gist_open_browser_after_post = 1
 

@@ -211,7 +211,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " Detect twig filetype
-au BufNewFile,BufRead *.html set filetype=htmljinja
+au BufNewFile,BufRead *.twig set filetype=htmljinja
 
 " lowercase to modulized
 nnoremap <leader>_ bf_x~

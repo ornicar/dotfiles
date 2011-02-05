@@ -7,3 +7,6 @@
 
 # Vim like case sensitivity
 --smart-case
+
+# Twig type
+--type-set=twig=.twig

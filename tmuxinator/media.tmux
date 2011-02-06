@@ -1,3 +1,5 @@
+_TMUX=$TMUX
+TMUX=
 cd ~/data
 tmux start-server
 
@@ -30,7 +32,7 @@ tmux select-window -t media:1
 
 fi
 
-if [ -z $TMUX ]; then
+if [ -z $_TMUX ]; then
     tmux -u attach-session -t media
 else
     tmux -u switch-client -t media

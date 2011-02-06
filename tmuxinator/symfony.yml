@@ -1,0 +1,6 @@
+# ~/.tmuxinator/symfony.yml
+
+project_name: symfony
+project_root: ~/data/workspace/symfony
+tabs:
+  - vim: vim

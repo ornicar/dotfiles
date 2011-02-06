@@ -1,3 +1,5 @@
+_TMUX=$TMUX
+TMUX=
 cd ~/data/workspace/exercise
 tmux start-server
 
@@ -24,7 +26,7 @@ tmux select-window -t exercise:1
 
 fi
 
-if [ -z $TMUX ]; then
+if [ -z $_TMUX ]; then
     tmux -u attach-session -t exercise
 else
     tmux -u switch-client -t exercise

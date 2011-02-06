@@ -1,3 +1,5 @@
+_TMUX=$TMUX
+TMUX=
 cd ~/data/workspace/dotfiles
 tmux start-server
 
@@ -36,7 +38,7 @@ tmux select-window -t system:1
 
 fi
 
-if [ -z $TMUX ]; then
+if [ -z $_TMUX ]; then
     tmux -u attach-session -t system
 else
     tmux -u switch-client -t system

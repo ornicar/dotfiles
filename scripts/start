@@ -5,13 +5,7 @@ startcommands=()
 separator="--------------------------------"
 lines=$separator
 
-lines="$lines\n1 - Raw shell"
-startcommands[1]="zsh"
-
-lines="$lines\n2 - New session"
-startcommands[2]="tmux"
-
-it=3
+it=1
 tmuxinatorpath="$HOME/.tmuxinator/"
 for scriptpath in "$tmuxinatorpath"[a-z]*.tmux; do
     name=$(basename $scriptpath | sed "s/.tmux//")

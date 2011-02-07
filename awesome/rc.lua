@@ -7,7 +7,6 @@ require("naughty")
 -- scratch console
 require("scratch")
 
--- default terminal is urxvt client with tmux in utf-8 and 256 colors
 home = os.getenv("HOME")
 terminal = "urxvtc"
 scratchterm = "urxvtc -e zsh " .. home .. "/.scripts/scratch"
@@ -34,8 +33,8 @@ layouts =
 
 -- {{{ Tags
 tags = {
-   names  = { "-" },
-   layout = { layouts[1] }
+   names  = { "1", "2" },
+   layout = { layouts[1], layouts[1] }
 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
@@ -56,6 +55,9 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
         end),
+        
+    -- toggle tags
+    awful.key({ "Mod1",            }, "h", awful.tag.viewnext),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "space", function () awful.client.swap.byidx(1)    end),
@@ -63,6 +65,7 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "c", function () awful.util.spawn('chromium-browser') end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
     awful.key({                   }, "F12", function () scratch.drop(scratchterm, "top") end)

@@ -91,7 +91,14 @@ set gdefault
 set cursorline
 
 " Reduce timeout for key codes
-set timeout timeoutlen=400 ttimeoutlen=0
+set timeout timeoutlen=800 ttimeoutlen=0
+
+map h <nop>
+map j <nop>
+map k <nop>
+map l <nop>
+"map! j <nop>
+"map! k <nop>
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *

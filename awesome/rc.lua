@@ -45,9 +45,9 @@ end
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- music control
-    awful.key({ modkey, "Shift"   }, "p", function() awful.util.spawn(home .. '/.scripts/music toggle') end),
-    awful.key({ modkey, "Shift"   }, "Left", function() awful.util.spawn(home .. '/.scripts/music down') end),
-    awful.key({ modkey, "Shift"   }, "Right", function() awful.util.spawn(home .. '/.scripts/music up') end),
+    awful.key({ modkey            }, "p", function() awful.util.spawn(home .. '/.scripts/music toggle') end),
+    awful.key({ modkey            }, "Left", function() awful.util.spawn(home .. '/.scripts/music down') end),
+    awful.key({ modkey            }, "Right", function() awful.util.spawn(home .. '/.scripts/music up') end),
 
     -- toggle clients
     awful.key({ modkey,           }, "Tab",
@@ -57,7 +57,10 @@ globalkeys = awful.util.table.join(
         end),
         
     -- toggle tags
-    awful.key({ "Mod1",            }, "h", awful.tag.viewnext),
+    awful.key({ "Mod1",           }, "l", awful.tag.viewnext),
+
+    -- toggle screens
+    awful.key({ modkey            }, "l", function () awful.screen.focus_relative( 1) end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "space", function () awful.client.swap.byidx(1)    end),

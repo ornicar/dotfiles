@@ -73,7 +73,7 @@ alias startwebserver="sudo /etc/rc.d/nginx start && sudo /etc/rc.d/php-fpm start
 alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart"
 
 # Man inside vim
-man() { vim -X -M -c "Man $*" -c "only" }
+man() { vim -X -M -c "Man $*" -c "set nomodifiable" -c "only" }
 
 # Calculator
 calc(){ awk "BEGIN{ print $* }" ;}

@@ -55,8 +55,10 @@ git-push-write()
 git-create-write()
 {
     [ -z $1 ] && 1=origin
-    git remote add "write-$1" $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
+    remote="write-$1"
+    git remote add $remote $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
     git remote -v
+    git fetch $remote
 }
 
 # Ctags

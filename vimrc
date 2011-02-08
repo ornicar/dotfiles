@@ -206,9 +206,9 @@ au BufNewFile,BufRead *.twig set filetype=htmljinja
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
 nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 
-" Remap 9 and 0 to beggining and end of the line
-map 9 ^
-map 0 $
+" Remap ( and ) to beggining and end of the line
+map ( ^
+map ) $
 
 " CTAGS
 " Explore tags for the word under the cursor

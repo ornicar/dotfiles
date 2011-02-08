@@ -43,7 +43,8 @@ alias gco='git checkout'
 alias gmt='git mergetool'
 alias gca='git commit --amend'
 alias gd='git diff'
-alias gr='git remote -v'
+alias gr='git remote'
+alias grv='git remote -v'
 
 # Push to a remote wich has no write url defined :)
 git-push-write()
@@ -59,6 +60,12 @@ git-create-write()
     git remote add $remote $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
     git remote -v
     git fetch $remote
+}
+# Set the upstream branch
+git-set-upstream()
+{
+    branch=$(current_branch)
+    git branch --set-upstream $branch $1/$branch
 }
 
 # Ctags

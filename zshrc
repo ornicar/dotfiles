@@ -43,6 +43,8 @@ alias gco='git checkout'
 alias gmt='git mergetool'
 alias gca='git commit --amend'
 alias gd='git diff'
+alias gr='git remote -v'
+
 # Push to a remote wich has no write url defined :)
 git-push-write()
 {
@@ -58,7 +60,7 @@ git-create-write()
 }
 
 # Ctags
-alias ct="rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --languages=PHP &"
+alias ct="touch tags && rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/zend/*'--languages=PHP &"
 
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"

@@ -117,21 +117,15 @@ set encoding=utf-8
 " Enable folding by indentation
 set foldmethod=indent
 set fillchars=fold:⋯
+" go to next fold and open it
 map zz zjzo
+" Disable folding by default
 set nofoldenable
 
-" Change cursor color
-if &term =~ "xterm"
-    let &t_SI = "\<Esc>]12;orange\x7"
-    let &t_EI = "\<Esc>]12;white\x7"
-endif
-
 " Change statusbar color
+hi StatusLine ctermfg=240 ctermbg=0
 au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
-
-" Redraw screen
-nmap <leader>r :redraw!<cr>
+au InsertLeave * hi StatusLine ctermfg=240 ctermbg=0
 
 " Delete buffer
 nmap <leader>d :bd<cr>
@@ -176,15 +170,10 @@ nmap <leader>z/ :%s#\<<C-r>=expand("<cword>")<CR>\>#
 " Pull word under cursor into Ack for a global search
 map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
 
-" Pull word under cursor into tag for a ctag search
-map <leader>zc :tag <C-r>=expand("<cword>")<CR>
-
 " Jump to line AND col
 nnoremap ' `
 
 " Faster viewport scrolling
-noremap <C-e> 3<C-e>
-noremap <C-y> 3<C-y>
 noremap <C-j> 3j
 noremap <C-k> 3k
 
@@ -192,7 +181,7 @@ noremap <C-k> 3k
 map <Leader>w :w<CR>
 
 " Sudo to write
-cmap w!! w !sudo tee % >/dev/null
+cmap :w w !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
@@ -213,27 +202,23 @@ vnoremap <silent> # :<C-U>
 " Detect twig filetype
 au BufNewFile,BufRead *.twig set filetype=htmljinja
 
-" lowercase to modulized
-nnoremap <leader>_ bf_x~
-
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
 nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 
+" Remap 9 and 0 to beggining and end of the line
+map 9 ^
+map 0 $
+
 " CTAGS
 " Explore tags for the word under the cursor
-map <C-l> <C-]>
+"map <C-l> <C-]>
 " Jump to next tag match
 map ]t :tnext<CR>
 " Jump to previous tag match
 map [t :tprevious<CR>
 " Open tag command
 nmap <leader>t :tag<space>
-let g:Tlist_Ctags_Cmd = 'ctags'
-" TagList
-let Tlist_Show_One_File = 1
-let Tlist_Sort_Type = "name"
-nnoremap <silent> <F7> :TlistToggle<CR>
 
 " Lusty
 map <leader>lp :LustyJugglePrevious<cr>

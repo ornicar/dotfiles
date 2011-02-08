@@ -11,7 +11,7 @@ xset fp+ /usr/share/fonts/local             # add local fonts
 xset s 300 300                              # set monitor to sleep after 5 mins
 xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
-xset r rate 170 30                          # Repeat keys way faster please
+xset r rate 250 40                          # Repeat keys way faster please
 urxvtd -q -f -o                             # start urxvt server
 tmux new-session -d -s scratch              # start tmux server with the scratch session
 $HOME/.scripts/collector_daemon &           # start cpu and lichess data collector

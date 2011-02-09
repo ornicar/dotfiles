@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/zsh
 
 # BATTERY
 
@@ -47,18 +47,20 @@ printf " %s%s%%#[default]" "$modifier" "$memory"
 # CPU BAR
 
 nbcores=4
-bars=('          ' '|         ' '||        ' '|||       ' '||||      ' '|||||     ' '||||||    ' '|||||||   ' '||||||||  ' '||||||||||')
 usage=$(cat /tmp/cpu_usage)
-(( index = (15 + usage * $nbcores) / 10 ))
-[ $index -gt 10 ] && index=10
-if [ "$usage" -lt 10 ]; then showusage=" $usage"; else showusage=$usage; fi
-if [ "$index" -gt 8 ]; then modifier="#[fg=red,bright]"
-elif [ "$index" -gt 5 ]; then modifier="#[fg=yellow,bright]"
-elif [ "$index" -gt 3 ]; then modifier="#[fg=white, bright]"
+(( usage = usage * nbcores ))
+(( index = usage / 5 ))
+[ $index -gt 19 ] && index=19
+bar="···················"
+for bari in $(seq $index); do
+    bar[$bari]="@"
+done
+if [ "$usage" -gt 80 ]; then modifier="#[fg=red,bright]"
+#elif [ "$usage" -gt 50 ]; then modifier="#[fg=yellow,bright]"
+#elif [ "$usage" -gt 25 ]; then modifier="#[fg=white, bright]"
 else modifier="#[fg=black, bright]"
 fi
-#printf " %s[%s%s%%]#[default]" "$modifier" "${bars[(($index-1))]}" "$showusage"
-printf " %s[%s]#[default]" "$modifier" "${bars[(($index-1))]}"
+printf " %s[%s]#[default]" "$modifier" "$bar"
 
 # LOAD AVERAGE
 
@@ -67,7 +69,7 @@ printf " %s%.01f#[default]" "#[fg=white]" "$load"
 
 # SEPARATOR
 
-printf " #[fg=magenta]•#[default]"
+#printf " #[fg=magenta]•#[default]"
 
 # LICHESS PLAYERS
 

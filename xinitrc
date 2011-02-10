@@ -13,7 +13,6 @@ xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 xset r rate 250 40                          # Repeat keys way faster please
 urxvtd -q -f -o                             # start urxvt server
-tmux new-session -d -s scratch              # start tmux server with the scratch session
 $HOME/.scripts/collector_daemon &           # start cpu and lichess data collector
 
 # Run window manager

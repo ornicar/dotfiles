@@ -128,6 +128,9 @@ generate-password() {
     strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
 }
 
+# Read 32GB zero's and throw them away.
+alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'
+
 # Connect using 3G usb dialer, and notify when connection is lost
 alias dial='sudo wvdial && notify-send "wvdial" "Connection lost"'
 

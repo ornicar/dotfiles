@@ -1,0 +1,7 @@
+# ~/.tmuxinator/s2b.yml
+
+project_name: s2b
+project_root: ~/data/workspace/symfony2bundles
+tabs:
+  - vim: vim
+  - git: tig

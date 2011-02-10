@@ -17,6 +17,9 @@ export DISABLE_AUTO_UPDATE="true"
 plugins=(git vi-mode)
 source $ZSH/oh-my-zsh.sh
 
+# CDPATH tells the cd command to look in this colon-separated list of directories for your destination.
+CDPATH=:..:~/data:~/data/workspace:/etc
+
 # Go back 3 times
 alias ....='cd ../../..'
 

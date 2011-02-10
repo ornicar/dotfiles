@@ -51,9 +51,9 @@ usage=$(cat /tmp/cpu_usage)
 (( usage = usage * nbcores ))
 (( index = usage / 5 ))
 [ $index -gt 19 ] && index=19
-bar="···················"
+bar="                   "
 for bari in $(seq $index); do
-    bar[$bari]="@"
+    bar[$bari]="|"
 done
 if [ "$usage" -gt 80 ]; then modifier="#[fg=red,bright]"
 #elif [ "$usage" -gt 50 ]; then modifier="#[fg=yellow,bright]"

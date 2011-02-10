@@ -123,6 +123,11 @@ alias dd="surfraw duckduckgo"
 alias search-urban="surfraw urban"
 alias search-acronym="surfraw acronym"
 
+# Get a 7 chars password: generate-password 7 
+generate-password() {
+    strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
+}
+
 # Connect using 3G usb dialer, and notify when connection is lost
 alias dial='sudo wvdial && notify-send "wvdial" "Connection lost"'
 

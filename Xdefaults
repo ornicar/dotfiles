@@ -1,5 +1,4 @@
 ! Cursor theme
-!Xcursor.theme: Obsidian
 Xcursor.theme: CG
 
 ! Colors
@@ -10,7 +9,6 @@ Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintfull
-
 ! }}}
 
 ! Urxvt {{{
@@ -40,5 +38,4 @@ URxvt*perl-ext-common: default,selection,url-select
 URxvt*urlLauncher:     chromium-browser
 URxvt.keysym.M-u:      perl:url-select:select_next
 URxvt.underlineURLs:   true
-
 ! }}}

@@ -8,10 +8,10 @@ xmodmap $HOME/.Xmodmap &&
 
 xrdb $HOME/.Xdefaults                       # load Xdefaults
 xset fp+ /usr/share/fonts/local             # add local fonts
-xset s 120 120                              # set monitor to sleep after 5 mins
+xset s 120 120                              # set monitor to sleep
 xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
-xset r rate 250 40                          # Repeat keys way faster please
+xset r rate 200 50                          # Repeat keys way faster please
 urxvtd -q -f -o                             # start urxvt server
 $HOME/.scripts/collector_daemon &           # start cpu and lichess data collector
 

@@ -165,7 +165,7 @@ nmap <Leader>h <Esc>:vert help<space>
 map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
-nmap <leader>z/ :%s#\<<C-r>=expand("<cword>")<CR>\>#
+nmap <leader>zs :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " Pull word under cursor into Ack for a global search
 map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"

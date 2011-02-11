@@ -1,28 +1,41 @@
 #!/bin/zsh
 
+clear
 startcommands=()
+keys=('a' 's' 'd' 'f' 'g' 'h' 'j' 'k' 'l' ';')
 
-separator="--------------------------------"
-lines=$separator
-
+lines=""
 it=1
 tmuxinatorpath="$HOME/.tmuxinator/"
 for scriptpath in "$tmuxinatorpath"[a-z]*.tmux; do
     name=$(basename $scriptpath | sed "s/.tmux//")
-    lines="$lines\n$it - ${(C)name}"
+    key=$keys[$it];
+    lines="$lines$key:${(C)name} "
     startcommands[$it]="$scriptpath"
     it=$(expr $it + 1)
 done
 
-lines="$lines\n$separator"
-echo -e "$lines"
+echo -e "$lines\n"
 
 read choice
-startcommand=$startcommands[$choice]
+
+if [ -z $choice ]; then
+    exit 1
+fi
+
+it=1
+startcommand=""
+for candidate in $startcommands; do
+    if [ $keys[$it] = $choice ]; then
+        startcommand=$startcommands[$it]
+    fi
+    it=$(expr $it + 1)
+done
 
 clear
+
 if [ -f $startcommand ] && [ ! -x $startcommand ]; then
     source $startcommand
 else
-    $startcommand
+    exit 1
 fi

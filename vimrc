@@ -17,7 +17,7 @@ set t_Co=256
 colorscheme aldmeris255
 
 " Sets how many lines of history VIM has to remember
-set history=1000
+set history=2000
 
 set undolevels=1000             " use many levels of undo
 set noundofile                  " Don't keep a persistent undofile
@@ -169,6 +169,9 @@ nmap <leader>zs :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " Pull word under cursor into Ack for a global search
 map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
+
+" Start a substitute
+map <leader>: :%s/
 
 " Jump to line AND col
 nnoremap ' `

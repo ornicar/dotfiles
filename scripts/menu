@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+tmuxinatorpath="$HOME/.tmuxinator/"
+
+ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
+    media "source $tmuxinatorpath/media.tmux" \
+    system "source $tmuxinatorpath/system.tmux" \
+    exercise "source $tmuxinatorpath/exercise.tmux" \
+    lichess "source $tmuxinatorpath/lichess.tmux"

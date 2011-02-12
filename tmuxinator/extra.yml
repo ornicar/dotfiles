@@ -1,0 +1,6 @@
+# ~/.tmuxinator/extra.yml
+
+project_name: extra
+project_root: ~/data/workspace
+tabs:
+  - workspace: 

@@ -265,3 +265,12 @@ let g:gist_open_browser_after_post = 1
 if filereadable("~/.vimrc.local")
     source ~/.vimrc.local
 endif
+
+function! Ranger()
+    silent !INVIM=1 ranger
+    let file = system('cat /tmp/ranger-selected-file')
+    exec 'edit '.file
+    redraw!
+endfunction
+
+nmap <leader>r :call Ranger()<cr>

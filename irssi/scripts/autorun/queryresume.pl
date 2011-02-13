@@ -1,1 +1,0 @@
-../queryresume.pl

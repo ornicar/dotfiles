@@ -31,7 +31,6 @@ link moc ~/.moc
 link rtorrent.rc ~/.rtorrent.rc
 link xmodmaprc ~/.Xmodmap
 link xinitrc ~/.xinitrc
-link awesome ~/.config/awesome
 link Xdefaults ~/.Xdefaults
 link xcolors ~/.xcolors
 link ackrc ~/.ackrc
@@ -43,3 +42,4 @@ link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator
 link bash_profile ~/.bash_profile
+link ratpoisonrc ~/.ratpoisonrc

@@ -5,7 +5,7 @@ escape C-z
 startup_message off
 
 # Simulate middle click with keyboard
-bind v ratclick 2
+definekey top M-p ratclick 2
 
 # Use urxvt client instead of xterm
 unbind c

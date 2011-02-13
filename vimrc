@@ -34,7 +34,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=*.pyc,*/cache/**,*/logs/**,*/zend/** " Ignore certain files
+set wildignore=*.pyc,*.pyo,*/cache/**,*/logs/**,*/zend/** " Ignore certain files
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -171,7 +171,7 @@ nmap <leader>zs :%s#\<<C-r>=expand("<cword>")<CR>\>#
 map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
 
 " Start a substitute
-map <leader>: :%s/
+map <leader>s :%s/\v
 
 " Jump to line AND col
 nnoremap ' `

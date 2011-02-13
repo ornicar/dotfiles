@@ -16,33 +16,24 @@ unbind b
 bind b exec chromium-browser
 
 # Next window
-definekey top M-h next
+definekey top M-l next
 
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)
 # ------------------------------------------------------------------
 unbind a # time
-unbind C-a
 unbind b # bannish
-unbind C-b
 unbind A # set window title
-unbind C-A
 unbind i # info
-unbind C-i
 unbind l # redisplay
-unbind C-l
 unbind n # next
-unbind C-n
 unbind p # prev
-unbind C-p
 unbind Return # next
-unbind C-Return
-unbind space
-unbind C-space # next
+unbind space # next
+unbind apostrophe # select
 unbind v # version
-unbind C-v
 unbind V # license
-unbind C-V
+unbind w # windows
 unbind C-underscore # undo (use u instead)
 unbind 0 # select 0
 unbind 1
@@ -54,4 +45,4 @@ unbind 6
 unbind 7
 unbind 8
 unbind 9
-unbind -
+unbind minus

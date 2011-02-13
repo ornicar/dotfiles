@@ -26,8 +26,6 @@ link mutt ~/.mutt
 link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc
-link irssi ~/.irssi
-link moc ~/.moc
 link rtorrent.rc ~/.rtorrent.rc
 link xmodmaprc ~/.Xmodmap
 link xinitrc ~/.xinitrc
@@ -41,5 +39,4 @@ link surfraw ~/.config/surfraw/conf
 link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator
-link bash_profile ~/.bash_profile
 link ratpoisonrc ~/.ratpoisonrc

@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-notify-send "$(date)" "$(mpc)"

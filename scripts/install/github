@@ -1,0 +1,2 @@
+gem source --add http://gemcutter.org
+sudo gem install github

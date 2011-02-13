@@ -17,7 +17,7 @@ unclutter -root -idle 1 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
 $HOME/.scripts/collector_daemon &           # start cpu and lichess data collector
 
-(sleep 1 && urxvtc) &
+(sleep 1 && urxvtc -e $HOME/.tmux/menu) &   # Give ratpoison one second to start, then open urxvt
 
 # Run window manager
 exec ratpoison

@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# This scripts help removing Git branches.
+# Run it from a git repo dir. It will open the Git branches list
+# in your favorite editor. Delete some branches from the list.
+# Save and close the file. The script applies the changes to the repo.
+
+import sys
+import subprocess
+import re
+import os
+
+branch_command = '/usr/bin/git branch'
+editor_command = os.getenv('EDITOR')
+
+# run a command, get no output
+def run(command, shell=True):
+    subprocess.call(command, shell=shell)
+
+# run a command and get its output
+def output(command, args=None):
+    if args is not None:
+        command = [command, args]
+    return subprocess.Popen(command, stdout=subprocess.PIPE).communicate()[0].decode().rstrip()
+
+def branches_to_list(branches):
+    # remove current branch indicator
+    branches = re.sub('\* ', '', branches, flags=re.M)
+    branch_list = branches.split()
+    return branch_list
+
+# create a temp file
+tmpfile=output('mktemp')
+
+# write git branches to the temp file
+run('%s > %s' % (branch_command, tmpfile))
+
+# get original branches
+with open(tmpfile, 'r') as tmp:
+    original_branches = branches_to_list(tmp.read())
+
+# edit the temp file with the editor command
+run('%s %s' % (editor_command, tmpfile))
+
+# get new branches
+with open(tmpfile, 'r') as tmp:
+    new_branches = branches_to_list(tmp.read())
+
+diff = set(original_branches).difference(set(new_branches))
+
+for branch in diff:
+    run('git branch -d %s' % branch)
+
+run('git branch')

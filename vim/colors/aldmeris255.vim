@@ -5,35 +5,19 @@ if exists("syntax_on")
 endif
 let g:colors_name = "aldmeris255"
 hi Normal ctermfg=7 ctermbg=233
-hi link htmlTag Normal
-hi link htmlEndTag Normal
-hi link htmlTagName Normal
-hi link htmlH1 Normal
-hi link htmlH2 Normal
-hi link htmlH3 Normal
-hi link htmlH4 Normal
-hi link htmlH5 Normal
-hi link htmlH6 Normal
-hi link phpParent Normal
-hi SpecialKey cterm=none ctermfg=51 ctermbg=none
-hi NonText cterm=bold ctermfg=21 ctermbg=none
 hi Directory cterm=none ctermfg=51 ctermbg=none
 hi ErrorMsg cterm=none ctermfg=231 ctermbg=196
 hi IncSearch cterm=reverse ctermfg=none ctermbg=none
-hi Search cterm=none ctermfg=16 ctermbg=226
 hi MoreMsg cterm=bold ctermfg=29 ctermbg=none
 hi ModeMsg cterm=bold ctermfg=none ctermbg=none
-hi LineNr cterm=none ctermfg=226 ctermbg=none
 hi Question cterm=bold ctermfg=46 ctermbg=none
 hi StatusLine cterm=bold,reverse ctermfg=none ctermbg=none
 hi StatusLineNC cterm=reverse ctermfg=none ctermbg=none
 hi VertSplit cterm=reverse ctermfg=none ctermbg=none
 hi Title cterm=bold ctermfg=201 ctermbg=none
-hi Visual cterm=none ctermfg=none ctermbg=248
 hi VisualNOS cterm=bold,underline ctermfg=none ctermbg=none
 hi WarningMsg cterm=none ctermfg=196 ctermbg=none
 hi WildMenu cterm=none ctermfg=16 ctermbg=226
-hi Folded cterm=none ctermfg=51 ctermbg=248
 hi FoldColumn cterm=none ctermfg=51 ctermbg=250
 hi DiffAdd cterm=none ctermfg=none ctermbg=18
 hi DiffChange cterm=none ctermfg=none ctermbg=90
@@ -44,23 +28,15 @@ hi SpellBad cterm=undercurl ctermfg=none ctermbg=196
 hi SpellCap cterm=undercurl ctermfg=none ctermbg=21
 hi SpellRare cterm=undercurl ctermfg=none ctermbg=201
 hi SpellLocal cterm=undercurl ctermfg=none ctermbg=51
-hi Pmenu cterm=none ctermfg=none ctermbg=201
-hi PmenuSel cterm=none ctermfg=none ctermbg=248
-hi PmenuSbar cterm=none ctermfg=none ctermbg=250
-hi PmenuThumb cterm=reverse ctermfg=none ctermbg=none
 hi TabLine cterm=underline ctermfg=none ctermbg=248
 hi TabLineSel cterm=bold ctermfg=none ctermbg=none
 hi TabLineFill cterm=reverse ctermfg=none ctermbg=none
-hi CursorColumn cterm=none ctermfg=none ctermbg=241
-hi CursorLine cterm=none ctermfg=none ctermbg=241
-hi Cursor cterm=reverse ctermfg=none ctermbg=none
 hi lCursor cterm=reverse ctermfg=none ctermbg=none
-hi MatchParen cterm=none ctermfg=none ctermbg=30
 hi Cursor ctermfg=16 ctermbg=7
-hi CursorLine ctermfg=NONE ctermbg=16
+hi CursorLine cterm=none ctermfg=NONE ctermbg=16
 hi CursorColumn ctermfg=NONE ctermbg=16
 hi MatchParen ctermfg=231 ctermbg=13
-hi Visual ctermfg=15 ctermbg=240
+hi Visual cterm=reverse ctermfg=none ctermbg=none
 hi LineNr ctermfg=8 ctermbg=16
 hi Folded ctermfg=251 ctermbg=NONE
 hi NonText ctermfg=8 ctermbg=NONE
@@ -78,13 +54,14 @@ hi Function ctermfg=208 ctermbg=NONE
 hi Class ctermfg=208 ctermbg=NONE
 hi Statement cterm=bold ctermfg=15 ctermbg=NONE
 hi PreProc ctermfg=13 ctermbg=NONE
-hi Include ctermfg=13 ctermbg=NONE
+hi Include ctermfg=208 ctermbg=NONE
 hi Type cterm=bold ctermfg=10 ctermbg=NONE
 hi Special ctermfg=215 ctermbg=NONE
 hi Error cterm=bold ctermfg=15 ctermbg=1
 hi Todo cterm=bold ctermfg=102 ctermbg=11
-hi clear Search
-hi Search ctermfg=NONE ctermbg=8
+hi Search cterm=reverse ctermbg=none ctermfg=none
+hi IncSearch cterm=reverse ctermbg=none ctermfg=none
+
 hi link xmlTag Identifier
 hi link xmlEndTag xmlTag
 hi link xmlTagName xmlTag
@@ -109,3 +86,13 @@ hi link phpStringSingle String
 hi link phpInclude Include
 hi link sqlKeyword String
 hi link sqlStatement String
+hi link htmlTag Normal
+hi link htmlEndTag Normal
+hi link htmlTagName Normal
+hi link htmlH1 Normal
+hi link htmlH2 Normal
+hi link htmlH3 Normal
+hi link htmlH4 Normal
+hi link htmlH5 Normal
+hi link htmlH6 Normal
+hi link phpParent Normal

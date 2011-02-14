@@ -1,5 +1,6 @@
 alias start_exercise='$SHELL /home/thib/.tmuxinator/exercise.tmux'
 alias start_vulug='$SHELL /home/thib/.tmuxinator/vulug.tmux'
+alias start_blog='$SHELL /home/thib/.tmuxinator/blog.tmux'
 alias start_symfony='$SHELL /home/thib/.tmuxinator/symfony.tmux'
 alias start_media='$SHELL /home/thib/.tmuxinator/media.tmux'
 alias start_extra='$SHELL /home/thib/.tmuxinator/extra.tmux'

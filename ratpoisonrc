@@ -15,6 +15,9 @@ bind b exec chromium-browser
 # Next window
 definekey top M-l next
 
+# Next screen
+definekey top M-n nextscreen
+
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)
 # ------------------------------------------------------------------
@@ -26,6 +29,8 @@ unbind l # redisplay
 unbind m # lastmessage
 unbind n # next
 unbind p # prev
+unbind N # nextscreen
+unbind P prevscreen
 unbind Return # next
 unbind space # next
 unbind apostrophe # select

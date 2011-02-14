@@ -1,55 +1,43 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This scripts help removing Git branches.
+# This scripts helps removing Git branches.
 # Run it from a git repo dir. It will open the Git branches list
 # in your favorite editor. Delete some branches from the list.
 # Save and close the file. The script applies the changes to the repo.
 
-import sys
-import subprocess
+from subprocess import call, Popen, PIPE
+from os import getenv
 import re
-import os
 
-branch_command = '/usr/bin/git branch'
-editor_command = os.getenv('EDITOR')
+# configure commands used in this script
+editor_command = getenv('EDITOR')
+branch_command = 'git branch'
+mktemp_command = 'mktemp'
 
-# run a command, get no output
-def run(command, shell=True):
-    subprocess.call(command, shell=shell)
-
-# run a command and get its output
-def output(command, args=None):
-    if args is not None:
-        command = [command, args]
-    return subprocess.Popen(command, stdout=subprocess.PIPE).communicate()[0].decode().rstrip()
-
+# takes 'git branch' output and returns a set of branches
 def branches_to_list(branches):
-    # remove current branch indicator
-    branches = re.sub('\* ', '', branches, flags=re.M)
-    branch_list = branches.split()
-    return branch_list
+    return set(re.sub('\* ', '', branches, flags=re.M).split())
 
 # create a temp file
-tmpfile=output('mktemp')
+tmp_file = Popen(mktemp_command, stdout=PIPE).communicate()[0].decode().rstrip()
 
 # write git branches to the temp file
-run('%s > %s' % (branch_command, tmpfile))
+call('%s > %s' % (branch_command, tmp_file), shell=True)
 
 # get original branches
-with open(tmpfile, 'r') as tmp:
-    original_branches = branches_to_list(tmp.read())
+original_branches = branches_to_list(open(tmp_file, 'r').read())
 
 # edit the temp file with the editor command
-run('%s %s' % (editor_command, tmpfile))
+call('%s %s' % (editor_command, tmp_file), shell=True)
 
 # get new branches
-with open(tmpfile, 'r') as tmp:
-    new_branches = branches_to_list(tmp.read())
+new_branches = branches_to_list(open(tmp_file, 'r').read())
 
-diff = set(original_branches).difference(set(new_branches))
+# adding and renaming branches is not supported
+if(new_branches.difference(original_branches)):
+    exit('Aborting! Do not add or rename branches, just remove them.')
 
-for branch in diff:
-    run('git branch -D %s' % branch)
-
-run('git branch')
+# remove branches with Git
+for branch in original_branches.difference(new_branches):
+    call('git branch -D %s' % branch, shell=True)

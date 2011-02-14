@@ -50,6 +50,6 @@ with open(tmpfile, 'r') as tmp:
 diff = set(original_branches).difference(set(new_branches))
 
 for branch in diff:
-    run('git branch -d %s' % branch)
+    run('git branch -D %s' % branch)
 
 run('git branch')

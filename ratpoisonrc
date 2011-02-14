@@ -4,9 +4,6 @@ escape C-z
 # Disable startup message
 startup_message off
 
-# Simulate middle click with keyboard
-definekey top M-p ratclick 2
-
 # Use urxvt client instead of xterm
 unbind c
 bind c exec urxvtc
@@ -26,6 +23,7 @@ unbind b # bannish
 unbind A # set window title
 unbind i # info
 unbind l # redisplay
+unbind m # lastmessage
 unbind n # next
 unbind p # prev
 unbind Return # next

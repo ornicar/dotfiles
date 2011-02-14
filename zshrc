@@ -14,7 +14,7 @@ export ZSH_THEME="ornicar"
 export DISABLE_AUTO_UPDATE="true"
 
 # Run oh-my-zsh
-plugins=(git vi-mode)
+plugins=(vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # CDPATH tells the cd command to look in this colon-separated list of directories for your destination.
@@ -40,24 +40,37 @@ alias v="vim"
 
 # Git
 alias t='tig status'
-alias s='git status'
+alias g='git'
+alias gs='git status'
+alias ga='git add -A'
+alias gl='git pull'
 alias glr='git pull --rebase'
+alias gp='git push'
+alias gc='git commit -v'
+alias gca='git commit --amend'
+alias gac='git commit -av'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gcp='git cherry-pick'
+alias glg='git log --stat --max-count=20'
 alias gco='git checkout'
 alias gmt='git mergetool'
-alias gca='git commit --amend'
 alias gd='git diff'
 alias gr='git remote'
 alias grv='git remote -v'
 
+# Get the current branch name if any
+git-current-branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
 # Push to a remote wich has no write url defined :)
-git-push-write()
-{
+git-push-write() {
     [ -z $1 ] && 1=origin
     git push $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
 }
 # Create a write remote from a readonly remote
-git-create-write()
-{
+git-create-write() {
     [ -z $1 ] && 1=origin
     remote="write-$1"
     git remote add $remote $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
@@ -65,9 +78,9 @@ git-create-write()
     git fetch $remote
 }
 # Set the upstream branch
-git-set-upstream()
-{
-    branch=$(current_branch)
+git-set-upstream() {
+    [ -z $1 ] && 1=origin
+    branch=$(git-current-branch)
     git branch --set-upstream $branch $1/$branch
 }
 

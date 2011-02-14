@@ -54,6 +54,7 @@ alias gba='git branch -a'
 alias gcp='git cherry-pick'
 alias glg='git log --stat --max-count=20'
 alias gco='git checkout'
+alias gm='git merge'
 alias gmt='git mergetool'
 alias gd='git diff'
 alias gr='git remote'
@@ -85,7 +86,7 @@ git-set-upstream() {
 }
 
 # Ctags
-alias ct="touch tags && rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/zend/*'--languages=PHP &"
+alias ct="touch tags && rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/swiftmailer/*' --exclude='*/zend/*'--languages=PHP &"
 
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"

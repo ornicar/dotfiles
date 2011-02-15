@@ -1,11 +1,13 @@
 " http://www.pixelbeat.org/docs/terminal_colours/
+
 hi clear
 set background=dark
 if exists("syntax_on")
   syntax reset
 endif
+
 let g:colors_name = "aldmeris255"
-hi Normal ctermfg=7 ctermbg=233
+hi Normal ctermfg=254 ctermbg=none
 hi Directory cterm=none ctermfg=51 ctermbg=none
 hi ErrorMsg cterm=none ctermfg=231 ctermbg=196
 hi IncSearch cterm=reverse ctermfg=none ctermbg=none
@@ -47,38 +49,27 @@ hi PmenuSbar ctermfg=238 ctermbg=238
 hi PmenuThumb ctermfg=102 ctermbg=102
 hi Comment ctermfg=102 ctermbg=NONE
 hi Constant ctermfg=11 ctermbg=NONE
-hi String ctermfg=220 ctermbg=NONE
+hi String ctermfg=178 ctermbg=NONE
 hi Boolean ctermfg=208 ctermbg=NONE
 hi Number ctermfg=208 ctermbg=NONE
 hi Float ctermfg=208 ctermbg=NONE
 hi Identifier ctermfg=12 ctermbg=NONE
 hi Function ctermfg=208 ctermbg=NONE
 hi Class ctermfg=208 ctermbg=NONE
-hi Statement cterm=bold ctermfg=15 ctermbg=NONE
+hi Statement cterm=bold ctermfg=254 ctermbg=NONE
 hi PreProc ctermfg=13 ctermbg=NONE
 hi Include ctermfg=208 ctermbg=NONE
 hi Type cterm=none ctermfg=10 ctermbg=NONE
-hi Special ctermfg=215 ctermbg=NONE
+hi Special cterm=none ctermfg=208 ctermbg=NONE
 hi Error cterm=bold ctermfg=15 ctermbg=1
 hi Todo cterm=bold ctermfg=15 ctermbg=58
 hi Search ctermbg=238 ctermfg=none
 hi IncSearch cterm=reverse ctermbg=none ctermfg=none
 
-hi phpParent cterm=none ctermbg=none ctermfg=246
+hi link phpParent Comment
 hi phpMemberSelector cterm=none ctermbg=none ctermfg=246
 
-hi link xmlTag Identifier
-hi link xmlEndTag xmlTag
-hi link xmlTagName xmlTag
-hi link xmlString String
-hi link htmlString xmlString
-hi link htmlSpecialChar PreProc
-hi link jinjaTagDelim Statement
-hi link jinjaStatement Statement
-hi link jinjaVarDelim jinjaTagDelim
-hi link jinjaFilter Special
-hi link jinjaString xmlString
-hi link jinjaVarDelim Statement
+hi link phpMethodsVar Normal
 hi link phpVarSelector Identifier
 hi link phpIdentifier Identifier
 hi link phpFunctions Function
@@ -88,8 +79,21 @@ hi link phpBoolean Boolean
 hi link phpNumber Number
 hi link phpStringSingle String
 hi link phpInclude Include
-hi link sqlKeyword String
-hi link sqlStatement String
+hi link phpStatement Statement
+hi link phpOperator Comment
+
+hi link xmlTag Identifier
+hi link xmlEndTag Identifier
+hi link xmlTagName Identifier
+hi link xmlString String
+hi link jinjaTagDelim Statement
+hi link jinjaStatement Statement
+hi link jinjaVarDelim jinjaTagDelim
+hi link jinjaFilter Special
+hi link jinjaString xmlString
+hi link jinjaVarDelim Statement
+hi link htmlString xmlString
+hi link htmlSpecialChar PreProc
 hi link htmlTag Normal
 hi link htmlEndTag Normal
 hi link htmlTagName Normal
@@ -99,4 +103,5 @@ hi link htmlH3 Normal
 hi link htmlH4 Normal
 hi link htmlH5 Normal
 hi link htmlH6 Normal
-hi link phpParent Normal
+hi link sqlKeyword String
+hi link sqlStatement String

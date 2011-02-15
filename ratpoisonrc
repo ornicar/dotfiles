@@ -13,15 +13,15 @@ unbind b
 bind b exec chromium-browser
 
 # Next window
-definekey top M-l next
+definekey top M-space next
 
 # Next screen
-definekey top M-n nextscreen
+definekey top M-enter nextscreen
 
 # Music control
 definekey top M-p exec ~/.scripts/music toggle
-definekey top M-right exec ~/.scripts/music up
-definekey top M-left exec ~/.scripts/music down
+definekey top M-equal exec ~/.scripts/music up
+definekey top M-minus exec ~/.scripts/music down
 
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)

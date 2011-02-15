@@ -123,9 +123,10 @@ map zz zjzo
 set nofoldenable
 
 " Change statusbar color
-hi StatusLine ctermfg=240 ctermbg=0
-au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=240 ctermbg=0
+au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214
+au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
+au InsertLeave * hi StatusLine ctermfg=16 ctermbg=240
+au InsertLeave * hi LineNr     ctermfg=8 ctermbg=16
 
 " Delete buffer
 nmap <leader>d :bd<cr>
@@ -133,8 +134,8 @@ nmap <leader>d :bd<cr>
 " Delete buffer and file
 nmap <leader>D :!rm %<cr>:bd!<cr>
 
-" Copy current file path to register "+
-nmap <leader>cp :let @+=@%<cr>
+" Copy current file path to register "*
+nmap <leader>cp :let @*=@%<cr>
 
 " In system register "+
 nmap + "+
@@ -278,6 +279,10 @@ function! Ranger()
 endfunction
 
 nmap <leader>r :call Ranger()<cr>
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Source local settings
 if filereadable("~/.vimrc.local")

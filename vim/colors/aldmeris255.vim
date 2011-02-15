@@ -1,3 +1,4 @@
+" http://www.pixelbeat.org/docs/terminal_colours/
 hi clear
 set background=dark
 if exists("syntax_on")
@@ -11,11 +12,10 @@ hi IncSearch cterm=reverse ctermfg=none ctermbg=none
 hi MoreMsg cterm=bold ctermfg=29 ctermbg=none
 hi ModeMsg cterm=bold ctermfg=none ctermbg=none
 hi Question cterm=bold ctermfg=46 ctermbg=none
-hi StatusLine cterm=bold,reverse ctermfg=none ctermbg=none
-hi StatusLineNC cterm=reverse ctermfg=none ctermbg=none
-hi VertSplit cterm=reverse ctermfg=none ctermbg=none
+hi StatusLine cterm=bold ctermfg=16 ctermbg=240
+hi StatusLineNC cterm=none ctermfg=16 ctermbg=238
+hi VertSplit cterm=none ctermfg=238 ctermbg=238
 hi Title cterm=bold ctermfg=201 ctermbg=none
-hi VisualNOS cterm=bold,underline ctermfg=none ctermbg=none
 hi WarningMsg cterm=none ctermfg=196 ctermbg=none
 hi WildMenu cterm=none ctermfg=16 ctermbg=226
 hi FoldColumn cterm=none ctermfg=51 ctermbg=250
@@ -34,8 +34,8 @@ hi TabLineFill cterm=reverse ctermfg=none ctermbg=none
 hi lCursor cterm=reverse ctermfg=none ctermbg=none
 hi Cursor ctermfg=16 ctermbg=7
 hi CursorLine cterm=none ctermfg=NONE ctermbg=16
-hi CursorColumn ctermfg=NONE ctermbg=16
-hi MatchParen ctermfg=231 ctermbg=13
+hi CursorColumn ctermfg=NONE ctermbg=none
+hi MatchParen cterm=bold ctermfg=208 ctermbg=none
 hi Visual cterm=reverse ctermfg=none ctermbg=none
 hi LineNr ctermfg=8 ctermbg=16
 hi Folded ctermfg=251 ctermbg=NONE
@@ -48,19 +48,24 @@ hi PmenuThumb ctermfg=102 ctermbg=102
 hi Comment ctermfg=102 ctermbg=NONE
 hi Constant ctermfg=11 ctermbg=NONE
 hi String ctermfg=220 ctermbg=NONE
-hi Boolean ctermfg=166 ctermbg=NONE
+hi Boolean ctermfg=208 ctermbg=NONE
+hi Number ctermfg=208 ctermbg=NONE
+hi Float ctermfg=208 ctermbg=NONE
 hi Identifier ctermfg=12 ctermbg=NONE
 hi Function ctermfg=208 ctermbg=NONE
 hi Class ctermfg=208 ctermbg=NONE
 hi Statement cterm=bold ctermfg=15 ctermbg=NONE
 hi PreProc ctermfg=13 ctermbg=NONE
 hi Include ctermfg=208 ctermbg=NONE
-hi Type cterm=bold ctermfg=10 ctermbg=NONE
+hi Type cterm=none ctermfg=10 ctermbg=NONE
 hi Special ctermfg=215 ctermbg=NONE
 hi Error cterm=bold ctermfg=15 ctermbg=1
-hi Todo cterm=bold ctermfg=102 ctermbg=11
-hi Search cterm=reverse ctermbg=none ctermfg=none
+hi Todo cterm=bold ctermfg=15 ctermbg=58
+hi Search ctermbg=238 ctermfg=none
 hi IncSearch cterm=reverse ctermbg=none ctermfg=none
+
+hi phpParent cterm=none ctermbg=none ctermfg=246
+hi phpMemberSelector cterm=none ctermbg=none ctermfg=246
 
 hi link xmlTag Identifier
 hi link xmlEndTag xmlTag
@@ -79,7 +84,6 @@ hi link phpIdentifier Identifier
 hi link phpFunctions Function
 hi link phpClasses Class
 hi link phpSpecial Special
-hi link phpMemberSelector Keyword
 hi link phpBoolean Boolean
 hi link phpNumber Number
 hi link phpStringSingle String

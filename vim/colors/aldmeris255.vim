@@ -63,7 +63,7 @@ hi Type cterm=none ctermfg=10 ctermbg=NONE
 hi Special cterm=none ctermfg=208 ctermbg=NONE
 hi Error cterm=bold ctermfg=15 ctermbg=1
 hi Todo cterm=bold ctermfg=15 ctermbg=58
-hi Search ctermbg=238 ctermfg=none
+hi Search ctermbg=236 ctermfg=none
 hi IncSearch cterm=reverse ctermbg=none ctermfg=none
 
 hi link phpParent Comment

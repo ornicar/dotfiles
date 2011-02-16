@@ -43,3 +43,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "vim/bundle/phpdebugger"]
+	path = vim/bundle/phpdebugger
+	url = git://github.com/taxilian/VimDebugger

@@ -75,9 +75,6 @@ set shiftwidth=4
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
 
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
-
 " Use perl regex style
 nnoremap / /\v
 vnoremap / /\v
@@ -190,6 +187,23 @@ cmap :w w !sudo tee % >/dev/null
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
+" Yankring
+let g:yankring_enabled = 1
+let g:yankring_min_element_length = 2
+let g:yankring_max_display = 80
+let g:yankring_persist = 1
+let g:yankring_share_between_instances = 1
+let g:yankring_dot_repeat_yank = 0
+let g:yankring_window_use_horiz = 0  " Use vertical split
+let g:yankring_window_width = 50
+let g:yankring_window_use_right = 1
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+function! YRRunAfterMaps()
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
+" Show yankring window
+nnoremap <silent> <F11> :YRShow<CR>
+
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -275,9 +289,9 @@ endfunction
 nmap <leader>r :call Ranger()<cr>
 
 " Show the group name of the word under the cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+"\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+"\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Source local settings
 if filereadable("~/.vimrc.local")

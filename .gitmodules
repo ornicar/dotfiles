@@ -46,3 +46,6 @@
 [submodule "vim/bundle/phpdebugger"]
 	path = vim/bundle/phpdebugger
 	url = git://github.com/taxilian/VimDebugger
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = git://github.com/chrismetcalf/vim-yankring.git

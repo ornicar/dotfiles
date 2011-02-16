@@ -57,8 +57,7 @@ alias gco='git checkout'
 alias gm='git merge'
 alias gmt='git mergetool'
 alias gd='git diff'
-alias gr='git remote'
-alias grv='git remote -v'
+alias gr='git remote -v'
 
 # Get the current branch name if any
 git-current-branch() {

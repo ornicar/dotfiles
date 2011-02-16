@@ -197,12 +197,16 @@ let g:yankring_dot_repeat_yank = 0
 let g:yankring_window_use_horiz = 0  " Use vertical split
 let g:yankring_window_width = 50
 let g:yankring_window_use_right = 1
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-function! YRRunAfterMaps()
-    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-endfunction
+
 " Show yankring window
 nnoremap <silent> <F11> :YRShow<CR>
+
+" Yank mappings should be defined here
+function! YRRunAfterMaps()
+    " Yank from the cursor to the end of the line, to be consistent with C and D.
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+    nnoremap 1p  :YRPush '*'<cr>p
+endfunction
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

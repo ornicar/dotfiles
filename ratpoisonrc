@@ -1,33 +1,12 @@
 # Change prefix
 escape C-z
 
-# Disable startup message
-startup_message off
-
-# Use urxvt client instead of xterm
-unbind c
-bind c exec urxvtc
-
-# Remap bannish to browser
-unbind b
-bind b exec chromium-browser
-
-# Next window
-definekey top M-space next
-
-# Next screen
-definekey top M-enter nextscreen
-
-# Music control
-definekey top M-p exec ~/.scripts/music toggle
-definekey top M-equal exec ~/.scripts/music up
-definekey top M-minus exec ~/.scripts/music down
-
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)
 # ------------------------------------------------------------------
 unbind a # time
 unbind b # bannish
+unbind c # console
 unbind A # set window title
 unbind i # info
 unbind l # redisplay
@@ -54,3 +33,24 @@ unbind 7
 unbind 8
 unbind 9
 unbind minus
+
+# Disable startup message
+startup_message off
+
+# Use urxvt client instead of xterm
+bind c exec urxvtc
+
+# Remap bannish to browser
+bind b exec chromium-browser
+
+# Next window
+definekey top M-space next
+
+# Next screen
+definekey top M-Return nextscreen
+
+# Music control
+definekey top M-p exec ~/.scripts/music toggle
+definekey top M-equal exec ~/.scripts/music up
+definekey top M-minus exec ~/.scripts/music down
+

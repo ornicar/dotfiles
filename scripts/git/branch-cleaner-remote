@@ -47,5 +47,5 @@ if(new_branches.difference(original_branches)):
 for branch in original_branches.difference(new_branches):
     pushable = re.sub('/', ' :', branch)
     call('git branch -rd %s' % branch, shell=True)
-    call('git push %s 2>/dev/null' % pushable, shell=True)
+    call('git push %s' % pushable, shell=True)
 

@@ -53,4 +53,5 @@ definekey top M-Return nextscreen
 definekey top M-p exec ~/.scripts/music toggle
 definekey top M-equal exec ~/.scripts/music up
 definekey top M-minus exec ~/.scripts/music down
+definekey top M-m exec urxvtc -e ~/.scripts/music ui
 

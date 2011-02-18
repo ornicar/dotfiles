@@ -108,12 +108,6 @@ calc(){ awk "BEGIN{ print $* }" ;}
 # Increase urxvt font size
 alias bigger="printf '\33]50;%s\007' \"xft:Inconsolata:size=16\""
 
-# Launch music player daemon and client
-music() {
-    [ ! -f ~/.mpd/mpd.pid ] && mpd ~/.mpd/mpd.conf
-    ncmpcpp
-}
-
 # radios are in ~/data/radio
 alias radio="mplayer -playlist"
 

@@ -182,31 +182,34 @@ noremap <C-k> 3k
 map <Leader>w :w<CR>
 
 " Sudo to write
-cmap :w w !sudo tee % >/dev/null
+cmap :w silent write !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
 " Yankring
-let g:yankring_enabled = 1
-let g:yankring_min_element_length = 2
-let g:yankring_max_display = 80
-let g:yankring_persist = 1
-let g:yankring_share_between_instances = 1
-let g:yankring_dot_repeat_yank = 0
-let g:yankring_window_use_horiz = 0  " Use vertical split
-let g:yankring_window_width = 50
-let g:yankring_window_use_right = 1
+let g:yankring_enabled = 0
+"let g:yankring_max_history = 500
+"let g:yankring_min_element_length = 2
+"let g:yankring_max_display = 100
+"let g:yankring_persist = 1
+"let g:yankring_share_between_instances = 1
+"let g:yankring_dot_repeat_yank = 0
+"let g:yankring_map_dot = 0
+"let g:yankring_window_use_horiz = 0  " Use vertical split
+"let g:yankring_window_width = 50
+"let g:yankring_window_use_right = 1
+"let g:yankring_clipboard_monitor = 0
 
-" Show yankring window
-nnoremap <silent> <F11> :YRShow<CR>
+"" Show yankring window
+"nnoremap <silent> <F11> :YRShow<CR>
 
-" Yank mappings should be defined here
-function! YRRunAfterMaps()
-    " Yank from the cursor to the end of the line, to be consistent with C and D.
-    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
-    nnoremap 1p  :YRPush '*'<cr>p
-endfunction
+"" Yank mappings should be defined here
+"function! YRRunAfterMaps()
+    "" Yank from the cursor to the end of the line, to be consistent with C and D.
+    "nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+    "nnoremap 1p  :YRPush '*'<cr>p
+"endfunction
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.

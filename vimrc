@@ -155,6 +155,8 @@ if &diff
     nmap <leader>dp :diffput<space>
     nmap <leader>q :wqa<CR>
     nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
+else
+    nmap <leader>q :wq<CR>
 endif
 
 set diffopt=filler,vertical

@@ -161,9 +161,6 @@ endif
 
 set diffopt=filler,vertical
 
-" Fast open vertical buffer
-nmap <Leader>vb :vsp^M^W^W<cr>
-
 " Fast open vertical help
 nmap <Leader>h <Esc>:vert help<space>
 

@@ -273,8 +273,16 @@ function! Ranger()
   endif
   redraw!
 endfunction
-
 nmap <leader>r :call Ranger()<cr>
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
 
 " Show the group name of the word under the cursor
 "map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

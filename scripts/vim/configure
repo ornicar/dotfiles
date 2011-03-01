@@ -1,11 +1,9 @@
 #! /bin/sh
 
 ./configure \
---with-python-config-dir=/usr/lib/python2.6/config \
 --with-features=normal \
 --prefix=/home/thib/data/bin/vim \
 --enable-rubyinterp \
---enable-pythoninterp \
 --enable-multibyte \
 --enable-cscope \
 --disable-netbeans \

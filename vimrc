@@ -275,6 +275,7 @@ function! Ranger()
 endfunction
 nmap <leader>r :call Ranger()<cr>
 
+" Show differences between buffer and saved versions of a file
 function! s:DiffWithSaved()
   let filetype=&ft
   diffthis

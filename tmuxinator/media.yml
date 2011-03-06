@@ -4,5 +4,3 @@ project_name: media
 project_root: ~/data
 tabs:
   - irc: weechat-curses
-  - mail: mutt
-  - music:

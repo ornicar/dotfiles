@@ -1,5 +1,5 @@
 # Change prefix
-escape C-z
+escape C-b
 
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)
@@ -54,4 +54,3 @@ definekey top M-p exec ~/.scripts/music toggle
 definekey top M-equal exec ~/.scripts/music up
 definekey top M-minus exec ~/.scripts/music down
 definekey top M-m exec urxvtc -e ~/.scripts/music ui
-

@@ -10,6 +10,8 @@ elseif exists("b:current_syntax")
   finish
 endif
 
+runtime! syntax/html.vim
+
 syntax case match
 
 " Twig template built-in tags and parameters (without filter, macro, is and raw, they

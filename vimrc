@@ -206,7 +206,7 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " Detect twig filetype
-au BufNewFile,BufRead *.twig set filetype=htmljinja
+au BufNewFile,BufRead *.twig set filetype=twig
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>

@@ -3,7 +3,4 @@
 project_name: system
 project_root: ~/data/workspace/dotfiles
 tabs:
-  - vim: vim
-  - dotfiles:
-  - /etc: cd /etc
-  - system: cd /
+  - zsh:

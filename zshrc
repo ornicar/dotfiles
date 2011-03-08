@@ -46,6 +46,7 @@ alias ga='git add -A'
 alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push'
+alias gpw='git-push-write'
 alias gc='git commit -v'
 alias gca='git commit --amend'
 alias gac='git commit -av'
@@ -76,6 +77,7 @@ git-create-write() {
     git remote add $remote $(git config --get "remote.$1.url"|sed 's#git://\([^/]*\)/\([^/]*\)/\(.*\)#git@\1:\2/\3#')
     git remote -v
     git fetch $remote
+    git-set-upstream $1
 }
 # Set the upstream branch
 git-set-upstream() {

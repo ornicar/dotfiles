@@ -143,6 +143,9 @@ nnoremap 1p "*p
 " In system register "+
 nmap + "+
 
+" Close other windows
+map <leader>o :only<cr>
+
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
 iab xname Thibault Duplessis

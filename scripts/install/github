@@ -1,3 +1,2 @@
-gem source --add http://gemcutter.org
-sudo gem install github
-sudo gem install git-pulls
+curl http://chriswanstrath.com/hub/standalone -Lo ~/.bin/hub
+chmod +x ~/.bin/hub

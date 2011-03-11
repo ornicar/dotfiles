@@ -40,7 +40,7 @@ alias v="vim"
 
 # Git
 alias t='tig status'
-alias g='git'
+alias g='hub'
 alias gs='git status'
 alias ga='git add -A'
 alias gl='git pull'

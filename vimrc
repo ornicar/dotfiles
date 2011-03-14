@@ -223,6 +223,18 @@ map [t :tprevious<CR>
 " Open tag command
 nmap <leader>t :tag<space>
 
+" Surround mappings
+let g:surround_no_mappings = 1
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap ys  <Plug>Ysurround
+nmap yS  <Plug>YSurround
+nmap yss <Plug>Yssurround
+nmap ySs <Plug>YSsurround
+nmap ySS <Plug>YSsurround
+" Twig surrounding
+let g:surround_45 = "{% \r %}"
+
 " Lusty
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 0

@@ -78,7 +78,7 @@ printf " #[fg=magenta,dim](%dp)#[default]" "$(cat /tmp/lichess_players)"
 
 # LOCAL DATE
 
-printf " #[fg=blue]$(date +"%b %d") #[bright]$(date +"%H:%M")#[default]"
+printf " #[fg=blue]$(date +"%a %b %d") #[bright]$(date +"%H:%M")#[default]"
 
 # FRENCH DATE
 

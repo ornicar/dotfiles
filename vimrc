@@ -213,9 +213,10 @@ nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 map ( ^
 map ) $
 
+" Don't use Ex mode; use Q for console mode
+map Q q:
+
 " CTAGS
-" Explore tags for the word under the cursor
-"map <C-l> <C-]>
 " Jump to next tag match
 map ]t :tnext<CR>
 " Jump to previous tag match
@@ -232,8 +233,9 @@ nmap yS  <Plug>YSurround
 nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
+
 " Twig surrounding
-let g:surround_45 = "{% \r %}"
+let g:surround_{char2nr('-')} = "{% \r %}"
 
 " Lusty
 map <leader>lp :LustyJugglePrevious<cr>
@@ -300,6 +302,6 @@ com! DiffSaved call s:DiffWithSaved()
 "\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Source local settings
-if filereadable("~/.vimrc.local")
-    source ~/.vimrc.local
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
 endif

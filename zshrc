@@ -30,10 +30,7 @@ alias ducks='du -cks * | sort -rn|head -10'
 alias h='history'
 
 # Run tmuxinator
-alias tt="$HOME/data/workspace/tmuxinator/bin/tmuxinator"
-
-# Session creator/switcher
-alias go="$HOME/.scripts/start"
+alias tmuxinator="$HOME/data/workspace/tmuxinator/bin/tmuxinator"
 
 # Vim
 alias v="vim"
@@ -60,6 +57,9 @@ alias gmt='git mergetool'
 alias gd='git diff'
 alias gr='git remote -v'
 alias gh='hub'
+
+# Add suffix alias for less
+alias -g L='| less'
 
 # Get the current branch name if any
 git-current-branch() {

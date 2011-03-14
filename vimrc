@@ -137,12 +137,6 @@ nmap <leader>cp :let @*=@%<cr>
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
-" Paste from system register
-nnoremap 1p "*p
-
-" In system register "+
-nmap + "+
-
 " Close other windows
 map <leader>o :only<cr>
 

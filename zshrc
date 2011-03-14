@@ -3,7 +3,7 @@
 # Show a gentle cow
 fortune | cowsay
 
-export PATH="$PATH:~/.bin"
+export PATH="$PATH:/home/thib/.bin"
 export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -40,7 +40,7 @@ alias v="vim"
 
 # Git
 alias t='tig status'
-alias g='hub'
+alias g='git'
 alias gs='git status'
 alias ga='git add -A'
 alias gl='git pull'
@@ -59,6 +59,7 @@ alias gm='git merge'
 alias gmt='git mergetool'
 alias gd='git diff'
 alias gr='git remote -v'
+alias gh='hub'
 
 # Get the current branch name if any
 git-current-branch() {
@@ -159,3 +160,7 @@ define() {
 
   rm -f "$tmp"
 }
+
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi

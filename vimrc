@@ -137,6 +137,9 @@ nmap <leader>cp :let @*=@%<cr>
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
+" Use space as " shortcut
+nmap <space> "
+
 " Close other windows
 map <leader>o :only<cr>
 

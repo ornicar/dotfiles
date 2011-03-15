@@ -52,11 +52,13 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gcp='git cherry-pick'
 alias glg='git log --stat --max-count=20'
+alias glp='git log -p'
 alias gco='git checkout'
 alias gm='git merge'
 alias gmt='git mergetool'
 alias gd='git diff'
 alias gr='git remote -v'
+alias gcf='git clean -f'
 alias gh='hub'
 
 # Add suffix alias for less

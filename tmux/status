@@ -38,8 +38,8 @@ fi
 
 memory=$(free | awk '/buffers\/cache:/ {printf "%.0f", 100*$3/($3 + $4)}')
 if [ "$memory" -gt 90 ]; then modifier="#[bg=red,fg=white,bright]"
-elif [ "$memory" -gt 70 ]; then modifier="#[bg=yellow,fg=black,bright]"
-elif [ "$memory" -gt 50 ]; then modifier="#[fg=yellow,bright]"
+elif [ "$memory" -gt 80 ]; then modifier="#[bg=yellow,fg=black,bright]"
+elif [ "$memory" -gt 70 ]; then modifier="#[fg=yellow,bright]"
 else modifier="#[fg=yellow,dim]"
 fi
 printf " %s%s%%#[default]" "$modifier" "$memory"

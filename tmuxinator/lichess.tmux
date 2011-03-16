@@ -1,33 +1,37 @@
+#!/bin/zsh
 _TMUX=$TMUX
 TMUX=
 cd ~/data/workspace/lichess
 tmux start-server
 
-if ! $(tmux has-session -t lichess); then
+if ! $(tmux has-session -t 'lichess'); then
 
+tmux new-session -d -s 'lichess' -n 'vim'
 tmux set-option base-index 1
-tmux new-session -d -s lichess -n vim
 
 
-  
-
-  
-tmux new-window -t lichess:2 -n lichess
-  
+tmux new-window -t 'lichess':2 -n 'lichess'
 
 
+# set up tabs and panes
 
-tmux send-keys  -t lichess:1 'vim' C-m
+# tab "vim"
 
-tmux send-keys  -t lichess:2 'tig' C-m
+tmux send-keys -t 'lichess':1 'vim' C-m
 
 
-tmux select-window -t lichess:1
+# tab "lichess"
+
+tmux send-keys -t 'lichess':2 'tig' C-m
+
+
+
+tmux select-window -t 'lichess':1
 
 fi
 
 if [ -z $_TMUX ]; then
-    tmux -u attach-session -t lichess
+    tmux -u attach-session -t 'lichess'
 else
-    tmux -u switch-client -t lichess
+    tmux -u switch-client -t 'lichess'
 fi

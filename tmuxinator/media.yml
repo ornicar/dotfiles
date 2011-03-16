@@ -3,4 +3,4 @@
 project_name: media
 project_root: ~/data
 tabs:
-  - irc: weechat-curses
+  - zsh:

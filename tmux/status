@@ -18,7 +18,6 @@ case $state in
     *) sign="$state" ;;
 esac
 printf "$modifier%s|%s|#[default]" "$percent" "$sign"
-break
 
 # TEMPERATURE
 

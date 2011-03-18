@@ -5,7 +5,7 @@ endif
 let b:php_ftplugin_loaded = 1
 
 " Because I write it so often
-imap ` ->
+imap <buffer> ` ->
 
 let PHP_autoformatcomment = 1
 
@@ -45,7 +45,7 @@ vnoremap <buffer> <leader>pa :call PhpAlign()<CR>
 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
-let g:pdv_cfg_Copyright = "2010"
+let g:pdv_cfg_Copyright = "2011"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
 
 func! PhpAlign() range

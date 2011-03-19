@@ -35,7 +35,7 @@ hi TabLineSel cterm=bold ctermfg=none ctermbg=none
 hi TabLineFill cterm=reverse ctermfg=none ctermbg=none
 hi lCursor cterm=reverse ctermfg=none ctermbg=none
 hi Cursor ctermfg=16 ctermbg=7
-hi CursorLine cterm=none ctermfg=NONE ctermbg=16
+hi CursorLine cterm=none ctermfg=NONE ctermbg=233
 hi CursorColumn ctermfg=NONE ctermbg=none
 hi MatchParen cterm=bold ctermfg=208 ctermbg=none
 hi Visual cterm=reverse ctermfg=none ctermbg=none

@@ -51,6 +51,7 @@ alias gac='git commit -av'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gcp='git cherry-pick'
+alias glo='git log'
 alias glg='git log --stat --max-count=20'
 alias glp='git log -p'
 alias gco='git checkout'
@@ -99,11 +100,11 @@ alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 # Resource this file
 alias reload=". ~/.zshrc"
 
-# Start web server
-alias startwebserver="sudo /etc/rc.d/nginx start && sudo /etc/rc.d/php-fpm start && sudo /etc/rc.d/mongodb start && sudo /etc/rc.d/memcached start"
-
 # Restart web server
 alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart"
+
+# Run IM program
+alias im="weechat-curses"
 
 # Man inside vim
 man() { vim -X -M -c "Man $*" -c "set nomodifiable" -c "only" }
@@ -136,8 +137,8 @@ generate-password() {
 # Read 32GB zero's and throw them away.
 alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'
 
-# Connect using 3G usb dialer, and notify when connection is lost
-alias dial='sudo wvdial && notify-send "wvdial" "Connection lost"'
+# Connect using 3G usb dialer
+alias dial='sudo wvdial'
 
 # use google for a definition 
 define() {

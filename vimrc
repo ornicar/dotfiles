@@ -125,11 +125,18 @@ au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
 au InsertLeave * hi StatusLine ctermfg=16 ctermbg=240
 au InsertLeave * hi LineNr     ctermfg=8 ctermbg=16
 
+" Close other windows
+map <leader>wo :only<cr>
+
+" Move in windows
+map <leader>ww :wincmd w<cr>
+map <leader>wh :wincmd h<cr>
+map <leader>wj :wincmd j<cr>
+map <leader>wk :wincmd k<cr>
+map <leader>wl :wincmd l<cr>
+
 " Delete buffer
 nmap <leader>d :bd<cr>
-
-" Close other windows
-map <leader>o :only<cr>
 
 " Delete buffer and file
 nmap <leader>D :!rm %<cr>:bd!<cr>
@@ -180,18 +187,26 @@ map <leader>s :%s/\v
 " Jump to line AND col
 nnoremap ' `
 
+" Sane moves in wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " Faster viewport scrolling
 noremap <C-j> 3j
 noremap <C-k> 3k
 
 " Fast save
-map <Leader>w :w<CR>
+map <tab> :w<CR>
 
 " Sudo to write
 cmap :w silent write !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
+
+" Don't loose selection when indenting
+vmap < <gv
+vmap > >gv
 
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
@@ -226,11 +241,14 @@ cmap Q :q
 " Larger console window
 set cmdwinheight=12
 
+" Fast, efficient file renaming
+map R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
+
 " CTAGS
 " Jump to next tag match
-map ]t :tnext<CR>
+map ]t :bd<cr>:tnext<cr>
 " Jump to previous tag match
-map [t :tprevious<CR>
+map [t :bd<cr>:tprevious<cr>
 " Open tag command
 nmap <leader>t :tag<space>
 
@@ -246,6 +264,9 @@ nmap ySS <Plug>YSsurround
 
 " Twig surrounding
 let g:surround_{char2nr('-')} = "{% \r %}"
+
+" Autoclose brackets
+imap {<cr> {<cr>}<esc>O
 
 " Lusty
 map <leader>lp :LustyJugglePrevious<cr>

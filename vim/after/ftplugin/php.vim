@@ -6,6 +6,7 @@ let b:php_ftplugin_loaded = 1
 
 " Because I write it so often
 imap <buffer> ` ->
+imap <C-j> $this->
 
 " PHP syntax options
 let php_sql_query = 0 "Coloration des requetes SQL
@@ -24,8 +25,7 @@ setlocal keywordprg=pman
 
 " Command mappings
 
-" Map <ctrl>+p to single line mode documentation (in insert and command mode)
-inoremap <buffer> <leader>pd :call PhpDocSingle()<CR>i
+" Map <ctrl>+p to single line mode documentation
 nnoremap <buffer> <leader>pd :call PhpDocSingle()<CR>
 " Map <ctrl>+p to multi line mode documentation (in visual mode)
 vnoremap <buffer> <leader>pd :call PhpDocRange()<CR>

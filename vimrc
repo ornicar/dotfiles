@@ -34,7 +34,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=*.pyc,*.pyo,*/cache/**,*/logs/**,*/zend/** " Ignore certain files
+set wildignore=*.pyc,*.pyo,*/cache/**,*/logs/**,*/zend/**,*/bootstrap.* " Ignore certain files
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.

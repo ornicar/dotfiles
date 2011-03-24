@@ -284,8 +284,8 @@ function! g:Jsbeautify()
 	endif
 
 	"let a:options = {}
-	let s:opt_indent_size = 1
-	let s:opt_indent_char = "\t"
+	let s:opt_indent_size = 4
+	let s:opt_indent_char = " "
 	let s:opt_preserve_newlines = 1
 	let s:opt_indent_level = 0
 

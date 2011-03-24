@@ -1,0 +1,7 @@
+# ~/.tmuxinator/ltc.yml
+
+project_name: ltc
+project_root: ~/data/workspace/ltc
+tabs:
+  - vim: vim
+  - git: 

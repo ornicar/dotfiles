@@ -7,5 +7,4 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     system "source $tmuxinatorpath/system.tmux" \
     exercise "source $tmuxinatorpath/exercise.tmux" \
     lichess "source $tmuxinatorpath/lichess.tmux" \
-    blog "source $tmuxinatorpath/blog.tmux" \
-    extra "source $tmuxinatorpath/extra.tmux"
+    ltc "source $tmuxinatorpath/ltc.tmux" \

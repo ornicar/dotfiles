@@ -10,7 +10,7 @@ tmux new-session -d -s 'lichess' -n 'vim'
 tmux set-option base-index 1
 
 
-tmux new-window -t 'lichess':2 -n 'lichess'
+tmux new-window -t 'lichess':2 -n 'git'
 
 
 # set up tabs and panes
@@ -20,9 +20,7 @@ tmux new-window -t 'lichess':2 -n 'lichess'
 tmux send-keys -t 'lichess':1 'vim' C-m
 
 
-# tab "lichess"
-
-tmux send-keys -t 'lichess':2 'tig' C-m
+# tab "git"
 
 
 

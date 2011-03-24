@@ -7,19 +7,11 @@ let b:php_ftplugin_loaded = 1
 " Because I write it so often
 imap <buffer> ` ->
 
-let PHP_autoformatcomment = 1
-
 " PHP syntax options
 let php_sql_query = 0 "Coloration des requetes SQL
 let php_htmlInStrings = 0 "Coloration des balises HTML
 let php_no_shorttags = 1
 let php_folding = 0
-
-"Folding
-nmap <buffer> <C-F5> <Esc>:EnableFastPHPFolds<Cr>
-nmap <buffer> <F5> <Esc>:EnablePHPFolds<Cr>
-nmap <buffer> <F6> <Esc>:DisablePHPFolds<Cr>
-let g:DisableAutoPHPFolding = 1
 
 " Indent whole PHP file
 nmap <leader>i <Esc>mygg=G'y

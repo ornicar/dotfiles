@@ -128,20 +128,21 @@ au InsertLeave * hi LineNr     ctermfg=8 ctermbg=16
 " Delete buffer
 nmap <leader>d :bd<cr>
 
+" Close other windows
+map <leader>o :only<cr>
+
 " Delete buffer and file
 nmap <leader>D :!rm %<cr>:bd!<cr>
 
-" Copy current file path to register "*
-nmap <leader>cp :let @*=@%<cr>
+" Copy current file path to register "* and "+
+nmap <leader>cp :let @*=@%<cr>:let @+=@%<cr>
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
 " Use space as " shortcut
 nmap <space> "
-
-" Close other windows
-map <leader>o :only<cr>
+vmap <space> "
 
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
@@ -162,13 +163,13 @@ endif
 set diffopt=filler,vertical
 
 " Fast open vertical help
-nmap <Leader>h <Esc>:vert help<space>
+nmap <Leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
 " Clear search highlight
 map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
-nmap <leader>zs :%s#\<<C-r>=expand("<cword>")<CR>\>#
+nmap <leader>zs :%s#<C-r>=expand("<cword>")<CR>#
 
 " Pull word under cursor into Ack for a global search
 map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
@@ -218,6 +219,12 @@ map ) $
 
 " Don't use Ex mode; use Q for console mode
 map Q q:
+
+" Also use Q to exit console mode
+cmap Q :q
+
+" Larger console window
+set cmdwinheight=12
 
 " CTAGS
 " Jump to next tag match

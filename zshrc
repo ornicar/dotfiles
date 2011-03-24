@@ -92,7 +92,7 @@ git-set-upstream() {
 }
 
 # Ctags
-alias ct="touch tags && rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/swiftmailer/*' --exclude='*/zend/*' --exclude='*/doctrine-data-fixtures/lib/vendor/*' --languages=PHP &"
+alias ct="touch tags && rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/swiftmailer/*' --exclude='*/zend/*' --exclude='*/doctrine-data-fixtures/lib/vendor/*' --exclude='*/bootstrap.*' --languages=PHP &"
 
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"

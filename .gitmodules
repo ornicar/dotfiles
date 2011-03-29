@@ -1,45 +1,59 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = git://github.com/ornicar/snipmate.vim.git
+    ignore = untracked
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+    ignore = untracked
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = git://github.com/ornicar/nerdcommenter.git
+    ignore = untracked
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = git://github.com/sjbach/lusty.git
+    ignore = untracked
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
+    ignore = untracked
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
+    ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
+    ignore = untracked
 [submodule "vim/bundle/commandt"]
 	path = vim/bundle/commandt
 	url = git://github.com/wincent/Command-T.git
+    ignore = untracked
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = git://github.com/ornicar/vim-unimpaired.git
+    ignore = untracked
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = git://github.com/ornicar/vim-ragtag.git
+    ignore = untracked
 [submodule "vim/bundle/gist"]
 	path = vim/bundle/gist
 	url = git://github.com/mattn/gist-vim.git
+    ignore = untracked
 [submodule "vim/bundle/renamer"]
 	path = vim/bundle/renamer
 	url = git://github.com/vim-scripts/renamer.vim.git
+    ignore = untracked
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git://github.com/ornicar/oh-my-zsh
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+    ignore = untracked
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive
+	url = git://githur.com/tpope/vim-fugitive
+    ignore = untracked

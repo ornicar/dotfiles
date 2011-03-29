@@ -1,12 +1,20 @@
 [user]
 	name = ornicar
 	email = thibault.duplessis@gmail.com
+
 [color]
 	ui = true
+
+[color "diff"]
+    whitespace = red reverse
+
 [core]
 	editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
 [merge]
 	tool = vimdiff
+
 [alias]
 
     # Show status and diff of dirty submodules
@@ -41,3 +49,6 @@
 
     # Add modified files to previous commit
     oups = "!git add -A -v && git commit --amend -C HEAD"
+
+    # haha
+    lol = log --graph --decorate --pretty=format:'%h %an: %s' --abbrev-commit

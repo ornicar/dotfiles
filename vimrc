@@ -136,12 +136,12 @@ map <leader>wk :wincmd k<cr>
 map <leader>wl :wincmd l<cr>
 
 " Delete buffer
-nmap <leader>d :bd<cr>
+nmap <leader>wd :bd<cr>
 
 " Delete buffer and file
-nmap <leader>D :!rm %<cr>:bd!<cr>
+nmap <leader>wD :!rm %<cr>:bd!<cr>
 
-" Copy current file path to register "* and "+
+" Copy current file path to registers "* and "+
 nmap <leader>cp :let @*=@%<cr>:let @+=@%<cr>
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.

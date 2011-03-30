@@ -37,14 +37,21 @@ fetch_lichess_players()
     echo $(curl -sL http://lichess.org/how-many-players-now) > $DATAFILE
 }
 
+fetch_lichess_games()
+{
+    DATAFILE="/tmp/lichess_games"
+    echo $(curl -sL http://lichess.org/nbgames.php) > $DATAFILE
+}
+
 while true; do
 
     sleep $INTERVAL
 
     calculate_cpu_usage
 
-    [ "$(date +%S)" -eq "0" ] && fetch_lichess_players
-
-    #printf "%s, %s\n" $(cat /tmp/cpu_usage) $(cat /tmp/lichess_players)
+    if [ "$(date +%S)" -eq "0" ]; then
+        fetch_lichess_players
+        fetch_lichess_games
+    fi
 
 done

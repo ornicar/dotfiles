@@ -15,6 +15,9 @@
 [merge]
 	tool = vimdiff
 
+[web]
+    browser = chromium
+
 [alias]
 
     # Show status and diff of dirty submodules

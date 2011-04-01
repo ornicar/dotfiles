@@ -57,3 +57,6 @@
 	path = vim/bundle/fugitive
 	url = git://githur.com/tpope/vim-fugitive
     ignore = untracked
+[submodule "vim/bundle/solarized"]
+	path = vim/bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git

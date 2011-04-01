@@ -14,8 +14,9 @@ hi IncSearch cterm=reverse ctermfg=none ctermbg=none
 hi MoreMsg cterm=bold ctermfg=29 ctermbg=none
 hi ModeMsg cterm=bold ctermfg=none ctermbg=none
 hi Question cterm=bold ctermfg=46 ctermbg=none
-hi StatusLine cterm=bold ctermfg=16 ctermbg=240
-hi StatusLineNC cterm=none ctermfg=16 ctermbg=238
+hi StatusLine cterm=none ctermfg=242 ctermbg=233
+hi StatusLineNC cterm=none ctermfg=242 ctermbg=235
+hi LineNr ctermfg=238 ctermbg=233
 hi VertSplit cterm=none ctermfg=238 ctermbg=238
 hi Title cterm=bold ctermfg=201 ctermbg=none
 hi WarningMsg cterm=none ctermfg=196 ctermbg=none
@@ -39,7 +40,6 @@ hi CursorLine cterm=none ctermfg=NONE ctermbg=233
 hi CursorColumn ctermfg=NONE ctermbg=none
 hi MatchParen cterm=bold ctermfg=208 ctermbg=none
 hi Visual cterm=reverse ctermfg=none ctermbg=none
-hi LineNr ctermfg=8 ctermbg=16
 hi Folded ctermfg=251 ctermbg=NONE
 hi NonText ctermfg=8 ctermbg=NONE
 hi SpecialKey ctermfg=8 ctermbg=NONE

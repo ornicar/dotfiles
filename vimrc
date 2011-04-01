@@ -122,8 +122,8 @@ set nofoldenable
 " Change statusbar color
 au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214
 au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=16 ctermbg=240
-au InsertLeave * hi LineNr     ctermfg=8 ctermbg=16
+au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
+au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
 
 " Close other windows
 map <leader>wo :only<cr>

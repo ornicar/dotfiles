@@ -8,6 +8,16 @@ let b:php_ftplugin_loaded = 1
 imap <buffer> ` ->
 imap <C-j> $this->
 
+" Insert current namespace
+nmap <leader>pn "%pdF.x:s#/#\\#<ESC>d/[A-Z]<CR>
+
+" Insert current namespace and opens php and create empty class
+nmap <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
+
+" Public version:
+" Insert current namespace and opens php and create empty class
+"nmap <F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
+
 " PHP syntax options
 let php_sql_query = 0 "Coloration des requetes SQL
 let php_htmlInStrings = 0 "Coloration des balises HTML
@@ -19,11 +29,6 @@ nmap <leader>i <Esc>mygg=G'y
 
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
-
-" Use pman for manual pages
-setlocal keywordprg=pman
-
-" Command mappings
 
 " Map <ctrl>+p to single line mode documentation
 nnoremap <buffer> <leader>pd :call PhpDocSingle()<CR>

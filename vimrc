@@ -204,10 +204,6 @@ cmap :w silent write !sudo tee % >/dev/null
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
-" Don't loose selection when indenting
-vmap < <gv
-vmap > >gv
-
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>

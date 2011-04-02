@@ -7,7 +7,7 @@ if exists("syntax_on")
 endif
 
 let g:colors_name = "aldmeris255"
-hi Normal ctermfg=254 ctermbg=none
+hi Normal ctermfg=252 ctermbg=none
 hi Directory cterm=none ctermfg=51 ctermbg=none
 hi ErrorMsg cterm=none ctermfg=231 ctermbg=196
 hi IncSearch cterm=reverse ctermfg=none ctermbg=none

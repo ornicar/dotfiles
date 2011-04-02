@@ -13,8 +13,11 @@ silent! call pathogen#runtime_append_all_bundles()
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Colorsheme
-set t_Co=256
+"set t_Co=256
 colorscheme aldmeris255
+"let g:solarized_termcolors=16
+"set background=dark
+"colorscheme solarized
 
 " Sets how many lines of history VIM has to remember
 set history=2000

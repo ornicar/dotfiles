@@ -8,8 +8,11 @@ let b:php_ftplugin_loaded = 1
 imap <buffer> ` ->
 imap <C-j> $this->
 
-" Insert current namespace
-nmap <leader>pn "%pdF.x:s#/#\\#<ESC>d/[A-Z]<CR>
+" Insert current class name
+nmap <leader>pcn "%pdF.x:s#/#\\#<ESC>d/[A-Z]<CR>
+
+" Insert current namespace at the top of the file
+nmap <leader>pn ggo<CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>
 
 " Insert current namespace and opens php and create empty class
 nmap <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>

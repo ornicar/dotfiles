@@ -14,7 +14,7 @@ hi IncSearch cterm=reverse ctermfg=none ctermbg=none
 hi MoreMsg cterm=bold ctermfg=29 ctermbg=none
 hi ModeMsg cterm=bold ctermfg=none ctermbg=none
 hi Question cterm=bold ctermfg=46 ctermbg=none
-hi StatusLine cterm=none ctermfg=242 ctermbg=233
+hi StatusLine cterm=none ctermfg=244 ctermbg=233
 hi StatusLineNC cterm=none ctermfg=242 ctermbg=235
 hi LineNr ctermfg=238 ctermbg=233
 hi VertSplit cterm=none ctermfg=238 ctermbg=238
@@ -43,7 +43,7 @@ hi Visual cterm=reverse ctermfg=none ctermbg=none
 hi Folded ctermfg=251 ctermbg=NONE
 hi NonText ctermfg=8 ctermbg=NONE
 hi SpecialKey ctermfg=8 ctermbg=NONE
-hi Pmenu ctermfg=250 ctermbg=16
+hi Pmenu ctermfg=250 ctermbg=234
 hi PmenuSel ctermfg=231 ctermbg=8
 hi PmenuSbar ctermfg=238 ctermbg=238
 hi PmenuThumb ctermfg=102 ctermbg=102

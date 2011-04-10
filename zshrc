@@ -32,6 +32,9 @@ alias h='history'
 # Run tmuxinator
 alias tmuxinator="$HOME/data/workspace/tmuxinator/bin/tmuxinator"
 
+# Add suffix alias for less
+alias -g L='| less'
+
 # Vim
 alias v="vim"
 
@@ -62,9 +65,6 @@ alias gd='git diff'
 alias gr='git remote -v'
 alias gcf='git clean -f'
 alias gh='hub'
-
-# Add suffix alias for less
-alias -g L='| less'
 
 # Get the current branch name if any
 git-current-branch() {

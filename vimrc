@@ -95,9 +95,9 @@ set timeout timeoutlen=800 ttimeoutlen=0
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+            \ if line("'\"") > 1 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 
 " Open man pages
 runtime! ftplugin/man.vim
@@ -187,6 +187,9 @@ map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
 " Start a substitute
 map <leader>s :%s/\v
 
+" Indent whole file
+nmap <leader>i <Esc>mygg=G'y
+
 " Jump to line AND col
 nnoremap ' `
 
@@ -207,18 +210,24 @@ cmap :w silent write !sudo tee % >/dev/null
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
+" wordwise yank from line above
+inoremap <silent> <C-Y> <C-C>:let @z = @"<CR>mz
+    \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<CR>
+    \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<CR>
+    \`zp:let @" = @z<CR>a
+
 " http://vim.wikia.com/wiki/Search_for_visually_selected_text
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
+    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+    \gvy/<C-R><C-R>=substitute(
+    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+    \gV:call setreg('"', old_reg, old_regtype)<CR>
 vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
+    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+    \gvy?<C-R><C-R>=substitute(
+    \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+    \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " Detect twig filetype
 au BufNewFile,BufRead *.twig set filetype=twig
@@ -291,35 +300,35 @@ let g:CommandTMatchWindowAtTop = 1
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |
-\ while 1 | exec <q-args> | sil cn | endwhile |
-\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
-\ endtry
+    \ while 1 | exec <q-args> | sil cn | endwhile |
+    \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+    \ endtry
 com! -nargs=1 Qfdofile try | sil cfirst |
-\ while 1 | exec <q-args> | sil cnf | endwhile |
-\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
-\ endtry
+    \ while 1 | exec <q-args> | sil cnf | endwhile |
+    \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+    \ endtry
 
 " Gist
 let g:gist_open_browser_after_post = 1
 
 " Use ranger as vim file manager
 function! Ranger()
-  silent !ranger --choosefile=/tmp/chosen
-  if filereadable('/tmp/chosen')
-    exec 'edit ' . system('cat /tmp/chosen')
-    call system('rm /tmp/chosen')
-  endif
-  redraw!
+    silent !ranger --choosefile=/tmp/chosen
+    if filereadable('/tmp/chosen')
+        exec 'edit ' . system('cat /tmp/chosen')
+        call system('rm /tmp/chosen')
+    endif
+    redraw!
 endfunction
 nmap <leader>r :call Ranger()<cr>
 
 " Show differences between buffer and saved versions of a file
 function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
@@ -330,5 +339,5 @@ com! DiffSaved call s:DiffWithSaved()
 
 " Source local settings
 if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+    source ~/.vimrc.local
 endif

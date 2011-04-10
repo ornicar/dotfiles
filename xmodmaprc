@@ -1,2 +1,13 @@
+! Make caps lock act as escape
 remove Lock = Caps_Lock
 keysym Caps_Lock = Escape
+!keycode 66 = Escape
+
+! Remove bindings for ctrl and mod4 actions
+!clear Control
+clear Mod4
+
+! Use super keys for ctrl action
+add Control = Super_L Super_R
+! Use control keys for mod1 action
+!add Mod4 = Control_L Control_R

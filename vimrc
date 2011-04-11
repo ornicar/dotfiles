@@ -194,8 +194,8 @@ nmap <leader>i <Esc>mygg=G'y
 nnoremap ' `
 
 " Sane moves in wrapped lines
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " Faster viewport scrolling
 noremap <C-j> 3j

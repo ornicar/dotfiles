@@ -72,11 +72,29 @@ set smartindent
 
 " Configure tabstyle...
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
-" But make it easy to switch it
+" But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
+" Or even hard tabs
+let tab_width=4
+function! TabToggle()
+  if &expandtab
+    set shiftwidth=4
+    set softtabstop=0
+    set noexpandtab
+    echo "Hard tabs on"
+  else
+    execute "set shiftwidth=".g:tab_width
+    execute "set softtabstop=".g:tab_width
+    set expandtab
+    echo "Hard tabs off"
+  endif
+endfunction
+nmap <leader><tab> mz:execute TabToggle()<CR>'z
 
 " Use perl regex style
 nnoremap / /\v

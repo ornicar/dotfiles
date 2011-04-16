@@ -45,6 +45,7 @@ bind b exec chromium-browser
 
 # Next window
 definekey top M-space next
+definekey top F9 next
 
 # Next screen
 definekey top M-Return nextscreen

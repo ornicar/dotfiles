@@ -3,7 +3,7 @@
 # Show a gentle cow
 fortune | cowsay
 
-export PATH="$PATH:/home/thib/.bin"
+export PATH="$PATH:$HOME/.bin"
 export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -16,6 +16,9 @@ export DISABLE_AUTO_UPDATE="true"
 # Run oh-my-zsh
 plugins=()
 source $ZSH/oh-my-zsh.sh
+
+# Dotfiles path
+DOTFILESPATH="$HOME/data/workspace/dotfiles"
 
 # Allow command line editing in an external editor.
 autoload -Uz edit-command-line
@@ -212,6 +215,9 @@ define() {
 
   rm -f "$tmp"
 }
+
+# Load less keys
+lesskey "$DOTFILESPATH/lesskeys"
 
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local

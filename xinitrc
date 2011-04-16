@@ -1,6 +1,6 @@
 #!/bin/sh
 
-setxkbmap en -variant colemap
+setxkbmap us -variant colemak
 
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp

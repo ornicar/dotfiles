@@ -45,10 +45,10 @@ bind b exec chromium-browser
 
 # Next window
 definekey top M-space next
-definekey top F9 next
 
 # Next screen
-definekey top M-Return nextscreen
+definekey top C-space nextscreen
+definekey top F9 nextscreen
 
 # Music control
 definekey top M-p exec ~/.scripts/music toggle

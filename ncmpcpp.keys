@@ -1,0 +1,4 @@
+key_up = 'e'
+key_down = 'n'
+key_edit_tags = 'E'
+key_move_song_down = 'k'

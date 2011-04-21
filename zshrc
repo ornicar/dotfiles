@@ -17,9 +17,6 @@ export DISABLE_AUTO_UPDATE="true"
 plugins=()
 source $ZSH/oh-my-zsh.sh
 
-# Dotfiles path
-DOTFILESPATH="$HOME/data/workspace/dotfiles"
-
 # Allow command line editing in an external editor.
 autoload -Uz edit-command-line
 
@@ -217,7 +214,7 @@ define() {
 }
 
 # Load less keys
-lesskey "$DOTFILESPATH/lesskeys"
+lesskey "$HOME/data/workspace/dotfiles/lesskeys"
 
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local

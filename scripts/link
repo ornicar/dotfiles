@@ -40,5 +40,5 @@ link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator
 link ratpoisonrc ~/.ratpoisonrc
-link vimperator ~/.vimperator
-link vimperatorrc ~/.vimperatorrc
+link ranger/keys.py ~/.config/ranger/keys.py
+link ncmpcpp.keys ~/.ncmpcpp/keys

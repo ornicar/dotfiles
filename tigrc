@@ -37,3 +37,5 @@ bind generic U !git add -A
 # colemak
 bind generic e move-up
 bind generic n move-down
+bind generic j find-next
+bind generic J find-prev

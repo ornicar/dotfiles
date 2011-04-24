@@ -613,4 +613,4 @@ function! g:Jsbeautify()
 	:put!0
 endfunction
 
-nmap <leader>i :call g:Jsbeautify()<cr>
+nmap <buffer> <leader>i :call g:Jsbeautify()<cr>

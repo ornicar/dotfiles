@@ -9,7 +9,7 @@
 fortune | cowsay
 
 # Absolute path this script is in
-dotfiles=$(dirname $(readlink -f $0))
+dotfiles=$HOME/data/workspace/dotfiles
 
 # Exports and configuration
 source $dotfiles/zsh/configuration.zsh

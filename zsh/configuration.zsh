@@ -10,6 +10,9 @@ export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
+# oh-my-zsh configuration
+export DISABLE_AUTO_TITLE="true"
+
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
 CDPATH=:..:~/data:~/data/workspace:/etc

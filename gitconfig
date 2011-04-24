@@ -55,3 +55,6 @@
 
     # haha
     lol = log --graph --decorate --pretty=format:'%h %an: %s' --abbrev-commit
+
+    # stash, pull rebase, stash pop, push
+    slp = !"git stash && git pull --rebase && git stash pop && git push"

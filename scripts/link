@@ -18,7 +18,6 @@ link (){
 }
 
 link zshrc ~/.zshrc
-link oh-my-zsh ~/.oh-my-zsh
 link scripts ~/.scripts
 link gitconfig ~/.gitconfig
 link muttrc ~/.muttrc

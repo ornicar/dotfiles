@@ -32,3 +32,6 @@ git-set-upstream() {
     branch=$(git-current-branch)
     git branch --set-upstream $branch $1/$branch
 }
+
+# Forward git commands to hub
+git(){hub "$@"}

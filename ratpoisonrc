@@ -44,10 +44,9 @@ bind c exec urxvtc
 bind b exec chromium-browser
 
 # Next window
-definekey top M-space next
+definekey top C-space next
 
 # Next screen
-definekey top C-space nextscreen
 definekey top F9 nextscreen
 
 # Music control

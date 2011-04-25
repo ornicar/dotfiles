@@ -12,12 +12,12 @@ else modifier="#[fg=green]"
 fi
 percent="$percent%"
 case $state in
-    "Charging") sign="+"; modifier="#[fg=green]" ;;
-    "Discharging") sign="-" ;;
-    "Full") sign="="; percent= ;;
+    "Charging") sign="|+|"; modifier="#[fg=green]" ;;
+    "Discharging") sign="|-|" ;;
+    "Full") sign="⚡"; percent= ;;
     *) sign="$state" ;;
 esac
-printf "$modifier%s|%s|#[default]" "$percent" "$sign"
+printf "$modifier%s%s#[default]" "$percent" "$sign"
 
 # TEMPERATURE
 
@@ -30,7 +30,7 @@ if [ -n "$temperature" ]; then
 	elif [ "$temperature" -gt 49 ]; then modifier="#[fg=cyan]"
 	else modifier="#[fg=blue]"
 	fi
-    printf " %s%s°C#[default]" "$modifier" "$temperature"
+    printf " %s%s°#[default]" "$modifier" "$temperature"
 fi
 
 # MEMORY

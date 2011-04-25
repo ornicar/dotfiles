@@ -28,6 +28,8 @@ set noundofile                  " Don't keep a persistent undofile
 " Disable spell checking
 set nospell
 
+set lazyredraw                    " make plugins smoother
+
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 

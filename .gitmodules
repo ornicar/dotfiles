@@ -63,3 +63,6 @@
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
 	url = git://github.com/sunaku/zsh-history-substring-search.git
+[submodule "vim/bundle/gitv"]
+	path = vim/bundle/gitv
+	url = git://github.com/gregsexton/gitv.git

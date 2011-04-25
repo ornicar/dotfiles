@@ -5,7 +5,7 @@
 if [ -f /tmp/weechat_hotlist ]; then
     hotlist=$(cat /tmp/weechat_hotlist)
     if [ ! -z $hotlist ]; then
-        printf "<%s> " "$hotlist"
+        printf "%s " "$hotlist"
     fi
 fi
 

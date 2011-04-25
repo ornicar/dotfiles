@@ -47,36 +47,33 @@ weechat.hook_print("", "notify_private", "", 1, "notify_show", "");
 weechat.hook_print("", "notify_highlight", "", 1, "notify_show", "");
 
 # Functions
-def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed,
-        ishilight, prefix, message):
+def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed, ishilight, prefix, message):
     """Sends highlighted message to be printed on notification"""
 
-    if (weechat.config_get_plugin('smart_notification') == "on" and
-            bufferp == weechat.current_buffer()):
+    if (weechat.config_get_plugin('smart_notification') == "on" and bufferp == weechat.current_buffer()):
         pass
 
-    elif (weechat.buffer_get_string(bufferp, "localvar_type") == "private" and
-            weechat.config_get_plugin('show_priv_msg') == "on"):
+    elif (weechat.buffer_get_string(bufferp, "localvar_type") == "private" and weechat.config_get_plugin('show_priv_msg') == "on"):
         show_notification(prefix, message)
 
-    elif (ishilight == "1" and 
-            weechat.config_get_plugin('show_hilights') == "on"):
-        buffer = (weechat.buffer_get_string(bufferp, "short_name") or
-                weechat.buffer_get_string(bufferp, "name"))
-        show_notification(buffer, prefix +
-                weechat.config_get_plugin('nick_separator') + message)
+    elif (ishilight == "1" and weechat.config_get_plugin('show_hilights') == "on"):
+        buffer = (weechat.buffer_get_string(bufferp, "short_name") or weechat.buffer_get_string(bufferp, "name"))
+        show_notification(buffer, prefix + weechat.config_get_plugin('nick_separator') + message)
 
     return weechat.WEECHAT_RC_OK
 
 def show_notification(chan,message):
     if(chan != ""):
-        command = 'notify-send "%s" "%s"' % (encode_string(chan), encode_string(message))
+        display = '%s\n%s' % (encode_string(chan), encode_string(message))
     else:
-        command = 'notify-send "%s"' % (encode_string(message))
+        display = '%s' % (encode_string(message))
+
+    command = 'ratpoison -c "echo %s"' % display
 
     os.system(command)
 
 def encode_string(string):
-    return string.replace('"', '\\"').replace('`', '\\`')
+    string = string.replace('"', '\\"').replace('`', '\\`')
+    return '$(echo "%s" | iconv -f utf-8 -t ISO-8859-1)' % string
 
 # vim: autoindent expandtab smarttab shiftwidth=4

@@ -74,14 +74,8 @@ def show_notification(chan, message):
 
     os.system(command)
 
-    write_notification_file(chan, message)
-
 def encode_string(string):
     string = string.replace('"', '\\"').replace('`', '\\`')
     return '$(echo "%s" | iconv -f utf-8 -t ISO-8859-1)' % string
-
-def write_notification_file(chan, message):
-    with open('/tmp/notification', 'w') as file:
-        file.write(chan)
 
 # vim: autoindent expandtab smarttab shiftwidth=4

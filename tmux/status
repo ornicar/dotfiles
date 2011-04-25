@@ -1,9 +1,12 @@
 #!/bin/zsh
 
-# NOTIFICATION
+# WEECHAT
 
-if [ -f /tmp/notification ]; then
-    printf "#[fg=white,bg=black,bright]<%s>#[default] " "$(cat /tmp/notification)"
+if [ -f /tmp/weechat_hotlist ]; then
+    hotlist=$(cat /tmp/weechat_hotlist)
+    if [ ! -z $hotlist ]; then
+        printf "<%s> " "$hotlist"
+    fi
 fi
 
 # BATTERY

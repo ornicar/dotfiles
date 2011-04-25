@@ -41,6 +41,7 @@ for option, default_value in settings.items():
         weechat.config_set_plugin(option, default_value)
 
 # Hook privmsg/hilights
+#weechat.hook_print("", "", "", 1, "notify_show", "") # debug
 weechat.hook_print("", "irc_privmsg", "", 1, "notify_show", "")
 weechat.hook_print("", "notify_message", "", 1, "notify_show", "");
 weechat.hook_print("", "notify_private", "", 1, "notify_show", "");
@@ -62,7 +63,8 @@ def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed, ishilight, prefix
 
     return weechat.WEECHAT_RC_OK
 
-def show_notification(chan,message):
+def show_notification(chan, message):
+    weechat.prnt("", "Notify %s: %s" % (chan, message))
     if(chan != ""):
         display = '%s\n%s' % (encode_string(chan), encode_string(message))
     else:
@@ -72,8 +74,14 @@ def show_notification(chan,message):
 
     os.system(command)
 
+    write_notification_file(chan, message)
+
 def encode_string(string):
     string = string.replace('"', '\\"').replace('`', '\\`')
     return '$(echo "%s" | iconv -f utf-8 -t ISO-8859-1)' % string
+
+def write_notification_file(chan, message):
+    with open('/tmp/notification', 'w') as file:
+        file.write(chan)
 
 # vim: autoindent expandtab smarttab shiftwidth=4

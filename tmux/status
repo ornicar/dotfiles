@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# NOTIFICATION
+
+if [ -f /tmp/notification ]; then
+    printf "#[fg=white,bg=black,bright]<%s>#[default] " "$(cat /tmp/notification)"
+fi
+
 # BATTERY
 
 infos=$(acpi -b)

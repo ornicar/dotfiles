@@ -64,7 +64,7 @@ def notify_show(data, bufferp, uber_empty, tagsn, isdisplayed, ishilight, prefix
     return weechat.WEECHAT_RC_OK
 
 def show_notification(chan, message):
-    weechat.prnt("", "Notify %s: %s" % (chan, message))
+    #weechat.prnt("", "Notify %s: %s" % (chan, message))
     if(chan != ""):
         display = '%s\n%s' % (encode_string(chan), encode_string(message))
     else:

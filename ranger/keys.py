@@ -78,11 +78,9 @@ keymanager.merge_all(map)     # merge the new map into all existing ones.
 
 from ranger.api.keys import *
 
-# ===================================================================
-# == Define aliases
-# ===================================================================
 map = vim_aliases = KeyMapWithDirections()
-map.dir('n', down='<down>')
+#map.dir('n', down='<down>')
+map('n', fm.move(down=1))
 map.dir('e', alias='<up>')
 
 map('j', fm.search())

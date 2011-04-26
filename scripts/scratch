@@ -1,7 +1,0 @@
-#!/bin/zsh
-
-if $(tmux has-session -t scratch); then
-    tmux -2 -u attach-session -t scratch
-else
-    tmux -2 -u new-session -s scratch
-fi

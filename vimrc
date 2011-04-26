@@ -290,6 +290,9 @@ nmap ySS <Plug>YSsurround
 " Twig surrounding
 let g:surround_{char2nr('-')} = "{% \r %}"
 
+" Configure supertab
+let g:SuperTabCrMapping = 0
+
 " Autoclose brackets
 imap {<cr> {<cr>}<esc>O
 

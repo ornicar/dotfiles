@@ -76,6 +76,6 @@ def show_notification(chan, message):
 
 def encode_string(string):
     string = string.replace('"', '\\"').replace('`', '\\`')
-    return '$(echo "%s" | iconv -f utf-8 -t ISO-8859-1)' % string
+    return '$(echo "%s" | iconv -c -f utf-8 -t ISO-8859-1)' % string
 
 # vim: autoindent expandtab smarttab shiftwidth=4

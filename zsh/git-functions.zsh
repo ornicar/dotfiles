@@ -1,8 +1,18 @@
 #!/usr/bin/env zsh
-# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
-# vim: ft=zsh sw=2 ts=2 et
+# -*- mode: zsh; sh-indentation: 4; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
+# vim: ft=zsh sw=4 ts=4 et
 #
 # There are some git function that save my time
+
+# stash and pull rebase, then stash pop if stashed
+git-stash-pull-rebase() {
+    stashresult=$(git stash)
+    echo $stashresult
+    git pull --rebase
+    if [ $stashresult != "No local changes to save" ]; then
+        git stash pop
+    fi
+}
 
 # Get the current branch name if any
 git-current-branch() {

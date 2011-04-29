@@ -16,3 +16,6 @@ export DISABLE_AUTO_TITLE="true"
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
 CDPATH=:..:~/data:~/data/workspace:/etc
+
+# Load less keys
+lesskey "$dotfiles/lesskeys"

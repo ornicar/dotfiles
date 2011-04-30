@@ -23,7 +23,7 @@ $HOME/.scripts/collector_daemon &           # start cpu and lichess data collect
 isexercisehardware=$(xrandr | awk '/LVDS1 connected/')
 [ -n isexercisehardware ] && xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
 
-(sleep 1 && urxvtc -e $HOME/.tmux/menu) &   # Give ratpoison one second to start, then open urxvt
+(sleep 1 && urxvtc -e $HOME/.tmuxinator/media.tmux) &   # Give ratpoison one second to start, then open urxvt
 
 # Run window manager
 exec ratpoison

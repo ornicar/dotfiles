@@ -14,10 +14,15 @@ filetype plugin indent on       " enable detection, plugins and indenting in one
 
 " Colorsheme
 "set t_Co=256
-colorscheme aldmeris255
-"let g:solarized_termcolors=16
-"set background=dark
-"colorscheme solarized
+"colorscheme aldmeris255
+
+let g:solarized_termcolors=16
+let g:solarized_termtrans=0
+let g:solarized_menu=0
+
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Sets how many lines of history VIM has to remember
 set history=2000
@@ -128,9 +133,6 @@ set shiftround
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-"Syntax
-syntax enable
-
 " Allow extended digraphs
 set encoding=utf-8
 
@@ -143,10 +145,10 @@ map zz zjzo
 set nofoldenable
 
 " Change statusbar color
-au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214
-au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
-au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
+"au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214
+"au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
+"au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
+"au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
 
 " Close other windows
 map <leader>wo :only<cr>

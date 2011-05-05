@@ -19,22 +19,39 @@
 !!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 !!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
-#define S_green         #b58900
-#define S_yellow        #cb4b16
-#define S_orange        #d30102
-#define S_red           #dc322f
-#define S_magenta       #6c71c4
-#define S_violet        #268bd2
-#define S_blue          #2aa198
-#define S_cyan          #859900
+#define S_base03         #002b36        
+#define S_base02         #073642
+#define S_base01         #586e75
+#define S_base00         #657b83
+#define S_base0          #839496
+#define S_base1          #93a1a1
+#define S_base2          #eee8d5
+#define S_base3          #fdf6e3
+#define S_yellow         #b58900
+#define S_orange         #cb4b16
+#define S_red            #dc322f
+#define S_magenta        #d33682
+#define S_violet         #6c71c4
+#define S_blue           #268bd2
+#define S_cyan           #2aa198
+#define S_green          #859900
+
+!#define S_base03        #1c1c1c
+!#define S_base02        #262626
+!#define S_base01        #585858
+!#define S_base00        #626262
+!#define S_base0         #808080
+!#define S_base1         #8a8a8a
+!#define S_base2         #e4e4e4
+!#define S_base3         #ffffd7
+!#define S_yellow        #af8700
+!#define S_orange        #d75f00
+!#define S_red           #d70000
+!#define S_magenta       #af005f
+!#define S_violet        #5f5faf
+!#define S_blue          #0087ff
+!#define S_cyan          #00afaf
+!#define S_green         #5f8700
 
 *background:            S_base03
 *foreground:            S_base00
@@ -64,7 +81,7 @@
 *color4:                S_blue
 *color12:               S_base0
 
-!! magenta dark/light[
+!! magenta dark/light
 *color5:                S_magenta
 *color13:               S_violet
 

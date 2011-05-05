@@ -18,5 +18,9 @@ for zsh_file ($dotfiles/zsh/*.zsh) source $zsh_file
 # Add fish-like history search (https://github.com/sunaku/zsh-history-substring-search)
 source $dotfiles/zsh/history-substring-search/zsh-history-substring-search.plugin.zsh
 
+# Enable completion after all plugins are loaded
+autoload -U compinit
+compinit -i
+
 # Load private configuration
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local

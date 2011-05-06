@@ -39,3 +39,8 @@ man() { vim -X -M -c "Man $*" -c "set nomodifiable" -c "only" }
 
 # Calculator
 calc(){ awk "BEGIN{ print $* }" ;}
+
+# Search on twitter
+twitter() {
+  echo "/search $*" | ttytter -script -anonymous
+}

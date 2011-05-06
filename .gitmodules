@@ -55,7 +55,7 @@
     ignore = untracked
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = git://githur.com/tpope/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive
     ignore = untracked
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized

@@ -1,0 +1,7 @@
+slowpost=5
+ansi=1
+avatar=curl -s %U | convert - -colorspace Gray -colors 16 -antialias ppm:- | ppmascii -photo -winx=4
+hold=1
+exts=/home/thib/data/workspace/dotfiles/ttytter/pretty-tweets/PrettyTweets.pl,/home/thib/data/workspace/dotfiles/ttytter/notify.pl
+notifytype=libnotifyperl
+notifies=dm,me,reply,search,default

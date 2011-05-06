@@ -59,10 +59,13 @@
     ignore = untracked
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = git://github.com/ornicar/vim-colors-solarized.git
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
 	url = git://github.com/sunaku/zsh-history-substring-search.git
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "ttytter/pretty-tweets"]
+	path = ttytter/pretty-tweets
+	url = git://github.com/russkey/TTYtter-PrettyTweets.git

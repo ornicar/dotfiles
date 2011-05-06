@@ -1,7 +1,22 @@
+# Give me 5 seconds to cancel a tweet
 slowpost=5
+# Use colors
 ansi=1
+# Show ascii avatars
 avatar=curl -s %U | convert - -colorspace Gray -colors 16 -antialias ppm:- | ppmascii -photo -winx=4
+# Try to connect, again
 hold=1
+# Extensions to load
 exts=/home/thib/data/workspace/dotfiles/ttytter/pretty-tweets/PrettyTweets.pl,/home/thib/data/workspace/dotfiles/ttytter/notify.pl
-notifytype=libnotifyperl
+# Notifications
+notifytype=ratpoison
+# Tweet types that are notified
 notifies=dm,me,reply,search,default
+# Tweet timestamp format
+timestamp=%H:%M
+# Tags I care about
+track="#lichess #symfony #colemak"
+# Enable readline magic
+# readline=1
+# Check for mentions from people I don't follow
+mentions=1

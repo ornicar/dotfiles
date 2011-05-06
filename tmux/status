@@ -1,4 +1,13 @@
 #!/bin/zsh
+# 0 black
+# 1 red
+# 2 green
+# 3 yellow
+# 4 blue
+# 5 pink
+# 6 cyan
+# 9 orange
+# black -> white 8 0 10 11 12 14 7 15 
 
 # WEECHAT
 
@@ -9,15 +18,19 @@ if [ -f /tmp/weechat_hotlist ]; then
     fi
 fi
 
+#for color in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+    #printf "#[fg=colour$color]#$color#[default]"
+#done;
+
 # BATTERY
 
 infos=$(acpi -b)
 percent=$(echo $infos|sed "s/Battery .: [a-z]*, \([0-9]*\)%\(,.*\|$\)/\1/i")
 state=$(echo $infos|sed "s/Battery .: \([a-z]*\),.*/\1/i")
-if [ "$percent" -lt 5 ]; then modifier="#[bg=red,fg=white,bright]"
-elif [ "$percent" -lt 20 ]; then modifier="#[bg=yellow,fg=black,bright]"
-elif [ "$percent" -lt 50 ]; then modifier="#[fg=yellow,bright]"
-else modifier="#[fg=green]"
+if [ "$percent" -lt 5 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$percent" -lt 20 ]; then modifier="#[bg=colour3,fg=colour8,bright]"
+elif [ "$percent" -lt 50 ]; then modifier="#[fg=colour3]"
+else modifier="#[fg=colour2]"
 fi
 percent="$percent%"
 case $state in
@@ -33,11 +46,11 @@ printf "$modifier%s%s#[default]" "$percent" "$sign"
 input=/sys/class/hwmon/hwmon0/temp1_input
 [ -s "$input" ] && temperature=$(awk '{printf "%0.f",$1/1000}' "$input")
 if [ -n "$temperature" ]; then
-	if [ "$temperature" -gt 64 ]; then modifier="#[bg=red,fg=white,bright]"
-	elif [ "$temperature" -gt 59 ]; then modifier="#[fg=red,bright]"
-	elif [ "$temperature" -gt 54 ]; then modifier="#[fg=magenta,bright]"
-	elif [ "$temperature" -gt 49 ]; then modifier="#[fg=cyan]"
-	else modifier="#[fg=blue]"
+	if [ "$temperature" -gt 64 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+	elif [ "$temperature" -gt 59 ]; then modifier="#[fg=colour13,bright]"
+	elif [ "$temperature" -gt 54 ]; then modifier="#[fg=colour5]"
+	elif [ "$temperature" -gt 49 ]; then modifier="#[fg=colour6]"
+	else modifier="#[fg=colour4]"
 	fi
     printf " %s%s°#[default]" "$modifier" "$temperature"
 fi
@@ -45,10 +58,10 @@ fi
 # MEMORY
 
 memory=$(free | awk '/buffers\/cache:/ {printf "%.0f", 100*$3/($3 + $4)}')
-if [ "$memory" -gt 90 ]; then modifier="#[bg=red,fg=white,bright]"
-elif [ "$memory" -gt 80 ]; then modifier="#[bg=yellow,fg=black,bright]"
-elif [ "$memory" -gt 70 ]; then modifier="#[fg=yellow,bright]"
-else modifier="#[fg=yellow,dim]"
+if [ "$memory" -gt 90 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$memory" -gt 80 ]; then modifier="#[bg=colour3,fg=colour0]"
+elif [ "$memory" -gt 70 ]; then modifier="#[fg=colour9]"
+else modifier="#[fg=colour2]"
 fi
 printf " %s%s%%#[default]" "$modifier" "$memory"
 
@@ -64,17 +77,17 @@ bar="                   "
 for bari in $(seq $index); do
     bar[$bari]="|"
 done
-if [ "$usage" -gt 50 ]; then modifier="#[fg=red,bright]"
+if [ "$usage" -gt 50 ]; then modifier="#[fg=colour1]"
 #elif [ "$usage" -gt 50 ]; then modifier="#[fg=yellow,bright]"
 #elif [ "$usage" -gt 25 ]; then modifier="#[fg=white, bright]"
-else modifier="#[fg=black, bright]"
+else modifier="#[fg=colour14]"
 fi
 printf " %s[%s]#[default]" "$modifier" "$bar"
 
 # LOAD AVERAGE
 
 load=$(awk '{print $1}' /proc/loadavg)
-printf " %s%.01f#[default]" "#[fg=white]" "$load"
+printf " %s%.01f#[default]" "#[fg=colour14]" "$load"
 
 # SEPARATOR
 
@@ -82,13 +95,13 @@ printf " %s%.01f#[default]" "#[fg=white]" "$load"
 
 # LICHESS PLAYERS
 
-printf " #[fg=magenta,dim](%d/%d)#[default]" "$(cat /tmp/lichess_players)" "$(cat /tmp/lichess_games)"
+printf " #[fg=colour10,dim](%d/%d)#[default]" "$(cat /tmp/lichess_players)" "$(cat /tmp/lichess_games)"
 
 # LOCAL DATE
 
-printf " #[fg=blue]$(date +"%a %b %d") #[bright]$(date +"%H:%M")#[default]"
+printf " #[fg=colour10]$(date +"%a %b %d") #[fg=colour7]$(date +"%H:%M")#[default]"
 
 # FRENCH DATE
 
 export TZ="Europe/Paris"
-printf " #[fg=magenta]$(date +"%H:%M")#[default]"
+printf " #[fg=colour10]$(date +"%H:%M")#[default]"

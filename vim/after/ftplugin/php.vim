@@ -53,6 +53,13 @@ let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"
 let g:pdv_cfg_Copyright = "2011"
 let g:pdv_cfg_php4always = 0 " Ignore PHP4 tags
+" Wether to create @uses tags for implementation of interfaces and inheritance
+let g:pdv_cfg_Uses = 0
+" Wether for PHP5 code PHP4 tags should be set, like @access,... (1|0)?
+let g:pdv_cfg_php4always = 0
+" Wether to guess scopes after PEAR coding standards:
+" $_foo/_bar() == <private|protected> (1|0)?
+let g:pdv_cfg_php4guess = 0
 
 func! PhpAlign() range
     let l:paste = &g:paste

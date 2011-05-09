@@ -47,7 +47,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=*.pyc,*.pyo,*/cache/**,*/logs/**,*/zend/**,*/bootstrap.* " Ignore certain files
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*/cache/**,*/logs/**,*/zend/**,*/bootstrap.* " Ignore certain files
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -235,6 +235,9 @@ cmap :w silent write !sudo tee % >/dev/null
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
+" Insert author
+imap <C-a> Thibault Duplessis <thibault.duplessis@gmail.com>
+
 " wordwise yank from line above
 inoremap <silent> <C-Y> <C-C>:let @z = @"<CR>mz
     \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<CR>
@@ -306,7 +309,10 @@ map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 0
 
 " Syntastic
-let g:syntastic_enable_signs = 1
+" use signs to indicate lines with errors only if signs are available
+if has('signs')
+   let g:syntastic_enable_signs = 1
+endif
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_quiet_warnings=0
 set statusline+=%#warningmsg#

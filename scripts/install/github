@@ -1,2 +1,2 @@
-curl http://chriswanstrath.com/hub/standalone -Lo ~/.bin/hub
+curl http://defunkt.io/hub/standalone -sLo ~/.bin/hub
 chmod +x ~/.bin/hub

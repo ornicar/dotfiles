@@ -44,7 +44,4 @@ git-set-upstream() {
 }
 
 # Forward git commands to hub
-function gh(){hub "$@"}
-
-# Forward git commands to git-achievements
-function git(){$HOME/data/workspace/git-achievements/git-achievements "$@"}
+function git(){hub "$@"}

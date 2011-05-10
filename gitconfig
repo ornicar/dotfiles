@@ -55,5 +55,3 @@
 
     # very compact log
     lol = log --graph --decorate --pretty=format:'%h %an: %s' --abbrev-commit
-[achievement]
-	upload = false

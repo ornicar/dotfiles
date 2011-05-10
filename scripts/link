@@ -42,3 +42,4 @@ link ratpoisonrc ~/.ratpoisonrc
 link ranger/keys.py ~/.config/ranger/keys.py
 link ncmpcpp.keys ~/.ncmpcpp/keys
 link ttytterrc ~/.ttytterrc
+link apvlvrc ~/.apvlvrc

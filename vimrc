@@ -16,6 +16,7 @@ filetype plugin indent on       " enable detection, plugins and indenting in one
 let g:solarized_termcolors=16
 let g:solarized_termtrans=0
 let g:solarized_menu=0
+let g:solarized_italic=0
 syntax enable
 set background=dark
 colorscheme solarized
@@ -304,9 +305,16 @@ let g:SuperTabCrMapping = 0
 " Autoclose brackets
 imap {<cr> {<cr>}<esc>O
 
-" Lusty
-map <leader>lp :LustyJugglePrevious<cr>
+" Lusty juggler
+nmap <silent> <leader>mp :LustyJugglePrevious<cr>
+nmap <silent> <leader>mt :LustyJuggler<CR>
 let g:LustyJugglerShowKeys = 0
+
+" Lusty explorer
+nmap <silent> <Leader>mf :LustyFilesystemExplorer<CR>
+nmap <silent> <Leader>mr :LustyFilesystemExplorerFromHere<CR>
+nmap <silent> <Leader>mb :LustyBufferExplorer<CR>
+nmap <silent> <Leader>mg :LustyBufferGrep<CR>
 
 " Syntastic
 " use signs to indicate lines with errors only if signs are available

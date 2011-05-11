@@ -223,10 +223,6 @@ nnoremap ' `
 " nnoremap j gj
 " nnoremap k gk
 
-" Faster viewport scrolling
-noremap <C-j> 3j
-noremap <C-k> 3k
-
 " Fast save
 map <tab> :w<CR>
 
@@ -306,15 +302,17 @@ let g:SuperTabCrMapping = 0
 imap {<cr> {<cr>}<esc>O
 
 " Lusty juggler
-nmap <silent> <leader>mp :LustyJugglePrevious<cr>
+nmap <silent> <leader>md :LustyJugglePrevious<cr>
 nmap <silent> <leader>mt :LustyJuggler<CR>
 let g:LustyJugglerShowKeys = 0
 
-" Lusty explorer
-nmap <silent> <Leader>mf :LustyFilesystemExplorer<CR>
-nmap <silent> <Leader>mr :LustyFilesystemExplorerFromHere<CR>
+" Lusty buffer
 nmap <silent> <Leader>mb :LustyBufferExplorer<CR>
 nmap <silent> <Leader>mg :LustyBufferGrep<CR>
+
+" Lusty explorer
+nmap <silent> <Leader>ms :LustyFilesystemExplorer<CR>
+nmap <silent> <Leader>mr :LustyFilesystemExplorerFromHere<CR>
 
 " Syntastic
 " use signs to indicate lines with errors only if signs are available

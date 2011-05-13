@@ -66,9 +66,6 @@
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
-[submodule "ttytter/pretty-tweets"]
-	path = ttytter/pretty-tweets
-	url = git://github.com/russkey/TTYtter-PrettyTweets.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git

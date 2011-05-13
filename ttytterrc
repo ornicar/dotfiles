@@ -7,7 +7,7 @@ avatar=curl -s %U | convert - -colorspace Gray -colors 16 -antialias ppm:- | ppm
 # Try to connect, again
 hold=1
 # Extensions to load
-exts=/home/thib/data/workspace/dotfiles/ttytter/pretty-tweets/PrettyTweets.pl,/home/thib/data/workspace/dotfiles/ttytter/notify.pl
+exts=/home/thib/data/workspace/dotfiles/ttytter/notify.pl
 # Notifications
 notifytype=ratpoison
 # Tweet types that are notified

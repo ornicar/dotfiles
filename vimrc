@@ -67,7 +67,7 @@ set notitle                       " Do not set the terminal's title
 
 set visualbell                    " No beeping.
 
-set shortmess+=filmnrxoOtT     	  " abbrev. of messages (avoids 'hit enter')
+set shortmess+=filmnrxoOtT        " abbrev. of messages (avoids 'hit enter')
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
@@ -371,6 +371,15 @@ function! s:DiffWithSaved()
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+"  Clean code function
+function! CleanCode()
+    %retab          " Replace tabs with spaces
+    %s/\r/\r/eg     " Turn DOS returns ^M into real returns
+    %s=  *$==e      " Delete end of line blanks
+    echo "Cleaned up this mess."
+endfunction
+nmap <leader>cc :call CleanCode()<cr>
 
 " Show the group name of the word under the cursor
 "map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

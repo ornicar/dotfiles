@@ -14,10 +14,14 @@ sub notifier_ratpoison {
 		}
 	}
 
-    #my $escaped = `echo \"TTYtter: $class - $text\" | iconv -c -f utf-8 -t ISO-8859-1`;
-    my $escaped = "$class - $text";
+    #`ratpoison -c \"echo test $ratpoison_path\"`;
 
-    `$ratpoison_path -c \"echo $escaped\"`;
+    #my $escaped = `echo \"TTYtter: $class - $text\" | iconv -c -f utf-8 -t ISO-8859-1`;
+    #my $escaped = "$class - $text";
+
+    #`$ratpoison_path -c \"echo $escaped\"`;
+
+    `ratpoison -c \"echo $class: $text\"`;
 
     return 1;
 }

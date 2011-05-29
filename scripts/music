@@ -4,7 +4,7 @@ case $1 in
     "up")     mpc volume +5 && mpc volume | xargs -0 notify-send -t 400;;
     "down")   mpc volume -5 && mpc volume | xargs -0 notify-send -t 400;;
     "toggle") mpc toggle | xargs -0 notify-send -t 1000;;
-    "ui")     [ ! -f ~/.mpd/mpd.pid ] && mpd ~/.mpd/mpd.conf; ncmpcpp;;
+    "ui")     [ ! -f ~/.mpd/mpd.pid ] && mpd ~/.mpd/mpd.conf 2> /dev/null; ncmpcpp;;
     "status") mpc status | xargs -0 notify-send -t 5000;;
     *)
 esac

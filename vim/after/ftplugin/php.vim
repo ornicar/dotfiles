@@ -33,8 +33,8 @@ nmap <buffer> <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <E
 " Insert current namespace and opens php and create empty class
 "nmap <F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
-" Open word under cursor with php.net
-nmap <buffer> <silent> <leader>pu :!elinks http://us2.php.net/<C-R><C-W>\#function.<C-R><C-W><CR>
+" Insert use statements based on ctags
+map <buffer> <leader>pu :call PhpInsertUse()<CR>
 
 " Single line mode documentation
 nnoremap <buffer> <leader>pd :call PhpDocSingle()<CR>

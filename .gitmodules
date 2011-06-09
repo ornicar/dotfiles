@@ -1,6 +1,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
-	url = git://github.com/ornicar/snipmate.vim.git
+	url = git://github.com/garbas/vim-snipmate.vim.git
     ignore = untracked
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
@@ -60,12 +60,24 @@
 [submodule "vim/bundle/solarized"]
 	path = vim/bundle/solarized
 	url = git://github.com/ornicar/vim-colors-solarized.git
+    ignore = untracked
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
 	url = git://github.com/sunaku/zsh-history-substring-search.git
+    ignore = untracked
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
+    ignore = untracked
 [submodule "vim/bundle/php-namespace"]
 	path = vim/bundle/php-namespace
 	url = git://github.com/arnaud-lb/vim-php-namespace.git
+    ignore = untracked
+[submodule "vim/bundle/tlib"]
+	path = vim/bundle/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+    ignore = untracked
+[submodule "vim/bundle/addonmwutils"]
+	path = vim/bundle/addonmwutils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+    ignore = untracked

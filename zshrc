@@ -16,7 +16,7 @@ for config_file ($dotfiles/oh-my-zsh/lib/*.zsh) source $config_file
 for zsh_file ($dotfiles/zsh/*.zsh) source $zsh_file
 
 # Add fish-like history search (https://github.com/sunaku/zsh-history-substring-search)
-source $dotfiles/zsh/history-substring-search/zsh-history-substring-search.plugin.zsh
+source $dotfiles/zsh/history-substring-search/history-substring-search.zsh
 
 # Enable completion after all plugins are loaded
 autoload -U compinit

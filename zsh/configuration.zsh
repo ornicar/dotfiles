@@ -19,3 +19,6 @@ CDPATH=:..:~/data:~/data/workspace:/etc
 
 # Load less keys
 lesskey "$dotfiles/lesskeys"
+
+# Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
+stty -ixon -ixoff

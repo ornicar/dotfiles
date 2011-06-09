@@ -40,4 +40,3 @@ URxvt*urlLauncher:     chromium-browser
 URxvt.keysym.M-u:      perl:url-select:select_next
 URxvt.underlineURLs:   true
 URxvt.keysym.M-p:      perl:clipboard:paste
-! }}}

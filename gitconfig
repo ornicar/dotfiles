@@ -26,6 +26,9 @@
     # Pull all submodules
     subpull = !"git submodule foreach git pull"
 
+    # Pull all submodules asynchronously
+    subpullasync = !"git submodule foreach 'git pull&'"
+
     # Update all submodules
     subupdate = !"git submodule sync && git submodule update --init --recursive"
 
@@ -34,6 +37,9 @@
 
     # Reset all submodules
     subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"
+
+    # Show current branch of each submodule
+    subbranch = !"git submodule foreach --recursive 'git rev-parse --abbrev-ref HEAD'"
 
     # show list of contributors in descending order by number of commits
     rank = shortlog -sn --no-merges

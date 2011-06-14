@@ -39,3 +39,5 @@ bind generic e move-up
 bind generic n move-down
 bind generic j find-next
 bind generic J find-prev
+
+bind generic E edit

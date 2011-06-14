@@ -292,7 +292,7 @@ nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
 
-" Twig surrounding
+" Twig surrounding yss-
 let g:surround_{char2nr('-')} = "{% \r %}"
 
 " Configure supertab

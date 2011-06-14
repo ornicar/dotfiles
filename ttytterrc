@@ -15,7 +15,7 @@ notifies=dm,me,reply,search
 # Tweet timestamp format
 timestamp=%H:%M
 # Tags I care about
-track=lichess colemak 
+track=lichess
 # Enable readline magic
 readline=1
 # Check for mentions from people I don't follow

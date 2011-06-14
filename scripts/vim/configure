@@ -14,4 +14,9 @@
 --disable-gtk2-check \
 --disable-gnome-check \
 --disable-gtktest \
---without-gnome
+--without-gnome \
+--disable-sysmouse \
+--disable-gpm \
+--disable-largefile \
+--disable-acl \
+--with-compiledby="Thibault Duplessis"

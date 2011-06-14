@@ -4,6 +4,6 @@ cd ~/data/bin/vim
 hg pull
 hg update
 cd src
-./configure
+~/.scripts/vim/configure
 make
 sudo make install

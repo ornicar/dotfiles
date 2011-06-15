@@ -17,6 +17,9 @@ setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 imap <buffer> ` ->
 imap <C-j> $this->
 
+" Autoclose brackets
+imap <buffer> {<cr> {<cr>}<esc>O
+
 " Insert current class name
 nmap <buffer> <leader>pcn "%pdF.xBdf/:s#/#\\#<CR>
 

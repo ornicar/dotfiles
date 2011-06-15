@@ -298,9 +298,6 @@ let g:surround_{char2nr('-')} = "{% \r %}"
 " Configure supertab
 let g:SuperTabCrMapping = 0
 
-" Autoclose brackets
-imap {<cr> {<cr>}<esc>O
-
 " Lusty juggler
 nmap <silent> <leader>md :LustyJugglePrevious<cr>
 nmap <silent> <leader>mt :LustyJuggler<CR>

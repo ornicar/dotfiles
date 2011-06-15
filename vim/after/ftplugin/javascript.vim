@@ -6,3 +6,6 @@ let b:javascript_ftplugin_loaded = 1
 
 " don't use cindent for javascript
 setlocal nocindent
+
+" Autoclose brackets
+imap <buffer> {<cr> {<cr>}<esc>O

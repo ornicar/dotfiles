@@ -81,3 +81,6 @@
 	path = vim/bundle/addonmwutils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
     ignore = untracked
+[submodule "vim/vendor/javascript"]
+	path = vim/vendor/javascript
+	url = git://github.com/pangloss/vim-javascript.git

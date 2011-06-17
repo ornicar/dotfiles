@@ -23,9 +23,6 @@ imap <buffer> {<cr> {<cr>}<esc>O
 " Insert current class name
 nmap <buffer> <leader>pcn "%pdF.xBdf/:s#/#\\#<CR>
 
-" Insert current namespace at the top of the file
-"nmap <leader>pn ggo<CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>
-
 " Replace namespace and class name based on filename
 nmap <buffer> <leader>pn gg/namespace <CR>D"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>/class <CR>wcw<C-R>=expand("%:t:r")<CR><ESC>
 

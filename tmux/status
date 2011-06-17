@@ -105,3 +105,8 @@ printf " #[fg=colour10]$(date +"%a %b %d") #[fg=colour7]$(date +"%H:%M")#[defaul
 
 export TZ="Europe/Paris"
 printf " #[fg=colour10]$(date +"%H:%M")#[default]"
+
+# AZORES DATE
+
+export TZ="Atlantic/Azores"
+printf " #[fg=colour10]$(date +"%H:%M")#[default]"

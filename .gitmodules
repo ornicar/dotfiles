@@ -84,3 +84,6 @@
 [submodule "vim/vendor/javascript"]
 	path = vim/vendor/javascript
 	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/snipmate-snippets"]
+	path = vim/bundle/snipmate-snippets
+	url = git://github.com/ornicar/snipmate-snippets.git

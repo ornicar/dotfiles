@@ -295,9 +295,6 @@ nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
 
-" Twig surrounding yss-
-let g:surround_{char2nr('-')} = "{% \r %}"
-
 " Show git log for the current file
 nmap <leader>gl :Git log -p %<cr>
 

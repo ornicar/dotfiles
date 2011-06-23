@@ -17,8 +17,7 @@ alias -g L='| less'
 alias v="vim"
 
 # Ctags
-alias ct="touch tags && rm tags && ctags -h '.php' --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --exclude='*/swiftmailer/*' --exclude='*/zend/*' --exclude='*/bootstrap.*' --languages=PHP --regex-PHP=\"/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/\" &"
-
+alias ct="touch tags && rm tags && ctags -h '.php' --tag-relative=yes --PHP-kinds=+cf --fields=+afkst --recurse --exclude='@.ctagsexclude' --languages=PHP --regex-PHP=\"/@method[ ][^ ]+[ ]+([^ (]*)/\1/f/\" &"
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 

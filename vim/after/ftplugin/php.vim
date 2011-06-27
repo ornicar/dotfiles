@@ -35,6 +35,8 @@ nmap <buffer> <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <E
 
 " Insert use statements based on ctags
 map <buffer> <leader>pu :call PhpInsertUse()<CR>
+" The same on insert mode
+imap <buffer> <C-e>u <esc>:call PhpInsertUse()<CR>a
 
 " Single line mode documentation
 nnoremap <buffer> <leader>pd :call PhpDocSingle()<CR>

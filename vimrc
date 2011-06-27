@@ -232,9 +232,6 @@ cmap :w silent write !sudo tee % >/dev/null
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
-" Insert author
-imap <C-a> Thibault Duplessis <thibault.duplessis@gmail.com>
-
 " wordwise yank from line above
 inoremap <silent> <C-Y> <C-C>:let @z = @"<CR>mz
     \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<CR>

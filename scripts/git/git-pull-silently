@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+function git_prompt_info() {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="*detached*"
+    echo $ref
+}
+
+output=$(git pull 2> /dev/null)
+if [ $? -ne 0 ]; then
+    printf "\n#%s(%s)" $(pwd) $(git_prompt_info)
+fi

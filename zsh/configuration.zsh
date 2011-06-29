@@ -5,7 +5,7 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.bin:$dotfiles/scripts/git"
 export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'

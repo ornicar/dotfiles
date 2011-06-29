@@ -24,10 +24,7 @@
     subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"
 
     # Pull all submodules
-    subpull = !"git submodule foreach git pull"
-
-    # Pull all submodules asynchronously
-    subpullasync = !"git submodule foreach 'git pull&'"
+    subpull = !"git-subpull-async"
 
     # Update all submodules
     subupdate = !"git submodule sync && git submodule update --init --recursive"

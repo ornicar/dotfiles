@@ -10,6 +10,9 @@ export BROWSER="chromium-browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
+# Fix ttytter
+export PERL_SIGNALS=unsafe
+
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
 

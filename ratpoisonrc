@@ -41,7 +41,7 @@ startup_message off
 bind c exec urxvtc
 
 # Remap bannish to browser
-bind b exec chromium-browser
+bind b exec chromium
 
 # Next window
 definekey top C-space next

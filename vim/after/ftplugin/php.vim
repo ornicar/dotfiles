@@ -4,6 +4,9 @@ if exists("b:php_ftplugin_loaded")
 endif
 let b:php_ftplugin_loaded = 1
 
+" Use php man http://bjori.blogspot.com/search/label/vim
+set keywordprg=pman
+
 " PHP syntax options
 let php_sql_query = 0 "Coloration des requetes SQL
 let php_htmlInStrings = 0 "Coloration des balises HTML

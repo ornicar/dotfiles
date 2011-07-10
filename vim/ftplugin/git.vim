@@ -3,4 +3,4 @@
 "startinsert
 
 " Fast save and quit
-nmap <Leader>q :wq<CR>
+nmap q :wq<CR>

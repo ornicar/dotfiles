@@ -331,6 +331,7 @@ set statusline+=%*
 " Snipmate
 let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 let g:snips_trigger_key = '<c-s>'
+let g:snips_trigger_key_backwards='<c-;>'
 
 " Ack
 let g:ackprg="ack -H --nocolor --nogroup --column"

@@ -1,9 +1,3 @@
-" Only do this when not done yet for this buffer
-if exists("b:php_ftplugin_loaded")
-    finish
-endif
-let b:php_ftplugin_loaded = 1
-
 " Use php man http://bjori.blogspot.com/search/label/vim
 set keywordprg=pman
 

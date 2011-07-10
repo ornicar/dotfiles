@@ -3,7 +3,7 @@
 # This is my main zsh configuration.
 # It loads scripts from zsh/ and oh-my-zsh/
 
-# First, show a gentle cow
+# First of all, feature a chatty cow
 fortune | cowsay
 
 # Absolute path this script is in

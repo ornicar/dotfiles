@@ -6,7 +6,7 @@
 
 # Export common variables
 export PATH="$PATH:$HOME/.bin:$dotfiles/scripts/git"
-export BROWSER="chromium"
+export BROWSER="google-chrome"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
@@ -18,7 +18,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
-CDPATH=:..:~/data:~/data/workspace:/etc
+CDPATH=:..:~/data:~/data/workspace
 
 # Load less keys
 lesskey "$dotfiles/lesskeys"

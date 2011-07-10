@@ -1,52 +1,72 @@
-" Use php man http://bjori.blogspot.com/search/label/vim
-set keywordprg=pman
+" Only do this when not done yet for this buffer
+if exists("b:did_ftplugin")
+  finish
+endif
+let b:did_ftplugin = 1
 
-" PHP syntax options
-let php_sql_query = 0 "Coloration des requetes SQL
-let php_htmlInStrings = 0 "Coloration des balises HTML
-let php_no_shorttags = 1
-let php_folding = 0
+"
+" From builtin vim php ftplugin
+"
+setlocal commentstring=/*%s*/
+if exists('&omnifunc')
+  setlocal omnifunc=phpcomplete#CompletePHP
+endif
+" Section jumping: [[ and ]] provided by Antony Scriven <adscriven at gmail dot com>
+let s:function = '\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function'
+let s:class = '\(abstract\s\+\|final\s\+\)*class'
+let s:interface = 'interface'
+let s:section = '\(.*\%#\)\@!\_^\s*\zs\('.s:function.'\|'.s:class.'\|'.s:interface.'\)'
+exe 'nno <buffer> <silent> [[ ?' . escape(s:section, '|') . '?<CR>:nohls<CR>'
+exe 'nno <buffer> <silent> ]] /' . escape(s:section, '|') . '/<CR>:nohls<CR>'
+exe 'ono <buffer> <silent> [[ ?' . escape(s:section, '|') . '?<CR>:nohls<CR>'
+exe 'ono <buffer> <silent> ]] /' . escape(s:section, '|') . '/<CR>:nohls<CR>'
+"
+" END from builtin vim php ftplugin
+"
+
+" Use php man http://bjori.blogspot.com/search/label/vim
+setlocal keywordprg=pman
 
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 
 " Because I write this shit so often
-imap <buffer> ` ->
-imap <C-j> $this->
+imap <buffer> <unique> ` ->
+imap <buffer> <unique> <C-j> $this->
 
 " Autoclose brackets
-imap <buffer> {<cr> {<cr>}<esc>O
+imap <buffer> <unique> {<cr> {<cr>}<esc>O
 
 " Insert current class name
-nmap <buffer> <leader>pcn "%pdF.xBdf/:s#/#\\#<CR>
+nmap <buffer> <unique> <leader>pcn "%pdF.xBdf/:s#/#\\#<CR>
 
 " Replace namespace and class name based on filename
-nmap <buffer> <leader>pn gg/namespace <CR>D"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>/class <CR>wcw<C-R>=expand("%:t:r")<CR><ESC>
+nmap <buffer> <unique> <leader>pn gg/namespace <CR>D"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>/class <CR>wcw<C-R>=expand("%:t:r")<CR><ESC>
 
 " Insert current namespace and opens php and create empty class
-nmap <buffer> <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
+nmap <buffer> <unique> <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
 " Public version:
 " Insert current namespace and opens php and create empty class
 "nmap <F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
 " Insert use statements based on ctags
-map <buffer> <leader>pu :call PhpInsertUse()<CR>
+map <buffer> <unique> <leader>pu :call PhpInsertUse()<CR>
 " The same on insert mode
-imap <buffer> <C-e>u <esc>:call PhpInsertUse()<CR>a
+imap <buffer> <unique> <C-e>u <esc>:call PhpInsertUse()<CR>a
 
 " Single line mode documentation
-nnoremap <buffer> <leader>pd :call PhpDocSingle()<CR>
+nnoremap <buffer> <unique> <leader>pd :call PhpDocSingle()<CR>
 
 " Multi line mode documentation (in visual mode)
-vnoremap <buffer> <leader>pd :call PhpDocRange()<CR>
+vnoremap <buffer> <unique> <leader>pd :call PhpDocRange()<CR>
 
 " Align selected code
-vnoremap <buffer> <leader>pa :call PhpAlign()<CR>
-noremap <buffer> <leader>p{ vi{:call PhpAlign()<CR>
-noremap <buffer> <leader>p} vi}:call PhpAlign()<CR>
-noremap <buffer> <leader>p( vi(:call PhpAlign()<CR>
-noremap <buffer> <leader>p) vi):call PhpAlign()<CR>
+vnoremap <buffer> <unique> <leader>pa :call PhpAlign()<CR>
+noremap <buffer> <unique> <leader>p{ vi{:call PhpAlign()<CR>
+noremap <buffer> <unique> <leader>p} vi}:call PhpAlign()<CR>
+noremap <buffer> <unique> <leader>p( vi(:call PhpAlign()<CR>
+noremap <buffer> <unique> <leader>p) vi):call PhpAlign()<CR>
 
 let g:pdv_cfg_Author = "Thibault Duplessis <thibault.duplessis@gmail.com>"
 let g:pdv_cfg_License = "MIT {@link http://opensource.org/licenses/mit-license.html}"

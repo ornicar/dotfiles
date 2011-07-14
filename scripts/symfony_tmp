@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+    echo "Usage: symfony_tmp app"
+    exit 1
+fi
+
+project=${PWD##*/}
+app=$1
+tmp=/tmp/$project/$app
+
+rm -rf $tmp
+mkdir -p $tmp/cache $tmp/logs
+
+[ -d $app/cache ] && rm -R $app/cache
+[ -d $app/logs ] && rm -R $app/logs
+
+ln -s $tmp/cache $app/cache
+ln -s $tmp/logs $app/logs

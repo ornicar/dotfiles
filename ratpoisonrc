@@ -41,7 +41,7 @@ startup_message off
 bind c exec urxvtc
 
 # Remap bannish to browser
-bind b exec google-chrome --disk-cache-dir=/tmp/chrome 
+bind b exec chromium-browser --disk-cache-dir=/tmp/chrome 
 
 # Next window
 definekey top C-space next

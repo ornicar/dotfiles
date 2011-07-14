@@ -6,7 +6,7 @@
 
 # Export common variables
 export PATH="$PATH:$HOME/.bin:$dotfiles/scripts/git"
-export BROWSER="google-chrome --disk-cache-dir=/tmp/chrome "
+export BROWSER="chromium-browser --disk-cache-dir=/tmp/chrome "
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 

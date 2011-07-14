@@ -365,7 +365,7 @@ function! Ranger()
     endif
     redraw!
 endfunction
-nmap <leader>r :call Ranger()<cr>
+nmap <leader>R :call Ranger()<cr>
 
 " Show differences between buffer and saved versions of a file
 function! s:DiffWithSaved()

@@ -95,7 +95,7 @@ printf " %s%.01f#[default]" "#[fg=colour14]" "$load"
 
 # LICHESS PLAYERS
 
-printf " #[fg=colour10,dim](%d/%d)#[default]" "$(cat /tmp/lichess_players)" "$(cat /tmp/lichess_games)"
+printf " #[fg=colour10,dim](%d/%d:%d)#[default]" "$(cat /tmp/lichess_players)" "$(cat /tmp/lichess_games)" "$(cat /tmp/lichess_recent_games)"
 
 # LOCAL DATE
 

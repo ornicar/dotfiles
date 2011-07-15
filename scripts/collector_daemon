@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 INTERVAL=1
-LICHESS_INTERVAL=5
+LICHESS_INTERVAL=10
 
 calculate_cpu_usage()
 {
@@ -43,15 +43,22 @@ fetch_lichess_games()
     echo $(curl -sL http://lichess.org/nbgames.php) > $DATAFILE
 }
 
+fetch_lichess_recent_games()
+{
+    DATAFILE="/tmp/lichess_recent_games"
+    echo $(curl -sL http://lichess.org/nbrecentgames.php) > $DATAFILE
+}
+
 while true; do
 
     sleep $INTERVAL
 
     calculate_cpu_usage
 
-    if [ "$(date +%S)" -eq "0" ]; then
-        fetch_lichess_players
-        fetch_lichess_games
+    if [ $(($(date +%S) % $LICHESS_INTERVAL)) -eq 0 ]; then
+        (fetch_lichess_players) &
+        (fetch_lichess_games) &
+        (fetch_lichess_recent_games) &
     fi
 
 done

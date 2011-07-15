@@ -16,7 +16,7 @@
 	tool = vimdiff
 
 [web]
-    browser = chromium
+    browser = browser
 
 [alias]
 

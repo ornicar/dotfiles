@@ -259,9 +259,12 @@ vnoremap <silent> # :<C-U>
 
 " Detect twig filetype
 au BufNewFile,BufRead *.twig set filetype=twig
-"
+
 " Detect scala filetype
 au BufNewFile,BufRead *.scala set filetype=scala
+
+" Use haml syntax for scaml
+au BufRead,BufNewFile *.scaml set filetype=haml
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>

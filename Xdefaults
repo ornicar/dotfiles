@@ -36,7 +36,7 @@ URxvt*cursorBlink:     true
 
 ! URLs in rxvt
 URxvt*perl-ext-common: default,selection,url-select,clipboard
-URxvt*urlLauncher:     browser
+URxvt*urlLauncher:     /home/thib/bin/browser
 URxvt.keysym.M-u:      perl:url-select:select_next
 URxvt.underlineURLs:   true
 URxvt.keysym.M-p:      perl:clipboard:paste

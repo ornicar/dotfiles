@@ -12,6 +12,11 @@ dotfiles=$HOME/data/workspace/dotfiles
 # Load all of the config files in oh-my-zsh that end in .zsh
 for config_file ($dotfiles/oh-my-zsh/lib/*.zsh) source $config_file
 
+# Load chosen oh-my-zsh plugins
+for plugin in archlinux; do
+    source $dotfiles/oh-my-zsh/plugins/$plugin/$plugin.plugin.zsh
+done
+
 # Load all of my zsh files in zsh/
 for zsh_file ($dotfiles/zsh/*.zsh) source $zsh_file
 

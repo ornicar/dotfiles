@@ -2,6 +2,8 @@
 
 INTERVAL=1
 LICHESS_INTERVAL=10
+LICHESS_TIMEOUT=9
+LICHESS_URL="http://en.lichess.org/status"
 
 calculate_cpu_usage()
 {
@@ -31,23 +33,12 @@ calculate_cpu_usage()
     echo "$IDLE $TOTAL" > $DATAFILE
 }
 
-fetch_lichess_players()
+fetch_lichess_status()
 {
-    DATAFILE="/tmp/lichess_players"
-    echo $(curl -sL http://lichess.org/how-many-players-now) > $DATAFILE
+    DATAFILE="/tmp/lichess_status"
+    echo $(curl --connect-timeout $LICHESS_TIMEOUT -m $LICHESS_TIMEOUT -s $LICHESS_URL) > $DATAFILE
 }
 
-fetch_lichess_games()
-{
-    DATAFILE="/tmp/lichess_games"
-    echo $(curl -sL http://lichess.org/nbgames.php) > $DATAFILE
-}
-
-fetch_lichess_recent_games()
-{
-    DATAFILE="/tmp/lichess_recent_games"
-    echo $(curl -sL http://lichess.org/nbrecentgames.php) > $DATAFILE
-}
 
 while true; do
 
@@ -56,9 +47,7 @@ while true; do
     calculate_cpu_usage
 
     if [ $(($(date +%S) % $LICHESS_INTERVAL)) -eq 0 ]; then
-        (fetch_lichess_players) &
-        (fetch_lichess_games) &
-        (fetch_lichess_recent_games) &
+        (fetch_lichess_status) &
     fi
 
 done

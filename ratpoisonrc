@@ -41,7 +41,7 @@ startup_message off
 bind c exec urxvtc
 
 # Remap bannish to browser
-bind b exec browser
+bind b exec /home/thib/bin/browser
 
 # Next window
 definekey top C-space next

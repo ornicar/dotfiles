@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Define tmpfile
+tmpfile=/tmp/mirrorlisttmp
+
+# Determine architecture type
+archtype=$(uname -m)
+
+# Get latest mirror list and save to tmpfile 
+wget -O $tmpfile "http://www.archlinux.org/mirrorlist/?country=United+States&protocol=ftp&protocol=http&ip_version=4&use_mirror_status=on" >/dev/null 2>&1
+
+# Wrangle txt in saved file
+sed -i -e "s/^#Server/Server/g" -e "s/\$arch/"$archtype"/g" $tmpfile 
+
+# Backup and replace current mirrorlist file 
+if [[ ! -f /etc/pacman.d/mirrorlist.orig ]]; then
+  mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.orig && echo "Successfully backed up original mirrorlist!"
+  cp $tmpfile /etc/pacman.d/mirrorlist && echo "Successfully applied new mirrorlist!"
+else
+  mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak && echo "Successfully backed up current mirrorlist!"
+  cp $tmpfile /etc/pacman.d/mirrorlist && echo "Successfully applied new mirrorlist!"
+fi
+
+exit

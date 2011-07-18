@@ -44,3 +44,8 @@ calc(){ awk "BEGIN{ print $* }" ;}
 twitter() {
   echo "/search $*" | ttytter -script -anonymous
 }
+
+# Search on wikipedia
+wiki() {
+  dig +short txt ${1}.wp.dg.cx
+}

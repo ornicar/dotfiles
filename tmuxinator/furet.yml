@@ -1,0 +1,7 @@
+# ~/.tmuxinator/lichess.yml
+
+project_name: furet
+project_root: ~/data/workspace/furet
+tabs:
+  - vim: vim
+  - git: 

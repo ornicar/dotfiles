@@ -9,3 +9,4 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     lichess "source $tmuxinatorpath/lichess.tmux" \
     ltc "source $tmuxinatorpath/ltc.tmux" \
     workspace "source $tmuxinatorpath/workspace.tmux" \
+    furet "source $tmuxinatorpath/furet.tmux" \

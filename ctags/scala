@@ -1,0 +1,22 @@
+-h .scala
+--verbose=no
+--recurse=yes
+--tag-relative=yes
+--langdef=scala
+--langmap=scala:.scala
+--regex-scala=/^.*case object[ \t]+([a-zA-Z0-9_]+)/\1/o,case objects/
+--regex-scala=/^.*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
+--regex-scala=/^.*case class[ \t]+([a-zA-Z0-9_]+)/\1/c,case classes/
+--regex-scala=/^.*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
+--regex-scala=/^.*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/^.*type[ \t]+([a-zA-Z0-9_]+)/\1/T,types/
+--regex-scala=/^.*def[ \t]+([a-zA-Z0-9_\?]+)/\1/m,methods/
+--regex-scala=/^.*val[ \t]+([a-zA-Z0-9_]+)/\1/C,constants/
+--regex-scala=/^.*var[ \t]+([a-zA-Z0-9_]+)/\1/l,local variables/
+--regex-scala=/^.*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+--exclude=.git
+--exclude=dist
+--exclude=target
+--exclude=lib_managed
+--exclude=src_managed
+--exclude=project

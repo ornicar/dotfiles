@@ -208,7 +208,8 @@ set diffopt=filler,vertical
 nmap <Leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
 " Clear search highlight
-map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
+"map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
+map <silent> <leader>/ :nohl<cr>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<CR>#

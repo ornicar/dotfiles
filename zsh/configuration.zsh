@@ -5,7 +5,7 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$PATH:$HOME/bin:$dotfiles/scripts/git"
+export PATH="$PATH:$HOME/bin:$DOTFILES/scripts/git"
 export BROWSER="browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -21,7 +21,7 @@ export DISABLE_AUTO_TITLE="true"
 CDPATH=:..:~/data:~/data/workspace
 
 # Load less keys
-lesskey "$dotfiles/lesskeys"
+lesskey "$DOTFILES/lesskeys"
 
 # Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
 stty -ixon -ixoff

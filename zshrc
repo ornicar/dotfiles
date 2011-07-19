@@ -7,21 +7,21 @@
 fortune | cowsay
 
 # Absolute path this script is in
-dotfiles=$HOME/data/workspace/dotfiles
+DOTFILES=$HOME/data/workspace/dotfiles
 
 # Load all of the config files in oh-my-zsh that end in .zsh
-for config_file ($dotfiles/oh-my-zsh/lib/*.zsh) source $config_file
+for config_file ($DOTFILES/oh-my-zsh/lib/*.zsh) source $config_file
 
 # Load chosen oh-my-zsh plugins
 for plugin in archlinux; do
-    source $dotfiles/oh-my-zsh/plugins/$plugin/$plugin.plugin.zsh
+    source $DOTFILES/oh-my-zsh/plugins/$plugin/$plugin.plugin.zsh
 done
 
 # Load all of my zsh files in zsh/
-for zsh_file ($dotfiles/zsh/*.zsh) source $zsh_file
+for zsh_file ($DOTFILES/zsh/*.zsh) source $zsh_file
 
 # Add fish-like history search (https://github.com/sunaku/zsh-history-substring-search)
-source $dotfiles/zsh/history-substring-search/history-substring-search.zsh
+source $DOTFILES/zsh/history-substring-search/history-substring-search.zsh
 
 # Enable completion after all plugins are loaded
 autoload -U compinit

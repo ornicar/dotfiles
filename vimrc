@@ -262,6 +262,7 @@ au BufNewFile,BufRead *.twig set filetype=twig
 
 " Detect scala filetype
 au BufNewFile,BufRead *.scala set filetype=scala
+au BufNewFile,BufRead *.sbt set filetype=scala
 
 " Use haml syntax for scaml
 au BufRead,BufNewFile *.scaml set filetype=haml

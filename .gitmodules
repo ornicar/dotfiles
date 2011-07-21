@@ -77,13 +77,12 @@
 	path = vim/bundle/tlib
 	url = git://github.com/tomtom/tlib_vim.git
     ignore = untracked
-[submodule "vim/bundle/addonmwutils"]
-	path = vim/bundle/addonmwutils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-    ignore = untracked
 [submodule "vim/vendor/javascript"]
 	path = vim/vendor/javascript
 	url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
 	url = git://github.com/ornicar/snipmate-snippets.git
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git

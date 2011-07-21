@@ -303,6 +303,31 @@ nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
 
+"{{{taglist options
+" set the names of flags
+let tlist_php_settings = 'php;c:class;f:function;d:constant;p:property'
+" set the executable
+let Tlist_Ctags_Cmd = 'ctags'
+" open on startup
+let Tlist_Auto_Open = 1
+" Display the tags for only one file in the taglist window
+let Tlist_Show_One_File = 0
+" close all folds except for current file
+let Tlist_File_Fold_Auto_Close = 1
+" make tlist pane active when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+" width of window
+let Tlist_WinWidth = 60
+" close tlist when a selection is made
+let Tlist_Close_On_Select = 0
+" show the prototype
+let Tlist_Display_Prototype = 1
+" show tags only for current buffer
+let Tlist_Show_One_File = 1
+" toggle the tag list
+nmap tt :TlistToggle<CR>
+"}}}
+"
 " Show git log for the current file
 nmap <leader>gl :Git log -p %<cr>
 

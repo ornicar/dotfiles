@@ -50,3 +50,6 @@ alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'
 
 # Connect using 3G usb dialer
 alias dial='sudo wvdial'
+
+# Soooo lazy
+alias ya='yaourt'

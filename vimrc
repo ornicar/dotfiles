@@ -141,7 +141,7 @@ runtime! ftplugin/man.vim
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Allow extended digraphs
 set encoding=utf-8
@@ -159,6 +159,9 @@ set nofoldenable
 "au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
 "au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
 "au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
+
+" Toggle line numbering
+nnoremap <silent> <leader>n :set nonumber!<cr>
 
 " Close other windows
 map <leader>wo :only<cr>
@@ -260,13 +263,6 @@ vnoremap <silent> # :<C-U>
 
 " Detect twig filetype
 au BufNewFile,BufRead *.twig set filetype=twig
-
-" Detect scala filetype
-au BufNewFile,BufRead *.scala set filetype=scala
-au BufNewFile,BufRead *.sbt set filetype=scala
-
-" Use haml syntax for scaml
-au BufRead,BufNewFile *.scaml set filetype=haml
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
@@ -417,9 +413,9 @@ endfunction
 nmap <leader>cc :call CleanCode()<cr>
 
 " Show the group name of the word under the cursor
-"map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-"\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-"\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Source local settings
 if filereadable(expand("~/.vimrc.local"))

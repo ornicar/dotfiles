@@ -86,9 +86,11 @@
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+    ignore = untracked
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
 	url = git://github.com/ornicar/vim-scala.git
+    ignore = untracked
 [submodule "zsh/syntax-highlighting"]
 	path = zsh/syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git

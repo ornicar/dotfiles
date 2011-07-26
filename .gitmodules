@@ -63,7 +63,7 @@
     ignore = untracked
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
-	url = git://github.com/sunaku/zsh-history-substring-search.git
+	url = git://github.com/zsh-users/zsh-history-substring-search.git
     ignore = untracked
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
@@ -89,3 +89,6 @@
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
 	url = git://github.com/ornicar/vim-scala.git
+[submodule "zsh/syntax-highlighting"]
+	path = zsh/syntax-highlighting
+	url = git://github.com/zsh-users/zsh-syntax-highlighting.git

@@ -16,6 +16,9 @@ export PERL_SIGNALS=unsafe
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
 
+# Enable more syntax highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets)
+
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
 CDPATH=:..:~/data:~/data/workspace

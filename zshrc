@@ -20,8 +20,11 @@ done
 # Load all of my zsh files in zsh/
 for zsh_file ($DOTFILES/zsh/*.zsh) source $zsh_file
 
-# Add fish-like history search (https://github.com/sunaku/zsh-history-substring-search)
-source $DOTFILES/zsh/history-substring-search/history-substring-search.zsh
+# Add fish-like syntax highlighting 
+source $DOTFILES/zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Add fish-like history search 
+source $DOTFILES/zsh/history-substring-search/zsh-history-substring-search.zsh
 
 # Enable completion after all plugins are loaded
 autoload -U compinit

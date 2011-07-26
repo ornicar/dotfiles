@@ -1,15 +1,11 @@
 " Vim configuration - Thibault Duplessis.
 
 set nocompatible
-let mapleader = ","
 
-filetype off                    " force reloading *after* pathogen loaded
+" Infect Vim with pathogen >:)
+call pathogen#infect()
 
-" Load bundles help
-silent! call pathogen#helptags()
-" Load bundles code
-silent! call pathogen#runtime_append_all_bundles()
-
+syntax on
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Colorsheme
@@ -17,16 +13,10 @@ let g:solarized_termcolors=16
 let g:solarized_termtrans=0
 let g:solarized_menu=0
 let g:solarized_italic=0
-syntax enable
 set background=dark
 colorscheme solarized
 
-" Toggle colorscheme dark/light
-function! TogBG()
-    let &background = ( &background == "dark"? "light" : "dark" )
-    exe "colorscheme " . g:colors_name
-endfunction
-map <leader>b :call TogBG()<cr>
+let mapleader = ","
 
 " Sets how many lines of history VIM has to remember
 set history=2000

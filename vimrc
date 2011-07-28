@@ -208,10 +208,10 @@ map <silent> <leader>/ :nohl<cr>
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<CR>#
 
 " Pull word under cursor into Ack for a global search
-map <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
+nmap <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
 
 " Start a substitute
-map <leader>s :%s/\v
+nmap <leader>ss :%s/\v
 
 " Indent whole file
 nmap <leader>i <Esc>mygg=G'y
@@ -272,6 +272,8 @@ set cmdwinheight=12
 map R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
 
 " CTAGS
+" Rebuild tags
+nmap <silent><leader>ct :!ctags&<cr>
 " Jump to next tag match
 map ]t :bd<cr>:tnext<cr>
 " Jump to previous tag match

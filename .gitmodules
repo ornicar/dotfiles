@@ -83,10 +83,6 @@
 [submodule "vim/bundle/snipmate-snippets"]
 	path = vim/bundle/snipmate-snippets
 	url = git://github.com/ornicar/snipmate-snippets.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
-    ignore = untracked
 [submodule "vim/bundle/scala"]
 	path = vim/bundle/scala
 	url = git://github.com/ornicar/vim-scala.git
@@ -97,3 +93,4 @@
 [submodule "vim/bundle/addon-mw-utils"]
 	path = vim/bundle/addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+    ignore = untracked

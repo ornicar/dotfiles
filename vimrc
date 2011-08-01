@@ -109,6 +109,9 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 
+" Execute external command
+nmap ! :!
+
 " Always replace all occurences of a line
 set gdefault
 

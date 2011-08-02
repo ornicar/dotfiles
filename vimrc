@@ -210,14 +210,21 @@ map <silent> <leader>/ :nohl<cr>
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<CR>#
 
-" Pull word under cursor into Ack for a global search
-nmap <leader>za :Ack "<C-r>=expand("<cword>")<CR>"
+" Ack
+let g:ackprg="ack -H --nocolor --nogroup --column"
+" Set a mark then search with Ack
+nmap <leader>a mA:Ack<space>
+" Set a mark, then pull word under cursor into Ack for a global search
+nmap <leader>za mA:Ack "<C-r>=expand("<cword>")<CR>"
 
 " Start a substitute
 nmap <leader>ss :%s/\v
 
 " Indent whole file
 nmap <leader>i <Esc>mygg=G'y
+
+" Expand current filed dir in console mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Jump to line AND col
 nnoremap ' `
@@ -354,12 +361,10 @@ let g:snips_author = 'Thibault Duplessis <thibault.duplessis@gmail.com>'
 let g:snips_trigger_key = '<c-s>'
 let g:snips_trigger_key_backwards='<c-;>'
 
-" Ack
-let g:ackprg="ack -H --nocolor --nogroup --column"
-nmap <leader>a :Ack<space>
-
-" Command-T
-nmap <silent> <leader>f :CommandT<CR>
+" Command-T search
+nmap <silent> <leader>mf :CommandT<CR>
+" Flush then search
+nmap <silent> <leader>mF :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1

@@ -283,13 +283,13 @@ map R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><es
 
 " CTAGS
 " Rebuild tags
-nmap <silent><leader>ct :!ctags&<cr>
+nmap <leader>ct :!ctags&<cr><cr>
 " Jump to next tag match
 map ]t :bd<cr>:tnext<cr>
 " Jump to previous tag match
 map [t :bd<cr>:tprevious<cr>
-" Open tag command
-nmap <leader>t :tag<space>
+" Save a mark then open tag command
+nmap <leader>t mA:tag<space>
 
 " Surround mappings
 let g:surround_no_mappings = 1

@@ -1,7 +1,0 @@
-# ~/.tmuxinator/lichess.yml
-
-project_name: scala-labs
-project_root: ~/data/workspace/scala-labs/labs
-tabs:
-  - vim: vim
-  - zsh: 

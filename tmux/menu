@@ -10,5 +10,5 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     ltc "source $tmuxinatorpath/ltc.tmux" \
     workspace "source $tmuxinatorpath/workspace.tmux" \
     haskell "source $tmuxinatorpath/haskell.tmux" \
-    scala-labs "source $tmuxinatorpath/scala-labs.tmux" \
+    praxeum "source $tmuxinatorpath/praxeum.tmux" \
     furet "source $tmuxinatorpath/furet.tmux" \

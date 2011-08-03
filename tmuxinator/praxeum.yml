@@ -1,0 +1,7 @@
+# ~/.tmuxinator/lichess.yml
+
+project_name: praxeum
+project_root: ~/data/workspace/praxeum
+tabs:
+  - vim: vim
+  - zsh: 

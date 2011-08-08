@@ -18,14 +18,12 @@ colorscheme solarized
 
 let mapleader = ","
 
-" Sets how many lines of history VIM has to remember
-set history=2000
+set history=2000                " Sets how many lines of history VIM has to remember
 
 set undolevels=1000             " use many levels of undo
 set noundofile                  " Don't keep a persistent undofile
 
-" Disable spell checking
-set nospell
+set nospell                       " Disable spell checking
 
 set lazyredraw                    " make plugins smoother
 
@@ -134,7 +132,8 @@ runtime! ftplugin/man.vim
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala
+    \ autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Allow extended digraphs
 set encoding=utf-8

@@ -165,6 +165,9 @@ map <leader>wj :wincmd j<cr>
 map <leader>wk :wincmd k<cr>
 map <leader>wl :wincmd l<cr>
 
+" Configure buffer explorer
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+
 " Delete buffer
 nmap <leader>wd :bd<cr>
 

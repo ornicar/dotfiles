@@ -1,0 +1,7 @@
+# ~/.tmuxinator/sltc.yml
+
+project_name: sltc
+project_root: ~/data/workspace/sltc
+tabs:
+  - vim: vim
+  - zsh: 

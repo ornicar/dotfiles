@@ -4,9 +4,14 @@
 # Ignore some dirs
 --ignore-dir=cache
 --ignore-dir=logs
+--ignore-dir=target
+--ignore-dir=project
 
 # Vim like case sensitivity
 --smart-case
 
 # Twig type
 --type-set=twig=.twig
+
+# Jade type
+--type-set=jade=.jade

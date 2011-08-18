@@ -22,8 +22,12 @@ noremap E gt
 " ======================================
 " Select link
 noremap s f
+" Select link for new tab
+noremap S F
 " Disable original select link mapping
 noremap f <nop>
+" Disable original select link mapping
+noremap F <nop>
 " Move tabs
 nnoremap <C-left> :tabmove! -1<CR>
 nnoremap <C-right> :tabmove! +1<CR>

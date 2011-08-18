@@ -1,0 +1,38 @@
+" colemak
+" =======================================
+" next search -> down
+noremap n 3j
+" Faster viewport scrolling
+noremap <C-n> 9j
+" previous -> prev tab
+noremap N gT
+" down -> next search
+noremap j n
+" join lines -> previous search
+noremap J N
+
+" end -> up
+noremap e 3k
+" Faster viewport scrolling
+noremap <C-e> 9k
+" end inclusive -> next tab
+noremap E gt
+
+" mappings
+" ======================================
+" Select link
+noremap s f
+" Disable original select link mapping
+noremap f <nop>
+" Move tabs
+nnoremap <C-left> :tabmove! -1<CR>
+nnoremap <C-right> :tabmove! +1<CR>
+" Select buffer
+nnoremap . b
+
+" options
+" ======================================
+" minimal gui
+set gui=tabs
+" Try to always switch to normal mode on page load
+set focuscontent

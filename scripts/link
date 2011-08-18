@@ -44,3 +44,5 @@ link ncmpcpp.keys ~/.ncmpcpp/keys
 link ttytterrc ~/.ttytterrc
 link apvlvrc ~/.apvlvrc
 link inputrc ~/.inputrc
+link vimperator ~/.vimperator
+link vimperatorrc ~/.vimperatorrc

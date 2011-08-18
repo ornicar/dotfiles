@@ -16,7 +16,7 @@
 	tool = vimdiff
 
 [web]
-    browser = browser
+    browser = firefox
 
 [alias]
 

@@ -153,7 +153,10 @@ set nofoldenable
 "au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
 
 " Toggle line numbering
-nnoremap <silent> <leader>n :set nonumber!<cr>
+nnoremap <silent> <leader>nn :set nonumber!<cr>
+
+" Toggle nowrap
+nnoremap <silent> <leader>nw :set nowrap!<cr>
 
 " Close other windows
 map <leader>wo :only<cr>
@@ -265,6 +268,9 @@ vnoremap <silent> # :<C-U>
 
 " Detect twig filetype
 au BufNewFile,BufRead *.twig set filetype=twig
+
+" Detect vimperator filetype
+au BufNewFile,BufRead *.vimp set filetype=vim
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>

@@ -1,3 +1,5 @@
+let mapleader = ","
+
 " colemak
 " =======================================
 " next search -> down
@@ -26,7 +28,7 @@ noremap s f
 noremap S F
 " Disable original select link mapping
 noremap f <nop>
-" Disable original select link mapping
+" Disable original select link mapping for new tab
 noremap F <nop>
 " Move tabs
 nnoremap <C-left> :tabmove! -1<CR>

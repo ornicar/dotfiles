@@ -13,3 +13,4 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     praxeum "source $tmuxinatorpath/praxeum.tmux" \
     furet "source $tmuxinatorpath/furet.tmux" \
     sltc "source $tmuxinatorpath/sltc.tmux" \
+    scalatra "source $tmuxinatorpath/scalatra.tmux" \

@@ -1,3 +1,4 @@
+alias start_scalatra='$SHELL /home/thib/.tmuxinator/scalatra.tmux'
 alias start_exercise='$SHELL /home/thib/.tmuxinator/exercise.tmux'
 alias start_sltc='$SHELL /home/thib/.tmuxinator/sltc.tmux'
 alias start_vulug='$SHELL /home/thib/.tmuxinator/vulug.tmux'

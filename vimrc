@@ -152,6 +152,9 @@ set nofoldenable
 "au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
 "au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
 
+" Move insertion to correct indentation
+imap <C-s> <esc>S
+
 " Toggle line numbering
 nnoremap <silent> <leader>nn :set nonumber!<cr>
 
@@ -266,12 +269,6 @@ vnoremap <silent> # :<C-U>
     \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
     \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" Detect twig filetype
-au BufNewFile,BufRead *.twig set filetype=twig
-
-" Detect vimperator filetype
-au BufNewFile,BufRead *.vimp set filetype=vim
-
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
 nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
@@ -351,6 +348,10 @@ nmap <silent> <leader>mF :CommandT<CR>
 " Increase cache size
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1
+
+" Filetype detection extensions
+au BufNewFile,BufRead *vimperatorrc*,*.vimp set filetype=vimperator
+au BufNewFile,BufRead *.twig set filetype=twig
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |

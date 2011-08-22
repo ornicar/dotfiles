@@ -28,7 +28,7 @@ noremap s f
 noremap S F
 " Disable original select link mapping
 noremap f <nop>
-" Disable original select link mapping for new tab
+" Disable original select link mapping for new tae
 noremap F <nop>
 " Move tabs
 nnoremap <C-left> :tabmove! -1<CR>
@@ -42,3 +42,15 @@ nnoremap . b
 set gui=tabs
 " Try to always switch to normal mode on page load
 set focuscontent
+" I don't like beeps
+set visualbell
+" useful for command-line completion
+set autocomplete
+set wildmode=list:longest,full
+
+" autocommand
+" ======================================
+" automatic pass-through mode on certain pages (do ':h autocommands' for details)
+"autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
+
+echo "~/.vimperatorrc sourced!"

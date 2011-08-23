@@ -3,22 +3,30 @@ let mapleader = ","
 " colemak
 " =======================================
 " next search -> down
-noremap n 3j
+nnoremap n 3j
+vnoremap n j
 " Faster viewport scrolling
-noremap <C-n> 9j
+nnoremap <C-n> 9j
+vnoremap <C-n> 3j
 " previous -> prev tab
-noremap N gT
+nnoremap N gT
+vnoremap N <nop>
 " down -> next search
-noremap j n
+nnoremap j n
+vnoremap j n
 " join lines -> previous search
-noremap J N
+nnoremap J N
+vnoremap J N
 
 " end -> up
-noremap e 3k
+nnoremap e 3k
+vnoremap e k
 " Faster viewport scrolling
-noremap <C-e> 9k
+nnoremap <C-e> 9k
+vnoremap <C-e> 3k
 " end inclusive -> next tab
-noremap E gt
+nnoremap E gt
+vnoremap E <nop>
 
 " mappings
 " ======================================
@@ -33,8 +41,6 @@ noremap F <nop>
 " Move tabs
 nnoremap <C-left> :tabmove! -1<CR>
 nnoremap <C-right> :tabmove! +1<CR>
-" Select buffer
-nnoremap . b
 
 " options
 " ======================================
@@ -52,5 +58,3 @@ set wildmode=list:longest,full
 " ======================================
 " automatic pass-through mode on certain pages (do ':h autocommands' for details)
 "autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
-
-echo "~/.vimperatorrc sourced!"

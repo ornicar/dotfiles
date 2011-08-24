@@ -47,3 +47,4 @@ link apvlvrc ~/.apvlvrc
 link inputrc ~/.inputrc
 link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc
+link ghci ~/.ghci

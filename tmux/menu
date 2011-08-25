@@ -9,7 +9,7 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     lichess "source $tmuxinatorpath/lichess.tmux" \
     ltc "source $tmuxinatorpath/ltc.tmux" \
     workspace "source $tmuxinatorpath/workspace.tmux" \
-    haskell "source $tmuxinatorpath/haskell.tmux" \
+    haskeum "source $tmuxinatorpath/haskeum.tmux" \
     praxeum "source $tmuxinatorpath/praxeum.tmux" \
     furet "source $tmuxinatorpath/furet.tmux" \
     sltc "source $tmuxinatorpath/sltc.tmux" \

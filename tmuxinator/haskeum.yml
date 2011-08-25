@@ -1,0 +1,7 @@
+# ~/.tmuxinator/haskeum.yml
+
+project_name: haskeum
+project_root: ~/data/workspace/haskeum
+tabs:
+  - vim: vim
+  - zsh: 

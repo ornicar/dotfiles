@@ -100,3 +100,6 @@
 [submodule "vim/bundle/jade"]
 	path = vim/bundle/jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/hoogle"]
+	path = vim/bundle/hoogle
+	url = git://github.com/Twinside/vim-hoogle.git

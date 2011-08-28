@@ -1,0 +1,7 @@
+# ~/.tmuxinator/yesod.yml
+
+project_name: yesod
+project_root: ~/data/workspace/yesod
+tabs:
+  - vim: vim
+  - zsh: 

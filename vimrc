@@ -36,7 +36,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -132,7 +132,7 @@ runtime! ftplugin/man.vim
 set shiftround
 
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala,haskell
     \ autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Allow extended digraphs

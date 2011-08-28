@@ -53,3 +53,6 @@ alias dial='sudo wvdial'
 
 # Soooo lazy
 alias ya='yaourt'
+
+# Generate haskell tags
+alias htags='find ./ -name "*.*hs" | xargs hasktags'

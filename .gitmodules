@@ -20,7 +20,7 @@
     ignore = untracked
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
-	url = git://github.com/tpope/vim-surround.git
+	url = git://github.com/ornicar/vim-surround.git
     ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit

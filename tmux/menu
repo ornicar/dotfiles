@@ -15,3 +15,4 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     sltc "source $tmuxinatorpath/sltc.tmux" \
     scalatra "source $tmuxinatorpath/scalatra.tmux" \
     yesod "source $tmuxinatorpath/yesod.tmux" \
+    ophir "source $tmuxinatorpath/ophir.tmux" \

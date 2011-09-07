@@ -99,16 +99,7 @@ raw_data=$(cat /tmp/lichess_status)
 data=(${(s: :)raw_data})
 printf " #[fg=colour10,dim](%d|%d+%d:%d|%s)#[default]" $data[1] $data[2] $data[4] $data[3] $data[5]
 
-# LOCAL DATE
-
-printf " #[fg=colour10]$(date +"%a %b %d") #[fg=colour7]$(date +"%H:%M")#[default]"
-
-# AZORES DATE
-
-export TZ="Atlantic/Azores"
-printf " #[fg=colour10]$(date +"%H:%M")#[default]"
-
 # FRENCH DATE
 
 export TZ="Europe/Paris"
-printf " #[fg=colour10]$(date +"%H:%M")#[default]"
+printf " #[fg=colour12]$(date +"%a %b %d") $(date +"%H:%M")#[default]"

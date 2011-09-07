@@ -96,7 +96,7 @@
     ignore = untracked
 [submodule "vim/bundle/bufexplorer"]
 	path = vim/bundle/bufexplorer
-	url = git://github.com/slack/vim-bufexplorer.git
+	url = git://github.com/ornicar/vim-bufexplorer.git
 [submodule "vim/bundle/jade"]
 	path = vim/bundle/jade
 	url = git://github.com/digitaltoad/vim-jade.git

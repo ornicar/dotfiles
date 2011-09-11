@@ -365,6 +365,7 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 
 " Gist
 let g:gist_open_browser_after_post = 1
+let g:gist_browser_command = "browser %URL% &"
 
 " Use ranger as vim file manager
 function! Ranger()

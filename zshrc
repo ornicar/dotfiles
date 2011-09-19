@@ -13,7 +13,7 @@ DOTFILES=$HOME/data/workspace/dotfiles
 for config_file ($DOTFILES/oh-my-zsh/lib/*.zsh) source $config_file
 
 # Load chosen oh-my-zsh plugins
-for plugin in archlinux; do
+for plugin in archlinux extract; do
     source $DOTFILES/oh-my-zsh/plugins/$plugin/$plugin.plugin.zsh
 done
 

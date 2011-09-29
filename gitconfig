@@ -16,7 +16,7 @@
 	tool = vimdiff
 
 [web]
-    browser = firefox-beta-bin
+    browser = firefox
 
 [alias]
 

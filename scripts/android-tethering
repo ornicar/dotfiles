@@ -1,6 +1,6 @@
 #!/bin/sh
 
-modprobe usbnet
+sudo modprobe usbnet
 sudo ifconfig usb0 up
 sudo dhcpcd usb0
 

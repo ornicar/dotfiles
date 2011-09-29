@@ -1,0 +1,20 @@
+#!/bin/sh
+
+for submodule in $(git submodule status|sed "s/\s/;/g"); do
+    sha1=$(echo $submodule|sed "s/.\([a-f0-9]*\).*/\1/")
+    path=$(echo $submodule|sed "s/.[a-f0-9]*;\([^;]*\).*/\1/")
+    url=$(git config submodule.$path.url)
+    if [ -z "$url" ]; then
+        echo "$path has no url"
+    else
+        user=$(echo $url|sed "s#.*://github.com/\([^/]*\)/.*#\1#")
+        repo=$(echo $url|sed "s#.*://github.com/[^/]*/\([^\.]*\).*#\1#")
+
+        commiturl="https://github.com/$user/$repo/commit/$sha1"
+        statuscode=$(curl -sILw "%{http_code}" -o /dev/null $commiturl)
+
+        if [ $statuscode != "200" ]; then
+            echo "$path:$sha1 is not published on $url"
+        fi
+    fi
+done

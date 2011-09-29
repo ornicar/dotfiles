@@ -5,7 +5,7 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$PATH:$HOME/bin:$DOTFILES/scripts/git:$HOME/.cabal/bin"
+export PATH="$PATH:$HOME/bin:$DOTFILES/scripts:$HOME/.cabal/bin"
 export BROWSER="browser"
 export EDITOR='vim'
 export GIT_EDITOR='vim'

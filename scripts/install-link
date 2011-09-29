@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Absolute path to this script
+SCRIPT=`readlink -f $0`
+# Absolute path this script is in
+SCRIPTPATH=`dirname $SCRIPT`
+
+echo "Linking config files from $SCRIPTPATH"
+
+link (){
+    FROM="$SCRIPTPATH/../$1"
+    TO=$2
+
+    printf "ln -s %s %s\n" $FROM $TO
+
+    rm $TO
+    ln -s $FROM $TO
+}
+
+link zshrc ~/.zshrc
+link scripts ~/.scripts
+link gitconfig ~/.gitconfig
+link muttrc ~/.muttrc
+link mutt ~/.mutt
+link vimrc ~/.vimrc
+link gvimrc ~/.gvimrc
+link vim ~/.vim
+link tigrc ~/.tigrc
+link rtorrent.rc ~/.rtorrent.rc
+link xmodmaprc ~/.Xmodmap
+link xinitrc ~/.xinitrc
+link Xdefaults ~/.Xdefaults
+link xcolors ~/.xcolors
+link ackrc ~/.ackrc
+link mpd ~/.mpd
+link offlineimaprc ~/.offlineimaprc
+link weechat ~/.weechat
+link surfraw ~/.config/surfraw/conf
+link tmux.conf ~/.tmux.conf
+link tmux ~/.tmux
+link tmuxinator ~/.tmuxinator
+link ratpoisonrc ~/.ratpoisonrc
+link ranger/keys.py ~/.config/ranger/keys.py
+link ncmpcpp.keys ~/.ncmpcpp/keys
+link ttytterrc ~/.ttytterrc
+link apvlvrc ~/.apvlvrc
+link inputrc ~/.inputrc
+link vimperator ~/.vimperator
+link vimperatorrc ~/.vimperatorrc
+link ghci ~/.ghci

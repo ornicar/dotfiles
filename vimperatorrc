@@ -58,7 +58,7 @@ set autocomplete
 set wildmode=list:longest,full
 " text editor
 set editor="urxvt -e vim -f"
-set hintinputs="label,value,name"
+set hintinputs="label,name"
 set hintmatching="wordstartswith"
 
 " autocommand

@@ -241,8 +241,8 @@ nnoremap ' `
 " nnoremap j gj
 " nnoremap k gk
 
-" Fast save
-map <tab> :w<CR>
+" Fast save (also clears the search)
+map <tab> :w<cr>:nohl<cr>
 
 " Sudo to write
 cmap :w silent write !sudo tee % >/dev/null

@@ -5,7 +5,6 @@
 --ignore-dir=cache
 --ignore-dir=logs
 --ignore-dir=target
---ignore-dir=project
 
 # Vim like case sensitivity
 --smart-case

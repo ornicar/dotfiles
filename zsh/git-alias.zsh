@@ -9,8 +9,8 @@ alias g='git'
 alias gs='git status'
 alias ga='git add -A'
 alias gf='git fetch'
-alias gl='git-up'
-alias glr='git-up --rebase'
+alias gl='git pull'
+alias glr='git pull --rebase'
 alias gp='git push'
 alias gpw='git-push-write'
 alias gc='git commit -v'
@@ -34,3 +34,8 @@ alias grhh='git reset --hard HEAD'
 alias gslr='git-stash-pull-rebase'
 alias gslrp='git-stash-pull-rebase && git push'
 alias gw='git-wtf'
+
+# Override aliases with functions
+# to keep autocompletion
+function gl(){git-up "$@"}
+function glr(){git-up --rebase "$@"}

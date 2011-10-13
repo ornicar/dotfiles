@@ -33,6 +33,7 @@ bind generic A !git commit --amend
 bind generic P !git push
 bind generic p !git pull
 bind generic U !git add -A
+bind generic W !git-wtf
 
 # colemak
 bind generic e move-up

@@ -1,0 +1,7 @@
+# ~/.tmuxinator/scalex.yml
+
+project_name: scalex
+project_root: ~/data/workspace/scalex
+tabs:
+  - vim: vim
+  - zsh: 

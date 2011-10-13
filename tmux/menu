@@ -4,15 +4,6 @@ tmuxinatorpath="$HOME/.tmuxinator/"
 
 ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     media "source $tmuxinatorpath/media.tmux" \
-    system "source $tmuxinatorpath/system.tmux" \
-    exercise "source $tmuxinatorpath/exercise.tmux" \
     lichess "source $tmuxinatorpath/lichess.tmux" \
-    ltc "source $tmuxinatorpath/ltc.tmux" \
     workspace "source $tmuxinatorpath/workspace.tmux" \
-    haskeum "source $tmuxinatorpath/haskeum.tmux" \
-    praxeum "source $tmuxinatorpath/praxeum.tmux" \
-    furet "source $tmuxinatorpath/furet.tmux" \
-    sltc "source $tmuxinatorpath/sltc.tmux" \
-    scalatra "source $tmuxinatorpath/scalatra.tmux" \
-    yesod "source $tmuxinatorpath/yesod.tmux" \
-    ophir "source $tmuxinatorpath/ophir.tmux" \
+    scalex "source $tmuxinatorpath/scalex.tmux" \

@@ -40,7 +40,7 @@ link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator
 link ratpoisonrc ~/.ratpoisonrc
-link ranger/keys.py ~/.config/ranger/keys.py
+link ranger/rc.conf ~/.config/ranger/rc.conf
 link ncmpcpp.keys ~/.ncmpcpp/keys
 link ttytterrc ~/.ttytterrc
 link apvlvrc ~/.apvlvrc

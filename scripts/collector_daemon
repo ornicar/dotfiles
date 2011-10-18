@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 INTERVAL=1
-LICHESS_INTERVAL=10
-LICHESS_TIMEOUT=9
+LICHESS_INTERVAL=4
+LICHESS_TIMEOUT=3
 LICHESS_URL="http://en.lichess.org/status"
 
 calculate_cpu_usage()

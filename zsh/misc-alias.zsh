@@ -32,9 +32,6 @@ alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm r
 # Run IM program
 alias im="weechat-curses"
 
-# Increase urxvt font size
-alias bigger="printf '\33]50;%s\007' \"xft:Inconsolata:size=16\""
-
 # radios are in ~/data/radio
 alias radio="mplayer -playlist"
 

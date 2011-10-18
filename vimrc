@@ -70,9 +70,9 @@ set autoindent
 set smartindent
 
 " Configure tabstyle...
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>

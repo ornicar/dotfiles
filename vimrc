@@ -331,9 +331,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Command-T search
-nmap <silent> <leader>mf :CommandT<CR>
+nmap <silent> <leader>mf :CommandT<cr>
 " Flush then search
-nmap <silent> <leader>mF :CommandT<CR>
+nmap <silent> <leader>mF :CommandTFlush<cr>:CommandT<cr>
+
 " Increase cache size
 let g:CommandTMaxFiles = 30000
 let g:CommandTMatchWindowAtTop = 1

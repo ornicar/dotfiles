@@ -95,12 +95,6 @@ function! TabToggle()
 endfunction
 nmap <leader><tab> mz:execute TabToggle()<CR>'z
 
-" Reduce the strain in my left pinky by using C-t for <esc>
-inoremap <C-t> <esc>
-nnoremap <C-t> <esc>
-vnoremap <C-t> <esc>
-cnoremap <C-t> <esc>
-
 " Use perl regex style
 nnoremap / /\v
 vnoremap / /\v

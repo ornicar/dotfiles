@@ -342,6 +342,7 @@ let g:CommandTMatchWindowAtTop = 1
 " Filetype detection extensions
 au BufNewFile,BufRead *vimperatorrc*,*.vimp set filetype=vimperator
 au BufNewFile,BufRead *.twig set filetype=twig
+au BufNewFile,BufRead *.md set filetype=markdown
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |

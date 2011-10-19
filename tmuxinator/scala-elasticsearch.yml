@@ -1,0 +1,7 @@
+# ~/.tmuxinator/scala-elasticsearch.yml
+
+project_name: scala-elasticsearch
+project_root: ~/data/workspace/scala-elasticsearch
+tabs:
+  - vim: vim
+  - zsh: 

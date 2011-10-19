@@ -7,3 +7,4 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     lichess "source $tmuxinatorpath/lichess.tmux" \
     workspace "source $tmuxinatorpath/workspace.tmux" \
     scalex "source $tmuxinatorpath/scalex.tmux" \
+    scala-elasticsearch "source $tmuxinatorpath/scala-elasticsearch.tmux" \

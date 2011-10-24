@@ -19,11 +19,10 @@ unclutter -root -idle 1 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
 $HOME/.scripts/collector_daemon &           # start cpu and lichess data collector
 
-# Detect exercise hardware and apply it
-isexercisehardware=$(xrandr | awk '/LVDS1 connected/')
-[ -n isexercisehardware ] && xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
+ishastone=$(xrandr | awk '/LVDS1 connected/')
+[ -n isexercisehardware ] && xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output VGA1 --mode 1680x1050 --pos 1366x0 --rotate normal
 
-(sleep 1 && urxvtc -e $HOME/.tmuxinator/media.tmux) &   # Give ratpoison one second to start, then open urxvt
+#(sleep 1 && urxvtc -e $HOME/.tmuxinator/media.tmux) &   # Give ratpoison one second to start, then open urxvt
 
 # Run window manager
 exec ratpoison

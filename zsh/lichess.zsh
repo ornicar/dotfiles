@@ -1,5 +1,5 @@
 #!/bin/zsh
 
 lichessdoprod() {
-    ssh lichess "cd /home/lichess/ && $*"
+    ssh phobos "cd /home/lichess && $*"
 }

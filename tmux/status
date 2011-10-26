@@ -46,10 +46,9 @@ printf "$modifier%s%s#[default]" "$percent" "$sign"
 input=/sys/class/hwmon/hwmon0/temp1_input
 [ -s "$input" ] && temperature=$(awk '{printf "%0.f",$1/1000}' "$input")
 if [ -n "$temperature" ]; then
-	if [ "$temperature" -gt 64 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-	elif [ "$temperature" -gt 59 ]; then modifier="#[fg=colour13,bright]"
-	elif [ "$temperature" -gt 54 ]; then modifier="#[fg=colour5]"
-	elif [ "$temperature" -gt 49 ]; then modifier="#[fg=colour6]"
+	if [ "$temperature" -gt 69 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+	elif [ "$temperature" -gt 62 ]; then modifier="#[fg=colour13,bright]"
+	elif [ "$temperature" -gt 54 ]; then modifier="#[fg=colour6]"
 	else modifier="#[fg=colour4]"
 	fi
     printf " %s%s°#[default]" "$modifier" "$temperature"
@@ -71,9 +70,9 @@ nbcores=4
 divisor=2
 usage=$(cat /tmp/cpu_usage)
 (( usage = usage * nbcores / divisor ))
-(( index = usage / 5 ))
-[ $index -gt 19 ] && index=19
-bar="                   "
+(( index = usage / 4 ))
+[ $index -gt 24 ] && index=24
+bar="                        "
 for bari in $(seq $index); do
     bar[$bari]="|"
 done
@@ -101,5 +100,5 @@ printf " #[fg=colour10,dim](%d|%d+%d:%d|%s)#[default]" $data[1] $data[2] $data[4
 
 # FRENCH DATE
 
-export TZ="Europe/Paris"
+#export TZ="Europe/Paris"
 printf " #[fg=colour12]$(date +"%a %b %d") $(date +"%H:%M")#[default]"

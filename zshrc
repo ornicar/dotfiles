@@ -7,7 +7,7 @@
 fortune | cowsay
 
 # Absolute path this script is in
-DOTFILES=$HOME/data/workspace/dotfiles
+DOTFILES=$HOME/dotfiles
 
 # Load all of the config files in oh-my-zsh that end in .zsh
 for config_file ($DOTFILES/oh-my-zsh/lib/*.zsh) source $config_file

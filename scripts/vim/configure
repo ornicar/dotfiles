@@ -2,7 +2,7 @@
 
 ./configure \
 --with-features=normal \
---prefix=/home/thib/data/bin/vim \
+--prefix=/home/thib/bin/vim \
 --enable-rubyinterp \
 --enable-multibyte \
 --enable-cscope \

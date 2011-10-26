@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ~/data/bin/vim/src
+cd ~/vim/src
 ~/.scripts/vim/configure
 make
 sudo make install

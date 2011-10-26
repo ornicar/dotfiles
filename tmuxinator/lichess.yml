@@ -1,7 +1,7 @@
 # ~/.tmuxinator/lichess.yml
 
 project_name: lichess
-project_root: ~/data/workspace/lichess
+project_root: ~/lichess
 tabs:
   - vim: vim
   - git: 

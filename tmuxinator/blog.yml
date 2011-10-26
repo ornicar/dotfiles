@@ -1,7 +1,0 @@
-# ~/.tmuxinator/blog.yml
-
-project_name: blog
-project_root: ~/data/workspace/ornicar.github.com
-tabs:
-  - vim: vim
-  - blog: zsh

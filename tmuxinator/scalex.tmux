@@ -1,7 +1,7 @@
 #!/bin/zsh
 _TMUX=$TMUX
 TMUX=
-cd ~/data/workspace/scalex
+cd ~/scalex
 tmux start-server
 
 if ! $(tmux has-session -t 'scalex'); then

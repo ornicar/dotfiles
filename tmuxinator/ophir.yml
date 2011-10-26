@@ -1,7 +1,0 @@
-# ~/.tmuxinator/ophir.yml
-
-project_name: ophir
-project_root: ~/data/workspace/ophir
-tabs:
-  - vim: vim
-  - zsh: 

@@ -3,8 +3,8 @@
 tmuxinatorpath="$HOME/.tmuxinator/"
 
 ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
-    media "source $tmuxinatorpath/media.tmux" \
-    lichess "source $tmuxinatorpath/lichess.tmux" \
-    scalex "source $tmuxinatorpath/scalex.tmux" \
-    scala-elasticsearch "source $tmuxinatorpath/scala-elasticsearch.tmux" \
-    aichallenge "source $tmuxinatorpath/aichallenge.tmux" \
+    archlinux "mux archlinux" \
+    lichess "mux lichess" \
+    scalex "mux scalex" \
+    aichallenge "mux aichallenge" \
+    jirafe-reaper "mux jirafe-reaper" \

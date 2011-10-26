@@ -1,7 +1,7 @@
 # ~/.tmuxinator/aichallenge.yml
 
 project_name: aichallenge
-project_root: ~/data/workspace/aichallenge
+project_root: ~/aichallenge
 tabs:
   - vim: vim
   - zsh: 

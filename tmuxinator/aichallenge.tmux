@@ -1,7 +1,7 @@
 #!/bin/zsh
 _TMUX=$TMUX
 TMUX=
-cd ~/data/workspace/aichallenge
+cd ~/aichallenge
 tmux start-server
 
 if ! $(tmux has-session -t 'aichallenge'); then

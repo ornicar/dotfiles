@@ -1,7 +1,7 @@
 #!/bin/zsh
 _TMUX=$TMUX
 TMUX=
-cd ~/data
+cd $HOME
 tmux start-server
 
 if ! $(tmux has-session -t 'media'); then

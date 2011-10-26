@@ -1,7 +1,0 @@
-# ~/.tmuxinator/vulug.yml
-
-project_name: vulug
-project_root: ~/data/workspace/vulug
-tabs:
-  - vim: vim
-  - vulug: 

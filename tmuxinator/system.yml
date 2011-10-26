@@ -1,6 +1,0 @@
-# ~/.tmuxinator/system.yml
-
-project_name: system
-project_root: ~/data/workspace/dotfiles
-tabs:
-  - zsh:

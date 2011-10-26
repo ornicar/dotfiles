@@ -1,7 +1,0 @@
-# ~/.tmuxinator/scalatra.yml
-
-project_name: scalatra
-project_root: ~/data/workspace/scalatra
-tabs:
-  - vim: vim
-  - zsh: 

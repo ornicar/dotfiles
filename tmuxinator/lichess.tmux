@@ -1,7 +1,7 @@
 #!/bin/zsh
 _TMUX=$TMUX
 TMUX=
-cd ~/data/workspace/lichess
+cd ~/lichess
 tmux start-server
 
 if ! $(tmux has-session -t 'lichess'); then

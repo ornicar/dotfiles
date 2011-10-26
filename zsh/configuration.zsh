@@ -11,8 +11,7 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Dfile.encoding=UTF8 -Xms388M -Xmx939M -Xss2M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512m"
-#export SBT_OPTS = "-Dfile.encoding=UTF8 -Xms128M -Xmx1526M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512m"
+export SBT_OPTS="-Dfile.encoding=UTF8 -Xms768M -Xmx2048M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048m"
 
 # Fix ttytter
 export PERL_SIGNALS=unsafe

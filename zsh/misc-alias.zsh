@@ -7,9 +7,6 @@ alias ducks='du -cks * | sort -rn|head -10'
 # History alias
 alias h='history'
 
-# Run tmuxinator
-alias tmuxinator="$HOME/data/workspace/tmuxinator/bin/tmuxinator"
-
 # Add suffix alias for less
 alias -g L='| less'
 

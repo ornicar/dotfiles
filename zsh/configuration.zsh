@@ -24,10 +24,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets)
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
-CDPATH=:..:~/data:~/data/workspace
+CDPATH=:..:~/etc
 
 # Load less keys
 lesskey "$DOTFILES/lesskeys"
 
 # Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
 stty -ixon -ixoff
+
+# Integrate tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

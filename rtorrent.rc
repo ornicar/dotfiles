@@ -1,8 +1,8 @@
 # The settings of torrents will be saved in this directory;
 # and a file, which will prevent rTorrent running more than once;
-session = ~/data/download/torrents
+session = ~/download/torrents
 # where the downloaded files will be saved;
-directory = ~/data/download
+directory = ~/download
 # Default upload speed (0 means No Limit);
 upload_rate = 40
 # Default download speed (0 means No Limit);

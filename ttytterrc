@@ -7,7 +7,7 @@ ansi=1
 # Try to connect, again
 hold=1
 # Extensions to load
-exts=/home/thib/data/workspace/dotfiles/ttytter/notify.pl
+exts=/home/thib/dotfiles/ttytter/notify.pl
 # Notifications
 notifytype=ratpoison
 # Tweet types that are notified

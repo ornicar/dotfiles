@@ -41,7 +41,9 @@ startup_message off
 bind c exec urxvtc
 
 # Remap bannish to browser
-bind b exec /home/thib/bin/browser
+bind b exec firefox-beta-bin
+
+bind m exec /home/thib/.scripts/touchpad_toggle
 
 # Next window
 definekey top C-space next

@@ -19,6 +19,6 @@ max_peers=100
 # Stops downloading when there is less than 200MB diskspace;
 schedule = low_diskspace,5,60,close_low_diskspace=200M
 # Torrents will be automatically added to the download list from this directory ;
-schedule = watch_directory,5,5,load_start=~/data/download/torrents/*.torrent
+schedule = watch_directory,5,5,load_start=~/download/torrents/*.torrent
 # After deleting torrents from that list .torrent files will be deleted too;
 schedule = untied_directory,5,5,stop_untied=

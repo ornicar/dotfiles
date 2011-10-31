@@ -21,6 +21,12 @@ fi
 #for color in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
     #printf "#[fg=colour$color]#$color#[default]"
 #done;
+#
+# MAIL
+
+data=$(cat /tmp/gmail_status)
+printf "#[fg=colour10,dim]%s#[default] " $data
+
 
 # BATTERY
 

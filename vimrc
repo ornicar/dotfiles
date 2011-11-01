@@ -343,6 +343,7 @@ let g:CommandTMatchWindowAtTop = 1
 au BufNewFile,BufRead *vimperatorrc*,*.vimp set filetype=vimperator
 au BufNewFile,BufRead *.twig set filetype=twig
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.rc set filetype=conf
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |

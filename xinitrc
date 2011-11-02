@@ -11,7 +11,7 @@ xmodmap $HOME/.Xmodmap &&
 xrdb $HOME/.Xdefaults                       # load Xdefaults
 xsetroot -solid black                       # black background
 #xset fp+ /usr/share/fonts/local             # add local fonts
-xset s 180 180                              # set monitor to sleep
+xset s 300 300                              # set monitor to sleep
 #xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 xset r rate 280 50                          # Repeat keys way faster please

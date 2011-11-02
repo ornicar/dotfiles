@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009-2010 Sebastien Helleu <flashcode@flashtux.org>
+# Copyright (C) 2009-2011 Sebastien Helleu <flashcode@flashtux.org>
 # Copyright (C) 2010 xt <xt@bash.no>
 # Copyright (C) 2010 Aleksey V. Zapparov <ixti@member.fsf.org>
 #
@@ -26,6 +26,10 @@
 # Happy chat, enjoy :)
 #
 # History:
+# 2011-03-21, Isaac Raway <isaac.raway@gmail.com>:
+#     version 0.8: search chat buffer before opening it
+# 2011-02-13, Sebastien Helleu <flashcode@flashtux.org>:
+#     version 0.7: use new help format for command arguments
 # 2010-11-23, xt
 #     version 0.6: change format of sent ping, to match RFC
 # 2010-10-05, xt, <xt@bash.no>
@@ -65,7 +69,7 @@
 
 SCRIPT_NAME    = "jabber"
 SCRIPT_AUTHOR  = "Sebastien Helleu <flashcode@flashtux.org>"
-SCRIPT_VERSION = "0.6"
+SCRIPT_VERSION = "0.8"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC    = "Jabber/XMPP protocol for WeeChat"
 SCRIPT_COMMAND = SCRIPT_NAME
@@ -961,9 +965,11 @@ class Chat:
         self.buddy = buddy
         buddy.chat = self
         bufname = "%s.%s.%s" % (SCRIPT_NAME, server.name, self.buddy.alias)
-        self.buffer = weechat.buffer_new(bufname,
-                                         "jabber_buffer_input_cb", "",
-                                         "jabber_buffer_close_cb", "")
+        self.buffer = weechat.buffer_search("python", bufname)
+        if not self.buffer:
+            self.buffer = weechat.buffer_new(bufname,
+                                             "jabber_buffer_input_cb", "",
+                                             "jabber_buffer_close_cb", "")
         self.buffer_title = self.buddy.alias
         if self.buffer:
             weechat.buffer_set(self.buffer, "title", self.buffer_title)
@@ -1121,13 +1127,14 @@ class Buddy:
 
 def jabber_hook_commands_and_completions():
     """ Hook commands and completions. """
-    weechat.hook_command(SCRIPT_COMMAND, "List, add, remove, connect to Jabber servers",
-                         "[ list | add name jid password [server[:port]] | connect server | "
-                         "disconnect | del server | alias [add|del] | away [message] | buddies | "
-                         "priority [priority] | status [message] | presence [online|chat|away|xa|dnd] | "
-                         "debug | set server setting [value] ]",
+    weechat.hook_command(SCRIPT_COMMAND, "Manage Jabber servers",
+                         "list || add <name> <jid> <password> [<server>[:<port>]]"
+                         " || connect|disconnect|del [<server>] || alias [add|del <alias> <jid>]"
+                         " || away [<message>] || buddies || priority [<priority>]"
+                         " || status [<message>] || presence [online|chat|away|xa|dnd]"
+                         " || debug || set <server> <setting> [<value>]",
                          "      list: list servers and chats\n"
-                         "       add: add a server"
+                         "       add: add a server\n"
                          "   connect: connect to server using password\n"
                          "disconnect: disconnect from server\n"
                          "       del: delete server\n"
@@ -1154,10 +1161,10 @@ def jabber_hook_commands_and_completions():
                          "  Delete an alias: /jabber alias del alias_name\n"
                          "\n"
                          "Other jabber commands:\n"
-                         "  /jchat  chat with a buddy (in private buffer)\n"
-                         "  /invite add a buddy to roster\n"
-                         "  /kick   remove buddy from roster\n"
-                         "  /jmsg   send message to a buddy",
+                         "  Chat with a buddy (pv buffer): /jchat\n"
+                         "  Add buddy to roster:           /invite\n"
+                         "  Remove buddy from roster:      /kick\n"
+                         "  Send message to buddy:         /jmsg",
                          "list %(jabber_servers)"
                          " || add %(jabber_servers)"
                          " || connect %(jabber_servers)"
@@ -1172,23 +1179,24 @@ def jabber_hook_commands_and_completions():
                          " || debug",
                          "jabber_cmd_jabber", "")
     weechat.hook_command("jchat", "Chat with a Jabber buddy",
-                         "buddy",
+                         "<buddy>",
                          "buddy: buddy id",
                          "",
                          "jabber_cmd_jchat", "")
     weechat.hook_command("jmsg", "Send a messge to a buddy",
-                         "[-server servername] buddy text",
-                         "servername: name of jabber server buddy is on\n"
-                         "     buddy: buddy id",
+                         "[-server <server>] <buddy> <text>",
+                         "server: name of jabber server buddy is on\n"
+                         " buddy: buddy id\n"
+                         "  text: text to send",
                          "",
                          "jabber_cmd_jmsg", "")
     weechat.hook_command("invite", "Add a buddy to your roster",
-                         "buddy",
+                         "<buddy>",
                          "buddy: buddy id",
                          "",
                          "jabber_cmd_invite", "")
     weechat.hook_command("kick", "Remove a buddy from your roster, or deny auth",
-                         "buddy",
+                         "<buddy>",
                          "buddy: buddy id",
                          "",
                          "jabber_cmd_kick", "")

@@ -16,6 +16,9 @@ alias v="vim"
 # Ranger
 alias r="ranger"
 
+# AlsaMixer
+alias a="alsamixer"
+
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 

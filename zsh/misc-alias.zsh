@@ -13,6 +13,9 @@ alias -g L='| less'
 # Vim
 alias v="vim"
 
+# Ranger
+alias r="ranger"
+
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 

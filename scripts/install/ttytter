@@ -1,4 +1,3 @@
 #!/bin/sh
 
-#sudo wget -O /usr/bin/ttytter http://www.floodgap.com/software/ttytter/beta/beta.txt 
 sudo wget -O /usr/bin/ttytter http://www.floodgap.com/software/ttytter/ttytter.txt

@@ -1,9 +1,13 @@
 # Change prefix
-escape C-b
+escape C-t
+
+# Create second group
+gnewbg second
 
 # ----------------------------------------------------------------
 # Builtin bindings that I remove (makes the ? info window less cluttered)
 # ------------------------------------------------------------------
+unbind C-t # other (use alt-space)
 unbind a # time
 unbind b # bannish
 unbind c # console
@@ -42,6 +46,17 @@ bind c exec urxvtc
 
 # Remap bannish to browser
 bind b exec firefox-beta-bin
+
+# Switch group
+bind C-t gnext
+# Go to next window after switching group
+addhook switchgroup next
+addhook switchgroup groups
+
+# Move current window to default group
+bind 1 gmove default
+# Move current window to second group
+bind 2 gmove second
 
 definekey top C-equal exec /home/thib/.scripts/touchpad_toggle
 

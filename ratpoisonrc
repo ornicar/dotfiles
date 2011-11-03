@@ -51,9 +51,9 @@ bind b exec firefox-beta-bin
 bind C-t exec ratpoison -c "select -" -c "gnext" -c "next" 
 
 # Move current window to default group
-bind 1 gmove default
+bind M-1 gmove default
 # Move current window to second group
-bind 2 gmove second
+bind M-2 gmove second
 
 definekey top C-equal exec /home/thib/.scripts/touchpad_toggle
 

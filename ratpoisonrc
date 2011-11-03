@@ -48,10 +48,7 @@ bind c exec urxvtc
 bind b exec firefox-beta-bin
 
 # Switch group
-bind C-t gnext
-# Go to next window after switching group
-addhook switchgroup next
-addhook switchgroup groups
+bind C-t exec ratpoison -c "select -" -c "gnext" -c "next" 
 
 # Move current window to default group
 bind 1 gmove default

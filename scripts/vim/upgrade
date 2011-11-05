@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ~/data/bin/vim
+cd ~/bin/vim
 hg pull
 hg update
 cd src

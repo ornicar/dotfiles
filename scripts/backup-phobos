@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+#ssh phobos "cd /home/backup/mongodb && mongodump"
+
+rsync --archive --force --delete --progress --compress phobos:/home/mongodb ~/backup/phobos

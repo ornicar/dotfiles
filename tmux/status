@@ -87,7 +87,16 @@ if [ "$usage" -gt 50 ]; then modifier="#[fg=colour1]"
 #elif [ "$usage" -gt 25 ]; then modifier="#[fg=white, bright]"
 else modifier="#[fg=colour14]"
 fi
-printf " %s[%s]#[default]" "$modifier" "$bar"
+printf " %s[%s#[default]" "$modifier" "$bar"
+
+# CPU FREQ
+
+if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
+  read hz < /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+  freq=$(print "scale = 1; $hz / 1000000" | bc)
+  printf " #[fg=colour3]%s" "$freq"; 
+fi
+printf "#[fg=colour14]]#[default]"
 
 # LOAD AVERAGE
 

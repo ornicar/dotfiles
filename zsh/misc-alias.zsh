@@ -2,7 +2,7 @@
 alias ....='cd ../../..'
 
 # Sort dirs by weight
-alias ducks='du -cks * | sort -rn|head -10'
+alias ducks='du -cks * | sort -rn|head -20'
 
 # History alias
 alias h='history'
@@ -46,7 +46,7 @@ alias fren="python2 ~/.scripts/translate -s fr -d en"
 # Search using surfraw
 alias gg="surfraw google"
 alias dd="surfraw duckduckgo"
-alias search-urban="surfraw urban"
+alias urban="surfraw urban"
 alias search-acronym="surfraw acronym"
 
 # Read 32GB zero's and throw them away.

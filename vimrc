@@ -18,10 +18,12 @@ colorscheme solarized
 
 let mapleader = ","
 
-set history=2000                " Sets how many lines of history VIM has to remember
+set clipboard=unnamedplus         " Alias unnamed register to the + register, which is the X Window clipboard.
 
-set undolevels=1000             " use many levels of undo
-set noundofile                  " Don't keep a persistent undofile
+set history=2000                  " Sets how many lines of history VIM has to remember
+
+set undolevels=1000               " use many levels of undo
+set noundofile                    " Don't keep a persistent undofile
 
 set nospell                       " Disable spell checking
 

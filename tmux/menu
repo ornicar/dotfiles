@@ -7,4 +7,5 @@ ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     lichess "mux lichess" \
     scalex "mux scalex" \
     aichallenge "mux aichallenge" \
+    sacem "mux sacem" \
     reaper "mux reaper" \

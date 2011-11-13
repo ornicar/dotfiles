@@ -93,3 +93,6 @@
 [submodule "vim/bundle/jade"]
 	path = vim/bundle/jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/shakespearean"]
+	path = vim/bundle/shakespearean
+	url = git://github.com/pbrisbin/html-template-syntax.git

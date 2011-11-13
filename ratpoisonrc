@@ -45,7 +45,7 @@ startup_message off
 bind c exec urxvtc
 
 # Remap bannish to browser
-bind b exec firefox-beta-bin
+bind b exec firefox
 
 # Switch group
 bind C-t exec ratpoison -c "select -" -c "gnext" -c "next" 

@@ -9,6 +9,7 @@ syntax on
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Colorsheme
+set t_Co=16
 let g:solarized_termcolors=16
 let g:solarized_termtrans=0
 let g:solarized_menu=0
@@ -210,6 +211,9 @@ nmap <Leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 " Clear search highlight
 "map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
 map <silent> <leader>/ :nohl<cr>
+
+" Replace what's selected
+vnoremap <C-h> ""y:%s/<C-R>=escape(@", '/\')<CR>//g<Left><Left>
 
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<CR>#

@@ -5,7 +5,7 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$PATH:$HOME/bin:$DOTFILES/scripts:$HOME/.cabal/bin"
+export PATH="$PATH:$HOME/bin:$DOTFILES/scripts:$DOTFILES/scripts/spark:$HOME/.cabal/bin:$HOME/bin/ghc/bin"
 export BROWSER="firefox"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -34,3 +34,6 @@ stty -ixon -ixoff
 
 # Integrate tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# Add dircolors
+eval `dircolors $DOTFILES/zsh/dircolors-solarized/dircolors.ansi-dark`

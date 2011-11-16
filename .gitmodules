@@ -96,3 +96,9 @@
 [submodule "vim/bundle/shakespearean"]
 	path = vim/bundle/shakespearean
 	url = git://github.com/pbrisbin/html-template-syntax.git
+[submodule "scripts/spark"]
+	path = scripts/spark
+	url = git://github.com/holman/spark.git
+[submodule "zsh/dircolors-solarized"]
+	path = zsh/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized

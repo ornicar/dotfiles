@@ -102,3 +102,6 @@
 [submodule "zsh/dircolors-solarized"]
 	path = zsh/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
+[submodule "vim/bundle/align"]
+	path = vim/bundle/align
+	url = https://github.com/tsaleh/vim-align

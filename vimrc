@@ -225,6 +225,10 @@ nmap <leader>a mA:Ack<space>
 " Set a mark, then pull word under cursor into Ack for a global search
 nmap <leader>za mA:Ack "<C-r>=expand("<cword>")<CR>"
 
+" Align
+" Disable default mappings
+let g:loaded_AlignMapsPlugin=1
+
 " Start a substitute
 nmap <leader>ss :%s/\v
 

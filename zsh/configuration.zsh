@@ -20,7 +20,7 @@ export PERL_SIGNALS=unsafe
 export DISABLE_AUTO_TITLE="true"
 
 # Enable more syntax highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
@@ -32,8 +32,5 @@ lesskey "$DOTFILES/lesskeys"
 # Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
 stty -ixon -ixoff
 
-# Integrate tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 # Add dircolors
-eval `dircolors $DOTFILES/zsh/dircolors-solarized/dircolors.ansi-dark`
+eval $(dircolors $DOTFILES/zsh/dircolors-solarized/dircolors.ansi-dark)

@@ -77,6 +77,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Not sure what this does
+set ttyfast
+
 " But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
@@ -132,12 +135,11 @@ set shiftround
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala,haskell
     \ autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-" Allow extended digraphs
 set encoding=utf-8
 
 " Enable folding by indentation
 set foldmethod=indent
-set fillchars=fold:⋯
+set fillchars=fold:⋯,diff:⣿
 " go to next fold and open it
 map zz zjzo
 " Disable folding by default

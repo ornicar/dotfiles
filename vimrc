@@ -215,8 +215,10 @@ set diffopt=filler,vertical
 nmap <Leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
 " Clear search highlight
-"map <silent> <leader>/ :let @/=""<CR>:echo "Cleared search register."<cr>
-map <silent> <leader>/ :nohl<cr>
+nmap <silent> <leader>/ :nohl<cr>
+
+" Open a Quickfix window for the last search.
+nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Replace what's selected
 vnoremap <C-h> ""y:%s/<C-R>=escape(@", '/\')<CR>//g<Left><Left>

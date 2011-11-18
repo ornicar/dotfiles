@@ -5,6 +5,8 @@
 --ignore-dir=cache
 --ignore-dir=logs
 --ignore-dir=target
+--ignore-dir=web/js
+--ignore-dir=web/css
 
 # Vim like case sensitivity
 --smart-case

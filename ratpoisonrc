@@ -69,3 +69,4 @@ definekey top M-equal exec ~/.scripts/music up
 definekey top M-minus exec ~/.scripts/music down
 definekey top M-m exec urxvtc -e ~/.scripts/music ui
 definekey top M-a exec urxvtc -e alsamixer
+definekey top M-r exec urxvtc -e ranger

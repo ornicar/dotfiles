@@ -1,107 +1,103 @@
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
-    ignore = untracked
+  path = vim/bundle/syntastic
+  url = git://github.com/scrooloose/syntastic.git
+  ignore = untracked
 [submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = git://github.com/ornicar/nerdcommenter.git
-    ignore = untracked
+  path = vim/bundle/nerdcommenter
+  url = git://github.com/ornicar/nerdcommenter.git
+  ignore = untracked
 [submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = git://github.com/ornicar/lusty.git
-    ignore = untracked
+  path = vim/bundle/lusty
+  url = git://github.com/ornicar/lusty.git
+  ignore = untracked
 [submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
-    ignore = untracked
+  path = vim/bundle/ack
+  url = git://github.com/mileszs/ack.vim.git
+  ignore = untracked
 [submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
-	url = git://github.com/ornicar/vim-surround.git
-    ignore = untracked
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = git://github.com/edsono/vim-matchit.git
-    ignore = untracked
+  path = vim/bundle/surround
+  url = git://github.com/ornicar/vim-surround.git
+  ignore = untracked
 [submodule "vim/bundle/commandt"]
-	path = vim/bundle/commandt
-	url = git://github.com/wincent/Command-T.git
-    ignore = untracked
+  path = vim/bundle/commandt
+  url = git://github.com/wincent/Command-T.git
+  ignore = untracked
 [submodule "vim/bundle/unimpaired"]
-	path = vim/bundle/unimpaired
-	url = git://github.com/ornicar/vim-unimpaired.git
-    ignore = untracked
+  path = vim/bundle/unimpaired
+  url = git://github.com/ornicar/vim-unimpaired.git
+  ignore = untracked
 [submodule "vim/bundle/ragtag"]
-	path = vim/bundle/ragtag
-	url = git://github.com/ornicar/vim-ragtag.git
-    ignore = untracked
+  path = vim/bundle/ragtag
+  url = git://github.com/ornicar/vim-ragtag.git
+  ignore = untracked
 [submodule "vim/bundle/gist"]
-	path = vim/bundle/gist
-	url = git://github.com/mattn/gist-vim.git
-    ignore = untracked
+  path = vim/bundle/gist
+  url = git://github.com/mattn/gist-vim.git
+  ignore = untracked
 [submodule "vim/bundle/renamer"]
-	path = vim/bundle/renamer
-	url = git://github.com/vim-scripts/renamer.vim.git
-    ignore = untracked
+  path = vim/bundle/renamer
+  url = git://github.com/vim-scripts/renamer.vim.git
+  ignore = untracked
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git://github.com/ornicar/oh-my-zsh
+  path = oh-my-zsh
+  url = git://github.com/ornicar/oh-my-zsh
 [submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
-    ignore = untracked
+  path = vim/bundle/supertab
+  url = git://github.com/ervandew/supertab.git
+  ignore = untracked
 [submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive
-    ignore = untracked
+  path = vim/bundle/fugitive
+  url = git://github.com/tpope/vim-fugitive
+  ignore = untracked
 [submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = git://github.com/ornicar/vim-colors-solarized.git
-    ignore = untracked
+  path = vim/bundle/solarized
+  url = git://github.com/ornicar/vim-colors-solarized.git
+  ignore = untracked
 [submodule "zsh/history-substring-search"]
-	path = zsh/history-substring-search
-	url = git://github.com/zsh-users/zsh-history-substring-search.git
-    ignore = untracked
+  path = zsh/history-substring-search
+  url = git://github.com/zsh-users/zsh-history-substring-search.git
+  ignore = untracked
 [submodule "vim/bundle/repeat"]
-	path = vim/bundle/repeat
-	url = git://github.com/tpope/vim-repeat.git
-    ignore = untracked
+  path = vim/bundle/repeat
+  url = git://github.com/tpope/vim-repeat.git
+  ignore = untracked
 [submodule "vim/bundle/php-namespace"]
-	path = vim/bundle/php-namespace
-	url = git://github.com/arnaud-lb/vim-php-namespace.git
-    ignore = untracked
+  path = vim/bundle/php-namespace
+  url = git://github.com/arnaud-lb/vim-php-namespace.git
+  ignore = untracked
 [submodule "vim/bundle/tlib"]
-	path = vim/bundle/tlib
-	url = git://github.com/tomtom/tlib_vim.git
-    ignore = untracked
+  path = vim/bundle/tlib
+  url = git://github.com/tomtom/tlib_vim.git
+  ignore = untracked
 [submodule "vim/vendor/javascript"]
-	path = vim/vendor/javascript
-	url = git://github.com/pangloss/vim-javascript.git
+  path = vim/vendor/javascript
+  url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/scala"]
-	path = vim/bundle/scala
-	url = git://github.com/ornicar/vim-scala.git
-    ignore = untracked
+  path = vim/bundle/scala
+  url = git://github.com/ornicar/vim-scala.git
+  ignore = untracked
 [submodule "zsh/syntax-highlighting"]
-	path = zsh/syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+  path = zsh/syntax-highlighting
+  url = git://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "vim/bundle/addon-mw-utils"]
-	path = vim/bundle/addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-    ignore = untracked
+  path = vim/bundle/addon-mw-utils
+  url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+  ignore = untracked
 [submodule "vim/bundle/bufexplorer"]
-	path = vim/bundle/bufexplorer
-	url = git://github.com/ornicar/vim-bufexplorer.git
+  path = vim/bundle/bufexplorer
+  url = git://github.com/ornicar/vim-bufexplorer.git
 [submodule "vim/bundle/jade"]
-	path = vim/bundle/jade
-	url = git://github.com/digitaltoad/vim-jade.git
+  path = vim/bundle/jade
+  url = git://github.com/digitaltoad/vim-jade.git
 [submodule "vim/bundle/shakespearean"]
-	path = vim/bundle/shakespearean
-	url = git://github.com/pbrisbin/html-template-syntax.git
+  path = vim/bundle/shakespearean
+  url = git://github.com/pbrisbin/html-template-syntax.git
 [submodule "scripts/spark"]
-	path = scripts/spark
-	url = git://github.com/holman/spark.git
+  path = scripts/spark
+  url = git://github.com/holman/spark.git
 [submodule "zsh/dircolors-solarized"]
-	path = zsh/dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized
+  path = zsh/dircolors-solarized
+  url = https://github.com/seebi/dircolors-solarized
 [submodule "vim/bundle/align"]
-	path = vim/bundle/align
-	url = https://github.com/tsaleh/vim-align
+  path = vim/bundle/align
+  url = https://github.com/tsaleh/vim-align

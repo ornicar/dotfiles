@@ -237,6 +237,8 @@ nmap <leader>za mA:Ack "<C-r>=expand("<cword>")<CR>"
 " Disable default mappings
 let g:loaded_AlignMapsPlugin=1
 
+vnoremap a :Align<space>
+
 " Start a substitute
 nmap <leader>ss :%s/\v
 
@@ -257,7 +259,7 @@ nnoremap ' `
 map <tab> :nohl<cr>:w<cr>
 
 " Sudo to write
-cmap :w silent write !sudo tee % >/dev/null
+cmap w! silent write !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
@@ -268,18 +270,15 @@ inoremap <silent> <C-Y> <C-C>:let @z = @"<CR>mz
     \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<CR>
     \`zp:let @" = @z<CR>a
 
-" http://vim.wikia.com/wiki/Search_for_visually_selected_text
-" Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy/<C-R><C-R>=substitute(
-    \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-    \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-    \gvy?<C-R><C-R>=substitute(
-    \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-    \gV:call setreg('"', old_reg, old_regtype)<CR>
+" Visual Mode */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
@@ -291,6 +290,9 @@ map ) $
 
 " Don't use Ex mode; use Q for console mode
 map Q q:
+
+" Less chording
+nnoremap ; :
 
 " Larger console window
 set cmdwinheight=12

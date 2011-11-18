@@ -149,6 +149,10 @@ set nofoldenable
 "au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
 "au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
 
+" Easier to type, and I never use the default behavior.
+noremap H ^
+noremap L $
+
 " Move insertion to correct indentation
 imap <C-s> <esc>S
 

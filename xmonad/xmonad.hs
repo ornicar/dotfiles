@@ -22,6 +22,8 @@ myConfig = defaultConfig {
     , "M-w"       -- Switch to physical/Xinerama screens 1
     , "M-e"       -- Switch to physical/Xinerama screens 2
     , "M-r"       -- Switch to physical/Xinerama screens 3
+    , "M-h"       -- Shrink the master area
+    , "M-l"       -- Extend the master area
     , "M-j"       -- Next window
     , "M-k"       -- Prev window
     , "M-m"       -- Master window
@@ -34,7 +36,7 @@ myConfig = defaultConfig {
   `removeKeysP` ["M-" ++ [n] | n <- ['1'..'9']] -- Workspace switch
   `additionalKeysP` [
       ("C-<Space>", windows W.focusDown)
-    , ("M-u", focusUrgent)
+    --, ("M-u", focusUrgent)
     , ("M-r", spawn "urxvtc -e ranger")
     , ("M-a", spawn "urxvtc -e alsamixer")
     , ("M-m", spawn "urxvtc -e mutt")

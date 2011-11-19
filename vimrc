@@ -291,15 +291,21 @@ map Q q:
 set cmdwinheight=12
 
 " Fast, efficient file renaming
-map R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
+nmap R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
+
+" Use dmenuclip to paste from a previous X clipboard
+nmap <leader>p :r !dmenuclip<cr>
+
+" Make the current file executable
+nmap <leader>% :Silent chmod +x %<cr>
 
 " CTAGS
 " Rebuild tags
 nmap <leader>ct :!ctags&<cr><cr>
 " Jump to next tag match
-map ]t :bd<cr>:tnext<cr>
+nmap ]t :bd<cr>:tnext<cr>
 " Jump to previous tag match
-map [t :bd<cr>:tprevious<cr>
+nmap [t :bd<cr>:tprevious<cr>
 " Save a mark then open tag command
 nmap <leader>t mA:tag<space>
 

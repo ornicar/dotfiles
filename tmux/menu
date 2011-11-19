@@ -12,7 +12,7 @@ reaper"
 
 source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 
-project=$(echo $projects | dmenu-dark)
+project=$(echo $projects | dmenu-dark -p "TMUX workspace ")
 
 [ -z "$project" ] && exit
 

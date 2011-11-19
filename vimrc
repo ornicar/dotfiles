@@ -259,7 +259,7 @@ nnoremap ' `
 map <tab> :nohl<cr>:w<cr>
 
 " Sudo to write
-cmap w! silent write !sudo tee % >/dev/null
+cmap w!! silent write !sudo tee % >/dev/null
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]

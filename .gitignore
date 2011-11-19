@@ -3,6 +3,7 @@ mpd/*
 !mpd/mpd.conf
 mutt/cache
 mutt/certificates
+mutt/temp
 weechat/logs
 weechat/weechat.log
 weechat/weeget
@@ -10,3 +11,5 @@ weechat/xfer
 weechat/irc.conf
 weechat/jabber.conf
 vimperator/info
+offlineimaprc
+*.pyc

@@ -14,6 +14,6 @@ localfolders = ~/.mail/thibault.duplessis.gmail.com
 [Repository ThibaultDuplessis-Remote]
 type = Gmail
 remoteuser = thibault.duplessis@gmail.com
-#remotepasseval = get_keychain_pass(account="thibault.duplessis@gmail.com", server="imap.gmail.com")
+remotepass = xxx
 realdelete = no
 nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Sent Mail$', 'sent', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder))))))

@@ -5,7 +5,11 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$PATH:$HOME/bin:$DOTFILES/scripts:$DOTFILES/scripts/spark:$HOME/.cabal/bin:$HOME/bin/ghc/bin"
+export PATH="$HOME/bin:$PATH"
+export PATH="$DOTFILES/scripts:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/bin/ghc/bin:$PATH"
+
 export BROWSER="firefox"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
@@ -24,7 +28,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
-CDPATH=:..:/etc
+CDPATH=$HOME:..:/etc
 
 # Load less keys
 lesskey "$DOTFILES/lesskeys"

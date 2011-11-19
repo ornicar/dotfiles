@@ -287,9 +287,6 @@ nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 " Don't use Ex mode; use Q for console mode
 map Q q:
 
-" Less chording
-nnoremap ; :
-
 " Larger console window
 set cmdwinheight=12
 

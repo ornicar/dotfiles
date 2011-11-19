@@ -1,10 +1,9 @@
 #!/bin/zsh
 
-tmuxinatorpath="$HOME/.tmuxinator/"
-
 ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
     archlinux "mux archlinux" \
     lichess "mux lichess" \
+    ltc "mux ltc" \
     scalex "mux scalex" \
     aichallenge "mux aichallenge" \
     sacem "mux sacem" \

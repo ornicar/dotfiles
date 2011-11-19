@@ -10,7 +10,6 @@ xmodmap $HOME/.Xmodmap &&
 
 xrdb $HOME/.Xdefaults                       # load Xdefaults
 xsetroot -solid black                       # black background
-#xset fp+ /usr/share/fonts/local             # add local fonts
 xset s 300 300                              # set monitor to sleep
 #xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
@@ -22,7 +21,7 @@ $HOME/.scripts/collector_daemon &           # start cpu and lichess data collect
 #ishastone=$(xrandr | awk '/LVDS1 connected/')
 #[ -n isexercisehardware ] && xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output VGA1 --mode 1680x1050 --pos 1366x0 --rotate normal
 
-(urxvtc -e $HOME/.scripts/startup)
+urxvtc -e $HOME/.scripts/startup &
 
 # Run window manager
-exec ratpoison
+exec xmonad

@@ -25,7 +25,6 @@ set query_command = "goobook query '%s'"
 set implicit_autoview
 
 bind editor <Tab> complete-query
-bind editor <space> noop
 
 # Fetch mail
 bind index G imap-fetch-mail

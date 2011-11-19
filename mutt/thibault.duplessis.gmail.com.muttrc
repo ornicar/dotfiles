@@ -1,0 +1,5 @@
+set from      = "thibault.duplessis@gmail.com"
+#set sendmail  = "/usr/local/bin/msmtp -a stevelosh"
+#set mbox      = "+steve-stevelosh.com/archive"
+#unset record
+#set postponed = "+steve-stevelosh.com/drafts"

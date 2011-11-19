@@ -20,7 +20,6 @@ link (){
 link zshrc ~/.zshrc
 link scripts ~/.scripts
 link gitconfig ~/.gitconfig
-link muttrc ~/.muttrc
 link mutt ~/.mutt
 link vimrc ~/.vimrc
 link gvimrc ~/.gvimrc

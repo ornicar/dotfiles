@@ -48,3 +48,4 @@ link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc
 link ghci ~/.ghci
 link goobookrc ~/.goobookrc
+link xmonad ~/.xmonad

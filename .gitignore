@@ -13,3 +13,7 @@ weechat/jabber.conf
 vimperator/info
 offlineimaprc
 *.pyc
+*.hi
+*.o
+xmonad/xmonad-x86_64-linux
+xmonad/xmonad.errors

@@ -32,7 +32,6 @@ link Xdefaults ~/.Xdefaults
 link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd
-link offlineimaprc ~/.offlineimaprc
 link weechat ~/.weechat
 link surfraw ~/.config/surfraw/conf
 link tmux.conf ~/.tmux.conf
@@ -48,3 +47,4 @@ link inputrc ~/.inputrc
 link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc
 link ghci ~/.ghci
+link goobookrc ~/.goobookrc

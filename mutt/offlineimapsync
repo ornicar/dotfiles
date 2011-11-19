@@ -5,14 +5,15 @@ ps aux | grep "[ ]$PID" && kill $PID
 
 function sync_normal {
     echo "NORMAL Sync"
-    offlineimap -o -u quiet
+    offlineimap -o 
 }
 function sync_quick {
     echo "QUICK Sync"
-    offlineimap -o -q -u quiet
+    offlineimap -o -q quiet
 }
 
 # This is silly.
 python -c'import sys, random; sys.exit(random.randint(0, 5))' && sync_normal || sync_quick
+#sync_normal
 
 exit 0

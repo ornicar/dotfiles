@@ -49,3 +49,5 @@ link vimperatorrc ~/.vimperatorrc
 link ghci ~/.ghci
 link goobookrc ~/.goobookrc
 link xmonad ~/.xmonad
+mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/
+link colors.ini ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini

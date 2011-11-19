@@ -1,0 +1,11 @@
+# ~/.tmuxinator/sacem.yml
+
+project_name: sacem
+project_root: ~/sacem
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - 
+  - shell:

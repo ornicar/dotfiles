@@ -1,6 +1,0 @@
-# ~/.tmuxinator/media.yml
-
-project_name: media
-project_root: ~/
-tabs:
-  - zsh:

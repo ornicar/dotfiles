@@ -1,0 +1,11 @@
+# ~/.tmuxinator/reaper.yml
+
+project_name: reaper
+project_root: ~/reaper
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - sbt
+  - shell:

@@ -3,5 +3,13 @@
 project_name: scalex
 project_root: ~/scalex
 tabs:
-  - vim: vim
-  - zsh: 
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - sbt
+  - shell:
+      layout: even-horizontal
+      panes: 
+        - #shell
+        - tig status

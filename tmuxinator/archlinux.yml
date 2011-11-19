@@ -1,0 +1,6 @@
+# ~/.tmuxinator/archlinux.yml
+
+project_name: archlinux
+project_root: ~/
+tabs:
+  - shell:

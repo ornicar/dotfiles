@@ -1,7 +1,0 @@
-# ~/.tmuxinator/jirafe-reaper.yml
-
-project_name: jirafe-reaper
-project_root: ~/jirafe-reaper
-tabs:
-  - vim: vim
-  - zsh: 

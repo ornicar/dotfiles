@@ -284,10 +284,6 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<CR>
 nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<CR>
 
-" Remap ( and ) to beggining and end of the line
-map ( ^
-map ) $
-
 " Don't use Ex mode; use Q for console mode
 map Q q:
 

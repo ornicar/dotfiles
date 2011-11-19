@@ -1,10 +1,19 @@
 #!/bin/zsh
 
-ratmenu -fg "#00ff22" -bg "#444444" -style dreary -shell /bin/zsh \
-    archlinux "mux archlinux" \
-    lichess "mux lichess" \
-    ltc "mux ltc" \
-    scalex "mux scalex" \
-    aichallenge "mux aichallenge" \
-    sacem "mux sacem" \
-    reaper "mux reaper" \
+IFS=$'\t\n'
+
+projects="archlinux
+lichess
+ltc
+scalex
+aichallenge
+sacem
+reaper"
+
+source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
+
+project=$(echo $projects | dmenu-dark)
+
+[ -z "$project" ] && exit
+
+mux "$project"

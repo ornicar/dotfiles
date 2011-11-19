@@ -380,6 +380,11 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = "browser %URL% &"
 
+" Run an external program through silent without messing up the screen in CLI
+command! -nargs=1 Silent
+\ | execute ':silent !'.<q-args>
+\ | execute ':redraw!'
+
 " Use ranger as vim file manager
 function! Ranger()
     silent !ranger --choosefile=/tmp/chosen

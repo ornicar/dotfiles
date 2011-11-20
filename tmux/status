@@ -18,15 +18,19 @@ if [ -f /tmp/weechat_hotlist ]; then
     fi
 fi
 
-#for color in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
-    #printf "#[fg=colour$color]#$color#[default]"
-#done;
-#
 # MAIL
 
-data=$(cat /tmp/gmail_status)
-printf "#[fg=colour10,dim]%s#[default] " $data
+show_mail() {
+  if [ 0 -eq $2 ]; then mfg="colour10, dim"
+  else mfg="colour7"
+  fi
+  printf "#[fg=%s,dim]%s(%d)#[default] " $mfg $1 $2
+}
 
+TD_BOX="$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
+TD_COUNT=`ls -l $TD_BOX/new | wc -l`
+TD_NEW=`expr $TD_COUNT - 1`
+show_mail "td" $TD_NEW
 
 # BATTERY
 

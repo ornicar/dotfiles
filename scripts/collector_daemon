@@ -3,16 +3,7 @@
 INTERVAL=1
 INTERNET_TIMEOUT=3
 LICHESS_INTERVAL=4
-GMAIL_INTERVAL=60
 LICHESS_URL="http://en.lichess.org/status"
-
-get_new_mails()
-{
-  DATAFILE="/tmp/gmail_status"
-  gmail=$(curl --connect-timeout $INTERNET_TIMEOUT -m $INTERNET_TIMEOUT -u $GMAIL_PERSO --silent 'https://mail.google.com/mail/feed/atom' | tr -d '\n' | awk -F '<entry>' '{for (i=2; i<=NF; i++) {print $i}}' | sed -n 's/<title>\(.*\)<\/title.*name>\(.*\)<\/name>.*/\2 - \1/p' | wc -l)
-  jirafe=$(curl --connect-timeout $INTERNET_TIMEOUT -m $INTERNET_TIMEOUT -u $GMAIL_JIRAFE --silent 'https://mail.google.com/mail/feed/atom' | tr -d '\n' | awk -F '<entry>' '{for (i=2; i<=NF; i++) {print $i}}' | sed -n 's/<title>\(.*\)<\/title.*name>\(.*\)<\/name>.*/\2 - \1/p' | wc -l)
-  echo "gmail($gmail) jirafe($jirafe)" > $DATAFILE
-}
 
 calculate_cpu_usage()
 {
@@ -59,9 +50,6 @@ while true; do
 
     if [ $((seconds % $LICHESS_INTERVAL)) -eq 0 ]; then
         (fetch_lichess_status) &
-    fi
-    if [ $((seconds % $GMAIL_INTERVAL)) -eq 0 ]; then
-        (get_new_mails) &
     fi
 
 done

@@ -13,6 +13,6 @@ set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secr
 set pgp_autosign=yes
 set pgp_sign_as=0x2697458F
 set pgp_replyencrypt=yes
-set pgp_timeout=2592000
+set pgp_timeout=7200
 set pgp_good_sign="^gpg: Good signature from"
 

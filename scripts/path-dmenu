@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$(dmenu_path_c | dmenu-dark)

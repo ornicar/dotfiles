@@ -13,7 +13,7 @@ function sync_quick {
 }
 
 # This is silly.
-python -c'import sys, random; sys.exit(random.randint(0, 5))' && sync_normal || sync_quick
+python -c'import sys, random; sys.exit(random.randint(0, 60))' && sync_normal || sync_quick
 #sync_normal
 
 exit 0

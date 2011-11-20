@@ -11,8 +11,7 @@ set editor              = "vim +/^$ +:s/^$/\\\\r\\\\r/ +:noh -c 'normal! k' -c '
 # main options
 set mbox_type           = Maildir                               # mailbox type
 set folder              = ~/.mail                               # mailbox location
-#set spoolfile           = "+steve-stevelosh.com/INBOX"          # GMail is default inbox
-set spoolfile						= "+thibault.duplessis.gmail.com/INBOX"
+set spoolfile						= "+thibault.duplessis.gmail.com/INBOX" # GMail is default inbox
 set timeout             = 3                                     # idle time before scanning
 set mail_check          = 0                                     # minimum time between scans
 set sort_alias          = alias                                 # sort alias file by alias
@@ -79,16 +78,17 @@ hdr_order from: to: cc: date: subject:                          # and in this or
 
 # boxes
 #mailboxes +steve-stevelosh.com/INBOX +steve-stevelosh.com/vim +steve-stevelosh.com/clojure +steve-stevelosh.com/django +steve-stevelosh.com/python +steve-stevelosh.com/mercurial +steve-stevelosh.com/archive +steve-stevelosh.com/sent +steve-stevelosh.com/drafts
-mailboxes +thibault.duplessis.gmail.com/INBOX
+mailboxes +thibault.duplessis.gmail.com/INBOX +thibault.jirafe.com/INBOX
 
 # always sourced
 #source $alias_file                                             # required for functionality
 source ~/.mutt/colors.muttrc                                    # source colors file
 source ~/.mutt/thibault.duplessis.gmail.com.muttrc              # source gmail as default
-#source ~/.mutt/sidebar.muttrc                                  # any muttng options are here
+source ~/.mutt/sidebar.muttrc                                   # any muttng options are here
 
 # account specific sources
 folder-hook thibault.duplessis.gmail.com/*  source ~/.mutt/thibault.duplessis.gmail.com.muttrc
+folder-hook thibault.jirafe.com/*           source ~/.mutt/thibault.jirafe.com.muttrc
 
 # these just give me headaches
 bind index,pager \# noop

@@ -1,8 +1,4 @@
 #!/usr/bin/env zsh
-# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
-# vim: ft=zsh sw=2 ts=2 et
-#
-# There are some zsh functions I find useful
 
 # Get a 7 chars password: generate-password 7 
 generate-password() {

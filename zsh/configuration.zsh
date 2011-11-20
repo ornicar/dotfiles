@@ -8,7 +8,7 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
-export PATH="$HOME/bin/ghc/bin:$PATH"
+#export PATH="$HOME/bin/ghc/bin:$PATH"
 
 export BROWSER="firefox"
 export EDITOR='vim'

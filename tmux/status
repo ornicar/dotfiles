@@ -20,17 +20,18 @@ fi
 
 # MAIL
 
+# args: name, box_dir
 show_mail() {
-  if [ 0 -eq $2 ]; then mfg="colour10, dim"
+  wcl=$(ls -l $2/new | wc -l)
+  nb=$(expr $wcl - 1)
+  if [ 0 -eq $nb ]; then mfg="colour10, dim"
   else mfg="colour7"
   fi
-  printf "#[fg=%s,dim]%s(%d)#[default] " $mfg $1 $2
+  printf "#[fg=%s,dim]%s(%d)#[default] " $mfg $1 $nb
 }
 
-TD_BOX="$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
-TD_COUNT=`ls -l $TD_BOX/new | wc -l`
-TD_NEW=`expr $TD_COUNT - 1`
-show_mail "td" $TD_NEW
+show_mail "td" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
+show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
 
 # BATTERY
 

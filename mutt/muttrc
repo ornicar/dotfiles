@@ -44,9 +44,6 @@ auto_view text/html                                             # view html auto
 alternative_order text/plain text/enriched text/html            # save html for last
 set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 
-# alternate emails
-#alternates sjl@pculture.org still\.?life@gmail.com steve@ladyluckblues.com
-
 # formats
 set date_format         = "%m/%d"
 set index_format        = "[%Z]  %D  %-20.20F  %s"
@@ -77,8 +74,8 @@ unignore from: to: cc: date: subject:                           # show only thes
 hdr_order from: to: cc: date: subject:                          # and in this order
 
 # boxes
-#mailboxes +steve-stevelosh.com/INBOX +steve-stevelosh.com/vim +steve-stevelosh.com/clojure +steve-stevelosh.com/django +steve-stevelosh.com/python +steve-stevelosh.com/mercurial +steve-stevelosh.com/archive +steve-stevelosh.com/sent +steve-stevelosh.com/drafts
-mailboxes +thibault.duplessis.gmail.com/INBOX +thibault.jirafe.com/INBOX
+mailboxes +thibault.duplessis.gmail.com/INBOX +thibault.duplessis.gmail.com/sent
+mailboxes +thibault.jirafe.com/INBOX +thibault.jirafe.com/sent
 
 # always sourced
 #source $alias_file                                             # required for functionality
@@ -120,8 +117,8 @@ macro index       \Cr   "<tag-prefix><clear-flag>N"                             
 macro index       \CR   "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"         "mark all messages as read"
 macro index       B     "<limit>~b "                                                         "search message bodies"
 macro index       I     "<change-folder>!<enter>"                                            "go to Inbox"
-macro pager       \Cu   "|urlview<enter>"                                                    "call urlview to extract URLs out of a message"
-macro index,pager o     "|mvim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<enter>"  "open in vim"
+#macro pager       \Cu   "|urlview<enter>"                                                    "call urlview to extract URLs out of a message"
+macro index,pager o     "|vim -c 'setlocal ft=mail' -c 'setlocal buftype=nofile' -<enter>"   "open in vim"
 
 macro index <esc>f     ":set date_format = \"%m/%d\"<enter>"                           "short date format"
 macro index <esc>F     ":set date_format = \"%m/%d at %I:%M %P\"<enter>"               "long date format"

@@ -5,12 +5,11 @@
 # settings
 set sidebar_delim       = '  │'
 set sidebar_visible     = yes
-set sidebar_width       = 20
+set sidebar_width       = 26
 
 # colors
-#color sidebar_new color117 color233
+color sidebar_new brightwhite default
 
-# bindings
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
+# macros
+macro index,pager \Cn     <sidebar-next><sidebar-open>
+macro index,pager \Ce     <sidebar-prev><sidebar-open>

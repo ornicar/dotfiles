@@ -3,6 +3,8 @@ set mbox      = "+thibault.jirafe.com/archive"
 set postponed = "+thibault.jirafe.com/drafts"
 unset record
 
+color status        green    black           
+
 # smtp config
 set smtp_url  = "smtps://thibault@jirafe.com@smtp.gmail.com"
 

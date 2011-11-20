@@ -1,4 +1,4 @@
 [DEFAULT]
 email: thibault.duplessis@gmail.com
-password: prompt
+password: xxx
 filter_groupless_contacts: no

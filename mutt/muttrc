@@ -96,20 +96,24 @@ bind index w        noop
 bind index <tab>    sync-mailbox
 bind index e        previous-entry
 bind index n        next-entry
+bind index gg       first-entry
+bind index G        last-entry
+bind index \Cp      recall-message
+bind index <space>  collapse-thread
+
 bind pager i        exit
 bind pager /        search
 bind pager e        previous-line
 bind pager n        next-line
 bind pager gg       top
 bind pager G        bottom
-bind index gg       first-entry
-bind index G        last-entry
+bind pager \Cn      next-entry
+bind pager \Ce      previous-entry
+
 bind index,pager R  group-reply
-bind index \Cp      recall-message
-bind index <space>  collapse-thread
-bind editor <Tab>   complete-query
 
 # complete contact emails
+bind editor <Tab>   complete-query
 set query_command = "goobook query '%s'"
 
 # macros

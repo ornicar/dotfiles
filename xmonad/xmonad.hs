@@ -4,6 +4,7 @@ import XMonad.Layout.Accordion
 import XMonad.Util.EZConfig
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
+import Graphics.X11.ExtraTypes.XF86
 
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
@@ -30,22 +31,24 @@ myConfig = defaultConfig {
     , "M-p"       -- Bin menu
     , "M-<Enter>" -- Swap focused/master windows
     , "M-<Space>" -- Rotate layout algorithm
-    , "M-<Tab>"
+    , "M-<Tab>"   -- Toggle windows
     , "M-S-p"     -- gmrun
   ]
   `removeKeysP` ["M-" ++ [n] | n <- ['1'..'9']] -- Workspace switch
   `additionalKeysP` [
       ("C-<Space>", windows W.focusDown)
-    --, ("M-u", focusUrgent)
+    , ("M-o", spawn "~/.scripts/path-dmenu")
     , ("M-r", spawn "urxvtc -e ranger")
     , ("M-a", spawn "urxvtc -e alsamixer")
     , ("M-m", spawn "urxvtc -e mutt")
+    , ("M-S-b", spawn "firefox")
     , ("M-s", spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t", spawn "urxvtc -e ~/.scripts/music toggle")
-    , ("M-S-b", spawn "firefox")
     , ("C-m", spawn "/home/thib/.scripts/touchpad_toggle")
   ]
   `additionalKeys` [
-      ((0, 0x1008FF13), spawn "amixer -q set PCM 5+ unmute")     -- Audio raise volume
-    , ((0, 0x1008FF11), spawn "amixer -q set PCM 5- unmute")     -- Audio lower volume
+      ((0, xF86XK_AudioMute), spawn "amixer -q set PCM toggle")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set PCM 2+")
+    , ((0, xF86XK_AudioLowerVolume), spawn "amixer -q set PCM 2-")
+    , ((0, xK_Print), spawn "screenshot")                    -- Take a screenshot
   ]

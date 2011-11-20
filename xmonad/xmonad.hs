@@ -6,7 +6,6 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.UrgencyHook
 import Graphics.X11.ExtraTypes.XF86
 
-import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
 --main = xmonad =<< xmobar myConfig
@@ -44,11 +43,12 @@ myConfig = defaultConfig {
     , ("M-S-b", spawn "firefox")
     , ("M-s", spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t", spawn "urxvtc -e ~/.scripts/music toggle")
+    , ("M-w", spawn "urxvtc -e wicd-curses")
     , ("C-m", spawn "/home/thib/.scripts/touchpad_toggle")
   ]
   `additionalKeys` [
       ((0, xF86XK_AudioMute), spawn "amixer -q set PCM toggle")
-    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set PCM 2+")
-    , ((0, xF86XK_AudioLowerVolume), spawn "amixer -q set PCM 2-")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set PCM 10+")
+    , ((0, xF86XK_AudioLowerVolume), spawn "amixer -q set PCM 10-")
     , ((0, xK_Print), spawn "screenshot")                    -- Take a screenshot
   ]

@@ -61,7 +61,7 @@ color index         brightyellow    default         "~v"                        
 color index         brightyellow    default         "~P"                        # messages from me
 color index         cyan            default         "~p!~F"                     # messages to me
 color index         cyan            default         "~N~p!~F"                   # new messages to me
-color index         cyan            default         "~U~p!~F"                   # unread messages to me
+color index         brightwhite     default         "~U~p!~F"                   # unread messages to me
 color index         brightgreen     default         "~R~p!~F"                   # messages to me
 color index         red             default         "~F"                        # flagged messages
 color index         red             default         "~F~p"                      # flagged messages to me

@@ -1,3 +1,4 @@
 # system-wide git ignores
 .ctags
 tags
+*private*

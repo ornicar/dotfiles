@@ -89,8 +89,7 @@ source ~/.mutt/thibault.duplessis.gmail.com.muttrc              # source gmail a
 #source ~/.mutt/sidebar.muttrc                                  # any muttng options are here
 
 # account specific sources
-#folder-hook steve-stevelosh.com/*        source ~/.mutt/steve-stevelosh.com.muttrc
-folder-hook thibault.duplessis.gmail.com/*        source ~/.mutt/thibault.duplessis.gmail.com.muttrc
+folder-hook thibault.duplessis.gmail.com/*  source ~/.mutt/thibault.duplessis.gmail.com.muttrc
 
 # these just give me headaches
 bind index,pager \# noop

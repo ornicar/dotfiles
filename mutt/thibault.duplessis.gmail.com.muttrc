@@ -1,5 +1,10 @@
 set from      = "thibault.duplessis@gmail.com"
-#set sendmail  = "/usr/local/bin/msmtp -a stevelosh"
-#set mbox      = "+steve-stevelosh.com/archive"
-#unset record
-#set postponed = "+steve-stevelosh.com/drafts"
+set mbox      = "+thibault.duplessis.gmail.com/archive"
+set postponed = "+thibault.duplessis.gmail.com/drafts"
+unset record
+
+# smtp config
+set smtp_url  = "smtps://thibault.duplessis@smtp.gmail.com"
+
+# set smtp_pass = "xxx"
+source ~/.mutt/thibault.duplessis.gmail.com.private.muttrc

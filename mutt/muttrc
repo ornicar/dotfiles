@@ -82,6 +82,7 @@ mailboxes +thibault.jirafe.com/INBOX +thibault.jirafe.com/sent
 source ~/.mutt/colors.muttrc                                    # source colors file
 source ~/.mutt/thibault.duplessis.gmail.com.muttrc              # source gmail as default
 source ~/.mutt/sidebar.muttrc                                   # any muttng options are here
+source ~/.mutt/pgp.muttrc                                       # GPG config
 
 # account specific sources
 folder-hook thibault.duplessis.gmail.com/*  source ~/.mutt/thibault.duplessis.gmail.com.muttrc

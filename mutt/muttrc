@@ -84,7 +84,6 @@ mailboxes +thibault.duplessis.gmail.com/INBOX
 # always sourced
 #source $alias_file                                             # required for functionality
 source ~/.mutt/colors.muttrc                                    # source colors file
-source ~/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
 source ~/.mutt/thibault.duplessis.gmail.com.muttrc              # source gmail as default
 #source ~/.mutt/sidebar.muttrc                                  # any muttng options are here
 

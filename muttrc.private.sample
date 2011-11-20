@@ -1,3 +1,0 @@
-set imap_user = "thibault.duplessis@gmail.com"
-set imap_pass = "secret"
-set smtp_pass = "secret"

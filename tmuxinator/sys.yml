@@ -1,0 +1,7 @@
+# ~/.tmuxinator/sys.yml
+
+project_name: sys
+project_root: /etc
+tabs:
+  - vim: _ vim
+  - shell:

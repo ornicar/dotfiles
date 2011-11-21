@@ -1,0 +1,7 @@
+# ~/.tmuxinator/dotfiles.yml
+
+project_name: dotfiles
+project_root: ~/dotfiles
+tabs:
+  - vim: vim
+  - shell:

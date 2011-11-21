@@ -1,0 +1,8 @@
+# ~/.tmuxinator/network.yml
+
+project_name: network
+project_root: ~/
+tabs:
+  - im: weechat-curses
+  - mail: mutt
+  - ttytter: ttytter

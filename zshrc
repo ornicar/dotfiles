@@ -32,8 +32,3 @@ compinit -i
 
 # Load private configuration
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
-
-# Start Xorg with the correct layout (i915 or nouveau)
-if [[ -z $DISPLAY && $(tty) = /dev/tty1 ]]; then
-  $HOME/.scripts/choose-x-layout
-fi

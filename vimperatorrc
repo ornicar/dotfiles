@@ -9,11 +9,12 @@ let mapleader = ","
 nnoremap n 3j
 vnoremap n j
 " Faster viewport scrolling
-nnoremap <C-n> 9j
-vnoremap <C-n> 3j
+nnoremap N 9j
+vnoremap N 3j
 " previous -> prev tab
-nnoremap N gT
-vnoremap N <nop>
+nnoremap <C-n> gT
+vnoremap <C-n> <nop>
+inoremap <C-n> <esc>gT
 " down -> next search
 nnoremap j n
 vnoremap j n
@@ -25,11 +26,12 @@ vnoremap J N
 nnoremap e 3k
 vnoremap e k
 " Faster viewport scrolling
-nnoremap <C-e> 9k
-vnoremap <C-e> 3k
+nnoremap E 9k
+vnoremap E 3k
 " end inclusive -> next tab
-nnoremap E gt
-vnoremap E <nop>
+nnoremap <C-e> gt
+vnoremap <C-e> <nop>
+inoremap <C-e> <esc>gt
 
 " mappings
 " ======================================

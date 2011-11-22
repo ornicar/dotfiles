@@ -13,8 +13,8 @@ Xft.hintstyle: hintfull
 ! }}}
 
 ! Urxvt {{{
-urxvt.font:  xft:Inconsolata:size=14
-urxvt.boldFont:  xft:Inconsolata:size=14
+urxvt.font:       xft:Inconsolata:size=14
+urxvt.boldFont:   xft:Inconsolata:size=14
 
 URxvt*scrollBar:  false
 URxvt*jumpScroll: true

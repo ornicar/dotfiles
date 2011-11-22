@@ -3,11 +3,11 @@
 nouveau=$(lsmod | grep nouveau | wc -l)
 
 if [ 0 -eq $nouveau ]; then
-  layout="i915"
+  XLAYOUT="i915"
 else
-  layout="nouveau"
+  XLAYOUT="nouveau"
 fi
 
-command="startx -- -layout $layout"
+command="startx -- -layout $XLAYOUT"
 echo $command
 $command

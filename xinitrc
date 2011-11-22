@@ -9,6 +9,12 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap $HOME/.Xmodmap &&
 
 xrdb $HOME/.Xdefaults                       # load Xdefaults
+
+nouveau=$(lsmod | grep nouveau | wc -l)
+if [ ! 0 -eq $nouveau ]; then
+	xrdb -override $HOME/dotfiles/Xdefaults.bigscreen
+fi
+
 xsetroot -solid black                       # black background
 xset s 300 300                              # set monitor to sleep
 #xset s off                                  # disable screensaver

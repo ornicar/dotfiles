@@ -73,13 +73,13 @@ myConfig = defaultConfig {
     , ("M-s", spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t", spawn "urxvtc -e ~/.scripts/music toggle")
     , ("M-w", spawn "urxvtc -e wicd-curses")
-    , ("C-m", spawn "/home/thib/.scripts/touchpad_toggle")
+    , ("C-m", spawn "~/.scripts/touchpad_toggle")
+    , ("M-S-p", spawn "~/.scripts/screenshot")           -- Take a screenshot
   ]
   `additionalKeys` [
       ((0, xF86XK_AudioMute), spawn "amixer -q set PCM toggle")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set PCM 15+")
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer -q set PCM 15-")
-    , ((0, xK_Print), spawn "screenshot")                    -- Take a screenshot
 
   ]
 

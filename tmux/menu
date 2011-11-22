@@ -1,14 +1,6 @@
 #!/bin/zsh
 
-IFS=$'\t\n'
-
-projects="archlinux
-lichess
-ltc
-scalex
-aichallenge
-sacem
-reaper"
+projects=$(ls -l ~/.tmuxinator/| grep "^-" | awk {'print $9'} | cut -d. -f1)
 
 source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 

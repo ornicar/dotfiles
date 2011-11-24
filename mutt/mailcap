@@ -1,0 +1,3 @@
+text/html; elinks -dump -eval "set document.codepage.assume = %{charset}" %s; copiousoutput
+application/pdf; apvlv %s &
+image/jpeg; feh %s &

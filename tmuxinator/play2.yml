@@ -1,0 +1,11 @@
+# ~/.tmuxinator/play2.yml
+
+project_name: play20
+project_root: ~/play20
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - 
+  - shell:

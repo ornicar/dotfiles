@@ -1,0 +1,6 @@
+# ~/.tmuxinator/home.yml
+
+project_name: home
+project_root: ~/
+tabs:
+  - shell:

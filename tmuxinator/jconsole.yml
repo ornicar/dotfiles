@@ -1,0 +1,11 @@
+# ~/.tmuxinator/jconsole.yml
+
+project_name: jconsole
+project_root: ~/jirafe-console
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - sbt
+  - shell:

@@ -1,0 +1,11 @@
+# ~/.tmuxinator/jirole.yml
+
+project_name: jirole
+project_root: ~/jirole
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - vim
+        - play
+  - shell:

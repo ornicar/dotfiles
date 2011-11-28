@@ -16,9 +16,6 @@ export GIT_EDITOR='vim'
 # Java/SBT configuration
 export SBT_OPTS="-Dfile.encoding=UTF8 -Xms768M -Xmx2048M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048m"
 
-# Fix ttytter
-export PERL_SIGNALS=unsafe
-
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
 

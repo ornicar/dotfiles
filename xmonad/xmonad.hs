@@ -8,9 +8,7 @@ import XMonad.Hooks.ManageHelpers
 import Graphics.X11.ExtraTypes.XF86
 
 import qualified XMonad.StackSet as W
-import qualified Data.Map        as M
 
---main = xmonad =<< xmobar myConfig
 main = xmonad $ withUrgencyHook dzenUrgencyHook { args = ["-bg", "darkgreen", "-xs", "1"] }
               $ myConfig
 
@@ -65,32 +63,19 @@ myConfig = defaultConfig {
   ]
   `additionalKeysP` [
       ("C-<Space>", windows W.focusDown)
-    , ("M-o", spawn "~/.scripts/path-dmenu")
-    , ("M-r", spawn "urxvtc -e ranger")
-    , ("M-a", spawn "urxvtc -e alsamixer")
-    , ("M-m", spawn "urxvtc -e mutt")
-    , ("M-S-b", spawn "firefox")
-    , ("M-s", spawn "urxvtc -e ~/.scripts/music ui")
-    , ("M-t", spawn "urxvtc -e ~/.scripts/music toggle")
-    , ("M-w", spawn "urxvtc -e wicd-curses")
-    , ("C-m", spawn "~/.scripts/touchpad_toggle")
+    , ("M-o",   spawn "~/.scripts/path-dmenu")
+    , ("M-r",   spawn "urxvtc -e ranger")
+    , ("M-a",   spawn "urxvtc -e alsamixer")
+    , ("M-m",   spawn "urxvtc -e mutt")
+    , ("M-S-b", spawn "firefox-beta-bin")
+    , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")
+    , ("M-t",   spawn "urxvtc -e ~/.scripts/music toggle")
+    , ("M-w",   spawn "urxvtc -e wicd-curses")
+    , ("C-m",   spawn "~/.scripts/touchpad_toggle")
     , ("M-S-p", spawn "~/.scripts/screenshot")           -- Take a screenshot
   ]
   `additionalKeys` [
-      ((0, xF86XK_AudioMute), spawn "amixer -q set PCM toggle")
+    ((0, xF86XK_AudioMute),          spawn "amixer -q set PCM toggle")
     , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -q set PCM 15+")
     , ((0, xF86XK_AudioLowerVolume), spawn "amixer -q set PCM 15-")
-
-  ]
-
-----------------------------------------------------------------------
--- Custom key bindings
---
-myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $ [
-
-    -- mod-[1..9], Switch to workspace N
-    -- mod-shift-[1..9], Move client to workspace N
-    ((m .|. modMask, k), windows $ f i)
-      | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-      , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
   ]

@@ -2,7 +2,7 @@
 
 INTERVAL=1
 INTERNET_TIMEOUT=3
-LICHESS_INTERVAL=4
+LICHESS_INTERVAL=3
 LICHESS_URL="http://en.lichess.org/status"
 
 calculate_cpu_usage()

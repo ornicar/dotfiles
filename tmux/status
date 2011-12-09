@@ -102,6 +102,7 @@ printf " %s%s#[default]" "$modifier" "$bar"
 if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
   read hz < /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
   freq=$(print "scale = 1; $hz / 1000000" | bc)
+  [[ freq -eq ".8" ]] && freq="0.8" # quick ugly fix for the missing leading 0
   printf " #[fg=colour3]«%s»" "$freq"; 
 fi
 

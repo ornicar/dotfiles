@@ -6,7 +6,6 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
-#export PATH="$HOME/bin/ghc/bin:$PATH"
 export PATH=$PATH:/home/thib/play20
 
 export BROWSER="firefox"

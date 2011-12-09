@@ -326,15 +326,17 @@ nmap <leader>gl :Git log -p %<cr>
 let g:SuperTabCrMapping = 0
 
 " Lusty juggler
+let g:LustyJugglerDefaultMappings = 0
+let g:LustyJugglerShowKeys = 0
 nmap <silent> <leader>md :LustyJugglePrevious<cr>
 nmap <silent> <leader>mt :LustyJuggler<CR>
-let g:LustyJugglerShowKeys = 0
 
 " Lusty buffer
 nmap <silent> <Leader>mb :LustyBufferExplorer<CR>
 nmap <silent> <Leader>mg :LustyBufferGrep<CR>
 
 " Lusty explorer
+let g:LustyExplorerDefaultMappings = 0
 nmap <silent> <Leader>ms :LustyFilesystemExplorer<CR>
 nmap <silent> <Leader>mr :LustyFilesystemExplorerFromHere<CR>
 

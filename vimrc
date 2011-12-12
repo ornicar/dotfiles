@@ -340,17 +340,6 @@ let g:LustyExplorerDefaultMappings = 0
 nmap <silent> <Leader>ms :LustyFilesystemExplorer<CR>
 nmap <silent> <Leader>mr :LustyFilesystemExplorerFromHere<CR>
 
-" Syntastic
-" use signs to indicate lines with errors only if signs are available
-if has('signs')
-   let g:syntastic_enable_signs = 1
-endif
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_quiet_warnings=0
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 " Command-T search
 nmap <silent> <leader>mf :CommandT<cr>
 " Flush then search

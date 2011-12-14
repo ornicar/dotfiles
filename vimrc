@@ -357,6 +357,9 @@ let g:NERDCustomDelimiters = {
     \ 'julius' : { 'left': '//' , 'right': '' }
 \ }
 
+" Redraw
+nmap <leader>rr :redraw!<cr>
+
 " Filetype detection extensions
 au BufNewFile,BufRead *vimperatorrc*,*.vimp set filetype=vimperator
 au BufNewFile,BufRead *.twig set filetype=twig
@@ -383,7 +386,7 @@ command! -nargs=1 Silent
 \ | execute ':silent !'.<q-args>
 \ | execute ':redraw!'
 
-" Use ranger as vim file manager
+" Use ranger r vim file manager
 function! Ranger()
     silent !ranger --choosefile=/tmp/chosen
     if filereadable('/tmp/chosen')

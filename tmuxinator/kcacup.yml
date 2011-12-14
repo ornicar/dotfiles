@@ -1,0 +1,11 @@
+# ~/.tmuxinator/kcacup.yml
+
+project_name: kcacup
+project_root: ~/kcacup
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - play
+        - vim
+  - shell:

@@ -13,7 +13,7 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Dfile.encoding=UTF8 -Xms768M -Xmx2048M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048m"
+export SBT_OPTS="-Dfile.encoding=UTF8 -Xms768M -Xmx4096M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048m"
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
@@ -33,3 +33,5 @@ stty -ixon -ixoff
 
 # Add dircolors
 eval $(dircolors $DOTFILES/zsh/dircolors-solarized/dircolors.ansi-dark)
+
+eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`

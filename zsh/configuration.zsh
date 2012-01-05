@@ -8,12 +8,15 @@ export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH=$PATH:/home/thib/play20
 
-export BROWSER="firefox"
+export BROWSER="firefox-beta-bin"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Dfile.encoding=UTF8 -Xms768M -Xmx4096M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048m"
+export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx2048M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048M"
+#export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx512M -Xss2M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -XX:+HeapDumpOnOutOfMemoryError"
+
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"

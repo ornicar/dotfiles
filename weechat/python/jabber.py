@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009-2011 Sebastien Helleu <flashcode@flashtux.org>
+# Copyright (C) 2009-2012 Sebastien Helleu <flashcode@flashtux.org>
 # Copyright (C) 2010 xt <xt@bash.no>
 # Copyright (C) 2010 Aleksey V. Zapparov <ixti@member.fsf.org>
 #
@@ -26,6 +26,11 @@
 # Happy chat, enjoy :)
 #
 # History:
+#
+# 2012-01-03, Sebastien Helleu <flashcode@flashtux.org>:
+#     version 1.0: changes for future compatibility with Python 3.x
+# 2011-12-15, Sebastien Helleu <flashcode@flashtux.org>:
+#     version 0.9: fix utf-8 encoding problem on jid
 # 2011-03-21, Isaac Raway <isaac.raway@gmail.com>:
 #     version 0.8: search chat buffer before opening it
 # 2011-02-13, Sebastien Helleu <flashcode@flashtux.org>:
@@ -69,7 +74,7 @@
 
 SCRIPT_NAME    = "jabber"
 SCRIPT_AUTHOR  = "Sebastien Helleu <flashcode@flashtux.org>"
-SCRIPT_VERSION = "0.8"
+SCRIPT_VERSION = "1.0"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC    = "Jabber/XMPP protocol for WeeChat"
 SCRIPT_COMMAND = SCRIPT_NAME
@@ -82,8 +87,8 @@ import_ok = True
 try:
     import weechat
 except:
-    print "This script must be run under WeeChat."
-    print "Get WeeChat now at: http://www.weechat.org/"
+    print("This script must be run under WeeChat.")
+    print("Get WeeChat now at: http://www.weechat.org/")
     import_ok = False
 
 # On import, xmpp may produce warnings about using hashlib instead of
@@ -94,8 +99,8 @@ warnings.filterwarnings("ignore",category=DeprecationWarning)
 try:
     import xmpp
 except:
-    print "Package python-xmpp (xmpppy) must be installed to use Jabber protocol."
-    print "Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/"
+    print("Package python-xmpp (xmpppy) must be installed to use Jabber protocol.")
+    print("Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/")
     import_ok = False
 finally:
     warnings.filters = original_filters
@@ -303,7 +308,7 @@ def jabber_config_server_write_cb(data, config_file, section_name):
     global jabber_servers
     weechat.config_write_line(config_file, section_name, "")
     for server in jabber_servers:
-        for name, option in sorted(server.options.iteritems()):
+        for name, option in sorted(server.options.items()):
             weechat.config_write_option(config_file, option)
     return weechat.WEECHAT_RC_OK
 
@@ -323,7 +328,7 @@ def jabber_config_jid_aliases_write_cb(data, config_file, section_name):
     """ Write jid_aliases section in config file. """
     global jabber_jid_aliases
     weechat.config_write_line(config_file, section_name, "")
-    for alias, jid in sorted(jabber_jid_aliases.iteritems()):
+    for alias, jid in sorted(jabber_jid_aliases.items()):
         weechat.config_write_line(config_file, alias, jid)
     return weechat.WEECHAT_RC_OK
 
@@ -392,11 +397,11 @@ class Server:
         self.options = {}
         # if the value is provided, use it, otherwise use the default
         values = {}
-        for option_name, props in jabber_server_options.iteritems():
+        for option_name, props in jabber_server_options.items():
             values[option_name] = props["default"]
         values['name'] = name
         values.update(**kwargs)
-        for option_name, props in jabber_server_options.iteritems():
+        for option_name, props in jabber_server_options.items():
             self.options[option_name] = weechat.config_new_option(
                 jabber_config_file, jabber_config_section["server"],
                 self.name + "." + option_name, props["type"], props["desc"],
@@ -593,7 +598,7 @@ class Server:
         body = node.getBody()
         if not jid or not body:
             return
-        buddy = self.search_buddy_list(str(jid).encode("utf-8"), by='jid')
+        buddy = self.search_buddy_list(self.stringify_jid(jid), by='jid')
         if not buddy:
             buddy = self.add_buddy(jid=jid)
         # If a chat buffer exists for the buddy, receive the message with that
@@ -612,7 +617,7 @@ class Server:
             return
         try:
             self.client.Process(1)
-        except xmpp.protocol.StreamError, e:
+        except xmpp.protocol.StreamError as e:
             weechat.prnt('', '%s: Error from server: %s' %(SCRIPT_NAME, e))
             self.disconnect()
             if weechat.config_boolean(self.options['autoreconnect']):
@@ -762,7 +767,7 @@ class Server:
             # into utf-8, else it will raise UnicodeException becaouse of
             # slash character :((
             return (jid_str + '/').encode("utf-8") + jid.resource.encode("utf-8")
-        return jid_str.encode("utf-8") 
+        return jid_str.encode("utf-8")
 
     def search_buddy_list(self, name, by='jid'):
         """ Search for a buddy by name.
@@ -1100,7 +1105,7 @@ class Buddy:
             self.alias = ''
         global jabber_jid_aliases
         self.alias = self.bare_jid
-        for alias, jid in jabber_jid_aliases.iteritems():
+        for alias, jid in jabber_jid_aliases.items():
             if jid == self.bare_jid:
                 self.alias = alias
                 break
@@ -1474,7 +1479,7 @@ class AliasCommand(object):
             return
         if jid in jabber_jid_aliases.values():
             weechat.prnt("", "\njabber: unable to add alias: %s" % (alias))
-            for a, j in jabber_jid_aliases.iteritems():
+            for a, j in jabber_jid_aliases.items():
                 if j == jid:
                     weechat.prnt("", "jabber: jid '%s' is already aliased as '%s', delete first" %
                         (j, a))
@@ -1532,14 +1537,14 @@ class AliasCommand(object):
         weechat.prnt("", "jabber jid aliases:")
         len_alias = 5
         len_jid = 5
-        for alias, jid in jabber_jid_aliases.iteritems():
+        for alias, jid in jabber_jid_aliases.items():
             if len_alias < len(alias):
                 len_alias = len(alias)
             if len_jid < len(jid):
                 len_jid = len(jid)
         prnt_format = "  %-" + str(len_alias) + "s %-" + str(len_jid) + "s"
         weechat.prnt("", prnt_format % ('Alias', 'JID'))
-        for alias, jid in sorted(jabber_jid_aliases.iteritems()):
+        for alias, jid in sorted(jabber_jid_aliases.items()):
             weechat.prnt("", prnt_format % (alias, jid))
         #FIXME \\\
         import sys
@@ -1579,7 +1584,7 @@ def jabber_completion_servers(data, completion_item, buffer, completion):
 def jabber_completion_jid_aliases(data, completion_item, buffer, completion):
     """ Completion with jabber alias names. """
     global jabber_jid_aliases
-    for alias, jid in sorted(jabber_jid_aliases.iteritems()):
+    for alias, jid in sorted(jabber_jid_aliases.items()):
         weechat.hook_completion_list_add(completion, alias,
                                          0, weechat.WEECHAT_LIST_POS_SORT)
     return weechat.WEECHAT_RC_OK

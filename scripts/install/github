@@ -1,2 +1,0 @@
-curl http://defunkt.io/hub/standalone -Lo ~/.bin/hub
-chmod +x ~/.bin/hub

@@ -1,11 +1,11 @@
-# ~/.tmuxinator/sacem.yml
+# ~/.tmuxinator/hermes.yml
 
-project_name: sacem
-project_root: ~/sacem
+project_name: hermes
+project_root: ~/hermes
 tabs:
   - main: 
       layout: even-horizontal
       panes: 
+        - sbt
         - vim
-        - 
   - shell:

@@ -1,8 +1,0 @@
-# ~/.tmuxinator/aichallenge.yml
-
-project_name: aichallenge
-project_root: ~/aichallenge
-tabs:
-  - main: vim
-  - sbt: sbt
-  - shell:

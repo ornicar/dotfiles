@@ -97,3 +97,6 @@
 [submodule "vim/bundle/align"]
   path = vim/bundle/align
   url = https://github.com/tsaleh/vim-align
+[submodule "vim/bundle/rainbow"]
+	path = vim/bundle/rainbow
+	url = https://github.com/kien/rainbow_parentheses.vim

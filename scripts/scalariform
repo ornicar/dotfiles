@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scala -cp ~/bin/scalariform_*.jar scalariform.commandline.Main +alignSingleLineCaseStatements +doubleIndentClassDeclaration "$@"

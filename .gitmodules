@@ -14,10 +14,6 @@
   path = vim/bundle/surround
   url = git://github.com/ornicar/vim-surround.git
   ignore = untracked
-[submodule "vim/bundle/commandt"]
-  path = vim/bundle/commandt
-  url = git://github.com/wincent/Command-T.git
-  ignore = untracked
 [submodule "vim/bundle/unimpaired"]
   path = vim/bundle/unimpaired
   url = git://github.com/ornicar/vim-unimpaired.git
@@ -82,21 +78,32 @@
 [submodule "vim/bundle/bufexplorer"]
   path = vim/bundle/bufexplorer
   url = git://github.com/ornicar/vim-bufexplorer.git
+  ignore = untracked
 [submodule "vim/bundle/jade"]
   path = vim/bundle/jade
   url = git://github.com/digitaltoad/vim-jade.git
+  ignore = untracked
 [submodule "vim/bundle/shakespearean"]
   path = vim/bundle/shakespearean
   url = git://github.com/pbrisbin/html-template-syntax.git
+  ignore = untracked
 [submodule "scripts/spark"]
   path = scripts/spark
   url = git://github.com/holman/spark.git
+  ignore = untracked
 [submodule "zsh/dircolors-solarized"]
   path = zsh/dircolors-solarized
   url = https://github.com/seebi/dircolors-solarized
+  ignore = untracked
 [submodule "vim/bundle/align"]
   path = vim/bundle/align
   url = https://github.com/tsaleh/vim-align
+  ignore = untracked
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = https://github.com/kien/rainbow_parentheses.vim
+  ignore = untracked
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+  ignore = untracked

@@ -1,17 +1,13 @@
--h .scala
 --verbose=no
 --recurse=yes
 --tag-relative=yes
---regex-scala=/^.*case object[ \t]+([a-zA-Z0-9_]+)/\1/o,case objects/
---regex-scala=/^.*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
---regex-scala=/^.*case class[ \t]+([a-zA-Z0-9_]+)/\1/c,case classes/
---regex-scala=/^.*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
---regex-scala=/^.*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
---regex-scala=/^.*type[ \t]+([a-zA-Z0-9_]+)/\1/T,types/
---regex-scala=/^.*def[ \t]+([a-zA-Z0-9_\?]+)/\1/m,methods/
---regex-scala=/^.*val[ \t]+([a-zA-Z0-9_]+)/\1/C,constants/
---regex-scala=/^.*var[ \t]+([a-zA-Z0-9_]+)/\1/l,local variables/
---regex-scala=/^.*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+--regex-scala=/^\s*class\s*([a-zA-Z0-9_]+)/\1/c,classes/
+--regex-scala=/^\s*object\s*([a-zA-Z0-9_]+)/\1/o,objects/
+--regex-scala=/^\s*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/^\s*def\s*([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/
+--regex-scala=/\s*val\s*([a-zA-Z0-9_]+)\s*[:=]/\1/V,values/
+--regex-scala=/\s*var\s*([a-zA-Z0-9_]+)\s*[:=]/\1/v,variables/
+--regex-scala=/^\s*type\s*([a-zA-Z0-9_]+)\s*[\[<>=]/\1/T,types/
 --exclude=.git
 --exclude=dist
 --exclude=target
@@ -19,5 +15,6 @@
 --exclude=src_managed
 --exclude=project
 --exclude=webapp
---exclude=tools
 --exclude=*.js
+--exclude=*.css
+--exclude=*.java

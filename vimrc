@@ -19,6 +19,9 @@ colorscheme solarized
 
 let mapleader = ","
 
+
+set autoread                      " Automatically read a file that has changed on disk
+
 set clipboard=unnamedplus         " Alias unnamed register to the + register, which is the X Window clipboard.
 
 set history=2000                  " Sets how many lines of history VIM has to remember
@@ -80,6 +83,9 @@ set shiftwidth=2
 " Not sure what this does
 set ttyfast
 
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=1024
+
 " But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
@@ -113,11 +119,13 @@ nmap ! :!
 " Always replace all occurences of a line
 set gdefault
 
-" Highlight current line
-set cursorline
+" Highlight the current line and column
+" Don't do this - It makes window redraws painfully slow
+set nocursorline
+set nocursorcolumn
 
 " Reduce timeout for key codes
-set timeout timeoutlen=700 ttimeoutlen=0
+set timeout timeoutlen=500 ttimeoutlen=0
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
@@ -193,6 +201,9 @@ nnoremap Y y$
 nmap <space> "
 vmap <space> "
 
+" Swap two words
+nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")
 iab xname Thibault Duplessis
@@ -210,6 +221,7 @@ else
 endif
 
 set diffopt=filler,vertical
+set diffopt+=iwhite
 
 " Fast open vertical help
 nmap <leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>

@@ -1,0 +1,19 @@
+-h .php
+--verbose=no
+--recurse=yes
+--tag-relative=yes
+--languages=PHP
+--PHP-kinds=+cif-dvj
+--regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
+--regex-PHP=/interface\s+([^ ]+)/\1/c/
+--regex-PHP=/(public\s+|static\s+|protected\s+|private\s+)\$([^     =]+)/\2/p/
+--regex-PHP=/final\s+(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
+--exclude=app
+--exclude=xhr
+--exclude=.git
+--exclude=.svn
+--exclude=vendor/zend-subtrees
+--exclude=vendor/*/vendor
+--exclude=web
+--exclude=tests
+--exclude=*.js

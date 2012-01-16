@@ -361,10 +361,6 @@ nmap <silent> <leader>mf :CtrlP<cr>
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 
-" Increase cache size
-let g:CommandTMaxFiles = 30000
-let g:CommandTMatchWindowAtTop = 1
-
 let g:NERDCustomDelimiters = {
     \ 'haskell': { 'left': '--' , 'right': '' },
     \ 'hamlet' : { 'left': '\<!-- ', 'right': ' -->' },

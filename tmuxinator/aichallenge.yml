@@ -1,0 +1,11 @@
+# ~/.tmuxinator/aichallenge.yml
+
+project_name: aichallenge
+project_root: ~/aichallenge
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - sbt
+        - vim
+  - shell:

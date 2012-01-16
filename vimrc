@@ -318,6 +318,8 @@ nmap <leader>ct :!ctags&<cr><cr>
 nmap ]t :bd<cr>:tnext<cr>
 " Jump to previous tag match
 nmap [t :bd<cr>:tprevious<cr>
+" Type a tag
+nmap <leader>t :tag<space>
 
 " Surround mappings
 let g:surround_no_mappings = 1
@@ -355,11 +357,9 @@ let g:ctrlp_max_height = 30
 let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_new_file = 3 " open in current window
-let g:ctrlp_extensions = ['tag']
 nmap <silent> <leader>mf :CtrlP<cr>
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
-nmap <silent> <leader>t :CtrlPTag<cr>
 
 " Increase cache size
 let g:CommandTMaxFiles = 30000

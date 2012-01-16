@@ -1,7 +1,10 @@
 --verbose=no
 --recurse=yes
 --tag-relative=yes
+--langdef=scala
+--langmap=scala:.scala
 --regex-scala=/^\s*class\s*([a-zA-Z0-9_]+)/\1/c,classes/
+--regex-scala=/^\s*case[ \t]*class[ \t]*([a-zA-Z0-9_]+)/\1/r,cclasses/
 --regex-scala=/^\s*object\s*([a-zA-Z0-9_]+)/\1/o,objects/
 --regex-scala=/^\s*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
 --regex-scala=/^\s*def\s*([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/

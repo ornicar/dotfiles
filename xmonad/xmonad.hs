@@ -16,7 +16,7 @@ main = xmonad $ withUrgencyHook dzenUrgencyHook { args = ["-bg", "darkgreen", "-
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..9]
+myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..6]
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -41,7 +41,7 @@ myManageHook = composeAll
 myConfig = defaultConfig {
       terminal   = "urxvtc -e ~/.tmux/menu"
     , modMask    = mod1Mask -- Alt
-    , layoutHook = noBorders (Full ||| Accordion)
+    , layoutHook = noBorders Full
     , manageHook = myManageHook
     , workspaces = myWorkspaces
   }

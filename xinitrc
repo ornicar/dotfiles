@@ -26,8 +26,5 @@ $HOME/.scripts/collector_daemon &           # start cpu and lichess data collect
 
 urxvtc -e $HOME/.tmux/menu &
 
-# store X clipboards for use with dmenuclip
-clipbored &
-
 # Run window manager
 exec xmonad

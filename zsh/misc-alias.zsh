@@ -26,11 +26,11 @@ alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 alias reload=". ~/.zshrc"
 
 # Start web server
-alias startwebserver="sudo /etc/rc.d/nginx start && sudo /etc/rc.d/php-fpm start && sudo /etc/rc.d/mongodb start"
+alias startwebserver="sudo /etc/rc.d/nginx start && sudo /etc/rc.d/php-fpm start && sudo /etc/rc.d/mongodb start && sudo /etc/rc.d/redis start"
 # Stop web server
-alias stopwebserver="sudo /etc/rc.d/nginx stop && sudo /etc/rc.d/php-fpm stop && sudo /etc/rc.d/mongodb stop"
+alias stopwebserver="sudo /etc/rc.d/nginx stop && sudo /etc/rc.d/php-fpm stop && sudo /etc/rc.d/mongodb stop && sudo /etc/rc.d/redis stop"
 # Restart web server
-alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart"
+alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart && sudo /etc/rc.d/redis restart"
 
 # Run IM program
 alias im="weechat-curses"

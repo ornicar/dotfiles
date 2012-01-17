@@ -38,11 +38,6 @@ alias im="weechat-curses"
 # radios are in ~/data/radio
 alias radio="mplayer -playlist"
 
-# Use google for translation
-alias trans="python2 ~/.scripts/translate"
-alias enfr="python2 ~/.scripts/translate -s en -d fr"
-alias fren="python2 ~/.scripts/translate -s fr -d en"
-
 # Search using surfraw
 alias gg="surfraw google"
 alias dd="surfraw duckduckgo"

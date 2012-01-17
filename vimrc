@@ -305,9 +305,6 @@ set cmdwinheight=12
 " Fast, efficient file renaming
 nmap R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
 
-" Use dmenuclip to paste from a previous X clipboard
-nmap <leader>p :r !dmenuclip<cr>
-
 " Make the current file executable
 nmap <leader>% :Silent chmod +x %<cr>
 

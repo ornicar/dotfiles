@@ -2,7 +2,6 @@
 Xcursor.theme: CG
 
 ! Colors
-!#include "/home/thib/.xcolors/ornicar.xcolors"
 #include "/home/thib/.xcolors/solarized.xcolors"
 
 ! Fonts {{{

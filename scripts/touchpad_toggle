@@ -9,4 +9,3 @@ else
   touch $file
   msg="Touchpad enabled"
 fi
-ratpoison -c "echo $msg"

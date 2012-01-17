@@ -72,12 +72,12 @@ def terminal_bell():
 
 def show_notification(chan, message):
     #weechat.prnt("", "Notify %s: %s" % (chan, message))
-    if(chan != ""):
-        display = '%s\n%s' % (encode_string(chan), encode_string(message))
-    else:
-        display = '%s' % (encode_string(message))
+    #if(chan != ""):
+        #display = '%s\n%s' % (encode_string(chan), encode_string(message))
+    #else:
+        #display = '%s' % (encode_string(message))
 
-    command = 'ratpoison -c "echo %s"' % display
+    #command = 'ratpoison -c "echo %s"' % display
 
     #os.system(command)
 

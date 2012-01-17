@@ -6,10 +6,6 @@ ansi=1
 #avatar=curl -s %U | convert - -colorspace Gray -colors 16 -antialias ppm:- | ppmascii -photo -winx=4
 # Try to connect, again
 #hold=1
-# Extensions to load
-#exts=/home/thib/dotfiles/ttytter/notify.pl
-# Notifications
-#notifytype=ratpoison
 # Tweet types that are notified
 notifies=dm,me,reply,search
 # Tweet timestamp format

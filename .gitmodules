@@ -98,11 +98,6 @@
 [submodule "vim/bundle/align"]
   path = vim/bundle/align
   url = https://github.com/tsaleh/vim-align
-  ignore = untracked
-[submodule "vim/bundle/rainbow"]
-	path = vim/bundle/rainbow
-	url = https://github.com/kien/rainbow_parentheses.vim
-  ignore = untracked
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim

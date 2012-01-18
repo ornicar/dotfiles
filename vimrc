@@ -19,6 +19,7 @@ colorscheme solarized
 
 let mapleader = ","
 
+set encoding=utf-8
 
 set autoread                      " Automatically read a file that has changed on disk
 
@@ -69,6 +70,9 @@ set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                   " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\(%{substitute(getcwd(),'^.*/','','')})%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
+
+" Configure powerline
+let g:Powerline_symbols = 'unicode'
 
 " Tabs and indentation.
 set expandtab
@@ -142,8 +146,6 @@ set shiftround
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala,haskell
     \ autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
-
-set encoding=utf-8
 
 " Enable folding by indentation
 set foldmethod=indent

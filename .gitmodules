@@ -107,3 +107,6 @@
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
   ignore = untracked
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline

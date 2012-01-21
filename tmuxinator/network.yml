@@ -5,4 +5,4 @@ project_root: ~/
 tabs:
   - im: weechat-curses
   - mail: mutt
-  - ttytter: 
+  - shell: 

@@ -1,49 +1,67 @@
 [user]
-	name = Thibault Duplessis
-	email = thibault.duplessis@gmail.com
+  name = Thibault Duplessis
+  email = thibault.duplessis@gmail.com
 
 [color]
-	ui = true
+  ui = true
 
 [color "diff"]
-    whitespace = red reverse
+  whitespace = red reverse
 
 [core]
-	editor = vim
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = /home/thib/dotfiles/gitignore
+  editor = vim
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = /home/thib/dotfiles/gitignore
 
 [merge]
-	tool = vimdiff
+  tool = vimdiff
+  summary = true
+  verbosity = 1
 
 [web]
-    browser = firefox
+  browser = firefox
+
+[push]
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+  default = tracking 
+
+[apply]
+  whitespace = nowarn
+
+[branch]
+  autosetupmerge = true
+
+[diff]
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  # instead of a/b/c/d as prefixes for patches
+  mnemonicprefix = true
 
 [alias]
 
     # Show status and diff of dirty submodules
-    subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"
+  subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"
 
     # Pull all submodules
-    subpull = !"git-subpull-async"
+  subpull = !"git-subpull-async"
 
     # Update all submodules
-    subupdate = !"git submodule sync && git submodule update --init --recursive"
+  subupdate = !"git submodule sync && git submodule update --init --recursive"
 
     # Checkout master branch of all submodules
-    subcheckout = !"git submodule foreach git checkout master"
+  subcheckout = !"git submodule foreach git checkout master"
 
     # Reset all submodules
-    subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"
+  subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"
 
     # Show current branch of each submodule
-    subbranch = !"git submodule foreach --recursive 'git rev-parse --abbrev-ref HEAD'"
+  subbranch = !"git submodule foreach --recursive 'git rev-parse --abbrev-ref HEAD'"
 
     # show list of contributors in descending order by number of commits
-    rank = shortlog -sn --no-merges
+  rank = shortlog -sn --no-merges
 
     # given any git object, try to show it briefly
-    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+  whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 
     # Search for a given string in all patches and print commit messages
     # example: search for any commit that adds or removes string "foobar"
@@ -52,10 +70,14 @@
     #     git searchcommits foobar src/lib
     # example: search commits for "foobar", print full diff of commit with 1 line context
     #     git searchcommits foobar --pickaxe-all -U1 src/lib
-    searchcommits = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
+  searchcommits = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
 
     # Add modified files to previous commit
-    oups = "!git add -A -v && git commit --amend -C HEAD"
+  oups = "!git add -A -v && git commit --amend -C HEAD"
 
-    # very compact log
-    lol = log --graph --decorate --pretty=format:'%h %an: %s' --abbrev-commit
+    # nice logs
+  l = log --decorate --graph --date=short --pretty=\"format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C()%s %C(black) [%an]%Creset\"
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 
+  changelog = log --pretty=format:\" * %s\" 
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 

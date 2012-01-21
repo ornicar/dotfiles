@@ -6,10 +6,9 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - vim
         - sbt
+        - vim
   - shell:
       layout: even-horizontal
       panes: 
         - #shell
-        - tig status

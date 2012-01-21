@@ -3,6 +3,7 @@
 set nocompatible
 
 " Infect Vim with pathogen >:)
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 syntax on
@@ -18,7 +19,6 @@ set background=dark
 colorscheme solarized
 
 let mapleader = ","
-
 
 set autoread                      " Automatically read a file that has changed on disk
 

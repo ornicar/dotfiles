@@ -8,8 +8,6 @@
 --regex-scala=/^\s*object\s*([a-zA-Z0-9_]+)/\1/o,objects/
 --regex-scala=/^\s*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
 --regex-scala=/^\s*def\s*([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/
---regex-scala=/\s*val\s*([a-zA-Z0-9_]+)\s*[:=]/\1/V,values/
---regex-scala=/\s*var\s*([a-zA-Z0-9_]+)\s*[:=]/\1/v,variables/
 --regex-scala=/^\s*type\s*([a-zA-Z0-9_]+)\s*[\[<>=]/\1/T,types/
 --exclude=.git
 --exclude=dist

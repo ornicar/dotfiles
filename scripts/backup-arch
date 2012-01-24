@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+backupdir=/media/buffalo/backup-arch/
+
+rsync --archive --force --delete --progress --compress /home/thib/dotfiles $backupdir
+rsync --archive --force --delete --progress --compress /etc $backupdir
+rsync --archive --force --delete --progress --compress /usr $backupdir
+rsync --archive --force --delete --progress --compress /var $backupdir

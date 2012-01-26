@@ -33,6 +33,9 @@ nnoremap <C-e> gt
 vnoremap <C-e> <nop>
 inoremap <C-e> <esc>gt
 
+noremap h H
+noremap l L
+
 " mappings
 " ======================================
 " Select link

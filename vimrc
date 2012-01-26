@@ -348,11 +348,12 @@ nmap <silent> <leader>ms :LustyFilesystemExplorer<cr>
 nmap <silent> <leader>mr :LustyFilesystemExplorerFromHere<cr>
 
 " CtrlP search
-let g:ctrlp_max_height = 30
+let g:ctrlp_max_height = 20
 let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_new_file = 3 " open in current window
 let g:ctrlp_extensions = ['tag']
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 nmap <silent> <leader>mf :CtrlP<cr>
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>

@@ -105,3 +105,6 @@
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen
+[submodule "vim/bundle/rename"]
+	path = vim/bundle/rename
+	url = git://github.com/wojtekmach/vim-rename.git

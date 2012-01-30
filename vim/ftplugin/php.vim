@@ -29,6 +29,11 @@ setlocal keywordprg=pman
 
 " Use errorformat for parsing PHP error output
 setlocal errorformat=%m\ in\ %f\ on\ line\ %l
+"
+" Configure tabstyle...
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
 
 " Because I write this shit so often
 imap <buffer> <unique> ` ->

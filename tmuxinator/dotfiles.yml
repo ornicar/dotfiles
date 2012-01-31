@@ -3,5 +3,5 @@
 project_name: dotfiles
 project_root: ~/dotfiles
 tabs:
-  - vim: vim
-  - shell:
+  - vim: cd ~/dotfiles && vim
+  - shell: cd ~/dotfiles

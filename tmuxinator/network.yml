@@ -3,6 +3,6 @@
 project_name: network
 project_root: ~/
 tabs:
-  - im: weechat-curses
-  - mail: mutt
-  - shell: 
+  - im: cd ~/ && weechat-curses
+  - mail: cd ~/ && mutt
+  - shell: cd ~/ 

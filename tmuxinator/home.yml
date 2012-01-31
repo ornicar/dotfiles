@@ -3,4 +3,4 @@
 project_name: home
 project_root: ~/
 tabs:
-  - shell:
+  - shell: cd ~/

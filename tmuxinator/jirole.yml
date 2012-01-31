@@ -6,6 +6,6 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - play
-        - vim
-  - shell:
+        - cd ~/jirole && play
+        - cd ~/jirole && vim
+  - shell: cd ~/jirole

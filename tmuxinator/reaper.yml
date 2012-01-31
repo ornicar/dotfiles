@@ -6,6 +6,6 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - sbt
-        - vim
-  - shell:
+        - cd ~/reaper && sbt
+        - cd ~/reaper && vim
+  - shell: cd ~/reaper

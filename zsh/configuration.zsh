@@ -9,7 +9,7 @@ export PATH="$HOME/.cabal/bin:$PATH"
 #export PATH=$PATH:/home/thib/Play20
 export PATH=$PATH:/home/thib/bin/play2
 
-export BROWSER="firefox"
+export BROWSER="firefox-beta-bin"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 

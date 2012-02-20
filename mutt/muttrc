@@ -24,6 +24,7 @@ unset mark_old                                                  # read/new is go
 set beep_new                                                    # bell on new mails
 set pipe_decode                                                 # strip headers and eval mimes when piping
 set thorough_search                                             # strip headers and eval mimes before searching
+set sleep_time=0                                                # Don't wait before switching mailbox
 
 # index options
 set sort                = threads                               # like gmail

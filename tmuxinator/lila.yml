@@ -1,0 +1,11 @@
+# ~/.tmuxinator/lila.yml
+
+project_name: lila
+project_root: ~/lila
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/lila && play
+        - cd ~/lila && vim
+  - shell: cd ~/lila

@@ -4,10 +4,11 @@
 --langdef=scala
 --langmap=scala:.scala
 --regex-scala=/^\s*class\s*([a-zA-Z0-9_]+)/\1/c,classes/
---regex-scala=/^\s*case[ \t]*class[ \t]*([a-zA-Z0-9_]+)/\1/r,cclasses/
+--regex-scala=/^\s*case\s*class[ \t]*([a-zA-Z0-9_]+)/\1/r,cclasses/
 --regex-scala=/^\s*object\s*([a-zA-Z0-9_]+)/\1/o,objects/
+--regex-scala=/^\s*case\s*object\s*([a-zA-Z0-9_]+)/\1/o,cobjects/
 --regex-scala=/^\s*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
---regex-scala=/^\s*sealed[ \t]*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/^\s*sealed\s*trait\s*([a-zA-Z0-9_]+)/\1/t,traits/
 --regex-scala=/^\s*def\s*([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/
 --regex-scala=/^\s*type\s*([a-zA-Z0-9_]+)\s*[\[<>=]/\1/T,types/
 --exclude=.git

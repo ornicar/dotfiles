@@ -1,0 +1,11 @@
+# ~/.tmuxinator/tracker.yml
+
+project_name: tracker
+project_root: ~/tracker
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/tracker && sbt
+        - cd ~/tracker && vim
+  - shell: cd ~/tracker

@@ -83,10 +83,6 @@
   path = vim/bundle/jade
   url = git://github.com/digitaltoad/vim-jade.git
   ignore = untracked
-[submodule "scripts/spark"]
-  path = scripts/spark
-  url = git://github.com/holman/spark.git
-  ignore = untracked
 [submodule "zsh/dircolors-solarized"]
   path = zsh/dircolors-solarized
   url = https://github.com/seebi/dircolors-solarized

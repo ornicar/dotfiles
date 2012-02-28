@@ -83,10 +83,6 @@
   path = vim/bundle/jade
   url = git://github.com/digitaltoad/vim-jade.git
   ignore = untracked
-[submodule "vim/bundle/shakespearean"]
-  path = vim/bundle/shakespearean
-  url = git://github.com/pbrisbin/html-template-syntax.git
-  ignore = untracked
 [submodule "scripts/spark"]
   path = scripts/spark
   url = git://github.com/holman/spark.git
@@ -98,13 +94,17 @@
 [submodule "vim/bundle/align"]
   path = vim/bundle/align
   url = https://github.com/tsaleh/vim-align
+  ignore = untracked
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
   ignore = untracked
+  ignore = untracked
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen
+  ignore = untracked
 [submodule "vim/bundle/rename"]
 	path = vim/bundle/rename
 	url = git://github.com/wojtekmach/vim-rename.git
+  ignore = untracked

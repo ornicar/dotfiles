@@ -39,7 +39,6 @@ fetch_lichess_status()
     echo $(curl --connect-timeout $INTERNET_TIMEOUT -m $INTERNET_TIMEOUT -s $LICHESS_URL) > $DATAFILE
 }
 
-
 while true; do
 
     sleep $INTERVAL

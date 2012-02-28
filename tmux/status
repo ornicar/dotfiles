@@ -18,6 +18,12 @@ if [ -f /tmp/weechat_hotlist ]; then
   fi
 fi
 
+# LICHESS 
+
+raw_data=$(cat /tmp/lichess_status)
+data=(${(s: :)raw_data})
+printf "#[fg=colour10,dim](%d|%d+%d:%d|%s)#[default] " $data[1] $data[2] $data[4] $data[3] $data[5]
+
 # MAIL
 
 syncing=$(pgrep offlineimap | wc -l)
@@ -111,6 +117,7 @@ if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
       "1800000") symbol="▄";;
       "1600000") symbol="▃";;
       "1400000") symbol="▂";;
+      "1200000") symbol="▂";;
       *) symbol="_";;
     esac
     chart="$chart$symbol"
@@ -126,12 +133,6 @@ printf " %s%.01f#[default]" "#[fg=colour14]" "$load"
 # SEPARATOR
 
 #printf " #[fg=magenta]•#[default]"
-
-# LICHESS PLAYERS
-
-raw_data=$(cat /tmp/lichess_status)
-data=(${(s: :)raw_data})
-printf " #[fg=colour10,dim]♛(%d|%d+%d:%d|%s)#[default]" $data[1] $data[2] $data[4] $data[3] $data[5]
 
 # FRENCH DATE
 

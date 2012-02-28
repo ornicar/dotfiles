@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo sed -i 's/"ondemand"/"powersave"/g' /etc/conf.d/cpufreq 
-sudo rc.d restart cpufreq

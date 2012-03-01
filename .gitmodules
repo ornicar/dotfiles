@@ -45,10 +45,6 @@
   path = vim/bundle/solarized
   url = git://github.com/ornicar/vim-colors-solarized.git
   ignore = untracked
-[submodule "zsh/history-substring-search"]
-  path = zsh/history-substring-search
-  url = git://github.com/zsh-users/zsh-history-substring-search.git
-  ignore = untracked
 [submodule "vim/bundle/repeat"]
   path = vim/bundle/repeat
   url = git://github.com/tpope/vim-repeat.git

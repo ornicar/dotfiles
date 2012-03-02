@@ -8,6 +8,7 @@ clear Mod4
 add Control = Super_L 
 !keycode 133 = Control_L
 
+! Use Return for Shift
+keycode 36 = Shift_L NoSymbol Shift_L
 ! Use AltGr-t for Return
-keycode 36 = NoSymbol NoSymbol Return
 keycode 41 = t T t T Return dead_doubleacute dead_acute

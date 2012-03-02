@@ -34,7 +34,6 @@ myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..6]
 --
 myManageHook = composeAll
     [ className =? "Firefox"        --> doShift "2:main"
-    , className =? "Gimp"           --> doFloat
     , resource  =? "Skype"          --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
@@ -57,6 +56,7 @@ myConfig = defaultConfig {
     , "M-m"       -- Master window
     , "M-p"       -- Bin menu
     , "M-<Enter>" -- Swap focused/master windows
+    , "M-S-<Enter>" -- Launch terminal
     , "M-<Space>" -- Rotate layout algorithm
     , "M-<Tab>"   -- Toggle windows
     , "M-S-p"     -- gmrun
@@ -67,6 +67,7 @@ myConfig = defaultConfig {
     , ("M-r",   spawn "urxvtc -e ranger")
     , ("M-a",   spawn "urxvtc -e alsamixer")
     , ("M-m",   spawn "urxvtc -e mutt")
+    , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")
     , ("M-S-b", spawn "firefox-beta-bin")
     , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t",   spawn "urxvtc -e ~/.scripts/music toggle")

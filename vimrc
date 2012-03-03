@@ -326,6 +326,9 @@ nmap yss <Plug>Yssurround
 nmap ySs <Plug>YSsurround
 nmap ySS <Plug>YSsurround
 
+" Select all text in the buffer
+map <leader>sa ggVG
+
 " Show git log for the current file
 nmap <leader>gl :Git log -p %<cr>
 

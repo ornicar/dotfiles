@@ -75,10 +75,6 @@
   path = vim/bundle/bufexplorer
   url = git://github.com/ornicar/vim-bufexplorer.git
   ignore = untracked
-[submodule "vim/bundle/jade"]
-  path = vim/bundle/jade
-  url = git://github.com/digitaltoad/vim-jade.git
-  ignore = untracked
 [submodule "zsh/dircolors-solarized"]
   path = zsh/dircolors-solarized
   url = https://github.com/seebi/dircolors-solarized

@@ -1,7 +1,7 @@
 " next -> down
-noremap n gj
+noremap n j
 " Faster viewport scrolling
-noremap <C-n> 3gj
+noremap <C-n> 3j
 " down -> next
 noremap j n
 " previous -> join lines
@@ -10,9 +10,9 @@ noremap N J
 noremap J N
 
 " end -> up
-noremap e gk
+noremap e k
 " Faster viewport scrolling
-noremap <C-e> 3gk
+noremap <C-e> 3k
 " up -> end
 noremap k e
 " end inclusive -> program

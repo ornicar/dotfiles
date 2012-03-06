@@ -1,0 +1,5 @@
+! Use Return for Return
+keycode 36 = Return NoSymbol Return
+! Use AltGr-t for dead_acute
+keycode 41 = t T t T dead_acute dead_doubleacute dead_acute
+

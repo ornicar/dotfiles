@@ -1,0 +1,11 @@
+# ~/.tmuxinator/scalp.yml
+
+project_name: scalp
+project_root: ~/scalex-http
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/scalex-http && sbt
+        - cd ~/scalex-http && vim
+  - shell: cd ~/scalex-http

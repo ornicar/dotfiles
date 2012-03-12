@@ -163,9 +163,6 @@ set nofoldenable
 noremap H ^
 noremap L $
 
-" Move insertion to correct indentation
-imap <C-s> <esc>S
-
 " Toggle line numbering
 nnoremap <silent> <leader>nn :set nonumber!<cr>
 
@@ -268,7 +265,7 @@ nnoremap ' `
 " nnoremap k gk
 
 " Fast save (also clears the search)
-map <tab> :nohl<cr>:w<cr>
+map <C-u> :nohl<cr>:w<cr>
 
 " Sudo to write
 cmap w!! silent write !sudo tee % >/dev/null

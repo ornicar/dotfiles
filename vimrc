@@ -251,8 +251,8 @@ vnoremap a :Align<space>
 " Start a substitute
 nmap <leader>ss :%s/\v
 
-" Indent whole file
-nmap <leader>i <Esc>mygg=G'y
+" Indent whole file then save
+nmap <leader>i <Esc>mygg=G'y:w<cr>
 
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

@@ -33,8 +33,7 @@ myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..6]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Firefox"        --> doShift "2:main"
-    , resource  =? "Skype"          --> doFloat
+    [ resource  =? "Skype"          --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 myConfig = defaultConfig {

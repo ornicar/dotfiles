@@ -266,6 +266,7 @@ nnoremap ' `
 
 " Fast save (also clears the search)
 map <C-u> :nohl<cr>:w<cr>
+imap <C-u> <esc>:nohl<cr>:w<cr>
 
 " Sudo to write
 cmap w!! silent write !sudo tee % >/dev/null

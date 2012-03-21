@@ -6,8 +6,7 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
-export PATH=$PATH:/home/thib/play-2.0
-#export PATH=$PATH:/home/thib/bin/play2
+export PATH=$PATH:/home/thib/play-2.0-stable
 
 export BROWSER="firefox-beta-bin"
 export EDITOR='vim'

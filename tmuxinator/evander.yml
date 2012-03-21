@@ -1,0 +1,11 @@
+# ~/.tmuxinator/evander.yml
+
+project_name: evander
+project_root: ~/evander
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/evander && sbt
+        - cd ~/evander && vim
+  - shell: cd ~/evander

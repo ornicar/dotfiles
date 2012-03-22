@@ -65,8 +65,9 @@ set wildmode=list:longest,full
 set editor="urxvt -e vim -f"
 set hintinputs="label,name"
 set hintmatching="wordstartswith"
-" use duckduckgo as the default search engine
-set defsearch="duckduckgo"
+" default search engine
+"set defsearch="duckduckgo"
+set defsearch="google"
 
 " autocommand
 " ======================================

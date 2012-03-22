@@ -332,6 +332,7 @@ nmap <leader>gl :Git log -p %<cr>
 
 " Configure supertab
 let g:SuperTabCrMapping = 0
+let g:SuperTabDefaultCompletionType = "context"
 
 " Lusty juggler
 let g:LustyJugglerDefaultMappings = 0

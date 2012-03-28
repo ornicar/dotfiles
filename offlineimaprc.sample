@@ -1,11 +1,12 @@
 [general]
 ui = ttyui
-accounts = ThibaultDuplessis
-pythonfile=~/.mutt/offlineimap.py
+accounts = ThibaultDuplessis,ThibaultJirafe
+maxsyncaccounts = 2
 
 [Account ThibaultDuplessis]
 localrepository = ThibaultDuplessis-Local
 remoterepository = ThibaultDuplessis-Remote
+quick=-1
 
 [Repository ThibaultDuplessis-Local]
 type = Maildir
@@ -14,6 +15,24 @@ localfolders = ~/.mail/thibault.duplessis.gmail.com
 [Repository ThibaultDuplessis-Remote]
 type = Gmail
 remoteuser = thibault.duplessis@gmail.com
-remotepass = xxx
+remotepass = xxxxxxxxxxxxxxx
 realdelete = no
 nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Sent Mail$', 'sent', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder))))))
+folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
+
+[Account ThibaultJirafe]
+localrepository = ThibaultJirafe-Local
+remoterepository = ThibaultJirafe-Remote
+quick=-1
+
+[Repository ThibaultJirafe-Local]
+type = Maildir
+localfolders = ~/.mail/thibault.jirafe.com
+
+[Repository ThibaultJirafe-Remote]
+type = Gmail
+remoteuser = thibault@jirafe.com
+remotepass = xxxxxxxxxxxxxxx
+realdelete = no
+nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Sent Mail$', 'sent', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder))))))
+folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']

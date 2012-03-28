@@ -3,6 +3,7 @@
 INTERVAL=1
 INTERNET_TIMEOUT=3
 LICHESS_INTERVAL=3
+LICHESS_LOADTIME_INTERVAL=10
 LICHESS_URL="http://en.lichess.org/status"
 
 calculate_cpu_usage()
@@ -38,6 +39,12 @@ fetch_lichess_status()
     DATAFILE="/tmp/lichess_status"
     echo $(curl --connect-timeout $INTERNET_TIMEOUT -m $INTERNET_TIMEOUT -s $LICHESS_URL) > $DATAFILE
 }
+fetch_lichess_loadtime()
+{
+    DATAFILE="/tmp/lichess_loadtime"
+    echo $(ssh -o ConnectTimeout=$INTERNET_TIMEOUT phobos "/usr/bin/time -p wget -p --no-cache --delete-after http://en.lichess.org -q 2>&1 | awk '/^real / { print \$2 }'") > $DATAFILE
+}
+
 
 while true; do
 
@@ -49,6 +56,9 @@ while true; do
 
     if [ $((seconds % $LICHESS_INTERVAL)) -eq 0 ]; then
         (fetch_lichess_status) &
+    fi
+    if [ $((seconds % $LICHESS_LOADTIME_INTERVAL)) -eq 0 ]; then
+        (fetch_lichess_loadtime) &
     fi
 
 done

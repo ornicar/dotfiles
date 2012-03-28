@@ -22,25 +22,30 @@ fi
 
 raw_data=$(cat /tmp/lichess_status)
 data=(${(s: :)raw_data})
-printf "#[fg=colour10,dim](%d|%d+%d:%d|%s)#[default] " $data[1] $data[2] $data[4] $data[3] $data[5]
+loadtime=$(cat /tmp/lichess_loadtime)
+printf "#[fg=colour10,dim](%d|%d+%d:%d|%s##[fg=colour12]%s#[fg=colour10,dim])#[default] " $data[1] $data[2] $data[4] $data[3] $data[5] $loadtime
 
 # MAIL
 
 syncing=$(pgrep offlineimap | wc -l)
 if [ $syncing != 0 ]; then
-  printf "↻ "
+  mailicon="↻"
+else
+  mailicon="@"
 fi
 
 # args: name, box_dir
 show_mail() {
   wcl=$(ls -l $2/new | wc -l)
   nb=$(expr $wcl - 1)
-  if [ 0 -eq $nb ]; then style="fg=colour10,dim"
-  else style="bg=colour2,fg=colour8"
+  if [ $syncing != 0 ]; then style="fg=colour12"
+  else 
+    if [ 0 -eq $nb ]; then style="fg=colour10,dim"
+    else style="bg=colour2,fg=colour8"
+    fi
   fi
-  printf "#[%s]@%s(%d)#[default] " $style $1 $nb
+  printf "#[%s]%s%s(%d)#[default] " $style $mailicon $1 $nb
 }
-
 show_mail "perso" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
 

@@ -22,8 +22,16 @@ fi
 
 raw_data=$(cat /tmp/lichess_status)
 data=(${(s: :)raw_data})
+printf "#[fg=colour10,dim](%d|%d+%d:%d|%s" $data[1] $data[2] $data[4] $data[3] $data[5] $loadtime
+
 loadtime=$(cat /tmp/lichess_loadtime)
-printf "#[fg=colour10,dim](%d|%d+%d:%d|%s##[fg=colour12]%s#[fg=colour10,dim])#[default] " $data[1] $data[2] $data[4] $data[3] $data[5] $loadtime
+isinf=$(echo "$loadtime < 0.1" | bc)
+if [ $isinf = 0 ]; then
+  lltc="bg=colour3 fg=colour0"
+else
+  lltc="fg=colour11"
+fi
+printf "##[%s]%s#[fg=colour10,dim])#[default] " $lltc $loadtime
 
 # MAIL
 

@@ -50,3 +50,4 @@ link xmonad ~/.xmonad
 link asoundrc ~/.asoundrc
 mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/
 link colors.ini ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
+link sbt/plugins/build.sbt ~/.sbt/plugins/build.sbt

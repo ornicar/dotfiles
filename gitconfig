@@ -19,7 +19,7 @@
   verbosity = 1
 
 [web]
-  browser = firefox-beta-bin
+  browser = firefox
 
 [push]
   # 'git push' will push the current branch to its tracking branch

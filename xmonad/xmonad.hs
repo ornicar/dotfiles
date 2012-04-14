@@ -39,7 +39,7 @@ myManageHook = composeAll
 myConfig = defaultConfig {
       terminal   = "urxvtc -e ~/.tmux/menu"
     , modMask    = mod1Mask -- Alt
-    , layoutHook = noBorders Full
+    , layoutHook = smartBorders $ noBorders Full
     , manageHook = myManageHook
     , workspaces = myWorkspaces
   }

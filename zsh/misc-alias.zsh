@@ -55,3 +55,8 @@ alias ya='yaourt'
 
 # Generate haskell tags
 alias htags='find ./ -name "*.*hs" | xargs hasktags'
+
+# Translations
+alias trans=google-translate
+alias enfr="google-translate en fr "
+alias fren="google-translate fr en "

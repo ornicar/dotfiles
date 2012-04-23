@@ -22,7 +22,7 @@ fi
 
 raw_data=$(cat /tmp/lichess_status)
 data=(${(s: :)raw_data})
-printf "#[fg=colour10,dim](%d|%d+%d:%d|%s" $data[1] $data[2] $data[4] $data[3] $data[5] $loadtime
+printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4] $data[5] $data[6] $loadtime
 
 loadtime=$(cat /tmp/lichess_loadtime)
 isinf=$(echo "$loadtime < 0.1" | bc)

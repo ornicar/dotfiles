@@ -129,19 +129,15 @@ set timeout timeoutlen=500 ttimeoutlen=0
 
 " When editing a file, always jump to the last known cursor position.
 autocmd BufReadPost *
-            \ if line("'\"") > 1 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
+      \ if line("'\"") > 1 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 
 " Open man pages
 runtime! ftplugin/man.vim
 
 " Round indent to shiftwidth
 set shiftround
-
-" Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim,scala,haskell
-    \ autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 set encoding=utf-8
 
@@ -209,12 +205,12 @@ iab xsigw Thibault Duplessis
 
 " Diff only config
 if &diff
-    nmap <leader>do :diffget<space>
-    nmap <leader>dp :diffput<space>
-    nmap <leader>q :wqa<cr>
-    nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
+  nmap <leader>do :diffget<space>
+  nmap <leader>dp :diffput<space>
+  nmap <leader>q :wqa<cr>
+  nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
 else
-    nmap <leader>q :wq<cr>
+  nmap <leader>q :wq<cr>
 endif
 
 set diffopt=filler,vertical
@@ -251,8 +247,11 @@ vnoremap a :Align<space>
 " Start a substitute
 nmap <leader>ss :%s/\v
 
-" Indent whole file then save
-nmap <leader>i <Esc>mygg=G'y:w<cr>
+" Remove trailing whitespaces and ^M chars
+nmap <leader>I :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))<cr>
+
+" Indent whole file, remove trailing whitespaces then save
+nmap <leader>i <Esc>mygg=G,I'y:w<cr>
 
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -276,9 +275,9 @@ nnoremap <leader>v V`]
 
 " wordwise yank from line above
 inoremap <silent> <C-Y> <C-C>:let @z = @"<cr>mz
-    \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
-    \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
-    \`zp:let @" = @z<cr>a
+      \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
+      \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
+      \`zp:let @" = @z<cr>a
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
@@ -362,12 +361,12 @@ nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>
 
 let g:NERDCustomDelimiters = {
-    \ 'haskell': { 'left': '--' , 'right': '' },
-    \ 'hamlet' : { 'left': '\<!-- ', 'right': ' -->' },
-    \ 'cassius': { 'left': '/* ' , 'right': ' */' },
-    \ 'lucius' : { 'left': '/* ' , 'right': ' */' },
-    \ 'julius' : { 'left': '//' , 'right': '' }
-\ }
+      \ 'haskell': { 'left': '--' , 'right': '' },
+      \ 'hamlet' : { 'left': '\<!-- ', 'right': ' -->' },
+      \ 'cassius': { 'left': '/* ' , 'right': ' */' },
+      \ 'lucius' : { 'left': '/* ' , 'right': ' */' },
+      \ 'julius' : { 'left': '//' , 'right': '' }
+      \ }
 
 " Redraw
 nmap <leader>rr :redraw!<cr>
@@ -381,11 +380,11 @@ au BufNewFile,BufRead *.muttrc set filetype=muttrc
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |
-    \ while 1 | exec <q-args> | sil cn | endwhile |
+      \ while 1 | exec <q-args> | sil cn | endwhile |
     \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
     \ endtry
 com! -nargs=1 Qfdofile try | sil cfirst |
-    \ while 1 | exec <q-args> | sil cnf | endwhile |
+      \ while 1 | exec <q-args> | sil cnf | endwhile |
     \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
     \ endtry
 
@@ -395,45 +394,45 @@ let g:gist_browser_command = "browser %URL% &"
 
 " Run an external program through silent without messing up the screen in CLI
 command! -nargs=1 Silent
-\ | execute ':silent !'.<q-args>
-\ | execute ':redraw!'
+      \ | execute ':silent !'.<q-args>
+      \ | execute ':redraw!'
 
 " Use ranger r vim file manager
 function! Ranger()
-    silent !ranger --choosefile=/tmp/chosen
-    if filereadable('/tmp/chosen')
-        exec 'edit ' . system('cat /tmp/chosen')
-        call system('rm /tmp/chosen')
-    endif
-    redraw!
+  silent !ranger --choosefile=/tmp/chosen
+  if filereadable('/tmp/chosen')
+    exec 'edit ' . system('cat /tmp/chosen')
+    call system('rm /tmp/chosen')
+  endif
+  redraw!
 endfunction
 nmap <leader>R :call Ranger()<cr>
 
 " Show differences between buffer and saved versions of a file
 function! s:DiffWithSaved()
-    let filetype=&ft
-    diffthis
-    vnew | r # | normal! 1Gdd
-    diffthis
-    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 
 "  Clean code function
 function! CleanCode()
-    %retab          " Replace tabs with spaces
-    %s/\r/\r/eg     " Turn DOS returns ^M into real returns
-    %s=  *$==e      " Delete end of line blanks
-    echo "Cleaned up this mess."
+  %retab          " Replace tabs with spaces
+  %s/\r/\r/eg     " Turn DOS returns ^M into real returns
+  %s=  *$==e      " Delete end of line blanks
+  echo "Cleaned up this mess."
 endfunction
 nmap <leader>cc :call CleanCode()<cr>
 
 " Show the group name of the word under the cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 " Source local settings
 if filereadable(expand("~/.vimrc.local"))
-    source ~/.vimrc.local
+  source ~/.vimrc.local
 endif

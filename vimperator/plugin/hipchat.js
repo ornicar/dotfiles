@@ -17,6 +17,54 @@ var INFO =
   </item>
 </plugin>;
 
+function jumpTo(contents, elem) {
+  let evt=contents.createEvent("MouseEvents");
+  evt.initMouseEvent(
+    'click',
+    true, // canBubble
+    true, // cancelable
+    window, // view
+    0, // detail
+    0, // screenX
+    0, // screenY
+    0, // clientX
+    0, // clientY
+    false, // ctrlKey
+    false, // altKey
+    false, // shiftKey
+    false, // metaKey
+    0, // button
+    null //relatedTarget
+  ); 
+  elem.dispatchEvent(evt);
+}
+
+commands.addUserCommand(
+  ['hipchatjumptonext'],
+  'Jump to the next tab',
+  function(){
+    let contents=gBrowser.selectedBrowser.contentDocument;
+    let targets=contents.getElementsByClassName('selected');
+    if(targets.length<1){
+      return false;
+    }
+    let elem = targets[0].nextSibling.firstChild;
+    jumpTo(contents, elem);
+  }
+);
+commands.addUserCommand(
+  ['hipchatjumptoprevious'],
+  'Jump to the previous tab',
+  function(){
+    let contents=gBrowser.selectedBrowser.contentDocument;
+    let targets=contents.getElementsByClassName('selected');
+    if(targets.length<1){
+      return false;
+    }
+    let elem = targets[0].previousSibling.firstChild;
+    jumpTo(contents, elem);
+  }
+);
 commands.addUserCommand(
   ['hipchatjumptoalert'],
   'Jump to the next highligthed tab',
@@ -24,33 +72,9 @@ commands.addUserCommand(
     let contents=gBrowser.selectedBrowser.contentDocument;
     let targets=contents.getElementsByClassName('alert');
     if(targets.length<1){
-      liberator.echoerr("no alert found");
       return false;
     }
     let elem = targets[0].firstChild;
-
-    elem.focus();
-
-    ["click"].forEach(function (event) {
-      let evt=contents.createEvent("MouseEvents");
-      evt.initMouseEvent(
-        'click',
-        true, // canBubble
-        true, // cancelable
-        window, // view
-        0, // detail
-        0, // screenX
-        0, // screenY
-        0, // clientX
-        0, // clientY
-        false, // ctrlKey
-        false, // altKey
-        false, // shiftKey
-        false, // metaKey
-        0, // button
-        null //relatedTarget
-      ); 
-      elem.dispatchEvent(evt);
-    });
+    jumpTo(contents, elem);
   }
 );

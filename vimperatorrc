@@ -71,7 +71,9 @@ set defsearch="google"
 
 " custom stuff
 " ======================================
-noremap <leader>t :hipchatjumptoalert<CR><esc>
+noremap <leader>a :hipchatjumptoalert<CR><esc>
+noremap <leader>t :hipchatjumptonext<CR><esc>
+noremap <leader>s :hipchatjumptoprevious<CR><esc>
 
 " autocommand
 " ======================================

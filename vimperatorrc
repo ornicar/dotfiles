@@ -69,6 +69,10 @@ set hintmatching="wordstartswith"
 "set defsearch="duckduckgo"
 set defsearch="google"
 
+" custom stuff
+" ======================================
+noremap <leader>t :hipchatjumptoalert<CR><esc>
+
 " autocommand
 " ======================================
 " automatic pass-through mode on certain pages (do ':h autocommands' for details)

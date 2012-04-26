@@ -96,3 +96,6 @@
 	path = vim/bundle/rename
 	url = git://github.com/wojtekmach/vim-rename.git
   ignore = untracked
+[submodule "vimperator-plugins"]
+	path = vimperator-plugins
+	url = git://github.com/ornicar/vimperator-plugins

@@ -237,6 +237,7 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 nmap <leader>a mA:Ack<space>
 " Set a mark, then pull word under cursor into Ack for a global search
 nmap <leader>za mA:Ack "<C-r>=expand("<cword>")<cr>"
+nmap <leader>zA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 
 " Align
 " Disable default mappings

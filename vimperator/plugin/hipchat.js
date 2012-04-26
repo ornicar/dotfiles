@@ -37,6 +37,11 @@ function jumpTo(contents, elem) {
     null //relatedTarget
   ); 
   elem.dispatchEvent(evt);
+  setTimeout(focusChat, 1000);
+}
+
+function focusChat() {
+  document.getElementsByClassName('chat_display')[0].focus();
 }
 
 commands.addUserCommand(

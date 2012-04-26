@@ -10,33 +10,15 @@ var INFO =
   <p>Hipchat goodies</p>
   <item>
     <tags>'hipchat'</tags>
-    <spec>:hipchatjumptoalert</spec>
+    <spec>'hipchat'</spec>
     <description>
-      <p>Jump to the next highligthed tab</p>
+      <p>Add handy commands for hipchat</p>
     </description>
   </item>
 </plugin>;
 
 function jumpTo(contents, elem) {
-  let evt=contents.createEvent("MouseEvents");
-  evt.initMouseEvent(
-    'click',
-    true, // canBubble
-    true, // cancelable
-    window, // view
-    0, // detail
-    0, // screenX
-    0, // screenY
-    0, // clientX
-    0, // clientY
-    false, // ctrlKey
-    false, // altKey
-    false, // shiftKey
-    false, // metaKey
-    0, // button
-    null //relatedTarget
-  ); 
-  elem.dispatchEvent(evt);
+  elem.click();
   setTimeout(focusChat, 1000);
 }
 
@@ -49,12 +31,8 @@ commands.addUserCommand(
   'Jump to the next tab',
   function(){
     let contents=gBrowser.selectedBrowser.contentDocument;
-    let targets=contents.getElementsByClassName('selected');
-    if(targets.length<1){
-      return false;
-    }
-    let elem = targets[0].nextSibling.firstChild;
-    jumpTo(contents, elem);
+    let target=contents.getElementsByClassName('selected')[0].nextSibling || contents.getElementById('tabs').firstChild;
+    jumpTo(contents, target.firstChild);
   }
 );
 commands.addUserCommand(
@@ -62,12 +40,8 @@ commands.addUserCommand(
   'Jump to the previous tab',
   function(){
     let contents=gBrowser.selectedBrowser.contentDocument;
-    let targets=contents.getElementsByClassName('selected');
-    if(targets.length<1){
-      return false;
-    }
-    let elem = targets[0].previousSibling.firstChild;
-    jumpTo(contents, elem);
+    let target=contents.getElementsByClassName('selected')[0].previousSibling || contents.getElementById('tabs').lastChild;
+    jumpTo(contents, target.firstChild);
   }
 );
 commands.addUserCommand(

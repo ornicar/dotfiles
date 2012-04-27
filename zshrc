@@ -4,7 +4,7 @@
 # It loads scripts from zsh/ and oh-my-zsh/
 
 # First of all, feature a chatty cow
-fortune | cowsay
+fortune -a | cowsay
 
 DOTFILES=$HOME/dotfiles
 OHMYZSH=$DOTFILES/oh-my-zsh

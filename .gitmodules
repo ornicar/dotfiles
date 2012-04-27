@@ -99,3 +99,6 @@
 [submodule "vimperator-plugins"]
 	path = vimperator-plugins
 	url = git://github.com/ornicar/vimperator-plugins
+[submodule "vim/bundle/play2"]
+	path = vim/bundle/play2
+	url = https://github.com/gre/play2vim

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo ln -s ~/.scripts/collector_daemon /etc/init.d/
-
-sudo update-rc.d collector_daemon defaults

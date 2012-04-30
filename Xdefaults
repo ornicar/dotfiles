@@ -18,7 +18,7 @@ URxvt.boldFont:   xft:inconsolata:size=14
 URxvt.scrollBar:  false
 URxvt.jumpScroll: true
 URxvt.skipScroll: true
-URxvt.saveLines:  32767
+URxvt.saveLines:  64000
 URxvt.visualBell: false
 
 URxvt.depth:       24

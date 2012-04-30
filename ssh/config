@@ -1,0 +1,36 @@
+Host lichess
+  HostName 188.165.238.17
+  User root
+Host iliaz
+  HostName iliaz.com
+  User root
+Host phobos
+  HostName 188.165.218.189
+  User root
+Host marty
+  HostName 188.165.194.171
+  User thib
+Host martyroot
+  HostName 188.165.194.171
+  User root
+Host jdb01
+  HostName db01.ec2.jirafe.net
+  User ubuntu
+Host jdb02
+  HostName db02.ec2.jirafe.net
+  User ubuntu
+Host jdev
+  HostName developer.jirafe.com
+  User ubuntu
+Host jsdb01
+  HostName staging-db01.ec2.jirafe.net
+  User ubuntu
+Host jsapp1
+  HostName staging-app1.ec2.jirafe.net
+  User ubuntu
+Host jtest
+  HostName testing.ec2.jirafe.net
+  User ubuntu
+Host jfreebird
+  HostName freebird.ec2.jirafe.net
+  User ubuntu

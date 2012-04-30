@@ -25,13 +25,13 @@ data=(${(s: :)raw_data})
 printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4] $data[5] $data[6] $loadtime
 
 loadtime=$(cat /tmp/lichess_loadtime)
-isinf=$(echo "$loadtime < 0.1" | bc)
+isinf=$(echo "$loadtime < 0.2" | bc)
 if [ $isinf = 0 ]; then
   lltc="bg=colour3 fg=colour0"
 else
   lltc="fg=colour11"
 fi
-printf "##[%s]%s#[fg=colour10,dim])#[default] " $lltc $loadtime
+printf "##[%s]%s#[fg=colour10,bg=default,dim])#[default] " $lltc $loadtime
 
 # MAIL
 
@@ -49,7 +49,7 @@ show_mail() {
   if [ $syncing != 0 ]; then style="fg=colour12"
   else 
     if [ 0 -eq $nb ]; then style="fg=colour10,dim"
-    else style="bg=colour2,fg=colour8"
+    else style="fg=colour7"
     fi
   fi
   printf "#[%s]%s%s(%d)#[default] " $style $mailicon $1 $nb

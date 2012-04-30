@@ -1,12 +1,9 @@
 ! Make caps lock act as escape
-!remove Lock = Caps_Lock
-!keysym Caps_Lock = Escape
 keycode 66 = Escape
 
 ! Use super keys for ctrl action
 clear Mod4
 add Control = Super_L 
-!keycode 133 = Control_L
 
 ! Use Return for Shift
 keycode 36 = Shift_L NoSymbol Shift_L

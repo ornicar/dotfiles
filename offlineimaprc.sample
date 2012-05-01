@@ -17,8 +17,8 @@ type = Gmail
 remoteuser = thibault.duplessis@gmail.com
 remotepass = xxxxxxxxxxxxxxx
 realdelete = no
-nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Sent Mail$', 'sent', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder))))))
-folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
+nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder)))))
+folderfilter = lambda foldername: foldername in ['INBOX', 'sent']
 
 [Account ThibaultJirafe]
 localrepository = ThibaultJirafe-Local

@@ -75,6 +75,9 @@ noremap <leader>a :hipchatjumptoalert<CR><esc>
 noremap <leader>t :hipchatjumptonext<CR><esc>
 noremap <leader>s :hipchatjumptoprevious<CR><esc>
 
+" noscript 
+noremap <leader>n :noscript popup<cr>
+
 " autocommand
 " ======================================
 " automatic pass-through mode on certain pages (do ':h autocommands' for details)

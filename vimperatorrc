@@ -69,7 +69,7 @@ set hintmatching="wordstartswith"
 "set defsearch="duckduckgo"
 set defsearch="google"
 
-" custom stuff
+" hipchat
 " ======================================
 noremap <leader>a :hipchatjumptoalert<CR><esc>
 noremap <leader>t :hipchatjumptonext<CR><esc>

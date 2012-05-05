@@ -335,6 +335,7 @@ let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = "context"
 
 " Lusty juggler
+let g:LustyJugglerKeyboardLayout = "colemak"
 let g:LustyJugglerDefaultMappings = 0
 let g:LustyJugglerShowKeys = 0
 nmap <silent> <leader>md :LustyJugglePrevious<cr>

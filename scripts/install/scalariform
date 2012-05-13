@@ -1,0 +1,3 @@
+#!/bin/sh
+
+wget -O ~/bin/scalariform.jar https://github.com/downloads/mdr/scalariform/scalariform.jar

@@ -1,5 +1,5 @@
 ! Use Return for Return
-keycode 36 = Return NoSymbol Return
+keycode 36 = Return Return Return
 ! Use AltGr-t for Return, too
-keycode 41 = t T t T Return dead_doubleacute dead_acute
+keycode 41 = t T t T Return Return Return
 

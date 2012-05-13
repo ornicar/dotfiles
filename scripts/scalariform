@@ -1,3 +1,9 @@
 #!/bin/sh
 
-java -jar ~/bin/scalariform.jar --preferenceFile=$HOME/.scalariformrc --stdout --forceOutput "$@"
+java -jar ~/bin/scalariform.jar \
++alignSingleLineCaseStatements \
++compactControlReadability \
++doubleIndentClassDeclaration \
++rewriteArrowSymbols \
++preserveDanglingCloseParenthesis \
+--stdout --forceOutput "$@"

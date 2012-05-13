@@ -52,4 +52,3 @@ link asoundrc ~/.asoundrc
 mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/
 link colors.ini ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 link ssh/config ~/.ssh/config
-link scalariformrc ~/.scalariformrc

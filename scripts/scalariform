@@ -1,9 +1,3 @@
 #!/bin/sh
 
-scala -cp ~/bin/scalariform_*.jar scalariform.commandline.Main \
-+alignSingleLineCaseStatements \
-+compactControlReadability \
-+doubleIndentClassDeclaration \
-+rewriteArrowSymbols \
-+preserveDanglingCloseParenthesis \
-"$@"
+java -jar ~/bin/scalariform.jar --preferenceFile=$HOME/.scalariformrc --stdout --forceOutput "$@"

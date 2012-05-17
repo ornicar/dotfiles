@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'uri'
+
+raw = ARGF.read
+line = raw.split(/\n/).select { |x| x != '' }.join(', ')
+data = line #URI.escape(line)
+browser = 'firefox'
+url = 'http://yuml.me/diagram/dir:LR;scale:120;/class/'
+command = browser + ' "' + url + data + '.jpg"'
+#puts command
+system command

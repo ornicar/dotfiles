@@ -239,6 +239,9 @@ nmap <leader>a mA:Ack<space>
 nmap <leader>za mA:Ack "<C-r>=expand("<cword>")<cr>"
 nmap <leader>zA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 
+" yuml
+nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>
+
 " Align
 " Disable default mappings
 let g:loaded_AlignMapsPlugin=1

@@ -18,6 +18,20 @@ main = xmonad $ withUrgencyHook dzenUrgencyHook { args = ["-bg", "darkgreen", "-
 --
 myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..6]
 
+myLayout = noBorders Full ||| noBorders tiled
+  where
+     -- default tiling algorithm partitions the screen into two panes
+     tiled   = Tall nmaster delta ratio
+
+     -- The default number of windows in the master pane
+     nmaster = 1
+
+     -- Default proportion of screen occupied by master pane
+     ratio   = 1/2
+
+     -- Percent of screen to increment by when resizing panes
+     delta   = 3/100
+
 ------------------------------------------------------------------------
 -- Window rules
 -- Execute arbitrary actions and WindowSet manipulations when managing
@@ -39,7 +53,7 @@ myManageHook = composeAll
 myConfig = defaultConfig {
       terminal   = "urxvtc -e ~/.tmux/menu"
     , modMask    = mod1Mask -- Alt
-    , layoutHook = smartBorders $ noBorders Full
+    , layoutHook = myLayout
     , manageHook = myManageHook
     , workspaces = myWorkspaces
   }
@@ -62,6 +76,8 @@ myConfig = defaultConfig {
   ]
   `additionalKeysP` [
       ("C-<Space>", windows W.focusDown)
+    , ("M-S-l",   sendMessage NextLayout) -- next layout
+    , ("M-l", windows W.focusDown) -- next window
     , ("M-o",   spawn "~/.scripts/path-dmenu")
     , ("M-r",   spawn "urxvtc -e ranger")
     , ("M-a",   spawn "urxvtc -e alsamixer")

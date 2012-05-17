@@ -22,6 +22,9 @@ Host jdb02
 Host jdev
   HostName developer.jirafe.com
   User ubuntu
+Host jdevatlassian
+  HostName developer.jirafe.com
+  User atlassian
 Host jsdb01
   HostName staging-db01.ec2.jirafe.net
   User ubuntu

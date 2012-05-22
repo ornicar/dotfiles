@@ -160,9 +160,11 @@ noremap H ^
 noremap L $
 
 " Toggle line numbering
+set nonumber
 nnoremap <silent> <leader>nn :set nonumber!<cr>
 
 " Toggle nowrap
+set nowrap
 nnoremap <silent> <leader>nw :set nowrap!<cr>
 
 " Close other windows

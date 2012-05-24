@@ -335,6 +335,9 @@ map <leader>sa ggVG
 " Show git log for the current file
 nmap <leader>gl :Git log -p %<cr>
 
+" Show tig
+nmap <silent>ti :!tig status<cr>
+
 " Configure supertab
 let g:SuperTabCrMapping = 0
 let g:SuperTabDefaultCompletionType = "context"

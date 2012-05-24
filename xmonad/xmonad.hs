@@ -83,7 +83,7 @@ myConfig = defaultConfig {
     , ("M-a",   spawn "urxvtc -e alsamixer")
     , ("M-m",   spawn "urxvtc -e mutt")
     , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")
-    , ("M-S-b", spawn "firefox-beta-bin")
+    , ("M-S-b", spawn "firefox")
     , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t",   spawn "urxvtc -e ~/.scripts/music toggle")
     , ("M-w",   spawn "urxvtc -e wicd-curses")

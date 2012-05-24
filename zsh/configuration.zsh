@@ -8,7 +8,7 @@ export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH=$PATH:/home/thib/Play20
 
-export BROWSER="firefox-beta-bin"
+export BROWSER="firefox"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 

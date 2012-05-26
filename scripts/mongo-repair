@@ -1,6 +1,6 @@
 #!/bin/sh
 
-datapath=/home/thib/data/bin/mongodata
+datapath=/home/thib/data/mongodb
 
 sudo /etc/rc.d/mongodb stop
 rm $datapath/mongod.lock

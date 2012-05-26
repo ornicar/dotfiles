@@ -198,6 +198,7 @@ vmap <space> "
 
 " Swap two words
 nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+nmap <silent> gW :s/\(\%#[^\s]\+\)\(\_W\+\)\([^\s]\+\)/\3\2\1/<CR>`'
 
 " My information
 iab xdate =strftime("%d/%m/%Y %H:%M:%S")

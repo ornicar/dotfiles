@@ -32,6 +32,10 @@ alias stopwebserver="sudo /etc/rc.d/nginx stop && sudo /etc/rc.d/php-fpm stop &&
 # Restart web server
 alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart && sudo /etc/rc.d/redis restart"
 
+alias start="sudo rc.d start"
+alias restart="sudo rc.d restart"
+alias stop="sudo rc.d stop"
+
 # Run IM program
 alias im="weechat-curses"
 

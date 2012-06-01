@@ -102,3 +102,6 @@
 [submodule "vim/bundle/play2"]
 	path = vim/bundle/play2
 	url = https://github.com/gre/play2vim
+[submodule "vim/bundle/commaobject"]
+	path = vim/bundle/commaobject
+	url = https://github.com/austintaylor/vim-commaobject

@@ -99,23 +99,6 @@ else modifier="#[fg=colour2]"
 fi
 printf " %s%s%%#[default]" "$modifier" "$memory"
 
-# CPU BAR
-
-nbcores=4
-divisor=2
-usage=$(cat /tmp/cpu_usage)
-(( usage = usage * nbcores / divisor ))
-(( index = usage / 4 ))
-[ $index -gt 24 ] && index=24
-bar="                        "
-for bari in $(seq $index); do
-  bar[$bari]="❚"
-done
-if [ "$usage" -gt 50 ]; then modifier="#[fg=colour1]"
-else modifier="#[fg=colour13]"
-fi
-printf " %s%s#[default]" "$modifier" "$bar"
-
 # CPU FREQ
 
 if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
@@ -135,7 +118,7 @@ if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
     esac
     chart="$chart$symbol"
   done
-  printf "#[fg=colour10]%s" "$chart"; 
+  printf " #[fg=colour10]%s" "$chart"; 
 fi
 
 # LOAD AVERAGE

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+alias japp1="ssh -A japp1"
+alias japp2="ssh -A japp2"
 alias jdb01="ssh -A jdb01"
 alias jdb02="ssh -A jdb02"
 alias jdev="ssh -A jdev"

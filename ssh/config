@@ -13,6 +13,12 @@ Host marty
 Host martyroot
   HostName 188.165.194.171
   User root
+Host japp1
+  HostName app1.ec2.jirafe.net
+  User ubuntu
+Host japp2
+  HostName app2.ec2.jirafe.net
+  User ubuntu
 Host jdb01
   HostName db01.ec2.jirafe.net
   User ubuntu

@@ -86,6 +86,11 @@ set ttyfast
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=1024
 
+" Display invisible chars
+set listchars=tab:▸\ ,trail:□,eol:¬
+" Not by default
+set nolist
+
 " But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>

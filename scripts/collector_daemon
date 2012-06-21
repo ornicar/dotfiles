@@ -4,7 +4,7 @@ INTERVAL=1
 INTERNET_TIMEOUT=3
 LICHESS_INTERVAL=3
 LICHESS_LOADTIME_INTERVAL=3
-LICHESS_URL="http://en.lichess.org/status"
+LICHESS_URL="http://en.lichess.org/monitor/status"
 
 fetch_lichess_status()
 {

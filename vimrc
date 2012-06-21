@@ -263,7 +263,7 @@ nmap <leader>ss :%s/\v
 nmap <leader>I :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))<cr>
 
 " Indent whole file, remove trailing whitespaces then save
-nmap <leader>i <Esc>mygg=G,I'y:w<cr>
+nmap <leader>i <Esc>:nohl<cr>mygg=G,I'y:w<cr>
 
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

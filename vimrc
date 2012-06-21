@@ -389,6 +389,10 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.rc set filetype=conf
 au BufNewFile,BufRead *.muttrc set filetype=muttrc
 
+" Filesystem
+nmap <leader>mk :!mkdir -p <c-r>=expand("%:p:h")."/"<cr>
+nmap <leader>rm :!rm -rf <c-r>=expand("%:p:h")."/"<cr>
+
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |
       \ while 1 | exec <q-args> | sil cn | endwhile |

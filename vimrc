@@ -239,6 +239,10 @@ vnoremap <C-h> ""y:%s/<C-R>=escape(@", '/\')<cr>//g<Left><Left>
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<cr>#
 
+" Global quick search-replace
+nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
+  \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
+
 " Ack
 let g:ackprg="ack -H --nocolor --nogroup --column"
 " Set a mark then search with Ack

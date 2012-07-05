@@ -6,6 +6,6 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/lila && play
+        - cd ~/lila && bin/dev
         - cd ~/lila && vim
   - shell: cd ~/lila

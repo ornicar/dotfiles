@@ -4,6 +4,9 @@ Host lichess
 Host iliaz
   HostName iliaz.com
   User root
+Host balrog
+  HostName 37.59.32.99
+  User root
 Host phobos
   HostName 188.165.218.189
   User root

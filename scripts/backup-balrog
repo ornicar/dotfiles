@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+ssh balrog "rsync --archive --force --delete --progress /home/mongodb /home/backup/"
+
+rsync --archive --force --delete --progress --compress balrog:/home/backup/mongodb ~/backup/balrog/

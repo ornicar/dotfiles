@@ -1,8 +1,9 @@
 #!/bin/zsh
 
-backupdir=/media/thib-ext4/backup-arch/
+#backupdir=/media/thib-ext4/backup-arch/
+backupdir=balrog:/home/thib-arch-backup/
 
 rsync --archive --force --delete --progress --compress /home/thib/dotfiles $backupdir
 rsync --archive --force --delete --progress --compress /etc $backupdir
-rsync --archive --force --delete --progress --compress /usr $backupdir
+# rsync --archive --force --delete --progress --compress /usr $backupdir
 rsync --archive --force --delete --progress --compress /var $backupdir

@@ -1,5 +1,5 @@
 " theme
-"source /home/thib/.vimperator/color/desert_revisited.vimp
+source /home/thib/.vimperator/color/solarized.vimp
 
 let mapleader = ","
 

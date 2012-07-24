@@ -380,14 +380,6 @@ nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>
 
-let g:NERDCustomDelimiters = {
-      \ 'haskell': { 'left': '--' , 'right': '' },
-      \ 'hamlet' : { 'left': '\<!-- ', 'right': ' -->' },
-      \ 'cassius': { 'left': '/* ' , 'right': ' */' },
-      \ 'lucius' : { 'left': '/* ' , 'right': ' */' },
-      \ 'julius' : { 'left': '//' , 'right': '' }
-      \ }
-
 " Redraw
 nmap <leader>rr :redraw!<cr>
 

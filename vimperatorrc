@@ -78,7 +78,5 @@ noremap <leader>s :hipchatjumptoprevious<CR><esc>
 " noscript 
 noremap <leader>n :noscript popup<cr>
 
-" autocommand
-" ======================================
-" automatic pass-through mode on certain pages (do ':h autocommands' for details)
-"autocmd LocationChange .* :js modes.passAllKeys = /mail\.google\.com/.test(buffer.URL)
+" commands
+noremap <leader>sv :source ~/.vimperatorrc<cr>

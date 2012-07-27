@@ -48,9 +48,10 @@ hi Tag      color: CornflowerBlue;
 hi Number   color: CornflowerBlue;
 
 hi CompTitle    background: #1c1c1c;
-hi CompTitle>*  color: #cb4b16; border-bottom: 1px solid #3c3c3f; padding: 1px 0.5ex;
-hi CompItem[selected] color: cyan;  background: #333;
-hi CompDesc   color: #d33682;
+hi CompTitle>*  color: #cb4b16; border-bottom: 1px solid #3c3c3f; padding: 1px 0.5ex; text-shadow: none;
+hi CompItem[selected] color: cyan;  background: #333; box-shadow: none;
+hi CompDesc     color: #d33682;
+hi Filter      background: #073642; color: #fdf6e3; border: none;
 
 hi Title    color:  #002630;
 hi Indicator    color:  #b58900;

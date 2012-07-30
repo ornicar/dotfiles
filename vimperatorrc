@@ -79,4 +79,4 @@ noremap <leader>s :hipchatjumptoprevious<CR><esc>
 noremap <leader>n :noscript popup<cr>
 
 " commands
-noremap <leader>sv :source ~/.vimperatorrc<cr>
+noremap <leader>S :source ~/.vimperatorrc<cr>

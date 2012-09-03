@@ -448,7 +448,12 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
       \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
       \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
-" Source local settings
+" Source user settings
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
+endif
+
+" Source project settings
+if filereadable('.vimrc.local')
+  source .vimrc.local
 endif

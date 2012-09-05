@@ -1,7 +1,0 @@
-# ~/.tmuxinator/lichess.yml
-
-project_name: lichess
-project_root: ~/lichess
-tabs:
-  - code: cd ~/lichess && vim
-  - shell: cd ~/lichess

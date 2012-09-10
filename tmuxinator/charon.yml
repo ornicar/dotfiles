@@ -6,6 +6,6 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/charon && play
+        - cd ~/charon && bin/play
         - cd ~/charon && vim
   - shell: cd ~/charon

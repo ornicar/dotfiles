@@ -4,4 +4,6 @@
 
 source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 
-$(dmenu_path_c | yeganesh -- -i -nb $base03 -nf $base0 -sb $base02 -sf $orange -fn 'xft:Inconsolata:size=16' -p "Run")
+YEGANESH=$HOME/.cabal/bin/yeganesh
+
+$(dmenu_path_c | $YEGANESH -- -i -nb $base03 -nf $base0 -sb $base02 -sf $orange -fn 'xft:Inconsolata:size=16' -p "Run")

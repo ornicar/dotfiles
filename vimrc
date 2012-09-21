@@ -244,7 +244,7 @@ nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
   \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
 
 " Ack
-let g:ackprg="ack -H --nocolor --nogroup --column"
+let g:ackprg = 'ag --nogroup --nocolor --column'
 " Set a mark then search with Ack
 nmap <leader>a mA:Ack<space>
 " Set a mark, then pull word under cursor into Ack for a global search

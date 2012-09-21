@@ -1,11 +1,2 @@
 #!/bin/sh
-
-file=/tmp/touchpad
-
-if [ -f $file ]; then
-  rm $file
-  msg="The rodent was exterminated"
-else
-  touch $file
-  msg="Touchpad enabled"
-fi
+synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')

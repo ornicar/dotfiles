@@ -7,7 +7,7 @@
 # 5 pink
 # 6 cyan
 # 9 orange
-# black -> white 8 0 10 11 12 14 7 15 
+# black -> white 8 0 10 11 12 14 7 15
 
 # WEECHAT
 
@@ -18,7 +18,7 @@ if [ -f /tmp/weechat_hotlist ]; then
   fi
 fi
 
-# LICHESS 
+# LICHESS
 
 raw_data=$(cat /tmp/lichess_status)
 data=(${(s: :)raw_data})
@@ -47,7 +47,7 @@ show_mail() {
   wcl=$(ls -l $2/new | wc -l)
   nb=$(expr $wcl - 1)
   if [ $syncing != 0 ]; then style="fg=colour12"
-  else 
+  else
     if [ 0 -eq $nb ]; then style="fg=colour10,dim"
     else style="fg=colour7"
     fi
@@ -67,19 +67,26 @@ elif [ "$percent" -lt 20 ]; then modifier="#[bg=colour3,fg=colour8,bright]"
 elif [ "$percent" -lt 50 ]; then modifier="#[fg=colour3]"
 else modifier="#[fg=colour2]"
 fi
-percent="$percent%"
+percentS="$percent%"
 case $state in
-  "Charging") sign="|+|"; modifier="#[fg=green]" ;;
-"Discharging") sign="|-|" ;;
-    "Full") sign="⚡"; percent= ;;
-  *) sign="$state" ;;
+  "Discharging") sign="|-|" ;;
+"Full") sign="⚡"; percentS= ;;
+*)
+  if [ "$percent" -gt 94 ]; then
+    sign="⚡"
+    percentS=
+  else
+    sign="|+|"
+    modifier="#[fg=green]"
+  fi
+  ;;
 esac
-printf "$modifier%s%s#[default]" "$percent" "$sign"
+printf "$modifier%s%s#[default]" "$percentS" "$sign"
 
 # TEMPERATURE
 
-input=/sys/class/hwmon/hwmon0/temp1_input
-[ -s "$input" ] && temperature=$(awk '{printf "%0.f",$1/1000}' "$input")
+temp_file=/sys/class/hwmon/hwmon0/temp1_input
+temperature=$(awk '{printf "%0.f",$1/1000}' "$temp_file")
 if [ -n "$temperature" ]; then
   if [ "$temperature" -gt 69 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
   elif [ "$temperature" -gt 62 ]; then modifier="#[fg=colour13,bright]"
@@ -104,28 +111,22 @@ printf " %s%s%%#[default]" "$modifier" "$memory"
 if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
   chart=""
   for i in 0 1 2 3; do
-    read cpu < "/sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq"
-    case $cpu in
-      "2901000") symbol="█";;
-      "2900000") symbol="█";;
-      "2800000") symbol="▇";;
-      "2700000") symbol="▇";;
-      "2500000") symbol="▆";;
-      "2400000") symbol="▆";;
-      "2300000") symbol="▅";;
-      "2200000") symbol="▅";;
-      "2000000") symbol="▄";;
-      "1900000") symbol="▃";;
-      "1800000") symbol="▃";;
-      "1700000") symbol="▂";;
-      "1600000") symbol="▂";;
-      "1400000") symbol="▁";;
-      "1200000") symbol="⎯";;
-      *) symbol="$cpu";;
-    esac
+    cpu_file="/sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq"
+    cpu=$(awk '{printf "%0.f",$1/100000}' "$cpu_file")
+    if [ "$cpu" -lt 13 ]; then symbol="#[fg=colour2]⎯"
+    elif [ "$cpu" -lt 15 ]; then symbol="#[fg=colour10]⎯"
+    elif [ "$cpu" -lt 17 ]; then symbol="#[fg=colour10]▁"
+    elif [ "$cpu" -lt 19 ]; then symbol="#[fg=colour10]▂"
+    elif [ "$cpu" -lt 21 ]; then symbol="#[fg=colour10]▃"
+    elif [ "$cpu" -lt 23 ]; then symbol="#[fg=colour10]▄"
+    elif [ "$cpu" -lt 25 ]; then symbol="#[fg=colour10]▅"
+    elif [ "$cpu" -lt 27 ]; then symbol="#[fg=colour10]▆"
+    elif [ "$cpu" -lt 29 ]; then symbol="#[fg=colour10]▇"
+    else symbol="#[fg=colour12]█"
+    fi
     chart="$chart$symbol"
   done
-  printf " #[fg=colour10]%s" "$chart"; 
+  printf " $chart";
 fi
 
 # LOAD AVERAGE

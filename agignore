@@ -1,0 +1,7 @@
+cache
+logs
+target
+*-backup_asd
+web/js
+web/css
+tags

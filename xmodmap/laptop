@@ -1,4 +1,5 @@
 ! Use Return for Shift
 keycode 36 = Shift_L Return Shift_L
+
 ! Use AltGr-t for Return
 keycode 41 = t T t T Return Return Return Return

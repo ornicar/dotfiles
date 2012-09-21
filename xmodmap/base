@@ -5,7 +5,11 @@ keycode 66 = Escape
 clear Mod4
 add Control = Super_L 
 
+! Use lenovo Impéc key for control right
+add Control = Print
+
 ! Use Return for Shift
-keycode 36 = Shift_L Return Shift_L
+! keycode 36 = Shift_L Return Shift_L
+
 ! Use AltGr-t for Return
 keycode 41 = t T t T Return Return Return

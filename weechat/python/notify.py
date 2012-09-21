@@ -71,6 +71,7 @@ def terminal_bell():
     f.close()
 
 def show_notification(chan, message):
+    pass
     #weechat.prnt("", "Notify %s: %s" % (chan, message))
     #if(chan != ""):
         #display = '%s\n%s' % (encode_string(chan), encode_string(message))

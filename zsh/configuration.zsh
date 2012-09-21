@@ -4,8 +4,8 @@
 
 # Export common variables
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
 export PATH=$PATH:/home/thib/Play21
 
 export BROWSER="firefox"

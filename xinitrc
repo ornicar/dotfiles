@@ -22,4 +22,4 @@ $HOME/.scripts/collector_daemon &           # start cpu and lichess data collect
 urxvtc -e $HOME/.tmux/menu &
 
 # Run window manager
-exec $HOME/.cabal/bin/xmonad
+exec xmonad

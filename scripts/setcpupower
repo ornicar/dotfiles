@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+values=(powersave conservative ondemand performance)
+value=$1
+
+if [[ ${values[(r)$value]} == $value ]] ; then 
+  sudo cpupower frequency-set --governor $value
+  cpupower frequency-info
+else 
+  echo "value must be one of: $values" 
+fi

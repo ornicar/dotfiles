@@ -26,7 +26,8 @@
 # Happy chat, enjoy :)
 #
 # History:
-#
+# 2012-05-12, Sebastian Rydberg <sr@rydbergtech.se>:
+#     version 1.3: Added support for fetching names from roster
 # 2012-04-11, Sebastien Helleu <flashcode@flashtux.org>:
 #     version 1.2: fix deletion of server options
 # 2012-03-09, Sebastien Helleu <flashcode@flashtux.org>:
@@ -78,7 +79,7 @@
 
 SCRIPT_NAME    = "jabber"
 SCRIPT_AUTHOR  = "Sebastien Helleu <flashcode@flashtux.org>"
-SCRIPT_VERSION = "1.2"
+SCRIPT_VERSION = "1.3"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC    = "Jabber/XMPP protocol for WeeChat"
 SCRIPT_COMMAND = SCRIPT_NAME
@@ -420,6 +421,7 @@ class Server:
         self.hook_fd = None
         self.buffer = ""
         self.chats = []
+        self.roster = None
         self.buddies = []
         self.buddy = None
         self.ping_timer = None              # weechat.hook_timer for sending pings
@@ -488,6 +490,8 @@ class Server:
                                     res)
             if auth:
                 weechat.prnt(self.buffer, "jabber: authentication ok (using %s)" % auth)
+
+                self.roster = self.client.getRoster()
                 self.client.RegisterHandler("presence", self.presence_handler)
                 self.client.RegisterHandler("iq", self.iq_handler)
                 self.client.RegisterHandler("message", self.message_handler)
@@ -570,6 +574,10 @@ class Server:
             status = ''
             if node.getStatus():
                 status = node.getStatus().encode("utf-8")
+            if self.roster:
+                name = self.roster.getName(buddy.bare_jid)
+                if name:
+                    buddy.set_name(name.encode("utf-8"))
             buddy.set_status(status=status, away=away)
         self.update_nicklist(buddy=buddy, action=action)
         return
@@ -1054,6 +1062,7 @@ class Buddy:
         self.server = server
         self.bare_jid = ''
         self.username = ''
+        self.name = ''
         self.domain = ''
         self.resource = ''
         self.alias = ''
@@ -1104,16 +1113,23 @@ class Buddy:
         """Set the buddy alias.
 
         If an alias is defined in jabber_jid_aliases, it is used. Otherwise the
-        alias is set to self.bare_jid.
+        alias is set to self.bare_jid or self.name if it exists.
         """
+        self.alias = self.bare_jid
         if not self.bare_jid:
             self.alias = ''
+        if self.name:
+            self.alias = self.name
         global jabber_jid_aliases
-        self.alias = self.bare_jid
         for alias, jid in jabber_jid_aliases.items():
             if jid == self.bare_jid:
                 self.alias = alias
                 break
+        return
+
+    def set_name(self, name=''):
+        self.name = name
+        self.set_alias()
         return
 
     def set_status(self, away=True, status=''):

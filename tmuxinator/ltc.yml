@@ -1,7 +1,0 @@
-# ~/.tmuxinator/ltc.yml
-
-project_name: ltc
-project_root: ~/ltc
-tabs:
-  - code: cd ~/ltc && vim
-  - shell: cd ~/ltc

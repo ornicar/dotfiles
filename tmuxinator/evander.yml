@@ -1,11 +1,11 @@
 # ~/.tmuxinator/evander.yml
 
 project_name: evander
-project_root: ~/evander
+project_root: ~/jirafe/evander
 tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/evander && sbt
-        - cd ~/evander && vim
-  - shell: cd ~/evander
+        - cd ~/jirafe/evander && sbt
+        - cd ~/jirafe/evander && vim
+  - shell: cd ~/jirafe/evander

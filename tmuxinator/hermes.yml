@@ -1,11 +1,11 @@
 # ~/.tmuxinator/hermes.yml
 
 project_name: hermes
-project_root: ~/hermes
+project_root: ~/jirafe/hermes
 tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/hermes && sbt
-        - cd ~/hermes && vim
-  - shell: cd ~/hermes
+        - cd ~/jirafe/hermes && sbt
+        - cd ~/jirafe/hermes && vim
+  - shell: cd ~/jirafe/hermes

@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 DESTINATION=~/backup/balrog/
-DESTINATION=/media/thib-ext4/balrog/
+DESTINATION=/media/passport/balrog/
 
 ssh balrog "rsync --archive --force --delete --progress /home/mongodb /home/backup/"
 

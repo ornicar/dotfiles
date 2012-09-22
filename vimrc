@@ -258,7 +258,7 @@ nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>
 " Disable default mappings
 let g:loaded_AlignMapsPlugin=1
 
-vnoremap a :Align<space>
+vnoremap <leader>a :Align<space>
 
 " Start a substitute
 nmap <leader>ss :%s/\v

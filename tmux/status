@@ -9,10 +9,12 @@
 # 9 orange
 # black -> white 8 0 10 11 12 14 7 15
 
+. $HOME/dotfiles/zsh/misc-functions.zsh
+
 # WEECHAT
 
 if [ -f /tmp/weechat_hotlist ]; then
-  hotlist=$(cat /tmp/weechat_hotlist)
+  hotlist=$(</tmp/weechat_hotlist)
   if [ ! -z $hotlist ]; then
     printf "%s " "$hotlist"
   fi
@@ -35,27 +37,22 @@ printf "##[%s]%s#[fg=colour10,bg=default,dim])#[default] " $lltc $loadtime
 
 # MAIL
 
-syncing=$(pgrep offlineimap | wc -l)
-if [ $syncing != 0 ]; then
-  mailicon="↻"
-else
-  mailicon="@"
-fi
-
 # args: name, box_dir
 show_mail() {
-  wcl=$(ls -l $2/new | wc -l)
-  nb=$(expr $wcl - 1)
-  if [ $syncing != 0 ]; then style="fg=colour12"
-  else
-    if [ 0 -eq $nb ]; then style="fg=colour10,dim"
-    else style="fg=colour7"
-    fi
+  nb=$(ls $2/new | wc -l)
+  if [ 0 -eq $nb ]; then style="fg=colour10,dim"
+  else style="fg=colour7"
   fi
-  printf "#[%s]%s%s(%d)#[default] " $style $mailicon $1 $nb
+  printf "#[%s]✉%s(%d)#[default] " $style $1 $nb
 }
 show_mail "perso" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
+
+# WIFI
+interface="wlan0"
+quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
+(( percent = (quality * 100) / 70 ))
+printf "#[fg=colour3]w%s#[default]" "$percent"
 
 # BATTERY
 
@@ -81,58 +78,55 @@ case $state in
   fi
   ;;
 esac
-printf "$modifier%s%s#[default]" "$percentS" "$sign"
+printf " $modifier%s%s#[default]" "$percentS" "$sign"
 
-# TEMPERATURE
+# TEMPERATURE & FAN
 
 temp_file=/sys/class/hwmon/hwmon0/temp1_input
-temperature=$(awk '{printf "%0.f",$1/1000}' "$temp_file")
-if [ -n "$temperature" ]; then
-  if [ "$temperature" -gt 69 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-  elif [ "$temperature" -gt 62 ]; then modifier="#[fg=colour13,bright]"
-  elif [ "$temperature" -gt 54 ]; then modifier="#[fg=colour6]"
-  else modifier="#[fg=colour4]"
-  fi
-  printf " %s%s°#[default]" "$modifier" "$temperature"
+(( temperature = $(<$temp_file) / 1000 ))
+if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
+elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
+else modifier="#[fg=colour4]"
 fi
+printf " %s%s°" "$modifier" "$temperature"
+fan=$(</sys/class/hwmon/hwmon1/device/fan1_input)
+max=3000
+(( percent = (fan * 100) / $max ))
+if (( $percent < 10 )); then spark=""; else spark=$(percent-spark $percent); fi
+printf "%s#[default]" "$spark"
 
 # MEMORY
 
 memory=$(free | awk '/buffers\/cache:/ {printf "%.0f", 100*$3/($3 + $4)}')
-if [ "$memory" -gt 90 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-elif [ "$memory" -gt 80 ]; then modifier="#[bg=colour3,fg=colour0]"
-elif [ "$memory" -gt 70 ]; then modifier="#[fg=colour9]"
+if [ "$memory" -gt 85 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$memory" -gt 75 ]; then modifier="#[bg=colour3,fg=colour0]"
+elif [ "$memory" -gt 65 ]; then modifier="#[fg=colour9]"
 else modifier="#[fg=colour2]"
 fi
-printf " %s%s%%#[default]" "$modifier" "$memory"
+printf " %sm%s#[default]" "$modifier" "$memory"
 
 # CPU FREQ
 
-if [ -r "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq" ]; then
-  chart=""
-  for i in 0 1 2 3; do
-    cpu_file="/sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq"
-    cpu=$(awk '{printf "%0.f",$1/100000}' "$cpu_file")
-    if [ "$cpu" -lt 13 ]; then symbol="#[fg=colour2]⎯"
-    elif [ "$cpu" -lt 15 ]; then symbol="#[fg=colour10]⎯"
-    elif [ "$cpu" -lt 17 ]; then symbol="#[fg=colour10]▁"
-    elif [ "$cpu" -lt 19 ]; then symbol="#[fg=colour10]▂"
-    elif [ "$cpu" -lt 21 ]; then symbol="#[fg=colour10]▃"
-    elif [ "$cpu" -lt 23 ]; then symbol="#[fg=colour10]▄"
-    elif [ "$cpu" -lt 25 ]; then symbol="#[fg=colour10]▅"
-    elif [ "$cpu" -lt 27 ]; then symbol="#[fg=colour10]▆"
-    elif [ "$cpu" -lt 29 ]; then symbol="#[fg=colour10]▇"
-    else symbol="#[fg=colour12]█"
-    fi
-    chart="$chart$symbol"
-  done
-  printf " $chart";
-fi
+min=12
+max=29
+chart=""
+for i in 0 1 2 3; do
+  freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq)
+  (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
+  spark=$(percent-spark $P)
+  chart="$chart$spark"
+done
+printf " #[fg=colour10]$chart";
 
 # LOAD AVERAGE
 
 load=$(awk '{print $1}' /proc/loadavg)
-printf " %s%.01f#[default]" "#[fg=colour14]" "$load"
+if (( $load > 1.9 )); then modifier="#[bg=colour1,fg=colour15,bright]"
+elif (( $load > 0.9 )); then modifier="#[fg=colour7]"
+else modifier="#[fg=colour14]"
+fi
+printf " %s%.01f#[default]" "$modifier" "$load"
 
 # SEPARATOR
 

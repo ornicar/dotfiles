@@ -17,6 +17,8 @@ link (){
     ln -s $FROM $TO
 }
 
+mkdir -p ~/.config
+
 link zshrc ~/.zshrc
 link scripts ~/.scripts
 link gitconfig ~/.gitconfig
@@ -33,10 +35,12 @@ link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd
 link weechat ~/.weechat
+mkdir -p ~/.config/surfraw
 link surfraw ~/.config/surfraw/conf
 link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator
+mkdir -p ~/.config/ranger
 link ranger/rc.conf ~/.config/ranger/rc.conf
 link ranger/apps.py ~/.config/ranger/apps.py
 link ncmpcpp.keys ~/.ncmpcpp/keys
@@ -51,7 +55,11 @@ link xmonad ~/.xmonad
 link asoundrc ~/.asoundrc
 mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/
 link colors.ini ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
+mkdir -p ~/.ssh
 link ssh/config ~/.ssh/config
 link agignore ~/.agignore
+mkdir -p ~/.config/htop
+link htoprc ~/.config/htop/htoprc
+link abcde.conf ~/.abcde.conf
 #link sbt/global.sbt ~/.sbt/global.sbt
 #link sbt/build.sbt ~/.sbt/build.sbt

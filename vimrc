@@ -42,7 +42,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi,tags
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,**/.rsync_cache/*,*.hi,tags
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -53,7 +53,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set showmatch                     " Show matching char (like {})
 
-set wrap                          " Turn on line wrapping.
+set nowrap                        " Turn off line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.
 set sidescrolloff=7
 
@@ -169,7 +169,6 @@ set nonumber
 nnoremap <silent> <leader>nn :set nonumber!<cr>
 
 " Toggle nowrap
-set nowrap
 nnoremap <silent> <leader>nw :set nowrap!<cr>
 
 " Close other windows

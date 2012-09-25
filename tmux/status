@@ -33,7 +33,7 @@ if [ $isinf = 0 ]; then
 else
   lltc="fg=colour11"
 fi
-printf "##[%s]%s#[fg=colour10,bg=default,dim])#[default] " $lltc $loadtime
+printf " ##[%s]%s#[fg=colour10,bg=default,dim])#[default]" $lltc $loadtime
 
 # MAIL
 
@@ -43,7 +43,7 @@ show_mail() {
   if [ 0 -eq $nb ]; then style="fg=colour10,dim"
   else style="fg=colour7"
   fi
-  printf "#[%s]✉%s(%d)#[default] " $style $1 $nb
+  printf " #[%s]✉%s(%d)#[default]" $style $1 $nb
 }
 show_mail "perso" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
@@ -51,8 +51,10 @@ show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
 # WIFI
 interface="wlan0"
 quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
-(( percent = (quality * 100) / 70 ))
-printf "#[fg=colour3]w%s#[default]" "$percent"
+if [[ $quality -gt 0 ]]; then
+  (( percent = (quality * 100) / 70 ))
+  printf " #[fg=colour3]w%s#[default]" "$percent"
+fi
 
 # BATTERY
 

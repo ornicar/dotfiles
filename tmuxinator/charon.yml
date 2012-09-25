@@ -1,11 +1,11 @@
 # ~/.tmuxinator/charon.yml
 
 project_name: charon
-project_root: ~/charon
+project_root: ~/jirafe/charon
 tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/charon && bin/play
-        - cd ~/charon && vim
-  - shell: cd ~/charon
+        - cd ~/jirafe/charon && bin/play
+        - cd ~/jirafe/charon && vim
+  - shell: cd ~/jirafe/charon

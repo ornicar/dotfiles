@@ -12,8 +12,8 @@ Xft.hintstyle: hintfull
 
 !URxvt.font:       xft:Inconsolata:size=14
 !URxvt.boldFont:   xft:Inconsolata:size=14
-URxvt.font:       xft:inconsolata:size=12
-URxvt.boldFont:   xft:inconsolata:size=12
+URxvt.font:       xft:inconsolata:size=13
+URxvt.boldFont:   xft:inconsolata:size=13
 
 URxvt.scrollBar:  false
 URxvt.jumpScroll: true

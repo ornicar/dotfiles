@@ -101,3 +101,6 @@
 [submodule "vim/bundle/commaobject"]
 	path = vim/bundle/commaobject
 	url = https://github.com/austintaylor/vim-commaobject
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git

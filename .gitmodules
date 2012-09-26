@@ -1,7 +1,3 @@
-[submodule "vim/bundle/nerdcommenter"]
-  path = vim/bundle/nerdcommenter
-  url = git://github.com/ornicar/nerdcommenter.git
-  ignore = untracked
 [submodule "vim/bundle/lusty"]
   path = vim/bundle/lusty
   url = git://github.com/ornicar/lusty.git

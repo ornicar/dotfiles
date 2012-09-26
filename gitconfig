@@ -80,6 +80,7 @@
     # nice logs
   l = log --decorate --graph --date=short --pretty=\"format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C()%s %C(black) [%an]%Creset\"
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  mini = log --pretty=format:\"%h\" 
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 
   changelog = log --pretty=format:\" * %s\" 
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 

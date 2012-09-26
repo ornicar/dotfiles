@@ -30,9 +30,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..:/etc
 
-# Load less keys
-lesskey "$DOTFILES/lesskeys"
-
 # Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
 stty -ixon -ixoff
 

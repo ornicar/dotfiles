@@ -8,12 +8,13 @@ fortune -a | cowsay
 
 DOTFILES=$HOME/dotfiles
 OHMYZSH=$DOTFILES/oh-my-zsh
+ZSH_CUSTOM=$OHMYZSH
 
 # Load all of the config files in oh-my-zsh that end in .zsh
 for config_file ($OHMYZSH/lib/*.zsh) source $config_file
 
 # Load chosen oh-my-zsh plugins
-for plugin in archlinux extract; do
+for plugin in archlinux extract cap colemak; do
     source $OHMYZSH/plugins/$plugin/$plugin.plugin.zsh
 done
 

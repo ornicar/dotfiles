@@ -104,3 +104,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/webapi"]
+	path = vim/bundle/webapi
+	url = https://github.com/mattn/webapi-vim

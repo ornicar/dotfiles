@@ -4,6 +4,7 @@ mpd/*
 mutt/cache
 mutt/certificates
 mutt/temp
+mutt/*.private.muttrc
 weechat/logs
 weechat/weechat.log
 weechat/weeget

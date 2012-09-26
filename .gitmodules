@@ -107,3 +107,6 @@
 [submodule "vim/bundle/webapi"]
 	path = vim/bundle/webapi
 	url = https://github.com/mattn/webapi-vim
+[submodule "zsh/history-substring-search"]
+	path = zsh/history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search

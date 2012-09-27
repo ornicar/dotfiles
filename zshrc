@@ -9,6 +9,11 @@ fortune -a | cowsay
 DOTFILES=$HOME/dotfiles
 OHMYZSH=$DOTFILES/oh-my-zsh
 
+for i in 0 1 2; do
+  f=/sys/class/hwmon/hwmon$i/device/fan1_input
+  [[ -f $f ]] && FAN_INPUT_FILE=$f
+done
+
 # Load all of the config files in oh-my-zsh that end in .zsh
 for config_file ($OHMYZSH/lib/*.zsh) source $config_file
 

@@ -5,15 +5,13 @@ Xcursor.theme: CG
 #include "/home/thib/.xcolors/solarized.xcolors"
 
 ! Fonts 
-Xft.antialias: true
-Xft.hinting:   true
-Xft.rgba:      rgb
-Xft.hintstyle: hintfull
+! Xft.antialias: true
+! Xft.hinting:   true
+! Xft.rgba:      rgb
+! Xft.hintstyle: hintfull
 
-!URxvt.font:       xft:Inconsolata:size=14
-!URxvt.boldFont:   xft:Inconsolata:size=14
-URxvt.font:       xft:inconsolata:size=13
-URxvt.boldFont:   xft:inconsolata:size=13
+URxvt.font:       xft:inconsolata:size=16
+URxvt.boldFont:   xft:inconsolata:size=16
 
 URxvt.scrollBar:  false
 URxvt.jumpScroll: true

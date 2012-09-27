@@ -8,7 +8,7 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # Remap keys
 xmodmap $HOME/.Xmodmap &&
 
-xrdb $HOME/.Xdefaults                       # load Xdefaults
+xrdb $HOME/.Xresources                       # load Xresources
 
 xsetroot -solid black                       # black background
 xset s 300 300                              # set monitor to sleep

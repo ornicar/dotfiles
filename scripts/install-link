@@ -30,7 +30,7 @@ link tigrc ~/.tigrc
 link rtorrent.rc ~/.rtorrent.rc
 link xmodmap/base ~/.Xmodmap
 link xinitrc ~/.xinitrc
-link Xdefaults ~/.Xdefaults
+link Xresources ~/.Xresources
 link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd

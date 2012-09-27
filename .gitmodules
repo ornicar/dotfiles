@@ -29,10 +29,6 @@
 [submodule "oh-my-zsh"]
   path = oh-my-zsh
   url = git://github.com/ornicar/oh-my-zsh
-[submodule "vim/bundle/supertab"]
-  path = vim/bundle/supertab
-  url = git://github.com/ervandew/supertab.git
-  ignore = untracked
 [submodule "vim/bundle/fugitive"]
   path = vim/bundle/fugitive
   url = git://github.com/tpope/vim-fugitive
@@ -126,3 +122,6 @@
 	path = vim/bundle/hoogle
 	url = https://github.com/Twinside/vim-hoogle
   ignore = untracked
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache

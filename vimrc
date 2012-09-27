@@ -379,13 +379,6 @@ nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>
 
-" vim2hs
-let g:haskell_conceal = 1
-let g:haskell_conceal_wide = 1
-let g:haskell_conceal_enumerations = 1
-" let g:haskell_conceal_comments = 1
-let g:haskell_conceal_bad = 1
-
 " Redraw
 nmap <leader>rr :redraw!<cr>
 

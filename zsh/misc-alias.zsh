@@ -1,6 +1,9 @@
 # Go back 3 times
 alias ....='cd ../../..'
 
+# Propagate user config
+alias _='sudo -E'
+
 # Sort dirs by weight
 alias ducks='du -cks * | sort -rn|head -20'
 

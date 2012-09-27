@@ -42,7 +42,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,**/.rsync_cache/*,*.hi,tags
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,.rsync_cache/*,*.hi,tags
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -378,6 +378,13 @@ nmap <silent> <leader>mf :CtrlP<cr>
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>
+
+" vim2hs
+let g:haskell_conceal = 1
+let g:haskell_conceal_wide = 1
+let g:haskell_conceal_enumerations = 1
+" let g:haskell_conceal_comments = 1
+let g:haskell_conceal_bad = 1
 
 " Redraw
 nmap <leader>rr :redraw!<cr>

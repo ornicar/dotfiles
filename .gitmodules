@@ -110,3 +110,15 @@
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = https://github.com/Shougo/vimproc
+[submodule "vim/bundle/neco-ghc"]
+	path = vim/bundle/neco-ghc
+	url = https://github.com/ujihisa/neco-ghc
+[submodule "vim/bundle/ghcmod"]
+	path = vim/bundle/ghcmod
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "vim/bundle/vim2hs"]
+	path = vim/bundle/vim2hs
+	url = https://github.com/dag/vim2hs

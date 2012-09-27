@@ -224,7 +224,7 @@ set diffopt=filler,vertical
 set diffopt+=iwhite
 
 " Fast open vertical help
-nmap <leader>h <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
+nmap <leader>H <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
 " Clear search highlight
 nmap <silent> <leader>/ :nohl<cr>
@@ -303,6 +303,12 @@ function! s:VSetSearch()
 endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<cr>??<cr><c-o>
+
+" Autoresize quickfix window http://vim.wikia.com/wiki/Automatically_fitting_a_quickfix_window_height
+au FileType qf call AdjustWindowHeight(3, 20)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 
 " Navigate in quickfix window
 nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<cr>

@@ -122,3 +122,7 @@
 [submodule "vim/bundle/vim2hs"]
 	path = vim/bundle/vim2hs
 	url = https://github.com/dag/vim2hs
+[submodule "vim/bundle/hoogle"]
+	path = vim/bundle/hoogle
+	url = https://github.com/Twinside/vim-hoogle
+  ignore = untracked

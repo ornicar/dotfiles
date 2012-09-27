@@ -1,8 +1,10 @@
 #!/bin/sh
 
 cd ~/vim
+hg update --clean
 hg pull
 hg update
+patch -p1 < $HOME/.scripts/vim/conceal.patch
 cd src
 ~/.scripts/vim/configure
 make

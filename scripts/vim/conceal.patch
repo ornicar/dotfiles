@@ -1,0 +1,12 @@
+diff -r 04592728474a src/feature.h
+--- a/src/feature.h	Fri Sep 21 14:54:30 2012 +0200
++++ b/src/feature.h	Wed Sep 26 22:49:21 2012 +0200
+@@ -529,7 +529,7 @@
+  * +conceal		'conceal' option.  Needs syntax highlighting
+  *			as this is how the concealed text is defined.
+  */
+-#if defined(FEAT_BIG) && defined(FEAT_SYN_HL)
++#if defined(FEAT_SYN_HL)
+ # define FEAT_CONCEAL
+ #endif
+ 

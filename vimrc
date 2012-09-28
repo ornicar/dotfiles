@@ -310,8 +310,8 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 " Navigate in quickfix window
-nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<cr>
-nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<cr>
+nmap ]q :<C-U>exe (v:count ? "cnext ".v:count : "cfirst")<cr>
+nmap [q :<C-U>exe (v:count ? "cprevious ".v:count : "cfirst")<cr>
 
 " Don't use Ex mode; use Q for console mode
 map Q q:

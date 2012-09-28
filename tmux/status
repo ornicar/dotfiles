@@ -92,7 +92,11 @@ elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
 else modifier="#[fg=colour4]"
 fi
 printf " %s%s°" "$modifier" "$temperature"
-fan=$(</sys/class/hwmon/hwmon1/device/fan1_input)
+for i in 0 1 2; do
+  FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
+  [[ -f $FAN_INPUT_FILE ]] && break
+done
+fan=$(<$FAN_INPUT_FILE)
 max=3000
 (( percent = (fan * 100) / $max ))
 if (( $percent < 10 )); then spark=""; else spark=$(percent-spark $percent); fi

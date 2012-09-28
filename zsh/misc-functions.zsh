@@ -14,7 +14,7 @@ calc() { awk "BEGIN{ print $* }" ;}
 # works with both integers and floats
 percent-spark() {
   if (( $1 < 10 )); then printf " "
-  elif (( $1 < 20 )); then printf "⎯"
+  elif (( $1 < 20 )); then printf "_"
   elif (( $1 < 30 )); then printf "▁"
   elif (( $1 < 40 )); then printf "▂"
   elif (( $1 < 50 )); then printf "▃"

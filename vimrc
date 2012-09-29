@@ -327,10 +327,10 @@ nmap <leader>% :Silent chmod +x %<cr>
 
 " haskell vim2hs
 let g:haskell_conceal = 1
-let g:haskell_conceal_wide = 1
-let g:haskell_conceal_enumerations = 1
+let g:haskell_conceal_wide = 0
+" let g:haskell_conceal_enumerations = 1
 " let g:haskell_conceal_comments = 1
-let g:haskell_conceal_bad = 1
+" let g:haskell_conceal_bad = 1
 let g:haskell_autotags = 1
 let g:haskell_tags_generator = 'fast-tags'
 let g:hpaste_author = 'github.com/ornicar'

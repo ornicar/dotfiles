@@ -125,3 +125,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache
+[submodule "vim/bundle/bufonly"]
+	path = vim/bundle/bufonly
+	url = https://github.com/duff/vim-bufonly

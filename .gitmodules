@@ -41,10 +41,6 @@
   path = vim/bundle/repeat
   url = git://github.com/tpope/vim-repeat.git
   ignore = untracked
-[submodule "vim/bundle/tlib"]
-  path = vim/bundle/tlib
-  url = git://github.com/tomtom/tlib_vim.git
-  ignore = untracked
 [submodule "vim/vendor/javascript"]
   path = vim/vendor/javascript
   url = git://github.com/pangloss/vim-javascript.git

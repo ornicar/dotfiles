@@ -55,17 +55,6 @@ nmap <buffer> <unique> <leader>pc ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#<CR>Iname
 " Insert current namespace and opens php and create empty class
 "nmap <F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
-" Insert use statements based on ctags
-map <buffer> <unique> <leader>pu :call PhpInsertUse()<CR>
-" The same on insert mode
-imap <buffer> <unique> <C-e>u <esc>:call PhpInsertUse()<CR>a
-
-" Single line mode documentation
-nnoremap <buffer> <unique> <leader>pd :call PhpDocSingle()<CR>
-
-" Multi line mode documentation (in visual mode)
-vnoremap <buffer> <unique> <leader>pd :call PhpDocRange()<CR>
-
 " Align selected code
 vnoremap <buffer> <unique> <leader>pa :call PhpAlign()<CR>
 noremap <buffer> <unique> <leader>p{ vi{:call PhpAlign()<CR>

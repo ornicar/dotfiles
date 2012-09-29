@@ -336,6 +336,9 @@ let g:haskell_tags_generator = 'fast-tags'
 let g:hpaste_author = 'github.com/ornicar'
 let g:hlint_args = ''
 
+" commentary
+nmap <leader>c<space> <Plug>CommentaryLine
+
 " CTAGS
 " Rebuild tags
 nmap <leader>ct :!ctags&<cr><cr>

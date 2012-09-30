@@ -1,0 +1,6 @@
+# ~/.tmuxinator/haskant.yml
+
+project_name: haskant
+project_root: ~/haskant
+tabs:
+  - code: cd ~/haskant 

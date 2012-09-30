@@ -28,7 +28,7 @@ printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4
 
 loadtime=$(cat /tmp/lichess_loadtime)
 isinf=$(echo "$loadtime < 0.2" | bc)
-if [ $isinf = 0 ]; then
+if [[ $isinf = 0 ]]; then
   lltc="bg=colour3 fg=colour0"
 else
   lltc="fg=colour11"
@@ -84,15 +84,18 @@ printf " $modifier%s%s#[default]" "$percentS" "$sign"
 
 # TEMPERATURE & FAN
 
-temp_file=/sys/class/hwmon/hwmon0/temp1_input
-(( temperature = $(<$temp_file) / 1000 ))
+for i in 0 1; do
+  TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
+  [[ -f $TEMP_INPUT_FILE ]] && break
+done
+(( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
 if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
 elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
 elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
 else modifier="#[fg=colour4]"
 fi
 printf " %s%s°" "$modifier" "$temperature"
-for i in 0 1 2; do
+for i in 0 1; do
   FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
   [[ -f $FAN_INPUT_FILE ]] && break
 done

@@ -120,3 +120,6 @@
 [submodule "vim/bundle/bufonly"]
 	path = vim/bundle/bufonly
 	url = https://github.com/duff/vim-bufonly
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular

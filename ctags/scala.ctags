@@ -31,3 +31,4 @@
 --exclude=*.js
 --exclude=*.css
 --exclude=*.java
+--exclude=Play21

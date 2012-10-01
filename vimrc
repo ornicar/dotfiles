@@ -338,6 +338,12 @@ let g:hlint_args = ''
 
 " commentary
 nmap <leader>c<space> <Plug>CommentaryLine
+vmap <leader>c<space> <Plug>Commentary
+
+" tabularize
+
+nmap <leader>T :Tabularize<space>
+vmap <leader>T :Tabularize<space>
 
 " CTAGS
 " Rebuild tags

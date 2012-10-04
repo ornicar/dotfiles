@@ -19,6 +19,7 @@ remotepass = xxxxxxxxxxxxxxx
 realdelete = no
 nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder)))))
 folderfilter = lambda foldername: foldername in ['INBOX', 'sent']
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042
 
 [Account ThibaultJirafe]
 localrepository = ThibaultJirafe-Local
@@ -36,3 +37,4 @@ remotepass = xxxxxxxxxxxxxxx
 realdelete = no
 nametrans = lambda folder: re.sub('.*Spam$', 'spam', re.sub('.*Drafts$', 'drafts', re.sub('.*Sent Mail$', 'sent', re.sub('.*Starred$', 'flagged', re.sub('.*Trash$', 'trash', re.sub('.*All Mail$', 'archive', folder))))))
 folderfilter = lambda foldername: foldername in ['INBOX', 'Sent']
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042

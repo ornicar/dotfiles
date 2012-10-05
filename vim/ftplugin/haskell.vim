@@ -42,3 +42,6 @@ setlocal suffixesadd=hs,lhs,hsc
 map <leader>h? :call Haddock()<cr>
 map <leader>h. :call Qualify()<cr>
 map <leader>hi :call Import(1,0)<cr>
+"
+" Enable folding by default
+set foldenable

@@ -30,3 +30,6 @@ setlocal errorformat=
       \%+C\ \ %#%tarning:\ %m,
       \cabal:\ %m,
       \%-G%.%#
+
+" Format with haskell-tidy then save
+nmap <buffer> <leader>i :nohl<cr>my:%!stylish-haskell<cr>'y:w<cr>

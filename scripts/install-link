@@ -61,5 +61,6 @@ link agignore ~/.agignore
 mkdir -p ~/.config/htop
 link htoprc ~/.config/htop/htoprc
 link abcde.conf ~/.abcde.conf
+link stylish-haskell.yaml ~/.stylish-haskell.yaml
 #link sbt/global.sbt ~/.sbt/global.sbt
 #link sbt/build.sbt ~/.sbt/build.sbt

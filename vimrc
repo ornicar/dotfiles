@@ -148,10 +148,13 @@ set encoding=utf-8
 
 " Enable folding by indentation
 set foldmethod=indent
-set fillchars=fold:⋯,diff:⣿
+set fillchars=fold:\ ,diff:⣿
+" open/close fold
+map <space><space> zA
 " go to next fold and open it
-map zz zjzo
+map <leader><space><space> zjzo
 " Disable folding by default
+" zi toggles the folding
 set nofoldenable
 
 " Change statusbar color

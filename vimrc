@@ -304,7 +304,7 @@ vnoremap * :<C-u>call <SID>VSetSearch()<cr>//<cr><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<cr>??<cr><c-o>
 
 " Autoresize quickfix window http://vim.wikia.com/wiki/Automatically_fitting_a_quickfix_window_height
-au FileType qf call AdjustWindowHeight(3, 20)
+au FileType qf call AdjustWindowHeight(1, 20)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
@@ -374,22 +374,23 @@ nmap <silent>ti :!tig status<cr>
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_smart_case = 'infercase'
+let g:neocomplcache_enable_auto_select = 0
+let g:neocomplcache_enable_cursor_hold_i = 1
+let g:neocomplcache_enable_insert_char_pre = 1
+let g:neocomplcache_temporary_dir = '~/.cache/neocon'
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-"autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 

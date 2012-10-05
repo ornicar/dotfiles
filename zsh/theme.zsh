@@ -10,6 +10,6 @@ my_git_prompt_info() {
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(git_prompt_short_sha)$bisect$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
-returncode="%(?.%{$fg[yellow]%} ⚡ .%{$fg[red]%} ⚡ )"
+returncode="%(?.%{$fg[yellow]%} λ .%{$fg[red]%} λ )"
 
 PROMPT='${returncode}%{$fg_bold[cyan]%}%C$(my_git_prompt_info)%{$reset_color%} %'

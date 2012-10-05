@@ -123,6 +123,3 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "vim/bundle/haskellmode"]
-	path = vim/bundle/haskellmode
-	url = https://github.com/lukerandall/haskellmode-vim

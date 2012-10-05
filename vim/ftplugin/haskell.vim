@@ -33,3 +33,8 @@ setlocal errorformat=
 
 " Format with haskell-tidy then save
 nmap <buffer> <leader>i :nohl<cr>my:%!stylish-haskell<cr>'y:w<cr>
+
+" From http://projects.haskell.org/haskellmode-vim
+setlocal include=^import\\s*\\(qualified\\)\\?\\s*
+setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
+setlocal suffixesadd=hs,lhs,hsc

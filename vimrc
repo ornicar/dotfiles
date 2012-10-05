@@ -336,6 +336,11 @@ let g:haskell_tags_generator = 'fast-tags'
 let g:hpaste_author = 'github.com/ornicar'
 let g:hlint_args = ''
 
+" haskellmode
+let g:haddock_browser = 'firefox'
+let g:haddock_docdir="/usr/share/doc/ghc/html/"
+let g:haddock_indexfiledir="/home/thib/.cache/"
+
 " commentary
 nmap <leader>c<space> <Plug>CommentaryLine
 vmap <leader>c<space> <Plug>Commentary

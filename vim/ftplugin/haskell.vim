@@ -1,6 +1,5 @@
 " hoogle
 nmap <buffer> <leader>ho :Hoogle<space>
-nmap <buffer> <leader>hc :HoogleClose<cr>:GhcModTypeClear<cr>
 nmap <buffer> <leader>hh :Hoogle "<C-r>=expand("<cword>")<cr>"<cr>
 
 " ghc-mod
@@ -38,3 +37,8 @@ nmap <buffer> <leader>i :nohl<cr>my:%!stylish-haskell<cr>'y:w<cr>
 setlocal include=^import\\s*\\(qualified\\)\\?\\s*
 setlocal includeexpr=substitute(v:fname,'\\.','/','g').'.'
 setlocal suffixesadd=hs,lhs,hsc
+
+" Mappings for ftplugin/haskell_doc.vim
+map <leader>h? :call Haddock()<cr>
+map <leader>h. :call Qualify()<cr>
+map <leader>hi :call Import(1,0)<cr>

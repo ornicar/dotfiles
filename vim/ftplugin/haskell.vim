@@ -18,7 +18,7 @@ inoremap <buffer> <C-u> <esc>:nohl<cr>:HoogleClose<cr>:GhcModTypeClear<cr>:w<cr>
 " compiler cabal
 setlocal makeprg=cabal\ build
 nmap <silent> <buffer> <leader>mm :make<cr>:cwindow<cr>
-nmap <silent> <buffer> <leader>mc :!cabal configure<cr>,mm
+nmap <silent> <buffer> <leader>mc :!cabal configure --enable-tests<cr>,mm
 setlocal errorformat=
       \%-Z\ %#,
       \%W%f:%s:%c:\ Warning:\ %m,

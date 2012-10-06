@@ -4,7 +4,7 @@ nmap <buffer> <leader>hh :Hoogle "<C-r>=expand("<cword>")<cr>"<cr>
 
 " ghc-mod
 au BufWritePost *.hs GhcModCheckAndLintAsync
-let g:ghcmod_ghc_options = ['-fno-warn-type-defaults', '-fno-warn-missing-signatures']
+let g:ghcmod_ghc_options = ['-fno-warn-type-defaults', '-fno-warn-missing-signatures', '-fno-warn-unused-binds', '-fno-warn-unused-matches']
 nmap <buffer> <leader>ht :GhcModType<cr>
 nmap <buffer> <leader>hp V:PointFree<cr>
 vmap <buffer> <leader>hp :PointFree<cr>

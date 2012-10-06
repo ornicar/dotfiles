@@ -1,7 +1,0 @@
-" Local Vim configuration for haskell projects
-" Install:
-" ln -s ~/.vim/vimrc.haskell .vimrc.local
-
-" CTAGS
-" Rebuild tags using hasktags
-nmap <leader>ct :!hasktags -c ./&<cr><cr>

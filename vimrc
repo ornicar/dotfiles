@@ -255,12 +255,6 @@ nmap <leader>zA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 " yuml
 nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>
 
-" Align
-" Disable default mappings
-let g:loaded_AlignMapsPlugin=1
-
-vnoremap <leader>a :Align<space>
-
 " Start a substitute
 nmap <leader>ss :%s/\v
 

@@ -42,7 +42,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,.rsync_cache/*,*.hi,tags
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,.rsync_cache/*,*.hi,tags,dist/*
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -336,7 +336,7 @@ let g:hlint_args = ''
 " haskellmode
 let g:haddock_browser = 'firefox'
 let g:haddock_docdir="/usr/share/doc/ghc/html/"
-let g:haddock_indexfiledir="/home/thib/.cache/"
+let g:haddock_indexfiledir=$HOME.'/.cache/'
 
 " commentary
 nmap <leader>c<space> <Plug>CommentaryLine
@@ -419,7 +419,15 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_new_file = 3 " open in current window
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-nmap <silent> <leader>mf :CtrlP<cr>
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_map = '<leader>mf'
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files'],
+    \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': ''
+  \ }
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>

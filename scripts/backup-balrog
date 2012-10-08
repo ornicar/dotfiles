@@ -4,4 +4,6 @@ DESTINATION=/media/passport/balrog/
 
 ssh balrog "nice -n 19 rsync --archive --force --delete --progress /home/mongodb /home/backup/"
 
-rsync --archive --force --delete --progress --compress balrog:/home/backup/mongodb $DESTINATION
+for SOURCE in /home/backup/mongodb /etc; do
+  nice -n 19 rsync --archive --force --delete --progress --compress balrog:$SOURCE $DESTINATION
+done

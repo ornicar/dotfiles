@@ -2,6 +2,6 @@
 
 BACKUPDIR=/media/passport/backup-arch/
 
-rsync --archive --force --delete --progress --compress /etc $BACKUPDIR
+nice -n 19 rsync --archive --force --delete --progress --compress /etc $BACKUPDIR
 # rsync --archive --force --delete --progress --compress /usr $BACKUPDIR
 #rsync --archive --force --delete --progress --compress /var $BACKUPDIR

@@ -24,7 +24,6 @@ link scripts ~/.scripts
 link gitconfig ~/.gitconfig
 link mutt ~/.mutt
 link vimrc ~/.vimrc
-link gvimrc ~/.gvimrc
 link vim ~/.vim
 link tigrc ~/.tigrc
 link rtorrent.rc ~/.rtorrent.rc

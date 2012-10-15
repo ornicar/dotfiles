@@ -2,7 +2,7 @@
 
 # adapted from http://flux242.blogspot.fr/2011/06/simple-bash-irc-loggin-bot.html
  
-nick="ornicar-irclogbot$$"
+nick="ornicar-bot$$"
 channel=lichess
 server=irc.freenode.net
 config=/tmp/irclog

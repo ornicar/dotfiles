@@ -46,3 +46,6 @@ Host jtest
 Host jfreebird
   HostName freebird.ec2.jirafe.net
   User ubuntu
+Host jproduct
+  HostName db-product.ec2.jirafe.net
+  User ubuntu

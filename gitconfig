@@ -75,7 +75,7 @@
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 
     # Add modified files to previous commit
-  oups = "!git add -A -v && git commit --amend -C HEAD"
+  oups = !"git add -A -v && git commit --amend -C HEAD"
 
     # nice logs
   l = log --decorate --graph --date=short --pretty=\"format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C()%s %C(black) [%an]%Creset\"

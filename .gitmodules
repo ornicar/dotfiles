@@ -125,3 +125,6 @@
 [submodule "zsh/cabal-completion"]
 	path = zsh/cabal-completion
 	url = https://github.com/supki/zsh-cabal-completion
+[submodule "vim/bundle/ruby-support"]
+	path = vim/bundle/ruby-support
+	url = git://github.com/vim-ruby/vim-ruby.git

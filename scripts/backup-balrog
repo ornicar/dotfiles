@@ -2,8 +2,8 @@
 
 DESTINATION=/media/passport/balrog/
 
-ssh balrog "nice -n 19 rsync --archive --force --delete --progress /home/mongodb /home/backup/"
+ssh balrog "nice -n 19 rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' /home/mongodb /home/backup/"
 
 for SOURCE in /home/backup/mongodb /etc; do
-  nice -n 19 rsync --archive --force --delete --progress --compress balrog:$SOURCE $DESTINATION
+  nice -n 19 rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' --compress balrog:$SOURCE $DESTINATION
 done

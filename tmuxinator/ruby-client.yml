@@ -1,0 +1,11 @@
+# ~/.tmuxinator/ruby-client.yml
+
+project_name: ruby-client
+project_root: ~/jirafe/ruby-client
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/jirafe/ruby-client 
+        - cd ~/jirafe/ruby-client && vim
+  - shell: cd ~/jirafe/ruby-client

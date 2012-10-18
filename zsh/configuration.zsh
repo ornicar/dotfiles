@@ -4,9 +4,7 @@
 
 # Export common variables
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
-export PATH=$PATH:/home/thib/Play21
 
 export BROWSER="firefox"
 export EDITOR='vim'
@@ -14,10 +12,11 @@ export GIT_EDITOR='vim'
 
 # Java/SBT configuration
 export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx2048M -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2048M"
-#export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx512M -Xss2M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -XX:+HeapDumpOnOutOfMemoryError"
-#export SBT_OPTS_CHEAP="-Dfile.encoding=UTF8 -Xms64M -Xmx128M -Xss2M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=64M"
 
-#export _JAVA_AWT_WM_NONREPARENTING=1
+# Ruby gems in the path
+export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
+# Ruby bundler, put gems in the user home
+export GEM_HOME="$HOME/.gem/ruby/1.9.1"
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"

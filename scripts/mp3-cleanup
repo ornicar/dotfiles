@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+# delete all but music files recursively
+
+require 'set'
+
+doDelete = ARGV.include? "--delete"
+verbose = ARGV.include? "-v"
+if doDelete
+  puts "Will delete"
+end
+
+files = Dir['**/*']
+
+musicExts = ['mp3', 'mp4', 'ogg', 'm4a', 'wav', 'wma', 'mpc', 'flac']
+found = Hash[]
+
+files.each do |file|
+  ext = File.extname(file).downcase[1..-1]
+  if not File.directory? file and not musicExts.include? ext
+    puts file if verbose
+    if found.include? ext
+      found[ext] << file
+    else
+      found[ext] = [file]
+    end
+  end
+end
+
+puts "------------------------------------------"
+found.each do |ext, files| 
+  puts "%s -> %d files" % [ext, files.count]
+  if doDelete
+    files.each do |file| 
+      puts "delete %s" % file
+      File.unlink file
+    end
+  end
+end
+
+# puts found

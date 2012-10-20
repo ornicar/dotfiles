@@ -49,3 +49,6 @@ Host jfreebird
 Host jproduct
   HostName db-product.ec2.jirafe.net
   User ubuntu
+Host jfbqa 
+  HostName fb-qa.jirafe.com
+  User ubuntu

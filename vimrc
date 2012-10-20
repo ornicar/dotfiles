@@ -14,7 +14,7 @@ set t_Co=16
 let g:solarized_termcolors=16
 let g:solarized_termtrans=0
 let g:solarized_menu=0
-let g:solarized_italic=0
+let g:solarized_italic=1
 set background=dark
 colorscheme solarized
 

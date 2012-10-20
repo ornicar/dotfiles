@@ -27,7 +27,7 @@ URxvt.transparent: false
 URxvt.shading:     100
 
 URxvt.intensityStyles: true
-URxvt.termName:        rxvt-256color
+URxvt.termName:        rxvt-unicode-256color
 URxvt.urgentOnBell:    true
 
 URxvt*cursorBlink:     true

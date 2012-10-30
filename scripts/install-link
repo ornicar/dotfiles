@@ -44,7 +44,6 @@ link ranger/rc.conf ~/.config/ranger/rc.conf
 link ranger/apps.py ~/.config/ranger/apps.py
 link ncmpcpp.keys ~/.ncmpcpp/keys
 link ttytterrc ~/.ttytterrc
-link apvlvrc ~/.apvlvrc
 link inputrc ~/.inputrc
 link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc

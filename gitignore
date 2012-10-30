@@ -1,6 +1,4 @@
 # system-wide git ignores
 .ctags
 /tags
-*-backup_asd
-.rsync_cache
 .vimrc.local

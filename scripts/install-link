@@ -45,6 +45,7 @@ link ranger/apps.py ~/.config/ranger/apps.py
 link ncmpcpp.keys ~/.ncmpcpp/keys
 link ttytterrc ~/.ttytterrc
 link inputrc ~/.inputrc
+link editrc ~/.editrc
 link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc
 link vimperator-plugins/hipchat.js ./vimperator/plugin/hipchat.js

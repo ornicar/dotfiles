@@ -1,4 +1,5 @@
 # system-wide git ignores
-.ctags
+/.ctags
 /tags
-.vimrc.local
+/TAGS
+/.vimrc.local

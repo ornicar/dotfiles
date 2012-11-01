@@ -11,8 +11,8 @@
   remote = green
 
 [color "diff"]
-  meta = yellow 
-  frag = magenta 
+  meta = yellow bold
+  frag = magenta bold
   old = red 
   new = green 
 
@@ -86,3 +86,7 @@
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 
 [github]
 	user = ornicar
+[rerere]
+  # Remember my merges
+  # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
+  enabled = true

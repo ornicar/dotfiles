@@ -24,10 +24,11 @@ set autoread                      " Automatically read a file that has changed o
 
 set clipboard=unnamedplus         " Alias unnamed register to the + register, which is the X Window clipboard.
 
-set history=2000                  " Sets how many lines of history VIM has to remember
+set history=9000                  " Sets how many lines of history VIM has to remember
 
-set undolevels=1000               " use many levels of undo
-set noundofile                    " Don't keep a persistent undofile
+set undolevels=2000               " use many levels of undo
+set undodir=~/.cache/vim/undo      " persistent undo
+set undofile
 
 set nospell                       " Disable spell checking
 

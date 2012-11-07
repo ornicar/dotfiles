@@ -27,7 +27,6 @@
 --exclude=project
 --exclude=public
 --exclude=assets
---exclude=.rsync_cache
 --exclude=*.js
 --exclude=*.css
 --exclude=*.java

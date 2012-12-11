@@ -40,7 +40,7 @@ git-create-write() {
 git-set-upstream() {
     [ -z $1 ] && 1=origin
     branch=$(git-current-branch)
-    git branch --set-upstream $branch $1/$branch
+    git branch --set-upstream-to $branch $1/$branch
 }
 
 # Forward git commands to hub

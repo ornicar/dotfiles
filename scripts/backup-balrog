@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-DESTINATION=/media/passport/balrog/
+DESTINATION=/home/thib/balrog/
 
 ssh balrog "nice -n 19 rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' /home/mongodb /home/backup/"
 

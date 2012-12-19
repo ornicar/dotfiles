@@ -7,6 +7,9 @@ Host iliaz
 Host balrog
   HostName 37.59.32.99
   User root
+Host hollie
+  HostName 91.121.106.120
+  User root
 Host phobos
   HostName 188.165.218.189
   User root

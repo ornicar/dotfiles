@@ -93,7 +93,7 @@
 	url = https://github.com/mattn/webapi-vim
 [submodule "zsh/history-substring-search"]
 	path = zsh/history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
+	url = https://github.com/ornicar/zsh-history-substring-search
 [submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc

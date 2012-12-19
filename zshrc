@@ -13,7 +13,7 @@ OHMYZSH=$DOTFILES/oh-my-zsh
 for config_file ($OHMYZSH/lib/*.zsh) source $config_file
 
 # Load chosen oh-my-zsh plugins
-for plugin in archlinux extract; do
+for plugin in archlinux; do
     source $OHMYZSH/plugins/$plugin/$plugin.plugin.zsh
 done
 

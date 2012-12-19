@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ~
+hg clone https://vim.googlecode.com/hg/ vim
+
+~/.scripts/vim/upgrade

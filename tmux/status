@@ -45,8 +45,7 @@ show_mail() {
   fi
   printf " #[%s]✉%s(%d)#[default]" $style $1 $nb
 }
-show_mail "perso" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
-show_mail "jirafe" "$HOME/.mail/thibault.jirafe.com/INBOX"
+show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 
 # WIFI
 interface="wlan0"

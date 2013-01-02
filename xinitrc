@@ -11,7 +11,7 @@ xmodmap $HOME/.Xmodmap &&
 xrdb $HOME/.Xresources                       # load Xresources
 
 xsetroot -solid black                       # black background
-xset s 300 300                              # set monitor to sleep
+xset s 100 100                              # set monitor to sleep
 #xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 xset r rate 220 56                          # Repeat keys way faster please

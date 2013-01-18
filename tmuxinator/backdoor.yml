@@ -1,0 +1,7 @@
+# ~/.tmuxinator/backdoor.yml
+
+project_name: backdoor
+project_root: ~/backdoor
+tabs:
+  - vim: cd ~/backdoor && vim
+  - shell: cd ~/backdoor

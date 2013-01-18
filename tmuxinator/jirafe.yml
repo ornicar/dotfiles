@@ -1,6 +1,0 @@
-# ~/.tmuxinator/jirafe.yml
-
-project_name: jirafe
-project_root: ~/jirafe
-tabs:
-  - code: cd ~/jirafe 

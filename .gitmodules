@@ -129,3 +129,6 @@
 [submodule "vim/bundle/ruby-support"]
 	path = vim/bundle/ruby-support
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "mongo-hacker"]
+	path = mongo-hacker
+	url = git@github.com:TylerBrock/mongo-hacker.git

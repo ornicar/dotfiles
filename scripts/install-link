@@ -63,5 +63,6 @@ link abcde.conf ~/.abcde.conf
 link stylish-haskell.yaml ~/.stylish-haskell.yaml
 mkdir -p ~/.cabal
 link cabal ~/.cabal/config
+link mongo-hacker/mongo_hacker.js ~/.mongorc.js
 #link sbt/global.sbt ~/.sbt/global.sbt
 #link sbt/build.sbt ~/.sbt/build.sbt

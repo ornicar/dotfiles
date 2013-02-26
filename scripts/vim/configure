@@ -6,6 +6,7 @@
 --enable-rubyinterp \
 --enable-multibyte \
 --enable-cscope \
+--enable-pythoninterp \
 --disable-netbeans \
 --disable-darwin \
 --disable-selinux \

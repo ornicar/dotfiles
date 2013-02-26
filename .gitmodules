@@ -110,9 +110,6 @@
 	path = vim/bundle/hoogle
 	url = https://github.com/Twinside/vim-hoogle
   ignore = untracked
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache
 [submodule "vim/bundle/bufonly"]
 	path = vim/bundle/bufonly
 	url = https://github.com/duff/vim-bufonly
@@ -132,3 +129,6 @@
 [submodule "mongo-hacker"]
 	path = mongo-hacker
 	url = git@github.com:TylerBrock/mongo-hacker.git
+[submodule "vim/bundle/ycm"]
+	path = vim/bundle/ycm
+	url = https://github.com/Valloric/YouCompleteMe

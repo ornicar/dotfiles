@@ -116,8 +116,8 @@ printf " %sm%s#[default]" "$modifier" "$memory"
 
 # CPU FREQ
 
-min=12
-max=29
+min=8
+max=22
 chart=""
 for i in 0 1 2 3; do
   freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq)

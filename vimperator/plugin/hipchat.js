@@ -1,1 +1,1 @@
-../../vimperator-plugins/hipchat.js
+/home/thib/dotfiles/scripts/../vimperator-plugins/hipchat.js

@@ -10,6 +10,9 @@ Host balrog
 Host hollie
   HostName 91.121.106.120
   User root
+Host holliegit
+  HostName 91.121.106.120
+  User gi
 Host cook
   HostName 5.39.94.86
   User root

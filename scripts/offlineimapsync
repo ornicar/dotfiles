@@ -15,6 +15,6 @@ function sync_quick {
 # This is silly.
 #python -c'import sys, random; sys.exit(random.randint(0, 60))' && sync_normal || sync_quick
 
-sync_quick
+# sync_quick
 
 exit 0

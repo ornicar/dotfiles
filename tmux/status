@@ -13,39 +13,39 @@
 
 # WEECHAT
 
-if [ -f /tmp/weechat_hotlist ]; then
-  hotlist=$(</tmp/weechat_hotlist)
-  if [ ! -z $hotlist ]; then
-    printf "%s " "$hotlist"
-  fi
-fi
+# if [ -f /tmp/weechat_hotlist ]; then
+#   hotlist=$(</tmp/weechat_hotlist)
+#   if [ ! -z $hotlist ]; then
+#     printf "%s " "$hotlist"
+#   fi
+# fi
 
 # LICHESS
 
-raw_data=$(cat /tmp/lichess_status)
-data=(${(s: :)raw_data})
-printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4] $data[5] $data[6] $loadtime
+# raw_data=$(cat /tmp/lichess_status)
+# data=(${(s: :)raw_data})
+# printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4] $data[5] $data[6] $loadtime
 
-loadtime=$(cat /tmp/lichess_loadtime)
-isinf=$(echo "$loadtime < 0.2" | bc)
-if [[ $isinf = 0 ]]; then
-  lltc="bg=colour3 fg=colour0"
-else
-  lltc="fg=colour11"
-fi
-printf " ##[%s]%s#[fg=colour10,bg=default,dim])#[default]" $lltc $loadtime
+# loadtime=$(cat /tmp/lichess_loadtime)
+# isinf=$(echo "$loadtime < 0.2" | bc)
+# if [[ $isinf = 0 ]]; then
+#   lltc="bg=colour3 fg=colour0"
+# else
+#   lltc="fg=colour11"
+# fi
+# printf " ##[%s]%s#[fg=colour10,bg=default,dim])#[default]" $lltc $loadtime
 
 # MAIL
 
 # args: name, box_dir
-show_mail() {
-  nb=$(ls $2/new | wc -l)
-  if [ 0 -eq $nb ]; then style="fg=colour10,dim"
-  else style="fg=colour7"
-  fi
-  printf " #[%s]✉%s(%d)#[default]" $style $1 $nb
-}
-show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
+# show_mail() {
+#   nb=$(ls $2/new | wc -l)
+#   if [ 0 -eq $nb ]; then style="fg=colour10,dim"
+#   else style="fg=colour7"
+#   fi
+#   printf " #[%s]✉%s(%d)#[default]" $style $1 $nb
+# }
+# show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 
 # WIFI
 interface="wlan0"
@@ -83,26 +83,26 @@ printf " $modifier%s%s#[default]" "$percentS" "$sign"
 
 # TEMPERATURE & FAN
 
-for i in 0 1; do
-  TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
-  [[ -f $TEMP_INPUT_FILE ]] && break
-done
-(( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
-if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
-elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
-else modifier="#[fg=colour4]"
-fi
-printf " %s%s°" "$modifier" "$temperature"
-for i in 0 1; do
-  FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
-  [[ -f $FAN_INPUT_FILE ]] && break
-done
-fan=$(<$FAN_INPUT_FILE)
-max=3000
-(( percent = (fan * 100) / $max ))
-if (( $percent < 10 )); then spark=""; else spark=$(percent-spark $percent); fi
-printf "%s#[default]" "$spark"
+# for i in 0 1; do
+#   TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
+#   [[ -f $TEMP_INPUT_FILE ]] && break
+# done
+# (( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
+# if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+# elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
+# elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
+# else modifier="#[fg=colour4]"
+# fi
+# printf " %s%s°" "$modifier" "$temperature"
+# for i in 0 1; do
+#   FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
+#   [[ -f $FAN_INPUT_FILE ]] && break
+# done
+# fan=$(<$FAN_INPUT_FILE)
+# max=3000
+# (( percent = (fan * 100) / $max ))
+# if (( $percent < 10 )); then spark=""; else spark=$(percent-spark $percent); fi
+# printf "%s#[default]" "$spark"
 
 # MEMORY
 

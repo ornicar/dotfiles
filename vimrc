@@ -69,7 +69,8 @@ set nowritebackup                 " And again.
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                   " Show the status line all the time
-set statusline=%{substitute(getcwd(),'^.*/','','')}\ [%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
+" set statusline=%{substitute(getcwd(),'^.*/','','')}\ [%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=%{substitute(getcwd(),'^.*/','','')}\ %<%.99f\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P
 
 " Tabs and indentation.
 set expandtab

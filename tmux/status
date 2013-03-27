@@ -58,28 +58,30 @@ fi
 # BATTERY
 
 infos=$(acpi -b)
-percent=$(echo $infos|sed "s/Battery .: [a-z]*, \([0-9]*\)%\(,.*\|$\)/\1/i")
-state=$(echo $infos|sed "s/Battery .: \([a-z]*\),.*/\1/i")
-if [ "$percent" -lt 5 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-elif [ "$percent" -lt 20 ]; then modifier="#[bg=colour3,fg=colour8,bright]"
-elif [ "$percent" -lt 50 ]; then modifier="#[fg=colour3]"
-else modifier="#[fg=colour2]"
-fi
-percentS="$percent%"
-case $state in
-  "Discharging") sign="|-|" ;;
-"Full") sign="⚡"; percentS= ;;
-*)
-  if [ "$percent" -gt 94 ]; then
-    sign="⚡"
-    percentS=
-  else
-    sign="|+|"
-    modifier="#[fg=green]"
-  fi
-  ;;
-esac
-printf " $modifier%s%s#[default]" "$percentS" "$sign"
+# percent=$(echo $infos|sed "s/Battery .: [a-z]*, \([0-9]*\)%\(,.*\|$\)/\1/i")
+# state=$(echo $infos|sed "s/Battery .: \([a-z]*\),.*/\1/i")
+# if [ "$percent" -lt 5 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+# elif [ "$percent" -lt 20 ]; then modifier="#[bg=colour3,fg=colour8,bright]"
+# elif [ "$percent" -lt 50 ]; then modifier="#[fg=colour3]"
+# else modifier="#[fg=colour2]"
+# fi
+# percentS="$percent%"
+# case $state in
+#   "Discharging") sign="|-|" ;;
+# "Full") sign="⚡"; percentS= ;;
+# *)
+#   if [ "$percent" -gt 94 ]; then
+#     sign="⚡"
+#     percentS=
+#   else
+#     sign="|+|"
+#     modifier="#[fg=green]"
+#   fi
+#   ;;
+# esac
+# printf " $modifier%s%s#[default]" "$percentS" "$sign"
+raw=$(echo $infos|sed "s/Battery .: \(.*\)/\1/i")
+printf " %s(%s)#[default]" "#[fg=colour10]" "$raw"
 
 # TEMPERATURE & FAN
 

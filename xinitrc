@@ -11,15 +11,15 @@ xmodmap $HOME/.Xmodmap &&
 xrdb $HOME/.Xresources                       # load Xresources
 
 xsetroot -solid black                       # black background
-xset s 100 100                              # set monitor to sleep
+xset s 200 200                              # set monitor to sleep
 #xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 xset r rate 220 56                          # Repeat keys way faster please
 unclutter -root -idle 2 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
-$HOME/.scripts/collector_daemon &           # start cpu and lichess data collector
+# $HOME/.scripts/collector_daemon &           # start lichess data collector
 
-urxvtc -e $HOME/.tmux/menu &
+# urxvtc -e $HOME/.tmux/menu &
 
 # Run window manager
 exec xmonad

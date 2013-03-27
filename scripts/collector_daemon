@@ -14,7 +14,7 @@ fetch_lichess_status()
 fetch_lichess_loadtime()
 {
     DATAFILE="/tmp/lichess_loadtime"
-    echo $(ssh -o ConnectTimeout=$INTERNET_TIMEOUT phobos "/usr/bin/time -p wget -p --no-cache --delete-after http://en.lichess.org -q 2>&1 | awk '/^real / { print \$2 }'") > $DATAFILE
+    echo $(ssh -o ConnectTimeout=$INTERNET_TIMEOUT hollie "/usr/bin/time -p wget -p --no-cache --delete-after http://en.lichess.org -q 2>&1 | awk '/^real / { print \$2 }'") > $DATAFILE
 }
 
 

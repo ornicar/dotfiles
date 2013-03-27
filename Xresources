@@ -2,8 +2,8 @@
 Xcursor.theme: CG
 
 ! Colors
-!#include "/home/thib/.xcolors/solarized.light.xcolors"
-#include "/home/thib/.xcolors/solarized.xcolors"
+#include "/home/thib/.xcolors/solarized.light.xcolors"
+!#include "/home/thib/.xcolors/solarized.xcolors"
 
 ! Fonts 
 ! Xft.antialias: true
@@ -11,8 +11,8 @@ Xcursor.theme: CG
 ! Xft.rgba:      rgb
 ! Xft.hintstyle: hintfull
 
-URxvt.font:       xft:inconsolata:size=16
-URxvt.boldFont:   xft:inconsolata:size=16
+URxvt.font:       xft:inconsolata:size=12
+URxvt.boldFont:   xft:inconsolata:size=12
 
 URxvt.scrollBar:  false
 URxvt.jumpScroll: true

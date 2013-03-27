@@ -17,9 +17,11 @@ xset -b                                     # Disable system bell
 xset r rate 220 56                          # Repeat keys way faster please
 unclutter -root -idle 2 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
+
+# not used anymore
 # $HOME/.scripts/collector_daemon &           # start lichess data collector
 
-# urxvtc -e $HOME/.tmux/menu &
+urxvtc -e $HOME/.tmux/menu &
 
 # Run window manager
 exec xmonad

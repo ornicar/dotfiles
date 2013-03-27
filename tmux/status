@@ -48,7 +48,7 @@
 # show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 
 # WIFI
-interface="wlan0"
+interface="wlp3s0"
 quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
 if [[ $quality -gt 0 ]]; then
   (( percent = (quality * 100) / 70 ))
@@ -83,22 +83,24 @@ infos=$(acpi -b)
 raw=$(echo $infos|sed "s/Battery .: \(.*\)/\1/i")
 printf " %s(%s)#[default]" "#[fg=colour10]" "$raw"
 
-# TEMPERATURE & FAN
+TEMPERATURE & FAN
 
+for i in 0 1; do
+  # TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
+  TEMP_INPUT_FILE=/sys/devices/platform/coretemp.0/temp1_input
+  [[ -f $TEMP_INPUT_FILE ]] && break
+done
+(( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
+if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
+elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
+else modifier="#[fg=colour4]"
+fi
+printf " %s%s°#[default]" "$modifier" "$temperature"
 # for i in 0 1; do
-#   TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
-#   [[ -f $TEMP_INPUT_FILE ]] && break
-# done
-# (( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
-# if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-# elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
-# elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
-# else modifier="#[fg=colour4]"
-# fi
-# printf " %s%s°" "$modifier" "$temperature"
-# for i in 0 1; do
-#   FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
-#   [[ -f $FAN_INPUT_FILE ]] && break
+  # FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
+  # FAN_INPUT_FILE=/sys/devices/platform/thinkpad_hwmon/fan1_input
+  # [[ -f $FAN_INPUT_FILE ]] && break
 # done
 # fan=$(<$FAN_INPUT_FILE)
 # max=3000
@@ -144,5 +146,5 @@ printf " %s%.01f#[default]" "$modifier" "$load"
 
 # FRENCH DATE
 
-#export TZ="Europe/Paris"
+# export TZ="America/Fortaleza"
 printf " #[fg=colour12]⎛$(date +"%a %b %d") $(date +"%H:%M")#[default]"

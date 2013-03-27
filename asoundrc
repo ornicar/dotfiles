@@ -1,19 +1,19 @@
-pcm.plugequal{
-  type equal
-    slave.pcm "plug:dmix"
-}
-
-ctl.equal{
-  type equal
-}
-         
-#I couldn't get this working, but I just assume it's essential
-pcm.equal{
-  type plug
-  slave.pcm "plug:dmix"
-}
-             
-pcm.!default {
-  type plug                                                                                      
-  slave.pcm "plugequal"                                                                          
-}
+# pcm.plugequal{
+#   type equal
+#     slave.pcm "plug:dmix"
+# }
+# 
+# ctl.equal{
+#   type equal
+# }
+#          
+# #I couldn't get this working, but I just assume it's essential
+# pcm.equal{
+#   type plug
+#   slave.pcm "plug:dmix"
+# }
+#              
+# pcm.!default {
+#   type plug                                                                                      
+#   slave.pcm "plugequal"                                                                          
+# }

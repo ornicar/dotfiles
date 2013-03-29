@@ -97,9 +97,6 @@
 [submodule "vim/bundle/vimproc"]
 	path = vim/bundle/vimproc
 	url = https://github.com/Shougo/vimproc
-[submodule "vim/bundle/neco-ghc"]
-	path = vim/bundle/neco-ghc
-	url = https://github.com/ujihisa/neco-ghc
 [submodule "vim/bundle/ghcmod"]
 	path = vim/bundle/ghcmod
 	url = https://github.com/eagletmt/ghcmod-vim

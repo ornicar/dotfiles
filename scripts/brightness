@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo $1 | sudo tee -a /sys/class/backlight/acpi_video0/brightness

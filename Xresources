@@ -2,8 +2,8 @@
 Xcursor.theme: CG
 
 ! Colors
-#include "/home/thib/.xcolors/solarized.light.xcolors"
-!#include "/home/thib/.xcolors/solarized.xcolors"
+!#include "/home/thib/.xcolors/solarized.light.xcolors"
+#include "/home/thib/.xcolors/solarized.xcolors"
 
 ! Fonts 
 ! Xft.antialias: true

@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+. /etc/profile.d/prll.sh
+
+size=1000x1000
+quality=93
+
+dir=webified
+mkdir -p $dir
+
+convertToWeb() {
+
+  orig=$1
+  extension=$orig:e:l
+  dest=$dir/$orig:l
+
+  if [[ -f $orig && ! -f $dest && $extension = "jpg" ]]; then
+
+    echo "Convert $orig to $dest, $size - $quality%"
+    convert $orig -resize $size -quality $quality $dest
+
+  fi
+}
+
+prll convertToWeb $@

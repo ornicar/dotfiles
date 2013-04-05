@@ -1,1 +1,0 @@
-../../vimperator-plugins/noscript_colemak.js

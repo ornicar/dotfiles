@@ -208,12 +208,6 @@ vmap <space> "
 nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nmap <silent> gW :s/\(\%#[^\s]\+\)\(\_W\+\)\([^\s]\+\)/\3\2\1/<CR>`'
 
-" My information
-iab xdate =strftime("%d/%m/%Y %H:%M:%S")
-iab xname Thibault Duplessis
-iab xsigp Thibault Duplessis
-iab xsigw Thibault Duplessis
-
 " Diff only config
 if &diff
   nmap <leader>do :diffget<space>
@@ -415,6 +409,13 @@ let g:ctrlp_user_command = {
 nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
 nmap <silent> <leader>mb :CtrlPBuffer<cr>
 nmap <silent> <leader>t :CtrlPTag<cr>
+
+" parameter text objects
+let g:no_parameter_object_maps = 1
+vmap     <silent> i, <Plug>ParameterObjectI
+omap     <silent> i, <Plug>ParameterObjectI
+vmap     <silent> a, <Plug>ParameterObjectA
+omap     <silent> a, <Plug>ParameterObjectA
 
 " Redraw
 nmap <leader>rr :redraw!<cr>

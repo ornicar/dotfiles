@@ -123,3 +123,6 @@
 [submodule "vim/bundle/ycm"]
 	path = vim/bundle/ycm
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/bundle/parameter-text-objects"]
+	path = vim/bundle/parameter-text-objects
+	url = https://github.com/vim-scripts/Parameter-Text-Objects

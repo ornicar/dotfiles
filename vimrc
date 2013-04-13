@@ -53,6 +53,7 @@ set smartcase                     " But case-sensitive if expression contains a 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 set showmatch                     " Show matching char (like {})
+set wrapscan                      " Circle search
 
 set nowrap                        " Turn off line wrapping.
 set scrolloff=7                   " Show 7 lines of context around the cursor.
@@ -82,17 +83,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Not sure what this does
-set ttyfast
-
-" Syntax coloring lines that are too long just slows down the world
-set synmaxcol=1024
-
-" Display invisible chars
-set listchars=tab:▸\ ,trail:□,eol:¬
-" Not by default
-set nolist
-
 " But make it easy to switch it to 2 or 4 spaces
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
@@ -114,6 +104,17 @@ function! TabToggle()
 endfunction
 nmap <leader><tab> mz:execute TabToggle()<cr>'z
 
+" Not sure what this does
+set ttyfast
+
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=1024
+
+" Display invisible chars
+set listchars=tab:▸\ ,trail:□,eol:¬
+" Not by default
+set nolist
+
 " Use perl regex style
 nnoremap / /\v
 vnoremap / /\v
@@ -127,7 +128,6 @@ nmap ! :!
 set gdefault
 
 " Highlight the current line and column
-" Don't do this - It makes window redraws painfully slow
 set nocursorline
 set nocursorcolumn
 
@@ -168,9 +168,6 @@ set nofoldenable
 " Easier to type, and I never use the default behavior.
 noremap H ^
 noremap L $
-
-" Toggle line numbering
-nnoremap <silent> <leader>nn :set nonumber!<cr>
 
 " Toggle nowrap
 nnoremap <silent> <leader>nw :set nowrap!<cr>
@@ -238,7 +235,7 @@ nmap <leader>zs :%s#<C-r>=expand("<cword>")<cr>#
 
 " Global quick search-replace
 nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
-  \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
+      \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
 
 " Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'

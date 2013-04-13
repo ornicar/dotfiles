@@ -4,5 +4,4 @@ project_name: network
 project_root: ~/
 tabs:
   - im: cd ~/ && weechat-curses
-  - mail: cd ~/ && mutt
   - shell: cd ~/ 

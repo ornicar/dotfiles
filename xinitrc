@@ -23,5 +23,7 @@ urxvtd -q -f -o                             # start urxvt server
 
 urxvtc -e $HOME/.tmux/menu &
 
+pulseaudio --start
+
 # Run window manager
 exec xmonad

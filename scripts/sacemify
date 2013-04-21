@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+. /etc/profile.d/prll.sh
+
+dest=cook:/home/sacem
+
+sendToSacem() {
+
+  orig=$1
+
+  echo "Send $orig to $dest"
+  scp $orig $dest
+}
+
+prll sendToSacem $@

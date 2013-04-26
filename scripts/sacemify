@@ -3,12 +3,13 @@
 . /etc/profile.d/prll.sh
 
 dest=cook:/home/sacem
+base_url=http://sacem.iliaz.com
 
 sendToSacem() {
 
   orig=$1
 
-  echo "Send $orig to $dest"
+  echo "Send $orig to $dest -- $base_url/$1"
   scp $orig $dest
 }
 

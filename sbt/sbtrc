@@ -2,6 +2,7 @@ alias c=compile
 alias cc=~compile
 alias r=run
 alias l=reload
+alias lc=;reload;compile
 alias p=project
 alias t=test
 alias tt=~test

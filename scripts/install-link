@@ -66,4 +66,6 @@ link cabal ~/.cabal/config
 link mongo-hacker/mongo_hacker.js ~/.mongorc.js
 link sbt/global.sbt ~/.sbt/global.sbt
 link sbt/sbtrc ~/.sbtrc
+mkdir -p ~/.mplayer
+link mplayer.conf ~/.mplayer/config
 #link sbt/build.sbt ~/.sbt/build.sbt

@@ -69,14 +69,8 @@ set hintmatching="wordstartswith"
 "set defsearch="duckduckgo"
 set defsearch="google"
 
-" hipchat
-" ======================================
-noremap <leader>a :hipchatjumptoalert<CR><esc>
-noremap <leader>t :hipchatjumptonext<CR><esc>
-noremap <leader>s :hipchatjumptoprevious<CR><esc>
-
 " noscript 
-noremap <leader>n :noscript popup<cr>
+" noremap <leader>n :noscript popup<cr>
 
 " commands
-noremap <leader>S :source ~/.vimperatorrc<cr>
+" noremap <leader>S :source ~/.vimperatorrc<cr>

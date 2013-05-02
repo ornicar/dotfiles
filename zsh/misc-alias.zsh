@@ -22,14 +22,8 @@ alias v="vim"
 # Ranger
 alias r="ranger"
 
-# AlsaMixer
-alias a="alsamixer"
-
 # Extract anything
 alias x="dtrx"
-
-# PHPUnit
-alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 
 # Resource this file
 alias reload=". ~/.zshrc"

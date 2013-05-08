@@ -10,6 +10,7 @@ sendToSacem() {
   orig=$1
 
   echo "Send $orig to $dest -- $base_url/$1"
+
   scp $orig $dest
 }
 

@@ -2,4 +2,5 @@
 
 DESTINATION=/home/thib/backup/lila-prod/
 
-nice -n 19 rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' --compress cook:/home/backup/hollie/mongodb $DESTINATION
+ssh cook "~/.scripts/backup-hollie"
+rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' --compress cook:/home/backup/hollie/mongodb $DESTINATION

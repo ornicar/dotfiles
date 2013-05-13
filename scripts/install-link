@@ -68,4 +68,5 @@ link sbt/global.sbt ~/.sbt/global.sbt
 link sbt/sbtrc ~/.sbtrc
 mkdir -p ~/.mplayer
 link mplayer.conf ~/.mplayer/config
+link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt

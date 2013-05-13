@@ -1,0 +1,21 @@
+; .editorconfig
+; for jsbeautify
+
+root = true
+
+[**.js]
+indent_style = space
+indent_size = 2
+bin=node
+
+[**.css]
+indent_style = space
+indent_size = 2
+bin=node
+
+[**.html]
+indent_style = space
+indent_size = 2
+max_char = 78
+brace_style = expand
+bin=node

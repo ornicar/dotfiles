@@ -19,7 +19,7 @@ unclutter -root -idle 2 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
 
 # not used anymore
-# $HOME/.scripts/collector_daemon &           # start lichess data collector
+$HOME/.scripts/collector_daemon &           # start data collector
 
 urxvtc -e $HOME/.tmux/menu &
 

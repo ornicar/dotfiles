@@ -55,6 +55,14 @@ if [[ $quality -gt 0 ]]; then
   printf " #[fg=colour3]w%s#[default]" "$percent"
 fi
 
+# BOX
+
+internet=$(cat /tmp/box_status)
+
+if [[ $internet != 1 ]]; then
+  printf "#[fg=colour9] DOWN#[default]"
+fi
+
 # BATTERY
 
 infos=$(acpi -b)

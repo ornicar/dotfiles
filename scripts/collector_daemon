@@ -6,6 +6,11 @@ LICHESS_INTERVAL=3
 LICHESS_LOADTIME_INTERVAL=3
 LICHESS_URL="http://en.lichess.org/monitor/status"
 
+fetch_box_status()
+{
+    DATAFILE="/tmp/box_status"
+    ping -c 1 google.com | grep ".net" | wc -l > $DATAFILE
+}
 fetch_lichess_status()
 {
     DATAFILE="/tmp/lichess_status"
@@ -23,12 +28,16 @@ while true; do
     sleep $INTERVAL
 
     seconds=$(date +%S)
+    
+    if [ $((seconds % 3)) -eq 0 ]; then
+        (fetch_box_status) &
+    fi
 
-    if [ $((seconds % $LICHESS_INTERVAL)) -eq 0 ]; then
-        (fetch_lichess_status) &
-    fi
-    if [ $((seconds % $LICHESS_LOADTIME_INTERVAL)) -eq 0 ]; then
-        (fetch_lichess_loadtime) &
-    fi
+    # if [ $((seconds % $LICHESS_INTERVAL)) -eq 0 ]; then
+    #     (fetch_lichess_status) &
+    # fi
+    # if [ $((seconds % $LICHESS_LOADTIME_INTERVAL)) -eq 0 ]; then
+    #     (fetch_lichess_loadtime) &
+    # fi
 
 done

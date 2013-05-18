@@ -260,7 +260,7 @@ nmap <leader>i <Esc>:nohl<cr>mygg=G,I'y:w<cr>
 " for js
 autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <leader>i :call HtmlBeautify()<cr>
+" autocmd FileType html noremap <buffer> <leader>i :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>i :call CSSBeautify()<cr>
 

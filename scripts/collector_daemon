@@ -29,9 +29,9 @@ while true; do
 
     seconds=$(date +%S)
     
-    if [ $((seconds % 3)) -eq 0 ]; then
-        (fetch_box_status) &
-    fi
+    # if [ $((seconds % 3)) -eq 0 ]; then
+    #     (fetch_box_status) &
+    # fi
 
     # if [ $((seconds % $LICHESS_INTERVAL)) -eq 0 ]; then
     #     (fetch_lichess_status) &

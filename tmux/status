@@ -57,11 +57,11 @@ fi
 
 # BOX
 
-internet=$(cat /tmp/box_status)
+# internet=$(cat /tmp/box_status)
 
-if [[ $internet != 1 ]]; then
-  printf "#[fg=colour9] DOWN#[default]"
-fi
+# if [[ $internet != 1 ]]; then
+#   printf "#[fg=colour9] DOWN#[default]"
+# fi
 
 # BATTERY
 
@@ -91,7 +91,7 @@ infos=$(acpi -b)
 raw=$(echo $infos|sed "s/Battery .: \(.*\)/\1/i")
 printf " %s(%s)#[default]" "#[fg=colour10]" "$raw"
 
-TEMPERATURE & FAN
+# TEMPERATURE & FAN
 
 for i in 0 1; do
   # TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
@@ -132,7 +132,7 @@ min=8
 max=22
 chart=""
 for i in 0 1 2 3; do
-  freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/scaling_cur_freq)
+  freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
   (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
   spark=$(percent-spark $P)
   chart="$chart$spark"

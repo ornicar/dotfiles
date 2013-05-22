@@ -48,7 +48,6 @@ link inputrc ~/.inputrc
 link editrc ~/.editrc
 link vimperator ~/.vimperator
 link vimperatorrc ~/.vimperatorrc
-link vimperator-plugins/hipchat.js ./vimperator/plugin/hipchat.js
 link ghci ~/.ghci
 link xmonad ~/.xmonad
 link asoundrc ~/.asoundrc

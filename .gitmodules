@@ -117,18 +117,24 @@
 [submodule "vim/bundle/ruby-support"]
 	path = vim/bundle/ruby-support
 	url = git://github.com/vim-ruby/vim-ruby.git
+  ignore = untracked
 [submodule "mongo-hacker"]
 	path = mongo-hacker
 	url = git@github.com:TylerBrock/mongo-hacker.git
+  ignore = untracked
 [submodule "vim/bundle/ycm"]
 	path = vim/bundle/ycm
 	url = https://github.com/Valloric/YouCompleteMe
+  ignore = untracked
 [submodule "vim/bundle/parameter-text-objects"]
 	path = vim/bundle/parameter-text-objects
 	url = https://github.com/vim-scripts/Parameter-Text-Objects
+  ignore = untracked
 [submodule "vim/bundle/coffee-script"]
 	path = vim/bundle/coffee-script
 	url = https://github.com/kchmck/vim-coffee-script
+  ignore = untracked
 [submodule "vim/bundle/jsbeautify"]
 	path = vim/bundle/jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
+  ignore = untracked

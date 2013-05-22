@@ -128,16 +128,16 @@ printf " %sm%s#[default]" "$modifier" "$memory"
 
 # CPU FREQ
 
-min=8
-max=22
-chart=""
-for i in 0 1 2 3; do
-  freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
-  (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
-  spark=$(percent-spark $P)
-  chart="$chart$spark"
-done
-printf " #[fg=colour10]$chart";
+# min=8
+# max=22
+# chart=""
+# for i in 0 1 2 3; do
+#   freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
+#   (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
+#   spark=$(percent-spark $P)
+#   chart="$chart$spark"
+# done
+# printf " #[fg=colour10]$chart";
 
 # LOAD AVERAGE
 

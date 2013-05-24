@@ -498,7 +498,3 @@ endif
 if filereadable('.vimrc.local')
   source .vimrc.local
 endif
-
-" Translate the content of selection
-" Classy.
-vmap <leader>ee :s/\n/ /e<cr>:s/\./;/e<cr><esc>0vLhy"=system('google-translate fr en ' . shellescape("<C-R>""))<cr>p:s/​//e<cr>:s/;/./e<cr>:nohl<cr>o<esc>

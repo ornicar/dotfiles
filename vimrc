@@ -221,6 +221,10 @@ set diffopt+=iwhite
 " Fast open vertical help
 nmap <leader>H <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
+" Search next occurence
+nmap <tab> j
+nmap <S-tab> J
+
 " Clear search highlight
 nmap <silent> <leader>/ :nohl<cr>
 

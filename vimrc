@@ -261,11 +261,11 @@ nmap <leader>I :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$",""
 " Indent whole file, remove trailing whitespaces then save
 nmap <leader>i <Esc>:nohl<cr>mygg=G,I'y:w<cr>
 
-" for js
+" indent js
 autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
-" for html
+" indent html
 " autocmd FileType html noremap <buffer> <leader>i :call HtmlBeautify()<cr>
-" for css or scss
+" indent css or scss
 autocmd FileType css noremap <buffer> <leader>i :call CSSBeautify()<cr>
 
 " Expand current filed dir in console mode

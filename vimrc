@@ -346,6 +346,9 @@ let g:haddock_indexfiledir=$HOME.'/.cache/'
 nmap <leader>c<space> <Plug>CommentaryLine
 vmap <leader>c<space> <Plug>Commentary
 
+" ycm
+let g:ycm_min_num_of_chars_for_completion = 2
+
 " tabularize
 
 nmap <leader>T :Tabularize<space>

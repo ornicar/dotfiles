@@ -16,6 +16,9 @@ Host holliegit
 Host cook
   HostName 5.39.94.86
   User root
+Host paul
+  HostName 91.121.7.111
+  User root
 Host phobos
   HostName 188.165.218.189
   User root

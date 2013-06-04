@@ -120,7 +120,7 @@
   ignore = untracked
 [submodule "mongo-hacker"]
 	path = mongo-hacker
-	url = git@github.com:TylerBrock/mongo-hacker.git
+	url = git://github.com/TylerBrock/mongo-hacker.git
   ignore = untracked
 [submodule "vim/bundle/ycm"]
 	path = vim/bundle/ycm

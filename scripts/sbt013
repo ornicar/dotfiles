@@ -1,0 +1,14 @@
+#!/bin/sh
+
+sbt_version="0.13.0-20130612-052157"
+sbt_file="sbt-launch_$sbt_version.jar" 
+sbt="$HOME/tmp/$sbt_file"
+sbt_url="http://repo.typesafe.com/typesafe/ivy-snapshots/org.scala-sbt/sbt-launch/$sbt_version/sbt-launch.jar"
+
+# install sbt if missing (first run)
+if [ ! -f $sbt ]; then
+  echo "  - Downloading $sbt_url"
+  curl -o $sbt $sbt_url
+fi
+
+java -Xms256M -Xmx2048M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -jar $sbt "$@"

@@ -6,6 +6,12 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/scalex && sbt
+        - cd ~/scalex && sbt013
         - cd ~/scalex && vim
   - shell: cd ~/scalex
+  - sbtmain: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/scalex-sbt && sbt013
+        - cd ~/scalex-sbt && vim
+  - sbtshell: cd ~/scalex-sbt

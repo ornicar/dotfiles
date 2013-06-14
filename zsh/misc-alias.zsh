@@ -31,7 +31,7 @@ alias reload=". ~/.zshrc"
 # Run IM program
 alias im="weechat-curses"
 
-# radios are in ~/data/radio
+# radios are in ~/radio
 alias radio="mplayer -playlist"
 
 # Search using surfraw

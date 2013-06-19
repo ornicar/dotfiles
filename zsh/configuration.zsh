@@ -4,6 +4,7 @@
 
 # Export common variables
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 
 export BROWSER="firefox"
@@ -11,8 +12,8 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Dfile.encoding=UTF8 -Xms512M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
-export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms512M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
+export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
+export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
 
 # Ruby gems in the path
 export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"

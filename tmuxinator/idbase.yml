@@ -1,0 +1,11 @@
+# ~/.tmuxinator/idbase.yml
+
+project_name: idbase
+project_root: ~/idbase
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/idbase && bin/play
+        - cd ~/idbase && vim
+  - shell: cd ~/idbase

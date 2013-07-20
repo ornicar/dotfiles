@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sbt_version="0.13.0-20130616-052157"
+sbt_version="0.13.0-20130621-052159"
 sbt_file="sbt-launch_$sbt_version.jar" 
 sbt="$HOME/tmp/$sbt_file"
 sbt_url="http://repo.typesafe.com/typesafe/ivy-snapshots/org.scala-sbt/sbt-launch/$sbt_version/sbt-launch.jar"

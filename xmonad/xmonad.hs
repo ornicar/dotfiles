@@ -77,7 +77,6 @@ myConfig = defaultConfig {
     , ("M-o",   spawn "~/.scripts/path-dmenu")
     , ("M-r",   spawn "urxvtc -e ranger")
     , ("M-a",   spawn "urxvtc -e pacmixer")
-    , ("M-m",   spawn "urxvtc -e mutt")
     , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")
     , ("M-S-b", spawn "firefox")
     , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")

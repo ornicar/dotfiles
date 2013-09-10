@@ -12,8 +12,9 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
-export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
+# export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
+export JAVA_OPTS="-Xms256M -Xmx2G -Xss8M -XX:MaxPermSize=2G -XX:ReservedCodeCacheSize=128m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+export SBT_OPTS=$JAVA_OPTS
 
 # Ruby gems in the path
 export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"

@@ -1,8 +1,4 @@
 #!/usr/bin/env zsh
-# -*- mode: zsh; sh-indentation: 4; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
-# vim: ft=zsh sw=4 ts=4 et
-#
-# There are some git function that save my time
 
 # stash and pull rebase, then stash pop if stashed
 git-stash-pull-rebase() {
@@ -46,15 +42,4 @@ git-set-upstream() {
 # Forward git commands to hub
 git() {
     hub "$@"
-}
-
-# Goes up the tree to the git root dir
-g-() {
-    d=".."
-    while [[ $(realpath $d) != "/" && ! -d $d/.git ]]; do
-        d="$d/.."
-    done
-    if [[ $(realpath $d) != "/" ]]; then
-        cd $d
-    fi
 }

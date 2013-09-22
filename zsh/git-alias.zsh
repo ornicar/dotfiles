@@ -1,16 +1,10 @@
 #!/usr/bin/env zsh
-# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
-# vim: ft=zsh sw=2 ts=2 et
-#
-# There are some git alias that save my time
 
 alias t='tig status'
 alias g='git'
 alias gs='git status'
 alias ga='git add -A'
 alias gf='git fetch'
-alias gl='git pull'
-alias glr='git pull --rebase'
 alias gp='git push'
 alias gpw='git-push-write'
 alias gc='git commit -v'
@@ -23,7 +17,7 @@ alias gcp='git cherry-pick'
 alias glo='git l'
 alias gco='git checkout'
 alias gm='git merge'
-alias gmt='git mergetool'
+alias gmt='git mergetool --no-prompt'
 alias gd='git diff'
 alias gr='git remote -v'
 alias gcf='git clean -f'
@@ -32,6 +26,9 @@ alias grhh='git reset --hard HEAD'
 alias gslr='git-stash-pull-rebase'
 alias gslrp='git-stash-pull-rebase && git push'
 alias gw='git wtf'
+
+# Goes up the tree to the git root dir
+alias g-='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # Override aliases with functions
 # to keep autocompletion

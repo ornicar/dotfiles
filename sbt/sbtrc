@@ -1,6 +1,7 @@
 alias c=compile
 alias cc=~compile
 alias r=run
+alias rr=~run
 alias l=reload
 alias lc=;reload;compile
 alias p=project

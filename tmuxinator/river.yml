@@ -1,0 +1,11 @@
+# ~/.tmuxinator/river.yml
+
+project_name: river
+project_root: ~/scalariver
+tabs:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/scalariver && sbt013
+        - cd ~/scalariver && vim
+  - shell: cd ~/scalariver

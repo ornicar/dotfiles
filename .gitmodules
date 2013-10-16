@@ -138,3 +138,6 @@
 	path = vim/bundle/jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
   ignore = untracked
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

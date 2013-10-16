@@ -15,7 +15,7 @@ main = xmonad $ withUrgencyHook dzenArgs myConfig
 --
 myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..9]
 
-myLayout = noBorders Full ||| noBorders tiled
+myLayout2 = noBorders Full ||| noBorders tiled
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -28,6 +28,8 @@ myLayout = noBorders Full ||| noBorders tiled
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
+
+myLayout = smartBorders $ layoutHook defaultConfig
 
 ------------------------------------------------------------------------
 -- Window rules

@@ -310,14 +310,6 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-" Navigate in quickfix window
-nmap ]q :<C-U>exe "cnext ".(v:count ? v:count : "")<cr>
-nmap [q :<C-U>exe "cprevious ".(v:count ? v:count : "")<cr>
-
-" Navigate in location window
-nmap ]l :<C-U>exe "lnext ".(v:count ? v:count : "")<cr>
-nmap [l :<C-U>exe "lprevious ".(v:count ? v:count : "")<cr>
-
 " Don't use Ex mode; use Q for console mode
 map Q q:
 

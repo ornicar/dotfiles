@@ -2,7 +2,7 @@
 
 . /etc/profile.d/prll.sh
 
-dest=cook:/home/sacem
+dest=paul:/home/sacem
 base_url=http://sacem.iliaz.com
 
 sendToSacem() {

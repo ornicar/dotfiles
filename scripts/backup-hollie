@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+DESTINATION=/home/thib/backup/hollie
+
+rsync --archive --force --delete --progress --compress hollie:/etc $DESTINATION

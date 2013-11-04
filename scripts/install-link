@@ -27,7 +27,7 @@ link vimrc ~/.vimrc
 link vim ~/.vim
 link tigrc ~/.tigrc
 link rtorrent.rc ~/.rtorrent.rc
-link xmodmap/base ~/.Xmodmap
+link xmodmap/mac ~/.Xmodmap
 link xinitrc ~/.xinitrc
 link Xresources ~/.Xresources
 link xcolors ~/.xcolors

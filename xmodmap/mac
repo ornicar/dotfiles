@@ -1,0 +1,17 @@
+! Make caps lock act as escape
+keycode 66 = Escape
+
+! Use AltGr-t for Return
+keycode 41 = t T t T Return Return Return
+
+! Due to xmodmap bug,
+! the mappings were done in /usr/share/X11/xkb/keycodes/evdev
+! <LALT> = 133;
+! <LCTL> = 64;
+! <SPCE> = 65;
+! <RCTL> = 108;
+! <RALT> = 134;
+! // Microsoft keyboard extra keys
+! <LWIN> = 37;
+! <RWIN> = 105;
+! <COMP> = 135;

@@ -16,6 +16,7 @@ xset s 200 200                              # set monitor to sleep
 xset -b                                     # Disable system bell
 xset r rate 220 56                          # Repeat keys way faster please
 unclutter -root -idle 2 &                   # kill inactive rat cursor
+syndaemon -i 2 -t -k -d &                   # disable the pad when typing
 urxvtd -q -f -o                             # start urxvt server
 
 # not used anymore

@@ -4,6 +4,9 @@ keycode 66 = Escape
 ! Use AltGr-t for Return
 keycode 41 = t T t T Return Return Return
 
+! Use eject for delete
+keycode 169 = Delete Delete Delete
+
 ! Due to xmodmap bug,
 ! the mappings were done in /usr/share/X11/xkb/keycodes/evdev
 ! <LALT> = 133;

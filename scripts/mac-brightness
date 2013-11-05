@@ -1,29 +1,10 @@
-#!/bin/bash                                                                                            
+#!/bin/zsh
                                                                                                        
-# Anthony Fejes (apfejes@gmail.com)                                                                    
-# Template taken from post by Fran Diéguez at                                                          
-# http://www.mabishu.com/blog/2010/06/24/macbook-pro-keyboard-backlight-keys-on-ubuntu-gnulinux/       
-#                                                                                                      
-# This program just modifies the value of video brightness for Apple Laptops                           
-# You must run it as root user or via sudo.
-# As a shortcut you could allow to admin users to run via sudo without password
-# prompt. To do this you must add sudoers file the next contents:
-#
-#   ALL = NOPASSWD: /usr/sbin/mbp_backlight
-
-# After this you can use this script as follows:
-#
-#     Increase backlight keyboard:
-#           $ sudo mbp_backlight up
-#     Decrease backlight keyboard:
-#           $ sudo mbp_backlight down
-#
-
 FILE=/sys/class/backlight/gmux_backlight/brightness
-BACKLIGHT=$(cat $FILE)
-MAX=$(cat /sys/class/backlight/gmux_backlight/max_brightness)
-MIN=`expr $MAX / 10`
-INCREMENT=$MIN
+BACKLIGHT=$(<$FILE)
+MAX=$(</sys/class/backlight/gmux_backlight/max_brightness)
+MIN=1000
+FACTOR=1.5
 
 if [ $UID -ne 0 ]; then
     echo "Please run this program as superuser"
@@ -33,7 +14,8 @@ fi
 case $1 in
 
     up)
-        TOTAL=`expr $BACKLIGHT + $INCREMENT`
+        (( TDouble = BACKLIGHT * FACTOR ))
+        TOTAL=$(echo "$TDouble"|sed "s/\([0-9]*\)\.*.*/\1/")
         if [ $BACKLIGHT -eq $MAX ]; then
                 exit 1
         fi
@@ -43,7 +25,8 @@ case $1 in
         echo $TOTAL > $FILE
         ;;
     down)
-        TOTAL=`expr $BACKLIGHT - $INCREMENT`
+        (( TDouble = BACKLIGHT / FACTOR ))
+        TOTAL=$(echo "$TDouble"|sed "s/\([0-9]*\)\.*.*/\1/")
         if [ $BACKLIGHT -eq $MIN ]; then
                 exit 1
         fi
@@ -53,6 +36,6 @@ case $1 in
         echo $TOTAL > $FILE
         ;;
     *)
-        echo "Use: mbp_backlight up|down"
+        echo "Use: up|down"
         ;;
 esac

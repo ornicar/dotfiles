@@ -49,7 +49,7 @@
 
 # WIFI
 interface="wlp3s0"
-quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
+quality=$(sudo iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
 if [[ $quality -gt 0 ]]; then
   (( percent = (quality * 100) / 70 ))
   printf " #[fg=colour3]w%s#[default]" "$percent"
@@ -95,26 +95,27 @@ printf " %s(%s)#[default]" "#[fg=colour10]" "$raw"
 
 for i in 0 1; do
   # TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
-  TEMP_INPUT_FILE=/sys/devices/platform/coretemp.0/temp1_input
+  TEMP_INPUT_FILE=/sys/devices/platform/coretemp.$i/temp1_input
   [[ -f $TEMP_INPUT_FILE ]] && break
 done
 (( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
-if [ "$temperature" -gt 65 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
-elif [ "$temperature" -gt 57 ]; then modifier="#[fg=colour13,bright]"
-elif [ "$temperature" -gt 50 ]; then modifier="#[fg=colour6]"
+if [ "$temperature" -gt 86 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+elif [ "$temperature" -gt 70 ]; then modifier="#[fg=colour13,bright]"
+elif [ "$temperature" -gt 63 ]; then modifier="#[fg=colour6]"
 else modifier="#[fg=colour4]"
 fi
 printf " %s%s°#[default]" "$modifier" "$temperature"
-# for i in 0 1; do
-  # FAN_INPUT_FILE=/sys/class/hwmon/hwmon$i/device/fan1_input
-  # FAN_INPUT_FILE=/sys/devices/platform/thinkpad_hwmon/fan1_input
-  # [[ -f $FAN_INPUT_FILE ]] && break
-# done
-# fan=$(<$FAN_INPUT_FILE)
-# max=3000
-# (( percent = (fan * 100) / $max ))
-# if (( $percent < 10 )); then spark=""; else spark=$(percent-spark $percent); fi
-# printf "%s#[default]" "$spark"
+
+for i in 0 1; do
+  FAN_INPUT_FILE=/sys/devices/platform/applesmc.768/fan1_input
+  [[ -f $FAN_INPUT_FILE ]] && break
+done
+fan=$(<$FAN_INPUT_FILE)
+min=2000
+max=6200
+(( percent = ((fan - min) * 100) / (max - min) ))
+if (( $percent < 10 )); then spark=" "; else spark=$(percent-spark $percent); fi
+printf "%s#[default]" "$spark"
 
 # MEMORY
 
@@ -128,22 +129,22 @@ printf " %sm%s#[default]" "$modifier" "$memory"
 
 # CPU FREQ
 
-# min=8
-# max=22
-# chart=""
-# for i in 0 1 2 3; do
-#   freq=$(</sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
-#   (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
-#   spark=$(percent-spark $P)
-#   chart="$chart$spark"
-# done
-# printf " #[fg=colour10]$chart";
+min=8
+max=32
+chart=""
+for i in 0 1 2 3 4 5 6 7; do
+  freq=$(sudo cat /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
+  (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
+  spark=$(percent-spark $P)
+  chart="$chart$spark"
+done
+printf " #[fg=colour10]$chart";
 
 # LOAD AVERAGE
 
 load=$(awk '{print $1}' /proc/loadavg)
-if (( $load > 1.9 )); then modifier="#[bg=colour1,fg=colour15,bright]"
-elif (( $load > 0.9 )); then modifier="#[fg=colour7]"
+if (( $load > 3.9 )); then modifier="#[bg=colour1,fg=colour15,bright]"
+elif (( $load > 1.9 )); then modifier="#[fg=colour7]"
 else modifier="#[fg=colour14]"
 fi
 printf " %s%.01f#[default]" "$modifier" "$load"

@@ -19,6 +19,9 @@ Host cook
 Host paul
   HostName 91.121.7.111
   User root
+Host salim
+  HostName 198.50.141.73
+  User root
 Host phobos
   HostName 188.165.218.189
   User root

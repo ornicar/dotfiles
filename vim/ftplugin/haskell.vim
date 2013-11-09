@@ -45,4 +45,4 @@ map <leader>hi :call Import(0,0)<cr>
 map <leader>hI :call Import(1,0)<cr>
 
 " Enable folding by default
-set foldenable
+" set foldenable

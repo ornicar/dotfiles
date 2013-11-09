@@ -27,11 +27,11 @@
 " green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
 
-hi Hint font-family: monospace; font-size: 8pt; font-weight: normal; color: #fdf6e3; background-color: #002630; border: none; padding: 0px 3px 0px 3px; 
+hi Hint font-family: monospace; font-size: 10pt; font-weight: normal; color: #fdf6e3; background-color: #002630; border: none; padding: 0px 3px 0px 3px; 
 hi HintElem background-color: #073642; color: #b58900;
 hi HintActive background-color: #dc322f; color: #073642;
 
-hi StatusLine     color: #93a1a1; background: #002630; font-weight: normal; font-size: 10pt;
+hi StatusLine     color: #93a1a1; background: #002630; font-weight: normal; font-size: 12pt;
 
 hi Normal     color:  #93a1a1;  background: #002630; font-size: 10pt;
 hi CmdLine    color:  #93a1a1;  background: #002630; font-size: 12pt;

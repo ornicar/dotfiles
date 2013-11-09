@@ -15,7 +15,7 @@ main = xmonad $ withUrgencyHook dzenArgs myConfig
 --
 myWorkspaces = ["1:system","2:main","3:network"] ++ map show [4..9]
 
-myLayout2 = noBorders Full ||| noBorders tiled
+noborderLayout = noBorders Full ||| noBorders tiled
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -29,7 +29,9 @@ myLayout2 = noBorders Full ||| noBorders tiled
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-myLayout = smartBorders $ layoutHook defaultConfig
+smartLayout = smartBorders $ layoutHook defaultConfig
+
+myLayout = noborderLayout
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -78,7 +80,7 @@ myConfig = defaultConfig {
     , ("M-S-l",   sendMessage NextLayout) -- next layout
     , ("M-o",   spawn "~/.scripts/path-dmenu")
     , ("M-r",   spawn "urxvtc -e ranger")
-    , ("M-a",   spawn "urxvtc -e alsamixer")
+    , ("M-a",   spawn "urxvtc -e pacmixer")
     , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")
     , ("M-S-b", spawn "firefox")
     , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")

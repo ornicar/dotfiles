@@ -59,6 +59,4 @@ alias fren="google-translate fr en "
 
 alias xtcf="startxfce4"
 
-alias startservers="_ systemctl start nginx && _ systemctl start mongodb && _ systemctl start elasticsearch"
-
 alias halt="echo 'Use poweroff instead'"

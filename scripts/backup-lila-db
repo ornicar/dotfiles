@@ -2,5 +2,5 @@
 
 DESTINATION=/home/thib/backup/lila-prod/
 
-ssh paul "~/.scripts/backup-hollie"
+# ssh paul "~/.scripts/backup-hollie"
 rsync --archive --force --delete --progress --exclude='mongodb/journal/prealloc.*' --compress paul:/home/backup/hollie/mongodb $DESTINATION

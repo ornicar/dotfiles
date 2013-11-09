@@ -24,6 +24,9 @@ export GEM_HOME="$HOME/.gem/ruby/1.9.1"
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
 
+# grant acpid access to pulseaudio - https://bbs.archlinux.org/viewtopic.php?id=155649
+# export PULSE_RUNTIME_PATH="/run/user/1000/pulse/"
+
 # Enable more syntax highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 

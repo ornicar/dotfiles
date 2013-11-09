@@ -11,6 +11,8 @@ man() { vim -M -c "Man $*" -c "set nomodifiable" -c "only" }
 # Calculator
 calc() { awk "BEGIN{ print $* }" ;}
 
+psg() { ps aux | grep $* }
+
 # works with both integers and floats
 percent-spark() {
   if (( $1 < 10 )); then printf " "

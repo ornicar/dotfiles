@@ -48,12 +48,12 @@
 # show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
 
 # WIFI
-interface="wlp3s0"
-quality=$(sudo iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
-if [[ $quality -gt 0 ]]; then
-  (( percent = (quality * 100) / 70 ))
-  printf " #[fg=colour3]w%s#[default]" "$percent"
-fi
+# interface="wlp3s0"
+# quality=$(sudo iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
+# if [[ $quality -gt 0 ]]; then
+#   (( percent = (quality * 100) / 70 ))
+#   printf " #[fg=colour3]w%s#[default]" "$percent"
+# fi
 
 # BOX
 
@@ -129,16 +129,16 @@ printf " %sm%s#[default]" "$modifier" "$memory"
 
 # CPU FREQ
 
-min=8
-max=32
-chart=""
-for i in 0 1 2 3 4 5 6 7; do
-  freq=$(sudo cat /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
-  (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
-  spark=$(percent-spark $P)
-  chart="$chart$spark"
-done
-printf " #[fg=colour10]$chart";
+# min=8
+# max=32
+# chart=""
+# for i in 0 1 2 3 4 5 6 7; do
+#   freq=$(sudo cat /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
+#   (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
+#   spark=$(percent-spark $P)
+#   chart="$chart$spark"
+# done
+# printf " #[fg=colour10]$chart";
 
 # LOAD AVERAGE
 

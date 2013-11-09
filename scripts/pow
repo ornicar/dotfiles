@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+
+# Must run as root because of `pkill -HUP nginx`
+
+# ---- START OF CONFIG
+
+$sleep = 1
+$pow_dir = ENV['HOME'] + '/.pow/'
+$sites_dir = ENV['HOME'] + '/.nginx-sites/'
+
+# ---- END OF CONFIG
+
+def create(name, port)
+  config = """server {
+server_name %s.dev;
+location / { proxy_pass http://127.0.0.1:%s/; }
+}""" % [name, port]
+File.write($sites_dir + name, config)
+system('pkill -HUP nginx')
+end
+
+while true do
+
+  pows = Dir[$pow_dir + '*'].map { |f| File.basename(f) }
+  sites = Dir[$sites_dir + '*'].map { |f| File.basename(f) }
+
+  pows.each do |pow|
+    create(pow, File.read($pow_dir + pow)) unless sites.include? pow
+  end
+
+  sites.each do |site|
+    File.delete($sites_dir + site) unless pows.include? site
+  end
+
+  system('inotifywait --event CREATE --event DELETE ' + $pow_dir)
+end

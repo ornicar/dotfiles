@@ -1,0 +1,5 @@
+" scala conventions: no arrow rewrite
+autocmd FileType scala setlocal formatprg=~/scalariver/scalariver\ --url=http://localhost\:8098\ --stdin\ --stdout\ -f\ +alignSingleLineCaseStatements\ +compactControlReadability\ +doubleIndentClassDeclaration\ +preserveDanglingCloseParenthesis
+
+" Do not sort imports
+autocmd FileType scala nmap <buffer> <leader>i :nohl<cr>mygggqG'y:w<cr>

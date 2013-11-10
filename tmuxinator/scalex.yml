@@ -6,7 +6,7 @@ tabs:
   - main: 
       layout: even-horizontal
       panes: 
-        - cd ~/scalex && sbt
+        - cd ~/scalex && sbt -Dconfig.file=/home/thib/scalex/application.conf
         - cd ~/scalex && vim
   - shell: cd ~/scalex
   - sbtmain: 

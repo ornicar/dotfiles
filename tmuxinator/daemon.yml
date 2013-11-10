@@ -1,0 +1,7 @@
+# ~/.tmuxinator/daemon.yml
+
+project_name: daemon
+project_root: ~/
+tabs:
+  - journal: _ journalctl -f
+  - shell: cd ~/

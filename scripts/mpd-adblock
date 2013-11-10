@@ -1,14 +1,17 @@
 #!/usr/bin/zsh
 
+echo "MPD Radio AdBlock started";
+echo $(mpc current);
+
 while : ; do
-  mpc idle
-  current=$(mpc current)
+  mpc idle;
+  current=$(mpc current);
   echo $current;
   ad=0;
   [ "$current" = "FuzzyandGroovy" ] && ad=1;
-  test "${current#*"SKY.fm"}" != "$current" && ad=1;
+  test "${current#*"TSTAG"}" != "$current" && ad=1;
   if [ $ad -eq 1 ]; then
-    echo "AD detected, pausing"
+    echo "AD detected, pausing";
     mpc pause;
   fi
 done

@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+while : ; do
+  mpc idle
+  current=$(mpc current)
+  if [ "$current" = "FuzzyandGroovy" ]; then
+    echo "AD detected, pausing"
+    mpc pause;
+  fi
+done

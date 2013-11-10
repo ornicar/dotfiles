@@ -68,7 +68,9 @@ current=$(mpc current)
 case $current in
   "FuzzyandGroovy") current="Advertisement!";;
 esac
-printf " %s♫ %s#[default]" "#[fg=colour10]" "$current"
+brand="ROCKRADIO.COM: ";
+current=${current/$brand/};
+printf " %s♫ %s#[default]" "#[fg=colour10]" "$current[1,70]"
 
 # BATTERY
 infos=$(acpi -b)

@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+radios="Fuzzy\n60sRock\nBluesRock\nHardRock\nHarderRock\nDeathMetal\nProgressiveMetal\nProgressiveRock\nClassicRock\nClassicMetal\nHairBands"
+
+source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
+
+radio=$(echo $radios | ~/.scripts/dmenu-dark -p "Rock Radio ")
+radio=$radio:l
+
+[ -z "$radio" ] && exit
+
+case $radio in
+  "fuzzy") url="http://listen.radionomy.com/fuzzy-and-groovy";;
+  *) url="http://pub4.rockradio.com:80/rr_$radio";;
+esac
+
+mpc clear;
+mpc add $url;
+mpc play;

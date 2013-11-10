@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+
+while : ; do
+  mpc idle
+  current=$(mpc current)
+  echo $current;
+  ad=0;
+  [ "$current" = "FuzzyandGroovy" ] && ad=1;
+  test "${current#*"SKY.fm"}" != "$current" && ad=1;
+  if [ $ad -eq 1 ]; then
+    echo "AD detected, pausing"
+    mpc pause;
+  fi
+done

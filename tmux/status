@@ -65,6 +65,9 @@
 
 # MUSIC
 current=$(mpc current)
+case $current in
+  "FuzzyandGroovy") current="Advertisement!";;
+esac
 printf " %s♫ %s#[default]" "#[fg=colour10]" "$current"
 
 # BATTERY

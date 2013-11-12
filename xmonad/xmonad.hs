@@ -79,8 +79,7 @@ myConfig = defaultConfig {
       ("C-<Space>", windows W.focusDown)
     , ("M-S-l",   sendMessage NextLayout) -- next layout
     , ("M-o",   spawn "~/.scripts/path-dmenu")
-    , ("M-r",   spawn "urxvtc -e ranger")
-    , ("M-S-r", spawn "~/.scripts/radio")
+    , ("M-r",   spawn "~/.scripts/radio")
     , ("M-a",   spawn "urxvtc -e pacmixer")
     , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")
     , ("M-S-b", spawn "firefox")
@@ -88,5 +87,8 @@ myConfig = defaultConfig {
     , ("M-t",   spawn "urxvtc -e ~/.scripts/music toggle")
     , ("M-w",   spawn "urxvtc -e wicd-curses")
     , ("C-m",   spawn "~/.scripts/touchpad_toggle")
-    , ("M-S-p", spawn "~/.scripts/screenshot")           -- Take a screenshot
+    , ("M-S-p", spawn "~/.scripts/screenshot")           
+    , ("C-1", spawn "~/.screenlayout/mac.sh")           
+    , ("C-2", spawn "~/.screenlayout/mac-screen.sh")           
+    , ("C-3", spawn "~/.screenlayout/screen.sh")           
   ]

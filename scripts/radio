@@ -1,6 +1,18 @@
 #!/bin/zsh
 
-radios="Fuzzy\n60sRock\nBluesRock\nHardRock\nHarderRock\nDeathMetal\nProgressiveMetal\nProgressiveRock\nClassicRock\nClassicMetal\nHairBands"
+radios="Fuzzy
+60sRock
+BluesRock
+HardRock
+HarderRock
+DeathMetal
+MelodicDeathMetal
+ProgressiveMetal
+ProgressiveRock
+ClassicRock
+ClassicMetal
+HairBands
+BeatlesTribute"
 
 source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 
@@ -14,6 +26,7 @@ case $radio in
   *) url="http://pub4.rockradio.com:80/rr_$radio";;
 esac
 
+~/.scripts/mpd-launcher;
 mpc clear;
 mpc add $url;
 mpc play;

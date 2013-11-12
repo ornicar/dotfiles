@@ -1,40 +1,9 @@
-#!/bin/zsh
-
-start_mpd() {
-  [ ! -f ~/.mpd/mpd.pid ] && mpd ~/.mpd/mpd.conf 2> /dev/null;
-}
-
-radio_on() {
-  start_mpd;
-  mpc clear;
-  mpc add http://listen.radionomy.com/fuzzy-and-groovy;
-  mpc play;
-}
-
-radio_off() {
-  mpc clear;
-  mpc stop;
-}
-
-radio_toggle() {
-  if radio_test
-  then radio_off
-  else radio_on
-  fi
-}
-
-radio_test() {
-  current=$(mpc current);
-  test "${current#*"FuzzyandGroovy"}" != "$current"
-}
+#!/usr/bin/zsh
 
 case $1 in
   "up")     mpc volume +5 && mpc volume;;
   "down")   mpc volume -5 && mpc volume;;
   "toggle") mpc toggle;;
-  "ui")     start_mpd; ncmpcpp;;
-  "radio-on") radio_on;;
-  "radio-off") radio_off;;
-  "radio-toggle") radio_toggle;;
+  "ui")     ~/.scripts/mpd-launcher; ncmpcpp;;
   *)
 esac

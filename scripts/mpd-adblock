@@ -1,17 +1,35 @@
 #!/usr/bin/zsh
 
 echo "MPD Radio AdBlock started";
-echo $(mpc current);
+
+detect() {
+  current=$(mpc current);
+  if [ $? != 0 ]; then 
+    echo "mpd is not running, exiting!";
+    exit 1;
+  fi
+  echo "Current song: $current";
+  [ "$current" = "FuzzyandGroovy" ] && return 1;
+  test "${current#*"TSTAG_"}" != "$current" && return 1;
+  test "${current#*"There's More To ROCKRADIO.COM!"}" != "$current" && return 1;
+  return 0;
+}
+
+ad_flag="/tmp/mpd-adblock.ad";
 
 while : ; do
-  mpc idle;
-  current=$(mpc current);
-  echo $current;
-  ad=0;
-  [ "$current" = "FuzzyandGroovy" ] && ad=1;
-  test "${current#*"TSTAG"}" != "$current" && ad=1;
-  if [ $ad -eq 1 ]; then
-    echo "AD detected, pausing";
-    mpc pause;
+  [ -f $ad_flag ] && rm $ad_flag;
+  detect;
+  if [ $? -eq 1 ]; then
+    echo "AD detected, waiting for confirmation...";
+    sleep 1;
+    detect;
+    if [ $? -eq 1 ]; then
+      echo "AD confirmed, pausing";
+      mpc pause;
+      touch $ad_flag;
+    fi
   fi
+  sleep 1; # may prevent loop frenzy
+  mpc idle;
 done

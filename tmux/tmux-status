@@ -1,0 +1,210 @@
+#!/bin/zsh
+# 0 black
+# 1 red
+# 2 green
+# 3 yellow
+# 4 blue
+# 5 pink
+# 6 cyan
+# 9 orange
+# black -> white 8 0 10 11 12 14 7 15
+
+_music=1
+_wifi=1
+_battery=1
+_temperature=1
+_fan=1
+_memory=1
+_load=1
+_time=1
+
+# works with both integers and floats
+percent-spark() {
+  if (( $1 < 10 )); then printf " "
+  elif (( $1 < 20 )); then printf "_"
+  elif (( $1 < 30 )); then printf "▁"
+  elif (( $1 < 40 )); then printf "▂"
+  elif (( $1 < 50 )); then printf "▃"
+  elif (( $1 < 60 )); then printf "▄"
+  elif (( $1 < 70 )); then printf "▅"
+  elif (( $1 < 80 )); then printf "▆"
+  elif (( $1 < 90 )); then printf "▇"
+  else printf "█"
+  fi
+}
+
+# WEECHAT
+
+# if [ -f /tmp/weechat_hotlist ]; then
+#   hotlist=$(</tmp/weechat_hotlist)
+#   if [ ! -z $hotlist ]; then
+#     printf "%s " "$hotlist"
+#   fi
+# fi
+
+# LICHESS
+
+# raw_data=$(cat /tmp/lichess_status)
+# data=(${(s: :)raw_data})
+# printf "#[fg=colour10,dim](%d|%d:%d/%d|%s|%s" $data[1] $data[2] $data[3] $data[4] $data[5] $data[6] $loadtime
+
+# loadtime=$(cat /tmp/lichess_loadtime)
+# isinf=$(echo "$loadtime < 0.2" | bc)
+# if [[ $isinf = 0 ]]; then
+#   lltc="bg=colour3 fg=colour0"
+# else
+#   lltc="fg=colour11"
+# fi
+# printf " ##[%s]%s#[fg=colour10,bg=default,dim])#[default]" $lltc $loadtime
+
+# MAIL
+
+# args: name, box_dir
+# show_mail() {
+#   nb=$(ls $2/new | wc -l)
+#   if [ 0 -eq $nb ]; then style="fg=colour10,dim"
+#   else style="fg=colour7"
+#   fi
+#   printf " #[%s]✉%s(%d)#[default]" $style $1 $nb
+# }
+# show_mail "mail" "$HOME/.mail/thibault.duplessis.gmail.com/INBOX"
+
+# BOX
+
+# internet=$(cat /tmp/box_status)
+
+# if [[ $internet != 1 ]]; then
+#   printf "#[fg=colour9] DOWN#[default]"
+# fi
+
+# MUSIC
+if [ $_music = 1 ]; then
+  if [ -f /tmp/mpd-adblock.ad ]; then
+    current="Advertisement!";
+  else
+    current=$(mpc current);
+    current=${current/"ROCKRADIO.COM: "/};
+  fi
+  if [ -z "$current" ]; then
+    symbol="♫";
+  else
+    symbol="#[fg=colour2]♫#[default]";
+  fi
+  printf " %s %s%s#[default]" "$symbol" "#[fg=colour10]" "$current[1,70]"
+fi
+
+# WIFI
+if [ $_wifi = 1 ]; then
+  interface="wlp3s0"
+  quality=$(sudo iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
+  if [[ $quality -gt 0 ]]; then
+    (( percent = (quality * 100) / 70 ))
+    printf " #[fg=colour3]w%s#[default]" "$percent"
+  fi
+fi
+
+# BATTERY
+if [ $_battery = 1 ]; then
+  infos=$(acpi -b)
+  percent=$(echo $infos|sed "s/Battery .: [a-z]*, \([0-9]*\)%\(,.*\|$\)/\1/i")
+  state=$(echo $infos|sed "s/Battery .: \([a-z]*\),.*/\1/i")
+  if [ "$percent" -lt 5 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+  elif [ "$percent" -lt 20 ]; then modifier="#[bg=colour3,fg=colour8,bright]"
+  elif [ "$percent" -lt 50 ]; then modifier="#[fg=colour3]"
+  else modifier="#[fg=colour2]"
+  fi
+  percentS="$percent%"
+  case $state in
+    "Discharging") sign="|-|" ;;
+  "Full") sign="⚡"; percentS= ;;
+*)
+  if [ "$percent" -gt 94 ]; then
+    sign="⚡"
+    percentS=
+  else
+    sign="|+|"
+    modifier="#[fg=green]"
+  fi
+  ;;
+esac
+printf " $modifier%s%s#[default]" "$percentS" "$sign"
+# raw=$(echo $infos|sed "s/Battery .: \(.*\)/\1/i")
+# printf " %s(%s)#[default]" "#[fg=colour10]" "$raw"
+fi
+
+# TEMPERATURE & FAN
+
+if [ $_temperature = 1 ]; then
+  for i in 0 1; do
+    # TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
+    TEMP_INPUT_FILE=/sys/devices/platform/coretemp.$i/temp1_input
+    [[ -f $TEMP_INPUT_FILE ]] && break
+  done
+  (( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))
+  if [ "$temperature" -gt 86 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+  elif [ "$temperature" -gt 70 ]; then modifier="#[fg=colour13,bright]"
+  elif [ "$temperature" -gt 63 ]; then modifier="#[fg=colour6]"
+  else modifier="#[fg=colour4]"
+  fi
+  printf " %s%s°#[default]" "$modifier" "$temperature"
+fi
+
+if [ $_fan = 1 ]; then
+  for i in 0 1; do
+    FAN_INPUT_FILE=/sys/devices/platform/applesmc.768/fan1_input
+    [[ -f $FAN_INPUT_FILE ]] && break
+  done
+  fan=$(<$FAN_INPUT_FILE)
+  min=2000
+  max=6200
+  (( percent = ((fan - min) * 100) / (max - min) ))
+  if (( $percent < 10 )); then spark=" "; else spark=$(percent-spark $percent); fi
+  printf "%s#[default]" "$spark"
+fi
+
+# MEMORY
+
+if [ $_memory = 1 ]; then
+  memory=$(free | awk '/buffers\/cache:/ {printf "%.0f", 100*$3/($3 + $4)}')
+  if [ "$memory" -gt 85 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
+  elif [ "$memory" -gt 75 ]; then modifier="#[bg=colour3,fg=colour0]"
+  elif [ "$memory" -gt 65 ]; then modifier="#[fg=colour9]"
+  else modifier="#[fg=colour2]"
+  fi
+  printf " %sm%s#[default]" "$modifier" "$memory"
+fi
+
+# CPU FREQ
+
+# min=8
+# max=32
+# chart=""
+# for i in 0 1 2 3 4 5 6 7; do
+#   freq=$(sudo cat /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
+#   (( P = (($freq/100000.0) - $min) / ($max - $min) * 100 ))
+#   spark=$(percent-spark $P)
+#   chart="$chart$spark"
+# done
+# printf " #[fg=colour10]$chart";
+
+# LOAD AVERAGE
+
+if [ $_load = 1 ]; then
+  load=$(awk '{print $1}' /proc/loadavg)
+  if (( $load > 3.9 )); then modifier="#[bg=colour1,fg=colour15,bright]"
+  elif (( $load > 1.9 )); then modifier="#[fg=colour7]"
+  else modifier="#[fg=colour14]"
+  fi
+  printf " %s%.01f#[default]" "$modifier" "$load"
+fi
+
+# SEPARATOR
+
+#printf " #[fg=magenta]•#[default]"
+
+# FRENCH DATE
+
+# export TZ="America/Fortaleza"
+if [ $_time = 1 ]; then
+  printf " #[fg=colour12]⎛$(date +"%a %b %d") $(date +"%H:%M")#[default]"
+fi

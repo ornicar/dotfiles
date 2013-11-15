@@ -12,6 +12,8 @@ detect() {
   [ "$current" = "FuzzyandGroovy" ] && return 1;
   test "${current#*"TSTAG_"}" != "$current" && return 1;
   test "${current#*"There's More To ROCKRADIO.COM!"}" != "$current" && return 1;
+  test "${current#*"JINGLE"}" != "$current" && return 1;
+  test "${current#*"Annonce"}" != "$current" && return 1;
   return 0;
 }
 
@@ -25,9 +27,10 @@ while : ; do
     sleep 1;
     detect;
     if [ $? -eq 1 ]; then
-      echo "AD confirmed, pausing";
+      echo "AD confirmed, switching";
       mpc pause;
       touch $ad_flag;
+      ~/.scripts/radio random &;
     fi
   fi
   sleep 1; # may prevent loop frenzy

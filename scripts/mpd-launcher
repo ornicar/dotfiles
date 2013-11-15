@@ -6,6 +6,6 @@ if [ ! -f ~/.mpd/mpd.pid ]; then
     exit 1;
   fi
   mpd ~/.mpd/mpd.conf > /tmp/mpd.log 2>&1 &;
-  sleep 1;
+  sleep 2;
   ~/.scripts/mpd-adblock > /tmp/mpd-adblock.log 2>&1 &;
 fi

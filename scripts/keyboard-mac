@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+
+setxkbmap -keycodes evdev-mac-thib us -variant colemak
+xmodmap ~/dotfiles/xmodmap/mac
+xset r rate 220 56                          

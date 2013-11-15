@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+
+setxkbmap -keycodes evdev us -variant colemak
+xmodmap ~/dotfiles/xmodmap/kinesis
+xset r rate 220 56                          

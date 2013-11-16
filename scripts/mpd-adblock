@@ -17,10 +17,7 @@ detect() {
   return 0;
 }
 
-ad_flag="/tmp/mpd-adblock.ad";
-
 while : ; do
-  [ -f $ad_flag ] && rm $ad_flag;
   detect;
   if [ $? -eq 1 ]; then
     echo "AD detected, waiting for confirmation...";
@@ -29,7 +26,6 @@ while : ; do
     if [ $? -eq 1 ]; then
       echo "AD confirmed, switching";
       mpc pause;
-      touch $ad_flag;
       ~/.scripts/radio random &;
     fi
   fi

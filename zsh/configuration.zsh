@@ -16,23 +16,15 @@ export GIT_EDITOR='vim'
 export JAVA_OPTS="-Xms256M -Xmx2G -Xss8M -XX:MaxPermSize=2G -XX:ReservedCodeCacheSize=128m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 export SBT_OPTS=$JAVA_OPTS
 
-# Ruby gems in the path
-export PATH="$HOME/.gem/ruby/1.9.1/bin:$PATH"
-# Ruby bundler, put gems in the user home
-export GEM_HOME="$HOME/.gem/ruby/1.9.1"
-
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
-
-# grant acpid access to pulseaudio - https://bbs.archlinux.org/viewtopic.php?id=155649
-# export PULSE_RUNTIME_PATH="/run/user/1000/pulse/"
 
 # Enable more syntax highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.
-CDPATH=$HOME:..:/etc
+CDPATH=$HOME:..
 
 # Load less keys
 lesskey "$DOTFILES/lesskeys"

@@ -13,8 +13,8 @@ OHMYZSH=$DOTFILES/oh-my-zsh
 for config_file ($OHMYZSH/lib/*.zsh) source $config_file
 
 # Load chosen oh-my-zsh plugins
-for plugin in archlinux; do
-    source $OHMYZSH/plugins/$plugin/$plugin.plugin.zsh
+for plugin in archlinux cp; do
+  source $OHMYZSH/plugins/$plugin/$plugin.plugin.zsh
 done
 
 # Load all of my zsh files in zsh/
@@ -30,6 +30,8 @@ source $DOTFILES/zsh/history-substring-search/zsh-history-substring-search.zsh
 autoload -U compinit
 fpath=($DOTFILES/zsh/cabal-completion $fpath)
 compinit -i
+
+source $OHMYZSH/plugins/cabal/cabal.plugin.zsh
 
 # Load private configuration
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local

@@ -10,8 +10,8 @@ nmap <buffer> <leader>hp V:PointFree<cr>
 vmap <buffer> <leader>hp :PointFree<cr>
 
 " Fast save (also clears the search, hoogle, and completion)
-noremap <buffer> <C-u> :nohl<cr>:HoogleClose<cr>:GhcModTypeClear<cr>:w<cr>
-inoremap <buffer> <C-u> <esc>:nohl<cr>:HoogleClose<cr>:GhcModTypeClear<cr>:w<cr>
+noremap <buffer> <C-e> :nohl<cr>:HoogleClose<cr>:GhcModTypeClear<cr>:w<cr>
+inoremap <buffer> <C-e> <esc>:nohl<cr>:HoogleClose<cr>:GhcModTypeClear<cr>:w<cr>
 
 " Compile and open quickfix window
 " compiler cabal

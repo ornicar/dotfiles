@@ -222,8 +222,8 @@ set diffopt+=iwhite
 nmap <leader>H <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
 
 " Search next occurence
-nmap <C-n> j
-nmap <C-e> J
+" nmap <C-n> j
+" nmap <C-e> J
 
 " Clear search highlight
 nmap <silent> <leader>/ :nohl<cr>
@@ -279,8 +279,8 @@ nnoremap ' `
 " nnoremap k gk
 
 " Fast save (also clears the search)
-map <C-u> :nohl<cr>:w<cr>
-imap <C-u> <esc>:nohl<cr>:w<cr>
+map <C-e> :nohl<cr>:w<cr>
+imap <C-e> <esc>:nohl<cr>:w<cr>
 
 " Sudo to write
 cmap w!! silent write !sudo tee % >/dev/null

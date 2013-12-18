@@ -3,5 +3,5 @@ goto 1
 startinsert
 
 " save and quit, enven during insert
-map <C-u> :nohl<cr>:wq<cr>
-imap <C-u> <esc>:nohl<cr>:wq<cr>
+map <C-e> :nohl<cr>:wq<cr>
+imap <C-e> <esc>:nohl<cr>:wq<cr>

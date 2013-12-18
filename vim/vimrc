@@ -159,6 +159,10 @@ map <leader><space><space> zjzo
 " zi toggles the folding
 set nofoldenable
 
+" gitgutter
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_realtime = 0
+
 " Change statusbar color
 "au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214
 "au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
@@ -170,6 +174,7 @@ let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_theme='solarized'
 if !exists('g:airline_symbols')
+
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.whitespace = 'Ξ'

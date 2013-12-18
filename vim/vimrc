@@ -402,26 +402,6 @@ let g:LustyExplorerDefaultMappings = 0
 nmap <silent> <leader>ms :LustyFilesystemExplorer<cr>
 nmap <silent> <leader>mr :LustyFilesystemExplorerFromHere<cr>
 
-" CtrlP search
-let g:ctrlp_max_height = 20
-let g:ctrlp_jump_to_buffer = 1 " switch to already opened buffer
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_open_new_file = 3 " open in current window
-let g:ctrlp_extensions = ['tag']
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_map = '<leader>mf'
-" let g:ctrlp_user_command = {
-"   \ 'types': {
-"     \ 1: ['.git', 'cd %s && git ls-files'],
-"     \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-"     \ },
-"   \ 'fallback': ''
-"   \ }
-nmap <silent> <leader>mF :ClearCtrlPCache<cr>:CtrlP<cr>
-nmap <silent> <leader>mb :CtrlPBuffer<cr>
-nmap <silent> <leader>t :CtrlPTag<cr>
-
 " parameter text objects
 let g:no_parameter_object_maps = 1
 vmap     <silent> i, <Plug>ParameterObjectI

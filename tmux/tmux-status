@@ -206,5 +206,5 @@ fi
 
 # export TZ="America/Fortaleza"
 if [ $_time = 1 ]; then
-  printf " #[fg=colour12]⎛$(date +"%a %b %d") $(date +"%H:%M")#[default]"
+  printf " #[fg=colour12]• $(date +"%a %b %d") $(date +"%H:%M")#[default]"
 fi

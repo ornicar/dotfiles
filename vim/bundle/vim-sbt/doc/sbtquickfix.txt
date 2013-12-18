@@ -1,0 +1,116 @@
+*sbtquickfix.txt*   SBTQuickfix: Quickfix integration for SBT
+
+*sbtquickfix* *sbtquickfix.vim*
+
+
+==============================================================================
+Contents
+
+         1. About ........................|sbtquickfix-about|
+         2. Requirements .................|sbtquickfix-requirements|
+         3. Installation .................|sbtquickfix-installation|
+         4. Usage ........................|sbtquickfix-usage|
+         5. Configuration ................|sbtquickfix-configuration|
+         A. License ......................|sbtquickfix-license|
+
+
+==============================================================================
+1. About                                                   *sbtquickfix-about*
+
+SBT is a tool for building software that people are trying to integrate with
+Vim; this is another attempt.  All this plugin aims to do (currently) is to
+create a file that can be used by the |quickfix| feature to help you navigate
+to your compile and test failures.
+
+
+==============================================================================
+2. Requirements                                     *sbtquickfix-requirements*
+
+In order to use this plugin, you must have compiled with |+quickfix| and
+optionally |+clientserver|.
+
+
+==============================================================================
+3. Installation                                     *sbtquickfix-installation*
+
+You need to specify the SBT plugin for your SBT project.  You can find out how
+to do this on the SBT website (http://www.scala-sbt.org), but essentially it
+involves creating a file and putting the appropriate command inside:
+>
+   addSbtPlugin("com.dscleaver.sbt" % "sbt-quickfix" % "0.2.0")
+<
+I generally put this into its own file -- <project root>/project/quickfix.sbt
+
+Once you've got that, you can run:
+>
+   sbt install-vim-plugin
+<
+That will toss the plugin into ~/.vim/bundle/vim-sbt, which allows Pathogen
+(https://github.com/tpope/vim-pathogen) to find it and load it up.
+
+==============================================================================
+3. Usage                                                   *sbtquickfix-usage*
+
+If you've got |+clientserver| enabled and the SBT plugin has
+'vim-enable-server' set to 'true' (the default) then you don't have to do
+anything.  When SBT finds an error in the compile or in a test, it will
+automatically send the right command to your single (you must only be
+running one) Vim instance, to load the quickfix file into place.
+
+If you don't have |+clientserver| enabled or you you've set the SBT plugin's
+'vim-enable-server' to 'false' then you can use a keyboard mapping to load the
+quickfix file.
+>
+   <leader>ff -- loads the quickfix file
+   <leader>fn -- moves to the next error
+<
+These are just wrappers around the :cf command and the :cn command.  The
+<leader>ff mapping is useful because it can locate the quickfix file
+dynamically.  It assumes that your current buffer holds a file in your Scala
+project, and then search up through the filesystem tree until it finds it.  If
+the current buffer isn't in that tree, then you're going to be out of luck.
+You can configure these mappings as detailed in |sbtquickfix-configuration|.
+
+
+==============================================================================
+5. Configuration                                   *sbtquickfix-configuration*
+
+There isn't much to configure.  If you want to specialize the mappings you can
+do so with the following:
+>
+    let g:quickfix_load_mapping="your mapping here"
+    let g:quickfix_next_mapping="your mapping here"
+<
+These mappings will get specified when you read a new scala buffer, so if you
+set them in your .vimrc, then they'll get set at that time.
+
+
+==============================================================================
+A. License                                               *sbtquickfix-license*
+
+Copyright (c) 2013 David Cleaver
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ vim:tw=78:ts=8:ft=help:norl:

@@ -85,6 +85,8 @@ myConfig = defaultConfig {
     , ("M-S-b", spawn "firefox")
     , ("M-s",   spawn "urxvtc -e ~/.scripts/music ui")
     , ("M-t",   spawn "urxvtc -e ~/.scripts/music toggle")
+    , ("M--",   spawn "urxvtc -e ~/.scripts/music down")
+    , ("M-=",   spawn "urxvtc -e ~/.scripts/music up")
     , ("M-w",   spawn "urxvtc -e wicd-curses")
     , ("C-m",   spawn "~/.scripts/touchpad_toggle")
     , ("M-S-p", spawn "~/.scripts/screenshot")           

@@ -2,6 +2,8 @@
 
 ./configure \
 --with-features=big \
+--enable-luainterp \
+--with-luajit \
 --prefix=/home/thib/bin/vim \
 --enable-rubyinterp \
 --enable-multibyte \

@@ -20,7 +20,6 @@ ProgressiveMetal
 ProgressiveRock
 ClassicRock
 ClassicMetal
-HairBands
 BeatlesTribute);
 
 if [ $1 = "random" ]; then

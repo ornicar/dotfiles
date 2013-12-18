@@ -2,7 +2,7 @@
 
 project_name: river
 project_root: ~/scalariver
-tabs:
+windows:
   - main: 
       layout: even-horizontal
       panes: 

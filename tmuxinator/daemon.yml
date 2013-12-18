@@ -2,6 +2,6 @@
 
 project_name: daemon
 project_root: ~/
-tabs:
+windows:
   - journal: _ journalctl -f
   - shell: cd ~/

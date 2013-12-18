@@ -2,6 +2,6 @@
 
 project_name: network
 project_root: ~/
-tabs:
+windows:
   - im: cd ~/ && weechat-curses
   - shell: cd ~/ 

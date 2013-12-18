@@ -2,6 +2,6 @@
 
 project_name: sys
 project_root: /etc
-tabs:
+windows:
   - vim: cd /etc && _ vim
   - shell: cd /etc

@@ -2,7 +2,7 @@
 
 project_name: lila
 project_root: ~/lila
-tabs:
+windows:
   - main: 
       layout: even-horizontal
       panes: 

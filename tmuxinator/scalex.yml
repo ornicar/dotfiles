@@ -2,7 +2,7 @@
 
 project_name: scalex
 project_root: ~/scalex
-tabs:
+windows:
   - main: 
       layout: even-horizontal
       panes: 

@@ -2,7 +2,7 @@
 
 project_name: idbase
 project_root: ~/idbase
-tabs:
+windows:
   - main: 
       layout: even-horizontal
       panes: 

@@ -2,6 +2,6 @@
 
 project_name: dotfiles
 project_root: ~/dotfiles
-tabs:
+windows:
   - vim: cd ~/dotfiles && vim
   - shell: cd ~/dotfiles

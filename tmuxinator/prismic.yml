@@ -2,7 +2,7 @@
 
 project_name: prismic
 project_root: ~/prismic
-tabs:
+windows:
   - wroom: 
       layout: even-horizontal
       panes: 

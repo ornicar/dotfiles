@@ -310,6 +310,9 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
+" Open/close quickfix window
+nmap F :cw<cr>
+
 " Don't use Ex mode; use Q for console mode
 map Q q:
 
@@ -415,7 +418,8 @@ nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=tag -start-insert tag<cr>
 nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer file_mru bookmark<cr>
 " nnoremap <leader>j :<C-u>Unite -no-split -buffer-name=jump jump<cr>
-function! s:unite_my_settings()
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
   nmap <buffer> n j
   nmap <buffer> e k
   imap <buffer> <C-n> <Plug>(unite_select_next_line)

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-java -jar ~/bin/scalariform.jar \
+java -jar ~/.bin/scalariform.jar \
 +alignSingleLineCaseStatements \
 +compactControlReadability \
 +doubleIndentClassDeclaration \

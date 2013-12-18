@@ -1,8 +1,12 @@
 #!/usr/bin/zsh
 
 case $1 in
-  "up")     mpc volume +5 && mpc volume;;
-  "down")   mpc volume -5 && mpc volume;;
+  # "up")     mpc volume +5 && mpc volume;;
+  # "down")   mpc volume -5 && mpc volume;;
+  # "toggle") mpc toggle;;
+  "down")   for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-volume "$i" -- -5%; done;;
+  "up")     for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-volume "$i" -- +5%; done;;
+  # "toggle") for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-mute "$i" -- toggle; done;;
   "toggle") mpc toggle;;
   "ui")     ~/.scripts/mpd-launcher; ncmpcpp;;
   *)

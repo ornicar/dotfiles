@@ -164,6 +164,30 @@ set nofoldenable
 "au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16
 "au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233
 "au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_theme='solarized'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.linenr = '¶'
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : ':)',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+let g:airline#extensions#tabline#enabled = 1
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
@@ -426,9 +450,9 @@ function! s:unite_settings()
   imap <buffer> <C-e> <Plug>(unite_select_previous_line)
 endfunction
 autocmd BufEnter *
-\   if empty(&buftype)
-\|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -no-split -buffer-name=tag tag<CR>
-\|  endif
+      \   if empty(&buftype)
+      \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -no-split -buffer-name=tag tag<CR>
+      \|  endif
 
 " parameter text objects
 let g:no_parameter_object_maps = 1

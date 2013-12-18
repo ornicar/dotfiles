@@ -147,3 +147,6 @@
 [submodule "vim/bundle/unite-tag"]
 	path = vim/bundle/unite-tag
 	url = https://github.com/tsukkee/unite-tag
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = https://github.com/bling/vim-airline

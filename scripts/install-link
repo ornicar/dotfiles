@@ -60,7 +60,8 @@ link abcde.conf ~/.abcde.conf
 link stylish-haskell.yaml ~/.stylish-haskell.yaml
 mkdir -p ~/.cabal
 link cabal ~/.cabal/config
-link sbt/global.sbt ~/.sbt/global.sbt
+link sbt/global.sbt ~/.sbt/0.13/global.sbt
+link sbt/plugins ~/.sbt/0.13/plugins
 link sbt/sbtrc ~/.sbtrc
 mkdir -p ~/.mplayer
 link mplayer.conf ~/.mplayer/config

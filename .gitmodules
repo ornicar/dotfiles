@@ -154,3 +154,6 @@
 [submodule "vim/bundle/quickfixsigns"]
 	path = vim/bundle/quickfixsigns
 	url = https://github.com/tomtom/quickfixsigns_vim
+[submodule "vim/bundle/buddy"]
+	path = vim/bundle/buddy
+	url = https://github.com/vim-scripts/vimbuddy.vim

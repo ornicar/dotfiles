@@ -2,10 +2,6 @@
   path = vim/bundle/lusty
   url = git://github.com/ornicar/lusty.git
   ignore = untracked
-[submodule "vim/bundle/ack"]
-  path = vim/bundle/ack
-  url = git://github.com/mileszs/ack.vim.git
-  ignore = untracked
 [submodule "vim/bundle/surround"]
   path = vim/bundle/surround
   url = git://github.com/ornicar/vim-surround.git

@@ -34,4 +34,5 @@ endfunction
 augroup SbtVim
   autocmd!
   autocmd BufRead *.scala call s:MakeMappings()
+  autocmd BufRead *.scala.html call s:MakeMappings()
 augroup END

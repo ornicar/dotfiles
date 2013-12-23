@@ -234,8 +234,7 @@ else
   nmap <leader>q :wq<cr>
 endif
 
-set diffopt=filler,vertical
-set diffopt+=iwhite
+set diffopt=filler,vertical,context:4,iwhite
 
 " Fast open vertical help
 nmap <leader>H <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>
@@ -331,9 +330,7 @@ endfunction
 
 " Quickfixsigns
 let g:quickfixsigns_classes = ['qfl', 'loc', 'marks', 'vcsdiff']
-
-" Open/close quickfix window
-nmap F :cw<cr>
+let g:quickfixsigns_balloon = 0
 
 " Don't use Ex mode; use Q for console mode
 map Q q:
@@ -503,24 +500,13 @@ function! Ranger()
 endfunction
 nmap <leader>R :call Ranger()<cr>
 
-" Show differences between buffer and saved versions of a file
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
-
 "  Clean code function
 function! CleanCode()
   %retab          " Replace tabs with spaces
   %s/\r/\r/eg     " Turn DOS returns ^M into real returns
   %s=  *$==e      " Delete end of line blanks
-  echo "Cleaned up this mess."
 endfunction
-nmap <leader>cc :call CleanCode()<cr>
+nmap <leader>cc my:call CleanCode()<cr>'y:delm y<cr>
 
 " Show the group name of the word under the cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

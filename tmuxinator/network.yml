@@ -3,5 +3,5 @@
 project_name: network
 project_root: ~/
 windows:
-  - im: cd ~/ && weechat-curses
+  - im: cd ~/ 
   - shell: cd ~/ 

@@ -13,6 +13,7 @@ weechat/irc.conf
 weechat/jabber.conf
 vimperator/info
 offlineimaprc
+target
 *.pyc
 *.hi
 *.o

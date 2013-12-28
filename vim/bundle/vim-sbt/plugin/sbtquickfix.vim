@@ -18,21 +18,3 @@ function! sbtquickfix#LoadQuickFix()
   endwhile
   echoerr "Unable to locate quickfix file"
 endfunction
-
-let g:quickfix_load_mapping="<leader>ff"
-let g:quickfix_next_mapping="<leader>fn"
-
-function! s:MakeMappings()
-  if g:quickfix_load_mapping != ""
-    exec ":nnoremap <silent> <buffer> " . g:quickfix_load_mapping . " :call sbtquickfix#LoadQuickFix()<cr>"
-  endif
-  if g:quickfix_next_mapping != ""
-    exec ":nnoremap <silent> <buffer> " . g:quickfix_next_mapping . " :cn<cr>"
-  endif
-endfunction
-
-augroup SbtVim
-  autocmd!
-  autocmd BufRead *.scala call s:MakeMappings()
-  autocmd BufRead *.scala.html call s:MakeMappings()
-augroup END

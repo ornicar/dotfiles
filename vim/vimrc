@@ -509,7 +509,7 @@ function! CleanCode()
   %s/\r/\r/eg     " Turn DOS returns ^M into real returns
   %s=  *$==e      " Delete end of line blanks
 endfunction
-nmap <leader>cc my:call CleanCode()<cr>'y:delm y<cr>
+nmap <leader>cc my:call CleanCode()<cr>'y:delm y<cr>:w<cr>
 
 " Show the group name of the word under the cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

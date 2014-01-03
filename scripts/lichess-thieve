@@ -2,7 +2,7 @@
 
 gameid=$(echo $1 | sed -r "s#.*lichess\.org/([a-z0-9]+).*#\1#")
 
-userid=$(ssh hollie 'mongo lichess --eval "db.game4.findOne({_id:\"'$gameid'\"}).p[1].id"' | tail -n +3)
+userid=$(ssh hollie 'mongo lichess --eval "db.game5.findOne({_id:\"'$gameid'\"}).is.slice(0,4)"' | tail -n +3)
 
 url="http://en.lichess.org/"$gameid$userid
 

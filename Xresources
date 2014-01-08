@@ -4,7 +4,7 @@ Xcursor.theme: CG
 ! Colors - also see scripts/xcolor for switching
 #include "/home/thib/.xcolors/solarized.xcolors"
 
-! Fonts 
+! Fonts
 ! Xft.antialias: true
 ! Xft.hinting:   true
 ! Xft.rgba:      rgb
@@ -32,11 +32,9 @@ URxvt.urgentOnBell:    true
 
 URxvt*cursorBlink:     true
 
-! URLs in rxvt
+! perl shit
 URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
 URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:      perl:url-select:select_next
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:      perl:keyboard-select:search
 URxvt.keysym.M-p:      perl:clipboard:paste

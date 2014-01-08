@@ -2,5 +2,5 @@
 
 project_name: home
 project_root: ~/
-tabs:
+windows:
   - shell: cd ~/

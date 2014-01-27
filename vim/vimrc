@@ -259,7 +259,7 @@ nmap <leader>zs :%s#<C-r>=expand("<cword>")<cr>#
 nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
       \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
 
-" Ag
+" Ag silver searcher
 let g:gprg = 'ag --nogroup --nocolor --column'
 " Set a mark then search with Ag
 nmap <leader>a mA:Ag<space>

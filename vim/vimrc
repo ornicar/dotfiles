@@ -338,7 +338,7 @@ map Q q:
 " Larger console window
 set cmdwinheight=12
 
-" Fast, efficient file renaming
+" Fast file renaming
 nmap R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
 
 " Make the current file executable
@@ -397,7 +397,7 @@ nmap ySS <Plug>YSsurround
 let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'passive_filetypes': ['scala', 'haskell', 'java'] }
+      \ 'passive_filetypes': ['scala', 'haskell', 'java', 'javascript'] }
 
 " Select all text in the buffer
 map <leader>sa ggVG
@@ -481,7 +481,7 @@ com! -nargs=1 Qfdofile try | sil cfirst |
     \ endtry
 
 " Show sbt errors in quickfix
-nnoremap <silent> <leader>ff :call sbtquickfix#LoadQuickFix()<cr>
+map <silent> <leader>ff :call sbtquickfix#LoadQuickFix()<cr>
 
 " Gist
 let g:gist_open_browser_after_post = 1

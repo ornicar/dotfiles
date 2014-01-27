@@ -20,7 +20,8 @@ ProgressiveMetal
 ProgressiveRock
 ClassicRock
 ClassicMetal
-BeatlesTribute);
+BeatlesTribute,
+JungleTrain);
 
 if [ $1 = "random" ]; then
   N=${#radios};
@@ -49,6 +50,7 @@ case $radio in
   "mozart") url="http://listen.radionomy.com/radio-mozart";;
   "barock") url="http://listen.radionomy.com/barock-music";;
   "reggae") url="http://listen.radionomy.com/natural-trip-reggae";;
+  "jungletrain") url="http://stream3.jungletrain.net:8000/";;
   *) url="http://pub4.rockradio.com:80/rr_$radio";;
 esac
 

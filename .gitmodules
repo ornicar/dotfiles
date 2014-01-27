@@ -153,3 +153,15 @@
 [submodule "vim/bundle/ag"]
 	path = vim/bundle/ag
 	url = https://github.com/rking/ag.vim
+[submodule "vim/bundle/clojure-static"]
+	path = vim/bundle/clojure-static
+	url = https://github.com/guns/vim-clojure-static
+[submodule "vim/bundle/rainbow-parentheses"]
+	path = vim/bundle/rainbow-parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule "vim/bundle/fireplace"]
+	path = vim/bundle/fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/classpath"]
+	path = vim/bundle/classpath
+	url = git://github.com/tpope/vim-classpath.git

@@ -60,111 +60,124 @@
   url = https://github.com/seebi/dircolors-solarized
   ignore = untracked
 [submodule "vim/bundle/pathogen"]
-	path = vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen
+  path = vim/bundle/pathogen
+  url = https://github.com/tpope/vim-pathogen
   ignore = untracked
 [submodule "vim/bundle/rename"]
-	path = vim/bundle/rename
-	url = git://github.com/wojtekmach/vim-rename.git
+  path = vim/bundle/rename
+  url = git://github.com/wojtekmach/vim-rename.git
   ignore = untracked
 [submodule "vimperator-plugins"]
-	path = vimperator-plugins
-	url = git://github.com/ornicar/vimperator-plugins
+  path = vimperator-plugins
+  url = git://github.com/ornicar/vimperator-plugins
 [submodule "vim/bundle/play2"]
-	path = vim/bundle/play2
-	url = https://github.com/gre/play2vim
+  path = vim/bundle/play2
+  url = https://github.com/gre/play2vim
 [submodule "vim/bundle/commentary"]
-	path = vim/bundle/commentary
-	url = git://github.com/tpope/vim-commentary.git
+  path = vim/bundle/commentary
+  url = git://github.com/tpope/vim-commentary.git
 [submodule "vim/bundle/webapi"]
-	path = vim/bundle/webapi
-	url = https://github.com/mattn/webapi-vim
+  path = vim/bundle/webapi
+  url = https://github.com/mattn/webapi-vim
 [submodule "zsh/history-substring-search"]
-	path = zsh/history-substring-search
-	url = https://github.com/ornicar/zsh-history-substring-search
+  path = zsh/history-substring-search
+  url = https://github.com/ornicar/zsh-history-substring-search
 [submodule "vim/bundle/vimproc"]
-	path = vim/bundle/vimproc
-	url = https://github.com/Shougo/vimproc
+  path = vim/bundle/vimproc
+  url = https://github.com/Shougo/vimproc
 [submodule "vim/bundle/ghcmod"]
-	path = vim/bundle/ghcmod
-	url = https://github.com/eagletmt/ghcmod-vim
+  path = vim/bundle/ghcmod
+  url = https://github.com/eagletmt/ghcmod-vim
 [submodule "vim/bundle/vim2hs"]
-	path = vim/bundle/vim2hs
-	url = https://github.com/dag/vim2hs
+  path = vim/bundle/vim2hs
+  url = https://github.com/dag/vim2hs
 [submodule "vim/bundle/hoogle"]
-	path = vim/bundle/hoogle
-	url = https://github.com/Twinside/vim-hoogle
+  path = vim/bundle/hoogle
+  url = https://github.com/Twinside/vim-hoogle
   ignore = untracked
 [submodule "vim/bundle/bufonly"]
-	path = vim/bundle/bufonly
-	url = https://github.com/duff/vim-bufonly
+  path = vim/bundle/bufonly
+  url = https://github.com/duff/vim-bufonly
 [submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular
+  path = vim/bundle/tabular
+  url = https://github.com/godlygeek/tabular
 [submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit
+  path = vim/bundle/matchit
+  url = https://github.com/tsaleh/vim-matchit
   ignore = untracked
 [submodule "vim/bundle/ruby-support"]
-	path = vim/bundle/ruby-support
-	url = git://github.com/vim-ruby/vim-ruby.git
+  path = vim/bundle/ruby-support
+  url = git://github.com/vim-ruby/vim-ruby.git
   ignore = untracked
 [submodule "mongo-hacker"]
-	path = mongo-hacker
-	url = git://github.com/TylerBrock/mongo-hacker.git
+  path = mongo-hacker
+  url = git://github.com/TylerBrock/mongo-hacker.git
   ignore = untracked
 [submodule "vim/bundle/parameter-text-objects"]
-	path = vim/bundle/parameter-text-objects
-	url = https://github.com/vim-scripts/Parameter-Text-Objects
+  path = vim/bundle/parameter-text-objects
+  url = https://github.com/vim-scripts/Parameter-Text-Objects
   ignore = untracked
 [submodule "vim/bundle/coffee-script"]
-	path = vim/bundle/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script
+  path = vim/bundle/coffee-script
+  url = https://github.com/kchmck/vim-coffee-script
   ignore = untracked
 [submodule "vim/bundle/jsbeautify"]
-	path = vim/bundle/jsbeautify
-	url = https://github.com/maksimr/vim-jsbeautify
+  path = vim/bundle/jsbeautify
+  url = https://github.com/maksimr/vim-jsbeautify
   ignore = untracked
 [submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+  path = vim/bundle/syntastic
+  url = https://github.com/scrooloose/syntastic.git
+  ignore = untracked
 [submodule "vim/bundle/html5"]
-	path = vim/bundle/html5
-	url = git://github.com/othree/html5.vim.git
+  path = vim/bundle/html5
+  url = git://github.com/othree/html5.vim.git
+  ignore = untracked
 [submodule "vim/bundle/neocomplete"]
-	path = vim/bundle/neocomplete
-	url = https://github.com/Shougo/neocomplete.vim
+  path = vim/bundle/neocomplete
+  url = https://github.com/Shougo/neocomplete.vim
+  ignore = untracked
 [submodule "vim/bundle/unite"]
-	path = vim/bundle/unite
-	url = https://github.com/Shougo/unite.vim
+  path = vim/bundle/unite
+  url = https://github.com/Shougo/unite.vim
+  ignore = untracked
 [submodule "vim/bundle/unite-outline"]
-	path = vim/bundle/unite-outline
-	url = https://github.com/Shougo/unite-outline
+  path = vim/bundle/unite-outline
+  url = https://github.com/Shougo/unite-outline
+  ignore = untracked
 [submodule "vim/bundle/unite-tag"]
-	path = vim/bundle/unite-tag
-	url = https://github.com/tsukkee/unite-tag
+  path = vim/bundle/unite-tag
+  url = https://github.com/tsukkee/unite-tag
   ignore = untracked
 [submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
-	url = https://github.com/bling/vim-airline
+  path = vim/bundle/airline
+  url = https://github.com/bling/vim-airline
+  ignore = untracked
 [submodule "vim/bundle/quickfixsigns"]
-	path = vim/bundle/quickfixsigns
-	url = https://github.com/tomtom/quickfixsigns_vim
+  path = vim/bundle/quickfixsigns
+  url = https://github.com/tomtom/quickfixsigns_vim
+  ignore = untracked
 [submodule "vim/bundle/ag"]
-	path = vim/bundle/ag
-	url = https://github.com/rking/ag.vim
+  path = vim/bundle/ag
+  url = https://github.com/rking/ag.vim
+  ignore = untracked
 [submodule "vim/bundle/clojure-static"]
-	path = vim/bundle/clojure-static
-	url = https://github.com/guns/vim-clojure-static
+  path = vim/bundle/clojure-static
+  url = https://github.com/guns/vim-clojure-static
+  ignore = untracked
 [submodule "vim/bundle/rainbow-parentheses"]
-	path = vim/bundle/rainbow-parentheses
-	url = https://github.com/kien/rainbow_parentheses.vim
+  path = vim/bundle/rainbow-parentheses
+  url = https://github.com/kien/rainbow_parentheses.vim
+  ignore = untracked
 [submodule "vim/bundle/fireplace"]
-	path = vim/bundle/fireplace
-	url = git://github.com/tpope/vim-fireplace.git
+  path = vim/bundle/fireplace
+  url = git://github.com/tpope/vim-fireplace.git
+  ignore = untracked
 [submodule "vim/bundle/classpath"]
-	path = vim/bundle/classpath
-	url = git://github.com/tpope/vim-classpath.git
+  path = vim/bundle/classpath
+  url = git://github.com/tpope/vim-classpath.git
+  ignore = untracked
 [submodule "vim/bundle/clojure-highlight"]
-	path = vim/bundle/clojure-highlight
-	url = https://github.com/guns/vim-clojure-highlight
+  path = vim/bundle/clojure-highlight
+  url = https://github.com/guns/vim-clojure-highlight
+  ignore = untracked

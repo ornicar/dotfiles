@@ -1,17 +1,11 @@
 # ~/.tmuxinator/vindinium.yml
 
 project_name: vindinium
-project_root: ~/24hcodebot
+project_root: ~/vindinium
 windows:
   - server_main: 
       layout: even-horizontal
       panes: 
-        - cd ~/24hcodebot/server && sbt
-        - cd ~/24hcodebot/server && vim
-  - server_shell: cd ~/24hcodebot/server
-  - scala_starter_main: 
-      layout: even-horizontal
-      panes: 
-        - cd ~/24hcodebot/starter-scala && sbt
-        - cd ~/24hcodebot/starter-scala && vim
-  - scala_starter_shell: cd ~/24hcodebot/starter-scala
+        - cd ~/vindinium/server && sbt
+        - cd ~/vindinium/server && vim
+  - server_shell: cd ~/vindinium/server

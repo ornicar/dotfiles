@@ -1,10 +1,10 @@
-import XMonad
-import XMonad.Layout.NoBorders
-import XMonad.Util.EZConfig
-import XMonad.Hooks.UrgencyHook
-import XMonad.Hooks.ManageHelpers
+import           XMonad
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Hooks.UrgencyHook
+import           XMonad.Layout.NoBorders
+import           XMonad.Util.EZConfig
 
-import qualified XMonad.StackSet as W
+import qualified XMonad.StackSet            as W
 
 main = xmonad $ withUrgencyHook dzenArgs myConfig
   where dzenArgs = dzenUrgencyHook { args = ["-bg", "darkgreen", "-xs", "1"] }
@@ -89,8 +89,8 @@ myConfig = defaultConfig {
     , ("M-=",   spawn "urxvtc -e ~/.scripts/music up")
     , ("M-w",   spawn "urxvtc -e wicd-curses")
     , ("C-m",   spawn "~/.scripts/touchpad_toggle")
-    , ("M-S-p", spawn "~/.scripts/screenshot")           
-    , ("C-1", spawn "~/.screenlayout/mac.sh")           
-    , ("C-2", spawn "~/.screenlayout/mac-screen.sh")           
-    , ("C-3", spawn "~/.screenlayout/screen.sh")           
+    , ("M-S-p", spawn "~/.scripts/screenshot")
+    , ("C-1", spawn "~/.screenlayout/mac.sh")
+    , ("C-2", spawn "~/.screenlayout/mac-screen.sh")
+    , ("C-3", spawn "~/.screenlayout/screen.sh")
   ]

@@ -368,22 +368,22 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_colorpairs = [
-	\ ['brown',       'RoyalBlue3'],
-	\ ['Darkblue',    'SeaGreen3'],
-	\ ['darkgray',    'DarkOrchid3'],
-	\ ['darkgreen',   'firebrick3'],
-	\ ['darkcyan',    'RoyalBlue3'],
-	\ ['darkred',     'SeaGreen3'],
-	\ ['darkmagenta', 'DarkOrchid3'],
-	\ ['brown',       'firebrick3'],
-	\ ['gray',        'RoyalBlue3'],
-	\ ['darkmagenta', 'DarkOrchid3'],
-	\ ['Darkblue',    'firebrick3'],
-	\ ['darkgreen',   'RoyalBlue3'],
-	\ ['darkcyan',    'SeaGreen3'],
-	\ ['darkred',     'DarkOrchid3'],
-	\ ['red',         'firebrick3'],
-	\ ]
+  \ ['brown',       'RoyalBlue3'],
+  \ ['Darkblue',    'SeaGreen3'],
+  \ ['darkgray',    'DarkOrchid3'],
+  \ ['darkgreen',   'firebrick3'],
+  \ ['darkcyan',    'RoyalBlue3'],
+  \ ['darkred',     'SeaGreen3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['brown',       'firebrick3'],
+  \ ['gray',        'RoyalBlue3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['Darkblue',    'firebrick3'],
+  \ ['darkgreen',   'RoyalBlue3'],
+  \ ['darkcyan',    'SeaGreen3'],
+  \ ['darkred',     'DarkOrchid3'],
+  \ ['red',         'firebrick3'],
+  \ ]
 
 " clojure
 let g:clojure_align_multiline_strings = 1
@@ -425,7 +425,7 @@ nmap ySS <Plug>YSsurround
 let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'passive_filetypes': ['scala', 'haskell', 'java', 'javascript'] }
+      \ 'passive_filetypes': ['scala', 'haskell', 'java'] }
 
 " Select all text in the buffer
 map <leader>sa ggVG
@@ -510,6 +510,7 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 
 " Show sbt errors in quickfix
 map <silent> <leader>ff :call sbtquickfix#LoadQuickFix()<cr>
+map <silent> <leader>fn :cn<cr>
 
 " Gist
 let g:gist_open_browser_after_post = 1

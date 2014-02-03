@@ -19,6 +19,10 @@ export SBT_OPTS=$JAVA_OPTS
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
 
+# clojurescript
+export CLOJURESCRIPT_HOME="$HOME/clojurescript"
+export PATH="$CLOJURESCRIPT_HOME/bin:$PATH"
+
 # Enable more syntax highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 

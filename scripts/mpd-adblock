@@ -4,7 +4,7 @@ echo "MPD Radio AdBlock started";
 
 detect() {
   current=$(mpc current);
-  if [ $? != 0 ]; then 
+  if [ $? != 0 ]; then
     echo "mpd is not running, exiting!";
     exit 1;
   fi
@@ -17,6 +17,7 @@ detect() {
   test "${current#*"Annonce"}" != "$current" && return 1;
   test "${current#*"BarockMusic"}" != "$current" && return 1;
   test "${current#*"RadioMozart"}" != "$current" && return 1;
+  test "${current#*"Classy"}" != "$current" && return 1;
   return 0;
 }
 

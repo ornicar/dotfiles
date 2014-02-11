@@ -259,6 +259,14 @@ nmap <leader>zs :%s#<C-r>=expand("<cword>")<cr>#
 nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
       \ xargs perl -pi -E 's/<C-r>=expand("<cword>")<cr>//g'<left><left><left>
 
+" Ag silver searcher
+let g:gprg = 'ag --nogroup --nocolor --column'
+" Set a mark then search with Ag
+nmap <leader>a mA:Ag<space>
+" Set a mark, then pull word under cursor into Ag for a global search
+nmap <leader>za mA:Ag "<C-r>=expand("<cword>")<cr>"
+nmap <leader>zA mA:Ag "<C-r>=expand("<cWORD>")<cr>"
+
 " yuml
 nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>
 
@@ -457,18 +465,6 @@ nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history
 nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=tag -start-insert tag<cr>
 nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer file_mru bookmark<cr>
 " nnoremap <leader>j :<C-u>Unite -no-split -buffer-name=jump jump<cr>
-
-" Use ag in unite grep source.
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts =
-\ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-\  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-let g:unite_source_grep_recursive_opt = ''
-
-nnoremap <leader>a :Unite -no-split -buffer-name=grep grep:.<cr>
-nmap <leader>za :Unite -no-split -buffer-name=grep grep:.<cr><C-r>=expand("<cword>")<cr>
-nmap <leader>zA :Unite -no-split -buffer-name=grep grep:.<cr><C-r>=expand("<cWORD>")<cr>
-
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
   nmap <buffer> n j

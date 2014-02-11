@@ -95,7 +95,7 @@ fi
 
 # WIFI
 if [ $_wifi = 1 ]; then
-  interface="wlp3s0"
+  interface="wlp4s0"
   quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
   if [[ $quality -gt 0 ]]; then
     (( percent = (quality * 100) / 70 ))

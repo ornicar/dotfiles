@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sudo modprobe usbnet
+sudo ifconfig usb0 up
+sudo dhcpcd usb0
+
+echo "Done!"
+echo "Disconnect with: sudo dhcpcd -x usb0"

@@ -4,7 +4,6 @@
 
 # ---- START OF CONFIG
 
-$sleep = 1
 $pow_dir = ENV['HOME'] + '/.pow/'
 $sites_dir = ENV['HOME'] + '/.nginx-sites/'
 

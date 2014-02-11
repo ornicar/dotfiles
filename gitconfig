@@ -13,8 +13,8 @@
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-  old = red 
-  new = green 
+  old = red
+  new = green
 
 [color "diff"]
   whitespace = red reverse
@@ -35,7 +35,7 @@
 [push]
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
-  default = tracking 
+  default = tracking
 
 [apply]
   whitespace = nowarn
@@ -44,7 +44,7 @@
   autosetupmerge = true
 
 [diff]
-  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject 
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
   # instead of a/b/c/d as prefixes for patches
   mnemonicprefix = true
 
@@ -80,12 +80,12 @@
     # nice logs
   l = log --decorate --graph --date=short --pretty=\"format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C()%s %C(black) [%an]%Creset\"
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  mini = log --pretty=format:\"%h\" 
-  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" 
-  changelog = log --pretty=format:\" * %s\" 
-  shortnocolor = log --pretty=format:\"%h %cr %cn %s\" 
+  mini = log --pretty=format:\"%h\"
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  changelog = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 [github]
-	user = ornicar
+  user = ornicar
 [rerere]
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/

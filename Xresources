@@ -5,11 +5,11 @@
 #include "/home/thib/.xcolors/solarized.xcolors"
 
 ! Fonts
-Xft.antialias: true
-Xft.hinting:   true
-Xft.rgba:      rgb
-Xft.hintstyle: hintfull
-Xft.dpi: 220
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintfull
+Xft.dpi:        220
 
 urxvt.font:  xft:DejaVuSansMono:size=8
 

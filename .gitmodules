@@ -147,7 +147,7 @@
   ignore = untracked
 [submodule "vim/bundle/unite-tag"]
   path = vim/bundle/unite-tag
-  url = https://github.com/tsukkee/unite-tag
+  url = git@github.com:ornicar/unite-tag
   ignore = untracked
 [submodule "vim/bundle/airline"]
   path = vim/bundle/airline

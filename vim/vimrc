@@ -368,22 +368,22 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 let g:rbpt_colorpairs = [
-  \ ['brown',       'RoyalBlue3'],
-  \ ['Darkblue',    'SeaGreen3'],
-  \ ['darkgray',    'DarkOrchid3'],
-  \ ['darkgreen',   'firebrick3'],
-  \ ['darkcyan',    'RoyalBlue3'],
-  \ ['darkred',     'SeaGreen3'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['brown',       'firebrick3'],
-  \ ['gray',        'RoyalBlue3'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['Darkblue',    'firebrick3'],
-  \ ['darkgreen',   'RoyalBlue3'],
-  \ ['darkcyan',    'SeaGreen3'],
-  \ ['darkred',     'DarkOrchid3'],
-  \ ['red',         'firebrick3'],
-  \ ]
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
 
 " clojure
 let g:clojure_align_multiline_strings = 1
@@ -455,6 +455,8 @@ nmap <silent> <leader>mr :LustyFilesystemExplorerFromHere<cr>
 " Unite
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_short_source_names = 0
+let g:unite_source_tag_max_name_length = 25
+let g:unite_source_tag_max_fname_length = 90
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 nnoremap <leader>mf :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
@@ -474,8 +476,9 @@ function! s:unite_settings()
 endfunction
 autocmd BufEnter *
       \   if empty(&buftype)
-      \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -no-split -buffer-name=tag tag<CR>
+      \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately -no-split -buffer-name=tag tag<CR>
       \|  endif
+
 
 " parameter text objects
 let g:no_parameter_object_maps = 1

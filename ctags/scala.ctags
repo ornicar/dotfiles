@@ -5,9 +5,7 @@
 --langdef=scala
 --langmap=scala:.scala
 --regex-scala=/^.*class\s+([a-zA-Z0-9_]+)/\1/c,classes/
---regex-scala=/^.*case\s+class\s+([a-zA-Z0-9_]+)/\1/r,cclasses/
 --regex-scala=/^.*object\s+([a-zA-Z0-9_]+)/\1/o,objects/
---regex-scala=/^.*case\s+object\s+([a-zA-Z0-9_]+)/\1/o,cobjects/
 --regex-scala=/^.*trait\s+([a-zA-Z0-9_]+)/\1/t,traits/
 --regex-scala=/^.*\s+def\s+([a-zA-Z0-9_=]+)\s*.*[:=\(\{]/\1/m,methods/
 --regex-scala=/^.*\s+val\s+([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/
@@ -25,3 +23,4 @@
 --exclude=*.css
 --exclude=*.java
 --exclude=play-*
+--exclude=test

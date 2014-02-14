@@ -85,11 +85,6 @@ if [ $_music = 1 ]; then
     current=$(mpc current);
     current=${current/"ROCKRADIO.COM: "/};
   fi
-  if [ -z "$current" ]; then
-    symbol="♫";
-  else
-    symbol="#[fg=colour2]♫#[default]";
-  fi
   printf " %s %s%s#[default]" "$symbol" "#[fg=colour10]" "$current[1,70]"
 fi
 

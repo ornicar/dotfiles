@@ -6,6 +6,7 @@
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
+export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
 
 export BROWSER="firefox"
 export EDITOR='vim'
@@ -13,8 +14,8 @@ export GIT_EDITOR='vim'
 
 # Java/SBT configuration
 # export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
-export JAVA_OPTS="-Xms256M -Xmx1G -Xss8M -XX:MaxPermSize=1G -XX:ReservedCodeCacheSize=512m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
-export SBT_OPTS=$JAVA_OPTS
+# export JAVA_OPTS="-Xms256M -Xmx1G -Xss8M -XX:MaxPermSize=1G -XX:ReservedCodeCacheSize=512m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+# export SBT_OPTS=$JAVA_OPTS
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"

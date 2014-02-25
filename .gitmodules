@@ -177,3 +177,6 @@
   path = vim/bundle/clojure-highlight
   url = https://github.com/guns/vim-clojure-highlight
   ignore = untracked
+[submodule "vim/bundle/stylus"]
+	path = vim/bundle/stylus
+	url = https://github.com/wavded/vim-stylus

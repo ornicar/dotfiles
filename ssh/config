@@ -1,3 +1,6 @@
+Host lizen
+  HostName 91.209.78.59
+  User root
 Host lichess
   HostName 188.165.238.17
   User root

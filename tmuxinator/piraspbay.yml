@@ -1,0 +1,12 @@
+# ~/.tmuxinator/piraspbay.yml
+
+project_name: piraspbay
+project_root: ~/piraspbay
+windows:
+  - main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/piraspbay 
+        - cd ~/piraspbay && vim
+  - shell: cd ~/piraspbay
+  - shell: cd ~/piraspbay

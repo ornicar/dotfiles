@@ -328,10 +328,6 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-" Quickfixsigns
-let g:quickfixsigns_classes = ['qfl', 'loc', 'marks', 'vcsdiff']
-let g:quickfixsigns_balloon = 0
-
 " Don't use Ex mode; use Q for console mode
 map Q q:
 

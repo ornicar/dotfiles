@@ -1,6 +1,6 @@
 #/bin/sh
 
-gameid=$(echo $1 | sed -r "s#.*lichess\.org/([a-z0-9]+).*#\1#")
+gameid=$(echo $1 | sed -r "s#.*lichess\.org/([a-zA-Z0-9]+).*#\1#")
 
 userid=$(ssh hollie 'mongo lichess --eval "db.game5.findOne({_id:\"'$gameid'\"}).is.slice(0,4)"' | tail -n +3)
 

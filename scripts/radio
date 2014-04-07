@@ -53,7 +53,7 @@ case $radio in
   "reggae") url="http://listen.radionomy.com/natural-trip-reggae";;
   "jungletrain") url="http://stream3.jungletrain.net:8000/";;
   "drumandbass") url="http://source2.dnbradio.com:13128/stream.ogg";;
-  *) url="http://pub4.rockradio.com:80/rr_$radio";;
+  *) url="http://pub5.rockradio.com:80/rr_$radio";;
 esac
 
 ~/.scripts/mpd-launcher;

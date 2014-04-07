@@ -2,4 +2,4 @@
 
 setxkbmap -keycodes evdev-mac-thib us -variant colemak
 xmodmap ~/dotfiles/xmodmap/mac
-xset r rate 220 56                          
+xset r rate 200 60                          

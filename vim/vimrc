@@ -475,7 +475,6 @@ autocmd BufEnter *
       \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately -no-split -buffer-name=tag tag<CR>
       \|  endif
 
-
 " parameter text objects
 let g:no_parameter_object_maps = 1
 vmap     <silent> i, <Plug>ParameterObjectI

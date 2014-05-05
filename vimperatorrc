@@ -54,6 +54,7 @@ nnoremap <C-right> :tabmove! +1<CR>
 " ======================================
 " minimal gui
 set gui=tabs
+set gui=nonavigation
 " Try to always switch to normal mode on page load
 set focuscontent
 " I don't like beeps

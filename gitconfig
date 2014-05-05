@@ -25,9 +25,14 @@
   excludesfile = /home/thib/dotfiles/gitignore
 
 [merge]
-  tool = vimdiff
   summary = true
   verbosity = 1
+  tool = diffconflicts
+
+[mergetool "diffconflicts"]
+  cmd = diffconflicts $EDITOR $BASE $LOCAL $REMOTE $MERGED
+  trustExitCode = true
+  keepBackup = false
 
 [web]
   browser = firefox

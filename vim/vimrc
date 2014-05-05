@@ -73,6 +73,8 @@ set laststatus=2                   " Show the status line all the time
 " set statusline=%{substitute(getcwd(),'^.*/','','')}\ [%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 " set statusline=%{VimBuddy()}%{substitute(getcwd(),'^.*/','','')}\ %<%.99f\ %h%w%m%r%y%=%-16(\ %#warningmsg#%{SyntasticStatuslineFlag()}%*\ %l,%c-%v\ %)%P
 
+" tab navigation
+nnoremap <C-t> :tabnext<CR>
 
 " Tabs and indentation.
 set expandtab
@@ -234,7 +236,7 @@ else
   nmap <leader>q :wq<cr>
 endif
 
-set diffopt=filler,vertical,context:4,iwhite
+set diffopt=filler,horizontal,context:4,iwhite
 
 " Fast open vertical help
 nmap <leader>H <Esc>:vert help<cr>:vert resize 80<cr>:vert help<space>

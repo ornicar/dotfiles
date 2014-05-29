@@ -5,3 +5,6 @@ autocmd FileType scala setlocal formatprg=~/scalariver/scalariver\ --url=http://
 autocmd FileType scala nmap <buffer> <leader>i :nohl<cr>mygggqG'y:w<cr>
 
 set wildignore+=ext
+
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'passive_filetypes': ['scala', 'haskell', 'java', 'javascript'] }

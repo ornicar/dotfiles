@@ -67,10 +67,10 @@ set editor="urxvt -e vim -f"
 set hintinputs="label,name"
 set hintmatching="wordstartswith"
 " default search engine
-"set defsearch="duckduckgo"
-set defsearch="google"
+set defsearch="duckduckgo"
+"set defsearch="google"
 
-" noscript 
+" noscript
 " noremap <leader>n :noscript popup<cr>
 
 " commands

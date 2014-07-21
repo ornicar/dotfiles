@@ -18,13 +18,13 @@ refresh_nginx()
 
 def create(name, port)
   config = """server {
-server_name %s.dev ~^.+\.%s.dev$;
-location / { 
+server_name %s.dev ~^.+\.%s.dev$ %s.fr ~^.+\.%s.fr$;
+location / {
 proxy_set_header Host $http_host;
 proxy_http_version 1.1;
-proxy_pass http://127.0.0.1:%s/; 
+proxy_pass http://127.0.0.1:%s/;
 }
-}""" % [name, name, port]
+}""" % [name, name, name, name, port]
 File.write($sites_dir + name, config)
 refresh_nginx
 end

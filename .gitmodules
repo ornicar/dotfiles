@@ -176,6 +176,8 @@
 [submodule "vim/bundle/stylus"]
   path = vim/bundle/stylus
   url = https://github.com/wavded/vim-stylus
+  ignore = untracked
 [submodule "vim/bundle/neomru"]
   path = vim/bundle/neomru
   url = https://github.com/Shougo/neomru.vim
+  ignore = untracked

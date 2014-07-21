@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+REMOTE=$1
+DB=$2
+COLL=$3
+FILE=$DB-$COLL.export.json
+
+ssh $REMOTE mongoexport --db $DB --collection $COLL --out /root/$FILE
+scp $REMOTE:$FILE ./
+ssh $REMOTE rm /root/$FILE
+mongoimport --db $DB --collection $COLL $FILE
+rm $FILE

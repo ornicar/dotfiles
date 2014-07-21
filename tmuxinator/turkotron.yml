@@ -1,0 +1,11 @@
+# ~/.tmuxinator/turkotron.yml
+
+project_name: turkotron
+project_root: ~/turkotron
+windows:
+  - server_main: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/turkotron/server && sbt
+        - cd ~/turkotron/server && vim
+  - server_shell: cd ~/turkotron/server

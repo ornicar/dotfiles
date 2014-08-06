@@ -181,3 +181,6 @@
   path = vim/bundle/neomru
   url = https://github.com/Shougo/neomru.vim
   ignore = untracked
+[submodule "vim/bundle/idris"]
+	path = vim/bundle/idris
+	url = git://github.com/idris-hackers/idris-vim.git

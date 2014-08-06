@@ -101,10 +101,6 @@
 [submodule "vim/bundle/tabular"]
   path = vim/bundle/tabular
   url = https://github.com/godlygeek/tabular
-[submodule "vim/bundle/matchit"]
-  path = vim/bundle/matchit
-  url = https://github.com/tsaleh/vim-matchit
-  ignore = untracked
 [submodule "vim/bundle/ruby-support"]
   path = vim/bundle/ruby-support
   url = git://github.com/vim-ruby/vim-ruby.git
@@ -184,3 +180,6 @@
 [submodule "vim/bundle/idris"]
 	path = vim/bundle/idris
 	url = git://github.com/idris-hackers/idris-vim.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/vim-scripts/matchit.zip.git

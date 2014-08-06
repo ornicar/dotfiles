@@ -43,7 +43,7 @@ set hidden                        " Handle multiple buffers better.
 
 set wildmenu                      " Enhanced command line completion.
 set wildmode=list:longest         " Complete files like a shell.
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.jar,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/*,**/logs/*,**/target/*,*.hi,tags,**/dist/*,**/public/**/vendor/**,**/public/vendor/**
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.jar,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/*,**/logs/*,**/target/*,*.hi,tags,**/dist/*,**/public/**/vendor/**,**/public/vendor/**,**/node_modules/**
 
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
@@ -468,7 +468,7 @@ let g:unite_source_tag_show_location = 0
 " Show file name field.  The default value is 1.
 let g:unite_source_tag_show_fname = 1
 
-let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --ignore ext -g ""'
+let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --ignore ext --ignore node_modules -g ""'
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])

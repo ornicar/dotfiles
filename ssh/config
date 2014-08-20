@@ -1,9 +1,15 @@
+Host wroomteam
+  HostName staff.0x50.net
+  User wroomteam
 Host matthews
   HostName 91.121.16.158
   User root
 Host lizen
   HostName 91.209.78.59
   User root
+Host vindinium
+  HostName 91.209.78.59
+  User vindinium
 Host lichess
   HostName 188.165.238.17
   User root

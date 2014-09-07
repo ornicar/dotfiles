@@ -1,5 +1,0 @@
-#!/bin/sh
-
-repopath=~/local-repo/sonatype/snapshots/org/reactivemongo
-mkdir -p $repopath
-lftp https://oss.sonatype.org/content/repositories/snapshots/org/reactivemongo/ -e "mirror --no-empty-dirs --parallel=4 . $repopath"

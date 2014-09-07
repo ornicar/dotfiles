@@ -1,9 +1,13 @@
+Host frank
+  HostName 5.196.64.149
+  User root
 Host wroomteam
   HostName staff.0x50.net
   User wroomteam
 Host matthews
   HostName 91.121.16.158
-  User root
+  Port 27120
+  User thibault
 Host lizen
   HostName 91.209.78.59
   User root

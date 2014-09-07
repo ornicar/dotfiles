@@ -183,3 +183,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
+[submodule "vim/bundle/elm"]
+	path = vim/bundle/elm
+	url = https://github.com/lambdatoast/elm.vim

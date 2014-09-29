@@ -68,6 +68,7 @@ mkdir -p ~/.mplayer
 link mplayer.conf ~/.mplayer/config
 link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
+link jshintrc ~/.jshintrc
 
 cd mongo-hacker
 make

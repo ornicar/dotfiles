@@ -13,9 +13,7 @@ export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
-# export JAVA_OPTS="-Dfile.encoding=UTF8 -Xms256M -Xmx4G -Xss4M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=4G"
-# export JAVA_OPTS="-Xms256M -Xmx1G -Xss8M -XX:MaxPermSize=1G -XX:ReservedCodeCacheSize=512m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
-export SBT_OPTS="-Xms256M -Xmx1G -Xss8M -XX:MaxPermSize=1G -XX:ReservedCodeCacheSize=256m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+export SBT_OPTS="-Xms256M -Xmx1G -Xss8M -XX:ReservedCodeCacheSize=256m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"

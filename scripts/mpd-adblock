@@ -15,10 +15,11 @@ detect() {
   test "${current#*"There's More To ROCKRADIO.COM!"}" != "$current" && return 1;
   test "${current#*"JINGLE"}" != "$current" && return 1;
   test "${current#*"Annonce"}" != "$current" && return 1;
-  test "${current#*"BarockMusic"}" != "$current" && return 1;
+  # test "${current#*"BarockMusic"}" != "$current" && return 1;
   test "${current#*"RadioMozart"}" != "$current" && return 1;
   test "${current#*"Classy"}" != "$current" && return 1;
   test "${current#*"NaturalTripReggae"}" != "$current" && return 1;
+  test "${current#*"ABCJazz"}" != "$current" && return 1;
   return 0;
 }
 

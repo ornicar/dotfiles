@@ -52,7 +52,7 @@ case $radio in
   "barock") url="http://listen.radionomy.com/barock-music";;
   "reggae") url="http://listen.radionomy.com/natural-trip-reggae";;
   "jungletrain") url="http://stream3.jungletrain.net:8000/";;
-  "drumandbass") url="http://source2.dnbradio.com:13128/stream.ogg";;
+  "drumandbass") url="http://dnbradio.com/aac.m3u";;
   *) url="http://pub5.rockradio.com:80/rr_$radio";;
 esac
 

@@ -18,7 +18,7 @@ refresh_nginx()
 
 def create(name, port)
   config = """server {
-server_name %s.dev ~^.+\.%s.dev$ %s.fr ~^.+\.%s.fr$;
+server_name %s.dev ~^.+\.%s.dev$ %s.xxx ~^.+\.%s.xxx$;
 location / {
 proxy_set_header Host $http_host;
 proxy_http_version 1.1;

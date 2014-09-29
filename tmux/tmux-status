@@ -131,8 +131,8 @@ fi
 
 if [ $_temperature = 1 ]; then
   for i in 0 1; do
-    # TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
-    TEMP_INPUT_FILE=/sys/devices/platform/coretemp.$i/temp1_input
+    TEMP_INPUT_FILE=/sys/class/hwmon/hwmon$i/temp1_input
+    # TEMP_INPUT_FILE=/sys/devices/platform/coretemp.$i/temp1_input
     [[ -f $TEMP_INPUT_FILE ]] && break
   done
   (( temperature = $(<$TEMP_INPUT_FILE) / 1000 ))

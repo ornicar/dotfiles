@@ -1,6 +1,12 @@
+Host hexal
+  HostName 91.209.78.225
+  User root
 Host frank
   HostName 5.196.64.149
   User root
+Host vindinium
+  HostName 5.196.64.149
+  User vindinium
 Host wroomteam
   HostName staff.0x50.net
   User wroomteam

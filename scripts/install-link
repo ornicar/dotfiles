@@ -40,7 +40,8 @@ link tmuxinator ~/.tmuxinator
 mkdir -p ~/.config/ranger
 link ranger/rc.conf ~/.config/ranger/rc.conf
 link ranger/apps.py ~/.config/ranger/apps.py
-link ncmpcpp.keys ~/.ncmpcpp/keys
+link ncmpcpp/bindings ~/.ncmpcpp/bindings
+link ncmpcpp/config ~/.ncmpcpp/config
 link ttytterrc ~/.ttytterrc
 link inputrc ~/.inputrc
 link editrc ~/.editrc

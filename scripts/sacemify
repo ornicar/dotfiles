@@ -3,7 +3,7 @@
 . /etc/profile.d/prll.sh
 
 dest=paul:/home/sacem
-base_url=http://sacem.iliaz.com
+base_url=http://sacem.lichess.org
 
 sendToSacem() {
 

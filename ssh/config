@@ -1,3 +1,6 @@
+Host nafis
+  HostName 23.251.154.68
+  User thib
 Host hexal
   HostName 91.209.78.225
   User root

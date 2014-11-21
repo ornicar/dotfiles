@@ -11,8 +11,8 @@ Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
 Xft.dpi:        220
 
-urxvt.font:  xft:Source Code Pro:size=8
-/* urxvt.font:  xft:DejaVuSansMono:size=8 */
+/* urxvt.font:  xft:Source Code Pro:size=8 */
+urxvt.font:  xft:DejaVuSansMono:size=8
 /* urxvt.font:  xft:DejaVuSansMono:size=10 */
 
 URxvt.scrollBar:  false

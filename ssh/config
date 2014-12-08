@@ -1,3 +1,13 @@
+Host rasp
+  HostName 10.0.25.81
+  User pi
+Host jaldus
+  HostName jaldus.ddns.net
+  User ornicar
+  Port 2223
+Host drazak
+  HostName 198.52.200.14
+  User root
 Host nafis
   HostName 23.251.154.68
   User thib

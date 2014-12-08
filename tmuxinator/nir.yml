@@ -1,0 +1,9 @@
+# ~/.tmuxinator/nir.yml
+
+project_name: nir
+project_root: ~/nir
+windows:
+  - wroom: 
+      layout: even-horizontal
+      panes: 
+        - cd ~/nir

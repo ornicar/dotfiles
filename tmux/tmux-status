@@ -160,7 +160,7 @@ fi
 # MEMORY
 
 if [ $_memory = 1 ]; then
-  memory=$(free -t | awk '/Total:/ {printf "%.0f", 100*$3/($3 + $4)}')
+  memory=$(free -t | awk '/Mem:/ {printf "%.0f", 100*($2 - $7)/$2}')
   if [ "$memory" -gt 85 ]; then modifier="#[bg=colour1,fg=colour15,bright]"
   elif [ "$memory" -gt 75 ]; then modifier="#[bg=colour3,fg=colour0]"
   elif [ "$memory" -gt 65 ]; then modifier="#[fg=colour9]"

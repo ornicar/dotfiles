@@ -1,6 +1,18 @@
 Host thib-mbp
   HostName 10.0.25.240
   User thib
+Host nir-proxybot
+  HostName 91.209.78.156
+  User root
+Host nir-fog
+  HostName 172.16.10.6
+  User root
+Host nir-sshgit
+  HostName 172.16.10.3
+  User root
+Host nir-zprun
+  HostName 172.16.10.1
+  User root
 Host rasp
   HostName 10.0.25.81
   User pi

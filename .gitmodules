@@ -143,15 +143,15 @@
   ignore = untracked
 [submodule "vim/bundle/unite-tag"]
   path = vim/bundle/unite-tag
-  url = git://github.com:ornicar/unite-tag
+  url = git://github.com/ornicar/unite-tag
   ignore = untracked
 [submodule "vim/bundle/airline"]
   path = vim/bundle/airline
-  url = https://github.com/bling/vim-airline
+  url = https://github.com/ornicar/vim-airline
   ignore = untracked
 [submodule "vim/bundle/ag"]
   path = vim/bundle/ag
-  url = https://github.com/rking/ag.vim
+  url = https://github.com/ornicar/ag.vim
   ignore = untracked
 [submodule "vim/bundle/clojure-static"]
   path = vim/bundle/clojure-static

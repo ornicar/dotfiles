@@ -10,17 +10,18 @@ xset s 200 200                              # set monitor to sleep
 xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 unclutter -root -idle 2 &                   # kill inactive rat cursor
-syndaemon -i 2 -t -k -d &                   # disable the pad when typing
+# syndaemon -i 2 -t -k -d &                   # disable the pad when typing
 urxvtd -q -f -o                             # start urxvt server
 
-sudo pkill tmux-status-daemon
-sudo $HOME/.tmux/tmux-status-daemon &           # start data collector
+# sudo pkill tmux-status-daemon
+# sudo $HOME/.tmux/tmux-status-daemon &           # start data collector
 
 urxvtc -e $HOME/.tmux/menu &
+#urxvtc &
 
 pulseaudio --start
 
-$HOME/.scripts/keyboard-mac
+$HOME/.scripts/keyboard-lenovo
 
 # Run window manager
 exec xmonad

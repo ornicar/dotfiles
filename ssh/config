@@ -1,3 +1,6 @@
+Host thib-mbp
+  HostName 10.0.25.240
+  User thib
 Host rasp
   HostName 10.0.25.81
   User pi

@@ -13,15 +13,17 @@ unclutter -root -idle 2 &                   # kill inactive rat cursor
 # syndaemon -i 2 -t -k -d &                   # disable the pad when typing
 urxvtd -q -f -o                             # start urxvt server
 
-# sudo pkill tmux-status-daemon
-# sudo $HOME/.tmux/tmux-status-daemon &           # start data collector
+sudo pkill tmux-status-dae &
+sudo $HOME/.tmux/tmux-status-daemon &           # start data collector
 
 urxvtc -e $HOME/.tmux/menu &
-#urxvtc &
+# urxvtc &
 
 pulseaudio --start
 
 $HOME/.scripts/keyboard-lenovo
+
+xscreensaver &
 
 # Run window manager
 exec xmonad

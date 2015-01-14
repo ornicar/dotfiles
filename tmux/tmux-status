@@ -13,7 +13,7 @@ _music=1
 _wifi=1
 _battery=1
 _temperature=1
-_fan=1
+_fan=0
 _memory=1
 _load=1
 _time=1
@@ -90,7 +90,7 @@ fi
 
 # WIFI
 if [ $_wifi = 1 ]; then
-  interface="wlp4s0"
+  interface="wlp8s0"
   quality=$(iwconfig $interface | grep Quality | cut -d'=' -f2 | cut -d' ' -f1 | cut -d'/' -f1)
   if [[ $quality -gt 0 ]]; then
     (( percent = (quality * 100) / 70 ))

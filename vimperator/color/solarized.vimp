@@ -27,21 +27,21 @@
 " green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
 
-hi Hint font-family: monospace; font-size: 10pt; font-weight: normal; color: #fdf6e3; background-color: #002630; border: none; padding: 0px 3px 0px 3px; 
+hi Hint font-family: monospace; font-size: 12pt; font-weight: normal; color: #fdf6e3; background-color: #002630; border: none; padding: 0px 3px 0px 3px; 
 hi HintElem background-color: #073642; color: #b58900;
 hi HintActive background-color: #dc322f; color: #073642;
 
-hi StatusLine     color: #93a1a1; background: #002630; font-weight: normal; font-size: 12pt;
+hi StatusLine     color: #93a1a1; background: #002630; font-weight: normal; font-size: 14pt;
 
-hi Normal     color:  #93a1a1;  background: #002630; font-size: 10pt;
-hi CmdLine    color:  #93a1a1;  background: #002630; font-size: 12pt;
-hi InfoMsg    color:  #93a1a1;  background: #002630; font-size: 10pt;
-hi ModeMsg    color:  #93a1a1;  background: #002630; font-size: 10pt;
+hi Normal     color:  #93a1a1;  background: #002630; font-size: 12pt;
+hi CmdLine    color:  #93a1a1;  background: #002630; font-size: 14pt;
+hi InfoMsg    color:  #93a1a1;  background: #002630; font-size: 12pt;
+hi ModeMsg    color:  #93a1a1;  background: #002630; font-size: 12pt;
 hi MoreMsg    color:  #859900; background: #002630;
-hi LineNr   color:  #dc322f; background: #002630; font-size: 10pt;
-hi Question   color: #b58900;  background: #002630;  font-size: 10pt;
-hi WarningMsg   color: #dc322f;  background: #002630;  font-size: 10pt;
-hi ErrorMsg   color: #002630;  background: red;  font-size: 10pt;
+hi LineNr   color:  #dc322f; background: #002630; font-size: 12pt;
+hi Question   color: #b58900;  background: #002630;  font-size: 12pt;
+hi WarningMsg   color: #dc322f;  background: #002630;  font-size: 12pt;
+hi ErrorMsg   color: #002630;  background: red;  font-size: 12pt;
 hi NonText    background: #000;
 hi Null     color: CornflowerBlue;
 hi Tag      color: CornflowerBlue;

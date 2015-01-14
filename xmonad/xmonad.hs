@@ -88,6 +88,7 @@ myConfig = defaultConfig {
     , ("M--",   spawn "urxvtc -e ~/.scripts/music down")
     , ("M-=",   spawn "urxvtc -e ~/.scripts/music up")
     , ("M-w",   spawn "urxvtc -e wicd-curses")
+    , ("M-S-x", spawn "xscreensaver-command --lock")
     -- , ("C-m",   spawn "~/.scripts/touchpad_toggle")
     -- , ("M-S-p", spawn "~/.scripts/screenshot")
     -- , ("C-1", spawn "~/.screenlayout/mac.sh")

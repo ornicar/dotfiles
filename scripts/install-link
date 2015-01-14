@@ -61,6 +61,7 @@ link abcde.conf ~/.abcde.conf
 link stylish-haskell.yaml ~/.stylish-haskell.yaml
 mkdir -p ~/.cabal
 link cabal ~/.cabal/config
+mkdir -p ~/.sbt/0.13
 link sbt/global.sbt ~/.sbt/0.13/global.sbt
 link sbt/plugins ~/.sbt/0.13/plugins
 link sbt/sbtrc ~/.sbtrc

@@ -7,6 +7,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="$DOTFILES/scripts:$PATH"
 export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
+export PATH="$HOME/git-hub:$PATH"
 
 export BROWSER="firefox"
 export EDITOR='vim'

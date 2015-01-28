@@ -42,5 +42,8 @@ while true do
     File.delete($sites_dir + site) unless pows.include? site
   end
 
-  system('inotifywait --event CREATE --event DELETE ' + $pow_dir)
+  if not system('inotifywait --event CREATE --event DELETE ' + $pow_dir)
+    puts "Install inotifywait"
+    exit
+  end
 end

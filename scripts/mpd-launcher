@@ -1,11 +1,13 @@
 #!/usr/bin/zsh
 
-if [ ! -f ~/.mpd/mpd.pid ]; then 
-  if [ ! -f ~/.mpd/mpd.conf ]; then 
-    "No mpd configuration found! Probably not the right user: $(whoami)";
-    exit 1;
-  fi
-  mpd ~/.mpd/mpd.conf > /tmp/mpd.log 2>&1 &;
-  sleep 2;
-  ~/.scripts/mpd-adblock > /tmp/mpd-adblock.log 2>&1 &;
+if [ -f ~/.mpd/mpd.pid ]; then
+  rm ~/.mpd/mpd.pid
 fi
+
+if [ ! -f ~/.mpd/mpd.conf ]; then
+  echo "No mpd configuration found! Probably not the right user: $(whoami)";
+  exit 1;
+fi
+mpd ~/.mpd/mpd.conf > /tmp/mpd.log 2>&1 &;
+sleep 2;
+~/.scripts/mpd-adblock > /tmp/mpd-adblock.log 2>&1 &;

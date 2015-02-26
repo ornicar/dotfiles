@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+DESTINATION=/home/thib/backup/frank
+
+rsync --archive --force --delete --progress --compress frank:/etc $DESTINATION

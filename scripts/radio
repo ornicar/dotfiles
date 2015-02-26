@@ -22,7 +22,8 @@ ClassicRock
 ClassicMetal
 BeatlesTribute
 JungleTrain
-DrumAndBass);
+DrumAndBass
+FIP);
 
 if [ $1 = "random" ]; then
   N=${#radios};
@@ -53,6 +54,7 @@ case $radio in
   "reggae") url="http://listen.radionomy.com/natural-trip-reggae";;
   "jungletrain") url="http://stream3.jungletrain.net:8000/";;
   "drumandbass") url="http://dnbradio.com/aac.m3u";;
+  "fip") url="http://95.81.155.3/fip/all/fiphautdebit.mp3";;
   *) url="http://pub5.rockradio.com:80/rr_$radio";;
 esac
 

@@ -23,6 +23,10 @@ Host jaldus
 Host drazak
   HostName 198.52.200.14
   User root
+Host yubaba
+  HostName yubaba.mindleaking.org
+  User ornicar
+  Port 10042
 Host nafis
   HostName 23.251.154.68
   User thib

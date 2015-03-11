@@ -1,3 +1,13 @@
+Host neary
+  HostName 91.121.223.148
+  User root
+Host neary-tmp
+  HostName 91.121.150.217
+  User root
+Host patat
+  HostName karmeliet.darklord.fr
+  User lichess
+  Port 9453
 Host thib-mbp
   HostName 10.0.25.240
   User thib

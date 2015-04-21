@@ -17,7 +17,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # sound
-bindsym $mod+a exec urxvtc -e pacmixer
+bindsym $mod+a exec --no-startup-id ario
 bindsym XF86AudioMute exec ~/.scripts/music toggle
 bindsym XF86AudioLowerVolume exec ~/.scripts/music down
 bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
@@ -26,7 +26,7 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show run -auto-select
@@ -114,7 +114,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)

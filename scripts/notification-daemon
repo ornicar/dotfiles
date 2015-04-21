@@ -1,0 +1,36 @@
+#!/bin/bash
+
+MEMORY_THRESHOLD=800
+BATTERY_NOTIF=7
+BATTERY_EMERG=3
+INTERVAL=30
+
+memory() {
+  available=$(free -m|awk '/^Mem:/{print $7}')
+  message="Memory available: $available""MB"""
+  if [ $available -lt $MEMORY_THRESHOLD ]; then
+    notify-send -u critical "Memory is running out!" "$message"
+  fi
+  echo $message
+}
+
+battery() {
+  level=`acpi -b | grep -P -o '[0-9]+(?=%)'`
+  message="Battery level: $level""%"""
+  if [ $level -le $BATTERY_NOTIF ]; then
+    notify-send -u normal "Battery low" "$message"
+  elif [ $level -le $BATTERY_EMERG ]; then
+    notify-send -u critical "Battery low" "$message"
+  fi
+  echo $message
+}
+
+while : ; do
+
+  memory
+
+  battery
+
+  sleep $INTERVAL
+
+done

@@ -39,6 +39,8 @@ mkdir -p ~/.config/surfraw
 link surfraw ~/.config/surfraw/conf
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
+mkdir -p ~/.config/dunst
+link dunstrc ~/.config/dunst/dunstrc
 link tmux.conf ~/.tmux.conf
 link tmux ~/.tmux
 link tmuxinator ~/.tmuxinator

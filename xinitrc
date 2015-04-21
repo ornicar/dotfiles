@@ -19,5 +19,7 @@ xautolock -time 10 -locker "~/.scripts/lock" &
 
 $HOME/.scripts/keyboard-dell
 
+$HOME/.scripts/notification-daemon &
+
 # exec xmonad
 exec i3 # -V >> ~/log/i3-$(date +'%F-%k-%M-%S') 2>&1

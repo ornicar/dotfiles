@@ -4,7 +4,7 @@ USER_NAME=$(whoami)
 
 my_git_prompt_info() {
   ref=$(cat .git/HEAD 2> /dev/null) || return
-  branch=${ref#ref: refs/heads/} 
+  branch=${ref#ref: refs/heads/}
   SHA=$(cat .git/refs/heads/$branch 2> /dev/null)
   if [ -z $SHA ]; then
     SHA=$branch
@@ -14,4 +14,4 @@ my_git_prompt_info() {
   echo " %{$reset_color%}±(%{$fg[green]%}$branch %{$fg[cyan]%}$SHA[1,5]%{$reset_color%}$bisect%{$reset_color%})"
 }
 
-PROMPT='%(?.%{$fg[yellow]%}$USER_NAME ▸ .%{$fg[red]%} ▸ )%{$fg_bold[cyan]%}%C$(my_git_prompt_info)%{$reset_color%} %'
+PROMPT='%(?.%{$fg[yellow]%}$USER_NAME> .%{$fg[red]%}> )%{$fg_bold[cyan]%}%C$(my_git_prompt_info)%{$reset_color%} %'

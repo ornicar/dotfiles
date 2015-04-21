@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# requires dmenu-xft, for the font
-
-source ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
-
-$(dmenu_path_c | yeganesh -- -i -nb $base03 -nf $base0 -sb $base02 -sf $orange -fn 'xft:Inconsolata:size=12' -p "Run")

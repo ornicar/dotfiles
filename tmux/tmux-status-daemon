@@ -3,9 +3,9 @@
 while : ; do
 
   tstatus=$(/home/thib/.tmux/tmux-status)
-  echo "$tstatus" > /tmp/tmux-status 
+  echo "$tstatus" > /tmp/tmux-status
   # echo "$tstatus\n\n" >> /tmp/tmux-status-log
-  
+
   # ~/.tmux/tmux-status > /tmp/tmux-status
 
   sleep 2;

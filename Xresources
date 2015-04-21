@@ -9,13 +9,22 @@ Xft.antialias:  true
 Xft.hinting:    true
 Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
-Xft.dpi:        220
 
 /* urxvt.font:  xft:Source Code Pro:size=8 */
-urxvt.font:  xft:DejaVuSansMono:size=26
-/* urxvt.font:  xft:DejaVuSansMono:size=10 */
+urxvt.font:  xft:Inconsolata:size=16
+/* urxvt.font:  xft:DejaVuSansMono:size=16 */
 
-URxvt.scrollBar:  false
+URxvt.letterSpace: -1
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+URxvt.scrollBar: false     ! turn off the scroll bar
 URxvt.jumpScroll: true
 URxvt.skipScroll: true
 URxvt.saveLines:  64000
@@ -34,9 +43,30 @@ URxvt.urgentOnBell:    true
 
 URxvt*cursorBlink:     true
 
+! disable annoying ctrl+shift encoding switch
+URxvt*iso14755: False
+
+! color links
+URxvt.colorUL: #4682B4
+
 ! perl shit
 URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
 URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.keysym.M-u:      perl:url-select:select_next
 URxvt.keysym.M-p:      perl:clipboard:paste
+
+rofi.bordercolor:	#0C73C2
+rofi.highlightbg:	#0C73C2
+rofi.background:	#000000
+rofi.borderwidth:	1
+rofi.highlightfg:	#FFFFFF
+rofi.foreground:	#A0A0A0
+rofi.font:  xft:Inconsolata:size=16
+rofi.padding:	3
+rofi.ssh-client:       ssh
+rofi.ssh-command:      urxvtc -e '{ssh-client} {host}'
+rofi.run-command:      {cmd}
+rofi.run-shell-command:  urxvtc -e '{cmd}'

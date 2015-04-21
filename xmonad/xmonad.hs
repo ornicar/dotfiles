@@ -78,7 +78,7 @@ myConfig = defaultConfig {
   `additionalKeysP` [
       ("C-<Space>", windows W.focusDown)
     , ("M-S-l",   sendMessage NextLayout) -- next layout
-    , ("M-o",   spawn "~/.scripts/path-dmenu")
+    , ("M-o",   spawn "dmenu-frecency")
     , ("M-r",   spawn "~/.scripts/radio")
     , ("M-a",   spawn "urxvtc -e pacmixer")
     , ("M-S-t", spawn "urxvtc -e ~/.tmux/menu")

@@ -5,25 +5,19 @@ setxkbmap -option terminate:ctrl_alt_bksp
 
 xrdb $HOME/.Xresources                       # load Xresources
 
-xsetroot -solid black                       # black background
-xset s 200 200                              # set monitor to sleep
-xset s off                                  # disable screensaver
+# xsetroot -solid black                       # black background
+# xset s 200 200                              # set monitor to sleep
+# xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 unclutter -root -idle 2 &                   # kill inactive rat cursor
 # syndaemon -i 2 -t -k -d &                   # disable the pad when typing
 urxvtd -q -f -o                             # start urxvt server
 
-sudo pkill tmux-status-dae &
-sudo $HOME/.tmux/tmux-status-daemon &           # start data collector
+sh $HOME/.fehbg &
 
-urxvtc -e $HOME/.tmux/menu &
-# urxvtc &
+xautolock -time 10 -locker "~/.scripts/lock" &
 
-pulseaudio --start
+$HOME/.scripts/keyboard-dell
 
-$HOME/.scripts/keyboard-lenovo
-
-xscreensaver &
-
-# Run window manager
-exec xmonad
+# exec xmonad
+exec i3 # -V >> ~/log/i3-$(date +'%F-%k-%M-%S') 2>&1

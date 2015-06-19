@@ -3,7 +3,7 @@
 FILE=/sys/class/backlight/intel_backlight/brightness
 BACKLIGHT=$(<$FILE)
 MAX=$(</sys/class/backlight/intel_backlight/max_brightness)
-MIN=10
+MIN=3
 FACTOR=1.4
 
 if [ $UID -ne 0 ]; then

@@ -15,7 +15,7 @@ urxvtd -q -f -o                             # start urxvt server
 
 sh $HOME/.fehbg &
 
-xautolock -time 10 -locker "~/.scripts/lock" &
+# xautolock -time 10 -locker "~/.scripts/lock" &
 
 $HOME/.scripts/keyboard-dell
 

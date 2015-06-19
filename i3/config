@@ -64,10 +64,10 @@ bindsym $mod+Right move right
 
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+s split h
 
 # split in vertical orientation
-bindsym $mod+s split v
+# bindsym $mod+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+t fullscreen toggle
@@ -152,7 +152,7 @@ bar {
   # mode hide
   # hidden_state hide
   # modifier $mod
-  status_command i3status -c ~/.i3/status
+  status_command python3 ~/dotfiles/i3/status.py
   colors {
       background #1a1a1a
       statusline #c0c0c0

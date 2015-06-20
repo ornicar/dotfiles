@@ -57,6 +57,6 @@ alias trans=google-translate
 alias enfr="google-translate en fr "
 alias fren="google-translate fr en "
 
-alias xtcf="startxfce4"
-
 alias halt="echo 'Use poweroff instead'"
+
+alias vimjsx='vim -S ~/dotfiles/vim/jsx.vim'

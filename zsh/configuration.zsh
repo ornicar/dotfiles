@@ -11,12 +11,14 @@ export PATH="$HOME/git-hub:$PATH"
 export PATH="$HOME/android-sdk/android-sdk-linux/tools/:$PATH"
 export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
 
+export TERMINAL="urxvtc"
 export BROWSER="firefox"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # Java/SBT configuration
 export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+# export SBT_OPTS="-Xms64M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"

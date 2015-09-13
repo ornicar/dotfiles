@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+DESTINATION=/home/thib/backup/clyde
+
+rsync --archive --force --delete --progress --compress clyde:/etc $DESTINATION

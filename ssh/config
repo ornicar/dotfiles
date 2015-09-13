@@ -1,3 +1,14 @@
+Host leela
+  HostName 52.24.238.133
+  User ubuntu
+  IdentityFile "~/.ssh/leela.pem"
+Host leelascale
+  HostName 52.11.60.154
+  User ubuntu
+  IdentityFile "~/.ssh/leela.pem"
+Host janis
+  HostName 91.121.89.109
+  User root
 Host clyde
   HostName 5.196.91.160
   User root

@@ -15,11 +15,11 @@ general {
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "load"
-order += "disk /"
+# order += "disk /"
 # order += "run_watch DHCP"
 # order += "run_watch VPN"
 order += "wireless _first_"
-order += "ethernet _first_"
+# order += "ethernet _first_"
 order += "battery 0"
 order += "tztime local"
 

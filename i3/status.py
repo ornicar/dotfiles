@@ -23,9 +23,9 @@ status.register("clock",
 # goes below 5 percent while discharging. The block will also color RED.
 status.register("battery",
     format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    color="#00cc00",
-    full_color="#00cc00",
-    charging_color="#00cc00",
+    color="#00bb00",
+    full_color="#00bb00",
+    charging_color="#00bb00",
     alert=True,
     alert_percentage=10,
     status={
@@ -55,18 +55,20 @@ status.register("battery",
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
-status.register("disk",
-    path="/",
-    format="{avail}G",
-    round_size=None)
+# status.register("disk",
+#     path="/",
+#     format="{avail}G",
+#     round_size=None)
 
 status.register("network",
     interface="wlp2s0",
-    format_up="{essid} {quality:03.0f}% {network_graph}",
+    format_up="{essid} {quality:03.0f}%",
     graph_width=16,
     upper_limit=100,
     dynamic_color=False,
-    start_color="#00cc00",
+    color_up="#00bb00",
+    color_down="#00bb00",
+    start_color="#00bb00",
     graph_style="braille-fill")
 
 # Shows the average load of the last minute and the last 5 minutes
@@ -76,7 +78,7 @@ status.register("load",
 
 status.register("mem",
     format="MEM {percent_used_mem}%",
-    color="#00cc00",
+    color="#00bb00",
     warn_percentage=85,
     alert_percentage=90)
 
@@ -89,7 +91,7 @@ status.register("temp",
 
 status.register("cpu_usage_graph",
     format="CPU {cpu_graph}",
-    start_color="#00cc00",
+    start_color="#00bb00",
     graph_width=16,
     graph_style="braille-fill")
 

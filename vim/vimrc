@@ -286,7 +286,7 @@ autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
 " indent html
 " autocmd FileType html noremap <buffer> <leader>i :call HtmlBeautify()<cr>
 " indent css or scss
-autocmd FileType css noremap <buffer> <leader>i :call CSSBeautify()<cr>
+" autocmd FileType css noremap <buffer> <leader>i :call CSSBeautify()<cr>
 
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

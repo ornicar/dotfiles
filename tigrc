@@ -1,5 +1,5 @@
-set show-date = relative
-set show-rev-graph = yes
+# set show-date = relative
+# set show-rev-graph = yes
 set line-graphics = yes
 
 # Unbind git gc

@@ -1,3 +1,11 @@
+Host timshell
+  HostName 91.121.176.121
+  Port 22422
+  User lichess
+Host timroot
+  HostName 91.121.176.121
+  Port 22422
+  User root
 Host leela
   HostName 52.24.238.133
   User ubuntu

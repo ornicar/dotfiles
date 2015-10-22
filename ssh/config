@@ -1,3 +1,9 @@
+Host ushio
+  HostName 91.121.211.87
+  User root
+Host marta
+  HostName 91.121.143.131
+  User root
 Host timshell
   HostName 91.121.176.121
   Port 22422

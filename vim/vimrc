@@ -354,7 +354,7 @@ let g:hpaste_author = 'github.com/ornicar'
 let g:hlint_args = ''
 
 " haskellmode
-let g:haddock_browser = 'firefox'
+let g:haddock_browser = 'chromium'
 let g:haddock_docdir="/usr/share/doc/ghc/html/"
 let g:haddock_indexfiledir=$HOME.'/.cache/'
 

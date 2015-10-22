@@ -12,7 +12,7 @@ export PATH="$HOME/android-sdk/android-sdk-linux/tools/:$PATH"
 export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
 
 export TERMINAL="urxvtc"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 

@@ -35,7 +35,7 @@
   keepBackup = false
 
 [web]
-  browser = firefox
+  browser = chromium
 
 [push]
   # 'git push' will push the current branch to its tracking branch

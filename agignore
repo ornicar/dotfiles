@@ -1,9 +1,9 @@
 cache
 logs
 target
-*-backup_asd
-web/js
-web/css
 tags
-weechat_fifo*
 dist
+node_modules
+submodules
+vendor
+staunton

@@ -8,7 +8,7 @@ alias _='sudo -E'
 alias l='ls -lah'
 
 # Sort dirs by weight
-alias ducks='du -cks * | sort -rn|head -20'
+alias ducks='du -lcks * | sort -rn|head -20'
 
 # History alias
 alias h='history'
@@ -39,6 +39,8 @@ alias gg="surfraw google"
 alias dd="surfraw duckduckgo"
 alias urban="surfraw urban"
 alias search-acronym="surfraw acronym"
+
+alias meteo="curl -4 http://wttr.in/Paris"
 
 # Read 32GB zero's and throw them away.
 alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'

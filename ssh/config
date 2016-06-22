@@ -1,3 +1,39 @@
+Host bitchess1
+  HostName 89.163.212.29
+  User root
+Host bitchess2
+  HostName 146.0.36.88
+  User root
+Host benko
+  HostName 5.196.84.117
+  User root
+Host bofur
+  HostName 149.202.91.37
+  User root
+Host homer
+  HostName 51.255.71.223
+  User root
+Host anand
+  HostName 149.202.92.196
+  User root
+Host titan
+  HostName 51.255.68.95
+  User root
+Host cloud1
+  HostName 167.114.254.12
+  User ubuntu
+Host hanoi
+  HostName 149.202.72.192
+  User root
+Host rambo
+  HostName 91.121.89.126
+  User root
+Host flynn
+  HostName 91.121.146.216
+  User root
+Host khiaw
+  HostName 176.31.115.179
+  User root
 Host ushio
   HostName 91.121.211.87
   User root

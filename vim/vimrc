@@ -185,6 +185,20 @@ let g:airline_mode_map = {
       \ '' : 'S',
       \ }
 let g:airline_section_b = "%{substitute(getcwd(),'^.*/','','')} %{airline#extensions#branch#head()}"
+" let g:airline_section_x = "%{airline#util#wrap(airline#parts#filetype(),0)}"
+let g:airline_section_y = "%{airline#util#wrap(airline#parts#ffenc(),0)} %{FileSize()}"
+
+function! FileSize()
+    let bytes = getfsize(expand("%:p"))
+      if bytes <= 0
+        return ""
+    endif
+    if bytes < 1024
+        return bytes . "B"
+    else
+        return (bytes / 1024) . "K"
+    endif
+endfunction
 
 " Easier to type, and I never use the default behavior.
 noremap H ^
@@ -468,7 +482,7 @@ let g:unite_source_tag_show_location = 0
 " Show file name field.  The default value is 1.
 let g:unite_source_tag_show_fname = 1
 
-let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --ignore ext --ignore node_modules --ignore submodules -g ""'
+let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])

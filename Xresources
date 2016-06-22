@@ -12,6 +12,8 @@ Xft.hintstyle:  hintfull
 
 /* urxvt.font:  xft:Source Code Pro:size=8 */
 urxvt.font:  xft:Inconsolata:size=16
+
+font pango:DejaVu Sans Mono 10
 /* urxvt.font:  xft:DejaVuSansMono:size=16 */
 
 URxvt.letterSpace: -1
@@ -27,7 +29,7 @@ URxvt.scrollstyle: plain
 URxvt.scrollBar: false     ! turn off the scroll bar
 URxvt.jumpScroll: true
 URxvt.skipScroll: true
-URxvt.saveLines:  64000
+URxvt.saveLines:  8000
 URxvt.visualBell: false
 
 URxvt.depth:       24
@@ -58,14 +60,12 @@ URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.keysym.M-u:      perl:url-select:select_next
 URxvt.keysym.M-p:      perl:clipboard:paste
 
-rofi.bordercolor:	#0C73C2
-rofi.highlightbg:	#0C73C2
-rofi.background:	#000000
-rofi.borderwidth:	1
-rofi.highlightfg:	#FFFFFF
-rofi.foreground:	#A0A0A0
-rofi.font:  xft:Inconsolata:size=16
-rofi.padding:	3
+rofi.font: Inconsolata 18
+rofi.color-enabled: true
+rofi.color-window: #002b37, #002b37, #003642
+rofi.color-normal: #002b37, #819396, #003643, #008ed4, #ffffff
+rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
 rofi.ssh-client:       ssh
 rofi.ssh-command:      urxvtc -e '{ssh-client} {host}'
 rofi.run-command:      {cmd}

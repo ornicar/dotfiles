@@ -9,8 +9,11 @@ status = Status(standalone=True, click_events=False)
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
-status.register("clock",
-    format="%a %-d %b %R",)
+# status.register("clock", format = [ ('%a %b %-d %b %X', 'UTC'), ("%a %-d %b %R", "%X") ])
+    # format="%a %-d %b %R",)
+status.register("clock", format = ('%H:%M UTC', 'UTC'))
+status.register("clock", format = ("%a %-d %b %R", "Europe/Paris"))
+    # format="%a %-d %b %R",)
 
 # The battery monitor has many formatting options, see README for details
 
@@ -23,8 +26,8 @@ status.register("clock",
 # goes below 5 percent while discharging. The block will also color RED.
 status.register("battery",
     format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    color="#00bb00",
-    full_color="#00bb00",
+    color="#ff8888",
+    full_color="#aaaaff",
     charging_color="#00bb00",
     alert=True,
     alert_percentage=10,

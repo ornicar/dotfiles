@@ -105,7 +105,7 @@ function! TabToggle()
     echo "Hard tabs off"
   endif
 endfunction
-nmap <leader><tab> mz:execute TabToggle()<cr>'z
+" nmap <leader><tab> mz:execute TabToggle()<cr>'z
 
 " Not sure what this does
 set ttyfast

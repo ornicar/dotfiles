@@ -73,7 +73,7 @@ bindsym $mod+s split h
 bindsym $mod+t fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+r layout stacking
+# bindsym $mod+r layout stacking
 bindsym $mod+f layout tabbed
 bindsym $mod+Shift+f layout toggle split
 
@@ -152,6 +152,8 @@ mode "resize" {
 bindsym $mod+Shift+r mode "resize"
 
 bindsym $mod+Shift+l exec ~/.scripts/lock
+
+bindsym $mod+r exec ~/.scripts/redshift-toggle
 
 bar {
   # mode hide

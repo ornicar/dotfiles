@@ -1,3 +1,21 @@
+Host gandi
+  HostName root@2001:4b98:dc2:45:216:3eff:fe50:df94
+  user root
+Host koala
+  HostName 94.23.220.148
+  User root
+Host peter
+  HostName peter.lichess.org
+  User root
+Host pesto
+  HostName 51.255.83.169
+  User root
+Host bitchess4
+  HostName 37.187.88.184
+  User root
+Host bitchess3
+  HostName 37.187.78.174
+  User root
 Host bitchess1
   HostName 89.163.212.29
   User root

@@ -10,7 +10,7 @@ xset s 600 600                              # set monitor to sleep
 # xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 unclutter -root -idle 2 &                   # kill inactive rat cursor
-syndaemon -i 2 -t -k -d &                   # disable the pad when typing
+syndaemon -i 1 -t -k -d -R &                   # disable the pad when typing
 synclient TapButton1=1 TapButton2=3 TapButton3=2 # tap to click
 urxvtd -q -f -o                             # start urxvt server
 

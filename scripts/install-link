@@ -32,9 +32,9 @@ link xcolors ~/.xcolors
 link ackrc ~/.ackrc
 link mpd ~/.mpd
 link weechat ~/.weechat
+mkdir -p ~/.i3
 link i3/config ~/.i3/config
 link i3/status ~/.i3/status
-link i3/i3cat ~/.i3/i3cat.conf
 mkdir -p ~/.config/surfraw
 link surfraw ~/.config/surfraw/conf
 mkdir -p ~/.config/dmenu-frecency
@@ -78,6 +78,7 @@ link mplayer.conf ~/.mplayer/config
 link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link jshintrc ~/.jshintrc
+link zlogin ~/.zlogin
 
 cd mongo-hacker
 make

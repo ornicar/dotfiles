@@ -10,10 +10,18 @@ Xft.hinting:    true
 Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
 
-/* urxvt.font:  xft:Source Code Pro:size=8 */
-urxvt.font:  xft:Inconsolata:size=16
+/* urxvt.font:  xft:Source Code Pro:size=12 */
+/* urxvt.font:  xft:Inconsolata:size=12 */
 
-font pango:DejaVu Sans Mono 10
+/* #define normal xft:Inconsolata:size=14 */
+#define normal xft:Inconsolata:size=14
+
+/* URxvt.font:     xft:Inconsolata:size=12:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True */
+urxvt.font:       normal
+urxvt.boldFont:   normal
+/* URxvt.boldFont: xft:Inconsolata:size=12:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True */
+
+/* font pango:DejaVu Sans Mono 10 */
 /* urxvt.font:  xft:DejaVuSansMono:size=16 */
 
 URxvt.letterSpace: -1

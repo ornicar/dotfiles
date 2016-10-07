@@ -1,3 +1,0 @@
-#!/bin/sh
-
-wget -O ~/bin/scalariform.jar https://s3.amazonaws.com/scalariform/scalariform.jar

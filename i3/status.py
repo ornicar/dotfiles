@@ -11,7 +11,7 @@ status = Status(standalone=True, click_events=False)
 #                          ^-- calendar week
 # status.register("clock", format = [ ('%a %b %-d %b %X', 'UTC'), ("%a %-d %b %R", "%X") ])
     # format="%a %-d %b %R",)
-status.register("clock", format = ('%H:%M UTC', 'UTC'))
+status.register("clock", format = ('UTC>%H:%M', 'UTC'))
 status.register("clock", format = ("%a %-d %b %R", "Europe/Paris"))
     # format="%a %-d %b %R",)
 
@@ -65,7 +65,7 @@ status.register("battery",
 
 status.register("network",
     interface="wlp2s0",
-    format_up="{interface} {network_graph}",
+    format_up="{interface} {quality}%",
     graph_width=16,
     recv_limit=100,
     dynamic_color=False,
@@ -87,7 +87,7 @@ status.register("mem",
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",
-    file="/sys/class/hwmon/hwmon0/temp1_input",
+    file="/sys/class/hwmon/hwmon1/temp1_input",
     interval=1,
     alert_temp=75,
     format="{temp:.0f}°",)

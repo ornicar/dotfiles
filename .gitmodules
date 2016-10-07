@@ -150,10 +150,6 @@
   path = vim/bundle/rainbow-parentheses
   url = https://github.com/kien/rainbow_parentheses.vim
   ignore = untracked
-[submodule "vim/bundle/fireplace"]
-  path = vim/bundle/fireplace
-  url = git://github.com/tpope/vim-fireplace.git
-  ignore = untracked
 [submodule "vim/bundle/stylus"]
   path = vim/bundle/stylus
   url = https://github.com/wavded/vim-stylus

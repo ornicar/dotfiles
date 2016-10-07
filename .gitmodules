@@ -67,9 +67,6 @@
   path = vim/bundle/rename
   url = git://github.com/wojtekmach/vim-rename.git
   ignore = untracked
-[submodule "vimperator-plugins"]
-  path = vimperator-plugins
-  url = git://github.com/ornicar/vimperator-plugins
 [submodule "vim/bundle/play2"]
   path = vim/bundle/play2
   url = https://github.com/gre/play2vim
@@ -113,10 +110,6 @@
   path = vim/bundle/parameter-text-objects
   url = https://github.com/vim-scripts/Parameter-Text-Objects
   ignore = untracked
-[submodule "vim/bundle/coffee-script"]
-  path = vim/bundle/coffee-script
-  url = https://github.com/kchmck/vim-coffee-script
-  ignore = untracked
 [submodule "vim/bundle/jsbeautify"]
   path = vim/bundle/jsbeautify
   url = https://github.com/maksimr/vim-jsbeautify
@@ -153,10 +146,6 @@
   path = vim/bundle/ag
   url = https://github.com/ornicar/ag.vim
   ignore = untracked
-[submodule "vim/bundle/clojure-static"]
-  path = vim/bundle/clojure-static
-  url = https://github.com/guns/vim-clojure-static
-  ignore = untracked
 [submodule "vim/bundle/rainbow-parentheses"]
   path = vim/bundle/rainbow-parentheses
   url = https://github.com/kien/rainbow_parentheses.vim
@@ -164,10 +153,6 @@
 [submodule "vim/bundle/fireplace"]
   path = vim/bundle/fireplace
   url = git://github.com/tpope/vim-fireplace.git
-  ignore = untracked
-[submodule "vim/bundle/clojure-highlight"]
-  path = vim/bundle/clojure-highlight
-  url = https://github.com/guns/vim-clojure-highlight
   ignore = untracked
 [submodule "vim/bundle/stylus"]
   path = vim/bundle/stylus
@@ -177,15 +162,9 @@
   path = vim/bundle/neomru
   url = https://github.com/Shougo/neomru.vim
   ignore = untracked
-[submodule "vim/bundle/idris"]
-	path = vim/bundle/idris
-	url = git://github.com/idris-hackers/idris-vim.git
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
-[submodule "vim/bundle/elm"]
-	path = vim/bundle/elm
-	url = https://github.com/lambdatoast/elm.vim
 [submodule "vim/bundle/jsx"]
 	path = vim/bundle/jsx
 	url = https://github.com/mgechev/vim-jsx.git

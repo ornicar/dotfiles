@@ -1,3 +1,12 @@
+Host drake
+  HostName 213.239.195.106
+  User root
+Host irwin
+  HostName 188.165.221.85
+  User root
+Host pluto
+  HostName 37.59.12.19
+  User root
 Host gandi
   HostName root@2001:4b98:dc2:45:216:3eff:fe50:df94
   user root
@@ -74,145 +83,32 @@ Host leelascale
   HostName 52.11.60.154
   User ubuntu
   IdentityFile "~/.ssh/leela.pem"
-Host janis
-  HostName 91.121.89.109
-  User root
-Host clyde
-  HostName 5.196.91.160
-  User root
 Host adele
   HostName 91.121.89.85
   User root
 Host cammy
   HostName 91.121.169.81
   User root
-Host neary
-  HostName 91.121.223.148
-  User root
 Host patat
   HostName karmeliet.darklord.fr
   User lichess
   Port 9453
-Host thib-mbp
-  HostName 10.0.25.240
-  User thib
-Host nir-proxybot
-  HostName 91.209.78.156
-  User root
-Host nir-fog
-  HostName 172.16.10.6
-  User root
-Host nir-sshgit
-  HostName 172.16.10.3
-  User root
-Host nir-zprun
-  HostName 172.16.10.1
-  User root
-Host rasp
-  HostName 10.0.25.81
-  User pi
-Host jaldus
-  HostName jaldus.ddns.net
-  User ornicar
-  Port 2223
-Host drazak
-  HostName 198.52.200.14
-  User root
-Host yubaba
-  HostName yubaba.mindleaking.org
-  User ornicar
-  Port 10042
-Host nafis
-  HostName 23.251.154.68
-  User thib
 Host hexal
   HostName 91.209.78.225
-  User root
-Host frank
-  HostName 5.196.64.149
   User root
 Host vindinium
   HostName 5.196.64.149
   User vindinium
-Host wroomteam
-  HostName staff.0x50.net
-  User wroomteam
 Host matthews
   HostName 91.121.16.158
   Port 27120
   User thibault
-Host lizen
-  HostName 91.209.78.59
-  User root
 Host vindinium
   HostName 91.209.78.59
   User vindinium
 Host lichess
   HostName 188.165.238.17
   User root
-Host iliaz
-  HostName iliaz.com
-  User root
-Host balrog
-  HostName 37.59.32.99
-  User root
-Host hollie
-  HostName 91.121.106.120
-  User root
-Host holliegit
-  HostName 91.121.106.120
-  User git
-Host cook
-  HostName 5.39.94.86
-  User root
-Host paul
-  HostName 91.121.7.111
-  User root
 Host salim2
   HostName 216.218.250.236
   User root
-Host phobos
-  HostName 188.165.218.189
-  User root
-Host marty
-  HostName 188.165.194.171
-  User thib
-Host martyroot
-  HostName 188.165.194.171
-  User root
-Host japp1
-  HostName app1.ec2.jirafe.net
-  User ubuntu
-Host japp2
-  HostName app2.ec2.jirafe.net
-  User ubuntu
-Host jdb01
-  HostName db01.ec2.jirafe.net
-  User ubuntu
-Host jdb02
-  HostName db02.ec2.jirafe.net
-  User ubuntu
-Host jdev
-  HostName developer.jirafe.com
-  User ubuntu
-Host jdevatlassian
-  HostName developer.jirafe.com
-  User atlassian
-Host jsdb01
-  HostName staging-db01.ec2.jirafe.net
-  User ubuntu
-Host jsapp1
-  HostName staging-app1.ec2.jirafe.net
-  User ubuntu
-Host jtest
-  HostName testing.ec2.jirafe.net
-  User ubuntu
-Host jfreebird
-  HostName freebird.ec2.jirafe.net
-  User ubuntu
-Host jproduct
-  HostName db-product.ec2.jirafe.net
-  User ubuntu
-Host jfbqa
-  HostName fb-qa.jirafe.com
-  User ubuntu

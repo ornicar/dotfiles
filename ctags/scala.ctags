@@ -24,3 +24,4 @@
 --exclude=*.java
 --exclude=play-*
 --exclude=test
+--exclude=ui

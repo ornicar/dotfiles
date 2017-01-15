@@ -82,8 +82,8 @@ status.register("load",
 status.register("mem",
     format="MEM {percent_used_mem}%",
     color="#00bb00",
-    warn_percentage=85,
-    alert_percentage=90)
+    warn_percentage=90,
+    alert_percentage=95)
 
 # Shows your CPU temperature, if you have a Intel CPU
 status.register("temp",

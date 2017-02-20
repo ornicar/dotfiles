@@ -302,6 +302,11 @@ autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
 " indent css or scss
 " autocmd FileType css noremap <buffer> <leader>i :call CSSBeautify()<cr>
 
+" typescript tools
+let g:tsuquyomi_disable_default_mappings = 1
+autocmd FileType typescript nmap <buffer> <Leader>s : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nmap <buffer> <C-]> :TsuDefinition<CR>
+
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 

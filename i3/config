@@ -17,7 +17,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvtc
 
 # sound
-bindsym $mod+a exec --no-startup-id ario
+# bindsym $mod+a exec --no-startup-id ario
 bindsym XF86AudioMute exec ~/.scripts/music toggle
 bindsym XF86AudioLowerVolume exec ~/.scripts/music down
 bindsym XF86AudioRaiseVolume exec ~/.scripts/music up

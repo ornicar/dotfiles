@@ -1,3 +1,11 @@
+# Host *
+#   ControlMaster auto
+#   ControlPath ~/.ssh/master-%r@%h:%p
+#   ControlPersist 600
+#   ForwardAgent yes
+Host stork
+  HostName 79.137.40.37
+  User root
 Host drake
   HostName 213.239.195.106
   User root
@@ -106,9 +114,6 @@ Host matthews
 Host vindinium
   HostName 91.209.78.59
   User vindinium
-Host lichess
-  HostName 188.165.238.17
-  User root
 Host salim2
   HostName 216.218.250.236
   User root

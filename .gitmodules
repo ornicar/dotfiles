@@ -110,10 +110,6 @@
   path = vim/bundle/parameter-text-objects
   url = https://github.com/vim-scripts/Parameter-Text-Objects
   ignore = untracked
-[submodule "vim/bundle/jsbeautify"]
-  path = vim/bundle/jsbeautify
-  url = https://github.com/maksimr/vim-jsbeautify
-  ignore = untracked
 [submodule "vim/bundle/syntastic"]
   path = vim/bundle/syntastic
   url = https://github.com/scrooloose/syntastic.git
@@ -170,3 +166,6 @@
 [submodule "vim/bundle/tsuquyomi"]
 	path = vim/bundle/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi
+[submodule "vim/bundle/js-indent"]
+	path = vim/bundle/js-indent
+	url = https://github.com/jason0x43/vim-js-indent

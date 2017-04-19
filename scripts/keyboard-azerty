@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+
+setxkbmap -keycodes evdev fr
+xset r rate 220 56

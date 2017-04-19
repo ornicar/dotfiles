@@ -296,7 +296,7 @@ nmap <leader>I :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$",""
 nmap <leader>i <Esc>:nohl<cr>mygg=G,I'y:w<cr>
 
 " indent js
-autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
+" autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
 " indent html
 " autocmd FileType html noremap <buffer> <leader>i :call HtmlBeautify()<cr>
 " indent css or scss
@@ -304,6 +304,8 @@ autocmd FileType javascript noremap <buffer> <leader>i :call JsBeautify()<cr>
 
 " typescript tools
 let g:tsuquyomi_disable_default_mappings = 1
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
 autocmd FileType typescript nmap <buffer> <Leader>s : <C-u>echo tsuquyomi#hint()<CR>
 autocmd FileType typescript nmap <buffer> <C-]> :TsuDefinition<CR>
 
@@ -442,7 +444,7 @@ nmap ySS <Plug>YSsurround
 let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'passive_filetypes': ['scala', 'haskell', 'java', 'html'] }
+      \ 'passive_filetypes': ['scala', 'haskell', 'java', 'html', 'typescript'] }
 
 " Select all text in the buffer
 map <leader>sa ggVG

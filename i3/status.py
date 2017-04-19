@@ -63,16 +63,16 @@ status.register("battery",
 #     format="{avail}G",
 #     round_size=None)
 
-status.register("network",
-    interface="wlp2s0",
-    format_up="{interface} {quality}%",
-    graph_width=16,
-    recv_limit=100,
-    dynamic_color=False,
-    color_up="#00bb00",
-    color_down="#00bb00",
-    start_color="#00bb00",
-    graph_style="braille-fill")
+# status.register("network",
+#     interface="wlp2s0",
+#     format_up="{interface} {quality}%",
+#     graph_width=16,
+#     recv_limit=100,
+#     dynamic_color=False,
+#     color_up="#00bb00",
+#     color_down="#00bb00",
+#     start_color="#00bb00",
+#     graph_style="braille-fill")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)

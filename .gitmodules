@@ -118,14 +118,6 @@
   path = vim/bundle/html5
   url = git://github.com/othree/html5.vim.git
   ignore = untracked
-[submodule "vim/bundle/unite-outline"]
-  path = vim/bundle/unite-outline
-  url = https://github.com/Shougo/unite-outline
-  ignore = untracked
-[submodule "vim/bundle/unite-tag"]
-  path = vim/bundle/unite-tag
-  url = git://github.com/ornicar/unite-tag
-  ignore = untracked
 [submodule "vim/bundle/airline"]
   path = vim/bundle/airline
   url = https://github.com/ornicar/vim-airline

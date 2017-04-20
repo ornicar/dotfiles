@@ -472,46 +472,46 @@ nmap <silent> <leader>ms :LustyFilesystemExplorer<cr>
 nmap <silent> <leader>mr :LustyFilesystemExplorerFromHere<cr>
 
 " Unite
-let g:unite_source_history_yank_enable = 1
-let g:unite_enable_short_source_names = 0
+" let g:unite_source_history_yank_enable = 1
+" let g:unite_enable_short_source_names = 0
 
-" Max length of tag name field in candidate.  The default value is 25.
-let g:unite_source_tag_max_name_length = 25
+" " Max length of tag name field in candidate.  The default value is 25.
+" let g:unite_source_tag_max_name_length = 25
 
-" Max length of file name field in candidate.  The default value is 20.
-let g:unite_source_tag_max_fname_length	= 90
+" " Max length of file name field in candidate.  The default value is 20.
+" let g:unite_source_tag_max_fname_length	= 90
 
-let g:unite_source_tag_strict_truncate_string = 0
+" let g:unite_source_tag_strict_truncate_string = 0
 
-" Show source location field.  The default value is 1.
-let g:unite_source_tag_show_location = 0
+" " Show source location field.  The default value is 1.
+" let g:unite_source_tag_show_location = 0
 
-" Show file name field.  The default value is 1.
-let g:unite_source_tag_show_fname = 1
+" " Show file name field.  The default value is 1.
+" let g:unite_source_tag_show_fname = 1
 
-let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+" let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-nnoremap <leader>mf :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
-" nnoremap <leader>ms :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
-" nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=tag -start-insert tag<cr>
-nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer file_mru bookmark<cr>
-" nnoremap <leader>j :<C-u>Unite -no-split -buffer-name=jump jump<cr>
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  nmap <buffer> n j
-  nmap <buffer> e k
-  imap <buffer> <C-n> <Plug>(unite_select_next_line)
-  imap <buffer> <C-e> <Plug>(unite_select_previous_line)
-endfunction
-autocmd BufEnter *
-      \   if empty(&buftype)
-      \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately -no-split -buffer-name=tag tag<CR>
-      \|  endif
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#sorter_default#use(['sorter_rank'])
+" nnoremap <leader>mf :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+" " nnoremap <leader>ms :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
+" " nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
+" nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+" nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
+nnoremap <leader>t :<C-u>Denite -no-split -buffer-name=tag -start-insert tag<cr>
+" nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer file_mru bookmark<cr>
+" " nnoremap <leader>j :<C-u>Unite -no-split -buffer-name=jump jump<cr>
+" autocmd FileType unite call s:unite_settings()
+" function! s:unite_settings()
+"   nmap <buffer> n j
+"   nmap <buffer> e k
+"   imap <buffer> <C-n> <Plug>(unite_select_next_line)
+"   imap <buffer> <C-e> <Plug>(unite_select_previous_line)
+" endfunction
+" autocmd BufEnter *
+"       \   if empty(&buftype)
+"       \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately -no-split -buffer-name=tag tag<CR>
+"       \|  endif
 
 " parameter text objects
 let g:no_parameter_object_maps = 1

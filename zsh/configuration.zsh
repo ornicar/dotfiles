@@ -15,8 +15,8 @@ export PATH="/usr/lib/emscripten/:$PATH"
 export TERMINAL="urxvtc"
 # export BROWSER="chromium"
 export BROWSER="google-chrome" # :( until chromium has pnacl again
-export EDITOR='vim'
-export GIT_EDITOR='vim'
+export EDITOR='nvim'
+export GIT_EDITOR='nvim'
 
 # Java/SBT configuration
 export SBT_OPTS="-Xms64M -Xmx256M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"

@@ -17,7 +17,7 @@ alias h='history'
 alias -g L='| less'
 
 # Vim
-alias v="vim"
+alias v="nvim"
 
 # Ranger
 alias r="ranger"

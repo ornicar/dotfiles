@@ -118,10 +118,6 @@
   path = vim/bundle/html5
   url = git://github.com/othree/html5.vim.git
   ignore = untracked
-[submodule "vim/bundle/neocomplete"]
-  path = vim/bundle/neocomplete
-  url = https://github.com/Shougo/neocomplete.vim
-  ignore = untracked
 [submodule "vim/bundle/unite"]
   path = vim/bundle/unite
   url = https://github.com/Shougo/unite.vim
@@ -169,3 +165,6 @@
 [submodule "vim/bundle/js-indent"]
 	path = vim/bundle/js-indent
 	url = https://github.com/jason0x43/vim-js-indent
+[submodule "vim/bundle/deoplete"]
+	path = vim/bundle/deoplete
+	url = https://github.com/Shougo/deoplete.nvim.git

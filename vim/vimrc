@@ -415,8 +415,8 @@ vmap <leader>c<space> <Plug>Commentary
 nmap <leader>T :Tabularize<space>
 vmap <leader>T :Tabularize<space>
 
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
+" deocomplete
+let g:deoplete#enable_at_startup = 1
 
 " CTAGS
 " Rebuild tags

@@ -1,6 +1,7 @@
 # set show-date = relative
 # set show-rev-graph = yes
 set line-graphics = yes
+set diff-highlight = /home/thib/.scripts/diff-highlight
 
 # Unbind git gc
 bind generic G none

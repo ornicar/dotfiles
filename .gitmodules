@@ -79,9 +79,6 @@
 [submodule "zsh/history-substring-search"]
   path = zsh/history-substring-search
   url = https://github.com/ornicar/zsh-history-substring-search
-[submodule "vim/bundle/vimproc"]
-  path = vim/bundle/vimproc
-  url = https://github.com/Shougo/vimproc
 [submodule "vim/bundle/ghcmod"]
   path = vim/bundle/ghcmod
   url = https://github.com/eagletmt/ghcmod-vim
@@ -159,3 +156,6 @@
 [submodule "vim/bundle/denite"]
 	path = vim/bundle/denite
 	url = https://github.com/Shougo/denite.nvim
+[submodule "vim/bundle/vimproc"]
+  path = vim/bundle/vimproc
+  url = https://github.com/Shougo/vimproc

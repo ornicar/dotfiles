@@ -12,7 +12,7 @@ status = Status(standalone=True, click_events=False)
 # status.register("clock", format = [ ('%a %b %-d %b %X', 'UTC'), ("%a %-d %b %R", "%X") ])
     # format="%a %-d %b %R",)
 status.register("clock", format = ('UTC>%H:%M', 'UTC'))
-status.register("clock", format = ("%a %-d %b %R", "Europe/Paris"))
+status.register("clock", format = ("%a %-d %b %R", "America/Bogota"))
     # format="%a %-d %b %R",)
 
 # The battery monitor has many formatting options, see README for details

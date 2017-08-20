@@ -35,3 +35,5 @@ source $OHMYZSH/plugins/cabal/cabal.plugin.zsh
 
 # Load private configuration
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+eval $(thefuck --alias)

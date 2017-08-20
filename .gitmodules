@@ -117,7 +117,7 @@
   ignore = untracked
 [submodule "vim/bundle/airline"]
   path = vim/bundle/airline
-  url = https://github.com/ornicar/vim-airline
+  url = https://github.com/vim-airline/vim-airline
   ignore = untracked
 [submodule "vim/bundle/ag"]
   path = vim/bundle/ag
@@ -162,3 +162,6 @@
 [submodule "vim/bundle/tig"]
 	path = vim/bundle/tig
 	url = https://github.com/codeindulgence/vim-tig
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/ornicar/vim-airline-themes

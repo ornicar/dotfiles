@@ -453,7 +453,8 @@ map <leader>sa ggVG
 nmap <leader>gl :Git log -p %<cr>
 
 " Show tig
-nmap <silent>ti :!tig status<cr>
+" nmap <silent>ti :!tig status<cr>
+nmap <silent>ti :!tig<cr>
 
 " Lusty juggler
 let g:LustyJugglerKeyboardLayout = "colemak"
@@ -490,28 +491,27 @@ nmap <silent> <leader>mr :LustyFilesystemExplorerFromHere<cr>
 " let g:unite_source_tag_show_fname = 1
 
 " let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+call denite#custom#var("file_rec", "command", ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
 
 " call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " call unite#filters#sorter_default#use(['sorter_rank'])
-" nnoremap <leader>mf :<C-u>Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+" nnoremap <leader>mf :<C-u>Denite file_rec<cr>
+nnoremap <leader>mf :<C-u>Denite file_rec<cr>
 " " nnoremap <leader>ms :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
-" " nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
 " nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 " nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
-nnoremap <leader>t :<C-u>Denite -no-split -buffer-name=tag -start-insert tag<cr>
-" nnoremap <leader>mb :<C-u>Unite -no-split -buffer-name=buffer -start-insert buffer file_mru bookmark<cr>
-" " nnoremap <leader>j :<C-u>Unite -no-split -buffer-name=jump jump<cr>
+nnoremap <leader>t :<C-u>Denite tag<cr>
+nnoremap <leader>mb :<C-u>Denite buffer file_mru bookmark<cr>
+nnoremap <leader>mj :<C-u>Denite jump<cr>
+nnoremap <C-]> :<C-u>DeniteCursorWord tag<cr>
 " autocmd FileType unite call s:unite_settings()
-" function! s:unite_settings()
-"   nmap <buffer> n j
-"   nmap <buffer> e k
-"   imap <buffer> <C-n> <Plug>(unite_select_next_line)
-"   imap <buffer> <C-e> <Plug>(unite_select_previous_line)
-" endfunction
 " autocmd BufEnter *
 "       \   if empty(&buftype)
 "       \|      nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately -no-split -buffer-name=tag tag<CR>
 "       \|  endif
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-e>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', ['.git/', 'images/', 'sound/'])
 
 " parameter text objects
 let g:no_parameter_object_maps = 1

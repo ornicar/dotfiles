@@ -4,8 +4,11 @@ alias ....='cd ../../..'
 # Propagate user config
 alias _='sudo -E'
 
+# A better ls https://the.exa.website/
+alias ls='exa'
+
 # List directory contents
-alias l='ls -lah'
+alias l='ls -la'
 
 # Sort dirs by weight
 alias ducks='du -lcks * | sort -rn|head -20'

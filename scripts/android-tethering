@@ -1,8 +1,10 @@
 #!/bin/sh
 
+device="enp0s20f0u2"
+
 sudo modprobe usbnet
-sudo ifconfig usb0 up
-sudo dhcpcd usb0
+sudo ifconfig $device up
+sudo dhcpcd $device
 
 echo "Done!"
-echo "Disconnect with: sudo dhcpcd -x usb0"
+echo "Disconnect with: sudo dhcpcd -x $device"

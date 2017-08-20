@@ -454,7 +454,7 @@ nmap <leader>gl :Git log -p %<cr>
 
 " Show tig
 " nmap <silent>ti :!tig status<cr>
-nmap <silent>ti :!tig<cr>
+nmap ti :Tig<cr>
 
 " Lusty juggler
 let g:LustyJugglerKeyboardLayout = "colemak"

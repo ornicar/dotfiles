@@ -159,3 +159,6 @@
 [submodule "vim/bundle/vimproc"]
   path = vim/bundle/vimproc
   url = https://github.com/Shougo/vimproc
+[submodule "vim/bundle/tig"]
+	path = vim/bundle/tig
+	url = https://github.com/codeindulgence/vim-tig

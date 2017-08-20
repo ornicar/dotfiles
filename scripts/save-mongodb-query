@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# #!/bin/zsh
+
+# autoload -U url-quote-magic  
+# zle -N self-insert url-quote-magic
+
+# sort it out for SCP
+# some_remote_commands=(scp rsync)
+# zstyle -e :urlglobber url-other-schema \
+#   '[[ $some_remote_commands[(i)$words[1]] -le ${#some_remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+
+REMOTE=$1
+shift
+DB=$1
+shift
+COLL=$1
+shift
+QUERY=$@
+FILE=$DB-$COLL.query.export.json
+
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --query $QUERY --out /root/$FILE"
+echo $C
+
+$C
+
+if [ $? != 0 ]; then
+  exit 1;
+fi
+scp $REMOTE:$FILE ./
+ssh $REMOTE rm /root/$FILE
+mongoimport --db $DB --collection $COLL $FILE
+# rm $FILE

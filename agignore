@@ -6,4 +6,4 @@ dist
 node_modules
 submodules
 vendor
-staunton
+.git

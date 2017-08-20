@@ -59,9 +59,9 @@ URxvt*iso14755: False
 ! color links
 URxvt.colorUL: #4682B4
 
-! perl shit
+! perl shit https://lichess.org
 URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
-URxvt.url-select.launcher: google-chrome
+URxvt.url-select.launcher: chromium
 URxvt.url-select.underline: true
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list

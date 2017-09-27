@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+setxkbmap -keycodes evdev us -variant colemak
+xmodmap ~/dotfiles/xmodmap/asus
+xset r rate 220 56
+
+xinput set-prop 13 277 1
+xinput set-prop 13 297 1

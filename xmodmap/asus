@@ -1,0 +1,23 @@
+! Make caps lock act as escape
+keycode 66 = Escape
+
+! Use super keys for ctrl action
+clear Mod4
+add Control = Super_L
+
+! Use lenovo menu key for ctrl action
+clear Mod3
+add Control = Menu
+keycode 135 = Control_R Control_R Control_R
+
+! Use Return for Shift
+! keycode 36 = Shift_L Return Shift_L
+
+! Use Tab for Shift
+! keycode 23 = Shift_L Tab Shift_L
+
+! Use Ctrl-i for Tab
+! keycode 46 = i I Tab I iacute Iacute iacute Iacute i I iacute Iacute
+
+! Use AltGr-t for Return
+keycode 41 = t T t T Return Return Return

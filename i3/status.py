@@ -93,16 +93,15 @@ status.register("temp",
     format="{temp:.0f}°",)
 
 status.register("cpu_usage_graph",
-    format="CPU {cpu_graph}",
-    start_color="#00bb00",
-    graph_width=16,
-    graph_style="braille-fill")
+    format="CPU {usage:2}",
+    start_color="#00bb00"
+)
 
 # Shows pulseaudio default sink volume
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-    format="♪{volume}",)
+    format="Vol {volume}",)
 
 # Shows mpd status
 status.register("mpd",

@@ -14,7 +14,7 @@ Xft.hintstyle:  hintfull
 /* urxvt.font:  xft:Inconsolata:size=12 */
 
 /* #define normal xft:Inconsolata:size=14 */
-#define normal xft:Inconsolatazi4:size=14
+#define normal xft:Inconsolata:size=14
 
 /* URxvt.font:     xft:Inconsolata:size=12:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True */
 urxvt.font:       normal

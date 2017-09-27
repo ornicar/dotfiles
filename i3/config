@@ -1,9 +1,9 @@
 set $mod Mod1
-# font pango:inconsolata 17
-font pango:DejaVu Sans Mono 10
+font pango:inconsolata 12
+# font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-exec --no-startup-id feh --bg-scale ~/image/i3bg.png
+# exec --no-startup-id feh --bg-scale ~/image/i3bg.png
 
 # borders, lol
 hide_edge_borders both

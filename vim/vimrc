@@ -501,7 +501,7 @@ nnoremap <leader>mf :<C-u>Denite file_rec<cr>
 " nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 " nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
 nnoremap <leader>t :<C-u>Denite tag<cr>
-nnoremap <leader>mb :<C-u>Denite buffer file_mru bookmark<cr>
+nnoremap <leader>mb :<C-u>Denite buffer file_mru<cr>
 nnoremap <leader>mj :<C-u>Denite jump<cr>
 nnoremap <C-]> :<C-u>DeniteCursorWord tag<cr>
 " autocmd FileType unite call s:unite_settings()

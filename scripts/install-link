@@ -32,7 +32,7 @@ link xinitrc ~/.xinitrc
 link Xresources ~/.Xresources
 link xcolors ~/.xcolors
 link ackrc ~/.ackrc
-link mpd ~/.mpd
+link mpd ~/.config/mpd
 link weechat ~/.weechat
 mkdir -p ~/.i3
 link i3/config ~/.i3/config
@@ -50,8 +50,8 @@ mkdir -p ~/.config/ranger
 link ranger/rc.conf ~/.config/ranger/rc.conf
 link ranger/apps.py ~/.config/ranger/apps.py
 link redshift.conf ~/.config/redshift.conf
-link ncmpcpp/bindings ~/.ncmpcpp/bindings
-link ncmpcpp/config ~/.ncmpcpp/config
+# link ncmpcpp/bindings ~/.ncmpcpp/bindings
+# link ncmpcpp/config ~/.ncmpcpp/config
 link ttytterrc ~/.ttytterrc
 link inputrc ~/.inputrc
 link editrc ~/.editrc
@@ -72,9 +72,12 @@ link stylish-haskell.yaml ~/.stylish-haskell.yaml
 mkdir -p ~/.cabal
 link cabal ~/.cabal/config
 mkdir -p ~/.sbt/0.13
-link sbt/global.sbt ~/.sbt/0.13/global.sbt
-link sbt/plugins ~/.sbt/0.13/plugins
-link sbt/sbtrc ~/.sbtrc
+mkdir -p ~/.sbt/1.0
+link sbt-0.13/global.sbt ~/.sbt/0.13/global.sbt
+link sbt-0.13/plugins ~/.sbt/0.13/plugins
+link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
+link sbt-1.0/plugins ~/.sbt/1.0/plugins
+link sbtrc ~/.sbtrc
 mkdir -p ~/.mplayer
 link mplayer.conf ~/.mplayer/config
 link editorconfig ~/.editorconfig

@@ -15,6 +15,7 @@ let g:solarized_termcolors=16
 let g:solarized_termtrans=0
 let g:solarized_menu=0
 let g:solarized_italic=1
+let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized
 
@@ -177,7 +178,7 @@ let g:airline_mode_map = {
       \ 'i'  : 'I',
       \ 'R'  : 'R',
       \ 'c'  : 'C',
-      \ 'v'  : 'V',
+      \ 'v'  : 'v',
       \ 'V'  : 'V',
       \ '' : 'V',
       \ 's'  : 'S',

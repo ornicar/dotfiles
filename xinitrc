@@ -13,13 +13,13 @@ unclutter -root -idle 2 &                   # kill inactive rat cursor
 urxvtd -q -f -o                             # start urxvt server
 
 # sh $HOME/.fehbg &
-redshift -r &
+pgrep redshift &> /dev/null || redshift -r &> /dev/null &
 
 # xautolock -time 10 -locker "~/.scripts/lock" &
 
 $HOME/.scripts/input-asus
 
-nm-applet    2>&1 > /dev/null
+# nm-applet    2>&1 > /dev/null &
 
 # exec i3
 i3

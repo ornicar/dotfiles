@@ -21,9 +21,9 @@ bindsym $mod+Return exec urxvtc
 bindsym XF86AudioMute exec ~/.scripts/music toggle
 bindsym XF86AudioLowerVolume exec ~/.scripts/music down
 bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
+# bindsym XF86AudioPrev exec mpc prev
+bindsym XF86Mail exec mpc toggle
+bindsym XF86WWW exec mpc next
 
 # kill focused window
 bindsym $mod+q kill

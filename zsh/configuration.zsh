@@ -13,8 +13,7 @@ export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
 export PATH="/usr/lib/emscripten/:$PATH"
 
 export TERMINAL="urxvtc"
-export BROWSER="chromium"
-# export BROWSER="google-chrome" # :( until chromium has pnacl again
+export BROWSER="firefox"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 

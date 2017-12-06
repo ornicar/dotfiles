@@ -96,5 +96,3 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
-[ghi]
-	token = f94671277255b5fd1157371ccb58a0de614322a9

@@ -22,6 +22,9 @@ case $1 in
     if [ $TOTAL -gt $MAX ]; then
       let TOTAL=MAX
     fi
+    if [ $TOTAL -lt $MIN ]; then
+      let TOTAL=MIN
+    fi
     echo $TOTAL > $FILE
     ;;
   down)

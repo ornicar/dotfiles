@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+setxkbmap -keycodes evdev us -variant colemak
+xmodmap ~/dotfiles/xmodmap/xps15
+xset r rate 220 56
+
+# touchpad
+xinput set-prop 12 276 1 # enable tapping
+xinput set-prop 12 296 1 # middle click emulation
+xinput set-prop 12 288 0.9 # Accel speed

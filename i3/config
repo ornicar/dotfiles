@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:inconsolata 12
+font pango:inconsolata 24
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
@@ -9,6 +9,8 @@ font pango:inconsolata 12
 hide_edge_borders both
 
 focus_follows_mouse no
+
+workspace_auto_back_and_forth yes
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -21,9 +23,9 @@ bindsym $mod+Return exec urxvtc
 bindsym XF86AudioMute exec ~/.scripts/music toggle
 bindsym XF86AudioLowerVolume exec ~/.scripts/music down
 bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
-# bindsym XF86AudioPrev exec mpc prev
-bindsym XF86Mail exec mpc toggle
-bindsym XF86WWW exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
 
 # kill focused window
 bindsym $mod+q kill
@@ -127,26 +129,26 @@ bindsym $mod+Shift+p restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        # bindsym n resize shrink width 10 px or 10 ppt
-        # bindsym e resize grow height 10 px or 10 ppt
-        # bindsym i resize shrink height 10 px or 10 ppt
-        # bindsym o resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  # bindsym n resize shrink width 10 px or 10 ppt
+  # bindsym e resize grow height 10 px or 10 ppt
+  # bindsym i resize shrink height 10 px or 10 ppt
+  # bindsym o resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 1 px or 1 ppt
+  bindsym Down resize grow height 1 px or 1 ppt
+  bindsym Up resize shrink height 1 px or 1 ppt
+  bindsym Right resize grow width 1 px or 1 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+r mode "resize"
@@ -160,13 +162,14 @@ bar {
   # hidden_state hide
   # modifier $mod
   status_command python3 ~/dotfiles/i3/status.py
+  separator_symbol " / "
   colors {
-      background #1a1a1a
-      statusline #c0c0c0
+    background #002630
+    statusline #a0a0a0
 
-      focused_workspace  #eeeeee #285577
-      active_workspace   #eeeeee #333333
-      inactive_workspace #888888 #222222
-      urgent_workspace   #ffffff #900000
+    focused_workspace  #eeeeee #285577
+    active_workspace   #eeeeee #333333
+    inactive_workspace #888888 #002630
+    urgent_workspace   #ffffff #900000
   }
 }

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+export GDK_SCALE=2 # 4k GTK3
+export QT_AUTO_SCREEN_SCALE_FACTOR=0 # QT5 no auto scale
+export QT_SCALE_FACTOR=2 # QT5 manual x2
+
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp
 
@@ -17,9 +21,8 @@ pgrep redshift &> /dev/null || redshift -r &> /dev/null &
 
 # xautolock -time 10 -locker "~/.scripts/lock" &
 
-$HOME/.scripts/input-asus
+$HOME/.scripts/input-xps15
 
 # nm-applet    2>&1 > /dev/null &
 
-# exec i3
 i3

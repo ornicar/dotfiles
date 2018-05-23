@@ -376,7 +376,7 @@ let g:hpaste_author = 'github.com/ornicar'
 let g:hlint_args = ''
 
 " haskellmode
-let g:haddock_browser = 'firefox'
+let g:haddock_browser = 'chromium'
 let g:haddock_docdir="/usr/share/doc/ghc/html/"
 let g:haddock_indexfiledir=$HOME.'/.cache/'
 
@@ -444,6 +444,7 @@ nmap ySS <Plug>YSsurround
 " Syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_python_checkers = ['python']
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'passive_filetypes': ['scala', 'haskell', 'java', 'html', 'typescript'] }
 

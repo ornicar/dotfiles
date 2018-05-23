@@ -1,0 +1,25 @@
+font pango:inconsolata 24
+# font pango:DejaVu Sans Mono 10
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# exec --no-startup-id feh --bg-scale ~/image/i3bg.png
+
+# borders, lol
+hide_edge_borders both
+
+focus_follows_mouse no
+
+# start a terminal
+bindsym Mod1+Return exec urxvt
+
+# sound
+# bindsym $mod+a exec --no-startup-id ario
+bindsym XF86AudioMute exec ~/.scripts/music toggle
+bindsym XF86AudioLowerVolume exec ~/.scripts/music down
+bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+
+# kill focused window
+# bindsym $mod+q kill

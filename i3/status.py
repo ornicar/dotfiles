@@ -12,7 +12,7 @@ status = Status(standalone=True, click_events=False)
 # status.register("clock", format = [ ('%a %b %-d %b %X', 'UTC'), ("%a %-d %b %R", "%X") ])
     # format="%a %-d %b %R",)
 status.register("clock", format = ('UTC %H:%M', 'UTC'))
-status.register("clock", format = ("%a %-d %b %R", "America/Bogota"))
+status.register("clock", format = ("%a %-d %b %R", "Europe/Paris"))
     # format="%a %-d %b %R",)
 
 status.register("battery",
@@ -39,11 +39,11 @@ status.register("mem",
     warn_percentage=80,
     alert_percentage=90)
 
-status.register("temp",
-    file="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
-    interval=1,
-    alert_temp=75,
-    format="{temp:.0f}°",)
+# status.register("temp",
+#     file="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
+#     interval=1,
+#     alert_temp=75,
+#     format="{temp:.0f}°",)
 
 # status.register("temp",
 #     file="/sys/class/hwmon/hwmon3/fan1_input",
@@ -85,12 +85,22 @@ status.register("mpd",
 
 status.register("network",
     interface="wlp2s0",
-    format_up="{bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
-    format_down="Internet DOWN",
+    format_up="BCM {bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
+    format_down="X",
     dynamic_color = True,
     start_color="#639B24",
     end_color="yellow",
     color_down="#ff2222",
 )
+# status.register("network",
+#     interface="enp0s20f0u1",
+#     unknown_up = True,
+#     format_up="EXT {bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
+#     format_down="X",
+#     dynamic_color = True,
+#     start_color="#639B24",
+#     end_color="yellow",
+#     color_down="#ff2222",
+# )
 
 status.run()

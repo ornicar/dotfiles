@@ -5,6 +5,6 @@ xmodmap ~/dotfiles/xmodmap/xps15
 xset r rate 220 56
 
 # touchpad
-xinput set-prop 12 276 1 # enable tapping
-xinput set-prop 12 296 1 # middle click emulation
-xinput set-prop 12 288 0.9 # Accel speed
+xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1 
+xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
+xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.9

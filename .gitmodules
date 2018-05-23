@@ -168,3 +168,6 @@
 [submodule "vim/bundle/rhubarb"]
 	path = vim/bundle/rhubarb
 	url = https://github.com/tpope/vim-rhubarb
+[submodule "vim/bundle/elm"]
+	path = vim/bundle/elm
+	url = https://github.com/ElmCast/elm-vim

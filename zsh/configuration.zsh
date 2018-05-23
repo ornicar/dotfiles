@@ -13,12 +13,12 @@ export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
 export PATH="/usr/lib/emscripten/:$PATH"
 
 export TERMINAL="urxvtc"
-export BROWSER="firefox"
+export BROWSER="chromium"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Xms128M -Xmx256M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+export SBT_OPTS="-Xms128M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 # export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 # export SBT_OPTS="-Xms64M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 

@@ -3,9 +3,23 @@
 #   ControlPath ~/.ssh/master-%r@%h:%p
 #   ControlPersist 600
 #   ForwardAgent yes
+Host leela
+  HostName 83.145.238.235
+  Port 9023
+  User thibault
+Host euler
+  HostName euler.lichess.ovh
+  User root
+Host dirac
+  HostName dirac.lichess.ovh
+  User root
+Host gauss
+  HostName gauss.lichess.ovh
+  User root
 Host stork
   HostName 79.137.40.37
   User root
+  ForwardAgent yes
 Host drake
   HostName 213.239.195.106
   User root
@@ -21,44 +35,14 @@ Host gandi
 Host koala
   HostName 94.23.220.148
   User root
-Host peter
-  HostName peter.lichess.org
-  User root
-Host pesto
-  HostName 51.255.83.169
-  User root
-Host bitchess4
-  HostName 37.187.88.184
-  User root
-Host bitchess3
-  HostName 37.187.78.174
-  User root
-Host bitchess1
-  HostName 89.163.212.29
-  User root
-Host bitchess2
-  HostName 146.0.36.88
+Host curie
+  HostName curie.lichess.org
   User root
 Host benko
   HostName 5.196.84.117
   User root
 Host bofur
   HostName 149.202.91.37
-  User root
-Host homer
-  HostName 51.255.71.223
-  User root
-Host anand
-  HostName 149.202.92.196
-  User root
-Host titan
-  HostName 51.255.68.95
-  User root
-Host cloud1
-  HostName 167.114.254.12
-  User ubuntu
-Host hanoi
-  HostName 149.202.72.192
   User root
 Host rambo
   HostName 91.121.89.126

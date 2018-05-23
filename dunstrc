@@ -1,4 +1,5 @@
 [global]
+
     font = Inconsolata 16
     
     # Allow a small subset of html markup:
@@ -139,7 +140,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/chromium
 
     # Align icons left/right/off
     icon_position = off

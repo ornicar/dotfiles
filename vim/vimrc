@@ -16,7 +16,7 @@ let g:solarized_termtrans=0
 let g:solarized_menu=0
 let g:solarized_italic=1
 let g:solarized_contrast="high"
-set background=dark
+set background=light
 colorscheme solarized
 
 let mapleader = ","

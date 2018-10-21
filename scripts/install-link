@@ -84,6 +84,7 @@ link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link jshintrc ~/.jshintrc
 link zlogin ~/.zlogin
+link alacritty.yml ~/.config/alacritty/alacritty.yml
 
 cd mongo-hacker
 make

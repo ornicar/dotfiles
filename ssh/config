@@ -1,8 +1,14 @@
-# Host *
-#   ControlMaster auto
-#   ControlPath ~/.ssh/master-%r@%h:%p
-#   ControlPersist 600
-#   ForwardAgent yes
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/master-%r@%h:%p
+  ControlPersist 600
+  ForwardAgent yes
+Host keres
+  HostName 193.70.93.222
+  User root
+Host gandi1
+  HostName 2001:4b98:dc0:41:216:3eff:fef3:b78e
+  User admin
 Host leela
   HostName 83.145.238.235
   Port 9023
@@ -29,9 +35,6 @@ Host irwin
 Host pluto
   HostName 37.59.12.19
   User root
-Host gandi
-  HostName root@2001:4b98:dc2:45:216:3eff:fe50:df94
-  user root
 Host koala
   HostName 94.23.220.148
   User root
@@ -53,6 +56,7 @@ Host flynn
 Host khiaw
   HostName 176.31.115.179
   User root
+  ForwardAgent yes
 Host ushio
   HostName 91.121.211.87
   User root
@@ -86,7 +90,7 @@ Host patat
   User lichess
   Port 9453
 Host hexal
-  HostName 91.209.78.225
+  HostName 37.60.8.7
   User root
 Host vindinium
   HostName 5.196.64.149

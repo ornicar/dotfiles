@@ -5,6 +5,10 @@ xmodmap ~/dotfiles/xmodmap/xps15
 xset r rate 220 56
 
 # touchpad
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1 
+xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
 xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
 xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.9
+
+# 'pointer:Razer Razer DeathAdder 2013' - dup :(
+xinput --set-prop 20 'libinput Accel Profile Enabled' 0 1
+xinput --set-prop 20 'Coordinate Transformation Matrix' 2.000000, 0.000000, 0.000000, 0.000000, 2.000000, 0.000000, 0.000000, 0.000000, 1.000000

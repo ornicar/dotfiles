@@ -48,3 +48,5 @@ alias htags='find ./ -name "*.*hs" | xargs hasktags'
 alias halt="echo 'Use poweroff instead'"
 
 alias sc2='ulimit -n 8192 && ~/.wine/drive_c/Program\ Files\ \(x86\)/StarCraft\ II/Support64/SC2Switcher_x64.exe'
+
+alias wifi='nmcli -f name,ssid,bssid,chan,rate,signal,bars,security,device,active,in-use dev wifi'

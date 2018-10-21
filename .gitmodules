@@ -171,3 +171,9 @@
 [submodule "vim/bundle/elm"]
 	path = vim/bundle/elm
 	url = https://github.com/ElmCast/elm-vim
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.vim

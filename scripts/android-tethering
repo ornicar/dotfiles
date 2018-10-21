@@ -1,6 +1,6 @@
 #!/bin/sh
 
-device="enp0s20f0u1"
+device="enp0s20f0u$1"
 
 sudo modprobe usbnet
 sudo ifconfig $device up

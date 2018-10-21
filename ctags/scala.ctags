@@ -4,12 +4,21 @@
 --tag-relative=yes
 --langdef=scala
 --langmap=scala:.scala
---regex-scala=/^.*class\s+([a-zA-Z0-9_]+)/\1/c,classes/
---regex-scala=/^.*object\s+([a-zA-Z0-9_]+)/\1/o,objects/
---regex-scala=/^.*trait\s+([a-zA-Z0-9_]+)/\1/t,traits/
---regex-scala=/^.*\s+def\s+([a-zA-Z0-9_=]+)\s*.*[:=\(\{]/\1/m,methods/
---regex-scala=/^.*\s+val\s+([a-zA-Z0-9_=]+)\s*.*[:=]/\1/m,methods/
---regex-scala=/^.*\s+type\s+([a-zA-Z0-9_]+)\s*[\[<>=]/\1/T,types/
+--langmap=scala:.scala
+--regex-scala=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
+--regex-scala=/.*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
+--regex-scala=/^[ \t]*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/.*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
+--regex-scala=/^[ \t]*type[ \t]+([a-zA-Z0-9_]+)/\1/T,types/
+--regex-scala=/^[ \t]*def[ \t]+([a-zA-Z0-9_\?]+)/\1/m,methods/
+--regex-scala=/^[ \t]*val[ \t]+([a-zA-Z0-9_]+)/\1/C,constants/
+--regex-scala=/^[ \t]*var[ \t]+([a-zA-Z0-9_]+)/\1/l,local variables/
+--regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+--regex-scala=/^[ \t]*case class[ \t]+([a-zA-Z0-9_]+)/\1/c,case classes/
+--regex-scala=/^[ \t]*final case class[ \t]+([a-zA-Z0-9_]+)/\1/c,case classes/
+--regex-scala=/^[ \t]*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
+--regex-scala=/.*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
+--regex-scala=/^[ \t]*private def[ \t]+([a-zA-Z0-9_]+)/\1/pd,defs/
 --exclude=.git
 --exclude=conf
 --exclude=dist

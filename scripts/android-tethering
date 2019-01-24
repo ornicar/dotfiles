@@ -1,10 +1,13 @@
 #!/bin/sh
 
 device="enp0s20f0u$1"
+pidfile="/run/dhcpcd-$device.pid"
 
-sudo modprobe usbnet
-sudo ifconfig $device up
-sudo dhcpcd $device
-
-echo "Done!"
-echo "Disconnect with: sudo dhcpcd -x $device"
+if [ -f $pidfile ]; then
+  echo "Already connected."
+else
+  sudo modprobe usbnet
+  sudo ifconfig $device up
+  sudo dhcpcd $device
+  echo "Connected!"
+fi

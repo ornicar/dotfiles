@@ -1,7 +1,5 @@
 " Vim configuration - Thibault Duplessis.
 
-set nocompatible
-
 " Infect Vim with pathogen >:)
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
@@ -190,15 +188,15 @@ let g:airline_section_b = "%{substitute(getcwd(),'^.*/','','')} %{airline#extens
 let g:airline_section_y = "%{airline#util#wrap(airline#parts#ffenc(),0)} %{FileSize()}"
 
 function! FileSize()
-    let bytes = getfsize(expand("%:p"))
-      if bytes <= 0
-        return ""
-    endif
-    if bytes < 1024
-        return bytes . "B"
-    else
-        return (bytes / 1024) . "K"
-    endif
+  let bytes = getfsize(expand("%:p"))
+  if bytes <= 0
+    return ""
+  endif
+  if bytes < 1024
+    return bytes . "B"
+  else
+    return (bytes / 1024) . "K"
+  endif
 endfunction
 
 " Easier to type, and I never use the default behavior.
@@ -418,14 +416,15 @@ nmap <leader>T :Tabularize<space>
 vmap <leader>T :Tabularize<space>
 
 " deocomplete
+let g:python3_host_prog = '/usr/bin/python3'
 let g:deoplete#enable_at_startup = 1
 
 " CTAGS
 " Rebuild tags
 if filereadable('.ctags')
-  nmap <leader>ct :!ctags&<cr><cr>
+  nmap <leader>ct :!ctags --options=.ctags<cr><cr>
 else
-  nmap <leader>ct :!ctags -R .&<cr><cr>
+  nmap <leader>ct :!ctags -R .<cr><cr>
 end
 " Jump to next tag match
 nmap ]t :bd<cr>:tnext<cr>
@@ -449,6 +448,9 @@ let g:syntastic_python_checkers = ['python']
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'passive_filetypes': ['scala', 'haskell', 'java', 'html', 'typescript'] }
 
+" Rust
+let g:rustfmt_autosave = 1 " Autoformat on save
+
 " Select all text in the buffer
 map <leader>sa ggVG
 
@@ -461,7 +463,7 @@ nmap ti :Tig<cr>
 
 " add FZF (fuzzy file finder) to runtimepath https://github.com/junegunn/fzf#as-vim-plugin
 set rtp+=~/dotfiles/fzf
-let g:fzf_tags_command = 'ctags -R'
+let g:fzf_tags_command = 'ctags --options=.ctags'
 " Augmenting Ag command using fzf#vim#with_preview function
 "   * fzf#vim#with_preview([[options], preview window, [toggle keys...]])
 "     * For syntax-highlighting, Ruby and any of the following tools are required:
@@ -472,10 +474,10 @@ let g:fzf_tags_command = 'ctags -R'
 "   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
 "   :Ag! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* FzfAg
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+      \ call fzf#vim#ag(<q-args>,
+      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \                 <bang>0)
 
 
 " Lusty juggler
@@ -522,7 +524,7 @@ nnoremap <leader>mf :<C-u>GFiles<cr>
 " " nnoremap <leader>ms :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
 " nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
 " nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank -start-insert history/yank<cr>
-nnoremap <leader>t :<C-u>Tags<cr>
+nnoremap <leader>t :<C-u>Denite tag<cr>
 nnoremap <leader>mb :<C-u>Denite buffer file_mru<cr>
 nnoremap <leader>mj :<C-u>Denite jump<cr>
 nnoremap <C-]> :<C-u>DeniteCursorWord tag<cr>

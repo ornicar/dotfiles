@@ -18,5 +18,3 @@ link (){
     rm $TO
     ln -s $FROM $TO
 }
-
-link urxvt/perl-clipboard /usr/lib/urxvt/perl/clipboard

@@ -3,6 +3,7 @@
 export GDK_SCALE=2 # 4k GTK3
 export QT_AUTO_SCREEN_SCALE_FACTOR=0 # QT5 no auto scale
 export QT_SCALE_FACTOR=2 # QT5 manual x2
+export WINIT_HIDPI_FACTOR=3.0
 
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp
@@ -13,8 +14,7 @@ xsetroot -solid black                       # black background
 xset s 600 600                              # set monitor to sleep
 xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
-unclutter -root -idle 2 &                   # kill inactive rat cursor
-urxvtd -q -f -o                             # start urxvt server
+unclutter --fork --timeout 2                # kill inactive rat cursor
 
 # sh $HOME/.fehbg &
 pgrep redshift &> /dev/null || redshift -r &> /dev/null &

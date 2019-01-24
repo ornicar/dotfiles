@@ -4,7 +4,6 @@
 --tag-relative=yes
 --langdef=scala
 --langmap=scala:.scala
---langmap=scala:.scala
 --regex-scala=/^[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
 --regex-scala=/.*class[ \t]+([a-zA-Z0-9_]+)/\1/c,classes/
 --regex-scala=/^[ \t]*trait[ \t]+([a-zA-Z0-9_]+)/\1/t,traits/
@@ -19,7 +18,6 @@
 --regex-scala=/^[ \t]*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
 --regex-scala=/.*object[ \t]+([a-zA-Z0-9_]+)/\1/o,objects/
 --regex-scala=/^[ \t]*private def[ \t]+([a-zA-Z0-9_]+)/\1/pd,defs/
---exclude=.git
 --exclude=conf
 --exclude=dist
 --exclude=target
@@ -30,7 +28,9 @@
 --exclude=assets
 --exclude=*.js
 --exclude=*.css
+--exclude=*.html
 --exclude=*.java
 --exclude=play-*
 --exclude=test
 --exclude=ui
+--exclude=node_modules

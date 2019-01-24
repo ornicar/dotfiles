@@ -12,66 +12,6 @@ Xft.hinting:    true
 Xft.rgba:       rgb
 Xft.hintstyle:  hintfull
 
-/* urxvt.font:  xft:Source Code Pro:size=12 */
-/* urxvt.font:  xft:Inconsolata:size=12 */
-
-/* #define normal xft:Inconsolata:size=14 */
-! #define normal xft:Inconsolata:size=14
-! #define normal xft:Inconsolata:size=26
-#define normal xft:Inconsolata:size=26
-
-/* URxvt.font:     xft:Inconsolata:size=12:hinting=True;antialias:True,xft:PowerlineSymbols,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:medium;antialias=False,xft:WenQuanYi Zen Hei-12:medium;antialias=True,xft:HanaMinA-12:medium;antialias:True,xft:HanaMinB-12:medium;antialias:True,xft:HanaMinPlus-12:medium;antialias:True */
-urxvt.font:       normal
-urxvt.boldFont:   normal
-/* URxvt.boldFont: xft:Inconsolata:size=12:bold;hinting=True;antialias:True,xft:Font Awesome:size=10,xft:WenQuanYi Bitmap Song-12:bold;antialias=False,xft:WenQuanYi Zen Hei-12:bold;antialias=True,xft:HanaMinA-12:bold;antialias:True,xft:HanaMinB-12:bold;antialias:True,xft:HanaMinPlus-12:bold;antialias:True */
-
-/* font pango:DejaVu Sans Mono 10 */
-/* urxvt.font:  xft:DejaVuSansMono:size=16 */
-
-URxvt.letterSpace: -1
-
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-URxvt.scrollstyle: plain
-URxvt.scrollBar: false     ! turn off the scroll bar
-URxvt.jumpScroll: true
-URxvt.skipScroll: true
-URxvt.saveLines:  8000
-URxvt.visualBell: false
-
-URxvt.depth:       24
-URxvt.buffered:    true
-!URxvt.foreground:  #f0f0f0
-!URxvt.background:  #000000
-URxvt.transparent: false
-URxvt.shading:     100
-
-URxvt.intensityStyles: true
-URxvt.termName:        rxvt-unicode-256color
-URxvt.urgentOnBell:    true
-
-URxvt*cursorBlink:     true
-
-! disable annoying ctrl+shift encoding switch
-URxvt*iso14755: False
-
-! color links
-URxvt.colorUL: #4682B4
-
-! perl shit https://lichess.org
-URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
-URxvt.url-select.launcher: chromium
-URxvt.url-select.underline: true
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
-URxvt.keysym.M-u:      perl:url-select:select_next
-URxvt.keysym.M-p:      perl:clipboard:paste
-
 rofi.font: Inconsolata 18
 rofi.color-enabled: true
 rofi.color-window: #002b37, #002b37, #003642
@@ -79,6 +19,6 @@ rofi.color-normal: #002b37, #819396, #003643, #008ed4, #ffffff
 rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
 rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
 rofi.ssh-client:       ssh
-rofi.ssh-command:      urxvtc -e '{ssh-client} {host}'
+rofi.ssh-command:      alacritty -e '{ssh-client} {host}'
 rofi.run-command:      {cmd}
-rofi.run-shell-command:  urxvtc -e '{cmd}'
+rofi.run-shell-command:  alacritty -e '{cmd}'

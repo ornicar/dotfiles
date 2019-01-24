@@ -12,7 +12,7 @@ export PATH="$HOME/android-sdk/android-sdk-linux/tools/:$PATH"
 export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
 export PATH="/usr/lib/emscripten/:$PATH"
 
-export TERMINAL="urxvtc"
+export TERMINAL="alacritty"
 export BROWSER="chromium"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
@@ -38,9 +38,6 @@ CDPATH=$HOME:..
 
 # Load less keys
 lesskey "$DOTFILES/lesskeys"
-
-# Disable flow control in rxvt, frees ctrl-s & ctrl-q mappings
-stty -ixon -ixoff
 
 # Add dircolors
 eval $(dircolors $DOTFILES/zsh/dircolors-solarized/dircolors.ansi-dark)

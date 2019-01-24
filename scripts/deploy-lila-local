@@ -1,0 +1,20 @@
+#!/bin/sh
+
+user=neio
+source=/home/thib/lila
+dest=/home/neio/lila
+agentpath=/home/neio/YourKit-JavaProfiler-2018.04/bin/linux-x86-64/libyjpagent.so
+
+mkdir -p $dest
+rm -rf $dest/*
+cp -r $source/target/universal/stage/* $dest/
+cp -r $source/data $dest/data
+
+echo "
+export JAVA_OPTS='-agentpath:$agentpath -Xms2g -Xmx2g -XX:ReservedCodeCacheSize=256m -XX:+UseG1GC -XX:+UseStringDeduplication'
+$dest/bin/lila -Dhttp.port=9663 -Dapplication.home=/tmp/lila/
+" > $dest/run
+
+chown -R neio:neio $dest
+chmod +x $dest/bin/lila
+chmod +x $dest/run

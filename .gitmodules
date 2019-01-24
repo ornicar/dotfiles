@@ -147,9 +147,6 @@
 [submodule "vim/bundle/tsuquyomi"]
 	path = vim/bundle/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi
-[submodule "vim/bundle/js-indent"]
-	path = vim/bundle/js-indent
-	url = https://github.com/jason0x43/vim-js-indent
 [submodule "vim/bundle/deoplete"]
 	path = vim/bundle/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
@@ -177,3 +174,9 @@
 [submodule "vim/bundle/fzf"]
 	path = vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/rust"]
+	path = vim/bundle/rust
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/bundle/javascript"]
+	path = vim/bundle/javascript
+	url = https://github.com/pangloss/vim-javascript

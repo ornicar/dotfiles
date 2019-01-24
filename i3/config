@@ -14,7 +14,7 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym Mod1+Return exec /home/thib/alacritty/target/release/alacritty
 
 # sound
 # bindsym $mod+a exec --no-startup-id ario

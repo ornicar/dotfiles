@@ -3,6 +3,15 @@ Host *
   ControlPath ~/.ssh/master-%r@%h:%p
   ControlPersist 600
   ForwardAgent yes
+Host listress
+  HostName 35.187.229.0
+  User root
+Host greco
+  HostName 54.38.248.235
+  User root
+Host moore
+  HostName 51.75.112.162 
+  User root
 Host keres
   HostName 193.70.93.222
   User root

@@ -1,0 +1,54 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2304,
+               "width": 3072,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Alacritty",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Alacritty$",
+               "instance": "^Alacritty$",
+               "title": "^Alacritty$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2120,
+               "width": 1920,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Home",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Org\\.gnome\\.Nautilus$",
+               "instance": "^org\\.gnome\\.Nautilus$",
+               "title": "^Home$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

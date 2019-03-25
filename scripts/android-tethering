@@ -1,13 +1,26 @@
 #!/bin/sh
 
-device="enp0s20f0u$1"
-pidfile="/run/dhcpcd-$device.pid"
+sudo modprobe usbnet
 
-if [ -f $pidfile ]; then
-  echo "Already connected."
-else
-  sudo modprobe usbnet
-  sudo ifconfig $device up
-  sudo dhcpcd $device
-  echo "Connected!"
-fi
+for i in 1 2 3 4; do
+
+  device="enp0s20f0u$i"
+  pidfile="/run/dhcpcd-$device.pid"
+
+  echo;
+  echo $device;
+  echo;
+  sudo dhcpcd -x $device;
+
+  if [ -f $pidfile ]; then
+    echo "Already connected."
+  else
+    sudo ifconfig $device up
+    sudo dhcpcd -B $device
+    if [ $? -eq 0 ]; then
+      sudo cp /home/thib/.scripts/resolv.conf /etc/resolv.conf
+      echo "Connected!"
+    fi
+  fi
+
+done

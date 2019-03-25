@@ -1,0 +1,142 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2304,
+               "width": 3072,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Alacritty",
+            "percent": 0.25,
+            "swallows": [
+               {
+               "title": "Lila terminal"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.25,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 2304,
+                       "width": 3072,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Alacritty",
+                    "percent": 0.42,
+                    "swallows": [
+                       {
+                       "title": "Lila SBT"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 2304,
+                       "width": 3072,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Alacritty",
+                    "percent": 0.58,
+                    "swallows": [
+                       {
+                       "title": "Lila vim"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.25,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 2304,
+                       "width": 3072,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Alacritty",
+                    "percent": 0.42,
+                    "swallows": [
+                       {
+                       "title": "Gulp CSS"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 2304,
+                       "width": 3072,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Alacritty",
+                    "percent": 0.58,
+                    "swallows": [
+                       {
+                       "title": "UI vim"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 2304,
+               "width": 3072,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Alacritty",
+            "percent": 0.25,
+            "swallows": [
+               {
+               "title": "Lila more"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

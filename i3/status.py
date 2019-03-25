@@ -13,21 +13,21 @@ status = Status(standalone=True, click_events=False)
     # format="%a %-d %b %R",)
 status.register("clock", format = ('UTC %H:%M', 'UTC'))
 status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
-status.register("clock", format = ("%a %-d %b %R", "Asia/Kuala_Lumpur"))
+status.register("clock", format = ("%a %-d %b %R", "Asia/Singapore"))
     # format="%a %-d %b %R",)
 
-status.register("battery",
-    format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    color="#ff8888",
-    full_color="#639B24",
-    charging_color="#639B24",
-    alert=True,
-    alert_percentage=10,
-    status={
-        "DIS": "↓",
-        "CHR": "↑",
-        "FULL": "=",
-    },)
+# status.register("battery",
+#     format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
+#     color="#ff8888",
+#     full_color="#639B24",
+#     charging_color="#639B24",
+#     alert=True,
+#     alert_percentage=10,
+#     status={
+#         "DIS": "↓",
+#         "CHR": "↑",
+#         "FULL": "=",
+#     },)
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)

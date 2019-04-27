@@ -1,0 +1,132 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                        "height": 1152,
+                        "width": 1536,
+                        "x": 0,
+                        "y": 0
+                    },
+                    "name": "Alacritty",
+                    "percent": 0.55,
+                    "swallows": [
+                        {
+                            "title": "journal"
+                        }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "splitv",
+                    "percent": 0.45,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "normal",
+                            "floating": "auto_off",
+                            "layout": "splith",
+                            "percent": 0.4,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "normal",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                        "height": 1152,
+                                        "width": 1536,
+                                        "x": 0,
+                                        "y": 0
+                                    },
+                                    "name": "Alacritty",
+                                    "percent": 0.66,
+                                    "swallows": [
+                                        {
+                                            "title": "sensors"
+                                        }
+                                    ],
+                                    "type": "con"
+                                },
+                                {
+                                    "border": "normal",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                        "height": 1152,
+                                        "width": 1536,
+                                        "x": 0,
+                                        "y": 0
+                                    },
+                                    "name": "Alacritty",
+                                    "percent": 0.34,
+                                    "swallows": [
+                                        {
+                                            "title": "cpus"
+                                        }
+                                    ],
+                                    "type": "con"
+                                }
+                            ]
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                                "height": 1152,
+                                "width": 1536,
+                                "x": 0,
+                                "y": 0
+                            },
+                            "name": "Alacritty",
+                            "percent": 0.6,
+                            "swallows": [
+                                {
+                                    "title": "htop"
+                                }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+                "height": 1152,
+                "width": 1536,
+                "x": 0,
+                "y": 0
+            },
+            "name": "Alacritty",
+            "percent": 0.5,
+            "swallows": [
+                {
+                    "title": "terminal"
+                }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

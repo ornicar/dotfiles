@@ -2,8 +2,9 @@
 i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
 
 (cd ~/lila; alacritty --title "Lila terminal" &)
-(cd ~/lila; alacritty --title "Lila SBT" --command bin/dev &)
-(cd ~/lila; alacritty --title "Lila vim" --command vim &)
-(cd ~/lila/ui; alacritty --title "Gulp CSS" --command gulp css &)
-(cd ~/lila/ui/site; alacritty --title "UI vim" --command vim &)
+(cd ~/lila; alacritty --title "Lila SBT" &)
+(cd ~/lila; alacritty --title "Lila vim" &)
+(cd ~/lila/ui; alacritty --title "ui gulp css" &)
+(cd ~/lila/ui/site; alacritty --title "ui/site gulp" &)
+(cd ~/lila/ui/site; alacritty --title "ui/site vim" &)
 (cd ~/lila; alacritty --title "Lila more" &)

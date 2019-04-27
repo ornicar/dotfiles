@@ -76,7 +76,7 @@ status.register("pulseaudio",
 
 # Shows mpd status
 status.register("mpd",
-    format="{title} {status} {album}",
+    format="{artist}: {album} {status} {title}",
     max_field_len=50,
     status={
         "pause": "▷",

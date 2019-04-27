@@ -9,8 +9,8 @@ Host listress
 Host greco
   HostName 54.38.248.235
   User root
-Host moore
-  HostName 51.75.112.162
+Host leess
+  HostName leess.lichess.ovh
   User root
 Host keres
   HostName 193.70.93.222

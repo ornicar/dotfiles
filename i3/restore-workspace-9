@@ -1,0 +1,8 @@
+#!/bin/bash
+i3-msg "workspace 9; append_layout ~/dotfiles/i3/workspace-9.json"
+
+(alacritty --title "journal" --command ~/dotfiles/i3/journal.sh &)
+(alacritty --title "sensors" --command watch -n1 sensors -A &)
+(alacritty --title "cpus" --command watch -n 1 'cat /proc/cpuinfo | grep MHz' &)
+(alacritty --title "htop" --command htop &)
+(alacritty --title "terminal" &)

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+(cd ~/disposable; git pull && echo "./generate" && ./.generate && git add domains.txt && git commit -m "regenerate domains.txt" && git push ornicar publish)

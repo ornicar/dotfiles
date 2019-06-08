@@ -1,12 +1,12 @@
 {
-    "border": "normal",
+    "border": "pixel 1",
     "floating": "auto_off",
     "layout": "tabbed",
     "percent": null,
     "type": "con",
     "nodes": [
         {
-            "border": "normal",
+            "border": "pixel 1",
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
@@ -25,14 +25,14 @@
             "type": "con"
         },
         {
-            "border": "normal",
+            "border": "pixel 1",
             "floating": "auto_off",
             "layout": "splith",
             "percent": 0.25,
             "type": "con",
             "nodes": [
                 {
-                    "border": "normal",
+                    "border": "pixel 1",
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
@@ -51,7 +51,7 @@
                     "type": "con"
                 },
                 {
-                    "border": "normal",
+                    "border": "pixel 1",
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
@@ -72,21 +72,21 @@
             ]
         },
         {
-            "border": "normal",
+            "border": "pixel 1",
             "floating": "auto_off",
             "layout": "splith",
             "percent": 0.35,
             "type": "con",
             "nodes": [
                 {
-                    "border": "normal",
+                    "border": "pixel 1",
                     "floating": "auto_off",
                     "layout": "splitv",
                     "percent": 0.25,
                     "type": "con",
                     "nodes": [
                             {
-                                "border": "normal",
+                                "border": "pixel 1",
                                 "current_border_width": 2,
                                 "floating": "auto_off",
                                 "geometry": {
@@ -105,7 +105,7 @@
                                 "type": "con"
                             },
                             {
-                                "border": "normal",
+                                "border": "pixel 1",
                                 "current_border_width": 2,
                                 "floating": "auto_off",
                                 "geometry": {
@@ -126,7 +126,7 @@
                     ]
                 },
                 {
-                    "border": "normal",
+                    "border": "pixel 1",
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
@@ -147,7 +147,7 @@
             ]
         },
         {
-            "border": "normal",
+            "border": "pixel 1",
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {

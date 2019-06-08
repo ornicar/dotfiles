@@ -1,20 +1,20 @@
 {
-    "border": "normal",
+    "border": "pixel 1",
     "floating": "auto_off",
     "layout": "tabbed",
     "percent": null,
     "type": "con",
     "nodes": [
         {
-            "border": "normal",
+            "border": "pixel 1",
             "floating": "auto_off",
             "layout": "splith",
             "percent": 0.5,
             "type": "con",
             "nodes": [
                 {
-                    "border": "normal",
-                    "current_border_width": 2,
+                    "border": "pixel 1",
+                    "current_border_width": 1,
                     "floating": "auto_off",
                     "geometry": {
                         "height": 1152,
@@ -32,22 +32,22 @@
                     "type": "con"
                 },
                 {
-                    "border": "normal",
+                    "border": "pixel 1",
                     "floating": "auto_off",
                     "layout": "splitv",
                     "percent": 0.45,
                     "type": "con",
                     "nodes": [
                         {
-                            "border": "normal",
+                            "border": "pixel 1",
                             "floating": "auto_off",
                             "layout": "splith",
                             "percent": 0.4,
                             "type": "con",
                             "nodes": [
                                 {
-                                    "border": "normal",
-                                    "current_border_width": 2,
+                                    "border": "pixel 1",
+                                    "current_border_width": 1,
                                     "floating": "auto_off",
                                     "geometry": {
                                         "height": 1152,
@@ -65,8 +65,8 @@
                                     "type": "con"
                                 },
                                 {
-                                    "border": "normal",
-                                    "current_border_width": 2,
+                                    "border": "pixel 1",
+                                    "current_border_width": 1,
                                     "floating": "auto_off",
                                     "geometry": {
                                         "height": 1152,
@@ -86,8 +86,8 @@
                             ]
                         },
                         {
-                            "border": "normal",
-                            "current_border_width": 2,
+                            "border": "pixel 1",
+                            "current_border_width": 1,
                             "floating": "auto_off",
                             "geometry": {
                                 "height": 1152,
@@ -109,8 +109,8 @@
             ]
         },
         {
-            "border": "normal",
-            "current_border_width": 2,
+            "border": "pixel 1",
+            "current_border_width": 1,
             "floating": "auto_off",
             "geometry": {
                 "height": 1152,

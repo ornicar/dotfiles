@@ -7,13 +7,13 @@ Host listress
   HostName 35.187.229.0
   User root
 Host greco
-  HostName 54.38.248.235
+  HostName greco.lichess.ovh
   User root
 Host leess
   HostName leess.lichess.ovh
   User root
 Host keres
-  HostName 193.70.93.222
+  HostName keres.lichess.ovh
   User root
 Host gandi1
   HostName 2001:4b98:dc0:41:216:3eff:fef3:b78e

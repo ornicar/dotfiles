@@ -5,6 +5,8 @@ font pango:inconsolata 24
 
 # exec --no-startup-id feh --bg-scale ~/image/i3bg.png
 
+default_border pixel 1
+
 # borders, lol
 hide_edge_borders both
 

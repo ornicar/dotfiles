@@ -3,10 +3,10 @@ font pango:inconsolata 12
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-for_window [title="twitch.tv/ornicar2 voice"] floating enable, resize set width 500px height 60px
+for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 500px height 60px
 
-default_border none
-default_floating_border none
+default_border pixel 1
+default_floating_border pixel 1
 
 # borders, lol
 hide_edge_borders both

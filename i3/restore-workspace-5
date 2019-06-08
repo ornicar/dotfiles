@@ -1,6 +1,0 @@
-#!/bin/bash
-i3-msg "workspace 5; append_layout ~/dotfiles/i3/workspace-5.json"
-
-# (cd ~/lila; alacritty &)
-# (nautilus &)
-# (cd ~/lila; alacritty --command vim &)

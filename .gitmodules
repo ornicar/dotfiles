@@ -186,3 +186,6 @@
 [submodule "vim/bundle/vim-autoformat"]
 	path = vim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat
+[submodule "vim/bundle/ripgrep"]
+	path = vim/bundle/ripgrep
+	url = https://github.com/jremmen/vim-ripgrep

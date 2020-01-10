@@ -277,14 +277,13 @@ nmap <leader>sr :!ack -l <C-r>=expand("<cword>")<cr> \|
 
 nmap <leader>sm :source $MYVIMRC<cr>
 
-" Ag silver searcher
-let g:gprg = 'ag --nogroup --nocolor --column'
-" Set a mark then search with Ag
-nmap <leader>ma mA:Ag!<cr>
-nmap <leader>a mA:Ag<space>
-" Set a mark, then pull word under cursor into Ag for a global search
-nmap <leader>za mA:Ag "<C-r>=expand("<cword>")<cr>"
-nmap <leader>zA mA:Ag "<C-r>=expand("<cWORD>")<cr>"
+" ripgrep
+" Set a mark then search with Rg
+nmap <leader>ma mA:Rg!<cr>
+nmap <leader>a mA:Rg<space>
+" Set a mark, then pull word under cursor into Rg for a global search
+nmap <leader>za mA:Rg "<C-r>=expand("<cword>")<cr>"
+nmap <leader>zA mA:Rg "<C-r>=expand("<cWORD>")<cr>"
 
 " yuml
 nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>

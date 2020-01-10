@@ -279,11 +279,9 @@ nmap <leader>sm :source $MYVIMRC<cr>
 
 " ripgrep
 " Set a mark then search with Rg
-nmap <leader>ma mA:Rg!<cr>
-nmap <leader>a mA:Rg<space>
+nmap <leader>a mA:RG<cr>
 " Set a mark, then pull word under cursor into Rg for a global search
-nmap <leader>za mA:Rg "<C-r>=expand("<cword>")<cr>"
-nmap <leader>zA mA:Rg "<C-r>=expand("<cWORD>")<cr>"
+nmap <leader>za mA:Rg <C-r>=expand("<cword>")<cr><cr>
 
 " yuml
 nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>
@@ -472,20 +470,18 @@ nmap ti :Tig<cr>
 " add FZF (fuzzy file finder) to runtimepath https://github.com/junegunn/fzf#as-vim-plugin
 set rtp+=~/dotfiles/fzf
 let g:fzf_tags_command = 'ctags --options=.ctags'
-" Augmenting Ag command using fzf#vim#with_preview function
-"   * fzf#vim#with_preview([[options], preview window, [toggle keys...]])
-"     * For syntax-highlighting, Ruby and any of the following tools are required:
-"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
-"       - CodeRay: http://coderay.rubychan.de/
-"       - Rouge: https://github.com/jneen/rouge
-"
-"   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
-"   :Ag! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* FzfAg
-      \ call fzf#vim#ag(<q-args>,
-      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \                 <bang>0)
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 
 " Lusty juggler

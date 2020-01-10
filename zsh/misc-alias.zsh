@@ -22,6 +22,9 @@ alias -g L='| less'
 # Vim
 alias v="nvim"
 
+# Lila
+alias li="./lila"
+
 # Ranger
 alias r="ranger"
 

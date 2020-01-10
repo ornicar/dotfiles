@@ -28,10 +28,10 @@ source $DOTFILES/zsh/history-substring-search/zsh-history-substring-search.zsh
 
 # Enable completion after all plugins are loaded
 autoload -U compinit
-fpath=($DOTFILES/zsh/cabal-completion $fpath)
+# fpath=($DOTFILES/zsh/cabal-completion $fpath)
 compinit -i
 
-source $OHMYZSH/plugins/cabal/cabal.plugin.zsh
+# source $OHMYZSH/plugins/cabal/cabal.plugin.zsh
 
 # Load private configuration
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local

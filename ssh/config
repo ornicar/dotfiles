@@ -1,10 +1,16 @@
 Host *
-  ControlMaster auto
-  ControlPath ~/.ssh/master-%r@%h:%p
-  ControlPersist 600
+  # ControlMaster auto
+  # ControlPath ~/.ssh/master-%r@%h:%p
+  # ControlPersist 600
   ForwardAgent yes
+Host listress-clients
+  HostName 35.209.121.121
+  User root
+Host listress-ws
+  HostName 35.209.204.46
+  User root
 Host listress
-  HostName 35.187.229.0
+  HostName 35.209.159.98
   User root
 Host greco
   HostName greco.lichess.ovh

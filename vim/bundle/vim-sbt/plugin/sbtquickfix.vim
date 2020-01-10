@@ -36,7 +36,30 @@ set efm+=%C\ %#L%lC%c%.%#
 set efm+=%-Z\ %#^%.%#
 set efm+=%C\ %m
 
+" scapegoat
+" [info] .home.thib.lila3.modules.tournament.src.main.arena.PairingSystem.scala:74: List.size is O(n)
+"           List.size is O(n). Consider using a different data type with O(1) size lookup such as Vector or Array.
+"
+" [info] /home/thib/lila3/modules/tournament/src/main/arena/PairingSystem.scala:74:95: List.size is O(n)
+" [info]   private def smartPairings(data: Data, players: RankedPlayers): List[Pairing.Prep] = players.size match {
+" [info]                                                                                               ^
+" [error] .home.thib.lila3.modules.tournament.src.main.arena.PairingSystem.scala:108: Use of unsafe Traversable methods (head, tail, init, last, reduce, reduceLeft, reduceRight, max, maxBy, min, minBy)
+"           players.map[Int](((x$4: lila.tournament.RankedPlayer) => x$4.rank)).max
+"
+" [error] /home/thib/lila3/modules/tournament/src/main/arena/PairingSystem.scala:108:39: Use of unsafe Traversable methods (head, tail, init, last, reduce, reduceLeft, reduceRight, max, maxBy, min, minBy)
+" [error]     val maxRank = players.map(_.rank).max
+set efm+=[error]\ %f:%l:\ %m
+" set efm+=[error]\ %f:%l:%c:\ %m
+
 set efm+=%-G%.%#
+
+" let s:absoluteQFLocation = "/tmp/sbt.quickfix"
+
+" function! sbtquickfix#LoadQuickFix()
+"   exec ":b " . s:absoluteQFLocation
+"   " exec ":bd"
+"   exec ":cf " . s:absoluteQFLocation
+" endfunction
 
 let s:relativeQFLocation = "target/quickfix/sbt.quickfix"
 
@@ -47,6 +70,7 @@ function! sbtquickfix#LoadQuickFix()
   while !found && len(path) != 0
     let file = "/" . join(path, "/") . "/" . s:relativeQFLocation
     if filereadable(file)
+      exec ":e " . file
       exec ":cf " . file
       return
     endif

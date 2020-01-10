@@ -3,14 +3,9 @@
 # Exports and oh-my-zsh configuration
 
 # Export common variables
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
-export PATH="$DOTFILES/scripts:$PATH"
-export PATH="$HOME/.gem/ruby/2.1.0/bin:$PATH"
-export PATH="$HOME/git-hub:$PATH"
-export PATH="$HOME/android-sdk/android-sdk-linux/tools/:$PATH"
-export PATH="$HOME/android-sdk/android-sdk-linux/platform-tools/:$PATH"
-export PATH="/usr/lib/emscripten/:$PATH"
+path+="$HOME/.bin:$PATH"
+path+="$DOTFILES/scripts:$PATH"
+path+="$HOME/nailgun/nailgun-client/target"
 
 export TERMINAL="alacritty"
 export BROWSER="chromium"
@@ -18,16 +13,12 @@ export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
 # Java/SBT configuration
-export SBT_OPTS="-Xms128M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
+export SBT_OPTS="-Xms128M -Xmx512M -Xss1m"
 # export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 # export SBT_OPTS="-Xms64M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 
 # oh-my-zsh configuration
 export DISABLE_AUTO_TITLE="true"
-
-# clojurescript
-export CLOJURESCRIPT_HOME="$HOME/clojurescript"
-export PATH="$CLOJURESCRIPT_HOME/bin:$PATH"
 
 # Enable more syntax highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)

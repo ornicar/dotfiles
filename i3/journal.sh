@@ -1,5 +1,5 @@
 #!/bin/bash
 
 nm-applet &
-screenkey
+# screenkey
 journalctl -f

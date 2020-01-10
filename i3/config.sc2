@@ -1,3 +1,4 @@
+set $mod Mod1
 font pango:inconsolata 24
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -12,6 +13,9 @@ focus_follows_mouse no
 # start a terminal
 bindsym Mod1+Return exec /home/thib/alacritty/target/release/alacritty
 
+bindsym $mod+BackSpace kill
+bindsym $mod+0 fullscreen toggle
+
 # sound
 # bindsym $mod+a exec --no-startup-id ario
 bindsym XF86AudioMute exec ~/.scripts/music toggle
@@ -21,5 +25,5 @@ bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 
-# kill focused window
-# bindsym $mod+q kill
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+o restart

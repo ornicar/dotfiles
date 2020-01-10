@@ -13,6 +13,7 @@ status = Status(standalone=True, click_events=False)
     # format="%a %-d %b %R",)
 status.register("clock", format = ('UTC %H:%M', 'UTC'))
 status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
+status.register("clock", format = ("MEX %H:%M"))
 # status.register("clock", format = ("%a %-d %b %R", "Asia/Singapore"))
     # format="%a %-d %b %R",)
 

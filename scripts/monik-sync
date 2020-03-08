@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+device=/dev/mmcblk0p1
+mnt_dir=/home/thib/mnt/monik
+data_dir=/home/thib/monik/$(date +%Y-%m-%d_%H-%M)
+
+echo "$mnt_dir -> $data_dir"
+mkdir -p $mnt_dir
+mkdir -p $data_dir
+sudo mount $device $mnt_dir
+sudo mv -iv $mnt_dir/DCIM/100MEDIA/* $data_dir/
+sync
+sudo chown -R thib:thib $data_dir
+sudo umount $device
+
+echo "Done and unmounted."

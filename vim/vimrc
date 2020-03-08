@@ -281,7 +281,12 @@ nmap <leader>sm :source $MYVIMRC<cr>
 " Set a mark then search with Rg
 nmap <leader>a mA:RG<cr>
 " Set a mark, then pull word under cursor into Rg for a global search
-nmap <leader>za mA:Rg <C-r>=expand("<cword>")<cr><cr>
+nmap <leader>za mA:RG <C-r>=expand("<cword>")<cr><cr>
+" Set a mark then search with Rg and put results in quickfix
+nmap <leader>r mA:Rg<space>
+" Set a mark, then pull word under cursor into Rg for a global search and put
+" results in quickfix
+nmap <leader>zr mA:Rg <C-r>=expand("<cword>")<cr><cr>
 
 " yuml
 nmap <silent> <leader>yu :w !~/.scripts/yuml<cr>

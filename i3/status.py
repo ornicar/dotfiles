@@ -13,7 +13,7 @@ status = Status(standalone=True, click_events=False)
     # format="%a %-d %b %R",)
 status.register("clock", format = ('UTC %H:%M', 'UTC'))
 status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
-status.register("clock", format = ("MEX %H:%M"))
+# status.register("clock", format = ("%H:%M"))
 # status.register("clock", format = ("%a %-d %b %R", "Asia/Singapore"))
     # format="%a %-d %b %R",)
 
@@ -86,8 +86,8 @@ status.register("mpd",
     })
 
 status.register("network",
-    interface="wlp2s0",
-    format_up="BCM {bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
+    interface="wlan0",
+    format_up="{bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
     format_down="X",
     dynamic_color = True,
     start_color="#639B24",

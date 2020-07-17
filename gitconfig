@@ -98,3 +98,5 @@
   enabled = true
 [rebase]
 	autoStash = true
+[pull]
+	rebase = false

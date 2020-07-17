@@ -1,13 +1,13 @@
 #!/usr/bin/zsh
 
 setxkbmap -keycodes evdev us -variant colemak
-xmodmap ~/dotfiles/xmodmap/xps15
+xmodmap ~/dotfiles/xmodmap/xps
 xset r rate 250 56
 
 # touchpad
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.9
+xinput --set-prop 'DELL098F:00 04F3:311C Touchpad' 'libinput Tapping Enabled' 1
+xinput --set-prop 'DELL098F:00 04F3:311C Touchpad' 'libinput Middle Emulation Enabled' 1
+xinput --set-prop 'DELL098F:00 04F3:311C Touchpad' 'libinput Accel Speed' 0.2
 
 # 'pointer:Razer Razer DeathAdder 2013' - dup :(
 xinput --set-prop 20 'libinput Accel Profile Enabled' 0 1

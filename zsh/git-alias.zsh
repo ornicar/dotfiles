@@ -34,3 +34,6 @@ alias g-='cd $(git rev-parse --show-toplevel || echo ".")'
 # to keep autocompletion
 function gl(){git-up "$@"}
 function glr(){git-up --rebase "$@"}
+
+# search for file names
+alias rgf='rg --files | rg'

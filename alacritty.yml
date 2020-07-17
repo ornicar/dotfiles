@@ -58,18 +58,6 @@ scrolling:
   # Specifying `0` will disable faux scrolling.
   # faux_multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 4
-
 # Font configuration (changes require restart)
 #
 # Important font attributes like antialiasing, subpixel aa, and hinting can be
@@ -107,7 +95,7 @@ font:
     # style: Italic
 
   # Point size
-  size: 9.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -230,7 +218,6 @@ colors:
   primary:
     background: '0x002124'
     foreground: '0x839496'
-
   # Normal colors
   normal:
     black:   '0x073642'
@@ -241,7 +228,6 @@ colors:
     magenta: '0xd33682'
     cyan:    '0x2aa198'
     white:   '0xeee8d5'
-
   # Bright colors
   bright:
     black:   '0x002124'

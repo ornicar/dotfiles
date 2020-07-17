@@ -4,8 +4,8 @@
 
 # Export common variables
 path+="$HOME/.bin:$PATH"
+# path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
 path+="$DOTFILES/scripts:$PATH"
-path+="$HOME/nailgun/nailgun-client/target"
 
 export TERMINAL="alacritty"
 export BROWSER="chromium"

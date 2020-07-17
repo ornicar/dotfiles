@@ -24,8 +24,9 @@ link scripts ~/.scripts
 link gitconfig ~/.gitconfig
 link mutt ~/.mutt
 link vim ~/.vim
-link vim ~/.config/nvim
-link vim/vimrc ~/.config/nvim/init.vim
+link nvim ~/.config/nvim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir ~/.config/nvim/undodir
 link tigrc ~/.tigrc
 link rtorrent.rc ~/.rtorrent.rc
 link xinitrc ~/.xinitrc

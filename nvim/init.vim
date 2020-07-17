@@ -6,8 +6,10 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'iberianpig/tig-explorer.vim'
-Plug 'rbgrouleff/bclose.vim' " for tig-explorer
+Plug 'codeindulgence/vim-tig'
+" Plug 'rbgrouleff/bclose.vim' " for tig
+Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-sandwich'
 call plug#end()
 
 let g:mapleader = ","
@@ -189,27 +191,11 @@ endif
 " === Plug fzf ===
 
 nnoremap <leader>mf :<C-u>GFiles<cr>
+nnoremap <leader>mt :Buffers<cr>
+nnoremap <leader>md :b#<cr>
+
 let g:fzf_tags_command = 'ctags --recurse --options=.ctags'
 
 " === Plug Tig ===
 
-" open tig with current file
-nnoremap <Leader>T :TigOpenCurrentFile<CR>
-
-" open tig with Project root path
-nnoremap <Leader>t :TigOpenProjectRootDir<CR>
-
-" open tig grep
-nnoremap <Leader>g :TigGrep<CR>
-
-" resume from last grep
-nnoremap <Leader>r :TigGrepResume<CR>
-
-" open tig grep with the selected word
-vnoremap <Leader>g y:TigGrep<Space><C-R>"<CR>
-
-" open tig grep with the word under the cursor
-nnoremap <Leader>cg :<C-u>:TigGrep<Space><C-R><C-W><CR>
-
-" open tig blame with current file
-nnoremap <Leader>b :TigBlame<CR>
+nmap ti :Tig<cr>

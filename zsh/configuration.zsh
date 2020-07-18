@@ -11,8 +11,10 @@ export TERMINAL="alacritty"
 export BROWSER="chromium"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Java/SBT configuration
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
 export SBT_OPTS="-Xms128M -Xmx512M -Xss1m"
 # export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 # export SBT_OPTS="-Xms64M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"

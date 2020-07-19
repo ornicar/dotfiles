@@ -5,26 +5,31 @@ call plug#begin(stdpath('data') . '/plugged')
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'codeindulgence/vim-tig'
-" Plug 'rbgrouleff/bclose.vim' " for tig
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:mapleader = ","
 
-" === Basic settings ===
+" === Theme ===
 
 set termguicolors
 syntax on
+let g:onedark_terminal_italics=1
 colorscheme onedark
+
+" === Basic settings ===
 
 set autoread                      " Automatically read a file that has changed on disk
 
-set clipboard=unnamed             " Alias unnamed register to the + register, which is the X Window clipboard.
+set clipboard=unnamedplus         " Alias unnamed register to the + register, which is the X Window clipboard.
 
 set history=9000                  " Sets how many lines of history VIM has to remember
 
@@ -68,7 +73,6 @@ set shiftround
 set smartindent
 
 set gdefault                      " replace all occurences of the line
-
 
 set cmdwinheight=12               " Larger console window
 
@@ -189,6 +193,11 @@ else
   nmap <leader>q :wq<cr>
 endif
 
+" === Plug lightline ===
+
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
 
 " === Plug fzf ===
 
@@ -261,7 +270,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
-" Remap for format selected region
+" Remap for format selected region (???)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 

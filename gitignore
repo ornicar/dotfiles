@@ -5,3 +5,6 @@
 /.vimrc.local
 .idea
 .venv
+.bloop
+.metals
+project/metals.sbt

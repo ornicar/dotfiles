@@ -1,9 +1,0 @@
-#/bin/sh
-
-gameid=$(echo $1 | sed -r "s#.*lichess\.org/([a-zA-Z0-9]+).*#\1#")
-
-userid=$(ssh frank 'mongo lichess --eval "db.game5.findOne({_id:\"'$gameid'\"}).is.slice(0,4)"' | tail -n +3)
-
-url="http://en.lichess.org/"$gameid$userid
-
-echo $url

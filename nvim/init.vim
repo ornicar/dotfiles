@@ -11,9 +11,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-vinegar'
+Plug 'chiel92/vim-autoformat'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let g:mapleader = ","
@@ -36,7 +40,7 @@ set history=9000                  " Sets how many lines of history VIM has to re
 set undolevels=2000               " use many levels of undo
 set undofile                      " persistent
 
-set noshowmode                    " Do not show mode on command line since vim-airline can show it
+set noshowmode                    " Do not show mode on command line since lightline can show it
 
 set hidden                        " Handle multiple buffers better.
 
@@ -196,15 +200,40 @@ endif
 " === Plug lightline ===
 
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
+  \   'colorscheme': 'onedark',
+  \   'active': {
+  \     'left': [
+  \       [ 'mode', 'paste' ], 
+  \       [ 'coc_errors', 'coc_warnings', 'coc_ok' ],
+  \       [ 'coc_status'  ], 
+  \       [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+  \     ]
+  \   },
+  \   'component_function': {
+  \     'gitbranch': 'FugitiveHead'
+  \   },
   \ }
 
-" === Plug fzf ===
+" register compoments:
+call lightline#coc#register()
+
+" === Plug mzf ===
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 
 nnoremap <leader>ms :<C-u>GFiles<cr>
 nnoremap <leader>mf :<C-u>Files<cr>
 nnoremap <leader>mt :Buffers<cr>
-nnoremap <leader>md :b#<cr>
+nnoremap <leader>mr :Rg<cr>
+nnoremap <leader>ma mA:Rg <C-r>=expand("<cword>")<cr><cr>
+nnoremap <leader>md :b#<cr>               " Previous buffer
 
 let g:fzf_tags_command = 'ctags --recurse --options=.ctags'
 
@@ -331,3 +360,14 @@ nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
 nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
 " Reveal current current class (trait or object) in Tree View 'metalsPackages'
 nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>
+
+" === autoformat ===
+
+" au BufWrite * :Autoformat
+
+nmap <leader>i <Esc>:Autoformat<cr>:w<cr>
+
+" === commentary ===
+
+nmap <leader>c<space> <Plug>CommentaryLine
+vmap <leader>c<space> <Plug>Commentary

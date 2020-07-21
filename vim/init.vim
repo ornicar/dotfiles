@@ -1,1 +1,0 @@
-/home/thib/dotfiles/scripts/../vim/vimrc

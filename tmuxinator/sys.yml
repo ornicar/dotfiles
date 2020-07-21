@@ -1,7 +1,0 @@
-# ~/.tmuxinator/sys.yml
-
-project_name: sys
-project_root: /etc
-windows:
-  - vim: cd /etc && _ vim
-  - shell: cd /etc

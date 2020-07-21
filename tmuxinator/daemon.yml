@@ -1,7 +1,0 @@
-# ~/.tmuxinator/daemon.yml
-
-project_name: daemon
-project_root: ~/
-windows:
-  - journal: _ journalctl -f
-  - shell: cd ~/

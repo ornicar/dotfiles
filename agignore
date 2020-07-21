@@ -1,9 +1,0 @@
-cache
-logs
-target
-tags
-dist
-node_modules
-submodules
-vendor
-.git

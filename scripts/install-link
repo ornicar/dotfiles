@@ -22,8 +22,6 @@ mkdir -p ~/.config
 link zshrc ~/.zshrc
 link scripts ~/.scripts
 link gitconfig ~/.gitconfig
-link mutt ~/.mutt
-link vim ~/.vim
 link nvim ~/.config/nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir ~/.config/nvim/undodir
@@ -32,50 +30,25 @@ link rtorrent.rc ~/.rtorrent.rc
 link xinitrc ~/.xinitrc
 link Xresources ~/.Xresources
 link xcolors ~/.xcolors
-link ackrc ~/.ackrc
 link mpd ~/.config/mpd
-link weechat ~/.weechat
 mkdir -p ~/.i3
 link i3/config ~/.i3/config
 link i3/status ~/.i3/status
-mkdir -p ~/.config/surfraw
-link surfraw ~/.config/surfraw/conf
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
-mkdir -p ~/.config/dunst
-link dunstrc ~/.config/dunst/dunstrc
-link tmux.conf ~/.tmux.conf
-link tmux ~/.tmux
-link tmuxinator ~/.tmuxinator
 mkdir -p ~/.config/ranger
 link ranger/rc.conf ~/.config/ranger/rc.conf
 link ranger/apps.py ~/.config/ranger/apps.py
 link redshift.conf ~/.config/redshift.conf
-# link ncmpcpp/bindings ~/.ncmpcpp/bindings
-# link ncmpcpp/config ~/.ncmpcpp/config
 link ttytterrc ~/.ttytterrc
 link inputrc ~/.inputrc
 link editrc ~/.editrc
-link vimperator ~/.vimperator
-link vimperatorrc ~/.vimperatorrc
 link ghci ~/.ghci
-link xmonad ~/.xmonad
-link asoundrc ~/.asoundrc
-mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/
-link colors.ini ${XDG_CONFIG_HOME:-$HOME/.config}/solarized/colors.ini
 mkdir -p ~/.ssh
 link ssh/config ~/.ssh/config
-link agignore ~/.agignore
 mkdir -p ~/.config/htop
 link htoprc ~/.config/htop/htoprc
-link abcde.conf ~/.abcde.conf
-link stylish-haskell.yaml ~/.stylish-haskell.yaml
-mkdir -p ~/.cabal
-link cabal ~/.cabal/config
-mkdir -p ~/.sbt/0.13
 mkdir -p ~/.sbt/1.0
-link sbt-0.13/global.sbt ~/.sbt/0.13/global.sbt
-link sbt-0.13/plugins ~/.sbt/0.13/plugins
 link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
 link sbt-1.0/plugins ~/.sbt/1.0/plugins
 link sbtrc ~/.sbtrc
@@ -83,7 +56,6 @@ mkdir -p ~/.mplayer
 link mplayer.conf ~/.mplayer/config
 link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
-link jshintrc ~/.jshintrc
 link zlogin ~/.zlogin
 link alacritty.yml ~/.config/alacritty/alacritty.yml
 

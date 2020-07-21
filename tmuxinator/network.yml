@@ -1,7 +1,0 @@
-# ~/.tmuxinator/network.yml
-
-project_name: network
-project_root: ~/
-windows:
-  - im: cd ~/ 
-  - shell: cd ~/ 

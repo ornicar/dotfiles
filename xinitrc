@@ -5,7 +5,6 @@ setxkbmap -option terminate:ctrl_alt_bksp
 
 xrdb $HOME/.Xresources                       # load Xresources
 
-xsetroot -solid black                       # black background
 xset s 600 600                              # set monitor to sleep
 xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell

@@ -5,6 +5,13 @@ font pango:inconsolata 11
 
 # exec --no-startup-id feh --bg-scale ~/image/i3bg.png
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #4b68ad #282c34 #73b2e6 #282c34   #4b68ad
+client.focused_inactive #23272e #282c34 #73b2e6 #484e50   #282c34   
+client.unfocused        #282c34 #282c34 #888888 #282c34   #282c34   
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 default_border pixel 1
 
 # borders, lol
@@ -164,12 +171,12 @@ bar {
   status_command python3 ~/dotfiles/i3/status.py
   separator_symbol " / "
   colors {
-    background #002630
-    statusline #a0a0a0
+    background #282c34
+    statusline #abb2bf
 
-    focused_workspace  #eeeeee #285577
+    focused_workspace  #d19a66 #282c34
     active_workspace   #eeeeee #333333
-    inactive_workspace #888888 #002630
-    urgent_workspace   #ffffff #900000
+    inactive_workspace #888888 #282c34
+    urgent_workspace   #ffffff #e06c75
   }
 }

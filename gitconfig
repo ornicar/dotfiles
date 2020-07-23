@@ -1,6 +1,6 @@
 [user]
   name = Thibault Duplessis
-  email = thibault.duplessis@gmail.com
+  email = t@lichess.org
 
 [color]
   ui = true
@@ -53,24 +53,6 @@
   compactionHeuristic = true
 
 [alias]
-
-    # Show status and diff of dirty submodules
-  subdiff = !"git submodule foreach --recursive --quiet '[ \"$(git status -s)\" ] && echo \"--- $name ---\" && git status -s && git diff --unified=1 || :'"
-
-    # Pull all submodules
-  subpull = !"git-subpull-async"
-
-    # Update all submodules
-  subupdate = !"git submodule sync && git submodule update --init --recursive"
-
-    # Checkout master branch of all submodules
-  subcheckout = !"git submodule foreach git checkout master"
-
-    # Reset all submodules
-  subreset = !"git submodule foreach --recursive git checkout -- . && git submodule foreach --recursive git clean -f"
-
-    # Show current branch of each submodule
-  subbranch = !"git submodule foreach --recursive 'git rev-parse --abbrev-ref HEAD'"
 
     # show list of contributors in descending order by number of commits
   rank = shortlog -sn --no-merges

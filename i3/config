@@ -174,7 +174,7 @@ bar {
     background #282c34
     statusline #abb2bf
 
-    focused_workspace  #d19a66 #282c34
+    focused_workspace  #73b2e6 #282c34
     active_workspace   #eeeeee #333333
     inactive_workspace #888888 #282c34
     urgent_workspace   #ffffff #e06c75

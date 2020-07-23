@@ -1,0 +1,4 @@
+{
+  "javaHome": "/usr/lib/jvm/java-11-graalvm",
+  "javaOptions": ["-Xmx3G"]
+}

@@ -11,7 +11,7 @@ export TERMINAL="alacritty"
 export BROWSER="chromium"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --silent --hidden --unrestricted --nocolor --ignore .git -g ""'
 
 # Java/SBT configuration
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/

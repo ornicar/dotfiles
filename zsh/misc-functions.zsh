@@ -21,11 +21,15 @@ psg() { ps aux | grep $* }
 #   export PATH="/usr/lib/jvm/java-9-jdk/jre/bin/:$PATH"
 #   java -version
 # }
-# java11() {
-#   export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
-#   java -version
-# }
+java11() {
+  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
+  java -version
+}
 # java13() {
 #   export PATH="/usr/lib/jvm/java-13-openjdk/bin/:$PATH"
 #   java -version
 # }
+grallvm11() {
+  export PATH="/usr/lib/jvm/java-11-grallvm/bin/:$PATH"
+  java -version
+}

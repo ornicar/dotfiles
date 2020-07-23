@@ -31,9 +31,6 @@ alias x="dtrx"
 # Resource this file
 alias reload=". ~/.zshrc"
 
-# radios are in ~/radio
-alias radio="mplayer -playlist"
-
 alias meteo="curl -4 http://wttr.in/Paris"
 
 # Read 32GB zero's and throw them away.
@@ -44,6 +41,7 @@ alias ya='yay'
 
 alias halt="echo 'Use poweroff instead'"
 
-alias wifi='nmcli -f name,ssid,bssid,chan,rate,signal,bars,security,device,active,in-use dev wifi'
+# alias wifi='nmcli -f name,ssid,bssid,chan,rate,signal,bars,security,device,active,in-use dev wifi'
+alias wifi='iwctl station wlan0 scan; iwctl station wlan0 get-networks; iwctl station wlan0 show'
 
 alias lipass="PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass"

@@ -19,5 +19,3 @@ nnoremap <leader>ma :Rg<cr>
 nnoremap <leader>za mA:Rg <C-r>=expand("<cword>")<cr><cr>
 nnoremap <leader>md :b#<cr>               " Previous buffer
 nnoremap <leader>H :Helptags<cr>
-
-nnoremap <silent> <Leader><Leader> :Files <C-R>=expand('%:h')<CR><CR>

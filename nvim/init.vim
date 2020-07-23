@@ -15,6 +15,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'chiel92/vim-autoformat'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/Rename2'
+Plug 'mattn/vim-gist'
+Plug 'gre/play2vim'
 call plug#end()
 
 source ~/dotfiles/nvim/theme.vim

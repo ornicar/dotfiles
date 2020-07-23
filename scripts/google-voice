@@ -7,4 +7,4 @@ output=${2-/tmp/google-voice-output.mpg}
 # curl --data-urlencode "q=$text" 'https://translate.google.com/translate_tts?ie=UTF-8&q=check&tl=en&total=1&idx=0&textlen=5&tk=236665&client=t&prev=input' -H 'Referer: https://translate.google.com/' -H 'Accept-Encoding: identity;q=1, *;q=0' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36' -H 'Range: bytes=0-' --compressed -o $output
 curl --get --data-urlencode "q=$text" "https://translate.google.com/translate_tts?ie=UTF-8&tl=en&total=1&idx=0&textlen=5&tk=236665&client=t&prev=input" -H 'Referer: https://translate.google.com/' -H 'Accept-Encoding: identity;q=1, *;q=0' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36' -H 'Range: bytes=0-' --compressed -o $output
 
-mplayer $output
+mpv $output

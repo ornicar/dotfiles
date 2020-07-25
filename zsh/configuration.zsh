@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-#
+
 HISTFILE=~/.zsh_history
 HISTSIZE=90000
 SAVEHIST=90000
@@ -24,6 +24,6 @@ export SBT_OPTS="-Xms128M -Xmx512M -Xss1m"
 CDPATH=$HOME:..
 
 # Load less keys
-lesskey "$DOTFILES/lesskeys"
+lesskey "$HOME/dotfiles/lesskeys"
 
 eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`

@@ -5,6 +5,9 @@ set signcolumn=yes
 
 au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
 
+let g:coc_fzf_preview = ''
+let g:coc_fzf_opts = []
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
@@ -84,21 +87,21 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 nnoremap <leader>cl :<C-u>call CocActionAsync('codeLensAction')<CR>
 
 " Show all diagnostics
-nnoremap <silent> <leader>cc  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>cc  :<C-u>CocFzfList diagnostics<cr>
 " Manage extensions
-" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
 " Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <space>c  :<C-u>CocFzfList commands<cr>
 " Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <space>p  :<C-u>CocFzfListResume<CR>
 
 " Notify coc.nvim that <enter> has been pressed.
 " Currently used for the formatOnType feature.

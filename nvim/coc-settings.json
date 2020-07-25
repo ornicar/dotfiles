@@ -1,3 +1,4 @@
 {
-  "java.home": "/usr/lib/jvm/java-11-openjdk/"
+  "java.home": "/usr/lib/jvm/java-11-graalvmee/",
+  "metals.javaHome":"/usr/lib/jvm/java-11-graalvmee/"
 }

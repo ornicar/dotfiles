@@ -1,4 +1,5 @@
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'itchyny/lightline.vim'
@@ -17,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/Rename2'
 Plug 'mattn/vim-gist'
 Plug 'gre/play2vim'
+Plug 'antoinemadec/coc-fzf'
 call plug#end()
 
 source ~/dotfiles/nvim/theme.vim
@@ -27,4 +29,5 @@ source ~/dotfiles/nvim/plugs.vim
 source ~/dotfiles/nvim/lightline.vim
 source ~/dotfiles/nvim/fzf.vim
 source ~/dotfiles/nvim/coc.vim
+source ~/dotfiles/nvim/unimpaired.vim
 source ~/dotfiles/nvim/functions.vim

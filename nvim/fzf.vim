@@ -1,6 +1,12 @@
 " === Plug fzf ===
 
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.7 } }
+let g:fzf_preview_window = 'right:60%'
 let g:fzf_tags_command = 'ctags --recurse --options=.ctags'
+
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'

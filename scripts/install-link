@@ -60,6 +60,8 @@ mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv
 link mpv.conf ~/.config/mpv/mpv.conf
+mkdir -p ~/.config/bat
+link bat.config ~/.config/bat/config
 
 cd mongo-hacker
 make

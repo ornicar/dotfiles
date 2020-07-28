@@ -14,6 +14,8 @@ export BROWSER="chromium"
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
+
 export JAVA_HOME=/usr/lib/jvm/java-11-graalvmee
 export SBT_OPTS="-Xms128M -Xmx512M -Xss1m"
 # export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"

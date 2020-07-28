@@ -75,6 +75,11 @@ nmap <leader>% :!chmod +x %<cr>
 
 nmap <leader>rr :redraw!<cr>
 
+" Expand current filed dir in console mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" Jump to line AND col
+nnoremap ' `
 
 " === Diff ===
 

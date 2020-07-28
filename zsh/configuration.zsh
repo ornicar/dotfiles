@@ -27,3 +27,10 @@ CDPATH=$HOME:..
 lesskey "$HOME/dotfiles/lesskeys"
 
 eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`
+
+# autocompletion
+autoload -Uz compinit
+compinit
+
+# complete sudo commands
+zstyle ':completion::complete:*' gain-privileges 1

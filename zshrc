@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 
 # Load all of my zsh files in zsh/
 for zsh_file (~/dotfiles/zsh/*.zsh) source $zsh_file

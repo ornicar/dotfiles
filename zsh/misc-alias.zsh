@@ -1,4 +1,6 @@
 # Go back 3 times
+alias ..='cd ..'
+alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Propagate user config

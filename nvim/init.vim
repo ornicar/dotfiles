@@ -19,6 +19,7 @@ Plug 'vim-scripts/Rename2'
 Plug 'mattn/vim-gist'
 Plug 'gre/play2vim'
 Plug 'antoinemadec/coc-fzf'
+Plug 'wellle/targets.vim'
 call plug#end()
 
 source ~/dotfiles/nvim/theme.vim

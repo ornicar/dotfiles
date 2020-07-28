@@ -28,8 +28,8 @@ window:
   # Blank space added around the window in pixels. This padding is not scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 2
-    y: 2
+    x: 5
+    y: 1
 
   # Window decorations
   #
@@ -43,7 +43,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 1000
+  history: 2000
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -78,30 +78,30 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Inconsolata
+    family: MesloLGS NF
     # The `style` can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # Bold font face
   bold:
-    family: Inconsolata
+    family: MesloLGS NF
     # The `style` can be specified to pick a specific face.
-    # style: Bold
+    style: Bold
 
   # Italic font face
   italic:
-    family: Inconsolata
+    family: MesloLGS NF
     # The `style` can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size
-  size: 10.0
+  size: 9
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: -2
+    y: -0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,

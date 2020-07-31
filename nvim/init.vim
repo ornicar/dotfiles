@@ -19,6 +19,8 @@ Plug 'mattn/vim-gist'
 Plug 'gre/play2vim'
 Plug 'antoinemadec/coc-fzf'
 Plug 'wellle/targets.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'stefandtw/quickfix-reflector.vim'
 call plug#end()
 
 source ~/dotfiles/nvim/theme.vim

@@ -4,7 +4,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'itchyny/lightline.vim'
 Plug 'codeindulgence/vim-tig'
-Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}

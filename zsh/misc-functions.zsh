@@ -13,6 +13,8 @@ calc() { awk "BEGIN{ print $* }" ;}
 
 psg() { ps aux | grep $* }
 
+batf() { tail -F $1 | bat --paging=never --plain -l log }
+
 # java paths are for local use only
 # else use archlinux-java
 

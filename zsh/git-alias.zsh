@@ -32,5 +32,5 @@ alias g-='cd $(git rev-parse --show-toplevel || echo ".")'
 
 # Override aliases with functions
 # to keep autocompletion
-function gl(){git-up "$@"}
-function glr(){git-up --rebase "$@"}
+function gl(){~/dotfiles/scripts/git-up "$@"}
+function glr(){~/dotfiles/scripts/git-up --rebase "$@"}

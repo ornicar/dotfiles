@@ -21,7 +21,7 @@ nnoremap <leader>ms :<C-u>GFiles<cr>
 nnoremap <leader>mf :<C-u>Files<cr>
 nnoremap <leader>mb :Buffers<cr>
 nnoremap <leader>mr :Files <C-R>=expand('%:h')<CR><CR>
-nnoremap <leader>ma :RgFzf<cr>
+nnoremap <leader>a :RgFzf<cr>
 nnoremap <leader>za mA:RgFzf <C-r>=expand("<cword>")<cr><cr>
 nnoremap <leader>md :b#<cr>               " Previous buffer
 nnoremap <leader>H :Helptags<cr>

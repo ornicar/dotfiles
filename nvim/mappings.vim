@@ -51,6 +51,9 @@ vnoremap ? ?\v
 " Start a substitute
 nmap <leader>ss :%s/\v
 
+" Search to quickfix
+nmap <leader>rg :Rg<space>
+
 " Fast save (also clears the search)
 map <C-e> :nohl<cr>:w<cr>
 imap <C-e> <esc>:nohl<cr>:w<cr>
@@ -80,16 +83,3 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Jump to line AND col
 nnoremap ' `
-
-" === Diff ===
-
-set diffopt=filler,horizontal,context:4,iwhite
-
-if &diff
-  nmap <leader>do :diffget<space>
-  nmap <leader>dp :diffput<space>
-  nmap <leader>q :wqa<cr>
-  nmap <leader><space> <C-w>l<C-w>q<C-w>j<C-w>L<C-w>h
-else
-  nmap <leader>q :wq<cr>
-endif

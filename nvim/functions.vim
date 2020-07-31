@@ -31,8 +31,7 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 command! -nargs=* -complete=file -bang Rename :call Rename("<args>", "<bang>")
 function! Rename(name, bang)
     let l:curfile = expand("%:p")
-    let l:curfilepath = expand("%:p:h")
-    let l:newname = l:curfilepath . "/" . a:name
+    let l:newname = a:name
     let v:errmsg = ""
     silent! exe "saveas" . a:bang . " " . l:newname
     if v:errmsg =~# '^$\|^E329'

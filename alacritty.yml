@@ -38,6 +38,8 @@ window:
   #     - none: Neither borders nor title bar
   decorations: full
 
+  dynamic_title: true
+
 # alt_send_esc: false
 
 scrolling:
@@ -119,7 +121,7 @@ draw_bold_text_with_bright_colors: false
 schemes:
   one_dark: &dark
     primary:
-      background: '#282c34'
+      background: '#262a31'
       foreground: '#abb2bf'
     normal:
       # NOTE: Use '#131613' for the `black` color if you'd like to see
@@ -189,9 +191,9 @@ colors: *dark
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
+# bell:
+#   animation: EaseOutExpo
+#   duration: 0
 
 # Background opacity
 #
@@ -247,8 +249,6 @@ selection:
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
   save_to_clipboard: false
-
-dynamic_title: true
 
 cursor:
   # If this is `true`, the cursor will be rendered as a hollow box when the

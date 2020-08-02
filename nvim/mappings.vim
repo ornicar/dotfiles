@@ -39,6 +39,9 @@ nmap <silent> gW :s/\(\%#[^\s]\+\)\(\_W\+\)\([^\s]\+\)/\3\2\1/<CR>`'
 " Clear search highlight
 nmap <silent> <leader>/ :nohl<cr>
 
+" Start a substitute
+nmap <leader>ss :%s/\v
+
 " Pull word under cursor into LHS of a substitute (for quick search and replace)
 nmap <leader>zs :%s#<C-r>=expand("<cword>")<cr>#
 
@@ -47,9 +50,6 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
-
-" Start a substitute
-nmap <leader>ss :%s/\v
 
 " Search to quickfix
 nmap <leader>rg :Rg<space>

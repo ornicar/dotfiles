@@ -4,6 +4,10 @@ import subprocess
 
 from i3pystatus import Status
 
+green="#98c379"
+red="#e06c75"
+yellow="#d19a66"
+
 status = Status(standalone=True, click_events=False)
 
 # Displays clock like this:
@@ -19,9 +23,9 @@ status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
 
 status.register("battery",
     format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    color="#ff8888",
-    full_color="#639B24",
-    charging_color="#639B24",
+    color=red,
+    full_color=green,
+    charging_color=green,
     alert=True,
     alert_percentage=10,
     status={
@@ -37,7 +41,7 @@ status.register("load",
 
 status.register("mem",
     format="MEM {percent_used_mem}%",
-    color="#639B24",
+    color=green,
     warn_percentage=80,
     alert_percentage=90)
 
@@ -67,7 +71,7 @@ status.register("cpu_freq",
 
 status.register("cpu_usage_graph",
     format="CPU {usage:2}",
-    start_color="#639B24"
+    start_color=green
 )
 
 # Shows pulseaudio default sink volume
@@ -85,24 +89,37 @@ status.register("mpd",
         "stop": "◾",
     })
 
+# status.register("runwatch",
+#     path="/tmp/lila-play-pid",
+#     name="lila",
+#     interval=2,
+#     color_up=green,
+#     color_down=red)
+
 status.register("network",
     interface="wlan0",
-    format_up="{bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
+    format_up="{bytes_sent} k↑ {bytes_recv} k↓ {essid} {quality}%",
     format_down="X",
     dynamic_color = True,
-    start_color="#639B24",
-    end_color="yellow",
-    color_down="#ff2222",
+    start_color=green,
+    end_color=yellow,
+    color_down=red,
 )
+
+# status.register("online",
+#     format_online="✓",
+#     format_offline="✗",
+#     color=green,
+#     color_offline=red)
 # status.register("network",
 #     interface="enp0s20f0u1",
 #     unknown_up = True,
 #     format_up="EXT {bytes_sent} kB/s↑ {bytes_recv} kB/s↓",
 #     format_down="X",
 #     dynamic_color = True,
-#     start_color="#639B24",
-#     end_color="yellow",
-#     color_down="#ff2222",
+#     start_color=green,
+#     end_color=yellow,
+#     color_down=red,
 # )
 
 status.run()

@@ -1,0 +1,13 @@
+[Unit]
+Description=lichess
+After=network.target
+
+[Service]
+; Environment="JAVA_OPTS=-Xms64m -Xmx256m"
+; ExecStart=/home/thib/lila/target/universal/stage/bin/lila -Dapplication.home=/home/thib/lila -Dhttp.port=9663 -Dconfig.file=/home/thib/lila/conf/application.conf -Dlogger.file=/home/thib/lila/conf/logback.xml -Dreactivemongo.api.bson.document.strict=false -Dapplication.mode=dev
+ExecStart=bloop run lila -m play.core.server.ProdServerStart -c /home/thib/lila/.bloop
+; WorkingDirectory=/home/thib/lila
+; PIDFile=/home/thib/lila/target/universal/stage/RUNNING_PID
+
+[Install]
+WantedBy=multi-user.target

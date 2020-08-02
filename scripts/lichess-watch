@@ -1,0 +1,4 @@
+#!/bin/sh
+
+journalctl --user --since=now -fu lichess | awk \
+  '/Listening for HTTP on / { system("chromium http://l.org") }'

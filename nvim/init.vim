@@ -34,3 +34,4 @@ source ~/dotfiles/nvim/coc.vim
 source ~/dotfiles/nvim/unimpaired.vim
 source ~/dotfiles/nvim/functions.vim
 source ~/dotfiles/nvim/diff.vim
+source ~/dotfiles/nvim/project.vim

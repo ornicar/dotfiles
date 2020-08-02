@@ -55,7 +55,6 @@ function! s:sortAcrossGroups()
   let first_line = -1
   let last_line = -1
   let trailing_newlines = 0
-  let java_scala_imports = []
   let first_party_imports = []
   let third_party_imports = []
 
@@ -69,9 +68,7 @@ function! s:sortAcrossGroups()
         let first_line = curr
       endif
 
-      if line =~ '^import \(java\(x\)\?\|scala\)\.'
-        call add(java_scala_imports, line)
-      elseif exists('g:scala_first_party_namespaces')
+      if exists('g:scala_first_party_namespaces')
         let regex = '^import '.g:scala_first_party_namespaces
         if line =~ regex
           call add(first_party_imports, line)
@@ -103,7 +100,6 @@ function! s:sortAcrossGroups()
 
   call s:sortAndPrint(first_party_imports)
   call s:sortAndPrint(third_party_imports)
-  call s:sortAndPrint(java_scala_imports)
 
   if first_line != -1
     " remove extra blank line at top

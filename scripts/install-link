@@ -63,9 +63,10 @@ link mpv.conf ~/.config/mpv/mpv.conf
 mkdir -p ~/.config/bat
 link bat.config ~/.config/bat/config
 mkdir -p ~/.config/systemd/user
-ln -s systemd/bloop.service ~/.config/systemd/user/
-ln -s systemd/lichess.service ~/.config/systemd/user/
-ln -s systemd/lichess-watch.service ~/.config/systemd/user/
+link systemd/bloop.service ~/.config/systemd/user/bloop.service
+link systemd/lichess.service ~/.config/systemd/user/lichess.service
+link systemd/lichess-watch.service ~/.config/systemd/user/lichess-watch.service
+systemctl --user daemon-reload
 
 cd mongo-hacker
 make

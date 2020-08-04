@@ -4,6 +4,7 @@ Description=lichess-watch
 After=network.target
 
 [Service]
+Environment="DISPLAY=:0"
 ExecStart=/home/thib/dotfiles/scripts/lichess-watch
 
 [Install]

@@ -3,7 +3,7 @@
 export FZF_DEFAULT_COMMAND='ag --silent --hidden --skip-vcs-ignores --nocolor --ignore .git --ignore .bloop --ignore node_modules --ignore target --ignore .cache -g ""'
 export FZF_DEFAULT_OPTS='--bind=ctrl-e:up'
 
-export FZF_COMPLETION_TRIGGER='.'
+export FZF_COMPLETION_TRIGGER='..'
 
 FD_EXCLUDES='--exclude .git --exclude node_modules --exclude .bloop --exclude target --exclude .cache'
 

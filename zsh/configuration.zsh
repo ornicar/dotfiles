@@ -36,3 +36,6 @@ compinit
 
 # complete sudo commands
 zstyle ':completion::complete:*' gain-privileges 1
+
+# cd without cd
+setopt autocd autopushd

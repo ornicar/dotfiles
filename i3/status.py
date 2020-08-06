@@ -71,7 +71,8 @@ status.register("cpu_freq",
 
 status.register("cpu_usage_graph",
     format="CPU {usage:2}",
-    start_color=green
+    start_color=green,
+    end_color=green
 )
 
 # Shows pulseaudio default sink volume

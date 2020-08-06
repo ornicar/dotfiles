@@ -12,7 +12,7 @@ path+="$HOME/.bin:$PATH"
 export TERMINAL="alacritty"
 export BROWSER="chromium"
 export EDITOR='nvim'
-export GIT_EDITOR='nvim'
+export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 

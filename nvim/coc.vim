@@ -98,9 +98,9 @@ nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
 " Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent> <leader>cn  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" nnoremap <silent> <leader>cp  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocFzfListResume<CR>
 

@@ -45,11 +45,14 @@ status.register("mem",
     warn_percentage=80,
     alert_percentage=90)
 
-# status.register("temp",
-#     file="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
-#     interval=1,
-#     alert_temp=75,
-#     format="{temp:.0f}°",)
+status.register("temp",
+    file="/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+    interval=2,
+    alert_temp=100,
+    color=green,
+    alert_color=red,
+    dynamic_color=True,
+    format="{temp:.0f}°",)
 
 # status.register("temp",
 #     file="/sys/class/hwmon/hwmon3/fan1_input",

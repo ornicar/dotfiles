@@ -1,8 +1,0 @@
-#!/usr/bin/zsh
-
-setxkbmap -keycodes evdev us -variant colemak
-xmodmap ~/dotfiles/xmodmap/xps15
-xset r rate 220 56
-
-xinput set-prop 13 276 1
-xinput set-prop 13 296 1

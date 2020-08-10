@@ -1,3 +1,0 @@
-#!/bin/sh
-
-wget -O ~/dotfiles/weechat/python/jabber.py http://www.weechat.org/files/scripts/jabber.py

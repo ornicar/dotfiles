@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cd ~/vim
-git pull
-cd src
-~/.scripts/vim/configure
-make
-sudo make install

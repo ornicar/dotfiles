@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo gem install jekyll
-sudo gem install rdiscount

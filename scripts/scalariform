@@ -1,9 +1,0 @@
-#!/bin/sh
-
-java -jar ~/.bin/scalariform.jar \
-+alignSingleLineCaseStatements \
-+compactControlReadability \
-+doubleIndentClassDeclaration \
-+rewriteArrowSymbols \
-+preserveDanglingCloseParenthesis \
---stdout --forceOutput "$@"

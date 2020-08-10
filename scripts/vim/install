@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd ~
-git clone git://github.com/vim/vim.git vim
-
-~/.scripts/vim/upgrade

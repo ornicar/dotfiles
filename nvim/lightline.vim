@@ -45,6 +45,10 @@ function! CocFullDiagnostics() abort
         call add(warnings, diagnostic)
       endif
     endfor
-    return " E " . string(len(errors)) . " W " . string(len(warnings))
+    if len(errors) + len(warnings) > 0
+      return " E " . string(len(errors)) . " W " . string(len(warnings))
+    else
+      return ""
+    endif
   endif
 endfunction

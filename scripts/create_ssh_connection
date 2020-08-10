@@ -1,4 +1,0 @@
-#!/bin/sh
-
-ssh-copy-id $*
-ssh $*

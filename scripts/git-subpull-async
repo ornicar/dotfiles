@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-# Pulls all submodules asynchronously
-git submodule --quiet foreach 'git-pull-silently&'

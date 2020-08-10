@@ -46,7 +46,7 @@ status.register("mem",
     alert_percentage=90)
 
 status.register("temp",
-    file="/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+    file="/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
     interval=2,
     alert_temp=100,
     color=green,

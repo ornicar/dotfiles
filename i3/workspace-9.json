@@ -23,7 +23,7 @@
                         "y": 0
                     },
                     "name": "Alacritty",
-                    "percent": 0.55,
+                    "percent": 0.5,
                     "swallows": [
                         {
                             "title": "journal"
@@ -35,56 +35,9 @@
                     "border": "pixel 1",
                     "floating": "auto_off",
                     "layout": "splitv",
-                    "percent": 0.45,
+                    "percent": 0.5,
                     "type": "con",
                     "nodes": [
-                        {
-                            "border": "pixel 1",
-                            "floating": "auto_off",
-                            "layout": "splith",
-                            "percent": 0.4,
-                            "type": "con",
-                            "nodes": [
-                                {
-                                    "border": "pixel 1",
-                                    "current_border_width": 1,
-                                    "floating": "auto_off",
-                                    "geometry": {
-                                        "height": 1152,
-                                        "width": 1536,
-                                        "x": 0,
-                                        "y": 0
-                                    },
-                                    "name": "Alacritty",
-                                    "percent": 0.66,
-                                    "swallows": [
-                                        {
-                                            "title": "sensors"
-                                        }
-                                    ],
-                                    "type": "con"
-                                },
-                                {
-                                    "border": "pixel 1",
-                                    "current_border_width": 1,
-                                    "floating": "auto_off",
-                                    "geometry": {
-                                        "height": 1152,
-                                        "width": 1536,
-                                        "x": 0,
-                                        "y": 0
-                                    },
-                                    "name": "Alacritty",
-                                    "percent": 0.34,
-                                    "swallows": [
-                                        {
-                                            "title": "cpus"
-                                        }
-                                    ],
-                                    "type": "con"
-                                }
-                            ]
-                        },
                         {
                             "border": "pixel 1",
                             "current_border_width": 1,
@@ -96,7 +49,7 @@
                                 "y": 0
                             },
                             "name": "Alacritty",
-                            "percent": 0.6,
+                            "percent": 0.5,
                             "swallows": [
                                 {
                                     "title": "htop"

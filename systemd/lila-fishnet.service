@@ -1,0 +1,10 @@
+[Unit]
+Description=lila-fishnet
+After=network.target
+
+[Service]
+Environment="JAVA_OPTS=-Xms64m -Xmx128m"
+ExecStart=/home/thib/lila-fishnet/target/universal/stage/bin/lila-fishnet -Dhttp.port=9665
+
+[Install]
+WantedBy=multi-user.target

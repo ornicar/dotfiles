@@ -17,7 +17,7 @@
   new = green
 
 [core]
-  editor = ~/dotfiles/scripts/gitcommit-nvim
+  editor = nvim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = /home/thib/dotfiles/gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX

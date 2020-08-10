@@ -17,7 +17,7 @@ export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 
 export JAVA_HOME=/usr/lib/jvm/java-11-graalvmee
-export SBT_OPTS="-Xms128M -Xmx512M -Xss1m"
+export SBT_OPTS="-Xms256M -Xmx4G"
 # export SBT_OPTS="-Xms64M -Xmx2048M -Xss4M -XX:ReservedCodeCacheSize=64m -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 # export SBT_OPTS="-Xms64M -Xmx512M -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC"
 

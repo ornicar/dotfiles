@@ -41,7 +41,7 @@ status.register("load",
 
 status.register("mem",
     format="MEM {percent_used_mem}%",
-    color=green,
+    color="white",
     warn_percentage=80,
     alert_percentage=90)
 

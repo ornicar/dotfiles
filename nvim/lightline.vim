@@ -6,7 +6,7 @@ let g:lightline = {
       \     'left': [
       \       [ 'mode', 'paste' ],
       \       [ 'coc_errors', 'coc_warnings', 'coc_ok' ],
-      \       [ 'coc_status', 'coc_diag'  ],
+      \       [ 'coc_status' ],
       \       [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ]
       \     ]
       \   },
@@ -45,10 +45,7 @@ function! CocFullDiagnostics() abort
         call add(warnings, diagnostic)
       endif
     endfor
-    if len(errors) + len(warnings) > 0
-      return " E " . string(len(errors)) . " W " . string(len(warnings))
-    else
-      return ""
+    return " E " . string(len(errors)) . " W " . string(len(warnings))
     endif
   endif
 endfunction

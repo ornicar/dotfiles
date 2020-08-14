@@ -25,7 +25,7 @@
 [merge]
   summary = true
   verbosity = 1
-  tool = diffconflicts
+  tool = meld
 
 [mergetool "diffconflicts"]
   cmd = diffconflicts $EDITOR $BASE $LOCAL $REMOTE $MERGED

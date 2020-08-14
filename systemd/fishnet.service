@@ -1,0 +1,18 @@
+[Unit]
+Description=Fishnet client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python -m fishnet --conf /home/thib/fishnet/fishnet.ini.local run
+KillMode=mixed
+WorkingDirectory=/home/thib/fishnet
+ReadWriteDirectories=/home/thib/fishnet
+Nice=5
+PrivateTmp=true
+DevicePolicy=closed
+ProtectSystem=full
+Restart=always
+
+[Install]
+WantedBy=default.target

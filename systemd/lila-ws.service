@@ -3,8 +3,7 @@ Description=lila-ws
 After=network.target
 
 [Service]
-Environment="JAVA_OPTS=-Xms128m -Xmx256m"
-ExecStart=/home/thib/lila-ws/target/universal/stage/bin/lila-ws -Duse.epoll=true
+ExecStart=bloop run root -m lila.ws.Boot -c /home/thib/lila-ws/.bloop
 
 [Install]
 WantedBy=multi-user.target

@@ -63,7 +63,7 @@ link mpv.conf ~/.config/mpv/mpv.conf
 mkdir -p ~/.config/bat
 link bat.config ~/.config/bat/config
 mkdir -p ~/.config/systemd/user
-for s in bloop lichess lichess-watch lila-ws lila-fishnet; do
+for s in bloop lichess lichess-watch lila-ws lila-fishnet fishnet; do
   link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 systemctl --user daemon-reload

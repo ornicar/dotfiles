@@ -13,7 +13,7 @@ alias ls='exa'
 alias l='ls -la'
 
 # Sort dirs by weight
-alias ducks='du -lcks * | sort -rn|head -20'
+alias ducks='du -lcks * | sort -rn|head -30'
 
 # History alias
 alias h='history'

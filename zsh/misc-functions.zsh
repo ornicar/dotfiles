@@ -15,6 +15,8 @@ psg() { ps aux | grep $* }
 
 batf() { tail -F $1 | bat --paging=never --plain -l log }
 
+limosh() { mosh root@$1.lichess.ovh }
+
 # java paths are for local use only
 # else use archlinux-java
 

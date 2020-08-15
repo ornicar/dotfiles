@@ -14,7 +14,7 @@ source ~/dotfiles/nvim/mappings.vim
 
 set nonumber
 
-1s/^$//e
+" 1s/^$//e
 goto 1
 startinsert
 

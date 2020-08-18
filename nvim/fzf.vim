@@ -1,6 +1,7 @@
 " === Plug fzf ===
 
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.7 } }
+" let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.7 } }
+let g:fzf_layout = { 'window': 'enew' }
 let g:fzf_preview_window = 'right:60%'
 let g:fzf_tags_command = 'ctags --recurse --options=.ctags'
 
@@ -15,7 +16,7 @@ function! RipgrepFzf(query, fullscreen)
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
-command! -nargs=* -bang RgFzf call RipgrepFzf(<q-args>, <bang>0)
+command! -nargs=* -bang RgFzf call RipgrepFzf(<q-args>, <bang>1)
 
 nnoremap <leader>ms :<C-u>GFiles<cr>
 nnoremap <leader>mf :<C-u>Files<cr>

@@ -60,6 +60,9 @@ mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv
 link mpv.conf ~/.config/mpv/mpv.conf
+mkdir -p ~/.config/mpv/scripts
+link mpv/youtube-quality/youtube-quality.lua ~/.config/mpv/scripts/youtube-quality.lua
+link mpv/youtube-upnext/youtube-upnext.lua ~/.config/mpv/scripts/youtube-upnext.lua
 mkdir -p ~/.config/bat
 link bat.config ~/.config/bat/config
 mkdir -p ~/.config/systemd/user

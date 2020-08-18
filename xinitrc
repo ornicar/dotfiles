@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# For dunst to find X
+systemctl --user import-environment DISPLAY
+
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp
 

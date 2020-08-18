@@ -65,6 +65,8 @@ link mpv/youtube-quality/youtube-quality.lua ~/.config/mpv/scripts/youtube-quali
 link mpv/youtube-upnext/youtube-upnext.lua ~/.config/mpv/scripts/youtube-upnext.lua
 mkdir -p ~/.config/bat
 link bat.config ~/.config/bat/config
+mkdir -p ~/.config/dunst
+link dunstrc ~/.config/dunst/dunstrc
 mkdir -p ~/.config/systemd/user
 for s in bloop lichess lichess-watch lila-ws lila-fishnet fishnet; do
   link systemd/$s.service ~/.config/systemd/user/$s.service

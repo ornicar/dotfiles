@@ -1,0 +1,5 @@
+#!/bin/sh
+
+journalctl --user --since=now -fu lila | awk '\
+/Listening for HTTP on / { system("notify-send \"lila ready\" -t 1000 -u low") } \
+/Failed with result / { system("notify-send \"lila fail\" -t 1000 -u critical") }'

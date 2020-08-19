@@ -1,5 +1,5 @@
 [Unit]
-Description=lichess
+Description=lila
 After=network.target
 
 [Service]

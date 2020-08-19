@@ -1,12 +1,11 @@
-
 [Unit]
-Description=lichess-watch
+Description=lila-watch
 After=network.target
 
 [Service]
 Environment="DISPLAY=:0"
 ; Environment="DISPLAY=:0" "XAUTHORITY=/home/thib/.Xauthority"
-ExecStart=/home/thib/dotfiles/scripts/lichess-watch
+ExecStart=/home/thib/dotfiles/scripts/lila-watch
 
 [Install]
 WantedBy=multi-user.target

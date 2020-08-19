@@ -35,7 +35,7 @@ bindsym XF86AudioPlay exec mpc toggle
 # bindsym XF86AudioNext exec mpc next
 
 bindsym $mod+m exec ~/.scripts/mpvopen
-bindsym F1 exec systemctl --user restart lichess
+bindsym F1 exec systemctl --user restart lila
 
 # kill focused window
 bindsym $mod+q kill

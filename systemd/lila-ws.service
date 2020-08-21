@@ -1,6 +1,6 @@
 [Unit]
 Description=lila-ws
-After=network.target
+Requires=bloop.service
 
 [Service]
 ExecStart=bloop run root -m lila.ws.Boot -c /home/thib/lila-ws/.bloop

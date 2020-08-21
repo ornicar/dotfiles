@@ -19,6 +19,7 @@ map <leader>wj :wincmd j<cr>
 map <leader>wk :wincmd k<cr>
 map <leader>wl :wincmd l<cr>
 
+nmap <leader>md :b#<cr>                         " Previous buffer
 nmap <leader>wd :bd<cr>                         " delete buffer
 nmap <leader>wD :!rm %<cr>:bd!<cr>              " delete buffer and file
 
@@ -76,7 +77,7 @@ nmap R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><e
 " Make the current file executable
 nmap <leader>% :!chmod +x %<cr>
 
-nmap <leader>rr :redraw!<cr>
+" nmap <leader>rr :redraw!<cr>
 
 " Expand current filed dir in console mode
 cnoremap %% <C-R>=expand('%:h').'/'<cr>

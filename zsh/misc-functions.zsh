@@ -17,6 +17,13 @@ batf() { tail -F $1 | bat --paging=never --plain -l log }
 
 limosh() { mosh root@$1.lichess.ovh }
 
+function andagain { while : ; do "$@" ; sleep 1 ; done; }
+
+take() {
+  mkdir -p $1
+  cd $1
+}
+
 # java paths are for local use only
 # else use archlinux-java
 

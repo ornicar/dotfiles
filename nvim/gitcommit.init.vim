@@ -11,13 +11,14 @@ source ~/dotfiles/nvim/theme.vim
 source ~/dotfiles/nvim/settings.vim
 source ~/dotfiles/nvim/colemak.vim
 source ~/dotfiles/nvim/mappings.vim
+source ~/dotfiles/nvim/unimpaired.vim
 
 set nonumber
-
-" 1s/^$//e
-goto 1
-startinsert
 
 " save and quit, enven during insert
 map <C-e> :nohl<cr>:wq<cr>
 imap <C-e> <esc>:nohl<cr>:wq<cr>
+
+put =nr2char(10) " add white line under cursor for visual comfort
+goto 1
+startinsert

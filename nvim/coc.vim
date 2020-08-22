@@ -1,6 +1,6 @@
 " === Plug Coc ===
 
-set updatetime=300
+set updatetime=100
 set signcolumn=yes
 
 au BufRead,BufNewFile *.sbt,*.sc set filetype=scala

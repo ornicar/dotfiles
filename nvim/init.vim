@@ -10,7 +10,6 @@ Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-vinegar'
 Plug 'chiel92/vim-autoformat'
 Plug 'tpope/vim-commentary'

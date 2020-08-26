@@ -5,8 +5,9 @@ Plug 'rakr/vim-one'
 Plug 'itchyny/lightline.vim'
 Plug 'codeindulgence/vim-tig'
 Plug 'machakann/vim-sandwich'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim'
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'antoinemadec/coc-fzf'
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -16,11 +17,11 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/Rename2'
 Plug 'mattn/vim-gist'
 Plug 'gre/play2vim'
-Plug 'antoinemadec/coc-fzf'
 Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'stefandtw/quickfix-reflector.vim'
 call plug#end()
+
 
 source ~/dotfiles/nvim/theme.vim
 source ~/dotfiles/nvim/settings.vim

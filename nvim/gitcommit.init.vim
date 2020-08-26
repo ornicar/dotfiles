@@ -14,6 +14,10 @@ source ~/dotfiles/nvim/unimpaired.vim
 
 set nonumber
 
+" save and quit, enven during insert
+map <C-e> :nohl<cr>:wq<cr>
+imap <expr> <C-e> pumvisible() ? '<C-p>' : '<esc>:wq<cr>'
+
 set omnifunc=rhubarb#Complete
 set completeopt-=preview
 

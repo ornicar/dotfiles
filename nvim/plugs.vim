@@ -19,6 +19,6 @@ vmap <leader>c<space> <Plug>Commentary
 
 " === Plug BufStop ===
 
-let g:BufstopKeys = "arstdhneio1234567890"
+let g:BufstopKeys = "arstneio"
 
 nmap <leader>mt :BufstopMode<CR>

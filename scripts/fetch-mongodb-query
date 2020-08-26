@@ -10,6 +10,8 @@
 # zstyle -e :urlglobber url-other-schema \
 #   '[[ $some_remote_commands[(i)$words[1]] -le ${#some_remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
+# fetch-mongodb-query root@loquy.lichess.ovh lichess tournament2 '{\"schedule.freq\":\"marathon\"}'
+
 REMOTE=$1
 shift
 DB=$1

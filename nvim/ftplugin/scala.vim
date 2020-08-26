@@ -8,7 +8,7 @@ setlocal include='^\s*import'
 setlocal includeexpr='substitute(v:fname,"\\.","/","g")'
 
 " Operator notation: transforms a.b(c) to a b c
-nmap <buffer> <leader>s. f.r<space>f(ds(i <esc>
+nmap <buffer> <leader>s. f.r<space>f(sd(i <esc>
 
 " Triple quotes: transforms "abc" to """abc"""
 nmap <buffer> <leader>s" ysi""lysi""

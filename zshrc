@@ -23,4 +23,7 @@ if [[ "$TERM" == "alacritty" ]]; then
   [[ ! -f ~/dotfiles/p10k.zsh ]] || source ~/dotfiles/p10k.zsh
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zsh
+
+# Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/
+bindkey '^E' fzf-history-widget

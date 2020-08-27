@@ -60,8 +60,10 @@ inoremap <Tab> <C-x><C-o>
 
 " Fast save (also clears the search)
 map <C-e> :nohl<cr>:w<cr>
-" Fast save while insert, or next element during omnicomplete
-imap <expr> <C-e> pumvisible() ? '<C-p>' : '<esc>:nohl<cr>:w<cr>'
+imap <C-e> <esc>:nohl<cr>:w<cr>
+
+" Previous element during omnicomplete (<C-e> is used for fast save)
+imap <expr> <C-k> pumvisible() ? '<C-p>' : '<C-k>'
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]

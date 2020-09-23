@@ -1,4 +1,5 @@
 {
   "javaHome": "/usr/lib/jvm/java-11-graalvmee",
-  "javaOptions": ["-Xmx20G"]
+  "javaOptions": ["-Xmx20G"],
+  "supportedScalaVersions": ["2.13.3"]
 }

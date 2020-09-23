@@ -3,7 +3,7 @@ Description=lila-ws
 Requires=bloop.service
 
 [Service]
-ExecStart=bloop run root -m lila.ws.Boot -c /home/thib/lila-ws/.bloop
+ExecStart=bloop run lila-ws -m lila.ws.Boot -c /home/thib/lila-ws/.bloop
 
 [Install]
 WantedBy=multi-user.target

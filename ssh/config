@@ -28,8 +28,8 @@ Host leela
   HostName 83.145.238.235
   Port 9023
   User thibault
-Host euler
-  HostName euler.lichess.ovh
+Host loquy
+  HostName loquy.lichess.ovh
   User root
 Host dirac
   HostName dirac.lichess.ovh
@@ -37,8 +37,8 @@ Host dirac
 Host gauss
   HostName gauss.lichess.ovh
   User root
-Host stork
-  HostName 79.137.40.37
+Host archi
+  HostName archi.lichess.ovh
   User root
   ForwardAgent yes
 Host drake

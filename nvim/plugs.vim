@@ -22,3 +22,7 @@ vmap <leader>c<space> <Plug>Commentary
 let g:BufstopKeys = "arstneio"
 
 nmap <leader>mt :BufstopMode<CR>
+
+" === Plug vinegar ===
+
+let g:netrw_liststyle=3

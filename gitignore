@@ -7,4 +7,5 @@
 .venv
 .bloop
 .metals
+.bsp
 project/metals.sbt

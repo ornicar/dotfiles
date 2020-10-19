@@ -78,7 +78,7 @@ inoremap <silent> <C-Y> <C-C>:let @z = @"<cr>mz
 map Q q:
 
 " Fast file renaming
-nmap R :let _pfn="<C-R>=expand("%:.")<cr>"<cr>q:iRename <C-R>=expand(_pfn)<cr><esc>^w
+nmap R :let _pfn="<C-R>=expand("%:t")<cr>"<cr>rename <C-R>=expand(_pfn)<cr><esc>^w
 
 " Make the current file executable
 nmap <leader>% :!chmod +x %<cr>

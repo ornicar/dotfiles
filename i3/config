@@ -1,13 +1,13 @@
 set $mod Mod1
-font pango:MesloLGS NF 9
+font pango:MesloLGS NF 8
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-# exec --no-startup-id feh --bg-scale ~/image/i3bg.png
+exec --no-startup-id feh ~/image/wallpaper/pang-yuhao-wCi28eq8TF4-unsplash.jpg
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4b68ad #282c34 #73b2e6 #282c34   #4b68ad
-client.focused_inactive #23272e #282c34 #73b2e6 #484e50   #282c34   
+client.focused          #4b68ad #24272e #73b2e6 #282c34   #4b68ad
+client.focused_inactive #24272e #24272e #73b2e6 #484e50   #282c34   
 client.unfocused        #282c34 #282c34 #888888 #282c34   #282c34   
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
@@ -17,7 +17,7 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -36,6 +36,8 @@ bindsym XF86AudioPlay exec mpc toggle
 
 bindsym $mod+m exec ~/.scripts/mpvopen
 bindsym F1 exec systemctl --user restart lila
+
+bindsym F8 exec ~/.screenlayout/laptop.sh
 
 # kill focused window
 bindsym $mod+q kill
@@ -130,6 +132,10 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+x move container to output down
+
 # reload the configuration file
 # bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -151,10 +157,12 @@ mode "resize" {
   # bindsym o resize grow width 10 px or 10 ppt
 
   # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 1 px or 1 ppt
-  bindsym Down resize grow height 1 px or 1 ppt
-  bindsym Up resize shrink height 1 px or 1 ppt
-  bindsym Right resize grow width 1 px or 1 ppt
+  bindsym n resize shrink width 3 px or 3 ppt
+  bindsym e resize grow width 3 px or 3 ppt
+  bindsym Shift+n resize shrink width 12 px or 12 ppt
+  bindsym Shift+e resize grow width 12 px or 12 ppt
+  bindsym l resize shrink height 3 px or 3 ppt
+  bindsym h resize grow height 3 px or 3 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -163,7 +171,7 @@ mode "resize" {
 
 bindsym $mod+Shift+r mode "resize"
 
-bindsym $mod+Shift+l exec ~/.scripts/lock
+# bindsym $mod+Shift+l exec ~/.scripts/lock
 
 bindsym $mod+r exec ~/.scripts/redshift-toggle
 
@@ -174,7 +182,7 @@ bar {
   status_command python3 ~/dotfiles/i3/status.py
   separator_symbol " / "
   colors {
-    background #282c34
+    background #24272e
     statusline #abb2bf
 
     focused_workspace  #73b2e6 #282c34

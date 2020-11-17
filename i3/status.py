@@ -39,11 +39,11 @@ status.register("battery",
 status.register("load",
     format="{avg1}")
 
-status.register("mem",
-    format="MEM {percent_used_mem}%",
-    color="white",
-    warn_percentage=80,
-    alert_percentage=90)
+# status.register("mem",
+#     format="MEM {percent_used_mem}%",
+#     color="white",
+#     warn_percentage=80,
+#     alert_percentage=90)
 
 status.register("temp",
     file="/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
@@ -88,7 +88,7 @@ status.register("mpd",
     format="♬ {artist}: {album} {status} {title}",
     max_field_len=50,
     status={
-        "pause": "▷",
+        "pause": "◾",
         "play": "▶",
         "stop": "◾",
     })

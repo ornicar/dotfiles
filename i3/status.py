@@ -21,61 +21,50 @@ status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
 # status.register("clock", format = ("%a %-d %b %R", "Asia/Singapore"))
     # format="%a %-d %b %R",)
 
-status.register("battery",
-    format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    color=red,
-    full_color=green,
-    charging_color=green,
-    alert=True,
-    alert_percentage=10,
-    status={
-        "DIS": "↓",
-        "CHR": "↑",
-        "FULL": "=",
-    },)
+
+status.register("redshift",
+    format="{period} {temperature}")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 status.register("load",
     format="{avg1}")
 
-# status.register("mem",
-#     format="MEM {percent_used_mem}%",
-#     color="white",
-#     warn_percentage=80,
-#     alert_percentage=90)
+status.register("mem",
+    format="MEM {percent_used_mem}%",
+    color="white",
+    warn_percentage=80,
+    alert_percentage=90)
 
-status.register("temp",
-    file="/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
-    interval=2,
-    alert_temp=100,
-    color=green,
-    alert_color=red,
-    dynamic_color=True,
-    format="{temp:.0f}°",)
+def kraken(s):
+    d=s.split(' ')
+    return f'{d[0]}º {d[2]}%'
 
-# status.register("temp",
-#     file="/sys/class/hwmon/hwmon3/fan1_input",
-#     interval=1,
-#     alert_temp=3000,
-#     format="{temp:.0f}°",)
-
-# status.register("file",
-#     components={
-#         'rpm1': (int, "/sys/class/hwmon/hwmon3/fan1_input"),
-#         'rpm2': (int, "/sys/class/hwmon/hwmon3/fan2_input")
-#     },
-#     format="Fans {rpm1} {rpm2}")
+status.register("file",
+        interval=1,
+        components={
+            "cpu": (int, "/tmp/coretemp"),
+            "kraken": (kraken, "/tmp/kraken")
+        },
+        format="CPU {cpu}º AIO {kraken}")
 
 status.register("cpu_freq",
-    file="/sys",
+    # file="/sys",
     interval=1,
     format="{avgg} Ghz")
 
-status.register("cpu_usage_graph",
-    format="CPU {usage:2}",
+# status.register("cpu_usage_graph",
+#     format="CPU {usage:2}",
+#     start_color=green,
+#     end_color=green
+# )
+
+status.register("cpu_usage_bar",
+    format="{usage_bar_cpu0}{usage_bar_cpu1}{usage_bar_cpu2}{usage_bar_cpu3}{usage_bar_cpu4}{usage_bar_cpu5}{usage_bar_cpu6}{usage_bar_cpu7}{usage_bar_cpu8}{usage_bar_cpu9}{usage_bar_cpu10}{usage_bar_cpu11}{usage_bar_cpu12}{usage_bar_cpu13}{usage_bar_cpu14}{usage_bar_cpu15}{usage_bar_cpu16}{usage_bar_cpu17}{usage_bar_cpu18}{usage_bar_cpu19}{usage_bar_cpu20}{usage_bar_cpu21}{usage_bar_cpu22}{usage_bar_cpu23}",
+    bar_type="vertical",
     start_color=green,
-    end_color=green
+    end_color=red,
+    dynamic_color=True
 )
 
 # Shows pulseaudio default sink volume
@@ -102,7 +91,17 @@ status.register("mpd",
 
 status.register("network",
     interface="wlan0",
-    format_up="{bytes_sent} k↑ {bytes_recv} k↓ {essid} {quality}%",
+    format_up="WIFI {bytes_sent} k↑ {bytes_recv} k↓ {essid} {quality}%",
+    format_down="X",
+    dynamic_color = True,
+    start_color=green,
+    end_color=yellow,
+    color_down=red,
+)
+
+status.register("network",
+    interface="enp7s0",
+    format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
     format_down="X",
     dynamic_color = True,
     start_color=green,

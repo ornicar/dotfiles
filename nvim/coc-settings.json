@@ -1,6 +1,6 @@
 {
-  "java.home": "/usr/lib/jvm/java-11-graalvmee/",
-  "metals.javaHome": "/usr/lib/jvm/java-11-graalvmee/",
+  "java.home": "/usr/lib/jvm/java-11-graalvm/",
+  "metals.javaHome": "/usr/lib/jvm/java-11-graalvm/",
   "metals.enable": true,
   "list.source.files.excludePatterns": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],
   "coc.source.file.ignorePatterns": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"]

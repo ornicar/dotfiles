@@ -16,8 +16,10 @@ export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.vim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 
-export JAVA_HOME=/usr/lib/jvm/java-11-graalvmee
+export JAVA_HOME=/usr/lib/jvm/java-11-graalvm
 export SBT_OPTS="-Xms256M -Xmx4G"
+
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # CDPATH tells the cd command to look in
 # this colon-separated list of directories for your destination.

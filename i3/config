@@ -1,5 +1,5 @@
 set $mod Mod1
-font pango:MesloLGS NF 8
+font pango:MesloLGS NF 16
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
@@ -27,17 +27,15 @@ bindsym Mod1+Return exec /usr/bin/alacritty
 
 # sound
 # bindsym $mod+a exec --no-startup-id ario
-bindsym XF86AudioMute exec ~/.scripts/music toggle
-bindsym XF86AudioLowerVolume exec ~/.scripts/music down
-bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
+bindsym F9 exec ~/.scripts/music down
+bindsym F10 exec ~/.scripts/music up
+bindsym F11 exec mpc toggle
 # bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
+# bindsym XF86AudioPlay exec mpc toggle
 # bindsym XF86AudioNext exec mpc next
 
 bindsym $mod+m exec ~/.scripts/mpvopen
 bindsym F1 exec systemctl --user restart lila
-
-bindsym F8 exec ~/.screenlayout/laptop.sh
 
 # kill focused window
 bindsym $mod+q kill

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+case $1 in
+
+  slow-burn)
+    liquidctl set ring color fading 550000 aa5500 dd0000 --speed=slower
+    liquidctl set logo color fading 550000 aa5500 dd0000 --speed=slower
+    ;;
+
+  rage)
+    liquidctl set ring color fading 330000 ff0000 --speed=faster
+    liquidctl set logo color fading 660000 330000
+    ;;
+
+  burn)
+    liquidctl set ring color fading 330000 ff0000 ff1100 ff0000
+    liquidctl set logo color fading 660000 330000
+    ;;
+
+  fusion)
+    liquidctl set ring color wings 0000ff 
+    liquidctl set logo color fading 000066 333333
+    ;;
+
+  rainbow)
+    liquidctl set ring color super-rainbow --speed=faster
+    liquidctl set logo color fixed 888888
+    ;;
+
+  spectrum)
+    liquidctl set ring color spectrum-wave --speed=fastest
+    liquidctl set logo color fixed 888888
+    ;;
+
+  breathing)
+    liquidctl set ring color breathing 550000 aa5500 dd0000
+    liquidctl set logo color fixed 888888
+    ;;
+
+  off)
+    liquidctl set ring color fixed 000000
+    liquidctl set logo color fading 660000 000000 --speed=fastest
+    ;;
+
+  *)
+    liquidctl set ring color fixed ffffff
+    liquidctl set logo color fixed aaaaaa
+    ;;
+
+esac

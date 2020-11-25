@@ -1,10 +1,9 @@
 #!/bin/bash
 i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
 
-(cd ~/lila; alacritty --title "Lila terminal" &)
-(cd ~/lila; alacritty --title "Lila SBT" &)
-(cd ~/lila; alacritty --title "Lila vim" &)
-(cd ~/lila/ui; alacritty --title "ui gulp css" &)
-(cd ~/lila/ui/site; alacritty --title "ui/site gulp" &)
-(cd ~/lila/ui/site; alacritty --title "ui/site vim" &)
-(cd ~/lila; alacritty --title "Lila more" &)
+(alacritty --working-directory ~/lila --title "Lila cli 1" &)
+(alacritty --working-directory ~/lila --title "Lila cli 2" &)
+(alacritty --working-directory ~/lila/ui/site --title "Lila UI" &)
+(alacritty --working-directory ~/lila --title "Lila metals" --command tail -F .metals/metals.log &)
+(alacritty --working-directory ~/lila --title "Lila journal" --command journalctl --user -fu lila &)
+(alacritty --working-directory ~/lila --title "Lila vim" --command nvim &)

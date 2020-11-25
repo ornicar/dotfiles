@@ -1,0 +1,11 @@
+#!/bin/sh
+
+while :
+do
+  temp=$(sensors | sed -rn 's/.*Tccd1:\s+.([0-9]+).*/\1/p')
+  freq=$(grep 'cpu MHz' /proc/cpuinfo | sort -r | head -1 | cut -c12-15)
+
+  echo "$freq $temp" > /tmp/crom-cpu-monitor
+
+  sleep 1
+done

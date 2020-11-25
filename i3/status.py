@@ -23,7 +23,8 @@ status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
 
 
 status.register("redshift",
-    format="{period} {temperature}")
+    format="{period}")
+    # format="{period} {temperature}")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
@@ -36,22 +37,32 @@ status.register("mem",
     warn_percentage=80,
     alert_percentage=90)
 
-def kraken(s):
+def case_monitor(s):
+    d=s.split(' ')
+    return f'{d[0]}% {d[1]}% {d[2]}%'
+
+status.register("file",
+        interval=1,
+        components={ "case": (case_monitor, "/tmp/crom-case-monitor") },
+        format="Case {case}")
+
+def aio_monitor(s):
     d=s.split(' ')
     return f'{d[0]}º {d[2]}%'
 
 status.register("file",
         interval=1,
-        components={
-            "cpu": (int, "/tmp/coretemp"),
-            "kraken": (kraken, "/tmp/kraken")
-        },
-        format="CPU {cpu}º AIO {kraken}")
+        components={ "aio": (aio_monitor, "/tmp/crom-aio-monitor"), },
+        format="AIO {aio}")
 
-status.register("cpu_freq",
-    # file="/sys",
-    interval=1,
-    format="{avgg} Ghz")
+def cpu_monitor(s):
+    d=s.split(' ')
+    return f'{d[0]} MHz {d[1]}º'
+
+status.register("file",
+        interval=1,
+        components={ "cpu": (cpu_monitor, "/tmp/crom-cpu-monitor"), },
+        format="{cpu}")
 
 # status.register("cpu_usage_graph",
 #     format="CPU {usage:2}",
@@ -81,23 +92,6 @@ status.register("mpd",
         "play": "▶",
         "stop": "◾",
     })
-
-# status.register("runwatch",
-#     path="/tmp/lila-play-pid",
-#     name="lila",
-#     interval=2,
-#     color_up=green,
-#     color_down=red)
-
-status.register("network",
-    interface="wlan0",
-    format_up="WIFI {bytes_sent} k↑ {bytes_recv} k↓ {essid} {quality}%",
-    format_down="X",
-    dynamic_color = True,
-    start_color=green,
-    end_color=yellow,
-    color_down=red,
-)
 
 status.register("network",
     interface="enp7s0",

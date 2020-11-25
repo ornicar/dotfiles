@@ -1,0 +1,46 @@
+#!/bin/sh
+
+CPU=fan1
+CASE_REAR=fan2
+CASE_TOP=fan3
+
+CASE_OFF=0
+CASE_MIN_SPEED=40
+CASE_MED_SPEED=60
+CASE_MAX_SPEED=100
+
+SET_FAN="liquidctl --match smart set"
+
+case $1 in
+
+  0)
+    $SET_FAN $CASE_REAR speed $CASE_OFF
+    $SET_FAN $CASE_TOP speed $CASE_OFF
+    ;;
+
+  1)
+    $SET_FAN $CASE_REAR speed $CASE_MIN_SPEED
+    $SET_FAN $CASE_TOP speed $CASE_OFF
+    ;;
+
+  1b)
+    $SET_FAN $CASE_REAR speed $CASE_OFF
+    $SET_FAN $CASE_TOP speed $CASE_MIN_SPEED
+    ;;
+
+  2)
+    $SET_FAN $CASE_REAR speed $CASE_MIN_SPEED
+    $SET_FAN $CASE_TOP speed $CASE_MIN_SPEED
+    ;;
+
+  3)
+    $SET_FAN $CASE_REAR speed $CASE_MED_SPEED
+    $SET_FAN $CASE_TOP speed $CASE_MED_SPEED
+    ;;
+
+  4)
+    $SET_FAN $CASE_REAR speed $CASE_MAX_SPEED
+    $SET_FAN $CASE_TOP speed $CASE_MAX_SPEED
+    ;;
+
+esac

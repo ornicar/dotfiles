@@ -1,11 +1,19 @@
 #!/bin/sh
 
+DIR=/run/crom
+mkdir $DIR
+
 while :
 do
-  temp=$(sensors | sed -rn 's/.*Tccd1:\s+.([0-9]+).*/\1/p')
-  freq=$(grep 'cpu MHz' /proc/cpuinfo | sort -r | head -1 | cut -c12-15)
+  sens=$(sensors -A)
 
-  echo "$freq $temp" > /tmp/crom-cpu-monitor
+  temp=$(echo $sens | sed -rn 's/.*Tccd1:\s+.([0-9]+).*/\1/p')
+  freq=$(grep 'cpu MHz' /proc/cpuinfo | sort -r | head -1 | cut -c12-15)
+  echo "$freq $temp" > $DIR/cpu-monitor
+
+  gpu_power=$(echo $sens | sed -rn 's/.*power1:\s+([0-9]+).*/\1/p')
+  gpu_temp=$(echo $sens | sed -rn 's/.*edge:\s+.([0-9]+).*/\1/p')
+  echo "$gpu_power $gpu_temp" > $DIR/gpu-monitor
 
   sleep 1
 done

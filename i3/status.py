@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
+import os
 
 from i3pystatus import Status
 
@@ -8,7 +9,7 @@ green="#98c379"
 red="#e06c75"
 yellow="#d19a66"
 
-status = Status(standalone=True, click_events=False)
+status = Status(standalone=True, click_events=True)
 
 # Displays clock like this:
 # Tue 30 Jul 11:59:46 PM KW31
@@ -37,14 +38,28 @@ status.register("mem",
     warn_percentage=80,
     alert_percentage=90)
 
+def gpu_monitor(s):
+    d=s.split(' ')
+    return f'{d[0]}W {d[1]}º'
+
+status.register("file",
+        interval=1,
+        components={ "gpu": (gpu_monitor, "/run/crom/gpu-monitor"), },
+        format="GPU {gpu}")
+
 def case_monitor(s):
     d=s.split(' ')
     return f'{d[0]}% {d[1]}% {d[2]}%'
 
+def toggle_rgb():
+    file="/tmp/crom-rgb-off"
+    os.remove(file) if os.path.isfile(file) else open(file, 'a').close()
+
 status.register("file",
         interval=1,
-        components={ "case": (case_monitor, "/tmp/crom-case-monitor") },
-        format="Case {case}")
+        components={ "case": (case_monitor, "/run/crom/case-monitor") },
+        format="Case {case}",
+        on_leftclick=toggle_rgb)
 
 def aio_monitor(s):
     d=s.split(' ')
@@ -52,7 +67,7 @@ def aio_monitor(s):
 
 status.register("file",
         interval=1,
-        components={ "aio": (aio_monitor, "/tmp/crom-aio-monitor"), },
+        components={ "aio": (aio_monitor, "/run/crom/aio-monitor"), },
         format="AIO {aio}")
 
 def cpu_monitor(s):
@@ -61,7 +76,7 @@ def cpu_monitor(s):
 
 status.register("file",
         interval=1,
-        components={ "cpu": (cpu_monitor, "/tmp/crom-cpu-monitor"), },
+        components={ "cpu": (cpu_monitor, "/run/crom/cpu-monitor"), },
         format="{cpu}")
 
 # status.register("cpu_usage_graph",

@@ -2,5 +2,5 @@
 
   "javaHome": "/usr/lib/jvm/java-11-graalvm",
   "javaOptions": ["-Xmx10G"],
-  "supportedScalaVersions": ["2.13.3"]
+  "supportedScalaVersions": ["2.13.4"]
 }

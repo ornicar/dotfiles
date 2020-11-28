@@ -52,8 +52,12 @@ def case_monitor(s):
     return f'{d[0]}% {d[1]}% {d[2]}%'
 
 def toggle_rgb():
-    file="/tmp/crom-rgb-off"
-    os.remove(file) if os.path.isfile(file) else open(file, 'a').close()
+    file="/run/crom/rgb-off"
+    try:
+        current = open(file).read().startswith("1")
+    except:
+        current = False
+    open(file, "w").write("0" if current else "1")
 
 status.register("file",
         interval=1,
@@ -109,7 +113,7 @@ status.register("mpd",
     })
 
 status.register("network",
-    interface="enp7s0",
+    interface="enp6s0",
     format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
     format_down="X",
     dynamic_color = True,

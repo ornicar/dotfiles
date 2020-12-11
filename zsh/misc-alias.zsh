@@ -47,3 +47,5 @@ alias halt="echo 'Use poweroff instead'"
 alias wifi='iwctl station wlan0 scan; iwctl station wlan0 get-networks; iwctl station wlan0 show'
 
 alias lipass="PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass"
+
+alias a="tmux a"

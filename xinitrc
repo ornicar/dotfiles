@@ -12,6 +12,10 @@ xset s off                                  # disable screensaver, use DPMS inst
 xset dpms 180 0 0                           # turn screen off after 3 minutes
 unclutter --fork --timeout 2                # kill inactive rat cursor
 
+pgrep redshift &> /dev/null || redshift -r &> /dev/null &
+
+watch -n 1200 feh --bg-fill --randomize ~/image/wallpaper/ &
+
 $HOME/.scripts/input-kinesis
 
 export QT_QPA_PLATFORMTHEME=qt5ct

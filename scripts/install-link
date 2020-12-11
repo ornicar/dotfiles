@@ -69,8 +69,11 @@ link bat.config ~/.config/bat/config
 mkdir -p ~/.config/dunst
 link dunstrc ~/.config/dunst/dunstrc
 mkdir -p ~/.config/systemd/user
-for s in lila lila-watch lila-ws lila-fishnet fishnet lila-search; do
+for s in lila lila-watch lila-ws lila-fishnet fishnet lila-search publish-ip; do
   link systemd/$s.service ~/.config/systemd/user/$s.service
+done
+for s in publish-ip; do
+  link systemd/$s.timer ~/.config/systemd/user/$s.timer
 done
 systemctl --user daemon-reload
 

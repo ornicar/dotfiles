@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl ifconfig.me | ssh thib@cammy.lichess.ovh "cat > crom_ip"

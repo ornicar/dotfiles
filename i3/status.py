@@ -23,14 +23,19 @@ status.register("clock", format = ("FR %H:%M", "Europe/Paris"))
     # format="%a %-d %b %R",)
 
 
-status.register("redshift",
-    format="{period}")
+# status.register("redshift",
+#     format="{period}")
     # format="{period} {temperature}")
 
 # Shows the average load of the last minute and the last 5 minutes
 # (the default value for format is used)
 status.register("load",
     format="{avg1}")
+
+status.register("swap",
+    format="SWP {percent_used}%",
+    color="white"
+)
 
 status.register("mem",
     format="MEM {percent_used_mem}%",
@@ -49,7 +54,7 @@ status.register("file",
 
 def case_monitor(s):
     d=s.split(' ')
-    return f'{d[0]}% {d[1]}% {d[2]}%'
+    return f'{d[0]}% {d[1]}% {d[2]}% {d[3]}x'
 
 def toggle_rgb():
     file="/run/crom/rgb-off"
@@ -59,15 +64,26 @@ def toggle_rgb():
         current = False
     open(file, "w").write("0" if current else "1")
 
+def toggle_turbo():
+    file="/run/crom/turbo"
+    turbo = 1
+    try:
+        turbo = int(open(file).read())
+    except:
+        pass
+    turbo = (turbo + 1) % 5
+    open(file, "w").write(str(turbo))
+
 status.register("file",
         interval=1,
         components={ "case": (case_monitor, "/run/crom/case-monitor") },
         format="Case {case}",
-        on_leftclick=toggle_rgb)
+        on_leftclick=toggle_rgb,
+        on_rightclick=toggle_turbo)
 
 def aio_monitor(s):
     d=s.split(' ')
-    return f'{d[0]}º {d[2]}%'
+    return f'{d[0]}º {d[1]}%'
 
 status.register("file",
         interval=1,
@@ -93,8 +109,7 @@ status.register("cpu_usage_bar",
     format="{usage_bar_cpu0}{usage_bar_cpu1}{usage_bar_cpu2}{usage_bar_cpu3}{usage_bar_cpu4}{usage_bar_cpu5}{usage_bar_cpu6}{usage_bar_cpu7}{usage_bar_cpu8}{usage_bar_cpu9}{usage_bar_cpu10}{usage_bar_cpu11}{usage_bar_cpu12}{usage_bar_cpu13}{usage_bar_cpu14}{usage_bar_cpu15}{usage_bar_cpu16}{usage_bar_cpu17}{usage_bar_cpu18}{usage_bar_cpu19}{usage_bar_cpu20}{usage_bar_cpu21}{usage_bar_cpu22}{usage_bar_cpu23}",
     bar_type="vertical",
     start_color=green,
-    end_color=red,
-    dynamic_color=True
+    end_color=red
 )
 
 # Shows pulseaudio default sink volume

@@ -64,22 +64,27 @@ def toggle_rgb():
         current = False
     open(file, "w").write("0" if current else "1")
 
-def toggle_turbo():
+def toggle_turbo(delta):
     file="/run/crom/turbo"
     turbo = 1
     try:
         turbo = int(open(file).read())
     except:
         pass
-    turbo = (turbo + 1) % 5
+    turbo = (turbo + delta) % 5
     open(file, "w").write(str(turbo))
+def inc_turbo():
+    toggle_turbo(1)
+def dec_turbo():
+    toggle_turbo(-1)
 
 status.register("file",
         interval=1,
         components={ "case": (case_monitor, "/run/crom/case-monitor") },
         format="Case {case}",
         on_leftclick=toggle_rgb,
-        on_rightclick=toggle_turbo)
+        on_rightclick=inc_turbo,
+        on_middleclick=dec_turbo)
 
 def aio_monitor(s):
     d=s.split(' ')

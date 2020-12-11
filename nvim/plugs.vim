@@ -26,3 +26,7 @@ nmap <leader>mt :BufstopMode<CR>
 " === Plug vinegar ===
 
 let g:netrw_liststyle=3
+
+" === Plug Blamer ===
+
+let g:blamer_enabled = 1

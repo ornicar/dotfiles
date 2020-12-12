@@ -1,3 +1,4 @@
 #!/bin/sh
 
-curl ifconfig.me | ssh thib@cammy.lichess.ovh "cat > crom_ip"
+ssh thib@cammy.lichess.ovh "ls"
+exit 0

@@ -72,10 +72,17 @@ status.register("cpu_freq",
     interval=1,
     format="{avgg} Ghz")
 
-status.register("cpu_usage_graph",
-    format="CPU {usage:2}",
+# status.register("cpu_usage_graph",
+#     format="CPU {usage:2}",
+#     start_color=green,
+#     end_color=green
+# )
+
+status.register("cpu_usage_bar",
+    format="{usage_bar_cpu0}{usage_bar_cpu1}{usage_bar_cpu2}{usage_bar_cpu3}{usage_bar_cpu4}{usage_bar_cpu5}{usage_bar_cpu6}{usage_bar_cpu7}{usage_bar_cpu8}{usage_bar_cpu9}{usage_bar_cpu10}{usage_bar_cpu11}",
+    bar_type="vertical",
     start_color=green,
-    end_color=green
+    end_color=red
 )
 
 # Shows pulseaudio default sink volume

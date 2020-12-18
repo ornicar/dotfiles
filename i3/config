@@ -17,7 +17,7 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 
-focus_follows_mouse yes
+focus_follows_mouse no
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

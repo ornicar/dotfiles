@@ -142,6 +142,16 @@ status.register("network",
     color_down=red,
 )
 
+status.register("network",
+    interface="wlan0",
+    format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
+    format_down="X",
+    dynamic_color = True,
+    start_color=green,
+    end_color=yellow,
+    color_down=red,
+)
+
 # status.register("online",
 #     format_online="✓",
 #     format_offline="✗",

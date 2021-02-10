@@ -8,5 +8,5 @@ FILE=$DB-$COLL.export.json
 ssh $REMOTE mongoexport --db $DB --collection $COLL --out /root/$FILE
 scp $REMOTE:$FILE ./
 ssh $REMOTE rm /root/$FILE
-mongoimport --db $DB --collection $COLL $FILE
+mongoimport --db $DB --collection $COLL $FILE 2> >(grep -v duplicate)
 rm $FILE

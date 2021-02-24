@@ -69,8 +69,11 @@ link bat.config ~/.config/bat/config
 mkdir -p ~/.config/dunst
 link dunstrc ~/.config/dunst/dunstrc
 mkdir -p ~/.config/systemd/user
-for s in lila lila-watch lila-ws lila-fishnet fishnet lila-search publish-ip; do
+for s in lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
   link systemd/$s.service ~/.config/systemd/user/$s.service
+done
+for s in daqs; do
+  link systemd/$s.target ~/.config/systemd/user/$s.target
 done
 for s in publish-ip; do
   link systemd/$s.timer ~/.config/systemd/user/$s.timer

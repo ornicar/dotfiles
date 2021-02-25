@@ -7,6 +7,7 @@ setopt SHARE_HISTORY
 
 # Export common variables
 path+="$HOME/.bin:$PATH"
+path+="$HOME/.local/share/coursier/bin"
 # path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
 
 export TERMINAL="alacritty"

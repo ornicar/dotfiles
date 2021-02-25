@@ -66,6 +66,7 @@ mkdir -p ~/.config/bat
 link bat.config ~/.config/bat/config
 mkdir -p ~/.config/dunst
 link dunstrc ~/.config/dunst/dunstrc
+link prettierrc.json ~/.prettierrc.json
 mkdir -p ~/.config/systemd/user
 for s in bloop lila lila-watch lila-ws lila-fishnet fishnet lila-search; do
   link systemd/$s.service ~/.config/systemd/user/$s.service

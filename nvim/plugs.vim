@@ -4,7 +4,6 @@ nmap ti :Tig<cr>
 
 " === Plug autoformat ===
 
-nmap <leader>i <Esc>:Autoformat<cr>:w<cr>
 " use scalafmt to format scala
 let g:formatdef_scalafmt = '"scalafmt --stdin"'
 let g:formatters_scala = ['scalafmt']

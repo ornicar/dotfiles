@@ -16,7 +16,9 @@ nmap <buffer> <leader>s" ysi""lysi""
 nmap <leader>i <Esc>:SortScalaImports<cr>:Autoformat<cr>:w<cr>
 
 " the ! prevents dups
-autocmd! BufWrite *.scala :Autoformat
+if filereadable(".scalafmt.conf")
+  autocmd! BufWrite *.scala :Autoformat
+endif
 
 let g:scala_sort_across_groups = 1
 

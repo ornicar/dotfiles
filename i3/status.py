@@ -71,7 +71,7 @@ def toggle_turbo(delta):
         turbo = int(open(file).read())
     except:
         pass
-    turbo = (turbo + delta) % 5
+    turbo = min(5, max(0, (turbo + delta)))
     open(file, "w").write(str(turbo))
 def inc_turbo():
     toggle_turbo(1)
@@ -132,15 +132,15 @@ status.register("mpd",
         "stop": "◾",
     })
 
-status.register("network",
-    interface="enp6s0",
-    format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
-    format_down="X",
-    dynamic_color = True,
-    start_color=green,
-    end_color=yellow,
-    color_down=red,
-)
+# status.register("network",
+#     interface="enp6s0",
+#     format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
+#     format_down="X",
+#     dynamic_color = True,
+#     start_color=green,
+#     end_color=yellow,
+#     color_down=red,
+# )
 
 status.register("network",
     interface="wlan0",

@@ -1,0 +1,11 @@
+[Unit]
+Description=Bloop Scala build server
+
+[Service]
+ExecStart=/home/thib/.local/share/coursier/bin/bloop server
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bloop
+
+[Install]
+WantedBy=default.target

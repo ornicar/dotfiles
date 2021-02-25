@@ -47,8 +47,6 @@ link editrc ~/.editrc
 link ghci ~/.ghci
 mkdir -p ~/.ssh
 link ssh/config ~/.ssh/config
-mkdir -p ~/.config/htop
-link htoprc ~/.config/htop/htoprc
 mkdir -p ~/.sbt/1.0
 link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
 link sbt-1.0/plugins ~/.sbt/1.0/plugins

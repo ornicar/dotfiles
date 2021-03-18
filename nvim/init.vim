@@ -20,6 +20,8 @@ Plug 'gre/play2vim'
 Plug 'wellle/targets.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'stefandtw/quickfix-reflector.vim'
+Plug 'leafgarland/typescript-vim' " for .tsx
+Plug 'peitalin/vim-jsx-typescript' " for .tsx
 call plug#end()
 
 

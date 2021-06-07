@@ -1,12 +1,17 @@
-#!/bin/zsh
+#!/bin/sh
 
 REMOTE=$1
 DB=$2
 COLL=$3
 FILE=$DB-$COLL.export.json
+REMOTE_PATH=/home/mongo-export/$FILE
 
-ssh $REMOTE mongoexport --db $DB --collection $COLL --out /root/$FILE
-scp $REMOTE:$FILE ./
-ssh $REMOTE rm /root/$FILE
-mongoimport --db $DB --collection $COLL $FILE 2> >(grep -v duplicate)
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --out $REMOTE_PATH"
+echo $C
+
+$C
+
+scp $REMOTE:$REMOTE_PATH ./
+ssh $REMOTE rm $REMOTE_PATH
+mongoimport --db $DB --collection $COLL $FILE
 rm $FILE

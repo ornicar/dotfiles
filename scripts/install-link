@@ -78,7 +78,3 @@ for s in publish-ip; do
   link systemd/$s.timer ~/.config/systemd/user/$s.timer
 done
 systemctl --user daemon-reload
-
-cd mongo-hacker
-make
-cd -

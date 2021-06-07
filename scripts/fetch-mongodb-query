@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# #!/bin/zsh
-
 # autoload -U url-quote-magic  
 # zle -N self-insert url-quote-magic
 
@@ -20,8 +18,9 @@ COLL=$1
 shift
 QUERY=$@
 FILE=$DB-$COLL.query.export.json
+REMOTE_PATH=/home/mongo-export/$FILE
 
-C="ssh $REMOTE mongoexport --db $DB --collection $COLL --query $QUERY --out /root/$FILE"
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --query $QUERY --out $REMOTE_PATH"
 echo $C
 
 $C
@@ -29,7 +28,7 @@ $C
 if [ $? != 0 ]; then
   exit 1;
 fi
-scp $REMOTE:$FILE ./
-ssh $REMOTE rm /root/$FILE
+scp $REMOTE:$REMOTE_PATH ./
+ssh $REMOTE rm $REMOTE_PATH
 mongoimport --db $DB --collection $COLL $FILE
 rm $FILE

@@ -45,7 +45,8 @@ status.register("mem",
 
 def gpu_monitor(s):
     d=s.split(' ')
-    return f'{d[0]}W {d[1]}º'
+    w = int(d[0])
+    return f'{" " if w < 10 else ""}{w}W {d[1]}º'
 
 status.register("file",
         interval=1,

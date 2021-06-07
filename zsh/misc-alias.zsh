@@ -33,7 +33,7 @@ alias x="dtrx"
 # Resource this file
 alias reload=". ~/.zshrc"
 
-alias meteo="curl -4 http://wttr.in/Paris"
+alias meteo="curl -4 http://wttr.in/44600"
 
 # Read 32GB zero's and throw them away.
 alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'

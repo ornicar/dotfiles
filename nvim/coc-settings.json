@@ -2,6 +2,7 @@
   "java.home": "/usr/lib/jvm/java-11-graalvm/",
   "metals.javaHome": "/usr/lib/jvm/java-11-graalvm/",
   "metals.enable": true,
+  "metals.serverVersion": "0.10.3",
   "list.source.files.excludePatterns": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],
   "coc.source.file.ignorePatterns": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "scss", "javascript", "typescript", "yaml", "json"],

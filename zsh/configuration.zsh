@@ -24,9 +24,6 @@ export SBT_OPTS="-Xms256M -Xmx4G"
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..
 
-# Load less keys
-lesskey "$HOME/dotfiles/lesskeys"
-
 eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`
 
 # autocompletion

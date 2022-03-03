@@ -1,3 +1,4 @@
 #!/bin/sh
 
-chromium --enable-features=WebUIDarkMode --force-dark-mode --force-device-scale-factor=1.5 %U
+# chromium --enable-features=WebUIDarkMode --force-dark-mode --force-device-scale-factor=1.5 %U
+chromium --force-device-scale-factor=1.5 %U

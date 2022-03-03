@@ -6,7 +6,7 @@ Wants=lila-watch.service
 
 [Service]
 ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila -m play.core.server.ProdServerStart -c /home/thib/lila/.bloop
-; ExecStop=fuser -k 9663/tcp
+ExecStop=fuser -k 9663/tcp -TERM
 
 [Install]
 WantedBy=multi-user.target

@@ -10,5 +10,5 @@ ssh $REMOTE mongoexport --db $DB --collection $COLL -q \'{\"_id\":\"$ID\"}\' --o
 scp $REMOTE:$FILE ./
 ssh $REMOTE rm /root/$FILE
 mongo $DB --eval "db.$COLL.remove({_id:'$ID'})"
-mongoimport --db $DB --collection $COLL $FILE
+mongoimport --db lichess --collection $COLL $FILE
 rm $FILE

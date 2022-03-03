@@ -48,4 +48,5 @@ alias wifi='iwctl station wlan0 scan; iwctl station wlan0 get-networks; iwctl st
 
 alias lipass="PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass"
 
-alias a="tmux a"
+alias streamvoice="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-data-dir --app=file:///home/thib/stream-voice/index.html &"
+alias streamtv="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-tv-data-dir --app=https://lichess.org/tv &"

@@ -50,7 +50,6 @@ bindsym $mod+space exec rofi -show run -auto-select
 
 # change focus
 bindsym $mod+n focus left
-bindsym $mod+Tab focus left
 bindsym $mod+e focus right
 bindsym $mod+h focus down
 bindsym $mod+l focus up
@@ -68,10 +67,12 @@ bindsym $mod+l focus up
 # bindsym $mod+Shift+o move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left move left
 bindsym $mod+Down move down
 bindsym $mod+Up move up
-bindsym $mod+Right move right
+# bindsym $mod+Left move left
+# bindsym $mod+Right move right
+bindsym $mod+Tab move right
+bindsym $mod+Shift+Tab move left
 
 
 # split in horizontal orientation

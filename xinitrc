@@ -16,6 +16,8 @@ pgrep redshift &> /dev/null || redshift -r &> /dev/null &
 
 watch -n 1200 feh --bg-fill --randomize ~/image/wallpaper/ &
 
+blueman-applet &
+
 $HOME/.scripts/input-kinesis
 
 export QT_QPA_PLATFORMTHEME=qt5ct

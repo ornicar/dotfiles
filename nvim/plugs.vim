@@ -7,6 +7,10 @@ let g:formatters_scala = ['scalafmt']
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 
+" === Plug rust ===
+
+let g:rustfmt_autosave = 0 " coc does it
+
 " === Plug commentary ===
 
 nmap <leader>c<space> <Plug>CommentaryLine

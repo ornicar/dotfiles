@@ -9,6 +9,7 @@ if [[ "$TERM" == "alacritty" ]]; then
   fi
 fi
 
+export THEFUCK_PRIORITY="git_hook_bypass=1100" # https://github.com/nvbn/thefuck/issues/1207
 eval $(thefuck --alias)
 
 # Load all of my zsh files in zsh/

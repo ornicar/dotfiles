@@ -11,7 +11,7 @@ path+="$HOME/.local/share/coursier/bin"
 # path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
 
 export TERMINAL="alacritty"
-export BROWSER="chromium"
+export BROWSER="google-chrome-stable"
 export EDITOR='nvim'
 export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.vim"
 

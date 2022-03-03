@@ -34,12 +34,12 @@ status.register("load",
 
 status.register("swap",
     format="SWP {percent_used}%",
-    color="white"
+    color="#aaaaaa"
 )
 
 status.register("mem",
     format="MEM {percent_used_mem}%",
-    color="white",
+    color="#aaaaaa",
     warn_percentage=80,
     alert_percentage=90)
 
@@ -144,7 +144,7 @@ status.register("mpd",
 # )
 
 status.register("network",
-    interface="wlan0",
+    interface="enp7s0",
     format_up="{interface} {bytes_sent} k↑ {bytes_recv} k↓",
     format_down="X",
     dynamic_color = True,

@@ -3,7 +3,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rakr/vim-one'
 Plug 'itchyny/lightline.vim'
-Plug 'codeindulgence/vim-tig'
+Plug 'kdheepak/lazygit.nvim'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'antoinemadec/coc-fzf'

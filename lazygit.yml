@@ -1,0 +1,69 @@
+gui:
+  language: 'en'
+  mouseEvents: false
+os:
+  editCommand: 'nvim'
+  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<c-c>' # alternative/alias of quit
+    return: '<esc>' # return to previous menu, will quit if there's nowhere to return
+    quitWithoutChangingDirectory: 'Q'
+    togglePanel: '<tab>' # goto the next panel
+    prevItem: '<up>' # go one line up
+    nextItem: '<down>' # go one line down
+    prevItem-alt: 'e' # go one line up
+    nextItem-alt: 'n' # go one line down
+    prevPage: ',' # go to next page in list
+    nextPage: '.' # go to previous page in list
+    gotoTop: '<' # go to top of list
+    gotoBottom: '>' # go to bottom of list
+    scrollLeft: 'H' # scroll left within list view
+    scrollRight: 'L' # scroll right within list view
+    prevBlock: '<left>' # goto the previous block / panel
+    nextBlock: '<right>' # goto the next block / panel
+    prevBlock-alt: 'h' # goto the previous block / panel
+    nextBlock-alt: 'l' # goto the next block / panel
+    jumpToBlock: ['1', '2', '3', '4', '5'] # goto the Nth block / panel
+    nextMatch: 'J'
+    prevMatch: 'j'
+    optionMenu: 'x' # show help menu
+    optionMenu-alt1: '?' # show help menu
+    select: '<space>'
+    goInto: '<enter>'
+    openRecentRepos: '<c-r>'
+    confirm: '<enter>'
+    confirm-alt1: 'y'
+    remove: 'd'
+    new: '<c-n>'
+    edit: '<c-e>'
+    openFile: 'o'
+    scrollUpMain: '<pgup>' # main panel scroll up
+    scrollDownMain: '<pgdown>' # main panel scroll down
+    scrollUpMain-alt1: 'E' # main panel scroll up
+    scrollDownMain-alt1: 'N' # main panel scroll down
+    scrollUpMain-alt2: '<c-u>' # main panel scroll up
+    scrollDownMain-alt2: '<c-d>' # main panel scroll down
+    executeCustomCommand: ':'
+    createRebaseOptionsMenu: 'm'
+    pushFiles: 'P'
+    pullFiles: 'p'
+    refresh: 'R'
+    createPatchOptionsMenu: '<c-p>'
+    nextTab: ']'
+    prevTab: '['
+    nextScreenMode: '+'
+    prevScreenMode: '_'
+    undo: 'z'
+    redo: '<c-z>'
+    filteringMenu: '<c-s>'
+    diffingMenu: 'W'
+    diffingMenu-alt: '<c-W>' # deprecated
+    copyToClipboard: '<c-o>'
+    submitEditorText: '<enter>'
+    appendNewline: '<a-enter>'
+    extrasMenu: '@'
+    toggleWhitespaceInDiffView: '<c-w>'
+    increaseContextInDiffView: '}'
+    decreaseContextInDiffView: '{'

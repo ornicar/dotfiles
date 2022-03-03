@@ -24,6 +24,18 @@ take() {
   cd $1
 }
 
+# github-pr-checkout ryantmurray10:touchpad-delta
+github-pr-checkout() {
+  parts=("${(@s/:/)1}")
+  user=$parts[1]
+  branch=$parts[2]
+  repo=${PWD##*/}
+  git remote add $user git@github.com:/$user/$repo
+  git fetch $user
+  git checkout -b $branch $user/$branch
+  git merge master
+}
+
 # java paths are for local use only
 # else use archlinux-java
 

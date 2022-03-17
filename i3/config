@@ -36,6 +36,9 @@ bindsym $mod+F11 exec ~/.scripts/music copy-current
 bindsym $mod+m exec ~/.scripts/mpvopen
 bindsym F1 exec systemctl --user restart lila
 
+bindsym F7 exec ~/.scripts/keyboard-dell
+bindsym F8 exec ~/.scripts/keyboard-qwerty
+
 # kill focused window
 bindsym $mod+q kill
 

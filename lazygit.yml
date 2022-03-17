@@ -8,6 +8,7 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+promptToReturnFromSubprocess: false
 keybinding:
   universal:
     quit: 'q'

@@ -4,6 +4,10 @@ gui:
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
 keybinding:
   universal:
     quit: 'q'

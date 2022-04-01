@@ -3,10 +3,9 @@ Description=Fishnet client
 After=network-online.target
 
 [Service]
-ExecStart=/home/thib/fishnet/target/release/fishnet --conf /home/thib/fishnet/fishnet.ini.local.analysis
+ExecStart=/home/thib/fishnet/fishnet-x86_64-unknown-linux-gnu --conf /home/thib/fishnet/fishnet.ini.local.analysis
 KillMode=mixed
-WorkingDirectory=/home/thib/fishnet/target/release/
-ReadWriteDirectories=/home/thib/fishnet/target/release/
+WorkingDirectory=/home/thib/fishnet/
 Nice=19
 PrivateTmp=true
 DevicePolicy=closed

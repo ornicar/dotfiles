@@ -1,5 +1,6 @@
 [Unit]
 Description=lila-ws
+Requires=bloop.service
 
 [Service]
 ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.Boot -c /home/thib/lila-ws/.bloop

@@ -3,6 +3,7 @@ gui:
   mouseEvents: false
   sidePanelWidth: 0.333
   mainPanelSplitMode: 'horizontal' # one of 'horizontal' | 'flexible' | 'vertical'
+  showFileTree: false # ` to toggle
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'

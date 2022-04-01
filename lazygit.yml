@@ -1,6 +1,8 @@
 gui:
   language: 'en'
   mouseEvents: false
+  sidePanelWidth: 0.333
+  mainPanelSplitMode: 'horizontal' # one of 'horizontal' | 'flexible' | 'vertical'
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
@@ -16,8 +18,8 @@ keybinding:
     return: '<esc>' # return to previous menu, will quit if there's nowhere to return
     quitWithoutChangingDirectory: 'Q'
     togglePanel: '<tab>' # goto the next panel
-    prevItem: '<up>' # go one line up
-    nextItem: '<down>' # go one line down
+    prevItem: '<pgup>' # go one line up
+    nextItem: '<pgdown>' # go one line down
     prevItem-alt: 'e' # go one line up
     nextItem-alt: 'n' # go one line down
     prevPage: ',' # go to next page in list
@@ -44,8 +46,8 @@ keybinding:
     new: '<c-n>'
     edit: '<c-e>'
     openFile: 'o'
-    scrollUpMain: '<pgup>' # main panel scroll up
-    scrollDownMain: '<pgdown>' # main panel scroll down
+    scrollUpMain: '<up>' # main panel scroll up
+    scrollDownMain: '<down>' # main panel scroll down
     scrollUpMain-alt1: 'E' # main panel scroll up
     scrollDownMain-alt1: 'N' # main panel scroll down
     scrollUpMain-alt2: '<c-u>' # main panel scroll up

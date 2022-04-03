@@ -1,70 +1,54 @@
+// vim:ts=4:sw=4:et
 {
-    "border": "pixel 1",
+    // tabbed split container with 2 children
+    "border": "pixel",
     "floating": "auto_off",
     "layout": "tabbed",
     "percent": null,
     "type": "con",
     "nodes": [
         {
-            "border": "pixel 1",
-            "current_border_width": 1,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 2304,
-               "width": 3072,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Alacritty",
-            "percent": 0.25,
-            "swallows": [
-               {
-               "title": "Lila terminal"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "pixel 1",
+            // splith split container with 2 children
+            "border": "pixel",
             "floating": "auto_off",
             "layout": "splith",
-            "percent": 0.25,
+            "percent": 0.5,
             "type": "con",
             "nodes": [
                 {
-                    "border": "pixel 1",
+                    "border": "pixel",
                     "current_border_width": 1,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 2304,
-                       "width": 3072,
+                       "height": 794,
+                       "width": 1294,
                        "x": 0,
                        "y": 0
                     },
                     "name": "Alacritty",
-                    "percent": 0.42,
+                    "percent": 0.5,
                     "swallows": [
                        {
-                       "title": "Lila SBT"
+                        "title": "Lila cli 1"
                        }
                     ],
                     "type": "con"
                 },
                 {
-                    "border": "pixel 1",
+                    "border": "pixel",
                     "current_border_width": 1,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 2304,
-                       "width": 3072,
+                       "height": 794,
+                       "width": 1294,
                        "x": 0,
                        "y": 0
                     },
                     "name": "Alacritty",
-                    "percent": 0.58,
+                    "percent": 0.5,
                     "swallows": [
                        {
-                       "title": "Lila vim"
+                        "title": "Lila cli 2"
                        }
                     ],
                     "type": "con"
@@ -72,98 +56,110 @@
             ]
         },
         {
-            "border": "pixel 1",
+            // splith split container with 2 children
+            "border": "pixel",
             "floating": "auto_off",
             "layout": "splith",
-            "percent": 0.35,
+            "percent": 0.5,
             "type": "con",
             "nodes": [
                 {
-                    "border": "pixel 1",
+                    // splitv split container with 2 children
+                    "border": "pixel",
                     "floating": "auto_off",
                     "layout": "splitv",
-                    "percent": 0.25,
+                    "percent": 0.38,
                     "type": "con",
                     "nodes": [
-                            {
-                                "border": "pixel 1",
-                                "current_border_width": 1,
-                                "floating": "auto_off",
-                                "geometry": {
-                                  "height": 2304,
-                                  "width": 3072,
-                                  "x": 0,
-                                  "y": 0
-                                },
-                                "name": "Alacritty",
-                                "percent": 0.42,
-                                "swallows": [
-                                  {
-                                  "title": "ui gulp css"
-                                  }
-                                ],
-                                "type": "con"
+                        {
+                            "border": "pixel",
+                            "current_border_width": 1,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 794,
+                               "width": 1294,
+                               "x": 0,
+                               "y": 0
                             },
-                            {
-                                "border": "pixel 1",
-                                "current_border_width": 1,
-                                "floating": "auto_off",
-                                "geometry": {
-                                  "height": 2304,
-                                  "width": 3072,
-                                  "x": 0,
-                                  "y": 0
+                            "name": "Alacritty",
+                            "percent": 0.29,
+                            "swallows": [
+                               {
+                                   "title": "Lila UI"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            // tabbed split container with 2 children
+                            "border": "pixel",
+                            "floating": "auto_off",
+                            "layout": "tabbed",
+                            "percent": 0.71,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "pixel",
+                                    "current_border_width": 1,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 794,
+                                       "width": 1294,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "Alacritty",
+                                    "percent": 0.5,
+                                    "swallows": [
+                                       {
+                                           "title": "Lila metals"
+                                       }
+                                    ],
+                                    "type": "con"
                                 },
-                                "name": "Alacritty",
-                                "percent": 0.42,
-                                "swallows": [
-                                  {
-                                  "title": "ui/site gulp"
-                                  }
-                                ],
-                                "type": "con"
-                            }
+                                {
+                                    "border": "pixel",
+                                    "current_border_width": 1,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 794,
+                                       "width": 1294,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "Alacritty",
+                                    "percent": 0.5,
+                                    "swallows": [
+                                       {
+                                           "title": "Lila journal"
+                                       }
+                                    ],
+                                    "type": "con"
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
-                    "border": "pixel 1",
+                    "border": "pixel",
                     "current_border_width": 1,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 2304,
-                       "width": 3072,
+                       "height": 794,
+                       "width": 1294,
                        "x": 0,
                        "y": 0
                     },
                     "name": "Alacritty",
-                    "percent": 0.65,
+                    "percent": 0.62,
                     "swallows": [
                        {
-                       "title": "ui vim"
+                           "title": "Lila vim"
                        }
                     ],
                     "type": "con"
                 }
             ]
-        },
-        {
-            "border": "pixel 1",
-            "current_border_width": 1,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 2304,
-               "width": 3072,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Alacritty",
-            "percent": 0.25,
-            "swallows": [
-               {
-               "title": "Lila more"
-               }
-            ],
-            "type": "con"
         }
     ]
 }

@@ -8,8 +8,8 @@ setxkbmap -option terminate:ctrl_alt_bksp
 
 xrdb $HOME/.Xresources                       # load Xresources
 
-xset s 600 600                              # set monitor to sleep
-xset s off                                  # disable screensaver
+xset s 300 300                              # set monitor to sleep
+# xset s off                                  # disable screensaver
 xset -b                                     # Disable system bell
 unclutter --fork --timeout 2                # kill inactive rat cursor
 

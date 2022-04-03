@@ -6,7 +6,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'codeindulgence/vim-tig'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'josa42/vim-lightline-coc'
 Plug 'tpope/vim-fugitive'

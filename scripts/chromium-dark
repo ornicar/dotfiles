@@ -1,3 +1,4 @@
 #!/bin/sh
 
-chromium --enable-features=WebUIDarkMode --force-dark-mode %U
+# google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode %U
+google-chrome-stable %U

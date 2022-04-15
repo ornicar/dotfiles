@@ -1,8 +1,10 @@
 [Unit]
 Description=lila-ws
+Requires=bloop.service
 
 [Service]
 ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.Boot -c /home/thib/lila-ws/.bloop
+ExecStop=fuser -k 9664/tcp -TERM
 
 [Install]
 WantedBy=multi-user.target

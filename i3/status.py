@@ -51,6 +51,7 @@ status.register("temp",
     alert_temp=100,
     color=green,
     alert_color=red,
+    dynamic_color=True,
     format="{temp:.0f}°",)
 
 # status.register("temp",
@@ -66,10 +67,10 @@ status.register("temp",
 #     },
 #     format="Fans {rpm1} {rpm2}")
 
-# status.register("cpu_freq",
-#     file="/sys",
-#     interval=1,
-#     format="{avgg} Ghz")
+status.register("cpu_freq",
+    file="/sys",
+    interval=1,
+    format="{avgg} Ghz")
 
 # status.register("cpu_usage_graph",
 #     format="CPU {usage:2}",

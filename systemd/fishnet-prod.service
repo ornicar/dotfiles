@@ -1,0 +1,16 @@
+[Unit]
+Description=Fishnet prod
+After=network-online.target
+
+[Service]
+ExecStart=/home/thib/Downloads/fishnet-x86_64-unknown-linux-gnu --conf /home/thib/fishnet/fishnet.ini
+KillMode=mixed
+WorkingDirectory=/home/thib/fishnet/target/release/
+ReadWriteDirectories=/home/thib/fishnet/target/release/
+Nice=19
+PrivateTmp=true
+DevicePolicy=closed
+ProtectSystem=full
+
+[Install]
+WantedBy=default.target

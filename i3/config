@@ -15,7 +15,7 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 
-focus_follows_mouse no
+focus_follows_mouse false
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -35,7 +35,8 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym $mod+m exec ~/.scripts/mpvopen
 bindsym F1 exec systemctl --user restart lila
 
-bindsym F8 exec ~/.screenlayout/laptop.sh
+bindsym F7 exec ~/.scripts/keyboard-dell
+bindsym F8 exec ~/.scripts/keyboard-qwerty
 
 # kill focused window
 bindsym $mod+q kill
@@ -70,8 +71,10 @@ bindsym $mod+l focus up
 # alternatively, you can use the cursor keys:
 bindsym $mod+Down move down
 bindsym $mod+Up move up
-bindsym $mod+Shift+Tab move left
+# bindsym $mod+Left move left
+# bindsym $mod+Right move right
 bindsym $mod+Tab move right
+bindsym $mod+Shift+Tab move left
 
 
 # split in horizontal orientation

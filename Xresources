@@ -4,7 +4,7 @@
 ! Colors - also see scripts/xcolor for switching
 !#include "/home/thib/.xcolors/solarized.xcolors"
 !#include "/home/thib/.xcolors/solarized.highcontrast.xcolors"
-/* #include "/home/thib/.xcolors/solarized.light.xcolors" */
+!#include "/home/thib/.xcolors/solarized.light.xcolors"
 
 ! Fonts
 Xft.antialias:  true

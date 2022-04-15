@@ -1,17 +1,17 @@
 #!/bin/sh
 
+# For dunst to find X
+systemctl --user import-environment DISPLAY
+
 # Kill X with C-A-BS
 setxkbmap -option terminate:ctrl_alt_bksp
 
 xrdb $HOME/.Xresources                       # load Xresources
 
-xsetroot -solid black                       # black background
-xset s 600 600                              # set monitor to sleep
-xset s off                                  # disable screensaver
-xset -b                                     # Disable system bell
-# unclutter --fork --timeout 2                # kill inactive rat cursor
+xset s off                                  # disable screensaver, use DPMS instead
+xset dpms 180 0 0                           # turn screen off after 3 minutes
 
-~/.screenlayout/1920.sh
+# ~/.screenlayout/1920.sh
 
 # sh $HOME/.fehbg &
 # pgrep redshift &> /dev/null || redshift -r &> /dev/null &
@@ -23,23 +23,23 @@ xmodmap ~/dotfiles/xmodmap/xps15.sc2
 xset r rate 250 40
 
 # touchpad
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.9
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.9
 
-xinput --set-prop 'pointer:Razer Razer DeathAdder 2013' 'libinput Accel Profile Enabled' 0 1
-xinput --set-prop 'pointer:Razer Razer DeathAdder 2013' 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
-# xinput --set-prop 20 'libinput Accel Profile Enabled' 0 1
-# xinput --set-prop 20 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+# xinput --set-prop 'pointer:Razer Razer DeathAdder 2013' 'libinput Accel Profile Enabled' 0 1
+# xinput --set-prop 'pointer:Razer Razer DeathAdder 2013' 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+# # xinput --set-prop 20 'libinput Accel Profile Enabled' 0 1
+# # xinput --set-prop 20 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
 
-# logitech g402
-xinput --set-prop 12 'libinput Accel Profile Enabled' 0 1
-xinput --set-prop 12 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.800000
+# # logitech g402
+# xinput --set-prop 12 'libinput Accel Profile Enabled' 0 1
+# xinput --set-prop 12 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.800000
 
-# touchpad
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
-xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.5
+# # touchpad
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Middle Emulation Enabled' 1
+# xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Accel Speed' 0.5
 
 # i3 -c ~/dotfiles/i3/config.1920.sc2
 i3 -c ~/dotfiles/i3/config.sc2

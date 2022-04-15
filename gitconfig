@@ -20,7 +20,19 @@
   editor = nvim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = /home/thib/dotfiles/gitignore
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
 
 [merge]
   summary = true
@@ -84,5 +96,3 @@
 	autoStash = true
 [pull]
 	rebase = false
-[init]
-	defaultBranch = main

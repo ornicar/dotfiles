@@ -1,7 +1,6 @@
 call plug#begin(stdpath('data') . '/plugged-gitcommit')
 Plug 'rakr/vim-one'
 Plug 'machakann/vim-sandwich'
-" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'wellle/targets.vim'
 call plug#end()

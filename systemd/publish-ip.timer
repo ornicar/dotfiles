@@ -1,0 +1,9 @@
+[Unit]
+Description=Publish dynamic IP
+
+[Timer]
+OnCalendar=*-*-* *:00/5:05
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -33,7 +33,7 @@ alias x="dtrx"
 # Resource this file
 alias reload=". ~/.zshrc"
 
-alias meteo="curl -4 http://wttr.in/Paris"
+alias meteo="curl -4 http://wttr.in/44600"
 
 # Read 32GB zero's and throw them away.
 alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'
@@ -47,3 +47,6 @@ alias halt="echo 'Use poweroff instead'"
 alias wifi='iwctl station wlan0 scan; iwctl station wlan0 get-networks; iwctl station wlan0 show'
 
 alias lipass="PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass"
+
+alias streamvoice="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-data-dir --app=file:///home/thib/stream-voice/index.html &"
+alias streamtv="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-tv-data-dir --app=https://lichess.org/tv &"

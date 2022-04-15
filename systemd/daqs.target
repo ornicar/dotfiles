@@ -1,0 +1,6 @@
+[Unit]
+Description=daqs
+Requires=daq@1.service daq@2.service daq@3.service daq@4.service daq@5.service daq@6.service daq@7.service daq@8.service daq@9.service daq@10.service daq@11.service daq@12.service daq@13.service daq@14.service daq@15.service daq@16.service 
+
+[Install]
+WantedBy=multi-user.target

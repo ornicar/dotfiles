@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ssh thib@cammy.lichess.ovh "ls"
+exit 0

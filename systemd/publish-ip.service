@@ -1,0 +1,10 @@
+[Unit]
+Description=Publish dynamic IP
+Wants=publish-ip.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/thib/dotfiles/scripts/publish-ip
+
+[Install]
+WantedBy=multi-user.target

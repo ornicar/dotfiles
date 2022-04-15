@@ -25,7 +25,9 @@ link gitconfig ~/.gitconfig
 link nvim ~/.config/nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir ~/.config/nvim/undodir
-link tigrc ~/.tigrc
+link scripts/chromium-dark ~/.bin/chromium-dark
+mkdir -p ~/.config/lazygit
+link lazygit.yml ~/.config/lazygit/config.yml
 link rtorrent.rc ~/.rtorrent.rc
 link xinitrc ~/.xinitrc
 link Xresources ~/.Xresources
@@ -66,8 +68,10 @@ link bat.config ~/.config/bat/config
 mkdir -p ~/.config/dunst
 link dunstrc ~/.config/dunst/dunstrc
 link prettierrc.json ~/.prettierrc.json
+link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
+link gtkrc-2.0 ~/.gtkrc-2.0
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila-watch lila-ws lila-fishnet fishnet lila-search; do
+for s in bloop lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
   link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 systemctl --user daemon-reload

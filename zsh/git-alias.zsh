@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-alias t='tig status'
+alias t='lazygit'
 alias g='git'
 alias gs='git status'
 alias ga='git add -A'

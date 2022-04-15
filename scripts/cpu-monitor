@@ -1,0 +1,21 @@
+#!/bin/sh
+
+DIR=/run/crom
+mkdir -p $DIR
+
+while :
+do
+  sens=$(sensors -A)
+
+  temp=$(echo $sens | sed -rn 's/.*Tccd1:\s+.([0-9]+).*/\1/p')
+  freqs=$(grep 'cpu MHz' /proc/cpuinfo | cut -c12-15)
+  min_freq=$(echo "$freqs" | sort | head -1)
+  max_freq=$(echo "$freqs" | sort -r | head -1)
+  echo "$min_freq-$max_freq $temp" > $DIR/cpu-monitor
+
+  gpu_power=$(echo $sens | sed -rn 's/.*slowPPT:\s+([0-9]+).*/\1/p')
+  gpu_temp=$(echo $sens | sed -rn 's/.*edge:\s+.([0-9]+).*/\1/p')
+  echo "$gpu_power $gpu_temp" > $DIR/gpu-monitor
+
+  sleep 1
+done

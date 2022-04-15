@@ -1,0 +1,7 @@
+#!/bin/sh
+
+xset dpms 180 0 0                           # turn screen off after 3 minutes
+$HOME/.scripts/input-kinesis
+export XDG_SESSION_TYPE=x11
+export GDK_BACKEND=x11
+exec gnome-session

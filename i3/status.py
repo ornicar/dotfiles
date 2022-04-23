@@ -124,14 +124,14 @@ status.register("pulseaudio",
     format="{volume} ♪",)
 
 # Shows mpd status
-status.register("mpd",
-    format="♬ {artist}: {album} {status} {title}",
-    max_field_len=50,
-    status={
-        "pause": "◾",
-        "play": "▶",
-        "stop": "◾",
-    })
+# status.register("mpd",
+#     format="♬ {artist}: {album} {status} {title}",
+#     max_field_len=50,
+#     status={
+#         "pause": "◾",
+#         "play": "▶",
+#         "stop": "◾",
+#     })
 
 # status.register("network",
 #     interface="enp6s0",

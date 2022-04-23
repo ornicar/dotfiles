@@ -32,6 +32,7 @@ github-pr-checkout() {
   repo=${PWD##*/}
   git remote add $user git@github.com:/$user/$repo
   git fetch $user
+  git branch -D $user-$branch
   git checkout -b $user-$branch $user/$branch
   git merge master
 }

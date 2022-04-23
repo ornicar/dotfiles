@@ -50,3 +50,4 @@ alias lipass="PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass"
 
 alias streamvoice="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-data-dir --app=file:///home/thib/stream-voice/index.html &"
 alias streamtv="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-tv-data-dir --app=https://lichess.org/tv &"
+alias streamtank="google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-tv-data-dir --app=http://82.64.134.116:8080/video &"

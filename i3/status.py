@@ -53,17 +53,22 @@ status.register("file",
         components={ "gpu": (gpu_monitor, "/run/crom/gpu-monitor"), },
         format="GPU {gpu}")
 
+def auto_rgb():
+    res="0" if os.system("xset -q | grep 'Monitor is On' > /dev/null") == 0 else "1"
+    open("/run/crom/rgb-off", "w").write(str(res))
+
 def case_monitor(s):
+    auto_rgb()
     d=s.split(' ')
     return f'{d[0]}% {d[1]}% {d[2]}% {d[3]}x'
 
-def toggle_rgb():
-    file="/run/crom/rgb-off"
-    try:
-        current = open(file).read().startswith("1")
-    except:
-        current = False
-    open(file, "w").write("0" if current else "1")
+# def toggle_rgb():
+#     file="/run/crom/rgb-off"
+#     try:
+#         current = open(file).read().startswith("1")
+#     except:
+#         current = False
+#     open(file, "w").write("0" if current else "1")
 
 def toggle_turbo(delta):
     file="/run/crom/turbo"
@@ -83,7 +88,7 @@ status.register("file",
         interval=1,
         components={ "case": (case_monitor, "/run/crom/case-monitor") },
         format="Case {case}",
-        on_leftclick=toggle_rgb,
+        # on_leftclick=toggle_rgb,
         on_rightclick=inc_turbo,
         on_middleclick=dec_turbo)
 

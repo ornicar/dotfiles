@@ -12,6 +12,7 @@ path+="$HOME/.local/share/coursier/bin"
 
 export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
+export CHROME_EXECUTABLE="google-chrome-stable"
 export EDITOR='nvim'
 export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.vim"
 

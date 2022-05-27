@@ -37,6 +37,7 @@ bindsym F1 exec systemctl --user restart lila
 
 bindsym F7 exec ~/.scripts/keyboard-dell
 bindsym F8 exec ~/.scripts/keyboard-qwerty
+bindsym F6 exec ~/.scripts/campic.sh
 
 # kill focused window
 bindsym $mod+q kill

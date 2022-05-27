@@ -1,7 +1,10 @@
 #!/bin/sh
 
 DIR=/run/crom
+LOG=/var/log/cpu-monitor
 mkdir -p $DIR
+
+echo "START" >> $LOG
 
 while :
 do
@@ -16,6 +19,25 @@ do
   gpu_power=$(echo $sens | sed -rn 's/.*slowPPT:\s+([0-9]+).*/\1/p')
   gpu_temp=$(echo $sens | sed -rn 's/.*edge:\s+.([0-9]+).*/\1/p')
   echo "$gpu_power $gpu_temp" > $DIR/gpu-monitor
+
+  # if (( "$gpu_power" > 9 )); then
+  #   rgboff=0
+  #  else
+  # fi
+  # echo "$rgboff" > /run/crom/rgb-off 
+
+  # if xset q | grep 'Monitor is On' > /dev/null; then
+  #   rgboff=0
+  # else
+  #   rgboff=1
+  # fi
+  # echo "$rgboff" > /run/crom/rgb-off 
+
+
+  # DISPLAY=0 xset q
+  # monitor_on=$(xset q)
+  # # monitor_on=$(xset q)
+  # echo "$monitor_on" >> $LOG
 
   sleep 1
 done

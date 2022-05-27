@@ -11,6 +11,9 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+  disableForcePushing: true
+  log:
+    showGraph: 'never'
 promptToReturnFromSubprocess: false
 keybinding:
   universal:

@@ -30,7 +30,9 @@ github-pr-checkout() {
   user=$parts[1]
   branch=$parts[2]
   repo=${PWD##*/}
-  git remote add $user git@github.com:/$user/$repo
+  remote=https://github.com/$user/$repo.git
+  echo $remote
+  git remote add $user $remote
   git fetch $user
   git branch -D $user-$branch
   git checkout -b $user-$branch $user/$branch

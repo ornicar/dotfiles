@@ -192,7 +192,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/chromium -new-tab
+    browser = /usr/bin/google-chrome-stable -new-tab
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true

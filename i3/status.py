@@ -51,7 +51,7 @@ status.register("temp",
     alert_temp=100,
     color=green,
     alert_color=red,
-    dynamic_color=True,
+    # dynamic_color=True,
     format="{temp:.0f}°",)
 
 # status.register("temp",
@@ -67,10 +67,10 @@ status.register("temp",
 #     },
 #     format="Fans {rpm1} {rpm2}")
 
-status.register("cpu_freq",
-    file="/sys",
-    interval=1,
-    format="{avgg} Ghz")
+# status.register("cpu_freq",
+#     file="/proc/cpuinfo",
+#     interval=1,
+#     format="{avgg} Ghz")
 
 # status.register("cpu_usage_graph",
 #     format="CPU {usage:2}",
@@ -91,14 +91,14 @@ status.register("pulseaudio",
     format="{volume} ♪",)
 
 # Shows mpd status
-status.register("mpd",
-    format="♬ {artist}: {album} {status} {title}",
-    max_field_len=50,
-    status={
-        "pause": "◾",
-        "play": "▶",
-        "stop": "◾",
-    })
+# status.register("mpd",
+#     format="♬ {artist}: {album} {status} {title}",
+#     max_field_len=50,
+#     status={
+#         "pause": "◾",
+#         "play": "▶",
+#         "stop": "◾",
+#     })
 
 # status.register("runwatch",
 #     path="/tmp/lila-play-pid",
@@ -111,7 +111,7 @@ status.register("network",
     interface="wlan0",
     format_up="{bytes_sent} k↑ {bytes_recv} k↓ {essid} {quality}%",
     format_down="X",
-    dynamic_color = True,
+    # dynamic_color = True,
     start_color=green,
     end_color=yellow,
     color_down=red,

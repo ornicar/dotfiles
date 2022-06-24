@@ -20,7 +20,7 @@ QUERY=$@
 FILE=$DB-$COLL.query.export.json
 REMOTE_PATH=/home/mongo-export/$FILE
 
-C="ssh $REMOTE mongoexport --db $DB --collection $COLL --query $QUERY --out $REMOTE_PATH"
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --query $QUERY --out $REMOTE_PATH --limit 500000"
 echo $C
 
 $C

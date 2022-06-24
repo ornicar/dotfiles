@@ -6,7 +6,7 @@ COLL=$3
 FILE=$DB-$COLL.export.json
 REMOTE_PATH=/home/mongo-export/$FILE
 
-C="ssh $REMOTE mongoexport --db $DB --collection $COLL --out $REMOTE_PATH"
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --out $REMOTE_PATH --limit 1000000"
 echo $C
 
 $C

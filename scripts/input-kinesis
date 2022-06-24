@@ -1,7 +1,7 @@
 #!/bin/sh
 
 setxkbmap -keycodes evdev us -variant colemak
-xset r rate 250 56
+xset r rate 200 56
 
 # 'pointer:Razer Razer DeathAdder 2013' - dup :(
 # xinput --set-prop 20 'libinput Accel Profile Enabled' 0 1

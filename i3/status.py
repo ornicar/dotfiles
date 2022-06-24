@@ -62,6 +62,9 @@ def case_monitor(s):
     d=s.split(' ')
     return f'{d[0]}% {d[1]}% {d[2]}% {d[3]}x'
 
+def turn_off_screen():
+    os.system("xset dpms force off")
+
 # def toggle_rgb():
 #     file="/run/crom/rgb-off"
 #     try:
@@ -77,7 +80,7 @@ def toggle_turbo(delta):
         turbo = int(open(file).read())
     except:
         pass
-    turbo = min(5, max(0, (turbo + delta)))
+    turbo = min(6, max(0, (turbo + delta)))
     open(file, "w").write(str(turbo))
 def inc_turbo():
     toggle_turbo(1)
@@ -88,7 +91,7 @@ status.register("file",
         interval=1,
         components={ "case": (case_monitor, "/run/crom/case-monitor") },
         format="Case {case}",
-        # on_leftclick=toggle_rgb,
+        on_leftclick=turn_off_screen,
         on_rightclick=inc_turbo,
         on_middleclick=dec_turbo)
 

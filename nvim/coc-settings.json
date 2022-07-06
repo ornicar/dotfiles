@@ -1,6 +1,6 @@
 {
-  "java.home": "/usr/lib/jvm/java-11-graalvm/",
-  "metals.javaHome": "/usr/lib/jvm/java-11-graalvm/",
+  "java.home": "/usr/lib/jvm/java-17-openjdk/",
+  "metals.javaHome": "/usr/lib/jvm/java-17-openjdk/",
   "metals.enable": true,
   "metals.serverVersion": "0.11.2",
   "list.source.files.excludePatterns": ["**/node_modules/**", "**/node_modules/**/.*", "**/node_modules/**/.*/**"],

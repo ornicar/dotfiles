@@ -30,5 +30,5 @@ if [ $? != 0 ]; then
 fi
 scp $REMOTE:$REMOTE_PATH ./
 ssh $REMOTE rm $REMOTE_PATH
-mongoimport --db lichess --collection $COLL $FILE
+mongoimport --db $DB --collection $COLL $FILE
 rm $FILE

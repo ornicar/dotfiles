@@ -3,15 +3,16 @@
 REMOTE=$1
 DB=$2
 COLL=$3
+LIMIT="${4:-1000000}"
 FILE=$DB-$COLL.export.json
 REMOTE_PATH=/home/mongo-export/$FILE
 
-C="ssh $REMOTE mongoexport --db $DB --collection $COLL --out $REMOTE_PATH --limit 1000000"
+C="ssh $REMOTE mongoexport --db $DB --collection $COLL --out $REMOTE_PATH --limit $LIMIT"
 echo $C
 
 $C
 
-scp $REMOTE:$REMOTE_PATH ./
+rsync -av $REMOTE:$REMOTE_PATH ./
 ssh $REMOTE rm $REMOTE_PATH
 mongoimport --db $DB --collection $COLL $FILE
 rm $FILE

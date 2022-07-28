@@ -120,7 +120,7 @@ draw_bold_text_with_bright_colors: false
 schemes:
   one_dark: &dark
     primary:
-      background: '#24272a'
+      background: '#212427'
       foreground: '#abb2bf'
     normal:
       # NOTE: Use '#131613' for the `black` color if you'd like to see

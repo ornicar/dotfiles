@@ -2,7 +2,7 @@
 
 sudo modprobe usbnet
 
-for i in 1 2 3 4; do
+for i in 1 2 3 4 5 6 7 8; do
 
   device="enp0s20f0u$i"
   pidfile="/run/dhcpcd-$device.pid"
@@ -15,7 +15,7 @@ for i in 1 2 3 4; do
   if [ -f $pidfile ]; then
     echo "Already connected."
   else
-    sudo ifconfig $device up
+    sudo ip link set $device up
     sudo dhcpcd -B $device
     if [ $? -eq 0 ]; then
       sudo cp /home/thib/.scripts/resolv.conf /etc/resolv.conf

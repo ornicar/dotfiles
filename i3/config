@@ -29,7 +29,7 @@ bindsym XF86AudioMute exec ~/.scripts/music toggle
 bindsym XF86AudioLowerVolume exec ~/.scripts/music down
 bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
 # bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 # bindsym XF86AudioNext exec mpc next
 
 bindsym $mod+m exec ~/.scripts/mpvopen

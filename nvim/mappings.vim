@@ -61,6 +61,8 @@ inoremap <Tab> <C-x><C-o>
 " Fast save (also clears the search)
 map <C-e> :nohl<cr>:w<cr>
 imap <C-e> <esc>:nohl<cr>:w<cr>
+map <C-S-E> :nohl<cr>:noa w<cr>
+imap <C-S-E> <esc>:nohl<cr>:noa w<cr>
 
 " Previous element during omnicomplete (<C-e> is used for fast save)
 imap <expr> <C-k> pumvisible() ? '<C-p>' : '<C-k>'

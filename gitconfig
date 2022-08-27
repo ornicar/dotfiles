@@ -51,6 +51,7 @@
   # 'git push' will push the current branch to its tracking branch
   # the usual default is to push all branches
   default = tracking
+	autoSetupRemote = true
 
 [apply]
   whitespace = nowarn
@@ -96,3 +97,6 @@
 	autoStash = true
 [pull]
 	rebase = false
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

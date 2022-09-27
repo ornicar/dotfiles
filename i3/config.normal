@@ -3,6 +3,9 @@ font pango:MesloLGS NF 18
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
+# https://gist.github.com/lirenlin/9892945
+for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, border pixel 1
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #4b68ad #24272e #73b2e6 #282c34   #4b68ad
 client.focused_inactive #24272e #24272e #73b2e6 #484e50   #282c34   

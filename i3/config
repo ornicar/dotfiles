@@ -11,6 +11,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 default_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # borders, lol
 hide_edge_borders both

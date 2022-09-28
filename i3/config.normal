@@ -12,6 +12,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 default_border pixel 1
 for_window [class="^.*"] border pixel 1
+# https://gist.github.com/lirenlin/9892945
+for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, border pixel 1
 
 # borders, lol
 hide_edge_borders both
@@ -33,7 +35,7 @@ bindsym XF86AudioRaiseVolume exec ~/.scripts/music up
 bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 # bindsym XF86AudioNext exec mpc next
 
-bindsym $mod+m exec ~/.scripts/mpvopen
+# bindsym $mod+m exec ~/.scripts/mpvopen
 bindsym F1 exec systemctl --user restart lila
 
 bindsym F7 exec ~/.scripts/keyboard-dell

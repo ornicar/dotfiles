@@ -1,12 +1,12 @@
 set $mod Mod1
-font pango:MesloLGS NF 18
+font pango:MesloLGS NF 5
 # font pango:DejaVu Sans Mono 10
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4b68ad #24272e #73b2e6 #282c34   #4b68ad
-client.focused_inactive #24272e #24272e #73b2e6 #484e50   #282c34   
-client.unfocused        #282c34 #282c34 #888888 #282c34   #282c34   
+client.focused          #4b68ad #24272e #24272e #282c34   #4b68ad
+client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34   
+client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34   
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -183,6 +183,7 @@ bindsym $mod+Shift+r mode "resize"
 bindsym $mod+r exec ~/.scripts/redshift-toggle
 
 bar {
+  font pango:MesloLGS NF 18
   # mode hide
   # hidden_state hide
   # modifier $mod

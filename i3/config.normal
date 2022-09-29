@@ -14,7 +14,7 @@ default_border pixel 1
 default_border pixel 1
 for_window [class="^.*"] border pixel 1
 # https://gist.github.com/lirenlin/9892945
-for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, border pixel 1
+for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, move position 3000px 2118px
 
 # borders, lol
 hide_edge_borders both

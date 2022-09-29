@@ -11,7 +11,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 default_border pixel 1
-default_border pixel 1
 for_window [class="^.*"] border pixel 1
 # https://gist.github.com/lirenlin/9892945
 for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, move position 3000px 2118px
@@ -33,7 +32,7 @@ bindsym F9 exec ~/.scripts/music down
 bindsym F10 exec ~/.scripts/music up
 bindsym F11 exec playerctl -p spotify play-pause
 bindsym F12 exec playerctl -p spotify next
-bindsym Mod1+F12 exec playerctl -p spotify position 20+
+bindsym Mod1+F12 exec ~/.scripts/music copy-current
 # bindsym XF86AudioPrev exec mpc prev
 # bindsym XF86AudioPlay exec mpc toggle
 # bindsym XF86AudioNext exec mpc next

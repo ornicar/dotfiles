@@ -34,7 +34,7 @@ link Xresources ~/.Xresources
 link xcolors ~/.xcolors
 link mpd ~/.config/mpd
 mkdir -p ~/.i3
-link i3/config ~/.i3/config
+link i3/config ~/.i3/config.normal
 link i3/status ~/.i3/status
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json

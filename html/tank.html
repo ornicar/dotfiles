@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>Fish Tank</title>
+  <style>* { margin: 0; background: black; overflow: hidden; }</style>
+</head>
+<body>
+  <img id="img" src="http://192.168.1.21:8080/video" width="102%">
+  <script>
+    const img = document.getElementById('img'),
+    videoSrc = img.getAttribute('src'), imageSrc = 'https://i.imgur.com/QLNjmKU.jpg';
+    const isPlaying = () => img.getAttribute('src') == videoSrc;
+    const play = p => img.setAttribute('src', p ? videoSrc : imageSrc);
+    img.addEventListener('click', () => play(!isPlaying()));
+    document.addEventListener('visibilitychange', () => play(!document['hidden']) , false);
+  </script>
+</body>
+</html>

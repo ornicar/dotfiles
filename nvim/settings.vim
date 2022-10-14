@@ -2,6 +2,8 @@
 
 let g:mapleader = ","
 
+set mouse=                        " a mouse in vim! heresy!
+
 set autoread                      " Automatically read a file that has changed on disk
 
 set clipboard=unnamedplus         " Alias unnamed register to the + register, which is the X Window clipboard.

@@ -16,5 +16,11 @@ return require('packer').startup(function(use)
   use 'jremmen/vim-ripgrep'
   use 'stefandtw/quickfix-reflector.vim'
   use 'rust-lang/rust.vim'
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      { "hrsh7th/cmp-nvim-lsp" },
+    },
+  })
   use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 end)

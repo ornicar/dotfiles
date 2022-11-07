@@ -1,39 +1,49 @@
-function map(mode, shortcut, command, opts)
-  vim.api.nvim_set_keymap(mode, shortcut, command, opts or {})
+function map(mode, lhs, rhs, opts)
+  local options = { noremap = true }
+  if opts then
+    options = vim.tbl_extend("force", options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 -- Colemak
 
 -- next -> down
-map('n', 'n', 'j', { noremap = true })
+map('n', 'n', 'j')
+map('v', 'n', 'j')
 -- Faster viewport scrolling
-map('n', 'N', '3j', { noremap = true })
+map('n', 'N', '3j')
+map('v', 'N', '3j')
 -- down -> next
-map('n', 'j', 'n', { noremap = true })
+map('n', 'j', 'n')
+map('v', 'j', 'n')
 -- join lines -> previous
-map('n', 'J', 'N', { noremap = true })
+map('n', 'J', 'N')
 -- new mapping for join
-map('n', '<leader>j', 'J', { noremap = true })
+map('n', '<leader>j', 'J')
 
 -- end -> up
-map('n', 'e', 'k', { noremap = true })
+map('n', 'e', 'k')
+map('v', 'e', 'k')
 -- Faster viewport scrolling
-map('n', 'E', '3k', { noremap = true })
+map('n', 'E', '3k')
+map('v', 'E', '3k')
 -- up -> end
-map('n', 'k', 'e', { noremap = true })
+map('n', 'k', 'e')
+map('v', 'k', 'e')
 -- program -> end inclusive
-map('n', 'K', 'E', { noremap = true })
+map('n', 'K', 'E')
 
 -- Colemak end
 
 map('n', '<leader>sm', ':source $MYVIMRC<cr>')
 
-map('n', 'H', '^', { noremap = true })
-map('n', 'L', '$', { noremap = true })
+map('n', 'H', '^')
+map('n', 'L', '$')
 map('n', '!', ':!')
 
 -- Toggle nowrap
-map('n', '<leader>nw', ':set nowrap!<cr>', { silent = true, noremap = true })
+map('n', '<leader>nw', ':set nowrap!<cr>', { silent = true })
 
 -- Close other windows
 map('n', '<leader>wo', ':only<cr>')
@@ -56,7 +66,7 @@ map('n', '<leader>wD', ':!rm %<cr>:bd!<cr>')
 map('n', '<leader>cp', ':let @*=@%<cr>:let @+=@%<cr>')
 
 -- Yank from the cursor to the end of the line, to be consistent with C and D.
-map('n', 'Y', 'y$', { noremap = true })
+map('n', 'Y', 'y$')
 
 -- Use space as " shortcut
 map('n', '<space>', '"')
@@ -76,16 +86,16 @@ map('n', '<leader>ss', ':%s/\v')
 map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
 
 -- Use perl regex style
-map('n', '/', '/\v', { noremap = true })
-map('v', '/', '/\v', { noremap = true })
-map('n', '?', '?\v', { noremap = true })
-map('v', '?', '?\v', { noremap = true })
+map('n', '/', '/\v')
+map('v', '/', '/\v')
+map('n', '?', '?\v')
+map('v', '?', '?\v')
 
 -- Search to quickfix
 map('n', '<leader>rg', ':Rg<space>')
 
 -- Open omnicomplete with tab
-map('i', '<Tab>', '<C-x><C-o>', { noremap = true })
+map('i', '<Tab>', '<C-x><C-o>')
 
 -- Fast save (also clears the search)
 map('n', '<C-e>', ':nohl<cr>:w<cr>')
@@ -99,13 +109,13 @@ map('i', '<C-S-E>', '<esc>:nohl<cr>:noa w<cr>')
 map('i', '<expr>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
 
 -- Reselect text that was just pasted with ,v
-map('n', '<leader>v', 'V`]', { noremap = true })
+map('n', '<leader>v', 'V`]')
 
 -- wordwise yank from line above
 -- imap('<C-Y>', '<C-C>:let @z = @"<cr>mz
 --       \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
 --       \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
---       \`zp:let @" = @z<cr>a\', { noremap = true, silent = true })
+--       \`zp:let @" = @z<cr>a\', { silent = true })
 
 -- Don't use Ex mode; use Q for console mode
 map('n', 'Q', 'q:')
@@ -117,7 +127,7 @@ map('n', 'Q', 'q:')
 map('n', '<leader>%', ':!chmod +x %<cr>')
 
 -- Expand current filed dir in console mode
-map('c', '%%', "<C-R>=expand('%:h').'/'<cr>", { noremap = true })
+map('c', '%%', "<C-R>=expand('%:h').'/'<cr>")
 
 -- Jump to line AND col
-map('n', "'", '`', { noremap = true })
+map('n', "'", '`')

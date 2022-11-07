@@ -19,6 +19,6 @@ vim.g.netrw_liststyle = 3
 
 -- === lazygit ===
 
-map('n', '<leader>gg', ':LazyGit<cr>', { noremap = true, silent = true })
+map('n', '<leader>gg', ':LazyGit<cr>', { silent = true })
 
 vim.g.lazygit_floating_window_scaling_factor = 1

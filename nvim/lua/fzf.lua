@@ -11,11 +11,11 @@ require'fzf-lua'.setup {
   }
 }
 
-map('n', '<leader>ms', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
-map('n', '<leader>mb', "<cmd>lua require('fzf-lua').buffers()<CR>", { noremap = true, silent = true })
-map('n', '<leader>mr', ":FzfLua files cwd=<C-R>=expand('%:h')<CR><CR>", { noremap = true, silent = true })
-map('n', '<leader>a', "<cmd>lua require('fzf-lua').live_grep_native()<CR>", { noremap = true, silent = true })
-map('n', '<leader>za', "mA:FzfLua grep_cword<CR>", { noremap = true, silent = true })
-map('n', '<leader>zr', "mA:Rg <C-R>=expand('<cword>')<CR><CR>", { noremap = true, silent = true })
+map('n', '<leader>ms', "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+map('n', '<leader>mb', "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+map('n', '<leader>mr', ":FzfLua files cwd=<C-R>=expand('%:h')<CR><CR>", { silent = true })
+map('n', '<leader>a', "<cmd>lua require('fzf-lua').live_grep_native()<CR>", { silent = true })
+map('n', '<leader>za', "mA:FzfLua grep_cword<CR>", { silent = true })
+map('n', '<leader>zr', "mA:Rg <C-R>=expand('<cword>')<CR><CR>", { silent = true })
 
-map('n', '<leader>H', ':FzfLua help_tags<cr>', { noremap = true })
+map('n', '<leader>H', ':FzfLua help_tags<cr>')

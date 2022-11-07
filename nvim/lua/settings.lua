@@ -49,4 +49,5 @@ vim.opt.cmdwinheight = 12               -- Larger console window
 -- save edit position
 vim.cmd([[
   autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
+  au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
 ]])

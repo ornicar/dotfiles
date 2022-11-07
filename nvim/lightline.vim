@@ -29,22 +29,4 @@ let g:lightline = {
       \ }
 
 " register compoments:
-call lightline#coc#register()
-
-" function! CocFullDiagnostics() abort
-"   let diagnostics = CocAction('diagnosticList')
-"   if type(diagnostics) == v:t_list
-"     let errors = []
-"     let warnings = []
-"     for diagnostic in diagnostics
-"       if diagnostic['severity'] == 'Error'
-"         call add(errors, diagnostic)
-"       endif
-"       if diagnostic['severity'] == 'Warning'
-"         call add(warnings, diagnostic)
-"       endif
-"     endfor
-"     return " E " . string(len(errors)) . " W " . string(len(warnings))
-"     endif
-"   endif
-" endfunction
+" call lightline#coc#register()

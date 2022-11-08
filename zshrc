@@ -25,6 +25,7 @@ if [[ "$TERM" == "alacritty" ]]; then
 fi
 
 source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh
 
 # Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/
 bindkey '^E' fzf-history-widget

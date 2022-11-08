@@ -7,8 +7,8 @@
 <body>
   <img id="img" src="http://192.168.1.21:8080/video" width="102%">
   <script>
-    const sleepAfterInactivity = 10 * 60 * 1000,
-    sleepAfterHidden = 15 * 1000,
+    const sleepAfterInactivity = 15 * 60 * 1000,
+    sleepAfterHidden = 30 * 1000,
     img = document.getElementById('img'),
     videoSrc = img.getAttribute('src'), imageSrc = 'https://i.imgur.com/QLNjmKU.jpg',
     isPlaying = () => img.getAttribute('src') == videoSrc,

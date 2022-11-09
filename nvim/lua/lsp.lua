@@ -4,7 +4,7 @@ local map = vim.keymap.set
 vim.opt.signcolumn = "yes"
 
 -- LSP mappings, also see telescope.lua
-map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>cl", [[<cmd>lua vim.lsp.codelens.run()<CR>]])
 map("n", "<leader>sh", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
@@ -23,25 +23,17 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'cssls', 'dartls' }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     capabilities = capabilities,
   }
 end
 
-require'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   capabilities = capabilities,
   settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-    },
-    -- Do not send telemetry data containing a randomized but unique identifier
-    telemetry = {
-      enable = false,
-    },
+    Lua = { diagnostics = { globals = {'vim'}, }, },
+    telemetry = { enable = false, },
   }
 }

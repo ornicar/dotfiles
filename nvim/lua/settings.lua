@@ -11,6 +11,7 @@ vim.opt.showmode = false -- lightline shows the mode
 
 vim.opt.wildmode = 'list:full'            -- Complete files like a shell.
 vim.opt.wildignore = '.git,.hg,*.o,*.a,*.class,*.jar,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/*,**/logs/*,**/target/*,*.hi,tags,**/dist/*,**/public/**/vendor/**,**/public/vendor/**,**/node_modules/**'
+vim.opt.wildignorecase = true
 
 vim.opt.number = true                        -- Show line numbers.
 vim.opt.ruler = true                         -- Show cursor position.

@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["lsp-format.nvim"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
+    url = "https://github.com/lukas-reineke/lsp-format.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

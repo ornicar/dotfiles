@@ -1,59 +1,49 @@
-function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
 -- Colemak
 
 -- next -> down
-map('n', 'n', 'j')
-map('v', 'n', 'j')
+map('', 'n', 'j')
 -- Faster viewport scrolling
-map('n', 'N', '3j')
-map('v', 'N', '3j')
+map('', 'N', '3j')
 -- down -> next
 map('n', 'j', 'n')
-map('v', 'j', 'n')
 -- join lines -> previous
 map('n', 'J', 'N')
 -- new mapping for join
 map('n', '<leader>j', 'J')
 
 -- end -> up
-map('n', 'e', 'k')
-map('v', 'e', 'k')
+map('', 'e', 'k')
 -- Faster viewport scrolling
-map('n', 'E', '3k')
-map('v', 'E', '3k')
+map('', 'E', '3k')
 -- up -> end
 map('n', 'k', 'e')
 map('v', 'k', 'e')
 -- program -> end inclusive
 map('n', 'K', 'E')
 
+map('', 'H', '^')
+map('', 'L', '$')
+
 -- Colemak end
 
 map('n', '<leader>sm', ':source $MYVIMRC<cr>')
 
-map('n', 'H', '^')
-map('n', 'L', '$')
 map('n', '!', ':!')
 
 -- Toggle nowrap
 map('n', '<leader>nw', ':set nowrap!<cr>', { silent = true })
 
 -- Close other windows
-map('n', '<leader>wo', ':only<cr>')
+map('', '<leader>wo', ':only<cr>')
 
 -- Move in windows
-map('n', '<leader>ww', ':wincmd w<cr>')
-map('n', '<leader>wh', ':wincmd h<cr>')
-map('n', '<leader>wj', ':wincmd j<cr>')
-map('n', '<leader>wk', ':wincmd k<cr>')
-map('n', '<leader>wl', ':wincmd l<cr>')
+map('', '<leader>ww', ':wincmd w<cr>')
+map('', '<leader>wh', ':wincmd h<cr>')
+map('', '<leader>wj', ':wincmd j<cr>')
+map('', '<leader>wk', ':wincmd k<cr>')
+map('', '<leader>wl', ':wincmd l<cr>')
 
 -- Previous buffer
 map('n', '<leader>md', ':b#<cr>')
@@ -86,42 +76,36 @@ map('n', '<leader>ss', ':%s/\v')
 map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
 
 -- Use perl regex style
-map('n', '/', '/\v')
-map('v', '/', '/\v')
-map('n', '?', '?\v')
-map('v', '?', '?\v')
+-- map('n', '/', "/\v")
+-- map('v', '/', "/\v")
+-- map('n', '?', "?\v")
+-- map('v', '?', "?\v")
 
 -- Search to quickfix
-map('n', '<leader>rg', ':Rg<space>')
+-- map('n', '<leader>rg', ':Rg<space>')
 
 -- Open omnicomplete with tab
 map('i', '<Tab>', '<C-x><C-o>')
 
 -- Fast save (also clears the search)
-map('n', '<C-e>', ':nohl<cr>:w<cr>')
-map('i', '<C-e>', ':nohl<cr>:w<cr>')
+map('', '<C-e>', ':nohl<cr>:w<cr>')
 map('i', '<C-e>', '<esc>:nohl<cr>:w<cr>')
-map('n', '<C-S-E>', ':nohl<cr>:noa w<cr>')
-map('i', '<C-S-E>', ':nohl<cr>:noa w<cr>')
+map('', '<C-S-E>', ':nohl<cr>:noa w<cr>')
 map('i', '<C-S-E>', '<esc>:nohl<cr>:noa w<cr>')
 
 -- Previous element during omnicomplete (<C-e> is used for fast save)
-map('i', '<expr>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
+map('i', '<C-k>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
 
 -- Reselect text that was just pasted with ,v
 map('n', '<leader>v', 'V`]')
 
 -- wordwise yank from line above
--- imap('<C-Y>', '<C-C>:let @z = @"<cr>mz
---       \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
---       \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
---       \`zp:let @" = @z<cr>a\', { silent = true })
-
--- Don't use Ex mode; use Q for console mode
-map('n', 'Q', 'q:')
-
--- Fast file renaming
--- nmap R :let _pfn="<C-R>=expand("%:t")<cr>"<cr>rename <C-R>=expand(_pfn)<cr><esc>^w
+vim.cmd([[
+inoremap <silent> <C-Y> <C-C>:let @z = @"<cr>mz
+      \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
+      \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
+      \`zp:let @" = @z<cr>a
+]])
 
 -- Make the current file executable
 map('n', '<leader>%', ':!chmod +x %<cr>')

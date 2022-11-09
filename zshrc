@@ -25,6 +25,7 @@ if [[ "$TERM" == "alacritty" ]]; then
 fi
 
 source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh
 
 source /usr/share/nvm/init-nvm.sh
 

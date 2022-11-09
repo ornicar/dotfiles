@@ -4,6 +4,7 @@ case $1 in
   "down")   for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-volume "$i" -4%; done;;
   "up")     for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-volume "$i" +4%; done;;
   "toggle") for i in $(pacmd list-sinks | grep index | sed 's/[^0-9]//g'); do pactl set-sink-mute "$i" toggle; done;;
-  "copy-current") echo "Current song: $(mpc current)" | xclip -selection clipboard;;
+  "current") echo "$(playerctl -p spotify metadata artist) - $(playerctl -p spotify metadata album) - $(playerctl -p spotify metadata title)";;
+  "copy-current") echo "Current song: $(~/.scripts/music current)" | xclip -selection clipboard;;
   *)
 esac

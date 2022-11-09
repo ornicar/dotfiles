@@ -4,6 +4,8 @@ gui:
   sidePanelWidth: 0.333
   mainPanelSplitMode: 'horizontal' # one of 'horizontal' | 'flexible' | 'vertical'
   showFileTree: false # ` to toggle
+  theme:
+    lightTheme: false # For terminals with a light background
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} {{filename}}'

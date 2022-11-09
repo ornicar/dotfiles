@@ -1,9 +1,11 @@
 require'packer'.startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'neovim/nvim-lspconfig'
   use 'rakr/vim-one'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'machakann/vim-sandwich'
   -- use 'tpope/vim-fugitive' -- Git blame

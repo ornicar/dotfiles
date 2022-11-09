@@ -1,6 +1,5 @@
 map = vim.keymap.set
 
-map('n', '<leader>ws', '<cmd>lua require"metals".hover_worksheet()<CR>')
 map('n', '<leader>mc', '<cmd>lua require"telescope".extensions.metals.commands()<CR>')
 
 local metals_config = require("metals").bare_config()

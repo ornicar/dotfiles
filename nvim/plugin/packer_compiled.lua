@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-metals"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-metals",
@@ -179,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/targets.vim",
     url = "https://github.com/wellle/targets.vim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -188,11 +198,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gist"] = {
     loaded = true,
@@ -208,11 +213,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
-  },
-  ["vim-ripgrep"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
-    url = "https://github.com/jremmen/vim-ripgrep"
   },
   ["vim-sandwich"] = {
     loaded = true,

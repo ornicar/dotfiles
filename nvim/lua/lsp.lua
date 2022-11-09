@@ -13,8 +13,12 @@ map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 map("n", "[c", vim.diagnostic.goto_prev)
 map("n", "]c", vim.diagnostic.goto_next)
 
--- local on_attach = function(client, bufnr)
--- end
+local lsp_format = require("lsp-format")
+lsp_format.setup {}
+
+local on_attach = function(client, bufnr)
+  lsp_format.on_attach(client, bufnr)
+end
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -26,14 +30,16 @@ local lspconfig = require('lspconfig')
 local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'cssls', 'dartls' }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
+    on_attach = on_attach,
     capabilities = capabilities,
   }
 end
 
 lspconfig.sumneko_lua.setup {
+  on_attach = on_attach,
   capabilities = capabilities,
   settings = {
-    Lua = { diagnostics = { globals = {'vim'}, }, },
+    Lua = { diagnostics = { globals = { 'vim' }, }, },
     telemetry = { enable = false, },
   }
 }

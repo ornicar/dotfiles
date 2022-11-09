@@ -28,3 +28,17 @@ require'packer'.startup(function(use)
   use {'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } }
 end)
 
+require('theme')
+require('settings')
+require('mappings')
+require('functions')
+require('project')
+require('lsp')
+
+require('plugins.lualine')
+require('plugins.cmp')
+require('plugins.metals')
+require('plugins.treesitter')
+require('plugins.telescope')
+require('plugins.unimpaired')
+require('plugins.others')

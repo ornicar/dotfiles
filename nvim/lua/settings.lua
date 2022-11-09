@@ -26,13 +26,13 @@ vim.opt.scrolloff = 8                   -- Show 7 lines of context around the cu
 vim.opt.sidescrolloff = 8
 
 
--- vim.opt.shortmess = vim.opt.shortmess .. 'c'  -- Do not show "match xx of xx" and other messages during auto-completion
+vim.opt.shortmess = 'filnxtToOFc'  -- Do not show "match xx of xx" and other messages during auto-completion
 
 vim.opt.backup = false                      -- Don't make a backup before overwriting a file.
 vim.opt.writebackup = false                 -- And again.
 vim.opt.swapfile = false                    -- Use an SCM instead of swap files
 
--- vim.opt.fillchars = 'fold:\ ,diff:⣿'
+vim.opt.listchars      = 'tab:╶─╴,lead:·,trail:▒,eol:↲,extends:►,precedes:◄'
 
 -- Tabs and indenting
 vim.opt.expandtab = true
@@ -46,8 +46,11 @@ vim.opt.gdefault = true                      -- replace all occurences of the li
 
 vim.opt.cmdwinheight = 12               -- Larger console window
 
+vim.opt.grepprg     = 'rg --vimgrep --no-heading --smart-case'
+
 -- save edit position
 vim.cmd([[
   autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
   au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
+  autocmd BufWritePre *.scala,*.sbt lua vim.lsp.buf.formatting_sync()
 ]])

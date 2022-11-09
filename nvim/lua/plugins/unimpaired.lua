@@ -11,5 +11,5 @@
 -- nmap [<space> :<C-U>call <SID>BlankUp()<CR>
 -- nmap ]<space> :<C-U>call <SID>BlankDown()<CR>
 
-map('n', '[q', ':<C-U>:cprev<CR>')
-map('n', ']q', ':<C-U>:cnext<CR>')
+vim.keymap.set('n', '[q', ':<C-U>:cprev<CR>')
+vim.keymap.set('n', ']q', ':<C-U>:cnext<CR>')

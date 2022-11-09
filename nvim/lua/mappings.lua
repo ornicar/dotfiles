@@ -1,10 +1,4 @@
-function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = vim.keymap.set
 
 -- Colemak
 
@@ -29,12 +23,13 @@ map('v', 'k', 'e')
 -- program -> end inclusive
 map('n', 'K', 'E')
 
+map('', 'H', '^')
+map('', 'L', '$')
+
 -- Colemak end
 
 map('n', '<leader>sm', ':source $MYVIMRC<cr>')
 
-map('n', 'H', '^')
-map('n', 'L', '$')
 map('n', '!', ':!')
 
 -- Toggle nowrap
@@ -87,7 +82,7 @@ map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
 -- map('v', '?', "?\v")
 
 -- Search to quickfix
-map('n', '<leader>rg', ':Rg<space>')
+-- map('n', '<leader>rg', ':Rg<space>')
 
 -- Open omnicomplete with tab
 map('i', '<Tab>', '<C-x><C-o>')
@@ -105,16 +100,12 @@ map('i', '<C-k>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
 map('n', '<leader>v', 'V`]')
 
 -- wordwise yank from line above
--- imap('<C-Y>', '<C-C>:let @z = @"<cr>mz
---       \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
---       \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
---       \`zp:let @" = @z<cr>a\', { silent = true })
-
--- Don't use Ex mode; use Q for console mode
-map('', 'Q', 'q:')
-
--- Fast file renaming
--- nmap R :let _pfn="<C-R>=expand("%:t")<cr>"<cr>rename <C-R>=expand(_pfn)<cr><esc>^w
+vim.cmd([[
+inoremap <silent> <C-Y> <C-C>:let @z = @"<cr>mz
+      \:exec 'normal!' (col('.')==1 && col('$')==1 ? 'k' : 'kl')<cr>
+      \:exec (col('.')==col('$')-1 ? 'let @" = @_' : 'normal! yw')<cr>
+      \`zp:let @" = @z<cr>a
+]])
 
 -- Make the current file executable
 map('n', '<leader>%', ':!chmod +x %<cr>')

@@ -74,20 +74,50 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-git"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-git",
+    url = "https://github.com/petertriho/cmp-git"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["fzf-lua"] = {
+  ["cmp-path"] = {
     loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/fzf-lua",
-    url = "https://github.com/ibhagwan/fzf-lua"
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-treesitter"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-treesitter",
+    url = "https://github.com/ray-x/cmp-treesitter"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -103,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-metals",
     url = "https://github.com/scalameta/nvim-metals"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -143,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/targets.vim",
     url = "https://github.com/wellle/targets.vim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,

@@ -1,3 +1,5 @@
+local map = vim.keymap.set
+
 -- === Plug rust ===
 
 -- let g:rustfmt_autosave = 0 " coc does it

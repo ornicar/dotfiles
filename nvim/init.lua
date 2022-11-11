@@ -31,12 +31,6 @@ require 'packer'.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use { 'scalameta/nvim-metals' }
   use 'lukas-reineke/lsp-format.nvim'
-  use {
-    'pwntester/octo.nvim',
-    config = function()
-      require "octo".setup()
-    end
-  }
 end)
 
 require('theme')

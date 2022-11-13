@@ -31,6 +31,7 @@ require 'packer'.startup(function(use)
   -- use 'mfussenegger/nvim-dap'
   use { 'scalameta/nvim-metals' }
   use 'lukas-reineke/lsp-format.nvim'
+  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 end)
 
 require('theme')

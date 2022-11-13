@@ -40,6 +40,7 @@ end)
 
 require('theme')
 require('settings')
+require('colemak')
 require('mappings')
 require('functions')
 require('project')

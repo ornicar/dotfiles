@@ -1,21 +1,25 @@
 local map = vim.keymap.set
 
 -- next -> down
-map('n', 'j')
+map('', 'n', 'j')
 -- Faster viewport scrolling
-map('N', '3j')
+map('', 'N', '3j')
 -- down -> next
-map('j', 'n')
+map('n', 'j', 'n')
 -- join lines -> previous
-map('J', 'N')
+map('n', 'J', 'N')
 -- new mapping for join
-map('<leader>j', 'J')
+map('n', '<leader>j', 'J')
 
 -- end -> up
-map('e', 'k')
+map('', 'e', 'k')
 -- Faster viewport scrolling
-map('E', '3k')
+map('', 'E', '3k')
 -- up -> end
-map('k', 'e')
+map('n', 'k', 'e')
+map('v', 'k', 'e')
 -- program -> end inclusive
-map('K', 'E')
+map('n', 'K', 'E')
+
+map('', 'H', '^')
+map('', 'L', '$')

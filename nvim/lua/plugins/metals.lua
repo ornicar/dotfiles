@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map('n', '<leader>mc', '<cmd>lua require"telescope".extensions.metals.commands()<CR>')
+map('n', '<leader>mc', function() require "telescope".extensions.metals.commands() end)
 
 -- dap
 -- map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])

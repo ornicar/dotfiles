@@ -6,6 +6,7 @@ require 'packer'.startup(function(use)
   use 'rakr/vim-one'
   use { 'nvim-lualine/lualine.nvim' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/nvim-treesitter-context'
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'

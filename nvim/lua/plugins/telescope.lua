@@ -24,8 +24,8 @@ map("n", "<space>o", builtin.lsp_document_symbols)
 map("n", "<space>s", builtin.lsp_dynamic_workspace_symbols)
 map("n", "<space>d", builtin.diagnostics)
 
--- :help telescope.setup()
-require 'telescope'.setup {
+local tel = require 'telescope'
+tel.setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -58,4 +58,4 @@ require 'telescope'.setup {
     }
   }
 }
-require 'telescope'.load_extension 'fzf'
+tel.load_extension 'fzf'

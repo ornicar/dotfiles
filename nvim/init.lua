@@ -9,7 +9,7 @@ require 'packer'.startup(function(use)
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
-  use 'machakann/vim-sandwich'
+  use 'kylechui/nvim-surround'
   -- use 'tpope/vim-fugitive' -- Git blame
   use 'tpope/vim-rhubarb' -- GBrowse
   use 'tpope/vim-vinegar' -- file browser
@@ -28,7 +28,7 @@ require 'packer'.startup(function(use)
     requires = { { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" },
       { "saadparwaiz1/cmp_luasnip" }, { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" } },
   })
-  use 'mfussenegger/nvim-dap'
+  -- use 'mfussenegger/nvim-dap'
   use { 'scalameta/nvim-metals' }
   use 'lukas-reineke/lsp-format.nvim'
 end)

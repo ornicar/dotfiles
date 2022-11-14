@@ -11,8 +11,8 @@ require 'packer'.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'kylechui/nvim-surround'
-  use 'tpope/vim-rhubarb' -- GBrowse
-  use 'tpope/vim-vinegar' -- file browser
+  -- use 'tpope/vim-rhubarb' -- GBrowse
+  use 'nvim-tree/nvim-tree.lua'
   use 'tpope/vim-commentary'
   use 'danro/rename.vim'
   use 'mattn/vim-gist'
@@ -29,7 +29,7 @@ require 'packer'.startup(function(use)
       { "saadparwaiz1/cmp_luasnip" }, { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" } },
   })
   -- use 'mfussenegger/nvim-dap'
-  use { 'scalameta/nvim-metals' }
+  use 'scalameta/nvim-metals'
   use 'lukas-reineke/lsp-format.nvim'
   use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
   use 'petertriho/nvim-scrollbar'
@@ -53,5 +53,6 @@ require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
 require('plugins.trouble')
+require('plugins.tree')
 require('plugins.unimpaired')
 require('plugins.others')

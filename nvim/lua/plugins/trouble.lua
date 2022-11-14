@@ -2,7 +2,7 @@ local map = vim.keymap.set
 local trouble = require("trouble")
 trouble.setup {
   height = 8,
-  auto_open = true, -- automatically open the list when you have diagnostics
+  auto_open = false, -- automatically open the list when you have diagnostics
   auto_close = true, -- automatically close the list when you have no diagnostics
 }
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true })

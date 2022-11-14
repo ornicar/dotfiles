@@ -3,7 +3,7 @@ require 'packer'.startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'neovim/nvim-lspconfig'
-  use 'rakr/vim-one'
+  use 'folke/tokyonight.nvim'
   use { 'nvim-lualine/lualine.nvim' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'

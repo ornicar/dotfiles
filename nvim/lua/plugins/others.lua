@@ -15,10 +15,6 @@ vim.g.BufstopKeys = "arstneio"
 
 map('n', '<leader>mt', ':BufstopMode<CR>')
 
--- === Plug vinegar ===
-
-vim.g.netrw_liststyle = 3
-
 -- === lazygit ===
 
 map('n', '<leader>gg', ':LazyGit<cr>', { silent = true })

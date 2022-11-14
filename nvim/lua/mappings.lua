@@ -8,14 +8,10 @@ map('n', '!', ':!')
 map('n', '<leader>nw', ':set nowrap!<cr>', { silent = true })
 
 -- Close other windows
-map('', '<leader>wo', ':only<cr>')
+map('n', '<leader>wo', ':only<cr>')
 
 -- Move in windows
-map('', '<leader>ww', ':wincmd w<cr>')
-map('', '<leader>wh', ':wincmd h<cr>')
-map('', '<leader>wj', ':wincmd j<cr>')
-map('', '<leader>wk', ':wincmd k<cr>')
-map('', '<leader>wl', ':wincmd l<cr>')
+map('n', '<tab>', ':wincmd w<cr>')
 
 -- Previous buffer
 map('n', '<leader>md', ':b#<cr>')

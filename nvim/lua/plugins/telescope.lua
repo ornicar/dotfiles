@@ -17,8 +17,8 @@ map('n', '<leader>vo', builtin.vim_options, {})
 map('n', '<leader>b', builtin.current_buffer_fuzzy_find, {})
 
 -- lsp
-map("n", "gd", builtin.lsp_definitions)
-map("n", "gr", builtin.lsp_references)
+-- map("n", "gd", builtin.lsp_definitions)
+-- map("n", "gr", builtin.lsp_references)
 map("n", "gi", builtin.lsp_implementations)
 map("n", "<space>o", builtin.lsp_document_symbols)
 map("n", "<space>s", builtin.lsp_dynamic_workspace_symbols)

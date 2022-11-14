@@ -11,7 +11,6 @@ require 'packer'.startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'kylechui/nvim-surround'
-  -- use 'tpope/vim-fugitive' -- Git blame
   use 'tpope/vim-rhubarb' -- GBrowse
   use 'tpope/vim-vinegar' -- file browser
   use 'tpope/vim-commentary'
@@ -36,6 +35,7 @@ require 'packer'.startup(function(use)
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'kevinhwang91/nvim-hlslens'
+  use 'folke/trouble.nvim'
 end)
 
 require('theme')
@@ -52,5 +52,6 @@ require('plugins.metals')
 require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
+require('plugins.trouble')
 require('plugins.unimpaired')
 require('plugins.others')

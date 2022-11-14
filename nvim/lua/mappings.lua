@@ -52,8 +52,12 @@ map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
 -- Search to quickfix
 -- map('n', '<leader>rg', ':Rg<space>')
 
+-- better indenting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 -- Open omnicomplete with tab
-map('i', '<Tab>', '<C-x><C-o>')
+-- map('i', '<Tab>', '<C-x><C-o>')
 
 -- Fast save (also clears the search)
 map('', '<C-e>', ':nohl<cr>:w<cr>')

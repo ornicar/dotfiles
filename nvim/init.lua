@@ -36,12 +36,14 @@ require 'packer'.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'kevinhwang91/nvim-hlslens'
   use 'folke/trouble.nvim'
+  use 'rcarriga/nvim-notify'
 end)
 
 require('theme')
 require('settings')
 require('colemak')
 require('mappings')
+require('commands')
 require('functions')
 require('project')
 require('lsp')

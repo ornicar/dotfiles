@@ -26,6 +26,10 @@ vim.g.lazygit_floating_window_scaling_factor = 1
 require("nvim-surround").setup({
 })
 
+--- notify
+
+vim.notify = require("notify")
+
 --- lsp lines
 
 require("lsp_lines").setup({

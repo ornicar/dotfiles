@@ -37,6 +37,7 @@ require 'packer'.startup(function(use)
   use 'kevinhwang91/nvim-hlslens'
   use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
+  use 'RRethy/vim-illuminate'
 end)
 
 require('theme')

@@ -21,6 +21,10 @@ map('n', '<leader>gg', ':LazyGit<cr>', { silent = true })
 
 vim.g.lazygit_floating_window_scaling_factor = 1
 
+--- gitsigns
+
+map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<cr>')
+
 --- surround
 
 require("nvim-surround").setup({

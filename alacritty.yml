@@ -168,7 +168,7 @@ schemes:
 
   tokyo: &tokyo
     primary:
-      background: '0x1a1b1e'
+      background: '0x1a1b1f'
       # background: '#212427'
       foreground: '0xc0caf5'
     normal:

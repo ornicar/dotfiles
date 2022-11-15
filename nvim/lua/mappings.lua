@@ -53,8 +53,8 @@ map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
 -- map('n', '<leader>rg', ':Rg<space>')
 
 -- better indenting
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Open omnicomplete with tab
 -- map('i', '<Tab>', '<C-x><C-o>')

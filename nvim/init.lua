@@ -34,7 +34,7 @@ require 'packer'.startup(function(use)
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'kevinhwang91/nvim-hlslens'
-  use 'folke/trouble.nvim'
+  -- use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
 end)
@@ -54,7 +54,7 @@ require('plugins.metals')
 require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
-require('plugins.trouble')
+-- require('plugins.trouble')
 require('plugins.tree')
 require('plugins.unimpaired')
 require('plugins.others')

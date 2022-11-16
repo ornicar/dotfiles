@@ -37,6 +37,7 @@ require 'packer'.startup(function(use)
   -- use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
+  use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
 end)
 
 require('theme')

@@ -149,6 +149,16 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-metals",
     url = "https://github.com/scalameta/nvim-metals"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
+  ["nvim-retrail"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-retrail",
+    url = "https://github.com/zakharykaplan/nvim-retrail"
+  },
   ["nvim-scrollbar"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
@@ -158,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -234,15 +249,10 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-gist",
     url = "https://github.com/mattn/vim-gist"
   },
-  ["vim-rhubarb"] = {
+  ["vim-illuminate"] = {
     loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
-    url = "https://github.com/tpope/vim-rhubarb"
-  },
-  ["vim-vinegar"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-vinegar",
-    url = "https://github.com/tpope/vim-vinegar"
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   }
 }
 

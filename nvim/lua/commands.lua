@@ -41,5 +41,12 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
+local base_group = vim.api.nvim_create_augroup("base", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
+  command = "set wrap linebreak nolist spell spelllang=en_us complete+=kspell",
+  group = base_group,
+})
+
 -- Highlight on yank
 vim.cmd("au TextYankPost * lua vim.highlight.on_yank {}")

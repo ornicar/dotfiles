@@ -2,6 +2,7 @@ local opt = vim.opt
 
 vim.g.mapleader = ','
 
+opt.mouse = nil
 opt.clipboard = 'unnamedplus' -- Alias unnamed register to the + register, which is the X Window clipboard.
 
 opt.history = 9000 -- Sets how many lines of history VIM has to remember
@@ -51,10 +52,3 @@ opt.gdefault = true -- replace all occurences of the line
 opt.cmdwinheight = 12 -- Larger console window
 
 opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
-
-local base_group = vim.api.nvim_create_augroup("base", { clear = true })
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
-  pattern = { "*.md", "*.txt", "COMMIT_EDITMSG" },
-  command = "set wrap linebreak nolist spell spelllang=en_us complete+=kspell",
-  group = base_group,
-})

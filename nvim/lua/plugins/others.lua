@@ -45,6 +45,11 @@ vim.diagnostic.config({
 require 'hlslens'.setup({})
 
 
+require 'inc_rename'.setup({
+})
+map("n", "<leader>rn", ":IncRename ")
+
+
 require 'yanky'.setup({})
 require 'telescope'.load_extension 'yank_history'
 map("n", "<leader>mp", ":Telescope yank_history<cr>")

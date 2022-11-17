@@ -38,6 +38,7 @@ require 'packer'.startup({ function(use)
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use 'gbprod/yanky.nvim' -- yank ring
   use 'smjonas/inc-rename.nvim' -- LSP rename with preview
+  use 'stevearc/dressing.nvim' -- better default nvim UI elements, using telescope
 end,
   config = {
     autoremove = true,

@@ -7,7 +7,6 @@ require 'packer'.startup({ function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context'
   use { 'kylechui/nvim-surround', config = function() require 'nvim-surround' end }
-  use 'wellle/targets.vim' -- adds various text objects - look for lua
   use 'onsails/lspkind-nvim' -- lsp icons
   use({
     "hrsh7th/nvim-cmp",
@@ -29,13 +28,10 @@ require('theme')
 require('settings')
 require('colemak')
 require('mappings')
-require('commands')
-require('functions')
 
 require('plugins.cmp')
 require('plugins.treesitter')
 require('plugins.scrollbar')
-require('plugins.others')
 
 vim.opt.number = false
 vim.opt.wrap = true

@@ -5,7 +5,6 @@ require 'packer'.startup({ function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'folke/tokyonight.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-context'
   use { 'kylechui/nvim-surround', config = function() require 'nvim-surround' end }
   use 'onsails/lspkind-nvim' -- lsp icons
   use({

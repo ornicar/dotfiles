@@ -54,3 +54,5 @@ vim.diagnostic.config({
 --     vim.diagnostic.show()
 --   end,
 -- })
+
+require 'hlslens'.setup({})

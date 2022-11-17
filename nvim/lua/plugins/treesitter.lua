@@ -1,6 +1,7 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "scala", "typescript", "scss", "rust", "python", "lua", "html", "css", "javascript", "bash", "vim", "yaml", "hocon", "dart" },
+  ensure_installed = { "scala", "typescript", "scss", "rust", "python", "lua", "html", "css", "javascript", "bash", "vim",
+    "yaml", "hocon", "dart", "haskell" },
   highlight = {
     enable = true,
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

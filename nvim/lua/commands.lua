@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- apply lua config (doesn't work lol)
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.lua",
   callback = function(event)

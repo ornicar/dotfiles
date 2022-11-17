@@ -1,4 +1,4 @@
-require 'packer'.startup(function(use)
+require 'packer'.startup({ function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
@@ -38,7 +38,11 @@ require 'packer'.startup(function(use)
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
-end)
+end,
+  config = {
+    autoremove = true,
+  }
+})
 
 require('theme')
 require('settings')

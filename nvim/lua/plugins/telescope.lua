@@ -45,6 +45,7 @@ tel.setup {
         width = 0.95
       }
     },
+    dynamic_preview_title = true
   },
   pickers = {
   },

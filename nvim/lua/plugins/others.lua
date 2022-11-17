@@ -27,8 +27,7 @@ map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<cr>')
 
 --- surround
 
-require("nvim-surround").setup({
-})
+require("nvim-surround").setup({})
 
 --- notify
 
@@ -36,23 +35,20 @@ vim.notify = require("notify")
 
 --- lsp lines
 
-require("lsp_lines").setup({
-})
+require("lsp_lines").setup({})
 vim.diagnostic.config({
   virtual_text = false, -- disable native error messages
   virtual_lines = true -- show line error messages
 })
--- https://www.reddit.com/r/neovim/comments/w5h9tl/comment/ih9wh9b/?utm_source=reddit&utm_medium=web2x&context=3
--- vim.api.nvim_create_autocmd('InsertEnter', {
---   callback = function()
---     vim.diagnostic.hide()
---   end,
--- })
--- vim.api.nvim_create_autocmd('ModeChanged', {
---   pattern = 'i:*',
---   callback = function()
---     vim.diagnostic.show()
---   end,
--- })
+
 
 require 'hlslens'.setup({})
+
+
+require 'yanky'.setup({})
+require 'telescope'.load_extension 'yank_history'
+map("n", "<leader>mp", ":Telescope yank_history<cr>")
+map({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+map({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+map("n", "<c-n>", "<Plug>(YankyCycleForward)")
+map("n", "<c-p>", "<Plug>(YankyCycleBackward)")

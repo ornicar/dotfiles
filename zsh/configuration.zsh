@@ -14,7 +14,7 @@ export TERMINAL="alacritty"
 export BROWSER="google-chrome-stable"
 export CHROME_EXECUTABLE="google-chrome-stable"
 export EDITOR='nvim'
-export GIT_EDITOR="nvim -u ~/dotfiles/nvim/gitcommit.init.vim"
+export GIT_EDITOR="nvim -u ~/dotfiles/nvim/init.gitcommit.lua"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 

@@ -46,6 +46,7 @@ require 'hlslens'.setup({})
 
 
 require 'inc_rename'.setup({
+  input_buffer_type = "dressing"
 })
 map("n", "<leader>rn", ":IncRename ")
 

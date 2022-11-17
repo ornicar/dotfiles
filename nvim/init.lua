@@ -36,6 +36,7 @@ require 'packer'.startup({ function(use)
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
+  use 'gbprod/yanky.nvim' -- yank ring
 end,
   config = {
     autoremove = true,

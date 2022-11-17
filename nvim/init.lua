@@ -26,7 +26,7 @@ require 'packer'.startup({ function(use)
     requires = { { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" },
       { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" } },
   })
-  -- use 'mfussenegger/nvim-dap'
+  use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'
   use 'lukas-reineke/lsp-format.nvim'
   use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'

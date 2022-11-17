@@ -28,7 +28,7 @@ require("nvim-tree").setup({
         { key = "p", action = "preview" },
         -- { key = "K", action = "first_sibling" },
         -- { key = "J", action = "last_sibling" },
-        { key = "I", action = "toggle_git_ignored" },
+        { key = "i", action = "toggle_git_ignored" },
         { key = "H", action = "toggle_dotfiles" },
         -- { key = "U", action = "toggle_custom" },
         { key = "R", action = "refresh" },
@@ -47,7 +47,7 @@ require("nvim-tree").setup({
         -- { key = "[c", action = "prev_git_item" },
         -- { key = "]e", action = "next_diag_item" },
         -- { key = "]c", action = "next_git_item" },
-        { key = "-", action = "dir_up" },
+        { key = "h", action = "dir_up" },
         { key = "s", action = "system_open" },
         -- { key = "f", action = "live_filter" },
         -- { key = "F", action = "clear_live_filter" },
@@ -71,4 +71,4 @@ require("nvim-tree").setup({
   },
 })
 
-vim.keymap.set('n', '<leader>t', ':NvimTreeFocus<cr>')
+vim.keymap.set('n', '-', ':NvimTreeToggle<cr>')

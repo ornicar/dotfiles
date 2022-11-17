@@ -6,22 +6,21 @@ require 'packer'.startup({ function(use)
   use 'folke/tokyonight.nvim'
   use { 'nvim-lualine/lualine.nvim' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-context'
+  use 'nvim-treesitter/nvim-treesitter-context' -- display context (fun, class) at the top
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'kylechui/nvim-surround'
-  -- use 'tpope/vim-rhubarb' -- GBrowse
   use 'nvim-tree/nvim-tree.lua'
   use 'tpope/vim-commentary'
   use 'danro/rename.vim'
   use 'mattn/vim-gist'
   use 'ornicar/play2vim'
-  use 'wellle/targets.vim'
+  use 'wellle/targets.vim' -- adds various text objects - vimscript
   -- use 'jremmen/vim-ripgrep'
   use 'stefandtw/quickfix-reflector.vim'
   use 'rust-lang/rust.vim'
-  use 'onsails/lspkind-nvim'
+  use 'onsails/lspkind-nvim' -- lsp icons
   use({
     "hrsh7th/nvim-cmp",
     requires = { { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" },
@@ -34,7 +33,6 @@ require 'packer'.startup({ function(use)
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'kevinhwang91/nvim-hlslens'
-  -- use 'folke/trouble.nvim'
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace

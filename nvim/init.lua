@@ -4,10 +4,10 @@ require 'packer'.startup({ function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'neovim/nvim-lspconfig'
   use 'folke/tokyonight.nvim'
-  use { 'nvim-lualine/lualine.nvim' }
+  use 'nvim-lualine/lualine.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-context' -- display context (fun, class) at the top
-  use { 'nvim-telescope/telescope.nvim' }
+  use 'nvim-telescope/telescope.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'kylechui/nvim-surround'

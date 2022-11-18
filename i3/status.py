@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import subprocess
+import os
 
 from i3pystatus import Status
 
@@ -45,8 +45,14 @@ status.register("load",
 #     warn_percentage=80,
 #     alert_percentage=90)
 
+hwmon_file=''
+for i in range(1, 9):
+    hwmon_file = f'/sys/devices/platform/coretemp.0/hwmon/hwmon{i}/temp1_input'
+    if os.path.isfile(hwmon_file):
+        break
+
 status.register("temp",
-    file="/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+    file=hwmon_file,
     interval=2,
     alert_temp=100,
     color=green,

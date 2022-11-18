@@ -15,7 +15,6 @@ require 'packer'.startup({ function(use)
   use 'tpope/vim-commentary'
   use 'danro/rename.vim'
   use 'mattn/vim-gist'
-  use 'ornicar/play2vim'
   use 'wellle/targets.vim' -- adds various text objects - vimscript
   -- use 'jremmen/vim-ripgrep'
   use 'stefandtw/quickfix-reflector.vim'

@@ -24,8 +24,8 @@ require 'packer'.startup({ function(use)
   use 'L3MON4D3/LuaSnip' -- snippets
   use({
     "hrsh7th/nvim-cmp",
-    requires = { { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" },
-      { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" }, { "saadparwaiz1/cmp_luasnip" } },
+    requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
+      "petertriho/cmp-git", "ray-x/cmp-treesitter", "saadparwaiz1/cmp_luasnip" },
   })
   use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'
@@ -60,6 +60,7 @@ require('plugins.metals')
 require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
+-- require('plugins.trouble')
 require('plugins.tree')
 require('plugins.unimpaired')
 require('plugins.others')

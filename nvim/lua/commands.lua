@@ -41,3 +41,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     end
   end,
 })
+
+-- play2
+vim.cmd([[
+au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
+au BufRead,BufNewFile */conf/*.conf setf hocon
+]])

@@ -23,8 +23,8 @@ require 'packer'.startup({ function(use)
   use 'onsails/lspkind-nvim' -- lsp icons
   use({
     "hrsh7th/nvim-cmp",
-    requires = { { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-path" },
-      { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" } },
+    requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
+      "petertriho/cmp-git", "ray-x/cmp-treesitter" },
   })
   use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'

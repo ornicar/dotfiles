@@ -26,23 +26,13 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'cssls' }
+local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'cssls', 'dartls' }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
-
-lspconfig.dartls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    dart = {
-      lineLength = 100
-    }
-  }
-}
 
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,

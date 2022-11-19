@@ -4,6 +4,7 @@ local cmp = require 'cmp'
 local cmp_buffer = require 'cmp_buffer'
 local luasnip = require 'luasnip'
 local lspkind = require 'lspkind'
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local get_bufnrs_unless_huge = function()
   local buf = vim.api.nvim_get_current_buf()

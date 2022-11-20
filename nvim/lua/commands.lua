@@ -26,24 +26,31 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- apply lua config (doesn't work lol)
-vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "*.lua",
-  callback = function(event)
-    ---@type string
-    local file = event.match
-    local mod = file:match("/lua/(.*)%.lua")
-    if mod then
-      mod = mod:gsub("/", ".")
-    end
-    if mod then
-      package.loaded[mod] = nil
-      vim.notify("Reloaded " .. mod, vim.log.levels.INFO, { title = "nvim" })
-    end
-  end,
-})
+--vim.api.nvim_create_autocmd("BufWritePost", {
+--  pattern = "*.lua",
+--  callback = function(event)
+--    ---@type string
+--    local file = event.match
+--    local mod = file:match("/lua/(.*)%.lua")
+--    if mod then
+--      mod = mod:gsub("/", ".")
+--    end
+--    if mod then
+--      package.loaded[mod] = nil
+--      vim.notify("Reloaded " .. mod, vim.log.levels.INFO, { title = "nvim" })
+--    end
+--  end,
+--})
 
--- play2
+
 vim.cmd([[
-au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
-au BufRead,BufNewFile */conf/*.conf setf hocon
+  " play2
+  au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
+  au BufRead,BufNewFile */conf/*.conf setf hocon
+
+  " reload config
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost init.lua source <afile> | PackerCompile
+  augroup end
 ]])

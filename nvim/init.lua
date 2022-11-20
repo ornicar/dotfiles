@@ -1,3 +1,5 @@
+require 'startup'
+
 require 'packer'.startup({ function(use)
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -11,7 +13,6 @@ require 'packer'.startup({ function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'kdheepak/lazygit.nvim'
   use 'kylechui/nvim-surround'
-  use 'nvim-tree/nvim-tree.lua'
   use 'tpope/vim-commentary'
   use 'danro/rename.vim'
   use 'mattn/vim-gist'
@@ -29,7 +30,6 @@ require 'packer'.startup({ function(use)
   use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'
   use 'lukas-reineke/lsp-format.nvim'
-  use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'kevinhwang91/nvim-hlslens'
@@ -38,6 +38,15 @@ require 'packer'.startup({ function(use)
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use 'gbprod/yanky.nvim' -- yank ring
   use 'smjonas/inc-rename.nvim' -- LSP rename with preview
+  use({ "nvim-tree/nvim-tree.lua", opt = true, cmd = { "NvimTreeToggle" },
+    setup = function()
+      vim.keymap.set('n', '-', ':NvimTreeToggle<cr>')
+    end,
+    config = function()
+      require("plugins.tree")
+    end,
+  })
+  use 'dstein64/vim-startuptime'
 end,
   config = {
     autoremove = true,
@@ -60,6 +69,5 @@ require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
 -- require('plugins.trouble')
-require('plugins.tree')
 require('plugins.unimpaired')
 require('plugins.others')

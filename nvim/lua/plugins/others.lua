@@ -25,28 +25,17 @@ vim.g.lazygit_floating_window_scaling_factor = 1
 
 map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<cr>')
 
---- surround
 
 require("nvim-surround").setup({})
 
---- notify
 
 vim.notify = require("notify")
-
---- lsp lines
-
-require("lsp_lines").setup({})
-vim.diagnostic.config({
-  virtual_text = false, -- disable native error messages
-  virtual_lines = true -- show line error messages
-})
 
 
 require 'hlslens'.setup({})
 
 
-require 'inc_rename'.setup({
-})
+require 'inc_rename'.setup({})
 map("n", "<leader>rn", ":IncRename ")
 
 

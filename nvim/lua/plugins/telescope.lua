@@ -13,7 +13,7 @@ map('n', 'q/', builtin.search_history, {})
 map('n', '<leader>man', builtin.man_pages, {})
 map('n', '<leader>qf', builtin.quickfix, {})
 map('n', '<leader>qh', builtin.quickfixhistory, {})
-map('n', '<leader>vo', builtin.vim_options, {})
+-- map('n', '<leader>vo', builtin.vim_options, {})
 map('n', '<leader>b', builtin.current_buffer_fuzzy_find, {})
 
 -- lsp

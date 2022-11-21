@@ -45,11 +45,9 @@ require 'packer'.startup({ function(use)
       require("plugins.tree")
     end,
   })
-  use 'dstein64/vim-startuptime'
+  -- use 'dstein64/vim-startuptime'
 end,
-  config = {
-    autoremove = true,
-  }
+  config = { autoremove = true }
 })
 
 require('theme')
@@ -67,6 +65,5 @@ require('plugins.metals')
 require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
--- require('plugins.trouble')
 require('plugins.unimpaired')
 require('plugins.others')

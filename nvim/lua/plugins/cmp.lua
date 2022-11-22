@@ -85,6 +85,11 @@ cmp.setup {
   --     return lspkind.cmp_format({ with_text = false })(entry, vim_item)
   --   end
   -- },
+  snippet = {
+    expand = function()
+      -- error('snippet engine is not configured.')
+    end,
+  },
 }
 
 -- Set configuration for specific filetype.

@@ -21,11 +21,10 @@ require 'packer'.startup({ function(use)
   use 'stefandtw/quickfix-reflector.vim'
   use 'rust-lang/rust.vim'
   use 'onsails/lspkind-nvim' -- lsp icons
-  use 'L3MON4D3/LuaSnip' -- snippets
   use({
     "hrsh7th/nvim-cmp",
     requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
-      "petertriho/cmp-git", "ray-x/cmp-treesitter", "saadparwaiz1/cmp_luasnip" },
+      "petertriho/cmp-git", "ray-x/cmp-treesitter" },
   })
   use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'

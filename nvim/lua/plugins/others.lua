@@ -50,3 +50,9 @@ map({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
 map({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
 map("n", "<c-n>", "<Plug>(YankyCycleForward)")
 map("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+map("n", "]p", "<Plug>(YankyPutIndentAfterLinewise)")
+map("n", "[p", "<Plug>(YankyPutIndentBeforeLinewise)")
+
+
+map("n", "<leader>rg", ":Rg ")
+map('n', '<leader>wg', ":Rg <C-R><C-W> ")

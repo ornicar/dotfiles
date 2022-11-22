@@ -11,7 +11,8 @@ map('n', '<leader>nw', ':set nowrap!<cr>', { silent = true })
 map('n', '<leader>wo', ':only<cr>')
 
 -- Move in windows
-map('n', '<tab>', ':wincmd w<cr>')
+-- map('n', '<tab>', ':wincmd w<cr>')
+map('n', '<leader>ww', ':wincmd w<cr>')
 
 -- Previous buffer
 map('n', '<leader>md', ':b#<cr>')

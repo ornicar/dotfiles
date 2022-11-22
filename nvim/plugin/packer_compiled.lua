@@ -253,11 +253,6 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["trouble.nvim"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -272,6 +267,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-ripgrep"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
+    url = "https://github.com/jremmen/vim-ripgrep"
   },
   ["vim-startuptime"] = {
     loaded = true,

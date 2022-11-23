@@ -86,7 +86,8 @@ cmp.setup {
   --   end
   -- },
   snippet = {
-    expand = function(args)
+    expand = function()
+      -- error('snippet engine is not configured.')
     end,
   },
 }

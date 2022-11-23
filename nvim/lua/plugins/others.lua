@@ -54,5 +54,6 @@ map("n", "]p", "<Plug>(YankyPutIndentAfterLinewise)")
 map("n", "[p", "<Plug>(YankyPutIndentBeforeLinewise)")
 
 
+-- ripgrep
 map("n", "<leader>rg", ":Rg ")
 map('n', '<leader>wg', ":Rg <C-R><C-W> ")

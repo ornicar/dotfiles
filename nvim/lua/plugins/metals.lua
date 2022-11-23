@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 map('n', '<leader>mm', function() require "telescope".extensions.metals.commands() end)
-map('n', '<leader>mc', ":MetalsCompileCascade<cr>")
+map('n', '<leader>mc', function() require("metals").compile_cascade() end)
 
 -- dap
 map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])

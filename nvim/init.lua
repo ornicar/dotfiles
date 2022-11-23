@@ -17,7 +17,7 @@ require 'packer'.startup({ function(use)
   use 'danro/rename.vim'
   use 'mattn/vim-gist'
   use 'wellle/targets.vim' -- adds various text objects - vimscript
-  -- use 'jremmen/vim-ripgrep'
+  use 'jremmen/vim-ripgrep'
   use 'stefandtw/quickfix-reflector.vim'
   use 'rust-lang/rust.vim'
   use 'onsails/lspkind-nvim' -- lsp icons

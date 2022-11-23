@@ -258,6 +258,11 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-ripgrep"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
+    url = "https://github.com/jremmen/vim-ripgrep"
+  },
   ["yanky.nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/yanky.nvim",

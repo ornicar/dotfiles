@@ -263,11 +263,6 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-ripgrep",
     url = "https://github.com/jremmen/vim-ripgrep"
   },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-startuptime",
-    url = "https://github.com/dstein64/vim-startuptime"
-  },
   ["yanky.nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/yanky.nvim",

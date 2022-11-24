@@ -25,7 +25,7 @@ end,
   config = {
     autoremove   = true,
     package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack-gitcommit'),
-    compile_path = util.join_paths(vim.fn.stdpath('config'), 'plugin', 'packer_compiled.gitcommit.lua'),
+    compile_path = util.join_paths(vim.fn.stdpath('data'), 'plugin', 'packer_compiled.gitcommit.lua'),
   }
 })
 

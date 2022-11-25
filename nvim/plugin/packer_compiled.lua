@@ -248,6 +248,11 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-gh-line"] = {
+    loaded = true,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-gh-line",
+    url = "https://github.com/ruanyl/vim-gh-line"
+  },
   ["vim-gist"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/vim-gist",

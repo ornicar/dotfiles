@@ -31,6 +31,7 @@ require 'packer'.startup({ function(use)
   use 'lukas-reineke/lsp-format.nvim'
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
+  use 'ruanyl/vim-gh-line' -- git browse (<leader>gh)
   use 'kevinhwang91/nvim-hlslens'
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'

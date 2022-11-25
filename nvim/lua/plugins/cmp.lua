@@ -3,6 +3,13 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 local cmp = require 'cmp'
 local cmp_buffer = require 'cmp_buffer'
 local lspkind = require 'lspkind'
+local luasnip = require 'luasnip'
+require 'luasnip.loaders.from_vscode'.lazy_load({
+  include = { 'scala', 'typescript' },
+})
+require 'luasnip.loaders.from_vscode'.lazy_load({
+  paths = { './snippets' }
+})
 
 local get_bufnrs_unless_huge = function()
   local buf = vim.api.nvim_get_current_buf()
@@ -18,6 +25,7 @@ cmp.setup {
   -- },
   sources = {
     { name = "nvim_lsp" },
+    { name = "luasnip" },
     { name = 'buffer', option = {
       keyword_length = 2,
       option = {
@@ -47,18 +55,22 @@ cmp.setup {
     ['<C-Space>'] = cmp.mapping.complete { behavior = cmp.ConfirmBehavior.Replace, select = true, },
     -- ["<C-n>"] = cmp.mapping.select_next_item(),
     -- ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping(function()
+    ['<C-n>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
-        -- fallback()
+        fallback()
       end
     end, { 'i', 's' }),
-    ['<C-k>'] = cmp.mapping(function()
+    ['<C-k>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
-        -- fallback()
+        fallback()
       end
     end, { 'i', 's' }),
   }),
@@ -69,6 +81,7 @@ cmp.setup {
         buffer = "[Buf]",
         treesitter = "[Tree]",
         nvim_lsp = "[LSP]",
+        luasnip = "[Snip]",
       })
     }),
   },
@@ -86,8 +99,8 @@ cmp.setup {
   --   end
   -- },
   snippet = {
-    expand = function()
-      -- error('snippet engine is not configured.')
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
     end,
   },
 }

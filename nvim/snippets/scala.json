@@ -1,0 +1,58 @@
+{
+  "opaque_string": {
+    "prefix": "opastring",
+    "body": [
+      "opaque type ${1:TypeName} = String",
+      "object $1 extends OpaqueString[$1]"
+    ],
+    "description": "OpaqueString"
+  },
+  "opaque_int": {
+    "prefix": "opaint",
+    "body": [
+      "opaque type ${1:TypeName} = Int",
+      "object $1 extends OpaqueInt[$1]"
+    ],
+    "description": "OpaqueInt"
+  },
+  "opaque_double": {
+    "prefix": "opadouble",
+    "body": [
+      "opaque type ${1:TypeName} = Double",
+      "object $1 extends OpaqueDouble[$1]"
+    ],
+    "description": "OpaqueDouble"
+  },
+  "opaque_float": {
+    "prefix": "opafloat",
+    "body": [
+      "opaque type ${1:TypeName} = Float",
+      "object $1 extends OpaqueFloat[$1]"
+    ],
+    "description": "OpaqueFloat"
+  },
+  "opaque_date": {
+    "prefix": "opadate",
+    "body": [
+      "opaque type ${1:TypeName} = DateTime",
+      "object $1 extends OpaqueDateTime[$1]"
+    ],
+    "description": "OpaqueDateTime"
+  },
+  "opaque_yesno": {
+    "prefix": "opayesno",
+    "body": [
+      "opaque type ${1:TypeName} = Boolean",
+      "object $1 extends YesNo[$1]"
+    ],
+    "description": "OpaqueYesNo"
+  },
+  "opaque_total": {
+    "prefix": "opatotal",
+    "body": [
+      "opaque type ${1:TypeName} = ${2:ImplName}",
+      "object $1 extends TotalWrapper[$1, $2]"
+    ],
+    "description": "TotalWrapper"
+  }
+}

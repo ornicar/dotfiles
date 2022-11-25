@@ -1,0 +1,11 @@
+{
+  "name": "thib-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "scala",
+        "path": "./scala.json"
+      }
+    ]
+  }
+}

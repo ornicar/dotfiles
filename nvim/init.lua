@@ -45,6 +45,7 @@ require 'packer'.startup({ function(use)
       require("plugins.tree")
     end,
   })
+  use({ "eandrju/cellular-automaton.nvim", opt = true, cmd = { "CellularAutomaton" } })
   -- use 'dstein64/vim-startuptime'
 end,
   config = { autoremove = true }

@@ -8,6 +8,8 @@ map("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<leader>cl", [[<cmd>lua vim.lsp.codelens.run()<CR>]])
 map("n", "<leader>sh", [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>:w<cr>")
+map("n", "<leader>rn", function() vim.lsp.buf.rename() end)
+
 -- map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>")
 map("n", "[c", vim.diagnostic.goto_prev)
 map("n", "]c", vim.diagnostic.goto_next)

@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["inc-rename.nvim"] = {
-    loaded = true,
-    path = "/home/thib/.local/share/nvim/site/pack/packer/start/inc-rename.nvim",
-    url = "https://github.com/smjonas/inc-rename.nvim"
-  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/lazygit.nvim",

@@ -35,10 +35,6 @@ vim.notify = require("notify")
 require 'hlslens'.setup({})
 
 
-require 'inc_rename'.setup({})
-map("n", "<leader>rn", ":IncRename ")
-
-
 require 'yanky'.setup({
   highlight = {
     timer = 200

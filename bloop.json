@@ -1,5 +1,4 @@
 {
   "javaHome": "/usr/lib/jvm/java-17-openjdk",
-  "javaOptions": ["-Xmx24G"],
-  "supportedScalaVersions": ["2.13.8"]
+  "javaOptions": ["-Xmx20G"]
 }

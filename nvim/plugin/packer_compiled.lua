@@ -74,6 +74,14 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cellular-automaton.nvim"] = {
+    commands = { "CellularAutomaton" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/thib/.local/share/nvim/site/pack/packer/opt/cellular-automaton.nvim",
+    url = "https://github.com/eandrju/cellular-automaton.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/thib/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -279,6 +287,7 @@ time([[Setup for nvim-tree.lua]], false)
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CellularAutomaton lua require("packer.load")({'cellular-automaton.nvim'}, { cmd = "CellularAutomaton", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 

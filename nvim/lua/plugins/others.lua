@@ -50,3 +50,19 @@ map("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 -- ripgrep
 map("n", "<leader>rg", ":Rg ")
 map('n', '<leader>wg', ":Rg <C-R><C-W> ")
+
+
+require('illuminate').configure({
+  -- providers: provider used to get references in the buffer, ordered by priority
+  providers = {
+    'treesitter',
+    'regex',
+  },
+  -- delay: delay in milliseconds
+  delay = 100,
+  -- under_cursor: whether or not to illuminate under the cursor
+  under_cursor = true,
+  -- large_file_cutoff: number of lines at which to use large_file_config
+  -- The `under_cursor` option is disabled when this cutoff is hit
+  large_file_cutoff = 9999,
+})

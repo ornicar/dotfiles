@@ -101,15 +101,15 @@ cmp.setup.filetype('gitcommit', {
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline({
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-  }),
-  sources = {
-    { name = 'buffer' }
-  }
-})
+-- cmp.setup.cmdline({ '/', '?' }, {
+--   mapping = cmp.mapping.preset.cmdline({
+--     ["<C-k>"] = cmp.mapping.select_prev_item(),
+--     ["<C-n>"] = cmp.mapping.select_next_item(),
+--   }),
+--   sources = {
+--     { name = 'buffer' }
+--   }
+-- })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 -- cmp.setup.cmdline(':', {

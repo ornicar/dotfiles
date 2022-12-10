@@ -5,7 +5,7 @@ Wants=lila-fishnet.service
 Wants=lila-watch.service
 
 [Service]
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila -m play.core.server.ProdServerStart -c /home/thib/lila/.bloop
+ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila -m lila.app.ServerStart -c /home/thib/lila/.bloop
 ExecStop=fuser -k 9663/tcp -TERM
 
 [Install]

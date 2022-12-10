@@ -29,6 +29,7 @@ require 'packer'.startup({ function(use)
   use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'
   use 'lukas-reineke/lsp-format.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim' -- hook into nvim LSP
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'ruanyl/vim-gh-line' -- git browse (<leader>gh)

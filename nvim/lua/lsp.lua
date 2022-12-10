@@ -29,13 +29,21 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'rust_analyzer', 'pyright', 'tsserver', 'cssls', 'dartls' }
+local servers = { 'rust_analyzer', 'pyright', 'cssls', 'dartls' }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
+
+lspconfig.tsserver.setup {
+  on_attach = function(client, _)
+    -- we want null-ls/prettier to handle formatting
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+  capabilities = capabilities
+}
 
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
@@ -45,3 +53,14 @@ lspconfig.sumneko_lua.setup {
     telemetry = { enable = false, },
   }
 }
+
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettierd.with({
+      filetypes = { "typescript" },
+    }),
+    -- null_ls.builtins.diagnostics.eslint,
+  },
+  on_attach = on_attach,
+})

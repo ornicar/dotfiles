@@ -62,5 +62,5 @@ null_ls.setup({
     }),
     -- null_ls.builtins.diagnostics.eslint,
   },
-  on_attach = on_attach,
+  on_attach = on_attach, -- async format typescript on save with prettierd
 })

@@ -69,3 +69,8 @@ require('illuminate').configure({
   -- The `under_cursor` option is disabled when this cutoff is hit
   large_file_cutoff = 9999,
 })
+
+
+require('iswap').setup { keys = 'arstdhneio' }
+map("n", "gw", ":ISwapWithRight<cr>")
+map("n", "<leader>is", ":ISwap<cr>")

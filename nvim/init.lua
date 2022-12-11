@@ -26,9 +26,9 @@ require 'packer'.startup({ function(use)
     requires = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
       "petertriho/cmp-git", "ray-x/cmp-treesitter" },
   })
-  use 'mfussenegger/nvim-dap'
   use 'scalameta/nvim-metals'
-  use 'lukas-reineke/lsp-format.nvim'
+  use 'mfussenegger/nvim-dap' -- debugger
+  use 'lukas-reineke/lsp-format.nvim' -- async code formatting
   use 'jose-elias-alvarez/null-ls.nvim' -- hook into nvim LSP
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
@@ -38,13 +38,11 @@ require 'packer'.startup({ function(use)
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use 'gbprod/yanky.nvim' -- yank ring
+  -- use 'mizlan/iswap.nvim' -- swap arguments and things
+  use 'ornicar/iswap.nvim'
   use({ "nvim-tree/nvim-tree.lua", opt = true, cmd = { "NvimTreeToggle" },
-    setup = function()
-      vim.keymap.set('n', '-', ':NvimTreeToggle<cr>')
-    end,
-    config = function()
-      require("plugins.tree")
-    end,
+    setup = function() vim.keymap.set('n', '-', ':NvimTreeToggle<cr>') end,
+    config = function() require("plugins.tree") end,
   })
   use({ "eandrju/cellular-automaton.nvim", opt = true, cmd = { "CellularAutomaton" } })
   -- use 'dstein64/vim-startuptime'

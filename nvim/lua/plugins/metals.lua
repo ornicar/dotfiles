@@ -1,16 +1,16 @@
 local map = vim.keymap.set
 
 map('n', '<leader>mm', function() require "telescope".extensions.metals.commands() end)
-map('n', '<leader>mc', function() require("metals").compile_cascade() end)
+map('n', '<leader>mc', function() require "metals".compile_cascade() end)
 
 -- dap
-map("n", "<leader>dc", [[<cmd>lua require"dap".continue()<CR>]])
-map("n", "<leader>dr", [[<cmd>lua require"dap".repl.toggle()<CR>]])
-map("n", "<leader>dK", [[<cmd>lua require"dap.ui.widgets".hover()<CR>]])
-map("n", "<leader>dt", [[<cmd>lua require"dap".toggle_breakpoint()<CR>]])
-map("n", "<leader>do", [[<cmd>lua require"dap".step_over()<CR>]])
-map("n", "<leader>di", [[<cmd>lua require"dap".step_into()<CR>]])
-map("n", "<leader>dl", [[<cmd>lua require"dap".run_last()<CR>]])
+map("n", "<leader>dc", function() require "dap".continue() end)
+map("n", "<leader>dr", function() require "dap".repl.toggle() end)
+map("n", "<leader>dK", function() require "dap.ui.widgets".hover() end)
+map("n", "<leader>dt", function() require "dap".toggle_breakpoint() end)
+map("n", "<leader>do", function() require "dap".step_over() end)
+map("n", "<leader>di", function() require "dap".step_into() end)
+map("n", "<leader>dl", function() require "dap".run_last() end)
 
 local metals = require 'metals'
 local metals_config = metals.bare_config()

@@ -10,3 +10,4 @@
 .bsp
 project/metals.sbt
 project/project
+**/*.worksheet.sc

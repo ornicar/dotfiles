@@ -38,8 +38,7 @@ require 'packer'.startup({ function(use)
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use 'gbprod/yanky.nvim' -- yank ring
-  -- use 'mizlan/iswap.nvim' -- swap arguments and things
-  use 'ornicar/iswap.nvim'
+  use 'mizlan/iswap.nvim' -- swap arguments and things
   use({ "nvim-tree/nvim-tree.lua", opt = true, cmd = { "NvimTreeToggle" },
     setup = function() vim.keymap.set('n', '-', ':NvimTreeToggle<cr>') end,
     config = function() require("plugins.tree") end,

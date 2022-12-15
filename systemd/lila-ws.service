@@ -1,9 +1,9 @@
 [Unit]
 Description=lila-ws
-Requires=bloop.service
 
 [Service]
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop
+WorkingDirectory=/home/thib/lila-ws
+ExecStart=/usr/share/sbt/bin/sbt --client run
 ExecStop=fuser -k 9664/tcp -TERM
 
 [Install]

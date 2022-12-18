@@ -1,11 +1,12 @@
 [Unit]
 Description=lila
 Wants=lila-ws.service
-Wants=lila-fishnet.service
-Wants=lila-watch.service
+; Wants=lila-fishnet.service
+; Wants=lila-watch.service
 
 [Service]
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila -m lila.app.Lila -c /home/thib/lila/.bloop
+WorkingDirectory=/home/thib/lila
+ExecStart=sbt --client run
 ExecStop=fuser -k 9663/tcp -TERM
 
 [Install]

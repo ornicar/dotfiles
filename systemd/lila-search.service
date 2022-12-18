@@ -1,9 +1,9 @@
 [Unit]
 Description=lila-search
-Requires=bloop.service
 
 [Service]
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-search -m play.core.server.ProdServerStart -c /home/thib/lila-search/.bloop
+WorkingDirectory=/home/thib/lila-search
+ExecStart=sbt --client run
 ExecStop=rm /home/thib/lila-search/RUNNING_PID
 
 [Install]

@@ -56,8 +56,6 @@ link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link zlogin ~/.zlogin
 link alacritty.yml ~/.config/alacritty/alacritty.yml
-mkdir -p ~/.bloop
-link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv
 link mpv.conf ~/.config/mpv/mpv.conf
 mkdir -p ~/.config/mpv/scripts
@@ -71,7 +69,7 @@ link prettierrc.json ~/.prettierrc.json
 link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
 link gtkrc-2.0 ~/.gtkrc-2.0
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
+for s in lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
   link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 for s in daqs; do

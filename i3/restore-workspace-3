@@ -3,7 +3,5 @@ i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
 
 (alacritty --working-directory ~/lila --title "Lila cli 1" &)
 (alacritty --working-directory ~/lila --title "Lila cli 2" &)
-(alacritty --working-directory ~/lila/ui --title "Lila UI" &)
-(alacritty --working-directory ~/lila --title "Lila metals" --command tail -F .metals/metals.log &)
-(alacritty --working-directory ~/lila --title "Lila journal" --command journalctl --user -fu lila -o cat &)
+(alacritty --working-directory ~/lila --title "Lila journal" --command yarn run multilog &)
 (alacritty --working-directory ~/lila --title "Lila vim" --command nvim &)

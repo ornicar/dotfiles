@@ -58,7 +58,7 @@ local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd.with({
-      filetypes = { "typescript", "scss", "css" },
+      filetypes = { "typescript", "scss", "css", "javascript" },
     }),
     -- null_ls.builtins.diagnostics.eslint,
   },

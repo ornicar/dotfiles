@@ -5,3 +5,4 @@ target
 *.hi
 *.o
 nvim/.netrwhist
+nvim/plugin/packer_compiled.lua

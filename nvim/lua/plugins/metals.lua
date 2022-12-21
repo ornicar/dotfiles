@@ -50,7 +50,7 @@ metals_config.on_attach = function(client, bufnr)
   require 'lsp-format'.on_attach(client, bufnr)
 end
 
--- Autocmd that will actually be in charging of starting the whole thing
+-- Autocmd that will actually be in charge of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "scala", "sbt", "java" },

@@ -6,8 +6,8 @@ Wants=lila-ws.service
 
 [Service]
 WorkingDirectory=/home/thib/lila
-ExecStart=/usr/share/sbt/bin/sbt --client run
-ExecStop=fuser -k 9663/tcp -TERM
+ExecStart=/home/thib/.local/share/coursier/bin/sbtn reStart
+ExecStop=/home/thib/.local/share/coursier/bin/sbtn reStop
 
 [Install]
 WantedBy=multi-user.target

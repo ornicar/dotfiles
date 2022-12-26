@@ -26,25 +26,41 @@ metals_config.init_options.statusBarProvider = "on"
 -- cmp integration
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require 'dap'.configurations.scala = {
+local dap = require 'dap'
+dap.configurations.scala = {
   {
     type = "scala",
     request = "launch",
     name = "RunOrTest",
     metals = {
       runType = "runOrTestFile",
-      --args = { "firstArg", "secondArg", "thirdArg" }, -- here just as an example
     },
   },
-  {
-    type = "scala",
-    request = "launch",
-    name = "Test Target",
-    metals = {
-      runType = "testTarget",
-    },
-  },
+  -- {
+  --   type = "scala",
+  --   request = "launch",
+  --   name = "Test Target",
+  --   metals = {
+  --     runType = "testTarget",
+  --   },
+  -- },
+  -- {
+  --   type = "scala",
+  --   request = "launch",
+  --   name = "Run or test with input",
+  --   metals = {
+  --     runType = "runOrTestFile",
+  --     args = function()
+  --       local args_string = vim.fn.input("Arguments: ")
+  --       return vim.split(args_string, " +")
+  --     end,
+  --   },
+  -- }
 }
+dap.listeners.after["event_terminated"]["nvim-metals"] = function()
+  -- vim.notify("Tests have finished!")
+  dap.repl.open()
+end
 
 metals_config.on_attach = function(client, bufnr)
   require 'metals'.setup_dap()

@@ -39,6 +39,9 @@ require 'packer'.startup({ function(use)
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use 'gbprod/yanky.nvim' -- yank ring
   use 'mizlan/iswap.nvim' -- swap arguments and things
+  use({
+    "folke/persistence.nvim", -- persist nvim session state
+  })
   use({ "nvim-tree/nvim-tree.lua", opt = true, cmd = { "NvimTreeToggle" },
     setup = function() vim.keymap.set('n', '-', ':NvimTreeToggle<cr>') end,
     config = function() require("plugins.tree") end,

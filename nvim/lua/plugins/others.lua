@@ -71,8 +71,3 @@ require('illuminate').configure({
 require('iswap').setup { keys = 'arstdhneio' }
 map("n", "gw", ":ISwapWithRight<cr>")
 map("n", "<leader>is", ":ISwap<cr>")
-
-
-require("persistence").setup()
--- load previous session unless vim was ran with arguments
-if next(vim.fn.argv()) == nil then require("persistence").load() end

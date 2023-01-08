@@ -1,4 +1,4 @@
 {
   "javaHome": "/usr/lib/jvm/java-17-openjdk",
-  "javaOptions": ["-Xmx20G"]
+  "javaOptions": ["-Xmx16G"]
 }

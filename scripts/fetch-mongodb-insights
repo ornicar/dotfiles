@@ -1,0 +1,18 @@
+#!/bin/sh
+
+REMOTE=$1
+DB=$2
+COLL=$3
+LIMIT="${4:-1000000}"
+FILE=$DB-$COLL.export.json
+REMOTE_PATH=/home/lichess-db/$FILE
+
+C="ssh $REMOTE mongoexport --port=27018 --db $DB --collection $COLL --out $REMOTE_PATH --limit $LIMIT"
+echo $C
+
+$C
+
+rsync -av $REMOTE:$REMOTE_PATH ./
+ssh $REMOTE rm $REMOTE_PATH
+mongoimport --db $DB --collection $COLL $FILE
+rm $FILE

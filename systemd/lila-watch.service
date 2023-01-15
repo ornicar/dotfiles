@@ -4,6 +4,3 @@ Description=lila-watch
 [Service]
 Environment="DISPLAY=:0"
 ExecStart=/home/thib/dotfiles/scripts/lila-watch
-
-[Install]
-WantedBy=multi-user.target

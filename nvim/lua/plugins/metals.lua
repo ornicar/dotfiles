@@ -6,7 +6,7 @@ map('n', '<leader>mc', function() require "metals".compile_cascade() end)
 -- dap
 map("n", "<leader>dc", function() require "dap".continue() end)
 map("n", "<leader>dr", function() require "dap".repl.toggle() end)
-map("n", "<leader>dK", function() require "dap.ui.widgets".hover() end)
+map("n", "<leader>dk", function() require "dap.ui.widgets".hover() end)
 map("n", "<leader>dt", function() require "dap".toggle_breakpoint() end)
 map("n", "<leader>do", function() require "dap".step_over() end)
 map("n", "<leader>di", function() require "dap".step_into() end)

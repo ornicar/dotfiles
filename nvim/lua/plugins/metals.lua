@@ -19,7 +19,8 @@ metals_config.settings = {
   showImplicitArguments = true,
   showInferredType = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-  serverProperties = { "-Xmx4g" }
+  serverProperties = { "-Xmx4g" },
+  serverVersion = 'latest.snapshot'
 }
 
 metals_config.init_options.statusBarProvider = "on"

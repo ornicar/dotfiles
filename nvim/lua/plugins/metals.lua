@@ -18,7 +18,8 @@ local metals_config = metals.bare_config()
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-  serverProperties = { "-Xmx4g" }
+  serverProperties = { "-Xmx4g" },
+  serverVersion = 'latest.snapshot'
 }
 
 metals_config.init_options.statusBarProvider = "on"

@@ -44,3 +44,7 @@ git-set-upstream() {
 git-revert() {
   git show $1 | git apply -R
 }
+
+gmm() {
+  git merge master --no-edit
+}

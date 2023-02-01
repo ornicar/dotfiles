@@ -38,3 +38,13 @@ git-set-upstream() {
     branch=$(git-current-branch)
     git push $1 $branch --set-upstream
 }
+
+# revert in working tree only
+# https://stackoverflow.com/a/33676571
+git-revert() {
+  git show $1 | git apply -R
+}
+
+gmm() {
+  git merge master --no-edit
+}

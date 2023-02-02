@@ -43,7 +43,6 @@ require 'packer'.startup({ function(use)
     setup = function() vim.keymap.set('n', '-', ':NvimTreeToggle<cr>') end,
     config = function() require("plugins.tree") end,
   })
-  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- folding
   use({ "eandrju/cellular-automaton.nvim", opt = true, cmd = { "CellularAutomaton" } })
   -- use 'dstein64/vim-startuptime'
 end,
@@ -66,5 +65,4 @@ require('plugins.treesitter')
 require('plugins.telescope')
 require('plugins.scrollbar')
 require('plugins.unimpaired')
-require('plugins.ufo')
 require('plugins.others')

@@ -33,7 +33,7 @@ require 'packer'.startup({ function(use)
   use 'petertriho/nvim-scrollbar'
   use 'lewis6991/gitsigns.nvim'
   use 'ruanyl/vim-gh-line' -- git browse (<leader>gh)
-  use 'kevinhwang91/nvim-hlslens'
+  -- use 'kevinhwang91/nvim-hlslens' -- improved search, instance count
   use 'rcarriga/nvim-notify'
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace

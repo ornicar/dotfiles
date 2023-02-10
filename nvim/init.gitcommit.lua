@@ -17,7 +17,6 @@ require 'packer'.startup({ function(use)
     requires = { { "hrsh7th/cmp-buffer" }, { "petertriho/cmp-git" }, { "ray-x/cmp-treesitter" } },
   })
   use 'petertriho/nvim-scrollbar'
-  use 'kevinhwang91/nvim-hlslens'
   use 'RRethy/vim-illuminate'
   use 'zakharykaplan/nvim-retrail' -- trim trail whitespace
   use { "gbprod/yanky.nvim", config = function() require 'yanky'.setup() end }

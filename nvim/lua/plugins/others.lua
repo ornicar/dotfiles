@@ -32,9 +32,6 @@ require("nvim-surround").setup({})
 vim.notify = require("notify")
 
 
-require 'hlslens'.setup({})
-
-
 require 'yanky'.setup({
   highlight = {
     timer = 200

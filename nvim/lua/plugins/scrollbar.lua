@@ -11,12 +11,12 @@ require 'scrollbar'.setup({
   },
   handlers = {
     diagnostic = true,
-    search = true, -- Requires hlslens to be loaded
+    -- search = true, -- Requires hlslens to be loaded
     gitsigns = true, -- Requires gitsigns.nvim
   },
 })
 require 'gitsigns'.setup()
 require 'scrollbar.handlers.gitsigns'.setup()
-require 'scrollbar.handlers.search'.setup({
-  -- hlslens config overrides
-})
+-- require 'scrollbar.handlers.search'.setup({
+--   -- hlslens config overrides
+-- })

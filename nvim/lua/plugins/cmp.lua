@@ -66,9 +66,9 @@ cmp.setup {
     format = lspkind.cmp_format({
       mode = "symbol_text",
       menu = ({
-        buffer = "[Buf]",
-        treesitter = "[Tree]",
         nvim_lsp = "[LSP]",
+        treesitter = "[Tree]",
+        buffer = "[Buf]",
       })
     }),
   },

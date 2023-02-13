@@ -32,35 +32,35 @@ local lspconfig = require('lspconfig')
 local servers = { 'rust_analyzer', 'pyright', 'cssls', 'dartls' }
 for _, server in ipairs(servers) do
   lspconfig[server].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
+      on_attach = on_attach,
+      capabilities = capabilities,
   }
 end
 
 lspconfig.tsserver.setup {
-  on_attach = function(client, _)
-    -- we want null-ls/prettier to handle formatting
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-  capabilities = capabilities
+    on_attach = function(client, _)
+      -- we want null-ls/prettier to handle formatting
+      client.server_capabilities.documentFormattingProvider = false
+    end,
+    capabilities = capabilities
 }
 
 lspconfig.lua_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = { diagnostics = { globals = { 'vim' }, }, },
-    telemetry = { enable = false, },
-  }
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        Lua = { diagnostics = { globals = { 'vim' }, }, },
+        telemetry = { enable = false, },
+    }
 }
 
 local null_ls = require("null-ls")
 null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.prettierd.with({
-      filetypes = { "typescript", "scss", "css", "javascript" },
-    }),
-    -- null_ls.builtins.diagnostics.eslint,
-  },
-  on_attach = on_attach, -- async format typescript on save with prettierd
+    sources = {
+        null_ls.builtins.formatting.prettierd.with({
+            filetypes = { "typescript", "scss", "css", "javascript" },
+        }),
+        -- null_ls.builtins.diagnostics.eslint,
+    },
+    on_attach = on_attach, -- async format typescript on save with prettierd
 })

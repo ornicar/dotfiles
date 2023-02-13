@@ -50,4 +50,4 @@ opt.gdefault = true -- replace all occurences of the line
 
 opt.cmdwinheight = 12 -- Larger console window
 
-opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+opt.grepprg = 'rg --vimgrep --smart-case'

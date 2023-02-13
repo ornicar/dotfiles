@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- next -> down
-map("n", "n", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map("", "n", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 -- Faster viewport scrolling
 map("n", "N", "v:count == 0 ? '3gj' : '3j'", { expr = true, silent = true })
 -- down -> next
@@ -12,7 +12,7 @@ map('n', 'J', 'N')
 map('n', '<leader>j', 'J')
 
 -- end -> up
-map("n", "e", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map("", "e", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- Faster viewport scrolling
 map("n", "E", "v:count == 0 ? '3gk' : '3k'", { expr = true, silent = true })
 -- up -> end

@@ -1,7 +1,5 @@
 local opt = vim.opt
 
-vim.g.mapleader = ','
-
 opt.mouse = nil
 opt.clipboard = 'unnamedplus' -- Alias unnamed register to the + register, which is the X Window clipboard.
 
@@ -13,7 +11,8 @@ opt.undofile = true -- persistent
 opt.showmode = false -- lightline shows the mode
 
 opt.wildmode = 'list:full' -- Complete files like a shell.
-opt.wildignore = '.git,.hg,*.o,*.a,*.class,*.jar,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/*,**/logs/*,**/target/*,*.hi,tags,**/dist/*,**/public/**/vendor/**,**/public/vendor/**,**/node_modules/**'
+opt.wildignore =
+'.git,.hg,*.o,*.a,*.class,*.jar,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,**/cache/*,**/logs/*,**/target/*,*.hi,tags,**/dist/*,**/public/**/vendor/**,**/public/vendor/**,**/node_modules/**'
 opt.wildignorecase = true
 
 opt.number = true -- Show line numbers.

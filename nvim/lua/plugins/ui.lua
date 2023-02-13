@@ -41,4 +41,22 @@ return {
             max_width = function() return math.floor(vim.o.columns * 0.75) end,
         },
     },
+    -- scrollbar
+    {
+        'petertriho/nvim-scrollbar',
+        opts = {
+            show_in_active_only = true,
+            max_lines = 10000, -- disables if no. of lines in buffer exceeds this
+            excluded_buftypes = { "terminal", },
+            excluded_filetypes = { "prompt", "TelescopePrompt", "noice", },
+            handlers = {
+                diagnostic = true,
+                gitsigns = true, -- Requires gitsigns.nvim
+            },
+        },
+        config = function(_, opts)
+          require 'scrollbar'.setup(opts)
+          require 'scrollbar.handlers.gitsigns'.setup()
+        end
+    },
 }

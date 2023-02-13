@@ -47,10 +47,4 @@ vim.cmd([[
   " play2
   au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
   au BufRead,BufNewFile */conf/*.conf setf hocon
-
-  " reload config
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost init.lua source <afile> | PackerCompile
-  augroup end
 ]])

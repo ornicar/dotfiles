@@ -1,4 +1,13 @@
 return {
+    -- colorscheme
+    {
+        'folke/tokyonight.nvim',
+        lazy = true,
+        opts = {},
+    },
+    -- icons
+    { "nvim-tree/nvim-web-devicons", lazy = true },
+    -- status line
     {
         'nvim-lualine/lualine.nvim',
         opts = function(plugin)
@@ -21,4 +30,15 @@ return {
               }
           }
         end
-    }
+    },
+    -- Better `vim.notify()`
+    {
+        "rcarriga/nvim-notify",
+        keys = {},
+        opts = {
+            timeout = 3000,
+            max_height = function() return math.floor(vim.o.lines * 0.75) end,
+            max_width = function() return math.floor(vim.o.columns * 0.75) end,
+        },
+    },
+}

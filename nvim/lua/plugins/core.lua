@@ -1,12 +1,7 @@
 return {
-    'wbthomason/packer.nvim',
+    { "folke/lazy.nvim",                          version = "*" },
     'nvim-lua/plenary.nvim',
-    'kyazdani42/nvim-web-devicons',
     'neovim/nvim-lspconfig',
-    'folke/tokyonight.nvim',
-    'nvim-lualine/lualine.nvim',
-    { 'nvim-treesitter/nvim-treesitter',          run = ':TSUpdate' },
-    'nvim-treesitter/nvim-treesitter-context', -- display context (fun, class) at the top
     'nvim-telescope/telescope.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     'kdheepak/lazygit.nvim',
@@ -31,7 +26,6 @@ return {
     'petertriho/nvim-scrollbar',
     'lewis6991/gitsigns.nvim',
     'ruanyl/vim-gh-line', -- git browse (<leader>gh)
-    'rcarriga/nvim-notify',
     'RRethy/vim-illuminate',
     'zakharykaplan/nvim-retrail', -- trim trail whitespace
     'gbprod/yanky.nvim', -- yank ring

@@ -79,13 +79,13 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Fira Code
+    family: FiraCode Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
   bold:
-    family: MesloLGS NF
+    family: FiraCode Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
 
@@ -96,7 +96,7 @@ font:
     style: Italic
 
   # font size
-  size: 11
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

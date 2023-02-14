@@ -21,8 +21,6 @@ map("n", "!", ":!")
 
 map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
 
--- Previous buffer
--- map('n', '<leader>md', ':b#<cr>')
 -- delete buffer
 map("n", "<leader>wd", ":bd<cr>")
 -- delete buffer and file
@@ -39,12 +37,6 @@ map("n", "<leader>ss", ":%s/\v")
 
 -- Pull word under cursor into LHS of a substitute (for quick search and replace)
 map("n", "<leader>zs", ':%s#<C-r>=expand("<cword>")<cr>#')
-
--- Previous element during omnicomplete (<C-e> is used for fast save)
--- map('i', '<C-k>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
-
--- Reselect text that was just pasted with ,v
-map("n", "<leader>v", "V`]")
 
 -- wordwise yank from line above
 vim.cmd([[

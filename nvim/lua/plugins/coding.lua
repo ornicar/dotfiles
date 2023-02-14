@@ -10,6 +10,11 @@ return {
     },
     ---@type TSConfig
     opts = {
+      highlight = {
+        disable = function(_, bufnr) -- Disable in large buffers
+          return vim.api.nvim_buf_line_count(bufnr) > 10000
+        end,
+      },
       ensure_installed = {
         "scala",
         "haskell",

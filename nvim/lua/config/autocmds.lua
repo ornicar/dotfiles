@@ -4,3 +4,9 @@
 
 -- trim white space
 vim.api.nvim_create_autocmd("BufWritePre", { command = "%s/\\s\\+$//e" })
+
+vim.cmd([[
+  " play2
+  au BufRead,BufNewFile */conf/\(*\|\)routes set filetype=play2-routes
+  au BufRead,BufNewFile */conf/*.conf setf hocon
+]])

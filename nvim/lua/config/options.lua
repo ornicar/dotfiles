@@ -7,7 +7,6 @@ vim.g.maplocalleader = ","
 
 local opt = vim.opt
 
-opt.mouse = nil
 opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 6 -- Lines of context
 opt.backup = false -- Don't make a backup before overwriting a file.

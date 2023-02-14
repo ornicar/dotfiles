@@ -10,7 +10,7 @@ if true then return {} end
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  { "ellisonleao/gruvbox-material.nvim" },
 
   -- Configure LazyVim to load gruvbox
   {
@@ -168,8 +168,8 @@ return {
     opts = function(_, opts)
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
-          "tsx",
-          "typescript",
+        "tsx",
+        "typescript",
       })
     end,
   },

@@ -1,4 +1,7 @@
 return {
+  -- colorscheme
+  { "sainnhe/gruvbox-material" },
+
   -- bufferline
   {
     "akinsho/bufferline.nvim",
@@ -21,6 +24,13 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      opts.sections.lualine_a =
+        { {
+          "mode",
+          fmt = function(str)
+            return str:sub(1, 1)
+          end,
+        } }
       opts.sections.lualine_z = { "g:metals_status" }
     end,
   },

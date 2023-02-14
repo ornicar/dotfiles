@@ -14,4 +14,18 @@ return {
       { "[p", "<Plug>(YankyPutIndentBeforeLinewise)" },
     },
   },
+
+  {
+    "folke/todo-comments.nvim",
+    enabled = false,
+  },
+
+  {
+    "folke/trouble.nvim",
+    opts = {
+      use_diagnostic_signs = true,
+      auto_open = true,
+      auto_close = true,
+    },
+  },
 }

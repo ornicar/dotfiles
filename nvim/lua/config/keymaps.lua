@@ -63,6 +63,10 @@ map("c", "%%", "<C-R>=expand('%:h').'/'<cr>")
 -- Jump to line AND col
 map("n", "'", "`")
 
--- quickfix navigation
-vim.keymap.set("n", "[q", ":<C-U>:cprev<CR>")
-vim.keymap.set("n", "]q", ":<C-U>:cnext<CR>")
+-- trouble navigation
+vim.keymap.set("n", "[q", function()
+  require("trouble").previous({ skip_groups = true, jump = true })
+end)
+vim.keymap.set("n", "]q", function()
+  require("trouble").next({ skip_groups = true, jump = true })
+end)

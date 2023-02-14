@@ -37,7 +37,10 @@ return {
   -- references
   {
     "RRethy/vim-illuminate",
-    opts = { delay = 100 },
+    opts = {
+      delay = 100,
+      large_file_cutoff = 10000,
+    },
   },
 
   -- git signs

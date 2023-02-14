@@ -1,13 +1,28 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
+    keys = function()
+      return {
+        {
+          "<space>e",
+          function()
+            require("neo-tree.command").execute({ dir = require("lazyvim.util").get_root() })
+          end,
+          desc = "Explorer NeoTree (root dir)",
+        },
+        {
+          "<space>E",
+          function()
+            require("neo-tree.command").execute({ dir = vim.loop.cwd() })
+          end,
+          desc = "Explorer NeoTree (cwd)",
+        },
+      }
+    end,
     opts = function(_, opts)
       opts.use_default_mappings = false
       opts.window.mappings = {
-        ["<space>"] = {
-          "toggle_node",
-          nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-        },
+        ["<space>"] = "toggle_node",
         ["<cr>"] = "open",
         ["<esc>"] = "revert_preview",
         ["P"] = { "toggle_preview", config = { use_float = true } },

@@ -6,8 +6,8 @@ return {
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
     keys = {
-      { "<leader>ms", Util.telescope("find_files"), {} },
-      { "<leader>mr", Util.telescope("find_files"), { cwd = vim.fn.expand("%:p:h") } },
+      { "<leader>ms", Util.telescope("find_files (root)"), {} },
+      { "<leader>mr", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       { "<leader>a", Util.telescope("live_grep"), {} },
       -- { "<leader>mb", Util.telescope("buffers"), {} },
       { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
@@ -65,7 +65,6 @@ return {
     config = function(_, opts)
       local tel = require("telescope")
       tel.setup(opts)
-      -- tel.load_extension("fzf")
       tel.load_extension("yank_history")
     end,
   },

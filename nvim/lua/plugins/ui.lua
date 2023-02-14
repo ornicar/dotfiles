@@ -15,6 +15,13 @@ return {
       { "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>" },
       { "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>" },
     },
-    opts = function(_, opts) end,
+  },
+
+  -- statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      opts.sections.lualine_z = { "g:metals_status" }
+    end,
   },
 }

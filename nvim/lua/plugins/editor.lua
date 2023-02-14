@@ -22,10 +22,13 @@ return {
 
   {
     "folke/trouble.nvim",
+    keys = {
+      { "<space>d", "<cmd>TroubleToggle<cr>" },
+    },
     opts = {
       use_diagnostic_signs = true,
-      auto_open = true,
-      auto_close = true,
+      auto_open = false,
+      auto_close = false,
     },
   },
 }

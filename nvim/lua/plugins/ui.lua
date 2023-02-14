@@ -34,4 +34,7 @@ return {
       opts.sections.lualine_z = { "g:metals_status" }
     end,
   },
+
+  -- just 4 fun
+  { "eandrju/cellular-automaton.nvim", cmd = "CellularAutomaton" },
 }

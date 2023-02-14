@@ -27,7 +27,6 @@ return {
       { "gi", Util.telescope("lsp_implementations") },
       { "<space>o", Util.telescope("lsp_document_symbols") },
       { "<space>s", Util.telescope("lsp_dynamic_workspace_symbols") },
-      { "<space>d", Util.telescope("diagnostics") },
     },
     opts = function(_, opts)
       opts.defaults.mappings = {

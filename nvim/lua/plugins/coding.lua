@@ -1,13 +1,18 @@
 return {
+  -- swap arguments and things
+  {
+    "mizlan/iswap.nvim",
+    keys = {
+      { "gw", ":ISwapWithRight<cr>" },
+      { "<leader>is", ":ISwap<cr>" },
+    },
+    opts = {
+      keys = "arstdhneio",
+    },
+  },
+
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    keys = {
-      { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Schrink selection", mode = "x" },
-    },
     ---@type TSConfig
     opts = {
       highlight = {

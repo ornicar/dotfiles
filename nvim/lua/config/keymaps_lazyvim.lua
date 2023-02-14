@@ -85,7 +85,7 @@ map("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, concea
   { desc = "Toggle Conceal" })
 
 -- lazygit
-map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root() }) end,
+map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), size = { width = 1, height = 1 }}) end,
   { desc = "Lazygit (root dir)" })
 map("n", "<leader>gG", function() Util.float_term({ "lazygit" }) end, { desc = "Lazygit (cwd)" })
 

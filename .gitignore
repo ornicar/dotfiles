@@ -6,3 +6,4 @@ target
 *.o
 nvim/.netrwhist
 nvim/plugin/packer_compiled.lua
+nvim/lazy-lock.json

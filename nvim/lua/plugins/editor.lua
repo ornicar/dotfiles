@@ -33,4 +33,38 @@ return {
       auto_close = false,
     },
   },
+
+  -- references
+  {
+    "RRethy/vim-illuminate",
+    opts = { delay = 100 },
+  },
+
+  -- git signs
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = { on_attach = function() end },
+  },
+
+  -- git browse and blame with GitHub
+  {
+    "ruanyl/vim-gh-line",
+    -- keys = {
+    --   { "<leader>ghh", "<Plug>(gh-line)", desc = "Open file in GitHub" },
+    -- },
+    -- config = function()
+    --   vim.g.gh_line_map_default = 0
+    --   vim.g.gh_line_blame_map_default = 0
+    -- end,
+  },
+
+  -- search/replace in multiple files
+  {
+    "windwp/nvim-spectre",
+    -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").open_visual({select_word=true}) end, desc = "Replace current word in files (Spectre)" },
+    },
+  },
 }

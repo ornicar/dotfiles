@@ -2,8 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua         █
 -- Add any additional keymaps here
 
-require 'config.keymaps_colemak'
-require 'config.keymaps_lazyvim'
+require("config.keymaps_colemak")
+require("config.keymaps_lazyvim")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -16,34 +16,34 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map('n', '!', ':!')
+map("n", "!", ":!")
 
-map('n', '<leader>wo', ':only<cr>', { desc = "Close other windows" })
+map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
 
 -- Previous buffer
 -- map('n', '<leader>md', ':b#<cr>')
 -- delete buffer
-map('n', '<leader>wd', ':bd<cr>')
+map("n", "<leader>wd", ":bd<cr>")
 -- delete buffer and file
-map('n', '<leader>wD', ':!rm %<cr>:bd!<cr>')
+map("n", "<leader>wD", ":!rm %<cr>:bd!<cr>")
 
 -- Copy current file path to registers "* and "+
-map('n', '<leader>cp', ':let @*=@%<cr>:let @+=@%<cr>')
+map("n", "<leader>cp", ":let @*=@%<cr>:let @+=@%<cr>")
 
 -- Yank from the cursor to the end of the line, to be consistent with C and D.
-map('n', 'Y', 'y$')
+map("n", "Y", "y$")
 
 -- Start a substitute
-map('n', '<leader>ss', ':%s/\v')
+map("n", "<leader>ss", ":%s/\v")
 
 -- Pull word under cursor into LHS of a substitute (for quick search and replace)
-map('n', '<leader>zs', ':%s#<C-r>=expand("<cword>")<cr>#')
+map("n", "<leader>zs", ':%s#<C-r>=expand("<cword>")<cr>#')
 
 -- Previous element during omnicomplete (<C-e> is used for fast save)
 -- map('i', '<C-k>', [[pumvisible() ? "\<C-p>" : "\<C-k>"]], { expr = true })
 
 -- Reselect text that was just pasted with ,v
-map('n', '<leader>v', 'V`]')
+map("n", "<leader>v", "V`]")
 
 -- wordwise yank from line above
 vim.cmd([[
@@ -54,10 +54,10 @@ inoremap <silent> <C-Y> <C-C>:let @z = @"<cr>mz
 ]])
 
 -- Make the current file executable
-map('n', '<leader>%', ':!chmod +x %<cr>')
+map("n", "<leader>%", ":!chmod +x %<cr>")
 
 -- Expand current filed dir in console mode
-map('c', '%%', "<C-R>=expand('%:h').'/'<cr>")
+map("c", "%%", "<C-R>=expand('%:h').'/'<cr>")
 
 -- Jump to line AND col
-map('n', "'", '`')
+map("n", "'", "`")

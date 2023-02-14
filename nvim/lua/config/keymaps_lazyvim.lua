@@ -43,12 +43,12 @@ map(
 )
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "j", "'Jj'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("x", "j", "'Jj'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("o", "j", "'Jj'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("n", "J", "'jJ'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("x", "J", "'jJ'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("o", "J", "'jJ'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("n", "j", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("x", "j", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("o", "j", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+map("n", "J", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("x", "J", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("o", "J", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
 -- Add undo break-points
 map("i", ",", ",<c-g>u")
@@ -104,7 +104,7 @@ map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
+-- map("n", "<leader>wd", "<C-W>c", { desc = "Delete window" })
 map("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>w|", "<C-W>v", { desc = "Split window right" })
 map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })

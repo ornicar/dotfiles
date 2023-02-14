@@ -2,7 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "tokyonight-night",
       -- load the default settings
       defaults = {
         autocmds = true, -- lazyvim.config.autocmds
@@ -10,5 +10,5 @@ return {
         options = true, -- lazyvim.config.options
       },
     },
-  }
+  },
 }

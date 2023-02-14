@@ -4,6 +4,7 @@
 
 require("config.keymaps_colemak")
 require("config.keymaps_lazyvim")
+require("config.unimpaired")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -61,3 +62,7 @@ map("c", "%%", "<C-R>=expand('%:h').'/'<cr>")
 
 -- Jump to line AND col
 map("n", "'", "`")
+
+-- quickfix navigation
+vim.keymap.set("n", "[q", ":<C-U>:cprev<CR>")
+vim.keymap.set("n", "]q", ":<C-U>:cnext<CR>")

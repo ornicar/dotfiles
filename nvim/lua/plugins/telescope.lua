@@ -5,29 +5,31 @@ return {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
-    keys = {
-      { "<leader>mr", Util.telescope("find_files"), {}, desc = "Find files (cwd)" },
-      { "<leader>ms", Util.telescope("find_files", { cwd = false }), desc = "Find Files (root)" },
-      { "<leader>a", Util.telescope("live_grep"), {} },
-      -- { "<leader>mb", Util.telescope("buffers"), {} },
-      { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
-      { "<leader>H", Util.telescope("help_tags"), {} },
-      { "<leader>za", Util.telescope("grep_string"), {} },
-      { "Q", Util.telescope("commands"), {} },
-      { "qq", Util.telescope("command_history"), {} },
-      { "q/", Util.telescope("search_history"), {} },
-      { "<leader>man", Util.telescope("man_pages"), {} },
-      { "<leader>qf", Util.telescope("quickfix"), {} },
-      { "<leader>qh", Util.telescope("quickfixhistory"), {} },
-      { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), {} },
-      { "<leader>mp", ":Telescope yank_history<cr>" },
-      -- lsp
-      { "gd", Util.telescope("lsp_definitions") },
-      { "gr", Util.telescope("lsp_references") },
-      { "gi", Util.telescope("lsp_implementations") },
-      { "<space>o", Util.telescope("lsp_document_symbols") },
-      { "<space>s", Util.telescope("lsp_dynamic_workspace_symbols") },
-    },
+    keys = function()
+      return {
+        { "<leader>mr", Util.telescope("find_files"), {}, desc = "Find files (cwd)" },
+        { "<leader>ms", Util.telescope("find_files", { cwd = false }), desc = "Find Files (root)" },
+        { "<leader>a", Util.telescope("live_grep"), {} },
+        -- { "<leader>mb", Util.telescope("buffers"), {} },
+        { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
+        { "<leader>H", Util.telescope("help_tags"), {} },
+        { "<leader>za", Util.telescope("grep_string"), {} },
+        { "Q", Util.telescope("commands"), {} },
+        { "qq", Util.telescope("command_history"), {} },
+        { "q/", Util.telescope("search_history"), {} },
+        { "<leader>man", Util.telescope("man_pages"), {} },
+        { "<leader>qf", Util.telescope("quickfix"), {} },
+        { "<leader>qh", Util.telescope("quickfixhistory"), {} },
+        { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), {} },
+        { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
+        -- lsp
+        { "gd", Util.telescope("lsp_definitions") },
+        { "gr", Util.telescope("lsp_references") },
+        { "gi", Util.telescope("lsp_implementations") },
+        { "<space>o", Util.telescope("lsp_document_symbols") },
+        { "<space>s", Util.telescope("lsp_dynamic_workspace_symbols") },
+      }
+    end,
     opts = function(_, opts)
       opts.defaults.mappings = {
         i = {

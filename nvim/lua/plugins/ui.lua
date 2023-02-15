@@ -1,7 +1,4 @@
 return {
-  -- colorscheme
-  { "sainnhe/gruvbox-material" },
-
   -- bufferline
   {
     "akinsho/bufferline.nvim",
@@ -65,7 +62,12 @@ return {
   },
 
   -- just 4 fun
-  { "eandrju/cellular-automaton.nvim", cmd = "CellularAutomaton" },
+  {
+    "eandrju/cellular-automaton.nvim",
+    keys = { {
+      "<leader>ce",
+      "<cmd>CellularAutomaton make_it_rain<cr>",
+      desc = "Make it rain",
+    } },
+  },
 }
--- {
--- },

@@ -56,9 +56,9 @@ map("c", "%%", "<C-R>=expand('%:h').'/'<cr>")
 map("n", "'", "`")
 
 -- trouble navigation
-vim.keymap.set("n", "[q", function()
+map("n", "[c", function()
   require("trouble").previous({ skip_groups = true, jump = true })
-end)
-vim.keymap.set("n", "]q", function()
+end, { desc = "Next trouble entry" })
+map("n", "]c", function()
   require("trouble").next({ skip_groups = true, jump = true })
-end)
+end, { desc = "Prev trouble entry" })

@@ -28,7 +28,9 @@ return {
             return str:sub(1, 1)
           end,
         } }
-      opts.sections.lualine_z = { "g:metals_status" }
+      opts.sections.lualine_z = opts.sections.lualine_y
+      opts.sections.lualine_y = opts.sections.lualine_x
+      opts.sections.lualine_x = { "g:metals_status" }
     end,
   },
 

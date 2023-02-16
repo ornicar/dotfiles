@@ -48,16 +48,7 @@ return {
   },
 
   -- git browse and blame with GitHub
-  {
-    "ruanyl/vim-gh-line",
-    -- keys = {
-    --   { "<leader>ghh", "<Plug>(gh-line)", desc = "Open file in GitHub" },
-    -- },
-    -- config = function()
-    --   vim.g.gh_line_map_default = 0
-    --   vim.g.gh_line_blame_map_default = 0
-    -- end,
-  },
+  { "ruanyl/vim-gh-line" },
 
   -- search/replace in multiple files
   {

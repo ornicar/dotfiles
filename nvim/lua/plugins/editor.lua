@@ -17,10 +17,17 @@ return {
     },
   },
 
+  -- easily jump to any location and enhanced f/t motions for Leap
   {
-    "folke/todo-comments.nvim",
-    enabled = false,
+    "ggandor/leap.nvim",
+    dependencies = {},
+    opts = {
+      safe_labels = { "s", "f", "j", "u", "t", "/", "S", "F", "J", "L", "H", "M", "U", "G", "T", "?", "Z" },
+    },
+    config = function(_, opts) end,
   },
+
+  { "folke/todo-comments.nvim", enabled = false },
 
   {
     "folke/trouble.nvim",

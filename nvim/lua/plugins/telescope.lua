@@ -7,8 +7,8 @@ return {
     version = false, -- telescope did only one release, so use HEAD for now
     keys = function()
       return {
-        { "<leader>mr", Util.telescope("find_files"), {}, desc = "Find files (cwd)" },
-        { "<leader>ms", Util.telescope("find_files", { cwd = false }), desc = "Find Files (root)" },
+        { "<leader>mr", Util.telescope("find_files"), {}, desc = "Find files in LSP root" },
+        { "<leader>ms", Util.telescope("find_files", { cwd = false }), desc = "Find Files n git root" },
         { "<leader>a", Util.telescope("live_grep"), {} },
         -- { "<leader>mb", Util.telescope("buffers"), {} },
         { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
@@ -22,6 +22,7 @@ return {
         { "<leader>qh", Util.telescope("quickfixhistory"), {} },
         { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), {} },
         { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
+        { "<leader>sR", Util.telescope("resume"), desc = "Resume" },
         -- lsp
         { "gd", Util.telescope("lsp_definitions") },
         { "gr", Util.telescope("lsp_references") },

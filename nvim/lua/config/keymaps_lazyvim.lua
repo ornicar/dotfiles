@@ -11,11 +11,16 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- Move in windows using <ctrl> arrow keys
+map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window" })
+map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window" })
+map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window" })
+map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window" })
+-- Resize window using <ctrl><shift> arrow keys
+map("n", "<C-S-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 -- map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -59,11 +64,8 @@ map("i", ";", ";<c-g>u")
 map({ "i", "v", "n", "s" }, "<C-e>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- better indenting
-map("v", "<", "<gv")
-map("v", ">", ">gv")
-
--- lazy
-map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+map("v", "<", "<gv", { desc = "Indent right" })
+map("v", ">", ">gv", { desc = "Indent left" })
 
 -- new file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })

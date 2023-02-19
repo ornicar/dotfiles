@@ -12,7 +12,7 @@ return {
         { "<leader>a", Util.telescope("live_grep"), {} },
         -- { "<leader>mb", Util.telescope("buffers"), {} },
         { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
-        { "<leader>H", Util.telescope("help_tags"), {} },
+        { "<leader>H", Util.telescope("help_tags"), { desc = "Help tags" } },
         { "<leader>za", Util.telescope("grep_string"), {} },
         { "Q", Util.telescope("commands"), {} },
         { "qq", Util.telescope("command_history"), {} },

@@ -20,19 +20,15 @@ return {
     "ggandor/leap.nvim",
     keys = function()
       return {
-        { "s", mode = { "n", "x" }, "<Plug>(leap-forward-to)", desc = "Leap forward to" },
-        { "t", mode = { "n", "x" }, "<Plug>(leap-backward-to)", desc = "Leap backward to" },
+        { "t", mode = { "n", "x" }, "<Plug>(leap-forward-to)", desc = "Leap forward to" },
+        { "s", mode = { "n", "x" }, "<Plug>(leap-backward-to)", desc = "Leap backward to" },
         { "gs", mode = { "n", "x" }, "<Plug>(leap-from-window)", desc = "Leap from windows" },
       }
     end,
-    opts = {
-      safe_labels = { "s", "t", "f", "w", "b", "h", "l", "m", "k" },
-    },
-    config = function(_, opts)
+    config = function()
       local leap = require("leap")
-      for k, v in pairs(opts) do
-        leap.opts[k] = v
-      end
+      leap.opts.labels = { "n", "t", "e", "s", "h", "d", "l", "p", "u", "f", "i", "r", "y", "w" }
+      leap.opts.safe_labels = {}
     end,
   },
   { "ggandor/flit.nvim", enabled = false },
@@ -73,9 +69,14 @@ return {
   -- search/replace in multiple files
   {
     "windwp/nvim-spectre",
-    -- stylua: ignore
     keys = {
-      { "<leader>sr", function() require("spectre").open_visual({select_word=true}) end, desc = "Replace current word in files (Spectre)" },
+      {
+        "<leader>sr",
+        function()
+          require("spectre").open_visual({ select_word = true })
+        end,
+        desc = "Replace current word in files (Spectre)",
+      },
     },
   },
 }

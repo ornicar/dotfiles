@@ -20,12 +20,24 @@ return {
   -- easily jump to any location and enhanced f/t motions for Leap
   {
     "ggandor/leap.nvim",
-    dependencies = {},
+    keys = function()
+      return {
+        { "s", mode = { "n", "x" }, "<Plug>(leap-forward-to)", desc = "Leap forward to" },
+        { "t", mode = { "n", "x" }, "<Plug>(leap-backward-to)", desc = "Leap backward to" },
+        { "gs", mode = { "n", "x" }, "<Plug>(leap-from-window)", desc = "Leap from windows" },
+      }
+    end,
     opts = {
-      safe_labels = { "s", "f", "j", "u", "t", "/", "S", "F", "J", "L", "H", "M", "U", "G", "T", "?", "Z" },
+      safe_labels = { "s", "t", "f", "w", "b", "h", "l", "m", "k" },
     },
-    config = function(_, opts) end,
+    config = function(_, opts)
+      local leap = require("leap")
+      for k, v in pairs(opts) do
+        leap.opts[k] = v
+      end
+    end,
   },
+  { "ggandor/flit.nvim", enabled = false },
 
   { "folke/todo-comments.nvim", enabled = false },
 

@@ -9,6 +9,10 @@ local opt = vim.opt
 
 opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 6 -- Lines of context
-opt.backup = false -- Don't make a backup before overwriting a file.
-opt.writebackup = false -- And again.
+
+opt.undofile = true -- Enable persistent undo (see also `:h undodir`)
+opt.backup = false -- Don't store backup while overwriting the file
+opt.writebackup = false -- Don't store backup while overwriting the file
 opt.swapfile = false -- Use an SCM instead of swap files
+
+opt.virtualedit = "block" -- Allow going past the end of line in visual block mode

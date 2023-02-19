@@ -4,7 +4,6 @@
 
 require("config.keymaps_colemak")
 require("config.keymaps_lazyvim")
-require("config.unimpaired")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -62,3 +61,7 @@ end, { desc = "Next trouble entry" })
 map("n", "]c", function()
   require("trouble").next({ skip_groups = true, jump = true })
 end, { desc = "Prev trouble entry" })
+
+-- Add empty lines before and after cursor line
+map("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
+map("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })

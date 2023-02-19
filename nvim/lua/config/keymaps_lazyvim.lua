@@ -60,8 +60,10 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
--- save file
-map({ "i", "v", "n", "s" }, "<C-e>", "<cmd>w<cr><esc>", { desc = "Save file" })
+-- Alternative way to save and exit in Normal mode.
+-- NOTE: Adding `redraw` helps with `cmdheight=0` if buffer is not modified
+map("n", "<C-e>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+map({ "i", "x" }, "<C-e>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
 -- better indenting
 map("v", "<", "<gv", { desc = "Indent right" })
@@ -87,9 +89,9 @@ map("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, concea
   { desc = "Toggle Conceal" })
 
 -- lazygit
-local lazygit_size = { width = 1, height = 1 }
-map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), size = lazygit_size}) end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function() Util.float_term({ "lazygit" }, { size = lazygit_size }) end, { desc = "Lazygit (cwd)" })
+local full_size = { width = 1, height = 1 }
+map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), size = full_size}) end, { desc = "Lazygit (root dir)" })
+map("n", "<leader>gG", function() Util.float_term({ "lazygit" }, { size = full_size }) end, { desc = "Lazygit (cwd)" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })

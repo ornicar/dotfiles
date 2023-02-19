@@ -37,8 +37,9 @@ return {
             return str:sub(1, 1)
           end,
         } }
-      opts.sections.lualine_c[3] =
-        { "filename", path = 3, symbols = { modified = "  ", readonly = "", unnamed = "" } }
+      table.remove(opts.sections.lualine_c, 2) -- remove filetype icon
+      opts.sections.lualine_c[2].path = 3 -- add project name
+      -- move metals status to the left
       opts.sections.lualine_z = opts.sections.lualine_y
       opts.sections.lualine_y = opts.sections.lualine_x
       opts.sections.lualine_x = { "g:metals_status" }

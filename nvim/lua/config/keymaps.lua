@@ -65,3 +65,19 @@ end, { desc = "Prev trouble entry" })
 -- Add empty lines before and after cursor line
 map("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 map("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
+
+-- Reselect latest changed, put, or yanked text
+map(
+  "n",
+  "<leader>v",
+  '"`[" . strpart(getregtype(), 0, 1) . "`]"',
+  { expr = true, desc = "Visually select changed text" }
+)
+
+-- Correct latest misspelled word by taking first suggestion.
+-- Use `<C-g>u` in Insert mode to mark this as separate undoable action.
+-- Source: https://stackoverflow.com/a/16481737
+-- NOTE: this remaps `<C-z>` in Normal mode (completely stops Neovim), but
+-- it seems to be too harmful anyway.
+map("n", "<C-Z>", "[s1z=", { desc = "Correct latest misspelled word" })
+map("i", "<C-Z>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Correct latest misspelled word" })

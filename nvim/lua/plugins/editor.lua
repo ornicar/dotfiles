@@ -12,8 +12,6 @@ return {
       { "<c-p>", "<Plug>(YankyCycleBackward)" },
       { "]p", "<Plug>(YankyPutIndentAfterLinewise)" },
       { "[p", "<Plug>(YankyPutIndentBeforeLinewise)" },
-      -- Reselect text that was just pasted
-      { "<leader>v", "V`]" },
     },
   },
 

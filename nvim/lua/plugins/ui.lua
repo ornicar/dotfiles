@@ -2,7 +2,16 @@ return {
   -- bufferline
   {
     "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        show_buffer_close_icons = false,
+        numbers = function(opts)
+          return opts.ordinal
+        end,
+      },
+    },
     keys = {
+      { "<space>t", "<Cmd>BufferLinePick<CR>", desc = "Buffer picker" },
       { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
       { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
       { "<leader>1", "<Cmd>BufferLineGoToBuffer 1<CR>" },

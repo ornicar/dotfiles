@@ -22,7 +22,7 @@ return {
         { "<leader>qh", Util.telescope("quickfixhistory"), {} },
         { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), {} },
         { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
-        { "<leader>sR", Util.telescope("resume"), desc = "Resume" },
+        { "<leader>mm", Util.telescope("resume"), desc = "Resume" },
         -- lsp
         { "gd", Util.telescope("lsp_definitions") },
         { "gr", Util.telescope("lsp_references") },

@@ -4,7 +4,7 @@ FILE=/sys/class/backlight/intel_backlight/brightness
 BACKLIGHT=$(<$FILE)
 MAX=$(</sys/class/backlight/intel_backlight/max_brightness)
 MIN=3 # do NOT set to 0 or 1
-FACTOR=1.4
+FACTOR=1.6
 
 if [ $UID -ne 0 ]; then
   echo "Please run this program as superuser"

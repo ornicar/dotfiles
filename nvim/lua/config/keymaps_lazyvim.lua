@@ -62,8 +62,8 @@ map("i", ";", ";<c-g>u")
 
 -- Alternative way to save and exit in Normal mode.
 -- NOTE: Adding `redraw` helps with `cmdheight=0` if buffer is not modified
-map("n", "<C-e>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
-map({ "i", "x" }, "<C-e>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
+map("n", "<C-s>", "<Cmd>silent! update | redraw<CR>", { desc = "Save" })
+map({ "i", "x" }, "<C-s>", "<Esc><Cmd>silent! update | redraw<CR>", { desc = "Save and go to Normal mode" })
 
 -- better indenting
 map("v", "<", "<gv", { desc = "Indent right" })

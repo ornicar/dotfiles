@@ -6,18 +6,23 @@ return {
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
     keys = function()
+      local in_buffer_dir = function(builtin)
+        return Util.telescope(builtin, { cwd = require("telescope.utils").buffer_dir() })
+      end
       return {
-        { "<leader>mr", Util.telescope("find_files"), {}, desc = "Find files in LSP root" },
-        { "<leader>ms", Util.telescope("find_files", { cwd = false }), desc = "Find Files n git root" },
-        { "<leader>ma", Util.telescope("live_grep"), desc = "Live grep" },
-        { "<leader>a", Util.telescope("live_grep"), desc = "Live grep" },
+        { "<leader>ma", Util.telescope("files", { cwd = false }), desc = "Find Files in git root" },
+        { "<leader>mr", Util.telescope("files"), desc = "Find files in LSP root" },
+        { "<leader>ms", in_buffer_dir("files"), desc = "Find files in buffer directory" },
+        { "<leader>a", Util.telescope("live_grep", { cwd = false }), desc = "Live grep in git root" },
+        { "<leader>r", Util.telescope("live_grep"), desc = "Live grep in LSP root" },
+        { "<leader>ss", in_buffer_dir("live_grep"), desc = "Live grep in buffer directory" },
         { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
         { "<leader>H", Util.telescope("help_tags"), desc = "Help tags" },
-        { "<leader>za", Util.telescope("grep_string"), desc = "Grep the string under cursor" },
+        { "<leader>*", Util.telescope("grep_string"), desc = "Grep the string under cursor" },
         { "Q", Util.telescope("commands"), desc = "Commands" },
         { "qq", Util.telescope("command_history"), desc = "Command history" },
         { "q/", Util.telescope("search_history"), desc = "Search history" },
-        { "<leader>man", Util.telescope("man_pages"), desc = "Man pages" },
+        { "<leader>mn", Util.telescope("man_pages"), desc = "Man pages" },
         { "<leader>qf", Util.telescope("quickfix"), desc = "Quickfix" },
         { "<leader>qh", Util.telescope("quickfixhistory"), desc = "Quickfix history" },
         { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), desc = "Current buffer fuzzy find" },

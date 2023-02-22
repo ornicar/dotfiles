@@ -22,7 +22,6 @@ return {
       return {
         { "t", mode = { "n", "x" }, "<Plug>(leap-forward-to)", desc = "Leap forward to" },
         { "s", mode = { "n", "x" }, "<Plug>(leap-backward-to)", desc = "Leap backward to" },
-        { "gs", mode = { "n", "x" }, "<Plug>(leap-from-window)", desc = "Leap from windows" },
       }
     end,
     config = function()

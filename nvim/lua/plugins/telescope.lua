@@ -7,7 +7,9 @@ return {
     version = false, -- telescope did only one release, so use HEAD for now
     keys = function()
       local in_buffer_dir = function(builtin)
-        return Util.telescope(builtin, { cwd = require("telescope.utils").buffer_dir() })
+        return function()
+          return Util.telescope(builtin, { cwd = require("telescope.utils").buffer_dir() })()
+        end
       end
       return {
         { "<leader>ma", Util.telescope("files", { cwd = false }), desc = "Find Files in git root" },

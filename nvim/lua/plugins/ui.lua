@@ -43,7 +43,12 @@ return {
       table.remove(opts.sections.lualine_y, 3)
     end,
   },
-
+  {
+    "rcarriga/nvim-notify",
+    keys = function()
+      return {}
+    end,
+  },
   -- dashboard
   {
     "goolord/alpha-nvim",

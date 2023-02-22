@@ -18,16 +18,13 @@ return {
       local cmp = require("cmp")
       opts.mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-e>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-Space>"] = function()
           if cmp.visible() then
             cmp.confirm({ select = true })
           else
             cmp.complete()
           end
-        end,
-        ["<C-e>"] = function(fallback)
-          fallback()
         end,
         ["<C-c>"] = cmp.mapping.abort(),
       })

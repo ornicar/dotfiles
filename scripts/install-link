@@ -56,6 +56,7 @@ link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link zlogin ~/.zlogin
 link alacritty.yml ~/.config/alacritty/alacritty.yml
+link wezterm.lua ~/.wezterm.lua
 mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv

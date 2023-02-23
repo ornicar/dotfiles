@@ -30,6 +30,7 @@ return {
         { "<leader>b", Util.telescope("current_buffer_fuzzy_find"), desc = "Current buffer fuzzy find" },
         { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
         { "<leader>mm", Util.telescope("resume"), desc = "Resume" },
+        { "<leader>mo", ":Telescope notify<cr>", desc = "Notifications" },
         -- lsp
         { "gd", Util.telescope("lsp_definitions"), desc = "LSP definitions" },
         { "gr", Util.telescope("lsp_references"), desc = "LSP references" },
@@ -81,6 +82,7 @@ return {
       tel.setup(opts)
       tel.load_extension("yank_history")
       tel.load_extension("fzf")
+      tel.load_extension("notify")
     end,
   },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },

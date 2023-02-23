@@ -5,8 +5,8 @@ font pango:MesloLGS NF 3
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4b68ad #2c3e4b #24272e #282c34   #4b68ad
-client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34   
-client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34   
+client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34
+client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -24,7 +24,7 @@ focus_follows_mouse false
 floating_modifier $mod
 
 # start a terminal
-bindsym Mod1+Return exec /usr/bin/alacritty
+bindsym Mod1+Return exec /usr/bin/wezterm
 
 # sound
 # bindsym $mod+a exec --no-startup-id ario

@@ -12,12 +12,12 @@ return {
         end
       end
       return {
-        { "<leader>ma", Util.telescope("files", { cwd = false }), desc = "Find Files in git root" },
-        { "<leader>mr", Util.telescope("files"), desc = "Find files in LSP root" },
-        { "<leader>ms", in_buffer_dir("files"), desc = "Find files in buffer directory" },
-        { "<leader>a", Util.telescope("live_grep", { cwd = false }), desc = "Live grep in git root" },
-        { "<leader>r", Util.telescope("live_grep"), desc = "Live grep in LSP root" },
-        { "<leader>ss", in_buffer_dir("live_grep"), desc = "Live grep in buffer directory" },
+        { "<leader>mr", Util.telescope("files", { cwd = false }), desc = "Find Files in git root" },
+        { "<leader>ms", Util.telescope("files"), desc = "Find files in LSP root" },
+        { "<leader>mt", in_buffer_dir("files"), desc = "Find files in buffer directory" },
+        { "<leader>r", Util.telescope("live_grep", { cwd = false }), desc = "Live grep in git root" },
+        { "<leader>s", Util.telescope("live_grep"), desc = "Live grep in LSP root" },
+        { "<leader>t", in_buffer_dir("live_grep"), desc = "Live grep in buffer directory" },
         { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
         { "<leader>H", Util.telescope("help_tags"), desc = "Help tags" },
         { "<leader>*", Util.telescope("grep_string"), desc = "Grep the string under cursor" },

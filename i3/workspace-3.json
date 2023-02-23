@@ -1,108 +1,107 @@
 // vim:ts=4:sw=4:et
 {
-    // tabbed split container with 2 children
-    "border": "pixel",
-    "floating": "auto_off",
-    "layout": "tabbed",
-    "percent": null,
-    "type": "con",
-    "nodes": [
+  // tabbed split container with 2 children
+  "border": "pixel",
+  "floating": "auto_off",
+  "layout": "tabbed",
+  "percent": null,
+  "type": "con",
+  "nodes": [
+    {
+      // splith split container with 2 children
+      "border": "pixel",
+      "floating": "auto_off",
+      "layout": "splith",
+      "percent": 0.5,
+      "type": "con",
+      "nodes": [
         {
-            // splith split container with 2 children
-            "border": "pixel",
-            "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.5,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "pixel",
-                    "current_border_width": 1,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 794,
-                       "width": 1294,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Alacritty",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "title": "Lila cli 1"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "pixel",
-                    "current_border_width": 1,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 794,
-                       "width": 1294,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Alacritty",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "title": "Lila cli 2"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "geometry": {
+            "height": 794,
+            "width": 1294,
+            "x": 0,
+            "y": 0
+          },
+          "name": "Term",
+          "percent": 0.5,
+          "swallows": [
+            {
+              "title": "Lila cli 1"
+            }
+          ],
+          "type": "con"
         },
         {
-            // splith split container with 2 children
-            "border": "pixel",
-            "floating": "auto_off",
-            "layout": "splith",
-            "percent": 0.5,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "pixel",
-                    "current_border_width": 1,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 794,
-                       "width": 1294,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Alacritty",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "title": "Lila journal"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "pixel",
-                    "current_border_width": 1,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 794,
-                       "width": 1294,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "Alacritty",
-                    "percent": 0.5,
-                    "swallows": [
-                       {
-                        "title": "Lila vim"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "geometry": {
+            "height": 794,
+            "width": 1294,
+            "x": 0,
+            "y": 0
+          },
+          "name": "Term",
+          "percent": 0.5,
+          "swallows": [
+            {
+              "title": "Lila cli 2"
+            }
+          ],
+          "type": "con"
         }
-    ]
+      ]
+    },
+    {
+      // splith split container with 2 children
+      "border": "pixel",
+      "floating": "auto_off",
+      "layout": "splith",
+      "percent": 0.5,
+      "type": "con",
+      "nodes": [
+        {
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "geometry": {
+            "height": 794,
+            "width": 1294,
+            "x": 0,
+            "y": 0
+          },
+          "name": "Term",
+          "percent": 0.5,
+          "swallows": [
+            {
+              "title": "Lila journal"
+            }
+          ],
+          "type": "con"
+        },
+        {
+          "border": "pixel",
+          "current_border_width": 1,
+          "floating": "auto_off",
+          "geometry": {
+            "height": 794,
+            "width": 1294,
+            "x": 0,
+            "y": 0
+          },
+          "name": "Term",
+          "percent": 0.5,
+          "swallows": [
+            {
+              "title": "Lila vim"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    }
+  ]
 }
-

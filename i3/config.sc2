@@ -11,7 +11,7 @@ hide_edge_borders both
 focus_follows_mouse no
 
 # start a terminal
-bindsym Mod1+Return exec /home/thib/alacritty/target/release/alacritty
+bindsym Mod1+Return exec wezterm
 
 bindsym $mod+BackSpace kill
 bindsym $mod+0 fullscreen toggle

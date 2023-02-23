@@ -1,6 +1,6 @@
 #!/bin/bash
 i3-msg "workspace 9; append_layout ~/dotfiles/i3/workspace-9.json"
 
-(alacritty --title "journal" --command journalctl -f &)
-(alacritty --title "btop" --command btop &)
-(alacritty --title "terminal" &)
+(wezterm start ""journalctl -f"" &)
+(wezterm start "btop" &)
+(wezterm start &)

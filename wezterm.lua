@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 return {
 	font = wezterm.font("FiraCode Nerd Font"),
-	font_size = 18,
+	font_size = 13,
 	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
 	window_padding = { left = 0, right = 0, top = 0, bottom = 0 },

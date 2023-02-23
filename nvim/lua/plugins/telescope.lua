@@ -52,16 +52,7 @@ return {
           ["<a-h>"] = function()
             Util.telescope("find_files", { hidden = true })()
           end,
-        },
-        n = {
-          ["n"] = function(...)
-            return require("telescope.actions").cycle_history_next(...)
-          end,
-          ["e"] = function(...)
-            return require("telescope.actions").cycle_history_prev(...)
-          end,
-          -- ['<C-p>'] = require('telescope.actions.layout').toggle_preview,
-          ["<C-c>"] = function(...)
+          ["<esc>"] = function(...)
             return require("telescope.actions").close(...)
           end,
         },

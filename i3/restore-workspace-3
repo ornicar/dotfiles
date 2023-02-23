@@ -1,7 +1,7 @@
 #!/bin/bash
 i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
 
-(alacritty --working-directory ~/lila --title "Lila cli 1" &)
-(alacritty --working-directory ~/lila --title "Lila cli 2" &)
-(alacritty --working-directory ~/lila --title "Lila journal" --command yarn run multilog &)
-(alacritty --working-directory ~/lila --title "Lila vim" &)
+(wezterm start --always-new-process --cwd ~/lila &)
+(wezterm start --always-new-process --cwd ~/lila &)
+(wezterm start --always-new-process --cwd ~/lila &)
+(wezterm start --always-new-process --cwd ~/lila &)

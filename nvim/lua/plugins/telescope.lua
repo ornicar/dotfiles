@@ -33,7 +33,6 @@ return {
         -- lsp
         { "gd", Util.telescope("lsp_definitions"), desc = "LSP definitions" },
         { "gr", Util.telescope("lsp_references"), desc = "LSP references" },
-        { "gi", Util.telescope("lsp_implementations"), desc = "LSP implementations" },
         { "<space>o", Util.telescope("lsp_document_symbols"), desc = "LSP document symboles" },
         -- { "<space>s", Util.telescope("lsp_dynamic_workspace_symbols"), desc = "LSP workspace symbols" },
       }

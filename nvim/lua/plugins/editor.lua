@@ -62,6 +62,13 @@ return {
   -- git browse and blame with GitHub
   { "ruanyl/vim-gh-line" },
 
+  {
+    "gabrielpoca/replacer.nvim",
+    keys = {
+      { "<leader>qr", ':lua require("replacer").run()<cr>' },
+    },
+  },
+
   -- search/replace in multiple files
   {
     "windwp/nvim-spectre",

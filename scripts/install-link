@@ -57,6 +57,7 @@ link editorconfig ~/.editorconfig
 link zlogin ~/.zlogin
 link alacritty.yml ~/.config/alacritty/alacritty.yml
 link wezterm.lua ~/.wezterm.lua
+link kitty.conf ~/.config/kitty/kitty.conf
 mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv

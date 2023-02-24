@@ -49,6 +49,7 @@ return {
       return {}
     end,
   },
+
   -- dashboard
   {
     "goolord/alpha-nvim",
@@ -81,10 +82,24 @@ return {
   -- just 4 fun
   {
     "eandrju/cellular-automaton.nvim",
-    keys = { {
-      "<leader>ce",
-      "<cmd>CellularAutomaton make_it_rain<cr>",
-      desc = "Make it rain",
-    } },
+    keys = {
+      {
+        "<leader>cer",
+        "<cmd>CellularAutomaton make_it_rain<cr>",
+        desc = "Make it rain",
+      },
+    },
+  },
+
+  {
+    "giusgad/pets.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
+    opts = {
+      default_style = "red",
+    },
+    keys = {
+      { "<leader>cec", "<cmd>PetsNew cat<cr>", desc = "Spawn a cat" },
+      { "<leader>cek", "<cmd>PetsKillAll<cr>", desc = "Kill the cats" },
+    },
   },
 }

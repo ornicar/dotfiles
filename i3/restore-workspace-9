@@ -1,6 +1,6 @@
 #!/bin/bash
 i3-msg "workspace 9; append_layout ~/dotfiles/i3/workspace-9.json"
 
-(kitty "journalctl -f" &)
-(kitty "btop" &)
-(kitty &)
+(kitty -1 --hold zsh -c "journalctl -f" &)
+(kitty -1 --hold zsh -c "btop" &)
+(kitty -1 &)

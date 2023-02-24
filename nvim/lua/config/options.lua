@@ -7,6 +7,7 @@ vim.g.maplocalleader = ","
 
 local opt = vim.opt
 
+opt.mouse = "" -- Enable mouse mode
 opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 6 -- Lines of context
 

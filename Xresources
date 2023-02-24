@@ -19,6 +19,6 @@ rofi.color-normal: #002b37, #819396, #003643, #008ed4, #ffffff
 rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
 rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
 rofi.ssh-client:       ssh
-rofi.ssh-command:      wezterm start '{ssh-client} {host}'
+rofi.ssh-command:      kitty '{ssh-client} {host}'
 rofi.run-command:      {cmd}
-rofi.run-shell-command:  wezterm start '{cmd}'
+rofi.run-shell-command:  kitty '{cmd}'

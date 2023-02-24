@@ -1,7 +1,7 @@
 #!/bin/bash
 i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
 
-(wezterm start --always-new-process --cwd ~/lila &)
-(wezterm start --always-new-process --cwd ~/lila &)
-(wezterm start --always-new-process --cwd ~/lila &)
-(wezterm start --always-new-process --cwd ~/lila &)
+(kitty --directory=~/lila &)
+(kitty --directory=~/lila &)
+(kitty --directory=~/lila &)
+(kitty --directory=~/lila &)

@@ -22,15 +22,15 @@ return {
     opts = function(_, opts)
       opts.use_default_mappings = false
       opts.window.mappings = {
-        ["<space>"] = "toggle_node",
+        -- ["<space>"] = "toggle_node",
         ["<cr>"] = "open",
         ["<esc>"] = "revert_preview",
         ["P"] = { "toggle_preview", config = { use_float = true } },
         ["l"] = "focus_preview",
-        ["S"] = "open_split",
-        ["s"] = "open_vsplit",
-        ["t"] = "open_tabnew",
-        ["w"] = "open_with_window_picker",
+        -- ["S"] = "open_split",
+        -- ["s"] = "open_vsplit",
+        -- ["t"] = "open_tabnew",
+        -- ["w"] = "open_with_window_picker",
         ["C"] = "close_node",
         ["z"] = "close_all_nodes",
         ["a"] = {

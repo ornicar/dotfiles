@@ -10,7 +10,7 @@ path+="$HOME/.bin:$PATH"
 path+="$HOME/.local/share/coursier/bin"
 # path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
 
-export TERMINAL="wezterm"
+export TERMINAL="kitty"
 export BROWSER="google-chrome-stable"
 export CHROME_EXECUTABLE="google-chrome-stable"
 export EDITOR='nvim'

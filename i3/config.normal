@@ -24,7 +24,7 @@ focus_follows_mouse false
 floating_modifier $mod
 
 # start a terminal
-bindsym Mod1+Return exec /usr/bin/wezterm
+bindsym Mod1+Return exec /usr/bin/kitty
 
 # sound
 # bindsym $mod+a exec --no-startup-id ario

@@ -4,3 +4,4 @@ target
 *.pyc
 *.hi
 *.o
+kitty.conf.bak

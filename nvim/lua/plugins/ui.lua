@@ -93,6 +93,7 @@ return {
 
   {
     "giusgad/pets.nvim",
+    branch = "forbidden-cats",
     dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
     opts = {
       default_style = "red",

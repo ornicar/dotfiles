@@ -3,8 +3,8 @@ return {
   {
     "mizlan/iswap.nvim",
     keys = {
-      { "gw", ":ISwapWithRight<cr>" },
-      { "<leader>is", ":ISwap<cr>" },
+      { "gw", ":ISwapWithRight<cr>", desc = "Swap two arguments" },
+      { "<leader>is", ":ISwap<cr>", desc = "Swap many arguments" },
     },
     opts = {
       keys = "arstdhneio",
@@ -60,7 +60,7 @@ return {
       -- stylua: ignore
       ensure_installed = {
         "scala", "haskell", "rust", "scss", "dart", "hocon", "bash", "help", "html", "javascript", "json", "lua",
-        "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "yaml",
+        "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "yaml", "c"
       },
     },
   },

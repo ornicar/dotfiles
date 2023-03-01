@@ -9,7 +9,7 @@ local opt = vim.opt
 
 opt.mouse = "" -- Enable mouse mode
 opt.relativenumber = false -- Relative line numbers
-opt.scrolloff = 6 -- Lines of context
+opt.scrolloff = 9 -- Lines of context
 
 opt.undofile = true -- Enable persistent undo (see also `:h undodir`)
 opt.backup = false -- Don't store backup while overwriting the file

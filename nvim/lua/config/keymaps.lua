@@ -54,14 +54,6 @@ map("c", "%%", "<C-R>=expand('%:h').'/'<cr>")
 -- Jump to line AND col
 map("n", "'", "`")
 
--- trouble navigation
-map("n", "[c", function()
-  require("trouble").previous({ skip_groups = true, jump = true })
-end, { desc = "Next trouble entry" })
-map("n", "]c", function()
-  require("trouble").next({ skip_groups = true, jump = true })
-end, { desc = "Prev trouble entry" })
-
 -- Add empty lines before and after cursor line
 map("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 map("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })

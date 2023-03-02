@@ -4,6 +4,7 @@ return {
     "neovim/nvim-lspconfig",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[8] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
       keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }
       keys[#keys + 1] = { "<space>q", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
     end,

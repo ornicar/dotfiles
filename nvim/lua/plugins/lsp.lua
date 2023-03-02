@@ -13,6 +13,7 @@ return {
         cssls = {},
         dartls = {},
         rust_analyzer = {},
+        pyright = {},
       },
     },
   },

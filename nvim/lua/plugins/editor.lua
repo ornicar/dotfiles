@@ -65,7 +65,7 @@ return {
   {
     "gabrielpoca/replacer.nvim",
     keys = {
-      { "<leader>qr", ':lua require("replacer").run()<cr>' },
+      { "<leader>qr", ':lua require("replacer").run()<cr>', desc = "QuickFix Replacer" },
     },
   },
 

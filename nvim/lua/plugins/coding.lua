@@ -59,7 +59,7 @@ return {
       },
       -- stylua: ignore
       ensure_installed = {
-        "scala", "haskell", "rust", "scss", "dart", "hocon", "bash", "help", "html", "javascript", "json", "lua",
+        "scala", "haskell", "rust", "scss", "dart", "hocon", "bash", "help", "html", "javascript", "json", "lua", "luap",
         "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "yaml", "c"
       },
     },

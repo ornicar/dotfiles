@@ -1,0 +1,2 @@
+# Using glob patterns to include/exclude files or folders
+--glob=*.arb

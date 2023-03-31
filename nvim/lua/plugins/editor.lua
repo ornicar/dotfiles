@@ -37,12 +37,13 @@ return {
   {
     "folke/trouble.nvim",
     keys = {
-      { "<space>d", "<cmd>TroubleToggle<cr>" },
+      { "<space>d", "<cmd>TroubleToggle<cr>", desc = "Trouble toggle" },
+      { "<space>D", "<cmd>Trouble<cr>", desc = "Trouble open" },
     },
     opts = {
       use_diagnostic_signs = true,
       auto_open = false,
-      auto_close = false,
+      auto_close = true,
     },
   },
 

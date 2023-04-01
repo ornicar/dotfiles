@@ -8,7 +8,7 @@ setopt SHARE_HISTORY
 # Export common variables
 path+="$HOME/.bin:$PATH"
 path+="$HOME/.local/share/coursier/bin"
-# path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
+path+="$HOME/.local/bin:$PATH"
 
 export TERMINAL="kitty -1"
 export BROWSER="google-chrome-stable"

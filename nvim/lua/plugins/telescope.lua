@@ -38,6 +38,7 @@ return {
         { "gr", Util.telescope("lsp_references"), desc = "LSP references" },
         { "<space>o", Util.telescope("lsp_document_symbols"), desc = "LSP document symboles" },
         { "<space>O", Util.telescope("lsp_dynamic_workspace_symbols"), desc = "LSP workspace symbols" },
+        { "<space>i", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
       }
     end,
     opts = function(_, opts)

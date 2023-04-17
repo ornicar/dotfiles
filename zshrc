@@ -7,8 +7,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export THEFUCK_PRIORITY="git_hook_bypass=1100" # https://github.com/nvbn/thefuck/issues/1207
-eval $(thefuck --alias)
+# export THEFUCK_PRIORITY="git_hook_bypass=1100" # https://github.com/nvbn/thefuck/issues/1207
+# eval $(thefuck --alias)
 
 # Load all of my zsh files in zsh/
 for zsh_file (~/dotfiles/zsh/*.zsh) source $zsh_file

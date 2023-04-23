@@ -18,8 +18,8 @@ export GIT_EDITOR="nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export SBT_OPTS="-Xms256M -Xmx4G"
+export JAVA_HOME=/usr/lib/jvm/java-20-openjdk
+export SBT_OPTS="-Xms256M -Xmx2G"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 

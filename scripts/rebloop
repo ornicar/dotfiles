@@ -1,0 +1,9 @@
+#!/bin/sh
+
+systemctl --user stop bloop
+find /tmp -name 'bsp-launcher*' -or -name -'metals*' -or -name 'bloop*' | xargs rm -rf {}
+rm -rf .metals
+rm -rf .bloop
+rm -rf target
+systemctl --user restart bloop
+systemctl --user status bloop

@@ -1,20 +1,20 @@
 #!/bin/sh
 
 # Absolute path to this script
-SCRIPT=`readlink -f $0`
+SCRIPT=$(readlink -f $0)
 # Absolute path this script is in
-SCRIPTPATH=`dirname $SCRIPT`
+SCRIPTPATH=$(dirname $SCRIPT)
 
 echo "Linking config files from $SCRIPTPATH"
 
-link (){
-    FROM="$SCRIPTPATH/../$1"
-    TO=$2
+link() {
+	FROM="$SCRIPTPATH/../$1"
+	TO=$2
 
-    printf "ln -s %s %s\n" $FROM $TO
+	printf "ln -s %s %s\n" $FROM $TO
 
-    rm $TO
-    ln -s $FROM $TO
+	rm $TO
+	ln -s $FROM $TO
 }
 
 mkdir -p ~/.config
@@ -74,13 +74,13 @@ link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
 link gtkrc-2.0 ~/.gtkrc-2.0
 link ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
-  link systemd/$s.service ~/.config/systemd/user/$s.service
+for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
+	link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 for s in daqs; do
-  link systemd/$s.target ~/.config/systemd/user/$s.target
+	link systemd/$s.target ~/.config/systemd/user/$s.target
 done
 for s in publish-ip; do
-  link systemd/$s.timer ~/.config/systemd/user/$s.timer
+	link systemd/$s.timer ~/.config/systemd/user/$s.timer
 done
 systemctl --user daemon-reload

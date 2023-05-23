@@ -1,20 +1,20 @@
 #!/bin/sh
 
 # Absolute path to this script
-SCRIPT=`readlink -f $0`
+SCRIPT=$(readlink -f $0)
 # Absolute path this script is in
-SCRIPTPATH=`dirname $SCRIPT`
+SCRIPTPATH=$(dirname $SCRIPT)
 
 echo "Linking config files from $SCRIPTPATH"
 
-link (){
-    FROM="$SCRIPTPATH/../$1"
-    TO=$2
+link() {
+	FROM="$SCRIPTPATH/../$1"
+	TO=$2
 
-    printf "ln -s %s %s\n" $FROM $TO
+	printf "ln -s %s %s\n" $FROM $TO
 
-    rm $TO
-    ln -s $FROM $TO
+	rm $TO
+	ln -s $FROM $TO
 }
 
 mkdir -p ~/.config
@@ -34,7 +34,7 @@ link Xresources ~/.Xresources
 link xcolors ~/.xcolors
 link mpd ~/.config/mpd
 mkdir -p ~/.i3
-link i3/config.normal ~/.i3/config
+link i3/config ~/.i3/config
 link i3/status ~/.i3/status
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
@@ -74,7 +74,7 @@ link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
 link gtkrc-2.0 ~/.gtkrc-2.0
 link ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
-  link systemd/$s.service ~/.config/systemd/user/$s.service
+for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
+	link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 systemctl --user daemon-reload

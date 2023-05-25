@@ -7,4 +7,3 @@ foo.*
 *.log
 data
 .netrwhist
-lazy-lock.json

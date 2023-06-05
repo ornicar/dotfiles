@@ -7,8 +7,8 @@ gui:
   theme:
     lightTheme: false # For terminals with a light background
 os:
-  editCommand: 'nvim'
-  editCommandTemplate: '{{editor}} +{{line}} {{filename}}'
+  Edit: 'nvim'
+  EditAtLine: '{{editor}} +{{line}} {{filename}}'
 git:
   paging:
     colorArg: always

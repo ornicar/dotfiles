@@ -38,7 +38,10 @@ alias meteo="curl -4 http://wttr.in/44600"
 # Read 32GB zero's and throw them away.
 alias benchmark='\dd if=/dev/zero of=/dev/null bs=1M count=32768'
 
+alias zzz="~/.scripts/input-xps9700"
+
 # Soooo lazy
+alias ya=u'ya && ~/.scripts/input-xps9700'
 alias ya='yay'
 
 alias halt="echo 'Use poweroff instead'"

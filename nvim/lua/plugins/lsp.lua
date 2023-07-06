@@ -6,8 +6,8 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       keys[8] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
       keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }
-      keys[#keys + 1] = { "<space>q", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
-      keys[#keys + 1] = { "<space>r", vim.diagnostic.reset, desc = "Reset diagnostics" }
+      keys[#keys + 1] = { "<space>cq", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
+      keys[#keys + 1] = { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" }
     end,
     ---@class PluginLspOpts
     opts = {

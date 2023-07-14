@@ -74,13 +74,9 @@ link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
 link gtkrc-2.0 ~/.gtkrc-2.0
 link ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search publish-ip daq@; do
+for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler; do
 	link systemd/$s.service ~/.config/systemd/user/$s.service
 done
-for s in daqs; do
-	link systemd/$s.target ~/.config/systemd/user/$s.target
-done
-for s in publish-ip; do
-	link systemd/$s.timer ~/.config/systemd/user/$s.timer
-done
 systemctl --user daemon-reload
+link ~/lila/public/font/lichess.ttf ~/.local/share/fonts/lichess.ttf
+fc-cache

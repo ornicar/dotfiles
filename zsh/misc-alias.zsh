@@ -3,6 +3,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# allow kitty scrolling
+# https://github.com/mobile-shell/mosh/issues/1110
+alias mo='mosh --no-init'
+
 # Propagate user config
 alias _='sudo -E'
 

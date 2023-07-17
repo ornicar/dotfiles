@@ -13,7 +13,7 @@ return {
     opts = {
       servers = {
         cssls = {},
-        -- dartls = {},
+        dartls = {},
         rust_analyzer = {},
         pyright = {},
       },

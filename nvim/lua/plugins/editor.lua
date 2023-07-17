@@ -15,22 +15,32 @@ return {
     },
   },
 
-  -- easily jump to any location and enhanced f/t motions for Leap
   {
-    "ggandor/leap.nvim",
+    "folke/flash.nvim",
+    vscode = false,
+    ---@type Flash.Config
+    opts = {
+      labels = "nteshdlpufiryw",
+      modes = {
+        char = {
+          label = { exclude = "rdc" },
+        },
+        treesitter = {
+          label = { exclude = "rdc", before = false, after = false },
+        },
+      },
+    },
     keys = function()
+      -- stylua: ignore
       return {
-        { "t", mode = { "n" }, "<Plug>(leap-forward-to)", desc = "Leap forward to" },
-        { "s", mode = { "n" }, "<Plug>(leap-backward-to)", desc = "Leap backward to" },
-      }
-    end,
-    config = function()
-      local leap = require("leap")
-      leap.opts.labels = { "n", "t", "e", "s", "h", "d", "l", "p", "u", "f", "i", "r", "y", "w" }
-      leap.opts.safe_labels = {}
+        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+        { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        -- { "r", mode = "o", function() requiee("flash").remote() end, desc = "Remote Flash" },
+        -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+        -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    }
     end,
   },
-  { "ggandor/flit.nvim", enabled = false },
 
   { "folke/todo-comments.nvim", enabled = false },
 

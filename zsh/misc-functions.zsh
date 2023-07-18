@@ -38,27 +38,3 @@ github-pr-checkout() {
   git checkout -b $user-$branch $user/$branch
   git merge master
 }
-
-# java paths are for local use only
-# else use archlinux-java
-
-# java8() {
-#   export PATH="/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH"
-#   java -version
-# }
-# java9() {
-#   export PATH="/usr/lib/jvm/java-9-jdk/jre/bin/:$PATH"
-#   java -version
-# }
-# java11() {
-#   export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
-#   java -version
-# }
-# java13() {
-#   export PATH="/usr/lib/jvm/java-13-openjdk/bin/:$PATH"
-#   java -version
-# }
-# grallvm11() {
-#   export PATH="/usr/lib/jvm/java-11-grallvm/bin/:$PATH"
-#   java -version
-# }

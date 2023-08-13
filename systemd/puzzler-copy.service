@@ -1,0 +1,10 @@
+[Unit]
+Description=Tags and uploads new puzzles
+
+[Service]
+Type=oneshot
+ExecStart=/home/thib/lichess-puzzler/bin/import-more.sh
+WorkingDirectory=/home/thib/lichess-puzzler
+
+[Install]
+WantedBy=multi-user.target

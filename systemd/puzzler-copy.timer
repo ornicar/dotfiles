@@ -1,0 +1,11 @@
+[Unit]
+Description=Runs puzzler-copy nightly
+Requires=puzzler-copy.service
+
+[Timer]
+Unit=puzzler-copy.service
+# every night at 5am
+OnCalendar=*-*-* 05:00:00
+
+[Install]
+WantedBy=timers.target

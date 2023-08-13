@@ -36,19 +36,4 @@ return {
   --     opts.debug = true
   --   end,
   -- },
-
-  -- debugger
-  {
-    "mfussenegger/nvim-dap",
-    -- stylua: ignore
-    keys = {
-      {"<leader>dc", function() require "dap".continue({}) end},
-      {"<leader>dr", function() require "dap".repl.toggle() end},
-      {"<leader>dk", function() require "dap.ui.widgets".hover() end},
-      {"<leader>dt", function() require "dap".toggle_breakpoint() end},
-      {"<leader>do", function() require "dap".step_over() end},
-      {"<leader>di", function() require "dap".step_into() end},
-      {"<leader>dl", function() require "dap".run_last() end},
-    },
-  },
 }

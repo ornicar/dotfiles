@@ -13,7 +13,7 @@ alias crlog='s crom -t "cd ~/lila; pnpm multilog"'
 alias _='sudo -E'
 
 # A better ls https://the.exa.website/
-alias ls='exa'
+alias ls='eza'
 
 # List directory contents
 alias l='ls -la'

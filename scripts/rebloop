@@ -5,5 +5,6 @@ find /tmp -name 'bsp-launcher*' -or -name -'metals*' -or -name 'bloop*' | xargs 
 rm -rf .metals
 rm -rf .bloop
 rm -rf target
+rm -rf modules/*/target
 systemctl --user restart bloop
 systemctl --user status bloop

@@ -8,7 +8,7 @@ setopt SHARE_HISTORY
 # Export common variables
 path+="$HOME/.bin:$PATH"
 path+="$HOME/.local/share/coursier/bin"
-# path+="$HOME/.local/bin:$PATH" # crashes ZSH!!!
+path+="$HOME/.local/bin:$PATH"
 
 export TERMINAL="kitty -1"
 export BROWSER="google-chrome-stable"
@@ -18,7 +18,7 @@ export GIT_EDITOR="nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 
-export JAVA_HOME=/usr/lib/jvm/java-20-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-bin
 export SBT_OPTS="-Xms256M -Xmx2G"
 
 export QT_QPA_PLATFORMTHEME=qt5ct

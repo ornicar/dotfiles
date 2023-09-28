@@ -30,7 +30,7 @@ bindsym Mod1+Return exec /usr/bin/kitty -1
 # bindsym $mod+a exec --no-startup-id ario
 bindsym F9 exec ~/.scripts/music down
 bindsym F10 exec ~/.scripts/music up
-bindsym F12 exec playerctl -p spotify play-pause
+bindsym F8 exec playerctl -p spotify play-pause
 # bindsym F12 exec playerctl -p spotify next
 bindsym Mod1+F12 exec ~/.scripts/music copy-current
 # bindsym XF86AudioPrev exec mpc prev
@@ -38,11 +38,10 @@ bindsym Mod1+F12 exec ~/.scripts/music copy-current
 # bindsym XF86AudioNext exec mpc next
 
 # bindsym $mod+m exec ~/.scripts/mpvopen
-bindsym F1 exec systemctl --user restart lila
+bindsym F2 exec systemctl --user restart lila
 
-bindsym F7 exec ~/.scripts/keyboard-dell
-bindsym F8 exec ~/.scripts/keyboard-qwerty
-bindsym F6 exec ~/.scripts/campic.sh
+bindsym F6 exec ~/.scripts/keyboard-qwerty
+bindsym F7 exec ~/.scripts/input-glove
 
 # kill focused window
 bindsym $mod+q kill

@@ -41,7 +41,7 @@ bindsym Mod1+F12 exec ~/.scripts/music copy-current
 bindsym F2 exec systemctl --user restart lila
 
 bindsym F6 exec ~/.scripts/keyboard-qwerty
-bindsym F7 exec ~/.scripts/input-glove
+bindsym F7 exec ~/.scripts/keyboard-glove
 
 # kill focused window
 bindsym $mod+q kill

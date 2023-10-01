@@ -106,7 +106,7 @@ return {
 
   -- search/replace in multiple files
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     keys = {
       {
         "<leader>sr",

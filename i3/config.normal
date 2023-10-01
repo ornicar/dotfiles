@@ -36,7 +36,8 @@ bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 # bindsym XF86AudioNext exec mpc next
 
 # bindsym $mod+m exec ~/.scripts/mpvopen
-bindsym F1 exec systemctl --user restart lila
+#bindsym F1 exec systemctl --user restart lila
+bindsym F1 exec ssh crom 'systemctl --user restart lila'
 
 bindsym F7 exec ~/.scripts/keyboard-dell
 bindsym F8 exec ~/.scripts/keyboard-qwerty

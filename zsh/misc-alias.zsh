@@ -3,9 +3,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# allow kitty scrolling
-# https://github.com/mobile-shell/mosh/issues/1110
-alias mo='mosh --no-init'
+alias s="kitty +kitten ssh"
+alias cr='s crom'
+alias crlila='s crom -t "cd ~/lila; zsh"'
+alias crvim='s crom -t "cd ~/lila; nvim"'
+alias crlog='s crom -t "cd ~/lila; pnpm multilog"'
 
 # Propagate user config
 alias _='sudo -E'

@@ -5,11 +5,6 @@ keycode 66 = Escape
 clear Mod4
 add Control = Super_L
 
-! Use lenovo menu key for ctrl action
-clear Mod3
-add Control = Menu
-keycode 135 = Control_R Control_R Control_R
-
 ! Use Return for Shift
 ! keycode 36 = Shift_L Return Shift_L
 
@@ -21,3 +16,16 @@ keycode 135 = Control_R Control_R Control_R
 
 ! Use AltGr-t for Return
 keycode 41 = t T t T Return Return Return
+
+! Use AltGr-s for backpace
+keycode  40 = s S s S BackSpace BackSpace BackSpace
+
+! Use [ ] for { }
+! keycode  34 = braceleft  braceleft bracketleft braceleft guillemetleft U2039 guillemetleft U2039 bracketleft braceleft guillemetleft U2039
+! keycode  35 = braceright  braceright bracketright braceright guillemetright U203A guillemetright U203A bracketright braceright guillemetright U203A
+
+! Use Ctrl-x Ctrl-c for [ ]
+! keycode  53 = x X bracketleft X dead_circumflex asciitilde dead_circumflex asciitilde x X dead_circumflex asciitilde x X dead_circumflex asciitilde
+! keycode  54 = c C bracketright C ccedilla Ccedilla ccedilla Ccedilla c C ccedilla Ccedilla c C ccedilla Ccedilla
+
+

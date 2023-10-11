@@ -86,7 +86,17 @@ return {
       {
         "<leader>cer",
         "<cmd>CellularAutomaton make_it_rain<cr>",
-        desc = "Make it rain",
+        desc = "Automaton: Make it rain",
+      },
+      {
+        "<leader>cel",
+        "<cmd>CellularAutomaton game_of_life<cr>",
+        desc = "Automaton: Game of life",
+      },
+      {
+        "<leader>ces",
+        "<cmd>CellularAutomaton scramble<cr>",
+        desc = "Automaton: Scramble",
       },
     },
   },

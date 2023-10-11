@@ -32,7 +32,7 @@ bindsym F9 exec ~/.scripts/music down
 bindsym F10 exec ~/.scripts/music up
 bindsym F8 exec playerctl -p spotify play-pause
 # bindsym F12 exec playerctl -p spotify next
-bindsym Mod1+F12 exec ~/.scripts/music copy-current
+bindsym Mod1+F11 exec ~/.scripts/music copy-current
 # bindsym XF86AudioPrev exec mpc prev
 # bindsym XF86AudioPlay exec mpc toggle
 # bindsym XF86AudioNext exec mpc next

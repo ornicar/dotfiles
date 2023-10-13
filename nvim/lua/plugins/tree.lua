@@ -6,7 +6,7 @@ return {
         {
           "<space>e",
           function()
-            require("neo-tree.command").execute({ dir = require("lazyvim.util").get_root() })
+            require("neo-tree.command").execute({ dir = require("lazyvim.util").root.get() })
           end,
           desc = "Explorer NeoTree (root dir)",
         },

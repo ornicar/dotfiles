@@ -64,6 +64,7 @@ return {
         "scala", "haskell", "rust", "scss", "dart", "hocon", "bash", "help", "html", "javascript", "json", "lua", "luap",
         "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "yaml", "c"
       },
+      ignore_install = { "help" },
     },
   },
 }

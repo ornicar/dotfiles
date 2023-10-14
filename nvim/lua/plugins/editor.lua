@@ -94,8 +94,16 @@ return {
     opts = { on_attach = function() end },
   },
 
-  -- git browse and blame with GitHub
-  { "ruanyl/vim-gh-line" },
+  -- open file in GitHub
+  {
+    "almo7aya/openingh.nvim",
+    lazy = true,
+    keys = {
+      { "<leader>gf", "<cmd>OpenInGHFile<cr>", mode = "n", desc = "Open file in GitHub" },
+      { "<leader>gf", "<cmd>OpenInGHFileLines<cr>", mode = "v", desc = "Open file in GitHub" },
+      { "<leader>gr", "<cmd>OpenInGHRepo<cr>", desc = "Open repo in GitHub" },
+    },
+  },
 
   {
     "gabrielpoca/replacer.nvim",

@@ -67,4 +67,7 @@ return {
       ignore_install = { "help" },
     },
   },
+
+  -- Show context of the current function
+  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
 }

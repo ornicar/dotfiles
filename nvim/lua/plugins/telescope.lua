@@ -28,13 +28,14 @@ return {
         { "<leader>S", Util.telescope("grep_string"), desc = "Grep cursor in LSP root" },
         { "<leader>T", in_buffer_dir("grep_string"), desc = "Grep cursor in buffer directory" },
         { "<leader>H", Util.telescope("help_tags"), desc = "Help tags" },
-        { "Q", Util.telescope("commands"), desc = "Commands" },
+        { "<leader>mq", Util.telescope("commands"), desc = "Commands" },
         { "qq", Util.telescope("command_history"), desc = "Command history" },
         { "q/", Util.telescope("search_history"), desc = "Search history" },
         { "<leader>mn", Util.telescope("man_pages"), desc = "Man pages" },
         { "<leader>qf", Util.telescope("quickfix"), desc = "Quickfix" },
         { "<leader>qh", Util.telescope("quickfixhistory"), desc = "Quickfix history" },
         { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
+        -- { "<leader>ma", ":Telescope macros<cr>", desc = "Macros" },
         { "<leader>mm", Util.telescope("resume"), desc = "Resume" },
         { "<leader>mo", ":Telescope notify<cr>", desc = "Notifications" },
         -- lsp
@@ -81,6 +82,7 @@ return {
       tel.load_extension("yank_history")
       tel.load_extension("fzf")
       tel.load_extension("notify")
+      -- tel.load_extension("macros")
     end,
   },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },

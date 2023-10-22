@@ -15,42 +15,6 @@ return {
     },
   },
 
-  -- macro tools
-  {
-    "ecthelionvi/NeoComposer.nvim",
-    dependencies = { "kkharji/sqlite.lua" },
-    lazy = true,
-    opts = {
-      keymaps = {
-        play_macro = false,
-        yank_macro = false,
-        stop_macro = false,
-        toggle_record = false,
-        cycle_next = false,
-        cycle_prev = false,
-        toggle_macro_menu = false,
-      },
-    },
-    config = function(_, opts)
-      require("NeoComposer").setup(opts)
-      require("NeoComposer.store").load_macros_from_database()
-    end,
-    keys = {
-      { "]m", "<cmd>lua require('NeoComposer.ui').cycle_next()<cr>", desc = "Macros cycle next" },
-      { "[m", "<cmd>lua require('NeoComposer.ui').cycle_prev()<cr>", desc = "Macros cycle prev" },
-      -- { "yq", "<cmd>lua require('NeoComposer.macro').yank_macro()<cr>", desc = "Macros yank" },
-      -- { "cq", "<cmd>lua require('NeoComposer.macro').halt_macro()<cr>", desc = "Macros halt" },
-      { "<c-q>", "<cmd>lua require('NeoComposer.ui').toggle_macro_menu()<cr>", desc = "Macros menu" },
-      { "q", "<cmd>lua require('NeoComposer.macro').toggle_record()<cr>", desc = "Macros record" },
-      {
-        "Q",
-        "<cmd>lua require('NeoComposer.macro').toggle_play_macro()<cr>",
-        desc = "Macros play",
-        mode = { "n", "x" },
-      },
-    },
-  },
-
   {
     "folke/flash.nvim",
     vscode = false,

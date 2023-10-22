@@ -73,3 +73,6 @@ map(
 -- it seems to be too harmful anyway.
 map("n", "<C-Z>", "[s1z=", { desc = "Correct latest misspelled word" })
 map("i", "<C-Z>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Correct latest misspelled word" })
+
+-- folds
+map("n", "<c-h>", "za", { desc = "Toggle Fold" })

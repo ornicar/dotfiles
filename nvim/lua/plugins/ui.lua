@@ -104,14 +104,15 @@ return {
 
   {
     "giusgad/pets.nvim",
-    branch = "forbidden-cats",
-    dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
-    opts = {
-      default_style = "red",
-    },
+    -- branch = "forbidden-cats",
+    dependencies = { "MunifTanjim/nui.nvim", "giusgad/hologram.nvim" },
+    -- opts = {
+    --   default_style = "red",
+    -- },
     keys = {
-      { "<leader>cec", "<cmd>PetsNew cat<cr>", desc = "Spawn a cat" },
-      { "<leader>cek", "<cmd>PetsKillAll<cr>", desc = "Kill the cats" },
+      { "<leader>cec", "<cmd>PetsNew clippy<cr>", desc = "Spawn clippy" },
+      { "<leader>ced", "<cmd>PetsNew dog<cr>", desc = "Spawn a dog" },
+      { "<leader>cek", "<cmd>PetsKillAll<cr>", desc = "Kill the pets" },
     },
   },
 }

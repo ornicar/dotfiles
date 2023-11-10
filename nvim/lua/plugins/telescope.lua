@@ -17,6 +17,11 @@ return {
         { "<leader>mt", in_buffer_dir("files"), desc = "Find files in buffer directory" },
         { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
         { "<leader><space>r", Util.telescope("live_grep", { cwd = false }), desc = "Live grep in git root" },
+        {
+          "<leader><space>R",
+          Util.telescope("live_grep", { cwd = false, no_ignore = true, hidden = true }),
+          desc = "Live grep, no ignore",
+        },
         { "<leader><space>s", Util.telescope("live_grep"), desc = "Live grep in LSP root" },
         { "<leader><space>t", in_buffer_dir("live_grep"), desc = "Live grep in buffer directory" },
         {
@@ -53,12 +58,6 @@ return {
           -- ["<esc>"] = "close",
           ["<C-t>"] = function(...)
             return require("trouble.providers.telescope").open_with_trouble(...)
-          end,
-          ["<a-i>"] = function()
-            Util.telescope("find_files", { no_ignore = true })()
-          end,
-          ["<a-h>"] = function()
-            Util.telescope("find_files", { hidden = true })()
           end,
           ["<esc>"] = function(...)
             return require("telescope.actions").close(...)

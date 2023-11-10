@@ -17,7 +17,6 @@ return {
 
   {
     "folke/flash.nvim",
-    vscode = false,
     ---@type Flash.Config
     opts = {
       labels = "nteshdlpufiryw",

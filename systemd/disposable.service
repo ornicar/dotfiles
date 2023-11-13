@@ -1,10 +1,11 @@
 [Unit]
-Description=Tags and uploads new puzzles
+Description=Updates and pushes disposable emails
+After=ssh-agent.service
 
 [Service]
 Type=oneshot
-ExecStart=/home/thib/lichess-puzzler/bin/import-more.sh
-WorkingDirectory=/home/thib/lichess-puzzler
+ExecStart=/home/thib/disposable/update.sh
+WorkingDirectory=/home/thib/disposable
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 ExecStartPre=/usr/bin/ssh-add /home/thib/.ssh/id_nokey
 

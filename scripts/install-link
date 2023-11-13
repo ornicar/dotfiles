@@ -74,10 +74,10 @@ link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
 link gtkrc-2.0 ~/.gtkrc-2.0
 link ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler puzzler-copy ssh-local-forward@; do
+for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler puzzler-copy disposable ssh-local-forward@; do
 	link systemd/$s.service ~/.config/systemd/user/$s.service
 done
-for s in puzzler-copy; do
+for s in puzzler-copy disposable; do
 	link systemd/$s.timer ~/.config/systemd/user/$s.timer
 done
 systemctl --user daemon-reload

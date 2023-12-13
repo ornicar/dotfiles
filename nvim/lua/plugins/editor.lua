@@ -8,8 +8,8 @@ return {
     keys = {
       { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
       { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
-      { "<c-n>", "<Plug>(YankyCycleForward)" },
-      { "<c-e>", "<Plug>(YankyCycleBackward)" },
+      { "<c-e>", "<Plug>(YankyCycleForward)" },
+      { "<c-n>", "<Plug>(YankyCycleBackward)" },
       { "]p", "<Plug>(YankyPutIndentAfterLinewise)" },
       { "[p", "<Plug>(YankyPutIndentBeforeLinewise)" },
     },

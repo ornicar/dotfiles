@@ -18,7 +18,7 @@ watch -n 1200 feh --bg-fill --randomize ~/image/wallpaper/ &
 
 blueman-applet &
 
-$HOME/.scripts/input-glove
+$HOME/.scripts/input-crom
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 

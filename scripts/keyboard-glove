@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 setxkbmap -keycodes evdev us -variant colemak
 xset r rate 200 56

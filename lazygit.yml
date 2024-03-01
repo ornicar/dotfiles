@@ -18,6 +18,8 @@ git:
     showGraph: 'never'
 promptToReturnFromSubprocess: false
 keybinding:
+  files:
+    stashAllChanges: '<c-a>' # instead of just 's' which I typod for 'c'
   universal:
     quit: 'q'
     quit-alt1: '<c-c>' # alternative/alias of quit

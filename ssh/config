@@ -15,111 +15,23 @@ Host listress-ws
 Host listress
   HostName 35.209.159.98
   User root
-Host greco
-  HostName greco.lichess.ovh
+Host manta
+  HostName manta.lichess.ovh
   User root
-Host leess
-  HostName leess.lichess.ovh
+Host kaiju
+  HostName kaiju.lichess.ovh
   User root
-Host keres
-  HostName keres.lichess.ovh
+Host rodan
+  HostName rodan.lichess.ovh
   User root
-Host gandi1
-  HostName 2001:4b98:dc0:41:216:3eff:fef3:b78e
-  User admin
-Host leela
-  HostName 83.145.238.235
-  Port 9023
-  User thibault
 Host loquy
   HostName loquy.lichess.ovh
-  User root
-Host dirac
-  HostName dirac.lichess.ovh
-  User root
-Host gauss
-  HostName gauss.lichess.ovh
   User root
 Host archi
   HostName archi.lichess.ovh
   User root
   ForwardAgent yes
-Host drake
-  HostName 213.239.195.106
-  User root
-Host irwin
-  HostName 188.165.221.85
-  User root
-Host pluto
-  HostName 37.59.12.19
-  User root
-Host koala
-  HostName 94.23.220.148
-  User root
-Host curie
-  HostName curie.lichess.org
-  User root
-Host benko
-  HostName 5.196.84.117
-  User root
-Host bofur
-  HostName 149.202.91.37
-  User root
-Host rambo
-  HostName 91.121.89.126
-  User root
-Host flynn
-  HostName 91.121.146.216
-  User root
 Host khiaw
   HostName 176.31.115.179
   User root
   ForwardAgent yes
-Host ushio
-  HostName 91.121.211.87
-  User root
-Host marta
-  HostName 91.121.143.131
-  User root
-Host timshell
-  HostName 91.121.176.121
-  Port 22422
-  User lichess
-Host timroot
-  HostName 91.121.176.121
-  Port 22422
-  User root
-Host leela
-  HostName 52.24.238.133
-  User ubuntu
-  IdentityFile "~/.ssh/leela.pem"
-Host leelascale
-  HostName 52.11.60.154
-  User ubuntu
-  IdentityFile "~/.ssh/leela.pem"
-Host adele
-  HostName 91.121.89.85
-  User root
-Host cammy
-  HostName 91.121.169.81
-  User root
-Host patat
-  HostName karmeliet.darklord.fr
-  User lichess
-  Port 9453
-Host hexal
-  HostName 37.60.8.7
-  User root
-Host vindinium
-  HostName 5.196.64.149
-  User vindinium
-Host matthews
-  HostName 91.121.16.158
-  Port 27120
-  User thibault
-Host vindinium
-  HostName 91.209.78.59
-  User vindinium
-Host salim2
-  HostName 216.218.250.236
-  User root

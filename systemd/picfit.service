@@ -1,0 +1,11 @@
+[Unit]
+Description=Picfit lila image server
+
+[Service]
+ExecStart=/home/thib/picfit/bin/picfit -c /home/thib/picfit/config.json
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=picfit
+
+[Install]
+WantedBy=default.target

@@ -20,12 +20,13 @@ return {
     },
   },
 
-  -- formatters
-  -- rm /run/user/1000/.prettierd
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   opts = function(_, opts)
-  --     opts.debug = true
-  --   end,
-  -- },
+  -- scala lsp
+  {
+    "scalameta/nvim-metals",
+    -- stylua: ignore
+    keys = {
+      {'<leader>me', function() require "telescope".extensions.metals.commands() end, desc="Metals commands"},
+      {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
+    },
+  },
 }

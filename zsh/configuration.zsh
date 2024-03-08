@@ -41,3 +41,5 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 # cd without cd
 setopt autocd autopushd
+
+eval "$(zoxide init zsh --cmd cd)"

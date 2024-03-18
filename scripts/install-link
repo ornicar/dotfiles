@@ -25,7 +25,6 @@ link gitconfig ~/.gitconfig
 link nvim ~/.config/nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir ~/.config/nvim/undodir
-link scripts/chromium-dark ~/.bin/chromium-dark
 mkdir -p ~/.config/lazygit
 link lazygit.yml ~/.config/lazygit/config.yml
 link rtorrent.rc ~/.rtorrent.rc
@@ -39,8 +38,6 @@ link i3/status ~/.i3/status
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
 mkdir -p ~/.config/ranger
-link ranger/rc.conf ~/.config/ranger/rc.conf
-link ranger/apps.py ~/.config/ranger/apps.py
 link redshift.conf ~/.config/redshift.conf
 link ttytterrc ~/.ttytterrc
 link inputrc ~/.inputrc
@@ -55,8 +52,6 @@ link sbtrc ~/.sbtrc
 link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link zlogin ~/.zlogin
-link alacritty.yml ~/.config/alacritty/alacritty.yml
-link wezterm.lua ~/.wezterm.lua
 link kitty.conf ~/.config/kitty/kitty.conf
 mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json

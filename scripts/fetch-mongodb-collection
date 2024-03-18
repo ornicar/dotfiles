@@ -14,5 +14,5 @@ $C
 
 rsync -av $REMOTE:$REMOTE_PATH ./
 ssh $REMOTE rm $REMOTE_PATH
-mongoimport --db $DB --collection $COLL $FILE
+mongoimport --db lichess --collection $COLL $FILE
 rm $FILE

@@ -33,6 +33,7 @@ bindsym F10 exec ~/.scripts/music up
 bindsym F8 exec playerctl -p spotify play-pause
 # bindsym F12 exec playerctl -p spotify next
 bindsym Mod1+F11 exec ~/.scripts/music copy-current
+bindsym Mod1+F10 exec ~/.scripts/screenshot
 # bindsym XF86AudioPrev exec mpc prev
 # bindsym XF86AudioPlay exec mpc toggle
 # bindsym XF86AudioNext exec mpc next
@@ -181,7 +182,7 @@ bindsym $mod+Shift+r mode "resize"
 bindsym $mod+r exec ~/.scripts/redshift-toggle
 
 bar {
-  font pango:MesloLGS NF 18
+  font pango:MesloLGS NF 17
   # mode hide
   # hidden_state hide
   # modifier $mod

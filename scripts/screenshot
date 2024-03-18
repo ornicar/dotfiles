@@ -1,7 +1,3 @@
 #!/bin/sh
-# Take screenshot of entire screen (multi-head) and display shot.
-# Author: Vic Fryzel
-# http://github.com/vicfryzel/xmonad-config
 
-
-sleep 0.2; scrot -m "$HOME/screenshots/%Y-%m-%d-%H%M%S_\$wx\$h.png" -e "$BROWSER \$f"
+gscreenshot -f '/home/thib/tmp/screenshot/$hx$w_%Y-%m-%d.png' -s -c -d 0

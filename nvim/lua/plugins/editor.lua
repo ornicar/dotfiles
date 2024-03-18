@@ -61,17 +61,17 @@ return {
         end,
         desc = "First trouble item",
       },
-      {
-        "]q",
-        function()
-          if require("trouble").is_open() then
-            require("trouble").next({ skip_groups = true, jump = true })
-          else
-            vim.cmd.cnext()
-          end
-        end,
-        desc = "Next trouble/quickfix item",
-      },
+      -- {
+      --   "]q",
+      --   function()
+      --     if require("trouble").is_open() then
+      --       require("trouble").next({ skip_groups = true, jump = true })
+      --     else
+      --       vim.cmd.cnext()
+      --     end
+      --   end,
+      --   desc = "Next trouble/quickfix item",
+      -- },
     },
     opts = {
       use_diagnostic_signs = true,
@@ -98,8 +98,8 @@ return {
     "almo7aya/openingh.nvim",
     lazy = true,
     keys = {
-      { "<leader>gf", "<cmd>OpenInGHFile<cr>", mode = "n", desc = "Open file in GitHub" },
-      { "<leader>gf", "<cmd>OpenInGHFileLines<cr>", mode = "v", desc = "Open file in GitHub" },
+      { "<leader>gh", "<cmd>OpenInGHFile<cr>", mode = "n", desc = "Open file in GitHub" },
+      { "<leader>gH", "<cmd>OpenInGHFileLines<cr>", mode = "v", desc = "Open file in GitHub" },
       { "<leader>gr", "<cmd>OpenInGHRepo<cr>", desc = "Open repo in GitHub" },
     },
   },

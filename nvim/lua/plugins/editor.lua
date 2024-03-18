@@ -1,4 +1,7 @@
 return {
+  {
+    "lambdalisue/suda.vim"
+  },
   -- yank ring
   {
     "gbprod/yanky.nvim",

@@ -35,6 +35,8 @@ link mpd ~/.config/mpd
 mkdir -p ~/.i3
 link i3/config ~/.i3/config
 link i3/status ~/.i3/status
+mkdir -p ~/.sway
+link sway/config ~/.sway/config
 mkdir -p ~/.config/dmenu-frecency
 link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
 mkdir -p ~/.config/ranger
@@ -76,5 +78,5 @@ for s in puzzler-copy disposable; do
 	link systemd/$s.timer ~/.config/systemd/user/$s.timer
 done
 systemctl --user daemon-reload
-link ~/lila/public/font/lichess.ttf ~/.local/share/fonts/lichess.ttf
-fc-cache
+#link ~/lila/public/font/lichess.ttf ~/.local/share/fonts/lichess.ttf
+#fc-cache

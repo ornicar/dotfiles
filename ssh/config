@@ -3,9 +3,12 @@ Host *
   # ControlPath ~/.ssh/master-%r@%h:%p
   # ControlPersist 600
   ForwardAgent yes
-Host fatboy
-  HostName 192.168.1.4
+Host crom
+  HostName 82.64.134.116
   User thib
+  LocalForward 27017 localhost:27017
+  LocalForward 9663 localhost:9663
+  LocalForward 9664 localhost:9664
 Host listress-clients
   HostName 35.209.121.121
   User root

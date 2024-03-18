@@ -16,11 +16,11 @@ for zsh_file (~/dotfiles/zsh/*.zsh) source $zsh_file
 # Load private configuration
 source ~/.zshrc.local
 
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-#[[ ! -f ~/dotfiles/p10k.zsh ]] || source ~/dotfiles/p10k.zsh
+#source /run/current-system/sw/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /run/current-system/sw/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/dotfiles/p10k.zsh ]] || source ~/dotfiles/p10k.zsh
 #
-# source ~/.fzf.zsh
+#source ~/.fzf.zsh
 # source /usr/share/nvm/init-nvm.sh
 #
 # # Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/

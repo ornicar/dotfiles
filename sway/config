@@ -18,6 +18,19 @@ set $term kitty
 #set $menu bemenu | wmenu | xargs swaymsg exec --
 set $menu bemenu-run | xargs swaymsg exec --
 
+# class                 border  backgr. text    indicator child_border
+# client.focused          #4b68ad #2c3e4b #24272e #282c34   #4b68ad
+# client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34
+# client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+default_border pixel 1
+# borders, lol
+hide_edge_borders both
+
+focus_follows_mouse no
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
@@ -35,8 +48,8 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 30 'swaylock -f -c 000000' \
+         timeout 60 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
@@ -68,7 +81,7 @@ input "type:keyboard" {
     # Despite the name, also works for non-floating windows.
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
-    floating_modifier $mod normal
+    floating_modifier $mod
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
@@ -127,16 +140,16 @@ input "type:keyboard" {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+s splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    # bindsym $mod+s layout stacking
+    bindsym $mod+f layout tabbed
     bindsym $mod+Shift+f layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+t fullscreen toggle
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -146,6 +159,8 @@ input "type:keyboard" {
 
     # Move focus to the parent container
     bindsym $mod+o focus parent
+    # focus the child container
+    bindsym $mod+i focus child
 #
 # Scratchpad:
 #
@@ -166,22 +181,21 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 3px
+    bindsym $down resize grow height 3px
+    bindsym $up resize shrink height 3px
+    bindsym Shift+$down resize shrink width 12 px or 12 ppt
+    bindsym Shift+$up resize grow width 12 px or 12 ppt
+    bindsym $right resize grow width 3px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
 
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
+
+bindsym $mod+r exec ~/.scripts/redshift-toggle
 
 #
 # Status Bar:

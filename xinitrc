@@ -16,7 +16,7 @@ pgrep redshift &> /dev/null || redshift -r &> /dev/null &
 
 watch -n 1200 feh --bg-fill --randomize ~/image/wallpaper/ &
 
-blueman-applet &
+# blueman-applet &
 
 $HOME/.scripts/input-crom
 

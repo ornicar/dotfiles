@@ -26,6 +26,7 @@
     swayidle
     wl-clipboard
     bemenu
+    waybar
     mako
     git
     btop
@@ -51,11 +52,16 @@
     python3
     keychain
     zoxide
-    nerdfonts
     fira-code
     keyd
     wev
     delta
+    zulip
+    mosh
+    redshift
+    mongosh
+    signal-desktop
+    discord
   ];
 
   programs.sway = {
@@ -79,6 +85,12 @@
             insert = "S-insert";
             leftmeta = "leftcontrol";
             sysrq = "leftcontrol";
+            rightalt = "layer(rightalt)";
+          };
+          "rightalt:C" = {
+            f = "enter";
+            n = "down";
+            e = "up";
           };
         };
       };
@@ -102,6 +114,13 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+  ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -176,7 +195,6 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11"; # Did you read the comment?
-
+  system.stateVersion = "23.11";
 }
 

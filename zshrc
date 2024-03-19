@@ -13,6 +13,8 @@ fi
 # Load all of my zsh files in zsh/
 for zsh_file (~/dotfiles/zsh/*.zsh) source $zsh_file
 
+eval "$(fzf --zsh)"
+
 # Load private configuration
 source ~/.zshrc.local
 

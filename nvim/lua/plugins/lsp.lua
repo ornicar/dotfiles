@@ -31,4 +31,7 @@ return {
       {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
     },
   },
+
+  -- required by nvim-dap
+  { "nvim-neotest/nvim-nio" },
 }

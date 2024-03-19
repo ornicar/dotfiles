@@ -48,8 +48,8 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 30 'swaylock -f -c 000000' \
-         timeout 60 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
@@ -173,6 +173,7 @@ input "type:keyboard" {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
 #
 # Resizing containers:
 #
@@ -194,8 +195,6 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+r mode "resize"
-
-bindsym $mod+r exec ~/.scripts/redshift-toggle
 
 #
 # Status Bar:

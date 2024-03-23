@@ -62,6 +62,11 @@
     mongosh
     signal-desktop
     discord
+    pavucontrol
+    neofetch
+    bat
+    httpie
+    powertop
   ];
 
   programs.sway = {
@@ -87,10 +92,8 @@
             sysrq = "leftcontrol";
             rightalt = "layer(rightalt)";
           };
-          "rightalt:C" = {
+          "rightalt:G" = {
             f = "enter";
-            n = "down";
-            e = "up";
           };
         };
       };
@@ -106,10 +109,9 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.

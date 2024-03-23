@@ -15,6 +15,7 @@ for zsh_file (~/dotfiles/zsh/*.zsh) source $zsh_file
 
 # Uncomment when fzf 0.48 lands in nix
 # eval "$(fzf --zsh)"
+source ~/tmp/fzf.zsh
 
 # Load private configuration
 source ~/.zshrc.local

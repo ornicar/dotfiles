@@ -12,15 +12,6 @@ Host crom-forward
   LocalForward 27017 localhost:27017
   LocalForward 9663 localhost:9663
   LocalForward 9664 localhost:9664
-Host listress-clients
-  HostName 35.209.121.121
-  User root
-Host listress-ws
-  HostName 35.209.204.46
-  User root
-Host listress
-  HostName 35.209.159.98
-  User root
 Host manta
   HostName manta.lichess.ovh
   User root
@@ -36,8 +27,6 @@ Host loquy
 Host archi
   HostName archi.lichess.ovh
   User root
-  ForwardAgent yes
 Host khiaw
   HostName 176.31.115.179
   User root
-  ForwardAgent yes

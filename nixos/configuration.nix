@@ -105,11 +105,15 @@
   };
 
   services.dbus.enable = true;
+  services.tlp.enable = true; # cpu power management
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.

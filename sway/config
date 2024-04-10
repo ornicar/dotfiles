@@ -1,6 +1,6 @@
 set $term kitty
 
-font pango:MesloLGS NF 5
+font pango:MesloLGS NF 3
 
 ### Variables
 
@@ -28,6 +28,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 default_border pixel 1
 # borders, lol
 hide_edge_borders both
+titlebar_padding 1 1
 
 focus_follows_mouse no
 

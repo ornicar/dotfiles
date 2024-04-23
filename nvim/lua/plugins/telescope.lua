@@ -56,9 +56,6 @@ return {
         i = {
           ["<C-e>"] = "move_selection_previous",
           -- ["<esc>"] = "close",
-          ["<C-t>"] = function(...)
-            return require("trouble.providers.telescope").open_with_trouble(...)
-          end,
           ["<esc>"] = function(...)
             return require("telescope.actions").close(...)
           end,

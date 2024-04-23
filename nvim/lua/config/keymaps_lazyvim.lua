@@ -1,7 +1,5 @@
 -- This file replaces LazyVim/lua/lazyvim/config/keymaps.lua
-local Util = require("lazyvim.util")
-
-local map = Util.safe_keymap_set
+local map = LazyVim.safe_keymap_set
 
 -- Move in windows using <ctrl> arrow keys
 map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window" })
@@ -72,7 +70,7 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 -- formatting
 map({ "n", "v" }, "<leader>cf", function()
-  Util.format({ force = true })
+  LazyVim.format({ force = true })
 end, { desc = "Format" })
 
 -- diagnostic
@@ -94,27 +92,32 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", function() Util.format.toggle() end, { desc = "Toggle auto format (global)" })
-map("n", "<leader>uF", function() Util.format.toggle(true) end, { desc = "Toggle auto format (buffer)" })
-map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
-map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
-map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
-map("n", "<leader>ud", Util.toggle.diagnostics, { desc = "Toggle Diagnostics" })
+map("n", "<leader>uf", function() LazyVim.format.toggle() end, { desc = "Toggle auto format (global)" })
+map("n", "<leader>uF", function() LazyVim.format.toggle(true) end, { desc = "Toggle auto format (buffer)" })
+map("n", "<leader>us", function() LazyVim.toggle("spell") end, { desc = "Toggle Spelling" })
+map("n", "<leader>uw", function() LazyVim.toggle("wrap") end, { desc = "Toggle Word Wrap" })
+map("n", "<leader>ul", function() LazyVim.toggle.number() end, { desc = "Toggle Line Numbers" })
+map("n", "<leader>ud", LazyVim.toggle.diagnostics, { desc = "Toggle Diagnostics" })
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-map("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
+map("n", "<leader>uc", function() LazyVim.toggle("conceallevel", false, { 0, conceallevel }) end,
+  { desc = "Toggle Conceal" })
 map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-  map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
+  map("n", "<leader>uh", function() LazyVim.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
 end
 
 -- lazygit
-local full_size = { width = 1, height = 1 }
-map("n", "<leader>gg", function() Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, size = full_size}) end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function() Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false, size = full_size }) end, { desc = "Lazygit (cwd)" })
+local lg_full_size = { width = 1, height = 1 }
+map("n", "<leader>gg",
+  function() LazyVim.lazygit({ esc_esc = false, ctrl_hjkl = false, size = lg_full_size, cwd = LazyVim.root.git() }) end,
+  { desc = "Lazygit (Root Dir)" })
+map("n", "<leader>gG", function() LazyVim.lazygit({ esc_esc = false, ctrl_hjkl = false, size = lg_full_size }) end,
+  { desc = "Lazygit (cwd)" })
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
-  Util.terminal({ "lazygit", "-f", vim.trim(git_path) }, { esc_esc = false, ctrl_hjkl = false })
+  LazyVim.terminal({ "lazygit", "-f", vim.trim(git_path) }, { esc_esc = false, ctrl_hjkl = false })
 end, { desc = "Lazygit current file history" })
+map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -123,8 +126,9 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- floating terminal
-map("n", "<leader>ft", function() Util.terminal(nil, { cwd = Util.root.get() }) end, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function() Util.terminal() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>ft", function() LazyVim.terminal(nil, { cwd = LazyVim.root.get() }) end,
+  { desc = "Terminal (root dir)" })
+map("n", "<leader>fT", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- windows

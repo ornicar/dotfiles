@@ -61,36 +61,18 @@ return {
         end,
         desc = "First trouble item",
       },
-      -- {
-      --   "]q",
-      --   function()
-      --     if require("trouble").is_open() then
-      --       require("trouble").next({ skip_groups = true, jump = true })
-      --     else
-      --       vim.cmd.cnext()
-      --     end
-      --   end,
-      --   desc = "Next trouble/quickfix item",
-      -- },
     },
-    opts = {
-      use_diagnostic_signs = true,
-      auto_open = false,
-      auto_close = true,
-    },
+    -- opts = {
+    --   use_diagnostic_signs = true,
+    --   auto_open = false,
+    --   auto_close = true,
+    -- },
   },
 
   -- references
   {
     "RRethy/vim-illuminate",
     opts = { delay = 100 },
-  },
-
-  -- git signs
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = { on_attach = function() end },
   },
 
   -- open file in GitHub

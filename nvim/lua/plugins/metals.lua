@@ -26,24 +26,24 @@ return {
       -- cmp integration
       config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local dap = require("dap")
-      dap.configurations.scala = {
-        {
-          type = "scala",
-          request = "launch",
-          name = "RunOrTest",
-          metals = {
-            runType = "runOrTestFile",
-          },
-        },
-      }
-      dap.listeners.after["event_terminated"]["nvim-metals"] = function()
-        -- vim.notify("Tests have finished!")
-        dap.repl.open()
-      end
+      -- local dap = require("dap")
+      -- dap.configurations.scala = {
+      --   {
+      --     type = "scala",
+      --     request = "launch",
+      --     name = "RunOrTest",
+      --     metals = {
+      --       runType = "runOrTestFile",
+      --     },
+      --   },
+      -- }
+      -- dap.listeners.after["event_terminated"]["nvim-metals"] = function()
+      --   -- vim.notify("Tests have finished!")
+      --   dap.repl.open()
+      -- end
 
       config.on_attach = function(client, bufnr)
-        metals.setup_dap()
+        -- metals.setup_dap()
         require("lsp-format").on_attach(client, bufnr)
       end
 

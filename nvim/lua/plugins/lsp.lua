@@ -10,6 +10,7 @@ return {
       keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }
       keys[#keys + 1] = { "<space>cq", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
       keys[#keys + 1] = { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" }
+      keys[#keys + 1] = { "<leader>cf", vim.lsp.buf.format, desc = "LSP format buffer" }
     end,
     ---@class PluginLspOpts
     opts = {
@@ -19,16 +20,6 @@ return {
         rust_analyzer = {},
         pyright = {},
       },
-    },
-  },
-
-  -- scala lsp
-  {
-    "scalameta/nvim-metals",
-    -- stylua: ignore
-    keys = {
-      {'<leader>me', function() require "telescope".extensions.metals.commands() end, desc="Metals commands"},
-      {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
     },
   },
 }

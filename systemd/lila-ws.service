@@ -4,8 +4,8 @@ Requires=bloop.service
 
 [Service]
 #ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop -- -J-Dlogback.configurationFile=logback.prod.xml
-#ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop -- -J-Dcsrf.origin=http://l.org -J-Dlogback.configurationFile=logback.dev.xml
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml
+ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop -- -J-Dcsrf.origin=https://l.org -J-Dlogback.configurationFile=logback.dev.xml
+#ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-ws -m lila.ws.LilaWs -c /home/thib/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml
 ExecStop=fuser -k 9664/tcp -TERM
 
 [Install]

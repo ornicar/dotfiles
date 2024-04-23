@@ -2,7 +2,7 @@
 Description=Picfit lila image server
 
 [Service]
-ExecStart=/home/thib/picfit/bin/picfit -c /home/thib/picfit/config.json
+ExecStart=/home/thib/picfit/bin/picfit --config /home/thib/picfit/config.json
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=picfit

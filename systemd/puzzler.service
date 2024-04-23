@@ -1,5 +1,6 @@
 [Unit]
 Description=puzzler
+After=mongodb.service
 
 [Service]
 WorkingDirectory=/home/thib/lichess-puzzler/validator/back

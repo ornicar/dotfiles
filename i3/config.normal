@@ -45,7 +45,7 @@ bindsym F6 exec ~/.scripts/keyboard-qwerty
 bindsym F7 exec ~/.scripts/input-crom
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show run -auto-select

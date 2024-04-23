@@ -18,8 +18,8 @@ export GIT_EDITOR="nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=default'"
 
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-bin
-export SBT_OPTS="-Xms256M -Xmx2G"
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export SBT_OPTS="-Xms128M -Xmx1G"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
@@ -27,7 +27,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..
 
-eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`
+eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
 
 # autocompletion
 autoload -Uz compinit

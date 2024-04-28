@@ -53,6 +53,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     ---@type TSConfig
+    ---@diagnostic disable-next-line: missing-fields
     opts = {
       highlight = {
         disable = function(_, bufnr) -- Disable in large buffers
@@ -69,5 +70,5 @@ return {
   },
 
   -- Show context of the current function
-  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
+  { "nvim-treesitter/nvim-treesitter-context", enabled = true, opts = { mode = "cursor", max_lines = 5 } },
 }

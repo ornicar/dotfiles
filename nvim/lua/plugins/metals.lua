@@ -17,7 +17,7 @@ return {
       config.settings = {
         showImplicitArguments = true,
         excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-        serverProperties = { "-Xmx2g" },
+        serverProperties = { "-Xmx4g" },
         serverVersion = "latest.snapshot",
       }
 

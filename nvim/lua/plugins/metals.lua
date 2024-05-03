@@ -42,10 +42,10 @@ return {
       --   dap.repl.open()
       -- end
 
-      config.on_attach = function(client, bufnr)
-        -- metals.setup_dap()
-        require("lsp-format").on_attach(client, bufnr)
-      end
+      -- config.on_attach = function(client, bufnr)
+      -- metals.setup_dap()
+      -- require("lsp-format").on_attach(client, bufnr)
+      -- end
 
       -- Autocmd that will actually be in charge of starting the whole thing
       local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })

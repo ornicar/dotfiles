@@ -59,6 +59,12 @@ return {
           ["<esc>"] = function(...)
             return require("telescope.actions").close(...)
           end,
+          ["<S-Down>"] = function(...)
+            require("telescope.actions").cycle_history_next(...)
+          end,
+          ["<S-Up>"] = function(...)
+            require("telescope.actions").cycle_history_prev(...)
+          end,
         },
       }
       opts.defaults.scroll_strategy = "limit"

@@ -35,3 +35,7 @@ Host khiaw
   HostName 176.31.115.179
   User root
   ForwardAgent yes
+Host snafu
+  HostName 141.94.96.141
+  User root
+  ForwardAgent yes

@@ -69,12 +69,6 @@ return {
     -- },
   },
 
-  -- references
-  {
-    "RRethy/vim-illuminate",
-    opts = { delay = 100 },
-  },
-
   -- open file in GitHub
   {
     "almo7aya/openingh.nvim",

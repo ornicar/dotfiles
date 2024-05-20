@@ -5,12 +5,12 @@
     "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.rust",
-    "lazyvim.plugins.extras.lang.scala",
-    "lazyvim.plugins.extras.lang.typescript"
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.lang.yaml"
   ],
   "news": {
-    "NEWS.md": "2123"
+    "NEWS.md": "4964"
   },
-  "version": 3
-}
+  "version": 4

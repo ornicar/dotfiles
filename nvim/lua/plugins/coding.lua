@@ -48,26 +48,4 @@ return {
       },
     },
   },
-
-  -- syntax parser
-  {
-    "nvim-treesitter/nvim-treesitter",
-    ---@type TSConfig
-    opts = {
-      highlight = {
-        disable = function(_, bufnr) -- Disable in large buffers
-          return vim.api.nvim_buf_line_count(bufnr) > 10000
-        end,
-      },
-      -- stylua: ignore
-      ensure_installed = {
-        "scala", "haskell", "rust", "scss", "dart", "hocon", "bash", "help", "html", "javascript", "json", "lua", "luap",
-        "markdown", "markdown_inline", "python", "query", "regex", "tsx", "typescript", "vim", "yaml", "c"
-      },
-      ignore_install = { "help" },
-    },
-  },
-
-  -- Show context of the current function
-  { "nvim-treesitter/nvim-treesitter-context", enabled = false },
 }

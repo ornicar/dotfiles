@@ -83,19 +83,6 @@ return {
     },
   },
 
-  -- references
-  {
-    "RRethy/vim-illuminate",
-    opts = { delay = 100 },
-  },
-
-  -- git signs
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = { on_attach = function() end },
-  },
-
   -- open file in GitHub
   {
     "almo7aya/openingh.nvim",

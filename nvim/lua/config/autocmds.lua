@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 -- trim white space
-vim.api.nvim_create_autocmd("BufWritePre", { command = "%s/\\s\\+$//e" })
+-- vim.api.nvim_create_autocmd("BufWritePre", { command = "%s/\\s\\+$//e" })
 
 vim.cmd([[
   " play2

@@ -33,20 +33,12 @@ return {
         require("lsp-format").on_attach(client, bufnr)
       end
 
-      local dap = require("dap")
-      dap.configurations.scala = {
-        {
-          type = "scala",
-          request = "launch",
-          name = "RunOrTest",
-          metals = {
-            runType = "runOrTestFile",
-          },
-        },
-      }
-      dap.listeners.after["event_terminated"]["nvim-metals"] = function()
-        -- vim.notify("Tests have finished!")
-        dap.repl.open()
+      -- config.on_attach = function(client, bufnr)
+      -- metals.setup_dap()
+      -- require("lsp-format").on_attach(client, bufnr)
+      -- end
+      config.on_attach = function(_, buffer)
+        LazyVim.toggle.inlay_hints(buffer, false)
       end
 
       -- Autocmd that will actually be in charge of starting the whole thing

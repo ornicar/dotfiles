@@ -12,14 +12,42 @@ return {
     keys = {
       -- stylua: ignore
       { "<leader>mp", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History", },
-      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank Text" },
-      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Cursor" },
-      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put Yanked Text Before Cursor" },
-      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Selection" },
+      {
+        "y",
+        "<Plug>(YankyYank)",
+        mode = { "n", "x" },
+        desc = "Yank Text",
+      },
+      {
+        "p",
+        "<Plug>(YankyPutAfter)",
+        mode = { "n", "x" },
+        desc = "Put Yanked Text After Cursor",
+      },
+      {
+        "P",
+        "<Plug>(YankyPutBefore)",
+        mode = { "n", "x" },
+        desc = "Put Yanked Text Before Cursor",
+      },
+      {
+        "gp",
+        "<Plug>(YankyGPutAfter)",
+        mode = { "n", "x" },
+        desc = "Put Yanked Text After Selection",
+      },
       { "<c-]>", "<Plug>(YankyCycleForward)" },
       { "<c-[>", "<Plug>(YankyCycleBackward)" },
-      { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put Indented After Cursor (Linewise)" },
-      { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put Indented Before Cursor (Linewise)" },
+      {
+        "]p",
+        "<Plug>(YankyPutIndentAfterLinewise)",
+        desc = "Put Indented After Cursor (Linewise)",
+      },
+      {
+        "[p",
+        "<Plug>(YankyPutIndentBeforeLinewise)",
+        desc = "Put Indented Before Cursor (Linewise)",
+      },
     },
   },
 
@@ -41,12 +69,12 @@ return {
     keys = function()
       -- stylua: ignore
       return {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+        { "S",     mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         -- { "r", mode = "o", function() requiee("flash").remote() end, desc = "Remote Flash" },
         -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    }
+        { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,     desc = "Toggle Flash Search" },
+      }
     end,
   },
 
@@ -54,20 +82,19 @@ return {
 
   {
     "folke/trouble.nvim",
+    opts = {
+      auto_close = true, -- auto close when there are no items
+      auto_open = true, -- auto open when there are items
+      auto_preview = true, -- automatically open preview when on an item
+      auto_refresh = true, -- auto refresh when open
+      auto_jump = true, -- auto jump to the item when there's only one
+    },
     keys = {
-      { "<space>d", "<cmd>TroubleToggle<cr>", desc = "Trouble toggle" },
-      { "<space>D", "<cmd>Trouble<cr>", desc = "Trouble open" },
+      { "<space>d", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
       {
         "<space><space>",
-        function()
-          local trouble = require("trouble")
-          if not trouble.is_open() then
-            trouble.open()
-          end
-          trouble.previous({ skip_groups = true, jump = false })
-          trouble.next({ skip_groups = true, jump = true })
-        end,
-        desc = "First trouble item",
+        "<cmd>Trouble diagnostics open focus=true<cr>",
+        desc = "Diagnostics (Trouble)",
       },
       -- {
       --   "]q",

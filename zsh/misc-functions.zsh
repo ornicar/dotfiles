@@ -16,6 +16,7 @@ psg() { ps aux | grep $* }
 batf() { tail -F $1 | bat --paging=never --plain -l log }
 
 limosh() { mosh root@$1.lichess.ovh }
+lissh() { ssh root@$1.lichess.ovh }
 
 function andagain { while : ; do "$@" ; sleep 1 ; done; }
 

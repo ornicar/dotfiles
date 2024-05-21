@@ -3,7 +3,7 @@ Description=lila-fishnet
 Requires=bloop.service
 
 [Service]
-ExecStart=/home/thib/.local/share/coursier/bin/bloop run lila-fishnet -m play.core.server.ProdServerStart -c /home/thib/lila-fishnet/.bloop
+ExecStart=/home/thib/.local/share/coursier/bin/bloop run app -c /home/thib/lila-fishnet/.bloop
 PIDFile=/home/lila-fishnet/RUNNING_PID
 
 [Install]

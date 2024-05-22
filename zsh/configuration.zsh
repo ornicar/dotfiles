@@ -27,7 +27,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..
 
-eval `keychain --eval --agents ssh --nogui -Q -q id_rsa`
+eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
 
 # autocompletion
 autoload -Uz compinit

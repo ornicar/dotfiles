@@ -32,9 +32,6 @@ link xinitrc ~/.xinitrc
 link Xresources ~/.Xresources
 link xcolors ~/.xcolors
 link mpd ~/.config/mpd
-mkdir -p ~/.i3
-link i3/config ~/.i3/config
-link i3/status ~/.i3/status
 mkdir -p ~/.sway
 link sway/config ~/.sway/config
 mkdir -p ~/.waybar

@@ -3,27 +3,22 @@
   environment.systemPackages = with pkgs; [
     git
     lazygit
+    gh
     gcc
     gnumake
     nodejs
-    gh
-    fzf
-    fd
     go
     cargo
     luarocks
     tree-sitter
     jdk
     python3
-    bat
-    httpie
     sbt
     bloop
     coursier
     corepack
     dart-sass
     delta
-    mosh
     mongosh
   ];
 

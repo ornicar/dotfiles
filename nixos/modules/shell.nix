@@ -2,7 +2,10 @@
 
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-  environment.variables.EDITOR = "nvim";
+  environment.variables = {
+    EDITOR = "nvim";
+    TERM = "xterm-kitty";
+  };
 
   environment.systemPackages = with pkgs; [
     kitty

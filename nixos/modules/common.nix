@@ -14,6 +14,7 @@
     ./packages.nix
     ./shell.nix
     ./sound.nix
+    ./stylix.nix
     ./sway.nix
     ./users.nix
   ];

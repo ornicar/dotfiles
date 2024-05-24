@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
+    "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.trouble-v3",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
@@ -14,3 +15,4 @@
     "NEWS.md": "4964"
   },
   "version": 4
+}

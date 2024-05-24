@@ -6,33 +6,11 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
     "modules-center": ["sway/window"],
-    //"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray"],
-    "modules-right": ["idle_inhibitor", "temperature", "cpu", "memory","network", "pulseaudio", "backlight", "battery", "tray", "clock"],
+    "modules-right": ["cpu", "temperature#cpu", "memory", "network", "pulseaudio", "backlight", "battery", "power-profiles-daemon", "tray", "clock#utc", "clock#local"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -55,25 +33,45 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "clock#local": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
+    "clock#utc": {
+        "timezone": "UTC",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
     "cpu": {
-        "format": " {usage}%",
+      "interval": 1,
+        // "format": " {usage}% {avg_frequency}GHz",
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+        "format-icons": ["", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
 //        "tooltip": false
     },
     "memory": {
         "format": " {}%"
     },
-    "temperature": {
-        "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-        "critical-threshold": 80,
+    "temperature#cpu": {
+        "interval": 1,
+        // "thermal-zone": 3,
+        "hwmon-path": "/sys/class/thermal/thermal_zone3/temp",
+        "critical-threshold": 70,
         "format-critical": "{icon} {temperatureC}°",
         "format": "{icon} {temperatureC}°",
-        "format-icons": ["", "", ""]
+        "format-icons": [""]
     },
     "backlight": {
         // "device": "acpi_video1",

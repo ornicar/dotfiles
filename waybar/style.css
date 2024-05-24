@@ -5,17 +5,17 @@
   min-height: 0;
 }
 
-window#waybar {
+#waybar {
   /*background: rgba(0, 0, 0, 0.5);*/
   background: black;
   /*    background-color: rgba(43, 48, 59, 0.5); */
   /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #ddd;
+  color: #bbb;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-window#waybar.hidden {
+#waybar.hidden {
   opacity: 0.2;
 }
 
@@ -27,9 +27,9 @@ window#waybar.hidden {
 }
 
 #window {
-  margin: 2;
-  padding-left: 8;
-  padding-right: 8;
+  margin: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
   background-color: rgba(0, 0, 0, 0.3);
   font-weight: bold;
 }
@@ -90,7 +90,6 @@ button:hover {
   margin: 2px;
   padding-left: 5px;
   padding-right: 5px;
-  color: #aaa;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -156,7 +155,8 @@ label:focus {
 }
 
 #temperature.critical {
-  background-color: #eb4d4b;
+  /*background-color: #903030;*/
+  color: red;
 }
 
 #idle_inhibitor.activated {

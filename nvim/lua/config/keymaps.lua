@@ -21,7 +21,7 @@ map("n", "!", ":!")
 map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
 
 -- delete buffer and file
-map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete Buffer and Window" })
+map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 
 -- Copy current file path to registers "* and "+
 map("n", "<leader>cp", ":let @*=@%<cr>:let @+=@%<cr>")
@@ -71,6 +71,3 @@ map(
 -- it seems to be too harmful anyway.
 map("n", "<C-Z>", "[s1z=", { desc = "Correct latest misspelled word" })
 map("i", "<C-Z>", "<C-g>u<Esc>[s1z=`]a<C-g>u", { desc = "Correct latest misspelled word" })
-
--- folds
-map("n", "<c-h>", "za", { desc = "Toggle Fold" })

@@ -88,12 +88,26 @@ return {
       auto_preview = true, -- automatically open preview when on an item
       auto_refresh = true, -- auto refresh when open
       auto_jump = true, -- auto jump to the item when there's only one
+      modes = {
+        cascade = {
+          mode = "diagnostics", -- inherit from diagnostics mode
+          filter = function(items)
+            local severity = vim.diagnostic.severity.HINT
+            for _, item in ipairs(items) do
+              severity = math.min(severity, item.severity)
+            end
+            return vim.tbl_filter(function(item)
+              return item.severity == severity
+            end, items)
+          end,
+        },
+      },
     },
     keys = {
-      { "<space>d", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<space>d", "<cmd>Trouble cascade toggle<cr>", desc = "Diagnostics (Trouble)" },
       {
         "<space><space>",
-        "<cmd>Trouble diagnostics open focus=true<cr>",
+        "<cmd>Trouble cascade open focus=true<cr>",
         desc = "Diagnostics (Trouble)",
       },
       -- {

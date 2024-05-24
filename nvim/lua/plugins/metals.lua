@@ -37,9 +37,9 @@ return {
       -- metals.setup_dap()
       -- require("lsp-format").on_attach(client, bufnr)
       -- end
-      config.on_attach = function(_, buffer)
-        LazyVim.toggle.inlay_hints(buffer, false)
-      end
+      -- config.on_attach = function(_, buffer)
+      --   LazyVim.toggle.inlay_hints(buffer, false)
+      -- end
 
       -- Autocmd that will actually be in charge of starting the whole thing
       local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })

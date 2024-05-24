@@ -38,6 +38,37 @@ local function lualine_pretty_path(opts)
 end
 
 return {
+  -- edgy
+  {
+    "folke/edgy.nvim",
+    opts = {
+      options = {
+        left = { size = 30 },
+        bottom = { size = 10 },
+        right = { size = 50 },
+        top = { size = 10 },
+      },
+      animate = {
+        enabled = false,
+      },
+      left = {
+        {
+          title = "Neo-Tree",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "filesystem"
+          end,
+          pinned = true,
+          open = function()
+            require("neo-tree.command").execute({ dir = LazyVim.root() })
+          end,
+          size = { height = 0.5 },
+        },
+        { title = "Neotest Summary", ft = "neotest-summary" },
+      },
+    },
+  },
+
   -- bufferline
   {
     "akinsho/bufferline.nvim",

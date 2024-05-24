@@ -11,9 +11,13 @@
   imports = [
     ./git.nix
     ./kitty.nix
+    ./lazygit.nix
   ];
 
   programs.bemenu = {
+    enable = true;
+  };
+  programs.eza = {
     enable = true;
   };
   programs.btop = {

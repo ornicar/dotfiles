@@ -15,3 +15,9 @@ vim.opt.writebackup = false -- Don't store backup while overwriting the file
 vim.opt.swapfile = false -- Use an SCM instead of swap files
 
 vim.opt.virtualedit = "block" -- Allow going past the end of line in visual block mode
+
+-- for edgy: views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
+-- for edgy: Default splitting will cause your main splits to jump when opening an edgebar.
+-- To prevent this, set `splitkeep` to either `screen` or `topline`.
+vim.opt.splitkeep = "screen"

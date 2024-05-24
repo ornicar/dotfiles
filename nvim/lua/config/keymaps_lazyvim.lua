@@ -2,15 +2,15 @@
 local map = LazyVim.safe_keymap_set
 
 -- Move in windows using <ctrl> arrow keys
-map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-Right>", "<C-w>l", { desc = "Go to right window" })
+map("n", "<C-n>", "<C-w>h", { desc = "Go to left window" })
+map("n", "<C-e>", "<C-w>l", { desc = "Go to right window" })
+map("n", "<C-l>", "<C-w>k", { desc = "Go to upper window" })
+map("n", "<C-h>", "<C-w>j", { desc = "Go to lower window" })
 -- Resize window using <ctrl><shift> arrow keys
-map("n", "<C-S-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- map("n", "<C-S-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+-- map("n", "<C-S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+-- map("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+-- map("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 -- map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -27,7 +27,7 @@ map("n", "<leader>md", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 
 -- Clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua

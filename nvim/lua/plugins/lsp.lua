@@ -14,11 +14,8 @@ return {
     end,
     ---@class PluginLspOpts
     opts = {
-      servers = {
-        cssls = {},
-        dartls = {},
-        rust_analyzer = {},
-        pyright = {},
+      inlay_hints = {
+        enabled = false,
       },
     },
   },

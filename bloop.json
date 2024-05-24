@@ -1,4 +1,4 @@
 {
-  "javaHome": "/usr/lib/jvm/java-21-openjdk-bin",
+  "javaHome": "/run/current-system/sw",
   "javaOptions": ["-Xmx14G"]
 }

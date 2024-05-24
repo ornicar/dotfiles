@@ -1,16 +1,16 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   /* font-family: 'Noto Sans CJK KR Regular'; */
-  font-size: 13px;
+  font-size: 19px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.5);
+  /*background: rgba(0, 0, 0, 0.5);*/
   background: black;
   /*    background-color: rgba(43, 48, 59, 0.5); */
   /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-  color: #ffffff;
+  color: #ddd;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -31,7 +31,6 @@ window#waybar.hidden {
   padding-left: 8;
   padding-right: 8;
   background-color: rgba(0, 0, 0, 0.3);
-  font-size: 14px;
   font-weight: bold;
 }
 
@@ -89,10 +88,9 @@ button:hover {
 #idle_inhibitor,
 #scratchpad {
   margin: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #ffffff;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #aaa;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -106,7 +104,6 @@ button:hover {
 }
 
 #clock {
-  font-size: 14px;
   font-weight: bold;
 }
 
@@ -114,10 +111,13 @@ button:hover {
   color: red;
 }
 
+/*#battery.charging {*/
+/*  color: #ffffff;*/
+/*  background-color: #26a65b;*/
+/*}*/
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26a65b;
+  color: #88cc88;
 }
 
 @keyframes blink {

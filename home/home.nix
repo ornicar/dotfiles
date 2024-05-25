@@ -9,6 +9,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
+    ./cli.nix
     ./coding.nix
     ./git.nix
     ./kitty.nix
@@ -16,6 +17,7 @@
     ./ssh.nix
     ./sway.nix
     ./waybar.nix
+    ./zsh.nix
   ];
 
   programs.bemenu = {

@@ -30,12 +30,5 @@
     fira-code
   ];
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "robbyrussell";
-    };
-  };
+  programs.zsh.enable = true;
 }

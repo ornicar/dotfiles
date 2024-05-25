@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
 
+with config.lib.stylix.colors.withHashtag;
+
 {
   programs.zsh.profileExtra = ''
     if [ -z "$DISPLAY" ] && [ "''\${XDG_VTNR:-0}" -eq 1 ]; then
@@ -27,7 +29,7 @@
     wrapperFeatures.gtk = true;
     checkConfig = false;
     config = rec {
-      fonts = lib.mkForce [ "DejaVu Sans 3" ];
+      fonts = lib.mkForce [ "DejaVu Sans 1" ];
       modifier = "Mod1";
       terminal = "kitty";
       left = "h";
@@ -45,6 +47,43 @@
           xkb_variant = "colemak";
           repeat_rate = "56";
           repeat_delay = "200";
+        };
+      };
+      colors = let
+        text = base04;
+        urgent = base09;
+        focused = base0D;
+        unfocused = base03;
+        background = base00;
+        indicator = base0C;
+      in lib.mkForce {
+        inherit background;
+        urgent = {
+          inherit background indicator text;
+          border = urgent;
+          childBorder = urgent;
+        };
+        focused = {
+          border = focused;
+          childBorder = focused;
+          background = focused;
+          indicator = focused;
+          text = focused;
+        };
+        focusedInactive = {
+          inherit background indicator text;
+          border = unfocused;
+          childBorder = unfocused;
+        };
+        unfocused = {
+          inherit background indicator text;
+          border = unfocused;
+          childBorder = unfocused;
+        };
+        placeholder = {
+          inherit background indicator text;
+          border = unfocused;
+          childBorder = unfocused;
         };
       };
       focus.followMouse = false;
@@ -129,12 +168,6 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 titlebar_padding 1 1
-
-client.focused          #4b68ad #2c3e4b #24272e #282c34   #4b68ad
-client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34
-client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 '';
   };
 }

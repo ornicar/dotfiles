@@ -178,4 +178,10 @@ hide_edge_borders both
 titlebar_padding 1 1
 '';
   };
+
+  services.mako = {
+    enable = true;
+    defaultTimeout = 5000;
+    ignoreTimeout = true;
+  };
 }

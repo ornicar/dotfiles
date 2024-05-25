@@ -22,5 +22,7 @@
     zeroad
     gimp
     gthumb
+    feh
+    libnotify
   ];
 }

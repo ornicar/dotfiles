@@ -125,7 +125,7 @@ with config.lib.stylix.colors.withHashtag;
         "XF86AudioNext" = "exec 'playerctl next'";
         "XF86AudioPrev" = "exec 'playerctl previous'";
 
-        "Print" = "exec 'FILENAME=\"screenshot-`date +%F-%T`\"; grim -g \"$(slurp)\" ~/Downloads/$FILENAME.png'";
+        "Print" = "exec 'FILENAME=\"screenshot-`date +%F-%T`\"; grim -g \"$(slurp)\" - | wl-copy; notify-send \"Screenshot -> clipboard\"'";
 
         "${modifier}+n" = "focus left";
         "${modifier}+e" = "focus right";

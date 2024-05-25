@@ -7,5 +7,10 @@
     bat
     httpie
     mosh
+    dust
   ];
+
+  services.logind.extraConfig = ''
+    HandlePowerKey=suspend
+  '';
 }

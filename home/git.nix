@@ -41,4 +41,8 @@
       "**/*.worksheet.sc"
     ];
   };
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+  };
 }

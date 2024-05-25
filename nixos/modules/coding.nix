@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
+    neovim
     git
     lazygit
     gh
@@ -14,18 +15,12 @@
     jdk
     python3
     sbt
-    bloop
     coursier
     corepack
     dart-sass
     delta
     mongosh
   ];
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   services.bloop = {
     install = true;

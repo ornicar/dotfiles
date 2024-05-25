@@ -32,13 +32,28 @@
   # fingerprint sensor
   services.fprintd.enable = false;
 
-  # services.actkbd = {
-  #   enable = true;
-  #   bindings = [
-  #     { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
-  #     { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
-  #   ];
-  # };
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          # to view key names:
+          # sudo keyd -m
+          main = {
+            capslock = "overload(control, esc)";
+            delete = "S-insert";
+            leftmeta = "leftcontrol";
+            sysrq = "leftcontrol";
+            rightalt = "layer(rightalt)";
+          };
+          "rightalt:G" = {
+            f = "enter";
+          };
+        };
+      };
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

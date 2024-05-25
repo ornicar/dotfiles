@@ -17,6 +17,13 @@
     enableZshIntegration = true;
   };
 
+  programs.bat = {
+    enable = true;
+  };
+  programs.ripgrep = {
+    enable = true;
+  };
+
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs.starship = {
     enable = true;

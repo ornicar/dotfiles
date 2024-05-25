@@ -8,6 +8,7 @@
     httpie
     mosh
     dust
+    psmisc # fuser
   ];
 
   services.logind.extraConfig = ''

@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   lib,
@@ -7,17 +5,18 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
   imports = [
-    ./cli.nix
-    ./coding.nix
-    ./git.nix
-    ./kitty.nix
-    ./lazygit.nix
-    ./ssh.nix
-    ./sway.nix
-    ./waybar.nix
-    ./zsh.nix
+    ./modules/cli.nix
+    ./modules/coding.nix
+    ./modules/git.nix
+    ./modules/kitty.nix
+    ./modules/lazygit.nix
+    ./modules/ssh.nix
+    ./modules/sway.nix
+    ./modules/waybar.nix
+    ./modules/zsh.nix
+    ./services/dev.nix
+    ./services/lila.nix
   ];
 
   programs.bemenu = {
@@ -42,7 +41,4 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
 }

@@ -38,7 +38,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.thib = import ./home/home.nix;
+            home-manager.users.thib = import ./home/fw.nix;
             home-manager.extraSpecialArgs = {inherit inputs outputs;};
           }
           inputs.stylix.nixosModules.stylix

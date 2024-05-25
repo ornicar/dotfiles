@@ -99,7 +99,7 @@ with config.lib.stylix.colors.withHashtag;
       keybindings = lib.mkForce {
         "${modifier}+return" = "exec ${terminal}";
         "${modifier}+space" = "exec ${menu}";
-        "${modifier}+shift+q" = "kill";
+        "${modifier}+q" = "kill";
         "${modifier}+shift+c" = "reload";
         "${modifier}+s" = "splith";
         "${modifier}+f" = "layout tabbed";
@@ -115,6 +115,8 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+shift+Down" = "move down";
         "${modifier}+shift+Up" = "move up";
         "${modifier}+shift+Right" = "move right";
+
+        "F2" = "exec 'systemctl --user start lila'";
 
         "XF86MonBrightnessDown" = "exec 'light -U 10'";
         "XF86MonBrightnessUp" = "exec 'light -A 10'";

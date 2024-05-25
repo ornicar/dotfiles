@@ -11,6 +11,7 @@
     btop
     google-chrome
     unzip
+    dtrx
     zulip
     redshift
     signal-desktop

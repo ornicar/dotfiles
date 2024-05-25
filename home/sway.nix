@@ -17,7 +17,7 @@ with config.lib.stylix.colors.withHashtag;
     enable = true;
     timeouts = [
       {
-        timeout = 300;
+        timeout = 600;
         command = ''${pkgs.sway}/bin/swaymsg "output * power off" '';
         resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
       }

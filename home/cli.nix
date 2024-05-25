@@ -2,12 +2,25 @@
 {
   programs.fzf = {
     enable = true;
+    enableZshIntegration = true;
+    # defaultCommand = "fd --type f'";
+    defaultCommand = "rg --files --hidden";
+    defaultOptions = ["--bind=ctrl-e:up" ];
   };
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       character = {
         success_symbol = "[›](bold green)";
@@ -19,11 +32,6 @@
         modified = "✶";
         staged = "✓";
         stashed = "≡";
-      };
-
-      nix_shell = {
-        symbol = " ";
-        heuristic = true;
       };
     };
   };

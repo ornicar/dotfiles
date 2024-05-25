@@ -23,9 +23,6 @@
   programs.bemenu = {
     enable = true;
   };
-  programs.eza = {
-    enable = true;
-  };
   programs.btop = {
     enable = true;
     settings = {

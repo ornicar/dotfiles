@@ -14,6 +14,8 @@ source ~/.zshrc.local
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..
 
+eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
+
 # Vimify
 
 # Allow command line editing in an external editor.

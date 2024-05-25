@@ -9,6 +9,10 @@ with config.lib.stylix.colors.withHashtag;
     fi
   '';
 
+  programs.bemenu = {
+    enable = true;
+  };
+
   gtk = {
     enable = true;
   };

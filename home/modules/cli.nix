@@ -11,17 +11,22 @@
     enable = true;
     enableZshIntegration = true;
   };
-
   programs.eza = {
     enable = true;
     enableZshIntegration = true;
   };
-
   programs.bat = {
     enable = true;
   };
   programs.ripgrep = {
     enable = true;
+  };
+  programs.btop = {
+    enable = true;
+    settings = {
+      proc_per_core = true;
+      update_ms = 1000;
+    };
   };
 
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";

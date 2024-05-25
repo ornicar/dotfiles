@@ -1,7 +1,0 @@
-#!/bin/bash
-i3-msg "workspace 3; append_layout ~/dotfiles/i3/workspace-3.json"
-
-(kitty -1 -d ~/lila --title "Lila cli 1" &)
-(kitty -1 -d ~/lila --title "Lila cli 2" &)
-(kitty -1 -d ~/lila --title "Lila journal" &)
-(kitty -1 -d ~/lila --title "Lila vim" &)

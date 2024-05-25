@@ -26,3 +26,7 @@ source ~/.zshrc.local
 #
 # # Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/
 bindkey '^E' fzf-history-widget
+
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec sway
+fi

@@ -21,56 +21,18 @@ mkdir -p ~/.config
 
 link zshrc ~/.zshrc
 link scripts ~/.scripts
-link gitconfig ~/.gitconfig
 link nvim ~/.config/nvim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mkdir ~/.config/nvim/undodir
-mkdir -p ~/.config/lazygit
-link lazygit.yml ~/.config/lazygit/config.yml
-link rtorrent.rc ~/.rtorrent.rc
-link xinitrc ~/.xinitrc
-link Xresources ~/.Xresources
-link xcolors ~/.xcolors
-link mpd ~/.config/mpd
-mkdir -p ~/.sway
-link sway/config ~/.sway/config
-mkdir -p ~/.waybar
-link waybar ~/.config/waybar
-mkdir -p ~/.config/dmenu-frecency
-link dmenu-frecency.conf ~/.config/dmenu-frecency/config.json
-mkdir -p ~/.config/ranger
-link redshift.conf ~/.config/redshift.conf
-link ttytterrc ~/.ttytterrc
-link inputrc ~/.inputrc
-link editrc ~/.editrc
-link ghci ~/.ghci
-mkdir -p ~/.ssh
-link ssh/config ~/.ssh/config
 mkdir -p ~/.sbt/1.0
 link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
-link sbt-1.0/plugins ~/.sbt/1.0/plugins
-link sbtrc ~/.sbtrc
 link editorconfig ~/.editorconfig
 #link sbt/build.sbt ~/.sbt/build.sbt
 link zlogin ~/.zlogin
-link kitty.conf ~/.config/kitty/kitty.conf
 mkdir -p ~/.bloop
 link bloop.json ~/.bloop/bloop.json
 mkdir -p ~/.config/mpv
 link mpv.conf ~/.config/mpv/mpv.conf
-mkdir -p ~/.config/mpv/scripts
-link mpv/youtube-quality/youtube-quality.lua ~/.config/mpv/scripts/youtube-quality.lua
-link mpv/youtube-upnext/youtube-upnext.lua ~/.config/mpv/scripts/youtube-upnext.lua
-mkdir -p ~/.config/bat
-link bat.config ~/.config/bat/config
-mkdir -p ~/.config/dunst
-link dunstrc ~/.config/dunst/dunstrc
-link prettierrc.json ~/.prettierrc.json
-link gtk-3.0.settings.ini ~/.config/gtk-3.0/settings.ini
-link gtkrc-2.0 ~/.gtkrc-2.0
-link ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/systemd/user
-for s in bloop lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler puzzler-copy disposable picfit ssh-local-forward@; do
+for s in lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler puzzler-copy disposable picfit ssh-local-forward@; do
 	link systemd/$s.service ~/.config/systemd/user/$s.service
 done
 for s in puzzler-copy disposable; do

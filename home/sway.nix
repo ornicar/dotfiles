@@ -24,9 +24,10 @@
 
   wayland.windowManager.sway = {
     enable = true;
-    checkConfig = true;
     wrapperFeatures.gtk = true;
+    checkConfig = false;
     config = rec {
+      fonts = lib.mkForce [ "DejaVu Sans 3" ];
       modifier = "Mod1";
       terminal = "kitty";
       left = "h";
@@ -52,7 +53,7 @@
         "${modifier}+return" = "exec ${terminal}";
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+shift+q" = "kill";
-        # "${modifier}+shift+c" = "reload";
+        "${modifier}+shift+c" = "reload";
         "${modifier}+s" = "splith";
         "${modifier}+f" = "layout tabbed";
         "${modifier}+shift+f" = "layout toggle split";
@@ -120,6 +121,12 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 titlebar_padding 1 1
+
+client.focused          #4b68ad #2c3e4b #24272e #282c34   #4b68ad
+client.focused_inactive #24272e #2c3e4b #2e3c46 #484e50   #282c34
+client.unfocused        #282c34 #282c34 #282c34 #282c34   #282c34
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 '';
   };
 }

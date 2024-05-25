@@ -15,6 +15,7 @@
     ./lazygit.nix
     ./ssh.nix
     ./sway.nix
+    ./waybar.nix
   ];
 
   programs.bemenu = {

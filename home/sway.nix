@@ -48,6 +48,14 @@ with config.lib.stylix.colors.withHashtag;
           repeat_rate = "56";
           repeat_delay = "200";
         };
+        "type:touchpad" = {
+          left_handed = "disabled";
+          tap = "enabled";
+          natural_scroll = "disabled";
+          # dwt = "enabled";
+          accel_profile = "adaptive"; # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+          pointer_accel = "0.3"; # set mouse sensitivity (between -1 and 1)
+        };
       };
       colors = let
         text = base04;

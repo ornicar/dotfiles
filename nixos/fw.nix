@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
     powertop
     fw-ectool
+    libinput
   ];
 
   networking.hostName = "fw";

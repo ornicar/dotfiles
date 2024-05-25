@@ -7,7 +7,7 @@
       mainBar = {
         layer = "top";
         position = "bottom";
-        modules-left = ["sway/workspaces" "sway/scratchpad" "custom/media"];
+        modules-left = ["sway/workspaces"];
         modules-center = ["sway/window"];
         modules-right = ["cpu" "temperature#cpu" "memory" "network" "pulseaudio" "backlight" "battery" "power-profiles-daemon" "tray" "clock#utc" "clock#local"];
         "sway/workspaces" = {
@@ -50,7 +50,7 @@
           };
         };
         "memory" = {
-          format = " {}%";
+          format = " {percentage}% {swapPercentage}%";
           states = {
             warning = 70;
             critical = 85;
@@ -81,12 +81,27 @@
           format-icons = ["" "" "" "" ""];
         };
         "network" = {
-          "format-wifi" = "{essid} {signalStrength}% ";
-          "format-ethernet" = " {ifname}";
+          "format-wifi" = " {essid} {signalStrength}% {bandwidthTotalBytes}";
           "tooltip-format" = " {ifname} via {gwaddr}";
           "format-linked" = " {ifname} (No IP)";
           "format-disconnected" = "Disconnected ⚠ {ifname}";
           "format-alt" = " {ifname}: {ipaddr}/{cidr}";
+        };
+        pulseaudio = {
+          "scroll-step" = 2;
+          "format" = "{icon}  {volume}%";
+          #"format-bluetooth"= "{icon}  {volume}%";
+          "format-muted" = "";
+          "format-icons" = {
+            "headphones" = "";
+            "handsfree" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = [ "" "" ];
+          };
+          "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
       };
     };
@@ -99,6 +114,9 @@ window#waybar > box {
 }
 .modules-right label {
   margin: 0 5px;
+}
+#tray {
+  margin: 0 15px;
 }
 #cpu {
   opacity: 0.6;
@@ -128,7 +146,10 @@ window#waybar > box {
 #workspaces button.urgent {
   background-color: @base09;
 }
-#clock {
+#clock.utc {
+  margin: 0;
+}
+#clock.local {
   font-weight: bold;
 }
 '';

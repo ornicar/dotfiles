@@ -17,8 +17,10 @@
     discord
     neofetch
     spotify
+    playerctl
     marksman
     zeroad
     gimp
+    gthumb
   ];
 }

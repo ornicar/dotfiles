@@ -44,7 +44,6 @@
             capslock = "overload(control, esc)";
             delete = "S-insert";
             leftmeta = "leftcontrol";
-            sysrq = "leftcontrol";
             rightalt = "layer(rightalt)";
           };
           "rightalt:G" = {

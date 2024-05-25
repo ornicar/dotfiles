@@ -19,7 +19,9 @@
     corepack
     dart-sass
     delta
+    mongodb
     mongosh
+    bloop
   ];
 
   services.bloop = {

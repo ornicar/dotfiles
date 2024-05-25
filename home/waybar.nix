@@ -45,7 +45,7 @@
           format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
           format-icons = ["" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           states = {
-            warning = 50;
+            warning = 30;
             critical = 70;
           };
         };

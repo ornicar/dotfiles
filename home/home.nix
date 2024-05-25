@@ -37,8 +37,6 @@
     homeDirectory = "/home/thib";
   };
 
-  home.packages = with pkgs; [ bloop ];
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;

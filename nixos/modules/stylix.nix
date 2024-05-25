@@ -1,7 +1,11 @@
 { pkgs, config, ... }: {
   stylix = {
     image = config.lib.stylix.pixel "base00";
+    # https://github.com/tinted-theming/base16-schemes
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
 
     fonts = rec {
       sansSerif = {

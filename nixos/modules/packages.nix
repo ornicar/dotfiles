@@ -19,6 +19,6 @@
     spotify
     marksman
     zeroad
-    nh
+    gimp
   ];
 }

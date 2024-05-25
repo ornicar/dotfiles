@@ -68,10 +68,15 @@
         "${modifier}+shift+Down" = "move down";
         "${modifier}+shift+Up" = "move up";
         "${modifier}+shift+Right" = "move right";
+
+        "XF86MonBrightnessDown" = "exec 'light -U 10'";
+        "XF86MonBrightnessUp" = "exec 'light -A 10'";
         "XF86AudioRaiseVolume" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
         "XF86AudioLowerVolume" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
         "XF86AudioMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
+
         "Print" = "exec 'FILENAME=\"screenshot-`date +%F-%T`\"; grim -g \"$(slurp)\" ~/Downloads/$FILENAME.png '";
+
         "${modifier}+n" = "focus left";
         "${modifier}+e" = "focus right";
         "${modifier}+h" = "focus down";

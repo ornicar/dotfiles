@@ -1,6 +1,7 @@
 { pkgs, lib, inputs, config, ... }: {
 
   environment.systemPackages = with pkgs; [
+    nh
     nix-search-cli
   ];
 

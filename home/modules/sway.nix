@@ -36,10 +36,10 @@ with config.lib.stylix.colors.withHashtag;
       fonts = lib.mkForce [ "DejaVu Sans 1" ];
       modifier = "Mod1";
       terminal = "kitty";
-      left = "h";
-      down = "n";
-      up = "e";
-      right = "l";
+      left = "n";
+      right = "e";
+      down = "h";
+      up = "l";
       startup = [
         { command = "kitty"; }
         { command = "google-chrome-stable"; }
@@ -133,10 +133,10 @@ with config.lib.stylix.colors.withHashtag;
 
         "Print" = "exec 'FILENAME=\"screenshot-`date +%F-%T`\"; grim -g \"$(slurp)\" - | wl-copy; notify-send \"Screenshot -> clipboard\"'";
 
-        "${modifier}+n" = "focus left";
-        "${modifier}+e" = "focus right";
-        "${modifier}+h" = "focus down";
-        "${modifier}+l" = "focus up";
+        "${modifier}+${left}" = "focus left";
+        "${modifier}+${right}" = "focus right";
+        "${modifier}+${down}" = "focus down";
+        "${modifier}+${up}" = "focus up";
         "${modifier}+o" = "focus parent";
         "${modifier}+i" = "focus child";
 

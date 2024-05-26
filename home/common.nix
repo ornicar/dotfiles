@@ -15,13 +15,13 @@
     ./modules/sway.nix
     ./modules/waybar.nix
     ./modules/zsh.nix
-    ./services/dev.nix
+    ./services/bloop.nix
     ./services/lila.nix
   ];
 
-  home = {
+  home = rec {
     username = "thib";
-    homeDirectory = "/home/thib";
+    homeDirectory = "/home/${username}";
   };
 
   programs.home-manager.enable = true;

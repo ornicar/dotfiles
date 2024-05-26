@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, nixpkgs-master, ... }: {
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -21,13 +21,6 @@
     delta
     mongodb
     mongosh
-    bloop
+    nixpkgs-master.legacyPackages."${pkgs.system}".bloop
   ];
-
-  services.bloop = {
-    install = true;
-    extraOptions = [
-      "-J-Xmx14G"
-    ];
-  };
 }

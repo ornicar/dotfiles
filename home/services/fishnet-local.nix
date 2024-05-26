@@ -1,19 +1,16 @@
 { pkgs, config, ... }:
-let
-  home = config.home.homeDirectory;
-in
 {
-  systemd.user.services.fishnet-prod =
+  systemd.user.services.fishnet-local = 
     let
-      fishnet = "${home}/fishnet";
+      fishnet = "${config.home.homeDirectory}/fishnet";
       release = "${fishnet}/target/release";
     in {
     Unit = {
-      Description = "Fishnet prod";
+      Description = "Fishnet client";
       After = [ "network-online.target" ];
     };
     Service = {
-      ExecStart = "${release}/fishnet --conf ${fishnet}/fishnet.ini";
+      ExecStart = "${release}/fishnet --conf ${fishnet}/fishnet.ini.local.analysis";
       KillMode = "mixed";
       WorkingDirectory = release;
       ReadWriteDirectories = release;

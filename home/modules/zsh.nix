@@ -94,6 +94,8 @@ bindkey '^E' fzf-history-widget
       "ga" = "git add -A";
       "gf" = "git fetch";
       "gp" = "git push";
+      "gl" = "git pull";
+      "glr" = "git pull --rebase";
       "gpw" = "git-push-write";
       "gc" = "git commit -v";
       "gca" = "git commit --amend";

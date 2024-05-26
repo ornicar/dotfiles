@@ -11,6 +11,7 @@
     ./locale.nix
     ./network.nix
     ./nix.nix
+    ./overlay.nix
     ./packages.nix
     ./shell.nix
     ./sound.nix

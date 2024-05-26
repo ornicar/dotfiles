@@ -1,7 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 let
   home = config.home.homeDirectory;
   bins = "/run/current-system/sw/bin";
+  bloop = "${bins}/bloop";
 in
 {
   systemd.user.services.lila = {
@@ -10,7 +11,7 @@ in
       Wants = [ "bloop.service" "lila-ws.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.bloop}/bin/bloop run lila -m lila.app.Lila -c ${home}/lila/.bloop";
+      ExecStart = "${bloop} run lila -m lila.app.Lila -c ${home}/lila/.bloop";
       ExecStop = "${bins}/fuser -k 9663/tcp -TERM";
     };
     Install = {
@@ -39,7 +40,7 @@ in
       Requires = [ "bloop.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.bloop}/bin/bloop run lila-ws -m lila.ws.LilaWs -c ${home}/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml";
+      ExecStart = "${bloop} run lila-ws -m lila.ws.LilaWs -c ${home}/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml";
       ExecStop = "${bins}/fuser -k 9664/tcp -TERM";
     };
     Install = {
@@ -52,7 +53,7 @@ in
       Requires = [ "bloop.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.bloop}/bin/bloop run lila-fishnet -m play.core.server.ProdServerStart -c ${home}/lila-fishnet/.bloop";
+      ExecStart = "${bloop} run lila-fishnet -m play.core.server.ProdServerStart -c ${home}/lila-fishnet/.bloop";
       ExecStop = "rm ${home}/lila-fishnet/RUNNING_PID";
     };
     Install = {
@@ -65,11 +66,25 @@ in
       Requires = [ "bloop.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.bloop}/bin/bloop run lila-search -m play.core.server.ProdServerStart -c ${home}/lila-search/.bloop";
+      ExecStart = "${bloop} run lila-search -m play.core.server.ProdServerStart -c ${home}/lila-search/.bloop";
       ExecStop = "rm ${home}/lila-search/RUNNING_PID";
     };
     Install = {
       WantedBy = [ "multi-user.target" ];
+    };
+  };
+  systemd.user.services.picfit = {
+    Unit = {
+      Description = "Picfit lila image server";
+    };
+    Service = {
+      ExecStart = "${home}/picfit/bin/picfit -c ${home}/picfit/config.json";
+      StandardOutput = "journal";
+      StandardError = "journal";
+      SyslogIdentifier = "picfit";
+    };
+    Install = {
+      WantedBy = [ "default.target" ];
     };
   };
 }

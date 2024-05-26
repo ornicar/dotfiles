@@ -1,4 +1,4 @@
-# Framework 16
+# frame.work 16
 { pkgs, ... }:
 
 {

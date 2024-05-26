@@ -67,7 +67,11 @@ eval "$(fzf --zsh)"
 # Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/
 bindkey '^E' fzf-history-widget
 '';
-    shellAliases = {
+    shellAliases = 
+      let 
+        xdgDir = "${config.home.homeDirectory}/.config";
+        nixDir = "${config.home.homeDirectory}/nixos-config";
+      in {
       "nswitch"="nh os switch ~/nixos-config/";
       "ntry"="nh os test ~/nixos-config/";
       "nup"="nh os switch --update ~/nixos-config/";
@@ -85,6 +89,10 @@ bindkey '^E' fzf-history-widget
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";
       "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
+# Nix
+# https://nixos-and-flakes.thiscute.world/best-practices/accelerating-dotfiles-debugging
+      "nvim-clean" = "rm -rf ${xdgDir}/nvim/lua";
+      "nvim-test" = "nvim-clean && rsync -avz --copy-links --chmod=D2755,F744 ${nixDir}/home/modules/neovim/nvim/lua ${xdgDir}/nvim/";
 # Git aliases
       "t" = "lazygit";
       "g" = "git";

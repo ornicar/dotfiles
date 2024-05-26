@@ -81,6 +81,7 @@
           format-icons = ["" "" "" "" ""];
         };
         "network" = {
+          interval = 1;
           "format-wifi" = " {essid} {signalStrength}% {bandwidthTotalBytes}";
           "tooltip-format" = " {ifname} via {gwaddr}";
           "format-linked" = " {ifname} (No IP)";

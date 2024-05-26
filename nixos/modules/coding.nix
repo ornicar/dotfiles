@@ -19,8 +19,9 @@
     corepack
     dart-sass
     delta
-    mongodb
-    mongosh
+    redis
     nixpkgs-master.legacyPackages."${pkgs.system}".bloop
   ];
+
+  services.redis.enable = true;
 }

@@ -9,6 +9,7 @@
     ./keyboard.nix
     ./linux.nix
     ./locale.nix
+    ./mongodb.nix
     ./network.nix
     ./nix.nix
     ./overlay.nix

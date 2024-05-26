@@ -30,6 +30,7 @@ alias gw='git wtf'
 # Goes up the tree to the git root dir
 alias g-='cd $(git rev-parse --show-toplevel || echo ".")'
 
+
 # Override aliases with functions
 # to keep autocompletion
 function gl(){~/dotfiles/scripts/git-up "$@"}

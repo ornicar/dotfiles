@@ -17,27 +17,10 @@ link() {
 	ln -s $FROM $TO
 }
 
-mkdir -p ~/.config
-
-link zshrc ~/.zshrc
 link scripts ~/.scripts
 link nvim ~/.config/nvim
 mkdir -p ~/.sbt/1.0
 link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
-link editorconfig ~/.editorconfig
-#link sbt/build.sbt ~/.sbt/build.sbt
-link zlogin ~/.zlogin
-mkdir -p ~/.bloop
-link bloop.json ~/.bloop/bloop.json
-mkdir -p ~/.config/mpv
-link mpv.conf ~/.config/mpv/mpv.conf
-mkdir -p ~/.config/systemd/user
-for s in lila lila2 lila-watch lila-ws lila-fishnet fishnet fishnet-prod lila-search puzzler puzzler-copy disposable picfit ssh-local-forward@; do
-	link systemd/$s.service ~/.config/systemd/user/$s.service
-done
-for s in puzzler-copy disposable; do
-	link systemd/$s.timer ~/.config/systemd/user/$s.timer
-done
 systemctl --user daemon-reload
 #link ~/lila/public/font/lichess.ttf ~/.local/share/fonts/lichess.ttf
 #fc-cache

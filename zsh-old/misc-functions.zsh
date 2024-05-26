@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Get a 7 chars password: generate-password 7
+# Get a 16 chars password: generate-password 16
 generate-password() {
   strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
 }

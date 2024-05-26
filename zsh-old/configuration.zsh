@@ -23,7 +23,7 @@ export SBT_OPTS="-Xms256M -Xmx2G"
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# CDPATH tells the cd command to look in
+# tells the cd command to look in
 # this colon-separated list of directories for your destination.
 CDPATH=$HOME:..
 

@@ -5,6 +5,7 @@ return {
   -- yank ring
   {
     "gbprod/yanky.nvim",
+    enabled = true,
     opts = {
       highlight = { timer = 150 },
     },
@@ -104,10 +105,10 @@ return {
       },
     },
     keys = {
-      { "<space>d", "<cmd>Trouble cascade toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<space>d", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
       {
         "<space><space>",
-        "<cmd>Trouble cascade open focus=true<cr>",
+        "<cmd>Trouble diagnostics open focus=true<cr>",
         desc = "Diagnostics (Trouble)",
       },
       -- {

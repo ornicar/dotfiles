@@ -23,5 +23,5 @@
     nixpkgs-master.legacyPackages."${pkgs.system}".bloop
   ];
 
-  services.redis.enable = true;
+  services.redis.servers."".enable = true;
 }

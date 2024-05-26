@@ -33,7 +33,7 @@ with config.lib.stylix.colors.withHashtag;
     wrapperFeatures.gtk = true;
     checkConfig = false;
     config = rec {
-      fonts = lib.mkForce [ "DejaVu Sans 1" ];
+      fonts = lib.mkForce { names = ["DejaVu Sans"]; size = 0.5; };
       modifier = "Mod1";
       terminal = "kitty";
       left = "n";

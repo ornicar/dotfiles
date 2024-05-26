@@ -101,10 +101,6 @@ location /oops/ {
   root /home/thib/lila/public/;
 }
 
-location /] {
-  return 400;
-}
-
 location /assets/lifat/ {
   autoindex on;
   access_log /var/log/nginx/access.log;

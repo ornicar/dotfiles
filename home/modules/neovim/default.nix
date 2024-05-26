@@ -38,6 +38,7 @@ in
 {
   home.packages = with pkgs; [
     lua-language-server
+    nodePackages_latest.typescript-language-server
   ];
 
   programs.neovim = {

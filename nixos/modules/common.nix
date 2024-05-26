@@ -11,6 +11,7 @@
     ./locale.nix
     ./mongodb.nix
     ./network.nix
+    ./nginx.nix
     ./nix.nix
     ./overlay.nix
     ./packages.nix

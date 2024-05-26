@@ -13,7 +13,6 @@
     unzip
     dtrx
     zulip
-    redshift
     signal-desktop
     discord
     neofetch

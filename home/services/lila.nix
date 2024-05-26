@@ -60,19 +60,19 @@ in
       WantedBy = [ "multi-user.target" ];
     };
   };
-  systemd.user.services.lila-search = {
-    Unit = {
-      Description = "lila-search";
-      Requires = [ "bloop.service" ];
-    };
-    Service = {
-      ExecStart = "${bloop} run lila-search -m play.core.server.ProdServerStart -c ${home}/lila-search/.bloop";
-      ExecStop = "rm ${home}/lila-search/RUNNING_PID";
-    };
-    Install = {
-      WantedBy = [ "multi-user.target" ];
-    };
-  };
+  # systemd.user.services.lila-search = {
+  #   Unit = {
+  #     Description = "lila-search";
+  #     Requires = [ "bloop.service" ];
+  #   };
+  #   Service = {
+  #     ExecStart = "${bloop} run lila-search -m play.core.server.ProdServerStart -c ${home}/lila-search/.bloop";
+  #     ExecStop = "rm ${home}/lila-search/RUNNING_PID";
+  #   };
+  #   Install = {
+  #     WantedBy = [ "multi-user.target" ];
+  #   };
+  # };
   systemd.user.services.picfit = {
     Unit = {
       Description = "Picfit lila image server";

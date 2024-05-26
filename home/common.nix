@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ./modules/neovim
     ./modules/cli.nix
     ./modules/coding.nix
     ./modules/git.nix
@@ -17,6 +18,7 @@
     ./modules/zsh.nix
     ./services/bloop.nix
     ./services/lila.nix
+    # ./services/gammarelay.nix
   ];
 
   home = rec {

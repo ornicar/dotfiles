@@ -182,6 +182,14 @@ default_border pixel 1
 # borders, lol
 hide_edge_borders both
 titlebar_padding 1 1
+
+# start major apps:
+workspace number 1
+exec kitty
+workspace number 2
+exec google-chrome-stable
+exec zulip
+exec discord
 '';
   };
 

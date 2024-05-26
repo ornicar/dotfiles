@@ -37,7 +37,6 @@ return {
         { "<leader>mn", LazyVim.telescope("man_pages"), desc = "Man pages" },
         { "<leader>qf", LazyVim.telescope("quickfix"), desc = "Quickfix" },
         { "<leader>qh", LazyVim.telescope("quickfixhistory"), desc = "Quickfix history" },
-        { "<leader>mp", ":Telescope yank_history<cr>", desc = "Yank history" },
         -- { "<leader>ma", ":Telescope macros<cr>", desc = "Macros" },
         { "<leader>mm", LazyVim.telescope("resume"), desc = "Resume" },
         { "<leader>mo", ":Telescope notify<cr>", desc = "Notifications" },

@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, inputs, ... }: 
+{
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
   stylix = {
     image = config.lib.stylix.pixel "base00";
     # https://github.com/tinted-theming/base16-schemes

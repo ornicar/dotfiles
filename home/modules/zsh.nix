@@ -99,6 +99,7 @@ ${zshCompletion}
       in {
       "nswitch"="nh os switch ${dotfiles}";
       "ntry"="nh os test ${dotfiles}";
+      "ndry"="nh os test ${dotfiles} --dry";
       "nup"="nh os switch --update ${dotfiles}";
       "su"= "systemctl --user";
       "sr"= "sudo systemctl";

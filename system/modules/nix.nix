@@ -24,6 +24,11 @@
     # nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
+
   programs.nh = {
     enable = true;
     clean.enable = true;

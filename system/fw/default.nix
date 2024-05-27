@@ -1,9 +1,10 @@
 # fw is my frame.work 16
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports =
     [
       ./hardware.nix
+      inputs.nixos-hardware.nixosModules.framework-16-7040-amd
       ../modules/common.nix
       ../modules/bluetooth.nix
     ];

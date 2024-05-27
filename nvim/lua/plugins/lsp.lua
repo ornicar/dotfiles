@@ -1,13 +1,3 @@
-local inlayHints = {
-  includeInlayEnumMemberValueHints = true,
-  includeInlayFunctionLikeReturnTypeHints = true,
-  includeInlayFunctionParameterTypeHints = true,
-  includeInlayParameterNameHints = "literal",
-  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  includeInlayPropertyDeclarationTypeHints = true,
-  includeInlayVariableTypeHints = false,
-  includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-}
 return {
   -- language servers
   {
@@ -60,10 +50,8 @@ return {
           },
           settings = {
             typescript = {
-              inlayHints = inlayHints,
             },
             javascript = {
-              inlayHints = inlayHints,
             },
             completions = {
               completeFunctionCalls = true,
@@ -79,8 +67,8 @@ return {
     "scalameta/nvim-metals",
     -- stylua: ignore
     keys = {
-      {'<leader>me', function() require "telescope".extensions.metals.commands() end, desc="Metals commands"},
-      {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
+      { '<leader>me', function() require "telescope".extensions.metals.commands() end, desc = "Metals commands" },
+      { '<leader>mc', function() require "metals".compile_cascade() end,               desc = "Metals compile cascade" },
     },
   },
 }

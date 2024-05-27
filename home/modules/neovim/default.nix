@@ -51,11 +51,16 @@ in
     ];
   };
 
+  # Neovim configuration
   home.file."./.config/nvim/" = {
     source = ./nvim;
     recursive = true;
   };
 
+  # Symlink the dotfiles/nvim-lua directory for faster development
+  home.file."./.config/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim-lua";
+
+  # Import the nix managed treesitter parsers
   home.file."./.config/nvim/init.lua".text = ''
     require("config.lazy")
     vim.opt.runtimepath:append("${treesitter-parsers}")

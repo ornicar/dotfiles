@@ -1,6 +1,66 @@
 { pkgs, config, ... }:
 {
-  programs.zsh = {
+  programs.zsh = let
+
+    constants = /* sh */ ''
+
+# Load private configuration
+source ~/.zshrc.local
+# tells the cd command to look in this colon-separated list of directories for your destination.
+CDPATH=$HOME:..
+# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#suggestion-strategy
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+'';
+
+    keychain = /* sh */ ''
+
+# Unlock the ssh private key
+eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
+'';
+
+    fzfCompletion = /* sh */ ''
+
+# https://github.com/junegunn/fzf?tab=readme-ov-file#settings
+FZF_COMPLETION_TRIGGER='..'
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+_fzf_compgen_path() { fd --hidden --follow --exclude ".git" . "$1" }
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
+  '';
+
+    keyMappings = /* sh */ ''
+
+# Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
+bindkey -d # Reset to default.
+bindkey -v # Use vi key bindings.
+
+bindkey "^ " autosuggest-accept
+bindkey -M vicmd "e" history-search-backward
+bindkey -M vicmd "n" history-search-forward
+bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
+bindkey -M viins "^L" clear-screen
+bindkey -M viins "^W" backward-kill-word
+  '';
+
+    editCommandLine = /* sh */ ''
+
+# Allow command line editing in an external editor.
+autoload -Uz edit-command-line
+zle -N edit-command-line
+'';
+
+    functions = /* sh */ ''
+
+limosh() { mosh root@$1.lichess.ovh }
+psg() { ps aux | grep $* }
+batf() { tail -F $1 | bat --paging=never --plain -l log }
+take() { mkdir -p $1; cd $1 }
+# Get a 16 chars password: generate-password 16
+generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
+'';
+  in {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -11,75 +71,24 @@
       size = 100000;
       save = 100000;
     };
-    initExtra = let
-      fzfCompletion = ''
-# https://github.com/junegunn/fzf?tab=readme-ov-file#settings
-  FZF_COMPLETION_TRIGGER='..'
-
-# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
-  _fzf_compgen_path() { fd --hidden --follow --exclude ".git" . "$1" }
-
-# Use fd to generate the list for directory completion
-  _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
-  '';
-      keyMappings = ''
-# Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
-  bindkey -d # Reset to default.
-  bindkey -v # Use vi key bindings.
-
-  bindkey "^ " autosuggest-accept
-  bindkey -M vicmd "e" history-search-backward
-  bindkey -M vicmd "n" history-search-forward
-  bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
-  bindkey -M viins "^L" clear-screen
-  bindkey -M viins "^W" backward-kill-word
-  bindkey '^E' fzf-history-widget
-  '';
-      functions = ''
-limosh() { mosh root@$1.lichess.ovh }
-psg() { ps aux | grep $* }
-batf() { tail -F $1 | bat --paging=never --plain -l log }
-take() {
-  mkdir -p $1
-  cd $1
-}
-# Get a 16 chars password: generate-password 16
-generate-password() {
-  strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
-}
-'';
-      in ''
-# Load private configuration
-source ~/.zshrc.local
-
-# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#suggestion-strategy
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
+    initExtraBeforeCompInit = ''
+${constants}
 ${fzfCompletion}
-
-# tells the cd command to look in
-# this colon-separated list of directories for your destination.
-CDPATH=$HOME:..
-
-# Unlock the ssh private key
-eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
-
-# Allow command line editing in an external editor.
-autoload -Uz edit-command-line
-zle -N edit-command-line
-
+${keychain}
+${editCommandLine}
 ${keyMappings}
-
 ${functions}
+'';
+    initExtra = ''
+bindkey '^E' fzf-history-widget # must be after compinit
 '';
     shellAliases = 
       let 
-        xdgDir = config.xdg.configHome;
-        nixDir = "${config.home.homeDirectory}/dotfiles";
+        dotfiles = "${config.home.homeDirectory}/dotfiles";
       in {
-      "nswitch"="nh os switch ${nixDir}";
-      "ntry"="nh os test ${nixDir}";
-      "nup"="nh os switch --update ${nixDir}";
+      "nswitch"="nh os switch ${dotfiles}";
+      "ntry"="nh os test ${dotfiles}";
+      "nup"="nh os switch --update ${dotfiles}";
       "su"= "systemctl --user";
       "sr"= "sudo systemctl";
       "ju"= "journalctl --user";

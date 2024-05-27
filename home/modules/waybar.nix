@@ -12,6 +12,7 @@
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
+          window-rewrite = { }; # just to get rid of the warning
         };
         # idle_inhibitor = {
         #   format = "{icon}";

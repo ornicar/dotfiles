@@ -8,4 +8,5 @@ rm -rf .bloop
 rm -rf target
 rm -rf modules/*/target
 systemctl --user restart bloop
+sleep 1
 systemctl --user status bloop

@@ -75,10 +75,7 @@ generate-password() {
   strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
 }
 
-# FZF
-eval "$(fzf --zsh)"
-
-# Ctrl+e = Ctrl+r. Must be after ~/.fzf.zsh, which seems to need to be near the end :-/
+# Ctrl+e = Ctrl+r
 bindkey '^E' fzf-history-widget
 '';
     shellAliases = 

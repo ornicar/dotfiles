@@ -21,7 +21,7 @@
   };
   # man with bat
   home.sessionVariables = {
-    MANPAGER = "MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"";
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
   };
   programs.ripgrep = {

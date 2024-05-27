@@ -40,7 +40,7 @@ autoload -Uz edit-command-line
 # }
 
 # zle -N zle-line-init
-# zle -N edit-command-line
+zle -N edit-command-line
 
 # Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
 bindkey -d # Reset to default.

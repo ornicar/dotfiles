@@ -65,7 +65,7 @@ with config.lib.stylix.colors.withHashtag;
         text = base04;
         urgent = base09;
         focused = base0D;
-        unfocused = base03;
+        unfocused = base00;
         background = base00;
         indicator = base0C;
       in lib.mkForce {

@@ -1,3 +1,13 @@
+local inlayHints = {
+  includeInlayEnumMemberValueHints = true,
+  includeInlayFunctionLikeReturnTypeHints = true,
+  includeInlayFunctionParameterTypeHints = true,
+  includeInlayParameterNameHints = "literal",
+  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+  includeInlayPropertyDeclarationTypeHints = true,
+  includeInlayVariableTypeHints = false,
+  includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+}
 return {
   -- language servers
   {
@@ -15,6 +25,51 @@ return {
     opts = {
       inlay_hints = {
         enabled = false,
+      },
+      servers = {
+        lua_ls = {
+        },
+        tsserver = {
+          keys = {
+            {
+              "<leader>co",
+              function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { "source.organizeImports.ts" },
+                    diagnostics = {},
+                  },
+                })
+              end,
+              desc = "Organize Imports",
+            },
+            {
+              "<leader>cR",
+              function()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { "source.removeUnused.ts" },
+                    diagnostics = {},
+                  },
+                })
+              end,
+              desc = "Remove Unused Imports",
+            },
+          },
+          settings = {
+            typescript = {
+              inlayHints = inlayHints,
+            },
+            javascript = {
+              inlayHints = inlayHints,
+            },
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        },
       },
     },
   },

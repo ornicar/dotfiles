@@ -37,8 +37,8 @@ return {
         mode = { "n", "x" },
         desc = "Put Yanked Text After Selection",
       },
-      { "<c-]>", "<Plug>(YankyCycleForward)" },
-      { "<c-[>", "<Plug>(YankyCycleBackward)" },
+      { "<c-]>",      "<Plug>(YankyCycleForward)" },
+      { "<c-[>",      "<Plug>(YankyCycleBackward)" },
       {
         "]p",
         "<Plug>(YankyPutIndentAfterLinewise)",
@@ -84,11 +84,11 @@ return {
   {
     "folke/trouble.nvim",
     opts = {
-      auto_close = true, -- auto close when there are no items
-      auto_open = true, -- auto open when there are items
+      auto_close = true,   -- auto close when there are no items
+      auto_open = true,    -- auto open when there are items
       auto_preview = true, -- automatically open preview when on an item
       auto_refresh = true, -- auto refresh when open
-      auto_jump = true, -- auto jump to the item when there's only one
+      auto_jump = true,    -- auto jump to the item when there's only one
       modes = {
         cascade = {
           mode = "diagnostics", -- inherit from diagnostics mode
@@ -135,9 +135,9 @@ return {
     "almo7aya/openingh.nvim",
     lazy = true,
     keys = {
-      { "<leader>gh", "<cmd>OpenInGHFile!<cr>", desc = "Open file in GitHub" },
-      { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v", desc = "Open file in GitHub" },
-      { "<leader>gr", "<cmd>OpenInGHRepo<cr>", desc = "Open repo in GitHub" },
+      { "<leader>gh", "<cmd>OpenInGHFile!<cr>",      desc = "Open file in GitHub" },
+      { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v",                  desc = "Open file in GitHub" },
+      { "<leader>gr", "<cmd>OpenInGHRepo<cr>",       desc = "Open repo in GitHub" },
     },
   },
 

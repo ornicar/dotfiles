@@ -2,6 +2,7 @@ return {
   -- just 4 fun
   {
     "eandrju/cellular-automaton.nvim",
+    enabled = true,
     keys = {
       {
         "<leader>cer",

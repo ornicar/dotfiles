@@ -18,7 +18,6 @@ link() {
 }
 
 link scripts ~/.scripts
-link nvim ~/.config/nvim
 mkdir -p ~/.sbt/1.0
 link sbt-1.0/global.sbt ~/.sbt/1.0/global.sbt
 systemctl --user daemon-reload

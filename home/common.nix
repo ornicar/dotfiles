@@ -1,10 +1,5 @@
+{ config, ... }: 
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   imports = [
     ./modules/cli.nix
     ./modules/coding.nix
@@ -24,13 +19,14 @@
   home = rec {
     username = "thib";
     homeDirectory = "/home/${username}";
-  };
-
-  home.file = {
-    ".local/bin" = {
-      source = ./scripts;
-      recursive = true;
-    };
+    # symlinks to files we don't want hm to manage
+    file =
+      let
+        dotfiles = "${homeDirectory}/dotfiles";
+      in {
+        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nvim";
+        ".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/scripts";
+      };
   };
 
   programs.home-manager.enable = true;

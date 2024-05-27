@@ -127,7 +127,7 @@ with config.lib.stylix.colors.withHashtag;
         "XF86AudioNext" = "exec 'playerctl next'";
         "XF86AudioPrev" = "exec 'playerctl previous'";
 
-        "Print" = "exec screenshot-clipboard.sh";
+        "Print" = "exec 'screenshot.sh clipboard'";
 
         "${modifier}+${left}" = "focus left";
         "${modifier}+${right}" = "focus right";

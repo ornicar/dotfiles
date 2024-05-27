@@ -6,49 +6,22 @@ return {
   {
     "gbprod/yanky.nvim",
     enabled = true,
-    opts = {
-      highlight = { timer = 150 },
-    },
+    opts = { highlight = { timer = 150 } },
     event = "LazyFile",
     keys = {
-      -- stylua: ignore
-      { "<leader>mp", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History", },
       {
-        "y",
-        "<Plug>(YankyYank)",
-        mode = { "n", "x" },
-        desc = "Yank Text",
+        "<leader>mp",
+        function() require("telescope").extensions.yank_history.yank_history({}) end,
+        desc = "Open Yank History",
       },
-      {
-        "p",
-        "<Plug>(YankyPutAfter)",
-        mode = { "n", "x" },
-        desc = "Put Yanked Text After Cursor",
-      },
-      {
-        "P",
-        "<Plug>(YankyPutBefore)",
-        mode = { "n", "x" },
-        desc = "Put Yanked Text Before Cursor",
-      },
-      {
-        "gp",
-        "<Plug>(YankyGPutAfter)",
-        mode = { "n", "x" },
-        desc = "Put Yanked Text After Selection",
-      },
-      { "<c-]>",      "<Plug>(YankyCycleForward)" },
-      { "<c-[>",      "<Plug>(YankyCycleBackward)" },
-      {
-        "]p",
-        "<Plug>(YankyPutIndentAfterLinewise)",
-        desc = "Put Indented After Cursor (Linewise)",
-      },
-      {
-        "[p",
-        "<Plug>(YankyPutIndentBeforeLinewise)",
-        desc = "Put Indented Before Cursor (Linewise)",
-      },
+      { "y",     "<Plug>(YankyYank)",                    mode = { "n", "x" },                            desc = "Yank Text", },
+      { "p",     "<Plug>(YankyPutAfter)",                mode = { "n", "x" },                            desc = "Put Yanked Text After Cursor", },
+      { "P",     "<Plug>(YankyPutBefore)",               mode = { "n", "x" },                            desc = "Put Yanked Text Before Cursor", },
+      { "gp",    "<Plug>(YankyGPutAfter)",               mode = { "n", "x" },                            desc = "Put Yanked Text After Selection", },
+      { "<c-,>", "<Plug>(YankyCycleForward)" },
+      { "<c-.>", "<Plug>(YankyCycleBackward)" },
+      { "]p",    "<Plug>(YankyPutIndentAfterLinewise)",  desc = "Put Indented After Cursor (Linewise)", },
+      { "[p",    "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put Indented Before Cursor (Linewise)", },
     },
   },
 
@@ -105,28 +78,12 @@ return {
       },
     },
     keys = {
-      { "<space>d", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<space>d", "<cmd>Trouble cascade toggle<cr>", desc = "Diagnostics (Trouble)" },
       {
         "<space><space>",
-        "<cmd>Trouble diagnostics open focus=true<cr>",
+        "<cmd>Trouble cascade open focus=true<cr>",
         desc = "Diagnostics (Trouble)",
       },
-      -- {
-      --   "]q",
-      --   function()
-      --     if require("trouble").is_open() then
-      --       require("trouble").next({ skip_groups = true, jump = true })
-      --     else
-      --       vim.cmd.cnext()
-      --     end
-      --   end,
-      --   desc = "Next trouble/quickfix item",
-      -- },
-    },
-    opts = {
-      use_diagnostic_signs = true,
-      auto_open = false,
-      auto_close = true,
     },
   },
 

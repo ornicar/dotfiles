@@ -120,7 +120,7 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+shift+Up" = "move up";
         "${modifier}+shift+Right" = "move right";
 
-        "F2" = "exec 'systemctl --user start lila'";
+        "F2" = "exec 'systemctl --user restart lila'";
 
         "XF86MonBrightnessDown" = "exec 'light -U 10'";
         "XF86MonBrightnessUp" = "exec 'light -A 10'";
@@ -131,7 +131,7 @@ with config.lib.stylix.colors.withHashtag;
         "XF86AudioNext" = "exec 'playerctl next'";
         "XF86AudioPrev" = "exec 'playerctl previous'";
 
-        "Print" = "exec 'FILENAME=\"screenshot-`date +%F-%T`\"; grim -g \"$(slurp)\" - | wl-copy; notify-send \"Screenshot -> clipboard\"'";
+        "Print" = "exec screenshot-clipboard.sh";
 
         "${modifier}+${left}" = "focus left";
         "${modifier}+${right}" = "focus right";

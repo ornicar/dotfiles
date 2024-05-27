@@ -1,4 +1,4 @@
-local inlay_hints_settings = {
+local inlayHints = {
   includeInlayEnumMemberValueHints = true,
   includeInlayFunctionLikeReturnTypeHints = true,
   includeInlayFunctionParameterTypeHints = true,
@@ -27,6 +27,8 @@ return {
         enabled = false,
       },
       servers = {
+        lua_ls = {
+        },
         tsserver = {
           keys = {
             {
@@ -58,10 +60,10 @@ return {
           },
           settings = {
             typescript = {
-              inlayHints = inlay_hints_settings,
+              inlayHints = inlayHints,
             },
             javascript = {
-              inlayHints = inlay_hints_settings,
+              inlayHints = inlayHints,
             },
             completions = {
               completeFunctionCalls = true,

@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
 
-  treesitterWithGrammars = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+  treesitterWithGrammars = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
     p.bash
     p.comment
     p.css
@@ -28,7 +28,7 @@ let
     p.typescript
     p.vue
     p.yaml
-  ]));
+  ]);
 
   treesitter-parsers = pkgs.symlinkJoin {
     name = "treesitter-parsers";

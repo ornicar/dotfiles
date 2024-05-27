@@ -73,7 +73,7 @@ bindkey '^E' fzf-history-widget
         nixDir = "${config.home.homeDirectory}/nixos-config";
       in {
       "nswitch"="nh os switch ~/nixos-config/";
-      "ntry"="nh os test ~/nixos-config/ --verbose";
+      "ntry"="nh os test ~/nixos-config/";
       "nup"="nh os switch --update ~/nixos-config/";
       ".." = "cd ..";
       "..." = "cd ../..";

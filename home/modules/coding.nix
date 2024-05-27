@@ -1,11 +1,6 @@
 { ... }:
 
 {
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
-
   home.file = {
     "./.sbtrc".text = ''
 alias c=compile

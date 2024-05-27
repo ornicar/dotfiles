@@ -26,6 +26,13 @@
     homeDirectory = "/home/${username}";
   };
 
+  home.file = {
+    ".local/bin" = {
+      source = ./scripts;
+      recursive = true;
+    };
+  };
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs

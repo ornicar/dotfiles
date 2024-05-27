@@ -22,12 +22,13 @@
     kitty
     zsh
     zsh-syntax-highlighting
-    zsh-powerlevel10k
     ripgrep
     eza
     keychain
     zoxide
     fira-code
+    pass
+    gnupg
   ];
 
   programs.zsh.enable = true;

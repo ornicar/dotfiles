@@ -20,6 +20,10 @@
         #     deactivated = "";
         #   };
         # };
+        # "sway/language" = {
+        #   "tooltip-format" = "{long}";
+        #   "format" = " {variant}";
+        # };
         "power-profiles-daemon" = {
           format = "{icon}";
           tooltip-format = "Power profile: {profile}\nDriver: {driver}";

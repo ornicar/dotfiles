@@ -47,8 +47,8 @@ with config.lib.stylix.colors.withHashtag;
       menu = "bemenu-run | xargs swaymsg exec --";
       input = {
         "type:keyboard" = {
-          xkb_layout = "us";
-          xkb_variant = "colemak";
+          xkb_layout = "us,us";
+          xkb_variant = "colemak,";
           repeat_rate = "56";
           repeat_delay = "200";
         };
@@ -168,7 +168,7 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+Shift+9" = "move container to workspace number 9";
         "${modifier}+Shift+0" = "move container to workspace number 10";
 #
-        "${modifier}+Home" = "exec --no-startup-id pkill -USR1 redshift";
+        "ctrl+f1" = "exec 'keyboard-switch-notify.sh'";
       };
       bars = [
         {

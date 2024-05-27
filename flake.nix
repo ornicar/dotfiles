@@ -45,7 +45,7 @@
             home-manager.extraSpecialArgs = specialArgs;
           }
           inputs.stylix.nixosModules.stylix
-          ./system/fw.nix
+          ./system/fw
         ];
       };
     };

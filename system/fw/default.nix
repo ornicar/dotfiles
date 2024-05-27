@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ./hardware/fw.nix
-      ./modules/common.nix
-      ./modules/bluetooth.nix
+      ./hardware.nix
+      ../modules/common.nix
+      ../modules/bluetooth.nix
     ];
 
   environment.systemPackages = with pkgs; [

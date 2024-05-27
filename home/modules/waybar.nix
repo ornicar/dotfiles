@@ -73,9 +73,9 @@
         "battery" = {
           interval = 5;
           states = {
-            good = 80;
-            warning = 40;
-            critical = 20;
+            good = 100;
+            warning = 50;
+            critical = 25;
           };
           format = "{icon} {capacity}% {power:2.1f}W";
           format-charging = " {capacity}% {power:2.1f}W";

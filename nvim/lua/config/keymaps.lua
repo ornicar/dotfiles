@@ -21,7 +21,7 @@ map("n", "!", ":!")
 map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
 
 -- delete buffer and file
-map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
+map("n", "<leader>wD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 
 -- Copy current file path to registers "* and "+
 map("n", "<leader>cp", ":let @*=@%<cr>:let @+=@%<cr>")

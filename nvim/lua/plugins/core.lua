@@ -2,13 +2,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "tokyonight-night",
-      colorscheme = "catppuccin-mocha",
+      colorscheme = "catppuccin-mocha", -- dark
+      -- colorscheme = "catppuccin-latte", -- light
       -- load the default settings
       defaults = {
         autocmds = true, -- lazyvim.config.autocmds
         keymaps = false, -- lazyvim.config.keymaps
-        options = true, -- lazyvim.config.options
+        options = true,  -- lazyvim.config.options
       },
     },
   },

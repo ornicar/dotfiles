@@ -26,7 +26,7 @@ map("n", "<C-h>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>md", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
+map("n", "<leader>wd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -102,16 +102,21 @@ map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word
 map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
 map("n", "<leader>ud", Util.toggle.diagnostics, { desc = "Toggle Diagnostics" })
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-map("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
+map("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, conceallevel }) end,
+  { desc = "Toggle Conceal" })
 map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-  map( "n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
+  map("n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
 end
 
 -- lazygit
 local full_size = { width = 1, height = 1 }
-map("n", "<leader>gg", function() Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, size = full_size}) end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function() Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false, size = full_size }) end, { desc = "Lazygit (cwd)" })
+map("n", "<leader>gg",
+  function() Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, size = full_size }) end,
+  { desc = "Lazygit (root dir)" })
+map("n", "<leader>gG",
+  function() Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false, size = full_size }) end,
+  { desc = "Lazygit (cwd)" })
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
   Util.terminal({ "lazygit", "-f", vim.trim(git_path) }, { esc_esc = false, ctrl_hjkl = false })

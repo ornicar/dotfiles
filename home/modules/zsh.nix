@@ -5,11 +5,6 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    # defaultKeymap = "vicmd";
-    dirHashes = {
-      dl = "$HOME/Downloads";
-      dot = "$HOME/dotfiles";
-    };
     history = {
       expireDuplicatesFirst = true;
       path = "${config.xdg.dataHome}/zsh_history";
@@ -34,12 +29,6 @@ eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
 # Allow command line editing in an external editor.
 autoload -Uz edit-command-line
 
-# This comes from the vi-mode plugin
-# function zle-line-init {
-#   zle reset-prompt
-# }
-
-# zle -N zle-line-init
 zle -N edit-command-line
 
 # Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.

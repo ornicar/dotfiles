@@ -1,6 +1,0 @@
-[submodule "mpv/youtube-quality"]
-	path = mpv/youtube-quality
-	url = https://github.com/jgreco/mpv-youtube-quality
-[submodule "mpv/youtube-upnext"]
-	path = mpv/youtube-upnext
-	url = https://github.com/cvzi/mpv-youtube-upnext

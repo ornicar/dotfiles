@@ -8,7 +8,7 @@
     # defaultKeymap = "vicmd";
     dirHashes = {
       dl = "$HOME/Downloads";
-      nix = "$HOME/.nixos-config";
+      dot = "$HOME/dotfiles";
     };
     history = {
       expireDuplicatesFirst = true;
@@ -84,11 +84,11 @@ bindkey '^E' fzf-history-widget
     shellAliases = 
       let 
         xdgDir = config.xdg.configHome;
-        nixDir = "${config.home.homeDirectory}/nixos-config";
+        nixDir = "${config.home.homeDirectory}/dotfiles";
       in {
-      "nswitch"="nh os switch ~/nixos-config/";
-      "ntry"="nh os test ~/nixos-config/";
-      "nup"="nh os switch --update ~/nixos-config/";
+      "nswitch"="nh os switch ${nixDir}";
+      "ntry"="nh os test ${nixDir}";
+      "nup"="nh os switch --update ${nixDir}";
       "su"= "systemctl --user";
       "sr"= "sudo systemctl";
       "ju"= "journalctl --user";

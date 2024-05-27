@@ -1,7 +1,0 @@
-mpd/*
-!mpd/mpd.conf
-target
-*.pyc
-*.hi
-*.o
-kitty.conf.bak

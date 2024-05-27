@@ -51,6 +51,17 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 '';
 
+    zshCompletion = /* sh */ ''
+
+# complete case insensitive (https://stackoverflow.com/questions/13424429/can-zsh-do-smartcase-completion-like-vims-search)
+zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+
+# complete sudo commands
+zstyle ':completion::complete:*' gain-privileges 1
+
+bindkey '^E' fzf-history-widget # must be after compinit
+'';
+
     functions = /* sh */ ''
 
 limosh() { mosh root@$1.lichess.ovh }
@@ -80,7 +91,7 @@ ${keyMappings}
 ${functions}
 '';
     initExtra = ''
-bindkey '^E' fzf-history-widget # must be after compinit
+${zshCompletion}
 '';
     shellAliases = 
       let 

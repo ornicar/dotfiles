@@ -6,12 +6,12 @@
   ...
 }: {
   imports = [
-    ./modules/neovim
     ./modules/cli.nix
     ./modules/coding.nix
     ./modules/git.nix
     ./modules/kitty.nix
     ./modules/lazygit.nix
+    ./modules/neovim.nix
     ./modules/ssh.nix
     ./modules/sway.nix
     ./modules/waybar.nix

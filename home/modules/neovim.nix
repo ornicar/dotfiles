@@ -1,3 +1,6 @@
+# The idea is to symlink dotfiles/nvim into .config/nvim,
+# because I don't want nix to manage my nvim config. LazyVim does it.
+# Then we write a dotfiles/nvim/init.lua that points to nix managed treesitter parsers.
 { pkgs, config, ... }:
 let
 
@@ -42,7 +45,7 @@ in
   ];
 
   programs.neovim = {
-    enable = true;
+    enable = false;
     vimAlias = true;
     withNodeJs = true;
 
@@ -51,17 +54,11 @@ in
     ];
   };
 
-  # Neovim configuration
-  home.file."./.config/nvim/" = {
-    source = ./nvim;
-    recursive = true;
-  };
+  # Use the external dotfiles nvim config for quicker hacking
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
 
-  # Symlink the dotfiles/nvim-lua directory for faster development
-  home.file."./.config/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim-lua";
-
-  # Import the nix managed treesitter parsers
-  home.file."./.config/nvim/init.lua".text = ''
+  # Import the nix managed treesitter parsers into the nvim boot script
+  home.file."dotfiles/nvim/init.lua".text = ''
     require("config.lazy")
     vim.opt.runtimepath:append("${treesitter-parsers}")
   '';

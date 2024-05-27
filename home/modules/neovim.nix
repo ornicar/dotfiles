@@ -44,15 +44,13 @@ in
     nodePackages_latest.typescript-language-server
   ];
 
-  programs.neovim = {
-    enable = false;
-    vimAlias = true;
-    withNodeJs = true;
-
-    plugins = [
-      treesitterWithGrammars
-    ];
-  };
+  # Not necessary.
+  # programs.neovim = {
+  #   enable = false;
+  #   plugins = [
+  #     treesitterWithGrammars
+  #   ];
+  # };
 
   # Use the external dotfiles nvim config for quicker hacking
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";

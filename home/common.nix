@@ -19,14 +19,7 @@
   home = rec {
     username = "thib";
     homeDirectory = "/home/${username}";
-    # symlinks to files we don't want hm to manage
-    file =
-      let
-        dotfiles = "${homeDirectory}/dotfiles";
-      in {
-        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nvim";
-        ".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/scripts";
-      };
+    file.".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
   };
 
   programs.home-manager.enable = true;

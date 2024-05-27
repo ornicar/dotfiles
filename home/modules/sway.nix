@@ -35,15 +35,11 @@ with config.lib.stylix.colors.withHashtag;
     config = rec {
       fonts = lib.mkForce { names = ["DejaVu Sans"]; size = 0.5; };
       modifier = "Mod1";
-      terminal = "kitty";
+      terminal = "kitty -1";
       left = "n";
       right = "e";
       down = "h";
       up = "l";
-      startup = [
-        { command = "kitty"; }
-        { command = "google-chrome-stable"; }
-      ];
       menu = "bemenu-run | xargs swaymsg exec --";
       input = {
         "type:keyboard" = {
@@ -185,7 +181,7 @@ titlebar_padding 1 1
 
 # start major apps:
 workspace number 1
-exec kitty
+exec kitty -1
 workspace number 2
 exec google-chrome-stable
 exec zulip

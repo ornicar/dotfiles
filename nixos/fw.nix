@@ -42,7 +42,7 @@
           # to view key names:
           # sudo keyd -m
           main = {
-            capslock = "overload(control, esc)";
+            capslock = "esc";
             delete = "S-insert";
             leftmeta = "leftcontrol";
             rightalt = "layer(rightalt)";

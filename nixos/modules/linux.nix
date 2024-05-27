@@ -11,6 +11,9 @@
     psmisc # fuser
   ];
 
+  # enable zsh completion for system packages
+  environment.pathsToLink = [ "/share/zsh" ];
+
   services.logind.extraConfig = ''
     HandlePowerKey=suspend
   '';

@@ -15,7 +15,7 @@
     XDG_BIN_HOME    = "$HOME/.local/bin";
     PATH = [ "${XDG_BIN_HOME}" ];
     EDITOR = "nvim";
-    TERMINAL = "kitty";
+    TERMINAL = "kitty -1";
   };
 
   environment.systemPackages = with pkgs; [

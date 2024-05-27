@@ -6,9 +6,22 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     # defaultKeymap = "vicmd";
+    dirHashes = {
+      dl = "$HOME/Downloads";
+      nix = "$HOME/.nixos-config";
+    };
+    history = {
+      expireDuplicatesFirst = true;
+      path = "${config.xdg.dataHome}/zsh_history";
+      size = 100000;
+      save = 100000;
+    };
     initExtra = ''
 # Load private configuration
 source ~/.zshrc.local
+
+# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#suggestion-strategy
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # tells the cd command to look in
 # this colon-separated list of directories for your destination.
@@ -22,20 +35,21 @@ eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
 autoload -Uz edit-command-line
 
 # This comes from the vi-mode plugin
-function zle-line-init {
-  zle reset-prompt
-}
+# function zle-line-init {
+#   zle reset-prompt
+# }
 
-zle -N zle-line-init
-zle -N edit-command-line
+# zle -N zle-line-init
+# zle -N edit-command-line
 
 # Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
 bindkey -d # Reset to default.
 bindkey -v # Use vi key bindings.
 bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
 
+bindkey "^ " autosuggest-accept
+
 # Vi mappings adapted to colemak layout
-bindkey ' ' magic-space 
 bindkey -M vicmd "gg" beginning-of-history
 bindkey -M vicmd "G" end-of-history
 bindkey -M vicmd "e" history-search-backward
@@ -69,12 +83,14 @@ bindkey '^E' fzf-history-widget
 '';
     shellAliases = 
       let 
-        xdgDir = "${config.home.homeDirectory}/.config";
+        xdgDir = config.xdg.configHome;
         nixDir = "${config.home.homeDirectory}/nixos-config";
       in {
       "nswitch"="nh os switch ~/nixos-config/";
       "ntry"="nh os test ~/nixos-config/";
       "nup"="nh os switch --update ~/nixos-config/";
+      "us"= "systemctl --user";
+      "rs"= "sudo systemctl";
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
@@ -122,10 +138,6 @@ bindkey '^E' fzf-history-widget
       "gslr" = "git-stash-pull-rebase";
       "gslrp" = "git-stash-pull-rebase && git push";
       "gw" = "git wtf";
-    };
-    history = {
-      size = 100000;
-      save = 100000;
     };
   };
 }

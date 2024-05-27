@@ -1,5 +1,6 @@
 { pkgs, config, ... }:
 {
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -18,6 +19,11 @@
   programs.bat = {
     enable = true;
   };
+  # man with bat
+  home.sessionVariables = {
+    MANPAGER = "MANPAGER=\"sh -c 'col -bx | bat -l man -p'\"";
+    MANROFFOPT = "-c";
+  };
   programs.ripgrep = {
     enable = true;
   };
@@ -29,7 +35,6 @@
     };
   };
 
-  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -47,4 +52,5 @@
       };
     };
   };
+  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
 }

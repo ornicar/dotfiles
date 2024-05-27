@@ -11,47 +11,31 @@
       size = 100000;
       save = 100000;
     };
-    initExtra = ''
-# Load private configuration
-source ~/.zshrc.local
+    initExtra = let
+      fzfCompletion = ''
+# https://github.com/junegunn/fzf?tab=readme-ov-file#settings
+  FZF_COMPLETION_TRIGGER='..'
 
-# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#suggestion-strategy
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+  _fzf_compgen_path() { fd --hidden --follow --exclude ".git" . "$1" }
 
-# tells the cd command to look in
-# this colon-separated list of directories for your destination.
-CDPATH=$HOME:..
-
-eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
-
-# Vimify
-
-# Allow command line editing in an external editor.
-autoload -Uz edit-command-line
-
-zle -N edit-command-line
-
+# Use fd to generate the list for directory completion
+  _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
+  '';
+      keyMappings = ''
 # Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
-bindkey -d # Reset to default.
-bindkey -v # Use vi key bindings.
-bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
+  bindkey -d # Reset to default.
+  bindkey -v # Use vi key bindings.
 
-bindkey "^ " autosuggest-accept
-
-# Vi mappings adapted to colemak layout
-bindkey -M vicmd "gg" beginning-of-history
-bindkey -M vicmd "G" end-of-history
-bindkey -M vicmd "e" history-search-backward
-bindkey -M vicmd "n" history-search-forward
-bindkey -M vicmd "?" history-incremental-search-backward
-bindkey -M vicmd "/" history-incremental-search-forward
-bindkey -M viins "^L" clear-screen
-bindkey -M viins "^W" backward-kill-word
-bindkey -M viins "^A" beginning-of-line
-bindkey -M viins "^E" end-of-line
-
-# Functions
-
+  bindkey "^ " autosuggest-accept
+  bindkey -M vicmd "e" history-search-backward
+  bindkey -M vicmd "n" history-search-forward
+  bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
+  bindkey -M viins "^L" clear-screen
+  bindkey -M viins "^W" backward-kill-word
+  bindkey '^E' fzf-history-widget
+  '';
+      functions = ''
 limosh() { mosh root@$1.lichess.ovh }
 psg() { ps aux | grep $* }
 batf() { tail -F $1 | bat --paging=never --plain -l log }
@@ -63,9 +47,30 @@ take() {
 generate-password() {
   strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo
 }
+'';
+      in ''
+# Load private configuration
+source ~/.zshrc.local
 
-# Ctrl+e = Ctrl+r
-bindkey '^E' fzf-history-widget
+# https://github.com/zsh-users/zsh-autosuggestions?tab=readme-ov-file#suggestion-strategy
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+${fzfCompletion}
+
+# tells the cd command to look in
+# this colon-separated list of directories for your destination.
+CDPATH=$HOME:..
+
+# Unlock the ssh private key
+eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
+
+# Allow command line editing in an external editor.
+autoload -Uz edit-command-line
+zle -N edit-command-line
+
+${keyMappings}
+
+${functions}
 '';
     shellAliases = 
       let 

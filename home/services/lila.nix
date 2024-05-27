@@ -24,11 +24,7 @@ in
     };
     Service = {
       Environment="DISPLAY=:0";
-      ExecStart = ''
-        ${bins}/journalctl --user --since=now -fu lila | ${bins}/awk '\
-        /Listening for HTTP on / { system("notify-send \"lila ready\" -t 1000 -u low") } \
-        /Failed with result / { system("notify-send \"lila fail\" -t 1000 -u critical") }'
-      '';
+      ExecStart = "${home}/.local/bin/lila-watch.sh";
     };
     Install = {
       WantedBy = [ "multi-user.target" ];

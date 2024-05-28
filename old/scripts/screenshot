@@ -1,3 +1,0 @@
-#!/bin/sh
-
-gscreenshot -f '/home/thib/tmp/screenshot/$hx$w_%Y-%m-%d.png' -s -c -d 0

@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-id=$1
-file="$id.zip"
-url="https://dl.opensubtitles.org/en/download/sub/$id"
-print "Download $url as $file"
-curl -o $file -H "User-Agent: firefox" -L $url
-dtrx $file
-rm $file

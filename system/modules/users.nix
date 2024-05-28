@@ -6,4 +6,12 @@
       extraGroups = [ "wheel" "video" ];
     };
   };
+
+  security.sudo = {
+    execWheelOnly = true;
+    wheelNeedsPassword = true;
+    extraConfig = ''
+Defaults        timestamp_timeout=600
+'';
+  };
 }

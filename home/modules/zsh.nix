@@ -37,6 +37,7 @@ bindkey -d # Reset to default.
 bindkey -v # Use vi key bindings.
 
 bindkey "^ " autosuggest-accept
+bindkey "^n" autosuggest-execute
 bindkey -M vicmd "e" history-search-backward
 bindkey -M vicmd "n" history-search-forward
 bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.

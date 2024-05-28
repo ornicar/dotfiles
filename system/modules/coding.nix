@@ -23,5 +23,7 @@
     nixpkgs-master.legacyPackages."${pkgs.system}".bloop
   ];
 
+  programs.java.enable = true;
+
   services.redis.servers."".enable = true;
 }

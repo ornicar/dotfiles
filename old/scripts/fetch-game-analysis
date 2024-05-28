@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-ID=$1
-
-~/.scripts/fetch-mongodb-document loquy lichess game5 "$ID"
-~/.scripts/fetch-mongodb-document loquy lichess analysis2 "$ID"

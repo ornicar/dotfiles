@@ -1,4 +1,0 @@
-#!/bin/sh
-
-notify-send -t 5000 "Playing $(xclip -o)"
-mpv "$(xclip -o)"

@@ -1,5 +1,0 @@
-#!/bin/bash
-touchpad_id=$(xinput --list | grep "Touchpad" | xargs -n 1 | grep "id=" | sed 's/id=//g')
-accel_speed_code=$(xinput --list-props $touchpad_id | awk '/Accel Speed \(/ {print $4}' | grep -o '[0-9]\+')
-
-xinput --set-prop $touchpad_id $accel_speed_code $@

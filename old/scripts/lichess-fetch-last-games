@@ -1,8 +1,0 @@
-#!/bin/sh
-
-server=hanoi
-db=lichess
-nb=100000
-echo "Fetching $nb games";
-query="\"{s:{'\\\$gte':30}}\" --sort \"{ca:-1}\" --limit $nb";
-~/.scripts/fetch-mongodb-query $server $db game5 $query;

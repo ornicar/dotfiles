@@ -51,9 +51,12 @@
           # sudo keyd -m
           main = {
             capslock = "esc";
-            delete = "S-insert";
-            leftmeta = "leftcontrol";
+            shift = "layer(shift)";
+            leftmeta = "layer(control)";
             rightalt = "layer(rightalt)";
+          };
+          "shift:S" = {
+            delete = "S-insert";
           };
           "rightalt:G" = {
             f = "enter";

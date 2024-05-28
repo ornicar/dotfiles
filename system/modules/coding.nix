@@ -21,6 +21,8 @@
     delta
     redis
     nixpkgs-master.legacyPackages."${pkgs.system}".bloop
+    ruff-lsp
+    pyright
   ];
 
   programs.java.enable = true;

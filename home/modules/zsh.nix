@@ -64,12 +64,12 @@ bindkey '^E' fzf-history-widget # must be after compinit
 
     functions = /* sh */ ''
 
-limosh() { mosh root@$1.lichess.ovh }
-psg() { ps aux | grep $* }
-batf() { tail -F $1 | bat --paging=never --plain -l log }
-take() { mkdir -p $1; cd $1 }
+function limosh() { mosh root@$1.lichess.ovh }
+function psg() { ps aux | grep $* }
+function batf() { tail -F $1 | bat --paging=never --plain -l log }
+function take() { mkdir -p $1; cd $1 }
 # Get a 16 chars password: generate-password 16
-generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
+function generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
 '';
   in {
     enable = true;

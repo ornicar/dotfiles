@@ -37,7 +37,7 @@
   hardware.sensor.iio.enable = true;
 
   # fingerprint sensor
-  services.fprintd.enable = false;
+  services.fprintd.enable = true;
 
   hardware.keyboard.qmk.enable = false;
 

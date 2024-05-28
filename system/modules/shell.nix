@@ -4,6 +4,7 @@
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {
     EDITOR = "nvim";
+    TERMINAL = "kitty -1";
     TERM = "xterm-kitty";
   };
 
@@ -14,8 +15,6 @@
     XDG_STATE_HOME  = "$HOME/.local/state";
     XDG_BIN_HOME    = "$HOME/.local/bin";
     PATH = [ "${XDG_BIN_HOME}" ];
-    EDITOR = "nvim";
-    TERMINAL = "kitty -1";
   };
 
   environment.systemPackages = with pkgs; [

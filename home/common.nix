@@ -10,7 +10,9 @@
     ./modules/ssh.nix
     ./modules/sway.nix
     ./modules/waybar.nix
+    ./modules/xdg.nix
     ./modules/zsh.nix
+
     ./services/bloop.nix
     ./services/lila.nix
     # ./services/gammarelay.nix

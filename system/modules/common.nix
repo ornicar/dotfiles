@@ -15,6 +15,7 @@
     ./nix.nix
     ./overlay.nix
     ./packages.nix
+    ./python.nix
     ./shell.nix
     ./sound.nix
     ./stylix.nix

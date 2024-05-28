@@ -104,8 +104,8 @@ ${zshCompletion}
       "nup"="nh os switch --update ${dotfiles}";
       "su"= "systemctl --user";
       "sr"= "sudo systemctl";
-      "ju"= "journalctl --user";
-      "jr"= "sudo systemctl";
+      "ju"= "journalctl --user -u";
+      "jr"= "sudo journalctl -u ";
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";

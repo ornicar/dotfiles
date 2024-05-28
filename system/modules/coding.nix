@@ -23,6 +23,10 @@
     nixpkgs-master.legacyPackages."${pkgs.system}".bloop
     ruff-lsp
     pyright
+    cargo
+    rustc
+    rust-analyzer
+    taplo
   ];
 
   programs.java.enable = true;

@@ -4,7 +4,7 @@
     wayland
     wget
     tldr
-    # firefox
+    firefox
     xdg-utils
     glib
     ffmpeg
@@ -24,5 +24,6 @@
     gthumb
     feh
     libnotify
+    barrier
   ];
 }

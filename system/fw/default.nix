@@ -15,7 +15,12 @@
     libinput
   ];
 
-  networking.hostName = "fw";
+  networking = {
+    hostName = "fw";
+    extraHosts = ''
+192.168.1.2 crom
+'';
+  };
 
   powerManagement.enable = true;
 
@@ -27,11 +32,14 @@
   # Enable touchpad support
   services.libinput.enable = true;
 
+  # Display backlight
   programs.light.enable = true;
   hardware.sensor.iio.enable = true;
 
   # fingerprint sensor
   services.fprintd.enable = false;
+
+  hardware.keyboard.qmk.enable = false;
 
   services.keyd = {
     enable = true;

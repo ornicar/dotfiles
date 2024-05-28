@@ -1,13 +1,9 @@
 # frame.work 16 home config
+{ inputs, lib, config, pkgs, ... }: 
 {
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   imports = [
     ./common.nix
+    ./modules/barrier.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

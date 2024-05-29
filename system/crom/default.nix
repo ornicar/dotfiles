@@ -9,6 +9,7 @@
     ];
 
   environment.systemPackages = with pkgs; [
+    lm_sensors
   ];
 
   # Open ports in the firewall.

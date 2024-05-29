@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-master, ... }: {
+{ pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -20,7 +20,7 @@
     dart-sass
     delta
     redis
-    nixpkgs-master.legacyPackages."${pkgs.system}".bloop
+    bloop
     ruff-lsp
     pyright
     cargo

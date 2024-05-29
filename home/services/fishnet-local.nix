@@ -1,16 +1,15 @@
-{ pkgs, config, ... }:
-{
-  systemd.user.services.fishnet-local = 
-    let
-      fishnet = "${config.home.homeDirectory}/fishnet";
-      release = "${fishnet}/target/release";
-    in {
+{ pkgs, config, ... }: {
+  systemd.user.services.fishnet-local = let
+    fishnet = "${config.home.homeDirectory}/fishnet";
+    release = "${fishnet}/target/release";
+  in {
     Unit = {
       Description = "Fishnet client";
       After = [ "network-online.target" ];
     };
     Service = {
-      ExecStart = "${release}/fishnet --conf ${fishnet}/fishnet.ini.local.analysis";
+      ExecStart =
+        "${release}/fishnet --conf ${fishnet}/fishnet.ini.local.analysis";
       KillMode = "mixed";
       WorkingDirectory = release;
       ReadWriteDirectories = release;
@@ -19,8 +18,6 @@
       DevicePolicy = "closed";
       ProtectSystem = "full";
     };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
+    Install = { WantedBy = [ "default.target" ]; };
   };
 }

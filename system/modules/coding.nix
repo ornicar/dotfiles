@@ -11,6 +11,7 @@
     go
     cargo
     luarocks
+    stylua
     tree-sitter
     jdk
     python3

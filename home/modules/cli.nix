@@ -1,11 +1,10 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
     # defaultCommand = "fd --type f'";
     defaultCommand = "rg --files --hidden";
-    defaultOptions = ["--bind=ctrl-e:up" ];
+    defaultOptions = [ "--bind=ctrl-e:up" ];
   };
   programs.zoxide = {
     enable = true;
@@ -15,17 +14,13 @@
     enable = true;
     enableZshIntegration = true;
   };
-  programs.bat = {
-    enable = true;
-  };
+  programs.bat = { enable = true; };
   # man with bat
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
   };
-  programs.ripgrep = {
-    enable = true;
-  };
+  programs.ripgrep = { enable = true; };
   programs.btop = {
     enable = true;
     settings = {

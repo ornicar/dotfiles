@@ -13,9 +13,7 @@
       };
       delta = {
         enable = true;
-        options = {
-          "navigate" = true;
-        };
+        options = { "navigate" = true; };
       };
       web.browser = "google-chrome-stable";
       push.default = "tracking";

@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.lazygit = {
     enable = true;
     settings = {
@@ -7,7 +6,8 @@
         language = "en";
         mouseEvents = false;
         sidePanelWidth = 0.333;
-        mainPanelSplitMode = "horizontal"; # one of "horizontal" | "flexible" | "vertical"
+        mainPanelSplitMode =
+          "horizontal"; # one of "horizontal" | "flexible" | "vertical"
         showFileTree = false; # ` to toggle
       };
       os = {

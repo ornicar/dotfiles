@@ -1,17 +1,13 @@
-{ config, ... }:
-{
-  systemd.user.services.disposable = 
-    let
-      home = config.home.homeDirectory;
-      bins = "/run/current-system/sw/bin";
-    in {
+{ config, ... }: {
+  systemd.user.services.disposable = let
+    home = config.home.homeDirectory;
+    bins = "/run/current-system/sw/bin";
+  in {
     Unit = {
       Description = "Updates and pushes disposable emails";
       After = [ "ssh-agent.service" ];
     };
-    Install = {
-      WantedBy = [ "multi-user.target" ];
-    };
+    Install = { WantedBy = [ "multi-user.target" ]; };
     Service = {
       ExecStart = "${home}/disposable/update.sh";
       Type = "oneshot";
@@ -27,11 +23,9 @@
     };
     Timer = {
       Unit = "disposable.service";
-# every night at 1am
+      # every night at 1am
       OnCalendar = "*-*-* 01:00:00";
     };
-    Install = {
-      WantedBy = [ "timers.target" ];
-    };
+    Install = { WantedBy = [ "timers.target" ]; };
   };
 }

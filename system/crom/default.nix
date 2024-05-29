@@ -1,12 +1,6 @@
 # crom is my desktop PC
-{ pkgs, inputs, ... }:
-{
-  imports =
-    [
-      ./hardware.nix
-      ../modules/common.nix
-      ../modules/bluetooth.nix
-    ];
+{ pkgs, inputs, ... }: {
+  imports = [ ./hardware.nix ../modules/common.nix ../modules/bluetooth.nix ];
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 
@@ -23,10 +17,11 @@
 
   networking = {
     hostName = "crom";
-    extraHosts = ''192.168.1.3 fw'';
-    firewall.allowedTCPPorts = [ 
-      80 443 
-      9371  # puzzler
+    extraHosts = "192.168.1.3 fw";
+    firewall.allowedTCPPorts = [
+      80
+      443
+      9371 # puzzler
       11987 # coolercontrol
     ];
   };

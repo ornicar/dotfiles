@@ -1,25 +1,19 @@
 # fw is my frame.work 16
-{ pkgs, inputs, ... }:
-{
-  imports =
-    [
-      ./hardware.nix
-      inputs.nixos-hardware.nixosModules.framework-16-7040-amd
-      ../modules/common.nix
-      ../modules/bluetooth.nix
-    ];
-
-  environment.systemPackages = with pkgs; [
-    powertop
-    fw-ectool
-    libinput
+{ pkgs, inputs, ... }: {
+  imports = [
+    ./hardware.nix
+    inputs.nixos-hardware.nixosModules.framework-16-7040-amd
+    ../modules/common.nix
+    ../modules/bluetooth.nix
   ];
+
+  environment.systemPackages = with pkgs; [ powertop fw-ectool libinput ];
 
   networking = {
     hostName = "fw";
     extraHosts = ''
-192.168.1.2 crom
-'';
+      192.168.1.2 crom
+    '';
   };
 
   programs.nm-applet.enable = true;
@@ -57,12 +51,8 @@
             leftmeta = "layer(control)";
             rightalt = "layer(rightalt)";
           };
-          "shift:S" = {
-            delete = "S-insert";
-          };
-          "rightalt:G" = {
-            f = "enter";
-          };
+          "shift:S" = { delete = "S-insert"; };
+          "rightalt:G" = { f = "enter"; };
         };
       };
     };

@@ -1,18 +1,14 @@
-{ config, ... }:
-{
-  systemd.user.services = 
-    let
-      home = config.home.homeDirectory;
-      bins = "/run/current-system/sw/bin";
-    in {
+{ config, ... }: {
+  systemd.user.services = let
+    home = config.home.homeDirectory;
+    bins = "/run/current-system/sw/bin";
+  in {
     puzzler = {
       Unit = {
         Description = "Puzzler validator backend";
         After = [ "mongodb.service" ];
       };
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
       Service = {
         WorkingDirectory = "${home}/lichess-puzzler/validator/back";
         ExecStart = "${bins}/pnpm run start --env=prod";
@@ -23,9 +19,7 @@
     };
 
     puzzler-copy = {
-      Unit = {
-        Description = "Tags and uploads new puzzles";
-      };
+      Unit = { Description = "Tags and uploads new puzzles"; };
       Service = {
         Type = "oneshot";
         ExecStart = "${home}/lichess-puzzler/bin/import-more.sh";
@@ -33,9 +27,7 @@
         Environment = "SSH_AUTH_SOCK=%t/ssh-agent.socket";
         ExecStartPre = "${bins}/ssh-add ${home}/.ssh/id_nokey";
       };
-      Install = {
-        WantedBy = [ "multi-user.target" ];
-      };
+      Install = { WantedBy = [ "multi-user.target" ]; };
     };
 
     puzzler-copy-timer = {
@@ -45,12 +37,10 @@
       };
       Timer = {
         Unit = "puzzler-copy.service";
-# every night at 4am
+        # every night at 4am
         OnCalendar = "*-*-* 04:00:00";
       };
-      Install = {
-        WantedBy = [ "timers.target" ];
-      };
+      Install = { WantedBy = [ "timers.target" ]; };
     };
   };
 }

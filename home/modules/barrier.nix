@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   services.barrier.client = {
     enable = false;
     enableCrypto = false;

@@ -1,30 +1,23 @@
 { config, lib, pkgs, ... }:
-with config.lib.stylix.colors.withHashtag;
-{
+with config.lib.stylix.colors.withHashtag; {
   # auto start
   programs.zsh.profileExtra = ''
-    if [ -z "$DISPLAY" ] && [ "''\${XDG_VTNR:-0}" -eq 1 ]; then
+    if [ -z "$DISPLAY" ] && [ "''${XDG_VTNR:-0}" -eq 1 ]; then
       exec sway
     fi
   '';
 
-  programs.bemenu = {
-    enable = true;
-  };
+  programs.bemenu = { enable = true; };
 
-  gtk = {
-    enable = true;
-  };
+  gtk = { enable = true; };
 
   services.swayidle = {
     enable = true;
-    timeouts = [
-      {
-        timeout = 600;
-        command = ''${pkgs.sway}/bin/swaymsg "output * power off" '';
-        resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
-      }
-    ];
+    timeouts = [{
+      timeout = 600;
+      command = ''${pkgs.sway}/bin/swaymsg "output * power off" '';
+      resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
+    }];
   };
 
   wayland.windowManager.sway = {
@@ -32,7 +25,10 @@ with config.lib.stylix.colors.withHashtag;
     wrapperFeatures.gtk = true;
     checkConfig = false;
     config = rec {
-      fonts = lib.mkForce { names = ["DejaVu Sans"]; size = 0.5; };
+      fonts = lib.mkForce {
+        names = [ "DejaVu Sans" ];
+        size = 0.5;
+      };
       modifier = "Mod1";
       terminal = "kitty -1";
       left = "n";
@@ -96,12 +92,12 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+f" = "layout tabbed";
         "${modifier}+shift+f" = "layout toggle split";
         "${modifier}+t" = "fullscreen toggle";
-#     # Move the focused window with the same, but add Shift
+        #     # Move the focused window with the same, but add Shift
         "${modifier}+shift+${left}" = "move left";
         "${modifier}+shift+${down}" = "move down";
         "${modifier}+shift+${up}" = "move up";
         "${modifier}+shift+${right}" = "move right";
-#     # Ditto, with arrow keys
+        #     # Ditto, with arrow keys
         "${modifier}+shift+Left" = "move left";
         "${modifier}+shift+Down" = "move down";
         "${modifier}+shift+Up" = "move up";
@@ -143,30 +139,28 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+Shift+8" = "move container to workspace number 8";
         "${modifier}+Shift+9" = "move container to workspace number 9";
         "${modifier}+Shift+0" = "move container to workspace number 10";
-#
+        #
         "ctrl+f1" = "exec 'keyboard-switch-notify.sh'";
       };
-      bars = [
-        {
-          position = "top";
-          command = "waybar";
-        }
-      ];
+      bars = [{
+        position = "top";
+        command = "waybar";
+      }];
     };
-  extraConfig = ''
-default_border pixel 1
-# borders, lol
-hide_edge_borders both
-titlebar_padding 1 1
+    extraConfig = ''
+      default_border pixel 1
+      # borders, lol
+      hide_edge_borders both
+      titlebar_padding 1 1
 
-# start major apps:
-workspace number 1
-exec kitty -1
-workspace number 2
-exec google-chrome-stable
-exec zulip
-exec discord
-'';
+      # start major apps:
+      workspace number 1
+      exec kitty -1
+      workspace number 2
+      exec google-chrome-stable
+      exec zulip
+      exec discord
+    '';
   };
 
   services.mako = {

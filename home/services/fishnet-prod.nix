@@ -1,10 +1,8 @@
-{ pkgs, config, ... }:
-{
-  systemd.user.services.fishnet-prod =
-    let
-      fishnet = "${config.home.homeDirectory}/fishnet";
-      release = "${fishnet}/target/release";
-    in {
+{ pkgs, config, ... }: {
+  systemd.user.services.fishnet-prod = let
+    fishnet = "${config.home.homeDirectory}/fishnet";
+    release = "${fishnet}/target/release";
+  in {
     Unit = {
       Description = "Fishnet prod";
       After = [ "network-online.target" ];
@@ -19,8 +17,6 @@
       DevicePolicy = "closed";
       ProtectSystem = "full";
     };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
+    Install = { WantedBy = [ "default.target" ]; };
   };
 }

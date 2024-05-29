@@ -1,12 +1,6 @@
 { pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    mongodb
-    mongodb-tools
-    mongosh
-  ];
+  environment.systemPackages = with pkgs; [ mongodb mongodb-tools mongosh ];
 
-  services.mongodb = {
-    enable = true;
-  };
+  services.mongodb = { enable = true; };
 }

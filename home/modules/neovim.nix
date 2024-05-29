@@ -37,8 +37,7 @@ let
     name = "treesitter-parsers";
     paths = treesitterWithGrammars.dependencies;
   };
-in
-{
+in {
   home.packages = with pkgs; [
     lua-language-server
     nodePackages_latest.typescript-language-server
@@ -53,7 +52,8 @@ in
   # };
 
   # Use the external dotfiles nvim config for quicker hacking
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink
+    "${config.home.homeDirectory}/dotfiles/nvim";
 
   # Import the nix managed treesitter parsers into the nvim boot script
   home.file."dotfiles/nvim/init.lua".text = ''

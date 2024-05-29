@@ -1,12 +1,8 @@
 { pkgs, lib, inputs, config, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    nh
-    nix-search-cli
-  ];
+  environment.systemPackages = with pkgs; [ nh nix-search-cli nixfmt ];
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
     settings = {
       # Enable flakes and new 'nix' command

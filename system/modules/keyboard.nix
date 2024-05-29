@@ -2,8 +2,5 @@
 
   console.keyMap = "colemak";
 
-  environment.systemPackages = with pkgs; [
-    keyd
-    wev
-  ];
+  environment.systemPackages = with pkgs; [ keyd wev ];
 }

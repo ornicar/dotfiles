@@ -19,41 +19,35 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nixos-hardware,
-    home-manager,
-    ...
-  } @ inputs: 
-  let
-    inherit (self) outputs;
-    inherit (nixpkgs.lib) nixosSystem;
-    specialArgs = { inherit inputs outputs; };
-  in {
-    nixosConfigurations = {
-      fw = nixosSystem {
-        specialArgs = specialArgs;
-        modules = [
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.thib = import ./home/fw.nix;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
-          ./system/fw
-        ];
-      };
-      crom = nixosSystem {
-        specialArgs = specialArgs;
-        modules = [
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.users.thib = import ./home/crom.nix;
-            home-manager.extraSpecialArgs = specialArgs;
-          }
-          ./system/crom
-        ];
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:
+    let
+      inherit (self) outputs;
+      inherit (nixpkgs.lib) nixosSystem;
+      specialArgs = { inherit inputs outputs; };
+    in {
+      nixosConfigurations = {
+        fw = nixosSystem {
+          specialArgs = specialArgs;
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.thib = import ./home/fw.nix;
+              home-manager.extraSpecialArgs = specialArgs;
+            }
+            ./system/fw
+          ];
+        };
+        crom = nixosSystem {
+          specialArgs = specialArgs;
+          modules = [
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.thib = import ./home/crom.nix;
+              home-manager.extraSpecialArgs = specialArgs;
+            }
+            ./system/crom
+          ];
+        };
       };
     };
-  };
 }

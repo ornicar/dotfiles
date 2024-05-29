@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   users.users = {
     thib = {
       isNormalUser = true;
@@ -11,7 +10,7 @@
     execWheelOnly = true;
     wheelNeedsPassword = true;
     extraConfig = ''
-Defaults        timestamp_timeout=600
-'';
+      Defaults        timestamp_timeout=600
+    '';
   };
 }

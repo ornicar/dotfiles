@@ -4,11 +4,11 @@
     wayland
     wget
     tldr
-    firefox
     xdg-utils
     glib
     ffmpeg
     btop
+    firefox
     google-chrome
     unzip
     dtrx
@@ -18,7 +18,6 @@
     neofetch
     spotify
     playerctl
-    marksman
     zeroad
     gimp
     gthumb

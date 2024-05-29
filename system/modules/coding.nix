@@ -27,6 +27,7 @@
     rustc
     rust-analyzer
     taplo
+    marksman
   ];
 
   programs.java.enable = true;

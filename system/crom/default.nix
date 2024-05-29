@@ -8,6 +8,8 @@
       ../modules/bluetooth.nix
     ];
 
+  boot.initrd.kernelModules = [ "amdgpu" ];
+
   environment.systemPackages = with pkgs; [
     lm_sensors
     coolercontrol.coolercontrold

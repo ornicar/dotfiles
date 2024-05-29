@@ -1,6 +1,6 @@
-{ pkgs, lib, inputs, config, ... }: {
+{ pkgs, lib, inputs, ... }: {
 
-  environment.systemPackages = with pkgs; [ nh nix-search-cli nixfmt ];
+  environment.systemPackages = with pkgs; [ nh nix-search-cli nixfmt nil ];
 
   nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {

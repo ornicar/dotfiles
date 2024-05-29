@@ -17,8 +17,8 @@ return {
         enabled = false,
       },
       servers = {
-        lua_ls = {
-        },
+        lua_ls = {},
+        nil_ls = {},
         tsserver = {
           keys = {
             {
@@ -49,10 +49,8 @@ return {
             },
           },
           settings = {
-            typescript = {
-            },
-            javascript = {
-            },
+            typescript = {},
+            javascript = {},
             completions = {
               completeFunctionCalls = true,
             },

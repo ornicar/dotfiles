@@ -19,10 +19,10 @@
           stashAllChanges = "<c-a>"; # instead of just 's' which I typod for 'c'
         };
         universal = {
-          prevItem-alt = "e";
-          nextItem-alt = "n";
-          scrollUpMain-alt = "E"; # main panel scroll up
-          scrollDownMain-alt = "N"; # main panel scroll down
+          prevItem = "e";
+          nextItem = "n";
+          scrollUpMain = "E"; # main panel scroll up
+          scrollDownMain = "N"; # main panel scroll down
           new = "<c-n>";
         };
       };

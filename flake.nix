@@ -45,6 +45,17 @@
           ./system/fw
         ];
       };
+      crom = nixosSystem {
+        specialArgs = specialArgs;
+        modules = [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.thib = import ./home/crom.nix;
+            home-manager.extraSpecialArgs = specialArgs;
+          }
+          ./system/crom
+        ];
+      };
     };
   };
 }

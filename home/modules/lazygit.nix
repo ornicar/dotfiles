@@ -23,6 +23,7 @@
           nextItem-alt = "n";
           scrollUpMain-alt = "E"; # main panel scroll up
           scrollDownMain-alt = "N"; # main panel scroll down
+          new = "<c-n>";
         };
       };
     };

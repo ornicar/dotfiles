@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
-
 with config.lib.stylix.colors.withHashtag;
-
 {
+  # auto start
   programs.zsh.profileExtra = ''
     if [ -z "$DISPLAY" ] && [ "''\${XDG_VTNR:-0}" -eq 1 ]; then
       exec sway
@@ -46,15 +45,7 @@ with config.lib.stylix.colors.withHashtag;
           xkb_layout = "us,us";
           xkb_variant = "colemak,";
           repeat_rate = "56";
-          repeat_delay = "200";
-        };
-        "type:touchpad" = {
-          left_handed = "disabled";
-          tap = "enabled";
-          natural_scroll = "disabled";
-          # dwt = "enabled";
-          accel_profile = "adaptive"; # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
-          pointer_accel = "0.3"; # set mouse sensitivity (between -1 and 1)
+          repeat_delay = "180";
         };
       };
       colors = let
@@ -96,7 +87,7 @@ with config.lib.stylix.colors.withHashtag;
       };
       focus.followMouse = false;
       floating.modifier = modifier;
-      keybindings = lib.mkForce {
+      keybindings = lib.mkDefault {
         "${modifier}+return" = "exec ${terminal}";
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+q" = "kill";
@@ -117,17 +108,6 @@ with config.lib.stylix.colors.withHashtag;
         "${modifier}+shift+Right" = "move right";
 
         "F2" = "exec 'systemctl --user restart lila'";
-
-        "XF86MonBrightnessDown" = "exec 'light -U 10'";
-        "XF86MonBrightnessUp" = "exec 'light -A 10'";
-        "XF86AudioRaiseVolume" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
-        "XF86AudioLowerVolume" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
-        "XF86AudioMute" = "exec 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'";
-        "XF86AudioPlay" = "exec 'playerctl play-pause'";
-        "XF86AudioNext" = "exec 'playerctl next'";
-        "XF86AudioPrev" = "exec 'playerctl previous'";
-
-        "Print" = "exec 'screenshot.sh clipboard'";
 
         "${modifier}+${left}" = "focus left";
         "${modifier}+${right}" = "focus right";

@@ -29,8 +29,8 @@ enable_network 0
 ```sh
 sudo parted /dev/sda
 mklabel gpt
-mkpart root ext4 512MB -8GB
-mkpart swap linux-swap -8GB 100%
+mkpart root ext4 512MB -64GB
+mkpart swap linux-swap -64GB 100%
 mkpart ESP fat32 1MB 512MB
 set 3 esp on
 ```

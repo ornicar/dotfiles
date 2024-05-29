@@ -3,6 +3,8 @@
 {
   imports = [
     ./common.nix
+
+    ./services/disposable-email.nix
   ];
 
   wayland.windowManager.sway.extraConfig = let

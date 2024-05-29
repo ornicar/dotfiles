@@ -22,6 +22,8 @@
 '';
   };
 
+  programs.nm-applet.enable = true;
+
   powerManagement.enable = true;
 
   # as per https://github.com/NixOS/nixos-hardware/tree/master/framework

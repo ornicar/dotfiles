@@ -9,8 +9,8 @@
     modifier = config.wayland.windowManager.sway.config.modifier;
   in ''
 bindsym F8 exec 'playerctl play-pause';
-bindsym F9 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0';
-bindsym F10 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0';
+bindsym F9 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0';
+bindsym F10 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0';
 bindsym ${modifier}+F10 exec 'screenshot.sh clipboard';
 '';
 

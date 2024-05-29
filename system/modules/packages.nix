@@ -2,6 +2,7 @@
 
   environment.systemPackages = with pkgs; [
     wayland
+    wlr-randr
     wget
     tldr
     xdg-utils

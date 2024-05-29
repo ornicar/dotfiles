@@ -24,5 +24,6 @@
     feh
     libnotify
     barrier
+    tmux
   ];
 }

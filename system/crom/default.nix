@@ -17,6 +17,7 @@
   networking = {
     hostName = "crom";
     extraHosts = ''192.168.1.3 fw'';
+    firewall.allowedTCPPorts = [ 80 443 9371 ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

@@ -1,9 +1,10 @@
 { config, ... }:
-let
-  home = config.home.homeDirectory;
-  bins = "/run/current-system/sw/bin";
-in
-  systemd.user.services.disposable = {
+{
+  systemd.user.services.disposable = 
+    let
+      home = config.home.homeDirectory;
+      bins = "/run/current-system/sw/bin";
+    in {
     Unit = {
       Description = "Updates and pushes disposable emails";
       After = [ "ssh-agent.service" ];

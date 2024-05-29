@@ -5,6 +5,7 @@
     ./common.nix
 
     ./services/disposable-email.nix
+    ./services/puzzler.nix
   ];
 
   wayland.windowManager.sway.extraConfig = let

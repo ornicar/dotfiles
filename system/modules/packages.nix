@@ -26,5 +26,6 @@
     libnotify
     barrier
     tmux
+    gnome.nautilus
   ];
 }

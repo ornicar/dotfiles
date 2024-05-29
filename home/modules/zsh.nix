@@ -149,6 +149,8 @@ ${zshCompletion}
       "gslr" = "git-stash-pull-rebase";
       "gslrp" = "git-stash-pull-rebase && git push";
       "gw" = "git wtf";
+# Stuff
+      "mongo-ssh" = "ssh -fNL 27117:rodan.vrack.lichess.ovh:27017 root@rodan.lichess.ovh";
     };
   };
 }

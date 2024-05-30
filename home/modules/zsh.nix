@@ -83,6 +83,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    autocd = true;
     history = {
       expireDuplicatesFirst = true;
       path = "${config.xdg.dataHome}/zsh_history";

@@ -28,4 +28,6 @@
         User root
     '';
   };
+
+  services.ssh-agent.enable = true;
 }

@@ -29,18 +29,18 @@
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };
+  };
 
-    puzzler-copy-timer = {
-      Unit = {
-        Description = "Runs puzzler-copy nightly";
-        Requires = [ "puzzler-copy.service" ];
-      };
-      Timer = {
-        Unit = "puzzler-copy.service";
-        # every night at 4am
-        OnCalendar = "*-*-* 04:00:00";
-      };
-      Install = { WantedBy = [ "timers.target" ]; };
+  systemd.user.timers.puzzler-copy-timer = {
+    Unit = {
+      Description = "Runs puzzler-copy nightly";
+      Requires = [ "puzzler-copy.service" ];
     };
+    Timer = {
+      Unit = "puzzler-copy.service";
+      # every night at 4am
+      OnCalendar = "*-*-* 04:00:00";
+    };
+    Install = { WantedBy = [ "timers.target" ]; };
   };
 }

@@ -16,7 +16,7 @@
       ExecStartPre = "${bins}/ssh-add /home/thib/.ssh/id_nokey";
     };
   };
-  systemd.user.services.disposable-timer = {
+  systemd.user.timers.disposable-timer = {
     Unit = {
       Description = "Runs disposable nightly";
       Requires = [ "disposable.service" ];

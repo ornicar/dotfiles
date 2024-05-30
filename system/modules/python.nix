@@ -10,6 +10,8 @@
           httpx
           h2
           websocket-client
+          pymongo
+          chess
         ]))
     ];
 }

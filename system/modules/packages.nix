@@ -27,5 +27,6 @@
     barrier
     tmux
     gnome.nautilus
+    stockfish
   ];
 }

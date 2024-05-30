@@ -5,7 +5,7 @@
       mainBar = {
         layer = "top";
         position = "bottom";
-        modules-left = [ "sway/workspaces" ];
+        modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
         modules-right = [
           "cpu"
@@ -25,6 +25,7 @@
           all-outputs = true;
           window-rewrite = { }; # just to get rid of the warning
         };
+        "sway/mode" = { "format" = " {}"; };
         # idle_inhibitor = {
         #   format = "{icon}";
         #   format-icons = {

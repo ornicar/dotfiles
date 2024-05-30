@@ -16,8 +16,7 @@
           tap = "enabled";
           natural_scroll = "disabled";
           # dwt = "enabled";
-          accel_profile =
-            "adaptive"; # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+          accel_profile = "adaptive";
           pointer_accel = "0.3"; # set mouse sensitivity (between -1 and 1)
         };
       };
@@ -33,6 +32,15 @@
       bindsym XF86AudioPrev exec 'playerctl previous';
       bindsym Print exec 'screenshot.sh clipboard';
     '';
+  };
+
+  services.swayidle = {
+    enable = true;
+    timeouts = [{
+      timeout = 600;
+      command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
+      resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
+    }];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

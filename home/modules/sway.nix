@@ -11,15 +11,6 @@ with config.lib.stylix.colors.withHashtag; {
 
   gtk = { enable = true; };
 
-  services.swayidle = {
-    enable = true;
-    timeouts = [{
-      timeout = 600;
-      command = ''${pkgs.sway}/bin/swaymsg "output * power off" '';
-      resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
-    }];
-  };
-
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

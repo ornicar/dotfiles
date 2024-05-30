@@ -23,6 +23,8 @@
           nextItem = "n";
           scrollUpMain = "E"; # main panel scroll up
           scrollDownMain = "N"; # main panel scroll down
+          nextMatch = "j";
+          prevMatch = "J";
           new = "<c-n>";
         };
       };

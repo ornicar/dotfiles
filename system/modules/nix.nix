@@ -31,12 +31,4 @@
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/thib/dotfiles";
   };
-
-  virtualisation.vmVariant = {
-    # following configuration is added only when building VM with build-vm
-    virtualisation = {
-      memorySize = 4096;
-      cores = 4;
-    };
-  };
 }

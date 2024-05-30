@@ -19,7 +19,11 @@
       Unit = { Description = "lila-watch"; };
       Service = {
         Environment = "DISPLAY=:0";
-        ExecStart = "${home}/.local/bin/lila-watch.sh";
+        ExecStart = pkgs.writeShellScript "lila-watch.sh" ''
+          journalctl --user --since=now -fu lila | ${bins}/awk '\
+          /Listening for HTTP on / { system("${bins}/notify-send \"lila ready\" -t 1000 -u low") } \
+          /Failed with result / { system("${bins}/notify-send \"lila fail\" -t 2000 -u critical") }'
+        '';
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };

@@ -1,6 +1,11 @@
 # crom is my desktop PC
 { pkgs, inputs, ... }: {
-  imports = [ ./hardware.nix ../modules/common.nix ../modules/bluetooth.nix ];
+  imports = [
+    ./hardware.nix
+    ../modules/common.nix
+    ../modules/bluetooth.nix
+    ../modules/amdgpu.nix
+  ];
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 

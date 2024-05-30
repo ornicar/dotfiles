@@ -1,6 +1,7 @@
 { config, ... }: {
   systemd.user.services = let
     home = config.home.homeDirectory;
+    puzzler = "${home}/lichess-puzzler";
     bins = "/run/current-system/sw/bin";
   in {
     puzzler = {
@@ -10,8 +11,8 @@
       };
       Install = { WantedBy = [ "default.target" ]; };
       Service = {
-        WorkingDirectory = "${home}/lichess-puzzler/validator/back";
-        ExecStart = "${bins}/pnpm run start --env=prod";
+        WorkingDirectory = "${puzzler}/validator/back";
+        ExecStart = ''${bins}/node build/src/index.js "--env=prod"'';
         StandardOutput = "journal";
         StandardError = "journal";
         SyslogIdentifier = "puzzler";
@@ -22,8 +23,8 @@
       Unit = { Description = "Tags and uploads new puzzles"; };
       Service = {
         Type = "oneshot";
-        ExecStart = "${home}/lichess-puzzler/bin/import-more.sh";
-        WorkingDirectory = "${home}/lichess-puzzler";
+        ExecStart = "${puzzler}/bin/import-more.sh";
+        WorkingDirectory = puzzler;
         Environment = "SSH_AUTH_SOCK=%t/ssh-agent.socket";
         ExecStartPre = "${bins}/ssh-add ${home}/.ssh/id_nokey";
       };

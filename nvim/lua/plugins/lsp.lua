@@ -19,6 +19,19 @@ return {
       servers = {
         lua_ls = {},
         nil_ls = {},
+        vtsls = {
+          enabled = false,
+        },
+        tsserver = {
+          enabled = true,
+          settings = {
+            typescript = {},
+            javascript = {},
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        },
       },
     },
   },

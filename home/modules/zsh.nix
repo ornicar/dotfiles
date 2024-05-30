@@ -159,6 +159,7 @@
         "ssh -fNL 27117:rodan.vrack.lichess.ovh:27017 root@rodan.lichess.ovh";
       "mongo-ssh-pri" =
         "ssh -NL 27917:kaiju.vrack.lichess.ovh:27017 root@kaiju.lichess.ovh";
+      "on" = ''swaymsg " output * power on"'';
     };
   };
 }

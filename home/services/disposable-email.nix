@@ -1,7 +1,5 @@
-{ config, ... }: {
-  systemd.user.services.disposable = let
-    home = config.home.homeDirectory;
-    bins = "/run/current-system/sw/bin";
+{ config, pkgs, ... }: {
+  systemd.user.services.disposable = let home = config.home.homeDirectory;
   in {
     Unit = {
       Description = "Updates and pushes disposable emails";
@@ -13,7 +11,7 @@
       Type = "oneshot";
       WorkingDirectory = "${home}/disposable";
       Environment = "SSH_AUTH_SOCK=%t/ssh-agent.socket";
-      ExecStartPre = "${bins}/ssh-add /home/thib/.ssh/id_nokey";
+      ExecStartPre = "${pkgs.openssh}/bin/ssh-add /home/thib/.ssh/id_nokey";
     };
   };
   systemd.user.timers.disposable-timer = {

@@ -132,6 +132,24 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+Shift+0" = "move container to workspace number 10";
         #
         "ctrl+f1" = "exec 'keyboard-switch-notify.sh'";
+        "ctrl+f6" = "mode gaming";
+      };
+      modes = {
+        gaming = {
+          "ctrl+f6" = "mode default";
+          "${modifier}+t" = "fullscreen toggle";
+          # Switch to workspace
+          "${modifier}+1" = "workspace number 1";
+          "${modifier}+2" = "workspace number 2";
+          "${modifier}+3" = "workspace number 3";
+          "${modifier}+4" = "workspace number 4";
+          "${modifier}+5" = "workspace number 5";
+          "${modifier}+6" = "workspace number 6";
+          "${modifier}+7" = "workspace number 7";
+          "${modifier}+8" = "workspace number 8";
+          "${modifier}+9" = "workspace number 9";
+          "${modifier}+0" = "workspace number 10";
+        };
       };
       bars = [{
         position = "top";

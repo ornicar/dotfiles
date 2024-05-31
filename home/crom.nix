@@ -1,14 +1,10 @@
 # desktop PC home config
-{ inputs, lib, config, pkgs, ... }: {
-  imports =
-    [ ./common.nix ./services/disposable-email.nix ./services/puzzler.nix ];
-
-  home.packages = with pkgs; [
-    (wineWowPackages.full.override {
-      wineRelease = "staging";
-      mingwSupport = true;
-    })
-    winetricks
+{ lib, config, pkgs, ... }: {
+  imports = [
+    ./common.nix
+    ./modules/wine.nix
+    ./services/disposable-email.nix
+    ./services/puzzler.nix
   ];
 
   wayland.windowManager.sway.extraConfig =

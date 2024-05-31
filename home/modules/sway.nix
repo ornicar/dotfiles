@@ -26,7 +26,7 @@ with config.lib.stylix.colors.withHashtag; {
       right = "e";
       down = "h";
       up = "l";
-      menu = "bemenu-run | xargs swaymsg exec --";
+      menu = "bemenu-run -H 40 | xargs swaymsg exec --";
       input = {
         "type:keyboard" = {
           xkb_layout = "us,us";

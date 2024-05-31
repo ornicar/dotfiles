@@ -135,20 +135,31 @@ with config.lib.stylix.colors.withHashtag; {
         "ctrl+f6" = "mode gaming";
       };
       modes = {
+        resize = {
+          "escape" = "mode default";
+          "${left}" = "resize shrink width 10 px";
+          "${right}" = "resize grow width 10 px";
+          "${down}" = "resize grow height 10 px";
+          "${up}" = "resize shrink height 10 px";
+          "shift+${left}" = "resize shrink width 300 px";
+          "shift+${right}" = "resize grow width 300 px";
+          "shift+${down}" = "resize grow height 300 px";
+          "shift+${up}" = "resize shrink height 300 px";
+        };
         gaming = {
           "ctrl+f6" = "mode default";
-          "${modifier}+t" = "fullscreen toggle";
+          "f11" = "fullscreen toggle";
           # Switch to workspace
-          "${modifier}+1" = "workspace number 1";
-          "${modifier}+2" = "workspace number 2";
-          "${modifier}+3" = "workspace number 3";
-          "${modifier}+4" = "workspace number 4";
-          "${modifier}+5" = "workspace number 5";
-          "${modifier}+6" = "workspace number 6";
-          "${modifier}+7" = "workspace number 7";
-          "${modifier}+8" = "workspace number 8";
-          "${modifier}+9" = "workspace number 9";
-          "${modifier}+0" = "workspace number 10";
+          "${modifier}+ctrl+1" = "workspace number 1";
+          "${modifier}+ctrl+2" = "workspace number 2";
+          "${modifier}+ctrl+3" = "workspace number 3";
+          "${modifier}+ctrl+4" = "workspace number 4";
+          "${modifier}+ctrl+5" = "workspace number 5";
+          "${modifier}+ctrl+6" = "workspace number 6";
+          "${modifier}+ctrl+7" = "workspace number 7";
+          "${modifier}+ctrl+8" = "workspace number 8";
+          "${modifier}+ctrl+9" = "workspace number 9";
+          "${modifier}+ctrl+0" = "workspace number 10";
         };
       };
       bars = [{

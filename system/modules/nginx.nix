@@ -11,6 +11,10 @@
     defaults.email = "t@lichess.org";
   };
 
+  # allow reading assets from home
+  users.users.nginx.extraGroups = [ "users" ];
+  systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
+
   services.nginx = {
     enable = true;
     enableReload = true;
@@ -113,7 +117,7 @@
             rewrite "^/assets/_\w{6}/(.+)$" /assets/$1;
             add_header "Access-Control-Allow-Origin" "*";
             add_header "Cross-Origin-Resource-Policy" "cross-origin";
-            alias /home/thib/lila/public;
+            alias /home/thib/lila/public/;
           # proxy_pass http://lila;  # no trailing /
           }
           location /game/export/ {

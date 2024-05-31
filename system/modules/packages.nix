@@ -29,5 +29,6 @@
     gnome.nautilus
     stockfish
     cmatrix
+    lm_sensors
   ];
 }

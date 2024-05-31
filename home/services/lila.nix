@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, config, ... }: {
   systemd.user.services = let
     home = config.home.homeDirectory;
     bloop = "${pkgs.bloop}/bin/bloop";

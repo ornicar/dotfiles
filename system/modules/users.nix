@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ ... }: {
   users.users = {
     thib = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" ];
+      extraGroups = [ "wheel" "video" "nginx" ];
+      homeMode = "750"; # for nginx to read assets
     };
   };
 

@@ -31,6 +31,13 @@
     ];
   };
 
+  stylix.fonts.sizes = lib.mkForce {
+    applications = 16;
+    desktop = 14;
+    popups = 16;
+    terminal = 16;
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }

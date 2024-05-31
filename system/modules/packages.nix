@@ -28,5 +28,6 @@
     tmux
     gnome.nautilus
     stockfish
+    cmatrix
   ];
 }

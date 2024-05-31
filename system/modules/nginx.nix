@@ -189,28 +189,26 @@
           }
         '';
       };
-      #       "socket.l.org" = {
-      #         enableACME = true;
-      #         forceSSL = false;
-      #         listen = [ { addr = "0.0.0.0"; port = 80; } { addr = "0.0.0.0"; port = 443; ssl = true; } ];
-      #         extraConfig = ''
-      # charset utf-8;
-      #
-      # if ( $request_method !~ GET ) {
-      #   return 405;
-      # }
-      #
-      # location / {
-      #   proxy_http_version 1.1;
-      #   proxy_set_header Host $host;
-      #   proxy_set_header Upgrade $http_upgrade;
-      #   proxy_set_header Connection $http_connection;
-      #   proxy_set_header X-Forwarded-For $remote_addr;
-      #   proxy_set_header X-Forwarded-Proto $scheme;
-      #   proxy_pass http://127.0.0.1:9664;  # no trailing /
-      # }
-      # '';
-      #       };
+      "socket.l.org" = {
+        enableACME = false;
+        forceSSL = false;
+        listen = listenLocal;
+        extraConfig = ''
+          if ( $request_method !~ GET ) {
+            return 405;
+          }
+
+          location / {
+            proxy_http_version 1.1;
+            proxy_set_header Host $host;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $http_connection;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_pass http://127.0.0.1:9664;  # no trailing /
+          }
+        '';
+      };
     };
   };
 }

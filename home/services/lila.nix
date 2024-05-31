@@ -1,8 +1,7 @@
 { pkgs, lib, config, ... }: {
   systemd.user.services = let
     home = config.home.homeDirectory;
-    bins = "/run/current-system/sw/bin";
-    bloop = "${bins}/bloop";
+    bloop = "${pkgs.bloop}/bin/bloop";
   in {
     lila = {
       Unit = {
@@ -11,7 +10,7 @@
       };
       Service = {
         ExecStart = "${bloop} run lila -m lila.app.Lila -c ${home}/lila/.bloop";
-        ExecStop = "${bins}/fuser -k 9663/tcp -TERM";
+        ExecStop = "${pkgs.psmisc}/bin/fuser -k 9663/tcp -TERM";
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };
@@ -20,9 +19,9 @@
       Service = {
         Environment = "DISPLAY=:0";
         ExecStart = pkgs.writeShellScript "lila-watch.sh" ''
-          journalctl --user --since=now -fu lila | ${bins}/awk '\
-          /Listening for HTTP on / { system("${bins}/notify-send \"lila ready\" -t 1000 -u low") } \
-          /Failed with result / { system("${bins}/notify-send \"lila fail\" -t 2000 -u critical") }'
+          journalctl --user --since=now -fu lila | ${pkgs.gawk}/bin/awk '\
+          /Listening for HTTP on / { system("${pkgs.libnotify}/bin/notify-send \"lila ready\" -t 1000 -u low") } \
+          /Failed with result / { system("${pkgs.libnotify}/bin/notify-send \"lila fail\" -t 2000 -u critical") }'
         '';
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
@@ -35,7 +34,7 @@
       Service = {
         ExecStart =
           "${bloop} run lila-ws -m lila.ws.LilaWs -c ${home}/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml";
-        ExecStop = "${bins}/fuser -k 9664/tcp -TERM";
+        ExecStop = "${pkgs.psmisc}/bin/fuser -k 9664/tcp -TERM";
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };

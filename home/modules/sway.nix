@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 with config.lib.stylix.colors.withHashtag; {
   # auto start
   programs.zsh.profileExtra = ''

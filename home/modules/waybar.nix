@@ -7,19 +7,6 @@
         position = "bottom";
         modules-left = [ "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
-        modules-right = [
-          "cpu"
-          "temperature#cpu"
-          "memory"
-          "network"
-          "pulseaudio"
-          "backlight"
-          "battery"
-          "power-profiles-daemon"
-          "tray"
-          "clock#utc"
-          "clock#local"
-        ];
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
@@ -37,19 +24,6 @@
         #   "tooltip-format" = "{long}";
         #   "format" = " {variant}";
         # };
-        "power-profiles-daemon" = {
-          format = "{icon}";
-          tooltip-format = ''
-            Power profile: {profile}
-            Driver: {driver}'';
-          tooltip = true;
-          format-icons = {
-            default = "";
-            performance = "";
-            balanced = "";
-            "power-saver" = "";
-          };
-        };
         "clock#local" = {
           tooltip-format = ''
             <big>{:%Y %B}</big>
@@ -60,46 +34,12 @@
           timezone = "UTC";
           format-alt = "{:%Y-%m-%d}";
         };
-        "cpu" = {
-          interval = 1;
-          format =
-            "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
-          format-icons = [ "" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-          states = {
-            warning = 20;
-            critical = 50;
-          };
-        };
         "memory" = {
           format = " {percentage}% {swapPercentage}%";
           states = {
             warning = 70;
             critical = 85;
           };
-        };
-        "temperature#cpu" = {
-          interval = 1;
-          "hwmon-path" = "/sys/class/thermal/thermal_zone3/temp";
-          critical-threshold = 70;
-          format = "{icon} {temperatureC}°";
-          format-icons = [ "" ];
-        };
-        "backlight" = {
-          format = "{icon} {percent}%";
-          format-icons = [ "" "" "" "" "" "" "" "" "" ];
-        };
-        "battery" = {
-          interval = 5;
-          states = {
-            good = 100;
-            warning = 50;
-            critical = 25;
-          };
-          format = "{icon} {capacity}% {power:2.1f}W";
-          format-charging = " {capacity}% {power:2.1f}W";
-          format-plugged = " {capacity}% {power:2.1f}W";
-          format-alt = "{icon} {time}";
-          format-icons = [ "" "" "" "" "" ];
         };
         "network" = {
           interval = 1;

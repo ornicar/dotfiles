@@ -1,5 +1,5 @@
 # desktop PC home config
-{ lib, config, pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./common.nix
     ./modules/wine.nix
@@ -15,6 +15,46 @@
       bindsym F10 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0';
       bindsym ${modifier}+F10 exec 'screenshot.sh clipboard';
     '';
+
+  programs.waybar = {
+    settings = {
+      mainBar = {
+        modules-right = [
+          "cpu"
+          "memory"
+          "amdgpu"
+          "network"
+          "pulseaudio"
+          "tray"
+          "clock#utc"
+          "clock#local"
+        ];
+      };
+      "cpu" = {
+        interval = 1;
+        format =
+          "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}";
+        format-icons = [ "" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        states = {
+          warning = 20;
+          critical = 50;
+        };
+      };
+      "amdgpu" = {
+        interval = 1;
+        exec = let
+          device = "amdgpu-pci-0800";
+          sensors = "${pkgs.lm_sensors}/bin/sensors";
+          sed = "${pkgs.gnused}/bin/sed";
+        in pkgs.writeShellScript "thib-amdgpu-waybar" ''
+          sens=$(${sensors} ${device})
+          power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
+          temp=$(echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p')
+          echo "$\{power\}W $\{temp\}°C"
+        '';
+      };
+    };
+  };
 
   services.swayidle = {
     enable = true;

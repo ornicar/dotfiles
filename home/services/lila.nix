@@ -33,10 +33,10 @@
       };
       Service = {
         ExecStart =
-          "${bloop} run lila-ws -m lila.ws.LilaWs -c ${home}/lila-ws/.bloop -- -J-Dcsrf.origin=http://localhost:9663 -J-Dlogback.configurationFile=logback.dev.xml";
+          "${bloop} run lila-ws -m lila.ws.LilaWs -c ${home}/lila-ws/.bloop -- -J-Dcsrf.origin=http://l.org -J-Dlogback.configurationFile=logback.dev.xml";
         ExecStop = "${pkgs.psmisc}/bin/fuser -k 9664/tcp -TERM";
       };
-      Install = { WantedBy = [ "multi-user.target" ]; };
+      Install = { WantedBy = [ "lila.target" ]; };
     };
     lila-fishnet = {
       Unit = {
@@ -48,7 +48,7 @@
           "${bloop} run lila-fishnet -m play.core.server.ProdServerStart -c ${home}/lila-fishnet/.bloop";
         ExecStop = "rm ${home}/lila-fishnet/RUNNING_PID";
       };
-      Install = { WantedBy = [ "multi-user.target" ]; };
+      Install = { WantedBy = [ "lila.target" ]; };
     };
     # lila-search = {
     #   Unit = {
@@ -71,7 +71,7 @@
         StandardError = "journal";
         SyslogIdentifier = "picfit";
       };
-      Install = { WantedBy = [ "default.target" ]; };
+      Install = { WantedBy = [ "lila.target" ]; };
     };
   };
 }

@@ -1,13 +1,14 @@
 # crom is my desktop PC
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, lib, ... }: {
   imports = [
     ./hardware.nix
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.common-gpu-amd
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/amdgpu.nix
   ];
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
 
   environment.systemPackages = with pkgs; [
     lm_sensors

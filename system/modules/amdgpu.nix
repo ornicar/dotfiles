@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
+  # https://wiki.archlinux.org/title/AMDGPU#Boot_parameter
+  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xfff7ffff" ];
+
   environment.systemPackages = with pkgs; [ lact ];
 
   systemd.services.lact = {

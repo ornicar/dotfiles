@@ -31,7 +31,7 @@
           modules = [
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.thib = import ./home/fw.nix;
+              home-manager.users.thib = import ./home/fw;
               home-manager.extraSpecialArgs = specialArgs;
             }
             ./system/fw
@@ -42,7 +42,7 @@
           modules = [
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.thib = import ./home/crom.nix;
+              home-manager.users.thib = import ./home/crom;
               home-manager.extraSpecialArgs = specialArgs;
             }
             ./system/crom

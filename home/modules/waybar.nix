@@ -24,6 +24,14 @@
         #   "tooltip-format" = "{long}";
         #   "format" = " {variant}";
         # };
+        "cpu" = {
+          interval = 1;
+          format-icons = [ "" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          states = {
+            warning = 20;
+            critical = 50;
+          };
+        };
         "clock#local" = {
           tooltip-format = ''
             <big>{:%Y %B}</big>

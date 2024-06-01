@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   programs.zsh = let
 
     constants = # sh
@@ -77,6 +77,7 @@
         function take() { mkdir -p $1; cd $1 }
         # Get a 16 chars password: generate-password 16
         function generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
+        function where-from() { readlink -f $(which $1) }
       '';
   in {
     enable = true;

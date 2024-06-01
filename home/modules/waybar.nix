@@ -115,6 +115,10 @@
         #clock.local {
           font-weight: bold;
         }
+        #custom-spotify {
+          margin-left: 20px;
+          color: @base0E;
+        }
       '';
   };
 }

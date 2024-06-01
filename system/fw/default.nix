@@ -46,10 +46,16 @@
           # to view key names:
           # sudo keyd -m
           main = {
-            capslock = "esc";
+            capslock = "overload(arrows, esc)";
             shift = "layer(shift)";
             leftmeta = "layer(control)";
             rightalt = "layer(rightalt)";
+          };
+          "arrows" = {
+            k = "up";
+            j = "down";
+            h = "left";
+            l = "right";
           };
           "shift:S" = { delete = "S-insert"; };
           "rightalt:G" = { f = "enter"; };

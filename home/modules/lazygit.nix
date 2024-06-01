@@ -21,8 +21,8 @@
         universal = {
           prevItem = "e";
           nextItem = "n";
-          scrollUpMain = "E"; # main panel scroll up
-          scrollDownMain = "N"; # main panel scroll down
+          scrollUpMain = "<up>"; # main panel scroll up
+          scrollDownMain = "<down>"; # main panel scroll down
           nextMatch = "j";
           prevMatch = "J";
           new = "<c-n>";

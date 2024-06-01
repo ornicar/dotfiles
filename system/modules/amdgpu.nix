@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   # https://wiki.archlinux.org/title/AMDGPU#Boot_parameter
-  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xfff7ffff" ];
+  boot.kernelParams = [ "amdgpu.ppfeaturemask=0xfffd7fff" ];
 
   systemd.services.thib-amdgpu-set-power = {
     script = let drm-dir = "/sys/class/drm/card1/device";

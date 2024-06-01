@@ -31,16 +31,11 @@
           format-icons = [ "" ];
         };
         "custom/amdgpu" = {
-          interval = 2;
+          interval = 1;
           format = "GPU {}";
-          exec = let
-            device = "amdgpu-pci-0800";
-            sensors = "${pkgs.lm_sensors}/bin/sensors";
-            sed = "${pkgs.gnused}/bin/sed";
-          in pkgs.writeShellScript "thib-amdgpu-waybar" ''
-            sens=$(${sensors} ${device})
-            power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
-            temp=$(echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p')
+          exec = pkgs.writeShellScript "thib-amdgpu-waybar" ''
+            power=$(cat /tmp/gpu-power)
+            temp=$(cat /tmp/gpu-temp)
             echo "''${power}W $temp°"
           '';
         };

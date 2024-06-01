@@ -9,10 +9,26 @@
       ${pkgs.coreutils}/bin/echo "2" > ${drm-dir}/pp_power_profile_mode
     '';
     serviceConfig = {
-      Description = "Sets AMDGPU power profile to POWER_SAVING";
       Type = "oneshot";
       User = "root";
     };
+  };
+
+  systemd.services.thib-amdgpu-monitor = {
+    script = let
+      device = "amdgpu-pci-0800";
+      sensors = "${pkgs.lm_sensors}/bin/sensors";
+      sed = "${pkgs.gnused}/bin/sed";
+    in ''
+      while :
+      do
+        sens=$(${sensors} ${device})
+        power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
+        echo $power > /tmp/gpu-power
+        echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p' > /tmp/gpu-temp
+        sleep 1
+      done
+    '';
   };
 
   systemd.timers.thib-amdgpu-set-power = {

@@ -120,6 +120,10 @@
           font-weight: bold;
           color: #ffffff;
         }
+        #custom-spotify {
+          margin-left: 20px;
+          color: @base0E;
+        }
       '';
   };
 }

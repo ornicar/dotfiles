@@ -1,7 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.waybar = {
     settings = {
       mainBar = {
+        modules-left = lib.mkAfter [ "custom/spotify" ];
         modules-right = [
           "cpu"
           "temperature#cpu"
@@ -38,6 +39,14 @@
             temp=$(cat /tmp/gpu-temp)
             echo "''${power}W $temp°"
           '';
+        };
+        "custom/spotify" = {
+          interval = 5;
+          exec = ''
+            ${pkgs.playerctl}/bin/playerctl -p spotify metadata --format "{{xesam:artist}} - {{xesam:album}}"'';
+          format = "♫ {}";
+          max-length = 70;
+          on-click = "${pkgs.playerctl}/bin/playerctl -p spotify play-pause";
         };
       };
     };

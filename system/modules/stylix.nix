@@ -9,7 +9,7 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyodark.yaml";
     base16Scheme = let
       light = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
-      dark = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+      dark = "${pkgs.base16-schemes}/share/themes/atelier-estuary.yaml";
     in dark;
 
     fonts = rec {

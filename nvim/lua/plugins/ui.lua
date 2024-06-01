@@ -38,6 +38,8 @@ local function lualine_pretty_path(opts)
 end
 
 return {
+  { "RRethy/base16-nvim" },
+
   -- edgy
   {
     "folke/edgy.nvim",

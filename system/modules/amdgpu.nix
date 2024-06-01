@@ -27,7 +27,6 @@
         sens=$(${sensors} ${device})
         power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
         echo $power > /tmp/gpu-power
-        echo "''${power}000" > /tmp/gpu-power-milli
         echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p' > /tmp/gpu-temp
         sleep 1
       done

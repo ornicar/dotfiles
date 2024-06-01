@@ -29,6 +29,7 @@
     rust-analyzer
     taplo
     marksman
+    dotnetPackages.MaxMindGeoIP2
   ];
 
   programs.java.enable = true;

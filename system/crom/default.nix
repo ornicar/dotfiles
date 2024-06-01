@@ -11,7 +11,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    lm_sensors
     coolercontrol.coolercontrold
     coolercontrol.coolercontrol-gui
   ];

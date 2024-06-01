@@ -13,13 +13,13 @@
           window-rewrite = { }; # just to get rid of the warning
         };
         "sway/mode" = { "format" = " {}"; };
-        # idle_inhibitor = {
-        #   format = "{icon}";
-        #   format-icons = {
-        #     activated = "";
-        #     deactivated = "";
-        #   };
-        # };
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
         # "sway/language" = {
         #   "tooltip-format" = "{long}";
         #   "format" = " {variant}";
@@ -114,6 +114,11 @@
         }
         #clock.local {
           font-weight: bold;
+        }
+        #idle_inhibitor.activated {
+          background-color: @base08;
+          font-weight: bold;
+          color: #ffffff;
         }
       '';
   };

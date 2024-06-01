@@ -11,6 +11,7 @@
           "backlight"
           "battery"
           "power-profiles-daemon"
+          "idle_inhibitor"
           "tray"
           "clock#utc"
           "clock#local"

@@ -58,7 +58,7 @@
             l = "right";
           };
           "shift:S" = { delete = "S-insert"; };
-          "rightalt:G" = { f = "enter"; };
+          "rightalt:S" = { space = "enter"; };
         };
       };
     };

@@ -7,7 +7,7 @@
     # Optional configuration in nix syntax, see config.toml for available options
     settings = let
       shareClipboard = dest:
-        "wl-paste --no-newline | ssh ${dest} env WAYLAND_DISPLAY='wayland-1' wl-copy";
+        "wl-paste --no-newline | ssh ${dest} -i .ssh/id_home_nokey env WAYLAND_DISPLAY='wayland-1' wl-copy";
     in {
       release_bind = [ "KeyLeftCtrl" "Key5" ];
       port = 4242;

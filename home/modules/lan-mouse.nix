@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, ... }: {
+{ inputs, ... }: {
   imports = [ inputs.lan-mouse.homeManagerModules.default ];
   programs.lan-mouse = {
     enable = true;
@@ -16,11 +16,13 @@
         hostname = "crom";
         activate_on_startup = true;
         enter_hook = shareClipboard "crom";
+        ips = [ "192.168.1.2" ];
       };
       left = {
         hostname = "fw";
         activate_on_startup = true;
         enter_hook = shareClipboard "fw";
+        ips = [ "192.168.1.3" ];
       };
     };
   };

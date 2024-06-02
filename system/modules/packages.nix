@@ -30,5 +30,6 @@
     stockfish
     cmatrix
     lm_sensors
+    input-leap
   ];
 }

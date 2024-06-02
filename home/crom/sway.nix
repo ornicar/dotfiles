@@ -1,15 +1,13 @@
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
 
-  wayland.windowManager.sway = {
-    extraConfig =
-      let modifier = config.wayland.windowManager.sway.config.modifier;
-      in ''
-        bindsym F8 exec 'playerctl play-pause';
-        bindsym F9 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0';
-        bindsym F10 exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0';
-        bindsym ${modifier}+F10 exec 'screenshot.sh clipboard';
-      '';
-  };
+  wayland.windowManager.sway.config.keybindings =
+    let modifier = config.wayland.windowManager.sway.config.modifier;
+    in lib.mkAfter {
+      "F8" = "exec 'playerctl play-pause'";
+      "F9" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
+      "F10" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
+      "${modifier}+F10" = "exec 'screenshot.sh clipboard'";
+    };
 
   services.swayidle = {
     enable = true;

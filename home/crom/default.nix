@@ -5,7 +5,6 @@
     ../modules/wine.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
-    ../services/barrier-server.nix
 
     ./sway.nix
     ./waybar.nix

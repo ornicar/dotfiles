@@ -11,9 +11,7 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "base16-danqing", -- dark
-        -- colorscheme = "catppuccin-latte", -- light
-        -- load the default settings
+        colorscheme = vim.g.theme,
         defaults = {
           autocmds = true, -- lazyvim.config.autocmds
           keymaps = false, -- lazyvim.config.keymaps

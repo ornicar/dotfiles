@@ -1,2 +1,2 @@
 *.log
-/init.lua
+./init.lua

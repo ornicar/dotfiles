@@ -1,7 +1,7 @@
 # The idea is to symlink dotfiles/nvim into .config/nvim,
 # because I don't want nix to manage my nvim config. LazyVim does it.
 # Then we write a dotfiles/nvim/init.lua that points to nix managed treesitter parsers.
-{ pkgs, config, ... }:
+{ pkgs, config, specialArgs, ... }:
 let
 
   treesitterWithGrammars = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
@@ -9,7 +9,6 @@ let
     p.comment
     p.css
     p.dockerfile
-    p.fish
     p.gitattributes
     p.gitignore
     p.go
@@ -57,8 +56,9 @@ in {
 
   # Import the nix managed treesitter parsers into the nvim boot script
   home.file."dotfiles/nvim/init.lua".text = ''
-    require("config.init")
+    vim.g.theme = "base16-${specialArgs.theme}"
     vim.opt.runtimepath:append("${treesitter-parsers}")
+    require("config.init")
   '';
 
   # Treesitter is configured as a locally developed module in lazy.nvim

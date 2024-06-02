@@ -17,6 +17,8 @@
         home-manager.follows = "home-manager";
       };
     };
+
+    lan-mouse.url = "github:feschber/lan-mouse";
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:

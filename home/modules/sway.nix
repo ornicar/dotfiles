@@ -74,7 +74,7 @@ with config.lib.stylix.colors.withHashtag; {
       };
       focus.followMouse = false;
       floating.modifier = modifier;
-      keybindings = lib.mkDefault {
+      keybindings = {
         "${modifier}+return" = "exec ${terminal}";
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+q" = "kill";

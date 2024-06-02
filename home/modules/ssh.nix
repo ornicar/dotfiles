@@ -36,9 +36,4 @@
   };
 
   services.ssh-agent.enable = true;
-
-  home.file.".ssh/authorized_keys".text = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSPqUrPj2kMuJ70tTnAxtQ2jhcklh2s0br9Vt7mm4XW thib@lichess
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBf8j+Z9iVPdqMqXDHMZduYemty7GKm2I/DFyM5Jghp6 thib@home
-  '';
 }

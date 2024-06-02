@@ -1,6 +1,6 @@
-{ pkgs, config, ... }: {
+{ ... }: {
   services.barrier.client = {
-    enable = false;
+    enable = true;
     enableCrypto = false;
     enableDragDrop = false;
     server = "crom";

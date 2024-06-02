@@ -5,7 +5,13 @@
     enable = true;
     forwardAgent = true;
     extraConfig = ''
+      Host fw
+        HostName 192.168.1.3
+        User thib
       Host crom
+        HostName 192.168.1.2
+        User thib
+      Host crom-pub
         HostName 82.64.134.116
         User thib
       Host crom-forward
@@ -30,4 +36,9 @@
   };
 
   services.ssh-agent.enable = true;
+
+  home.file.".ssh/authorized_keys".text = ''
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGSPqUrPj2kMuJ70tTnAxtQ2jhcklh2s0br9Vt7mm4XW thib@lichess
+    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBf8j+Z9iVPdqMqXDHMZduYemty7GKm2I/DFyM5Jghp6 thib@home
+  '';
 }

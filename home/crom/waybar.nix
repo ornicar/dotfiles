@@ -10,7 +10,7 @@
           "memory"
           "network"
           "pulseaudio"
-          "custom/lan-mouse"
+          # "custom/lan-mouse"
           "tray"
           "clock#utc"
           "clock#local"

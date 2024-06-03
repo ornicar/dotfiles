@@ -30,5 +30,9 @@
     stockfish
     cmatrix
     lm_sensors
+    gping
+    sysz
+    systemctl-tui
+    trippy
   ];
 }

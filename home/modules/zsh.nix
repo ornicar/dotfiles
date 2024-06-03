@@ -156,6 +156,7 @@
       "gslrp" = "git-stash-pull-rebase && git push";
       "gw" = "git wtf";
       # Stuff
+      "st" = "systemctl-tui";
       "mongo-ssh" =
         "ssh -fNL 27117:rodan.vrack.lichess.ovh:27017 root@rodan.lichess.ovh";
       "mongo-ssh-pri" =

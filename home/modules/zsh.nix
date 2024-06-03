@@ -78,6 +78,7 @@
         # Get a 16 chars password: generate-password 16
         function generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
         function where-from() { readlink -f $(which $1) }
+        gclone() { git clone "$1" && cd "$(basename "$1" .git)" }
       '';
   in {
     enable = true;

@@ -36,7 +36,7 @@
     systemctl = "${pkgs.systemd}/bin/systemctl --user";
     service = "lan-mouse.service";
   in {
-    interval = 2;
+    interval = 5;
     exec = pkgs.writeShellScript "lan-mouse-check" ''
       if ${systemctl} is-active --quiet ${service}
       then echo "󰍽 ON"

@@ -17,6 +17,7 @@
     python3
     sbt
     coursier
+    scala-cli
     corepack
     dart-sass
     delta
@@ -30,6 +31,7 @@
     taplo
     marksman
     dotnetPackages.MaxMindGeoIP2
+    http-server
   ];
 
   programs.java.enable = true;

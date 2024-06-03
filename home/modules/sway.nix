@@ -76,7 +76,6 @@ with config.lib.stylix.colors.withHashtag; {
       floating.modifier = modifier;
       keybindings = {
         "${modifier}+return" = "exec ${terminal}";
-        "${modifier}+space" = "exec ${menu}";
         "${modifier}+q" = "kill";
         "${modifier}+shift+c" = "reload";
         "${modifier}+s" = "splith";

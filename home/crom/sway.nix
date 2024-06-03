@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }: {
 
   wayland.windowManager.sway.config.keybindings =
-    let modifier = config.wayland.windowManager.sway.config.modifier;
+    let inherit (config.wayland.windowManager.sway.config) modifier menu;
     in lib.mkAfter {
+      "${modifier}+space" = "exec ${menu}";
       "F8" = "exec 'playerctl play-pause'";
       "F9" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
       "F10" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";

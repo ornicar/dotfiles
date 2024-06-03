@@ -8,6 +8,7 @@
       "F9" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
       "F10" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
       "${modifier}+F10" = "exec 'screenshot.sh clipboard'";
+      "ctrl+f9" = ''exec "sleep 1; pkill -SIGUSR1 swayidle"'';
     };
 
   services.swayidle = {

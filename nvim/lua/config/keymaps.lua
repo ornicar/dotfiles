@@ -18,19 +18,14 @@ end
 
 map("n", "!", ":!")
 
-map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
-
 -- delete buffer and file
-map("n", "<leader>wD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
+map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 
 -- Copy current file path to registers "* and "+
 map("n", "<leader>cp", ":let @*=@%<cr>:let @+=@%<cr>")
 
--- Yank from the cursor to the end of the line, to be consistent with C and D.
-map("n", "Y", "y$")
-
 -- Start a substitute
-map("n", "<leader>ss", ":%s/\v")
+map("n", "<leader>ss", ":%s/")
 
 -- Pull word under cursor into LHS of a substitute (for quick search and replace)
 map("n", "<leader>zs", ':%s#<C-r>=expand("<cword>")<cr>#')

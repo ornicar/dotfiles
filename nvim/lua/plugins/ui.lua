@@ -38,7 +38,17 @@ local function lualine_pretty_path(opts)
 end
 
 return {
-  { "RRethy/base16-nvim" },
+  {
+    "catppuccin",
+    opts = {
+      color_overrides = {
+        mocha = {
+          -- base = "1e1e2e",
+          base = "#1e1e22",
+        },
+      },
+    },
+  },
 
   -- edgy
   {

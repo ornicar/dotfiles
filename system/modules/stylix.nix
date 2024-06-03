@@ -8,6 +8,8 @@
     base16Scheme = let theme = "catppuccin-mocha";
     in "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
+    override = { base00 = "#1e1e22"; };
+
     fonts = rec {
       sansSerif = {
         package = pkgs.dejavu_fonts;

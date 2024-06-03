@@ -58,7 +58,6 @@ in {
 
   # Import the nix managed treesitter parsers into the nvim boot script
   home.file."dotfiles/nvim/init.lua".text = ''
-    vim.g.theme = "base16-${specialArgs.theme}"
     vim.opt.runtimepath:append("${treesitter-parsers}")
     require("config.init")
   '';

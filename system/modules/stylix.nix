@@ -1,9 +1,12 @@
-{ pkgs, config, inputs, specialArgs, ... }: {
+{ pkgs, config, inputs, ... }: {
   imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
     image = config.lib.stylix.pixel "base00";
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/${specialArgs.theme}.yaml";
+    # https://tinted-theming.github.io/base16-gallery/
+    # catppuccin-mocha tokyo-dark
+    # #231f20
+    base16Scheme = let theme = "catppuccin-mocha";
+    in "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
     fonts = rec {
       sansSerif = {

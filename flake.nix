@@ -25,10 +25,7 @@
     let
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
-      # https://tinted-theming.github.io/base16-gallery/
-      # catppuccin-mocha tokyo-dark
-      theme = "onedark";
-      specialArgs = { inherit inputs outputs theme; };
+      specialArgs = { inherit inputs outputs; };
     in {
       nixosConfigurations = {
         fw = nixosSystem {

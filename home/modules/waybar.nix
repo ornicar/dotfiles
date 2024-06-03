@@ -35,7 +35,7 @@
           format-alt = "{:%Y-%m-%d}";
         };
         "memory" = {
-          format = " {percentage}% {swapPercentage}%";
+          format = " {percentage}%  {swapPercentage}%";
           states = {
             warning = 70;
             critical = 85;
@@ -43,8 +43,9 @@
         };
         "network" = {
           interval = 1;
-          "format-wifi" = " {essid} {signalStrength}% {bandwidthTotalBytes}";
-          "tooltip-format" = " {ifname} via {gwaddr}";
+          # "format-wifi" = " {essid} {signalStrength}% {bandwidthTotalBytes}";
+          "format-wifi" = " {essid} {signalStrength}%";
+          "tooltip-format" = "{bandwidthTotalBytes} {ifname} via {gwaddr}";
           "format-linked" = " {ifname} (No IP)";
           "format-disconnected" = "Disconnected ⚠ {ifname}";
           "format-alt" = " {ifname}: {ipaddr}/{cidr}";

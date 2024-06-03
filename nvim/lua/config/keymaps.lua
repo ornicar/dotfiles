@@ -18,6 +18,9 @@ end
 
 map("n", "!", ":!")
 
+-- close quickfix and other pesky windows
+map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
+
 -- delete buffer and file
 map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 

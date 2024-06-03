@@ -5,9 +5,9 @@
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
+    ./amdgpu.nix
     ../modules/common.nix
     ../modules/bluetooth.nix
-    ../modules/amdgpu.nix
   ];
 
   environment.systemPackages = with pkgs; [

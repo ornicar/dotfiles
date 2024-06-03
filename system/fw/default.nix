@@ -49,7 +49,7 @@
             capslock = "overload(arrows, esc)";
             shift = "layer(shift)";
             leftmeta = "layer(control)";
-            rightalt = "layer(rightalt)";
+            rightalt = "layer(rightaltMaj)";
           };
           "arrows" = {
             k = "up";
@@ -58,7 +58,7 @@
             l = "right";
           };
           "shift:S" = { delete = "S-insert"; };
-          "rightalt:S" = { space = "enter"; };
+          "rightaltMaj:S" = { space = "enter"; };
         };
       };
     };

@@ -11,14 +11,16 @@ let
     p.dockerfile
     p.gitattributes
     p.gitignore
+    p.git_config
     p.go
     p.gomod
     p.gowork
     p.hcl
     p.javascript
     p.jq
-    p.json5
     p.json
+    p.json5
+    p.jsonc
     p.lua
     p.make
     p.markdown

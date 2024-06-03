@@ -25,9 +25,9 @@
     let
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
-      # https://github.com/tinted-theming/base16-schemes
+      # https://tinted-theming.github.io/base16-gallery/
       # catppuccin-mocha tokyo-dark
-      theme = "gruvbox-dark-hard";
+      theme = "twilight";
       specialArgs = { inherit inputs outputs theme; };
     in {
       nixosConfigurations = {

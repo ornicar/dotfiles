@@ -133,6 +133,7 @@ with config.lib.stylix.colors.withHashtag; {
         #
         "ctrl+f1" = "exec 'keyboard-switch-notify.sh'";
         "ctrl+f6" = "mode gaming";
+        "ctrl+f9" = ''exec "sleep 1; pkill -SIGUSR1 swayidle"'';
       };
       modes = {
         resize = {

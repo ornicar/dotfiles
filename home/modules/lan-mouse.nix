@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [ inputs.lan-mouse.homeManagerModules.default ];
   programs.lan-mouse = {
     enable = true;
@@ -31,4 +31,25 @@
 
   systemd.user.services.lan-mouse.Service.Environment =
     "PATH=$PATH:/run/current-system/sw/bin";
+
+  programs.waybar.settings.mainBar."custom/lan-mouse" = let
+    systemctl = "${pkgs.systemd}/bin/systemctl --user";
+    service = "lan-mouse.service";
+  in {
+    interval = 2;
+    exec = pkgs.writeShellScript "lan-mouse-check" ''
+      if ${systemctl} is-active --quiet ${service}
+      then echo "󰍽 ON"
+      else echo "󰍾"
+      fi
+    '';
+    format = "{}";
+    tooltip-format = "LAN Mouse";
+    on-click = pkgs.writeShellScript "lan-mouse-toggle" ''
+      if ${systemctl} is-active --quiet ${service}
+      then ${systemctl} stop ${service}
+      else ${systemctl} start ${service}
+      fi
+    '';
+  };
 }

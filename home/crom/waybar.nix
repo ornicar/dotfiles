@@ -10,6 +10,7 @@
           "memory"
           "network"
           "pulseaudio"
+          "custom/lan-mouse"
           "tray"
           "clock#utc"
           "clock#local"
@@ -33,7 +34,7 @@
         };
         "custom/amdgpu" = {
           interval = 1;
-          format = "GPU {}";
+          format = " {}";
           exec = pkgs.writeShellScript "thib-amdgpu-waybar" ''
             power=$(cat /tmp/gpu-power)
             temp=$(cat /tmp/gpu-temp)

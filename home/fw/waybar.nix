@@ -12,6 +12,7 @@
           "battery"
           "power-profiles-daemon"
           "idle_inhibitor"
+          "custom/lan-mouse"
           "tray"
           "clock#utc"
           "clock#local"

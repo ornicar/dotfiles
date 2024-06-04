@@ -3,36 +3,34 @@
     enable = true;
     keyboards = {
       default = {
-        ids = [ "*" ];
+        # 32ac:0012 Framework Laptop 16 Keyboard Module
+        ids = [ "32ac:012" ];
         settings = {
           # to view key names:
           # sudo keyd -m
           main = {
-            capslock = "overload(shift, esc)";
-            # shift = "layer(shift)";
+            shift = "layer(shiftAltGr)";
+            capslock = "layer(capsShift)";
             leftmeta = "layer(control)";
             leftalt = "layer(leftalt)";
             rightalt = "layer(rightaltMaj)";
-            "tab" = "overload(tabAltGr, tab)";
+            "tab" = "layerm(tab, esc)";
           };
-          # caps lock acts as shift
-          "capsShift:S" = {
-            k = "up";
-            j = "down";
-            h = "left";
-            l = "right";
-          };
-          "shift:S" = { delete = "S-insert"; };
+          # both shift keys act as alt gr for french accents
+          "shiftAltGr:G" = { };
+          # # caps lock acts as shift
+          "capsShift:S" = { delete = "S-insert"; };
           # left alt combines with space for enter
           "leftalt:A" = { space = "enter"; };
           # right alt acts as shift
           "rightaltMaj:S" = { };
-          # tab acts as alt gr for french accents, and can do arrow keys
-          "tabAltGr:G" = {
+          # tab acts as escape ands enters a mode where hjkl are arrow keys
+          "tab" = {
             k = "up";
             j = "down";
             h = "left";
             l = "right";
+            space = "tab";
           };
         };
       };

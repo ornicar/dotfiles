@@ -6,6 +6,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     ./amdgpu.nix
+    ./keyd.nix
     ../modules/common.nix
     ../modules/bluetooth.nix
   ];

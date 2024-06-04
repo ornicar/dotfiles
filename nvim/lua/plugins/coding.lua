@@ -54,6 +54,8 @@ return {
     opts = {
       formatters_by_ft = {
         nix = { "nixfmt" },
+        scss = { "prettierd" },
+        typescript = { "prettierd" },
       },
     },
   },

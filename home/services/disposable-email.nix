@@ -7,11 +7,16 @@
     };
     Install = { WantedBy = [ "multi-user.target" ]; };
     Service = {
-      ExecStart = "${home}/disposable/update.sh";
+      ExecStart = pkgs.writeShellScript "disposable-update.sh" ''
+        git pull origin master
+        python .generate
+        git add .
+        git commit -m "auto update domains"
+        git push
+      '';
       Type = "oneshot";
       WorkingDirectory = "${home}/disposable";
-      Environment = "SSH_AUTH_SOCK=%t/ssh-agent.socket";
-      ExecStartPre = "${pkgs.openssh}/bin/ssh-add /home/thib/.ssh/id_nokey";
+      Environment = "PATH=$PATH:/run/current-system/sw/bin";
     };
   };
   systemd.user.timers.disposable-timer = {

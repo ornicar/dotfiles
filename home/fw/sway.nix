@@ -34,19 +34,26 @@
 
   services.swayidle = {
     enable = true;
-    timeouts =
-      let resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
-      in [
-        {
-          timeout = 600;
-          command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
-          inherit resumeCommand;
-        }
-        {
-          timeout = 630;
-          command = "${pkgs.systemd}/bin/systemctl suspend";
-          inherit resumeCommand;
-        }
-      ];
+    timeouts = let
+      swayMsg = "${pkgs.sway}/bin/swaymsg";
+      light = "${pkgs.light}/bin/light";
+      resumeCommand = ''${swayMsg} "output * power on"'';
+    in [
+      {
+        timeout = 600;
+        command = "${light} -O; ${light} -T 0.5";
+        resumeCommand = "${light} -I";
+      }
+      {
+        timeout = 900;
+        command = ''${swayMsg} "output * power off"'';
+        inherit resumeCommand;
+      }
+      {
+        timeout = 930;
+        command = "${pkgs.systemd}/bin/systemctl suspend";
+        inherit resumeCommand;
+      }
+    ];
   };
 }

@@ -14,6 +14,7 @@
   services.swayidle = {
     enable = true;
     timeouts = let
+      light = "${pkgs.light}/bin/light";
       api-url = "http://localhost:11987";
       uid-off = "d7e75992-c2ce-473f-bbc7-0dd23c00ae07";
       uid-on = "d14d565f-c9da-403d-bf54-7476379eb798";
@@ -25,10 +26,17 @@
         ${pkgs.curl}/bin/curl -XPOST -c ${cookie-file} ${api-url}/login -u CCAdmin:coolAdmin
         ${pkgs.curl}/bin/curl -XPOST -b ${cookie-file} ${api-url}/modes-active/$uid
       '';
-    in [{
-      timeout = 600;
-      command = "${crom-mode} off";
-      resumeCommand = "${crom-mode} on";
-    }];
+    in [
+      {
+        timeout = 600;
+        command = "${light} -O; ${light} -T 0.5";
+        resumeCommand = "${light} -I";
+      }
+      {
+        timeout = 630;
+        command = "${crom-mode} off";
+        resumeCommand = "${crom-mode} on";
+      }
+    ];
   };
 }

@@ -111,16 +111,15 @@ end
 
 -- lazygit
 local full_size = { width = 1, height = 1 }
-map("n", "<leader>gg",
-  function() Util.terminal({ "lazygit" }, { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false, size = full_size }) end,
-  { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG",
-  function() Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false, size = full_size }) end,
-  { desc = "Lazygit (cwd)" })
+map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
-  Util.terminal({ "lazygit", "-f", vim.trim(git_path) }, { esc_esc = false, ctrl_hjkl = false })
-end, { desc = "Lazygit current file history" })
+  LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
+end, { desc = "Lazygit Current File History" })
+map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
+map("n", "<leader>gl", function()
+  LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
+end, { desc = "Lazygit Log" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })

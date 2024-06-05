@@ -127,35 +127,6 @@
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";
       "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
-      # Git aliases
-      "t" = "lazygit";
-      "g" = "git";
-      "gs" = "git status";
-      "ga" = "git add -A";
-      "gf" = "git fetch";
-      "gp" = "git push";
-      "gl" = "git pull";
-      "glr" = "git pull --rebase";
-      "gpw" = "git-push-write";
-      "gc" = "git commit -v";
-      "gca" = "git commit --amend";
-      "gch" = "git commit --amend -C HEAD";
-      "gac" = "git commit -av";
-      "gb" = "git branch -v";
-      "gba" = "git branch -va";
-      "gcp" = "git cherry-pick";
-      "glo" = "git l";
-      "gco" = "git checkout";
-      "gm" = "git merge";
-      "gmt" = "git mergetool --no-prompt";
-      "gd" = "git diff";
-      "gr" = "git remote -v";
-      "gcf" = "git clean -f";
-      "grh" = "git reset --hard";
-      "grhh" = "git reset --hard HEAD";
-      "gslr" = "git-stash-pull-rebase";
-      "gslrp" = "git-stash-pull-rebase && git push";
-      "gw" = "git wtf";
       # Stuff
       "st" = "_ systemctl-tui";
       "on" = ''swaymsg " output * power on"'';

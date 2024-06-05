@@ -11,11 +11,17 @@
       gui = {
         language = "en";
         mouseEvents = false;
-        sidePanelWidth = 0.333;
+        sidePanelWidth = 0.3;
         mainPanelSplitMode =
-          "horizontal"; # one of "horizontal" | "flexible" | "vertical"
+          "flexible"; # one of "horizontal" | "flexible" | "vertical"
         showFileTree = false; # ` to toggle
+        nerdFontsVersion = "3";
+        commitHashLength = 6;
+        showDivergenceFromBaseBranch = "arrowAndNumber";
       };
+      quitOnTopLevelReturn = true;
+      disableStartupPopups = true;
+      promptToReturnFromSubprocess = false;
       os = {
         edit = "nvim";
         editAtLine = "{{editor}} +{{line}} {{filename}}";

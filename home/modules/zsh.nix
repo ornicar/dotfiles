@@ -120,6 +120,7 @@
       "_" = "sudo -E";
       "l" = "ls -la";
       "h" = "history";
+      "man" = "batman";
       # Add suffix alias for less
       "-g L" = "| less";
       "v" = "nvim";

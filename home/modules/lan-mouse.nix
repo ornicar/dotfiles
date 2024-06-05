@@ -1,8 +1,8 @@
 { inputs, pkgs, ... }: {
   imports = [ inputs.lan-mouse.homeManagerModules.default ];
   programs.lan-mouse = {
-    enable = false;
-    systemd = false;
+    enable = true;
+    systemd = true;
     # package = inputs.lan-mouse.packages.${pkgs.stdenv.hostPlatform.system}.default
     # Optional configuration in nix syntax, see config.toml for available options
     settings = let

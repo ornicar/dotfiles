@@ -11,7 +11,7 @@
     ./modules/waybar.nix
     ./modules/xdg.nix
     ./modules/zsh.nix
-    ./modules/lan-mouse.nix
+    # ./modules/lan-mouse.nix
 
     ./services/bloop.nix
     ./services/lila.nix

@@ -1,6 +1,13 @@
 { config, ... }: {
   programs.zsh = let
 
+    stty = # sh
+      ''
+        # unbind ^S, ^Q
+        # https://unix.stackexchange.com/questions/12107/how-to-unfreeze-after-accidentally-pressing-ctrl-s-in-a-terminal
+        stty -ixon
+      '';
+
     constants = # sh
       ''
 
@@ -40,9 +47,10 @@
         bindkey -v # Use vi key bindings.
 
         bindkey "^ " autosuggest-accept
-        bindkey "^n" autosuggest-execute
-        bindkey -M vicmd "e" history-search-backward
-        bindkey -M vicmd "n" history-search-forward
+        bindkey "^m" autosuggest-execute # somehow this is needed for <enter> to run the suggestion
+        bindkey "^Q" autosuggest-clear
+        bindkey -M vicmd "^[[A" history-search-backward
+        bindkey -M vicmd "^[[B" history-search-forward
         bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
         bindkey -M viins "^L" clear-screen
         bindkey -M viins "^W" backward-kill-word
@@ -65,7 +73,7 @@
         # complete sudo commands
         zstyle ':completion::complete:*' gain-privileges 1
 
-        bindkey '^E' fzf-history-widget # must be after compinit
+        bindkey "''${key[Up]}" fzf-history-widget
       '';
 
     functions = # sh
@@ -73,12 +81,10 @@
 
         function limosh() { mosh root@$1.lichess.ovh }
         function psg() { ps aux | grep $* }
-        function batf() { tail -F $1 | bat --paging=never --plain -l log }
         function take() { mkdir -p $1; cd $1 }
         # Get a 16 chars password: generate-password 16
         function generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
         function where-from() { readlink -f $(which $1) }
-        gclone() { git clone "$1" && cd "$(basename "$1" .git)" }
       '';
   in {
     enable = true;
@@ -93,6 +99,7 @@
       save = 100000;
     };
     initExtraBeforeCompInit = ''
+      ${stty}
       ${constants}
       ${fzfCompletion}
       ${keychain}

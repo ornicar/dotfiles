@@ -40,6 +40,13 @@
           new = "<c-n>";
         };
       };
+      # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
+      customCommands = [{
+        key = "H";
+        context = "commits";
+        # or use "y u" to copy the url
+        command = "gh browse {{.SelectedLocalCommit.Hash}}";
+      }];
     };
   };
 }

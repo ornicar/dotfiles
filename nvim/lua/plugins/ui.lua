@@ -45,6 +45,7 @@ return {
         mocha = {
           -- base = "1e1e2e",
           base = "#1f1e22",
+          mantle = "#232224",
         },
       },
     },

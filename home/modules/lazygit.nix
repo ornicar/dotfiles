@@ -2,6 +2,12 @@
   programs.lazygit = {
     enable = true;
     settings = {
+      git = {
+        paging = {
+          colorArg = "always";
+          pager = "diff-so-fancy";
+        };
+      };
       gui = {
         language = "en";
         mouseEvents = false;

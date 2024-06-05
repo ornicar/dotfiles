@@ -14,11 +14,14 @@
             leftmeta = "layer(control)";
             leftalt = "layer(leftalt)";
             rightalt = "layer(rightaltMaj)";
-            "tab" = "layerm(tab, esc)";
+            # tab acts as escape and can do nothing else because:
+            # - we want escape on keydown, not keyup
+            # - we don't want to escape before doing something else
+            tab = "esc";
           };
           # both shift keys act as alt gr for french accents
           "shiftAltGr:G" = { };
-          # # caps lock acts as shift
+          # caps lock acts as shift
           "capsShift:S" = {
             delete = "S-insert";
             space = "tab";
@@ -26,14 +29,7 @@
           # left alt combines with space for enter
           "leftalt:A" = { space = "enter"; };
           # right alt acts as shift
-          "rightaltMaj:S" = { };
-          # tab acts as escape ands enters a mode where hjkl are arrow keys
-          "tab" = {
-            k = "up";
-            j = "down";
-            h = "left";
-            l = "right";
-          };
+          "rightaltMaj:S" = { space = "S-tab"; };
         };
       };
     };

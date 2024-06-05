@@ -29,6 +29,12 @@
     pass
     gnupg
     pinentry-tty
+    bat-extras.batman
+    bat-extras.batwatch
+    tmux
+    cmatrix
+    sysz
+    systemctl-tui
   ];
 
   programs.gnupg.agent = {

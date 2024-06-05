@@ -5,8 +5,6 @@ return {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      -- "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio",
     },
     ft = { "scala", "sbt", "java" },
     -- stylua: ignore
@@ -21,7 +19,7 @@ return {
       config.init_options.statusBarProvider = "on"
       config.settings = {
         showImplicitArguments = true,
-        excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+        excludedPackages = { "akka.actor.typed.javadsl" },
         serverProperties = { "-Xmx2g" },
         serverVersion = "latest.snapshot",
       }

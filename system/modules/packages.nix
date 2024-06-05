@@ -24,15 +24,10 @@
     gthumb
     feh
     libnotify
-    barrier
-    tmux
     gnome.nautilus
     stockfish
-    cmatrix
     lm_sensors
-    gping
-    sysz
-    systemctl-tui
-    trippy
+    gping # ping with a graph
+    trippy # network diagnostic https://github.com/fujiapple852/trippy
   ];
 }

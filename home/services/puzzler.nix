@@ -24,8 +24,7 @@
         Type = "oneshot";
         ExecStart = "${puzzler}/bin/import-more.sh";
         WorkingDirectory = puzzler;
-        Environment = "SSH_AUTH_SOCK=%t/ssh-agent.socket";
-        ExecStartPre = "${pkgs.openssh}/bin/ssh-add ${home}/.ssh/id_nokey";
+        Environment = "PATH=$PATH:/run/current-system/sw/bin";
       };
       Install = { WantedBy = [ "multi-user.target" ]; };
     };

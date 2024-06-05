@@ -4,7 +4,7 @@
     let inherit (config.wayland.windowManager.sway.config) modifier menu;
     in lib.mkAfter {
       "${modifier}+space" = "exec ${menu}";
-      "F8" = "exec 'playerctl play-pause'";
+      "F8" = "exec '${pkgs.playerctl}/bin/playerctl -p spotify play-pause'";
       "F9" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0'";
       "F10" = "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
       "${modifier}+F10" = "exec 'screenshot.sh clipboard'";

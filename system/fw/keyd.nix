@@ -19,7 +19,10 @@
           # both shift keys act as alt gr for french accents
           "shiftAltGr:G" = { };
           # # caps lock acts as shift
-          "capsShift:S" = { delete = "S-insert"; };
+          "capsShift:S" = {
+            delete = "S-insert";
+            space = "tab";
+          };
           # left alt combines with space for enter
           "leftalt:A" = { space = "enter"; };
           # right alt acts as shift
@@ -30,7 +33,6 @@
             j = "down";
             h = "left";
             l = "right";
-            space = "tab";
           };
         };
       };

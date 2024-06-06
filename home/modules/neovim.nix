@@ -44,6 +44,7 @@ in {
     prettierd
     shfmt
     nodePackages_latest.typescript-language-server
+    nodePackages_latest.vscode-json-languageserver
   ];
 
   # Use the external dotfiles nvim config for quicker hacking

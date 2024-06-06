@@ -2,6 +2,7 @@
 { ... }: {
   imports = [
     ../common.nix
+    ../modules/stream.nix
     ../modules/wine.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix

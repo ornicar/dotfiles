@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }: {
+{ ... }: {
   programs.kitty = {
     enable = true;
     settings = {

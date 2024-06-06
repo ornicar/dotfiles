@@ -10,7 +10,7 @@
           # to view key names:
           # sudo keyd -m
           main = {
-            shift = "layer(shiftAltGr)";
+            shift = "oneshot(shiftAltGr)";
             capslock = "layer(capsShift)";
             leftmeta = "layer(leftcontrol)";
             leftalt = "layer(leftalt)";

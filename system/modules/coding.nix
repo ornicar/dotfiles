@@ -30,7 +30,6 @@
     rust-analyzer
     taplo
     marksman
-    dotnetPackages.MaxMindGeoIP2
     http-server
   ];
 

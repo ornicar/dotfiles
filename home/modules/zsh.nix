@@ -46,6 +46,7 @@
         bindkey -d # Reset to default.
         bindkey -v # Use vi key bindings.
 
+        bindkey "^H" autosuggest-execute
         bindkey "^ " autosuggest-accept
         bindkey "^Q" autosuggest-clear
         bindkey -M vicmd "e" history-search-backward

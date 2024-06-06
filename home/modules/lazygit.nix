@@ -37,7 +37,7 @@
           scrollDownMain = "<down>"; # main panel scroll down
           nextMatch = "j";
           prevMatch = "J";
-          new = "<c-n>";
+          new = "<c-a>";
         };
       };
       # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md

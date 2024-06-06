@@ -47,10 +47,11 @@
         bindkey -v # Use vi key bindings.
 
         bindkey "^ " autosuggest-accept
-        bindkey "^m" autosuggest-execute # somehow this is needed for <enter> to run the suggestion
         bindkey "^Q" autosuggest-clear
-        bindkey -M vicmd "^[[A" history-search-backward
-        bindkey -M vicmd "^[[B" history-search-forward
+        bindkey -M vicmd "e" history-search-backward
+        bindkey -M vicmd "n" history-search-forward
+        bindkey -M vicmd "^[[A" history-search-backward # up
+        bindkey -M vicmd "^[[B" history-search-forward # down
         bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
         bindkey -M viins "^L" clear-screen
         bindkey -M viins "^W" backward-kill-word

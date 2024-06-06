@@ -4,7 +4,15 @@
     keyboards = {
       glove = {
         ids = [ "16c0:27db" ];
-        settings = { shift = { tab = "S-insert"; }; };
+        settings = {
+          main = { leftcontrol = "layer(leftcontrol)"; };
+          "leftcontrol:C" = {
+            j = "down";
+            k = "up";
+            # h = "left";
+            # u = "right"; ctrl+l focuses the address bar
+          };
+        };
       };
       kone = {
         ids = [ "1e7d:afca" ];

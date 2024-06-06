@@ -9,7 +9,7 @@
           natural_scroll = "disabled";
           # dwt = "enabled";
           accel_profile = "adaptive";
-          pointer_accel = "0.3"; # set mouse sensitivity (between -1 and 1)
+          pointer_accel = "0.4"; # set mouse sensitivity (between -1 and 1)
         };
       };
       keybindings = let

@@ -171,6 +171,7 @@ with config.lib.stylix.colors.withHashtag; {
       # borders, lol
       hide_edge_borders both
       titlebar_padding 1 1
+      focus_follows_mouse yes
 
       # start major apps:
       workspace number 1

@@ -16,7 +16,7 @@
     jdk
     python3
     sbt
-    coursier
+    coursier # required by metals
     scala-cli
     corepack
     dart-sass
@@ -28,8 +28,8 @@
     cargo
     rustc
     rust-analyzer
-    taplo
-    marksman
+    taplo # TOML language server
+    marksman # markdown language server
     http-server
   ];
 

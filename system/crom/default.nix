@@ -33,7 +33,7 @@
   };
 
   stylix.fonts.sizes = lib.mkForce {
-    applications = 16;
+    applications = 14;
     desktop = 14;
     popups = 16;
     terminal = 16;

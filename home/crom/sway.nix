@@ -11,6 +11,10 @@
       "ctrl+f9" = ''exec "sleep 1; pkill -SIGUSR1 swayidle"'';
     };
 
+  # the glove is a bit too repeaty
+  wayland.windowManager.sway.config.input."type:keyboard".repeat_delay =
+    lib.mkForce "250";
+
   services.swayidle = {
     enable = true;
     timeouts = let

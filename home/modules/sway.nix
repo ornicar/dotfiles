@@ -81,7 +81,7 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+s" = "splith";
         "${modifier}+f" = "layout tabbed";
         "${modifier}+shift+f" = "layout toggle split";
-        "${modifier}+t" = "fullscreen toggle";
+        "F11" = "fullscreen toggle";
         #     # Move the focused window with the same, but add Shift
         "${modifier}+shift+${left}" = "move left";
         "${modifier}+shift+${down}" = "move down";

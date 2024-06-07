@@ -4,7 +4,7 @@
     font-awesome # installed for waybar icons
     jetbrains-mono # terminal
     # iosevka-bin
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     # (nerdfonts.override { fonts = [ "FiraMono" "JetBrainsMono" ]; })
   ];

@@ -38,7 +38,7 @@ with config.lib.stylix.colors.withHashtag; {
       colors = let
         text = base04;
         urgent = base09;
-        focused = base0D;
+        focused = base04;
         unfocused = base00;
         background = base00;
         indicator = base0C;

@@ -1,27 +1,25 @@
 return {
-  {
-    "lambdalisue/suda.vim"
-  },
+  -- sudo with password prompt
+  -- {
+  --   "lambdalisue/suda.vim",
+  -- },
   -- yank ring
   {
     "gbprod/yanky.nvim",
     enabled = true,
     opts = { highlight = { timer = 150 } },
     event = "LazyFile",
+    -- stylua: ignore
     keys = {
-      {
-        "<leader>mp",
-        function() require("telescope").extensions.yank_history.yank_history({}) end,
-        desc = "Open Yank History",
-      },
-      { "y",     "<Plug>(YankyYank)",                    mode = { "n", "x" },                            desc = "Yank Text", },
-      { "p",     "<Plug>(YankyPutAfter)",                mode = { "n", "x" },                            desc = "Put Yanked Text After Cursor", },
-      { "P",     "<Plug>(YankyPutBefore)",               mode = { "n", "x" },                            desc = "Put Yanked Text Before Cursor", },
-      { "gp",    "<Plug>(YankyGPutAfter)",               mode = { "n", "x" },                            desc = "Put Yanked Text After Selection", },
+      { "<leader>mp", function() require("telescope").extensions.yank_history.yank_history({}) end, desc = "Open Yank History", },
+      { "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank Text", },
+      { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Cursor", },
+      { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put Yanked Text Before Cursor", },
+      { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Selection", },
       { "<c-,>", "<Plug>(YankyCycleForward)" },
       { "<c-.>", "<Plug>(YankyCycleBackward)" },
-      { "]p",    "<Plug>(YankyPutIndentAfterLinewise)",  desc = "Put Indented After Cursor (Linewise)", },
-      { "[p",    "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put Indented Before Cursor (Linewise)", },
+      { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put Indented After Cursor (Linewise)" },
+      { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put Indented Before Cursor (Linewise)" },
     },
   },
 
@@ -57,14 +55,14 @@ return {
   {
     "folke/trouble.nvim",
     opts = {
-      auto_close = true,   -- auto close when there are no items
-      auto_open = true,    -- auto open when there are items
+      auto_close = true, -- auto close when there are no items
       auto_preview = true, -- automatically open preview when on an item
       auto_refresh = true, -- auto refresh when open
-      auto_jump = true,    -- auto jump to the item when there's only one
+      auto_jump = true, -- auto jump to the item when there's only one
       modes = {
         cascade = {
           mode = "diagnostics", -- inherit from diagnostics mode
+          auto_open = true, -- auto open when there are items
           filter = function(items)
             local severity = vim.diagnostic.severity.HINT
             for _, item in ipairs(items) do
@@ -92,9 +90,8 @@ return {
     "almo7aya/openingh.nvim",
     lazy = true,
     keys = {
-      { "<leader>gh", "<cmd>OpenInGHFile!<cr>",      desc = "Open file in GitHub" },
-      { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v",                  desc = "Open file in GitHub" },
-      { "<leader>gr", "<cmd>OpenInGHRepo<cr>",       desc = "Open repo in GitHub" },
+      { "<leader>gh", "<cmd>OpenInGHFile!<cr>", desc = "Open file in GitHub" },
+      { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v", desc = "Open file in GitHub" },
     },
   },
 

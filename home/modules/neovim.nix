@@ -3,6 +3,7 @@
 { pkgs, config, ... }: {
   home.packages = with pkgs; [
     lua-language-server
+    yaml-language-server
     prettierd
     shfmt
     nodePackages_latest.typescript-language-server

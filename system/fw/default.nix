@@ -7,6 +7,7 @@
     ./keyd.nix
     ../modules/common.nix
     ../modules/bluetooth.nix
+    ../modules/coolercontrol.nix
   ];
 
   environment.systemPackages = with pkgs; [ powertop fw-ectool libinput ];

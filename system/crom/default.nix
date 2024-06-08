@@ -1,5 +1,5 @@
 # crom is my desktop PC
-{ pkgs, inputs, lib, ... }: {
+{ inputs, lib, ... }: {
   imports = [
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
@@ -9,14 +9,8 @@
     ./keyd.nix
     ../modules/common.nix
     ../modules/bluetooth.nix
+    ../modules/coolercontrol.nix
   ];
-
-  environment.systemPackages = with pkgs; [
-    coolercontrol.coolercontrold
-    coolercontrol.coolercontrol-gui
-  ];
-
-  programs.coolercontrol.enable = true;
 
   # Open ports in the firewall.
   programs.mosh.enable = true;

@@ -29,6 +29,10 @@ return {
     end,
   },
 
+  -- 30ms of load time for not much use
+  { "rafa madriz/friendly-snippets", enabled = false },
+  { "garymjr/nvim-snippets", enabled = false },
+
   { "echasnovski/mini.pairs", enabled = false },
 
   -- surround

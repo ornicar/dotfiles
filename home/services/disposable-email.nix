@@ -12,7 +12,7 @@
         python .generate
         git add .
         git commit -m "auto update domains"
-        git push
+        git push publish-nokey publish
       '';
       Type = "oneshot";
       WorkingDirectory = "${home}/disposable";

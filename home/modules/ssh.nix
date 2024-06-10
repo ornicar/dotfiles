@@ -36,6 +36,10 @@
         HostName rubik.lichess.ovh
         User root
         IdentityFile ~/.ssh/id_nokey
+      Host github-nokey
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_nokey
     '';
   };
 

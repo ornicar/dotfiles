@@ -55,10 +55,9 @@ return {
   {
     "folke/trouble.nvim",
     opts = {
-      auto_close = true, -- auto close when there are no items
+      auto_close = false, -- auto close when there are no items
       auto_preview = true, -- automatically open preview when on an item
       auto_refresh = true, -- auto refresh when open
-      auto_jump = true, -- auto jump to the item when there's only one
       modes = {
         cascade = {
           mode = "diagnostics", -- inherit from diagnostics mode

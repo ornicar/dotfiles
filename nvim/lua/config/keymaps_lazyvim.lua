@@ -111,7 +111,7 @@ end
 
 -- lazygit
 local full_size = { width = 1, height = 1 }
-map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
+map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git(), size = full_size }) end, { desc = "Lazygit (Root Dir)" })
 map("n", "<leader>gf", function()
   local git_path = vim.api.nvim_buf_get_name(0)
   LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
@@ -129,9 +129,10 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- floating terminal
-map("n", "<leader>ft", function() Util.terminal(nil, { cwd = Util.root.get() }) end, { desc = "Terminal (root dir)" })
+map("n", "<leader>ft", function() Util.terminal(nil, { cwd = Util.root.get(), }) end, { desc = "Terminal (root dir)" })
 map("n", "<leader>fT", function() Util.terminal() end, { desc = "Terminal (cwd)" })
-map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+map("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+map("t", "<c-t>", "<c-\\><c-n><c-w>k", { desc = "Switch away from the terminal to top window." })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })

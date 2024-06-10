@@ -32,6 +32,10 @@
       Host snafu
         HostName 141.94.96.141
         User root
+      Host rubik-nokey
+        HostName rubik.lichess.ovh
+        User root
+        IdentityFile ~/.ssh/id_nokey
     '';
   };
 

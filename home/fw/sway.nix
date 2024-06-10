@@ -41,7 +41,7 @@
     in [
       {
         timeout = 600;
-        command = "${light} -O; ${light} -T 0.5";
+        command = "${light} -O; ${light} -T 0.2";
         resumeCommand = "${light} -I";
       }
       {
@@ -50,7 +50,7 @@
         inherit resumeCommand;
       }
       {
-        timeout = 930;
+        timeout = 1200;
         command = "${pkgs.systemd}/bin/systemctl suspend";
         inherit resumeCommand;
       }

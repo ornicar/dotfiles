@@ -7,6 +7,7 @@
     ./keyd.nix
     ../modules/common.nix
     ../modules/bluetooth.nix
+    # ../modules/coolercontrol.nix
   ];
 
   environment.systemPackages = with pkgs; [ powertop fw-ectool libinput ];
@@ -37,7 +38,7 @@
   # fingerprint sensor
   services.fprintd.enable = true;
 
-  hardware.keyboard.qmk.enable = false;
+  hardware.keyboard.qmk.enable = false; # am using keyd instead
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

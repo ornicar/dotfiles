@@ -20,3 +20,6 @@ vim.opt.virtualedit = "block" -- Allow going past the end of line in visual bloc
 vim.opt.splitkeep = "screen"
 
 vim.g.deprecation_warnings = true
+
+-- for https://github.com/smjonas/inc-rename.nvim
+vim.opt.inccommand = "split" -- Show live preview of substitution

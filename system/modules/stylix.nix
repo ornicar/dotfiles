@@ -2,6 +2,8 @@
   imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
 
+    enable = true;
+
     # https://tinted-theming.github.io/base16-gallery/
     base16Scheme = let theme = "catppuccin-mocha";
     in "${pkgs.base16-schemes}/share/themes/${theme}.yaml";

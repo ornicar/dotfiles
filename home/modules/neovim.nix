@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     lua-language-server
     yaml-language-server
+    vscode-langservers-extracted
     prettierd
     shfmt
     nodePackages_latest.typescript-language-server

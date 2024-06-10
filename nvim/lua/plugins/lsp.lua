@@ -19,6 +19,7 @@ return {
       servers = {
         lua_ls = {},
         nil_ls = {},
+        cssls = {},
         vtsls = {
           enabled = false,
         },

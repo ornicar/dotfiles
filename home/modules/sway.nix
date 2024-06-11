@@ -1,11 +1,11 @@
 { config, lib, ... }:
 with config.lib.stylix.colors.withHashtag; {
   # auto start
-  programs.zsh.profileExtra = ''
-    if [ -z "$DISPLAY" ] && [ "''${XDG_VTNR:-0}" -eq 1 ]; then
-      exec sway
-    fi
-  '';
+  # programs.zsh.profileExtra = ''
+  #   if [ -z "$DISPLAY" ] && [ "''${XDG_VTNR:-0}" -eq 1 ]; then
+  #     exec sway
+  #   fi
+  # '';
 
   programs.bemenu = { enable = true; };
 

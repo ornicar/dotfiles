@@ -131,7 +131,7 @@ map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 -- floating terminal
 map("n", "<leader>ft", function() Util.terminal(nil, { cwd = Util.root.get(), }) end, { desc = "Terminal (root dir)" })
 map("n", "<leader>fT", function() Util.terminal() end, { desc = "Terminal (cwd)" })
-map("t", "<esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 map("t", "<c-t>", "<c-\\><c-n><c-w>k", { desc = "Switch away from the terminal to top window." })
 
 -- windows

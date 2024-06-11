@@ -188,4 +188,9 @@ with config.lib.stylix.colors.withHashtag; {
     defaultTimeout = 5000;
     ignoreTimeout = false;
   };
+
+  # fixes:
+  # Unable to connect to the compositor. If your compositor is running, check or set the WAYLAND_DISPLAY environment variable.
+  systemd.user.services.swayidle.Service.Environment =
+    lib.mkAfter [ "WAYLAND_DISPLAY='wayland-1'" ];
 }

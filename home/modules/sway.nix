@@ -82,12 +82,12 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+f" = "layout tabbed";
         "${modifier}+shift+f" = "layout toggle split";
         "F11" = "fullscreen toggle";
-        #     # Move the focused window with the same, but add Shift
+        # Move the focused window with the same, but add Shift
         "${modifier}+shift+${left}" = "move left";
         "${modifier}+shift+${down}" = "move down";
         "${modifier}+shift+${up}" = "move up";
         "${modifier}+shift+${right}" = "move right";
-        #     # Ditto, with arrow keys
+        # Ditto, with arrow keys
         "${modifier}+shift+Left" = "move left";
         "${modifier}+shift+Down" = "move down";
         "${modifier}+shift+Up" = "move up";
@@ -106,6 +106,8 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+minus" = "scratchpad show";
 
         "${modifier}+shift+r" = "mode resize";
+
+        # "${modifier}+t" = "splitv; exec kitty; resize set height 200 px";
 
         # Switch to workspace
         "${modifier}+1" = "workspace number 1";

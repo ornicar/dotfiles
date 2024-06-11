@@ -15,6 +15,7 @@
         enable = true;
         options = { "navigate" = true; };
       };
+      diff.tool = "meld";
       web.browser = "google-chrome-stable";
       push.default = "tracking";
       push.autoSetupRemote = true;
@@ -32,6 +33,8 @@
       in ''log --pretty=format:"${format}"'';
 
     diff-so-fancy.enable = true;
+    # difftastic.enable = true;
+
     ignores = [
       ".idea"
       ".venv"

@@ -31,6 +31,7 @@
     taplo # TOML language server
     marksman # markdown language server
     http-server
+    meld
   ];
 
   programs.java.enable = true;

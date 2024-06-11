@@ -16,6 +16,6 @@
   wayland.windowManager.sway.extraConfig = lib.mkAfter ''
     for_window [title="Floating Window - Show Me The Key"] floating enable, sticky enable, resize set width 400px height 100px, move position 2000px 1000px
 
-    for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 600px height 54px, move position 2900px 2078px
+    for_window [title="www.twitch.tv/ornicar2 voice"] floating enable, resize set width 500px height 49px, move position 3050px 2088px
   '';
 }

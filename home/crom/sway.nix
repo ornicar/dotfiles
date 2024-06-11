@@ -24,10 +24,12 @@
       cookie-file = "/tmp/coolercontrol-cookie";
       crom-mode = pkgs.writeShellScript "crom-mode.sh" ''
         mode=$1
-        ${pkgs.sway}/bin/swaymsg "output * power $mode" 
         if [ "$mode" = "off" ]; then uid=${uid-off}; else uid=${uid-on}; fi
-        ${pkgs.curl}/bin/curl -XPOST -c ${cookie-file} ${api-url}/login -u CCAdmin:coolAdmin
-        ${pkgs.curl}/bin/curl -XPOST -b ${cookie-file} ${api-url}/modes-active/$uid
+        ${pkgs.curl}/bin/curl --silent -XPOST -c ${cookie-file} ${api-url}/login -u CCAdmin:coolAdmin
+        ${pkgs.curl}/bin/curl --silent -XPOST -b ${cookie-file} ${api-url}/modes-active/$uid
+        # hack to get the current sway socket as I've seen it be wrong once.
+        export SWAYSOCK=$XDG_RUNTIME_DIR/sway-ipc.$UID.$(${pkgs.procps}/bin/pgrep -x sway).sock
+        ${pkgs.sway}/bin/swaymsg "output * power $mode" 
       '';
     in [{
       timeout = 600;

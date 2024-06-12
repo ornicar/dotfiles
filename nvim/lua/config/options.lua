@@ -19,7 +19,7 @@ vim.opt.virtualedit = "block" -- Allow going past the end of line in visual bloc
 -- To prevent this, set `splitkeep` to either `screen` or `topline`.
 vim.opt.splitkeep = "screen"
 
-vim.g.deprecation_warnings = true
+vim.g.deprecation_warnings = false
 
 -- for https://github.com/smjonas/inc-rename.nvim
 vim.opt.inccommand = "split" -- Show live preview of substitution

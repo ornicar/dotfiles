@@ -13,7 +13,7 @@ return {
         { "<leader>mr", LazyVim.telescope("files", { cwd = false }), desc = "Find Files in git root" },
         { "<leader>ms", LazyVim.telescope("files"), desc = "Find files in LSP root" },
         { "<leader>mt", in_buffer_dir("files"), desc = "Find files in buffer directory" },
-        { "<leader>mb", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
+        { "<leader>mb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
         { "<leader><space>r", LazyVim.telescope("live_grep", { cwd = false }), desc = "Live grep in git root" },
         {
           "<leader><space>R",

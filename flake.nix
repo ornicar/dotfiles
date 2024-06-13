@@ -3,6 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nixpkgs-mongodb.url =
+      "github:NixOS/nixpkgs/e913ae340076bbb73d9f4d3d065c2bca7caafb16";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
@@ -21,11 +25,18 @@
     lan-mouse.url = "github:feschber/lan-mouse";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-mongodb, nixos-hardware, home-manager, ...
+    }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
-      specialArgs = { inherit inputs outputs; };
+      specialArgs = {
+        inherit inputs outputs;
+        pkgs-mongodb = import nixpkgs-mongodb {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      };
     in {
       nixosConfigurations = {
         fw = nixosSystem {

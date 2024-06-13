@@ -3,30 +3,39 @@ return {
     "nvim-telescope/telescope.nvim",
     enabled = true,
     cmd = "Telescope",
-    version = false, -- telescope did only one release, so use HEAD for now
     keys = function()
-      -- local in_buffer_dir = function(builtin)
-      --   return function()
-      --     return LazyVim.telescope(builtin, { cwd = require("telescope.utils").buffer_dir() })()
-      --   end
-      -- end
       return {
-        { "<leader>ms", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" },
-        { "<leader>mt", LazyVim.pick("auto", { root = false }), desc = "Find Files (cwd)" },
-        { "<leader><space>s", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-        { "<leader><space>t", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
-        { "<leader>S", LazyVim.pick("grep_string", { word_match = "-w" }), desc = "Word (Root Dir)" },
-        { "<leader>T", LazyVim.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (cwd)" },
-        -- {
-        --   "<leader><space>R",
-        --   LazyVim.telescope("live_grep", { cwd = false, no_ignore = true, hidden = true }),
-        --   desc = "Live grep, no ignore",
-        -- },
-        -- {
-        --   "<leader><space>b",
-        --   LazyVim.telescope("live_grep", { grep_open_files = true }),
-        --   desc = "Live grep in open buffers",
-        -- },
+        { "<leader>mr", LazyVim.pick("auto", { root = false }), desc = "Find Files (Root Dir)" },
+        { "<leader>ms", LazyVim.pick("auto", { root = true }), desc = "Find Files (cwd)" },
+        {
+          "<leader>mt",
+          function()
+            require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })
+          end,
+          desc = "Find Files (Buffer dir)",
+        },
+        { "<leader><space>r", LazyVim.pick("live_grep"), { root = false }, desc = "Grep (Root Dir)" },
+        { "<leader><space>s", LazyVim.pick("live_grep", { root = true }), desc = "Grep (cwd)" },
+        {
+          "<leader><space>t",
+          function()
+            require("telescope.builtin").live_grep({ cwd = require("telescope.utils").buffer_dir() })
+          end,
+          desc = "Grep (Buffer dir)",
+        },
+        { "<leader>R", LazyVim.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (Root Dir)" },
+        { "<leader>S", LazyVim.pick("grep_string", { root = true, word_match = "-w" }), desc = "Word (cwd)" },
+        {
+          "<leader>T",
+          function()
+            require("telescope.builtin").grep_string({
+              word_match = "-w",
+              cwd = require("telescope.utils").buffer_dir(),
+            })
+          end,
+          desc = "Word (Buffer dir)",
+        },
+        { "<leader>mv", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
         { "<leader>mb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Switch Buffer" },
         { "<leader>H", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
         { "<leader>mq", "<cmd>Telescope commands<cr>", desc = "Commands" },
@@ -37,22 +46,18 @@ return {
         { "<leader>mm", "<cmd>Telescope resume<cr>", desc = "Resume" },
         { "<leader>mo", "<cmd>Telescope notify<cr>", desc = "Notifications" },
         -- lsp
-        {
-          "gd",
-          function()
-            require("telescope.builtin").lsp_definitions({ reuse_win = true })
-          end,
-          desc = "Goto Definition",
-          has = "definition",
-        },
-        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
         { "<space>o", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP document symboles" },
-        -- {
-        --   "<space>O",
-        --   LazyVim.telescope("<cmd>Telescope lsp_dynamic_workspace_symbols<cr>"),
-        --   desc = "LSP workspace symbols",
-        -- },
+        {
+          "<space>O",
+          function()
+            require("telescope.builtin").lsp_dynamic_workspace_symbols({
+              symbols = require("lazyvim.config").get_kind_filter(),
+            })
+          end,
+          desc = "Goto Symbol (Workspace)",
+        },
         { "<space>i", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+        { "<leader>mk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
       }
     end,
     opts = function(_, opts)
@@ -84,7 +89,6 @@ return {
       tel.load_extension("yank_history")
       tel.load_extension("fzf")
       tel.load_extension("notify")
-      -- tel.load_extension("macros")
     end,
   },
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },

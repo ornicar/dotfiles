@@ -162,11 +162,10 @@ return {
       opts.config.header = vim.split(logo, "\n")
       -- stylua: ignore
       opts.config.center = {
-        { action = LazyVim.telescope("files"),                        desc = " Find File",       icon = " ", key = "f" },
+        { action = LazyVim.pick("auto"),                              desc = " Find File",       icon = " ", key = "f" },
         { action = "ene | startinsert",                               desc = " New File",        icon = " ", key = "n" },
         { action = "Telescope oldfiles",                              desc = " Recent Files",    icon = " ", key = "r" },
         { action = [[lua LazyVim.lazygit({cwd=LazyVim.root.git()})]], desc = " LazyGit",         icon = "󰘬 ", key = "g" },
-        { action = [[lua LazyVim.telescope.config_files()()]],        desc = " Config",          icon = " ", key = "c" },
         { action = 'lua require("persistence").load()',               desc = " Restore Session", icon = " ", key = "s" },
         { action = "LazyExtras",                                      desc = " Lazy Extras",     icon = " ", key = "x" },
         { action = "Lazy",                                            desc = " Lazy",            icon = "󰒲 ", key = "l" },

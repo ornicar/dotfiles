@@ -19,19 +19,19 @@ end
 map("n", "!", ":!")
 
 -- close quickfix and other pesky windows
-map("n", "<leader>wo", ":only<cr>", { desc = "Close other windows" })
+map("n", "<leader>wo", "<cmd>only<cr>", { desc = "Close other windows" })
 
 -- delete buffer and file
-map("n", "<leader>bD", ":!rm %<cr>:bd!<cr>", { desc = "Delete file" })
+map("n", "<leader>bD", "<cmd>!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 
 -- Copy current file path to registers "* and "+
-map("n", "<leader>cp", ":let @*=@%<cr>:let @+=@%<cr>")
+map("n", "<leader>cp", "<cmd>let @*=@%<cr>:let @+=@%<cr>")
 
 -- Start a substitute
-map("n", "<leader>ss", ":%s/")
+map("n", "<leader>ss", "<cmd>%s/")
 
 -- Pull word under cursor into LHS of a substitute (for quick search and replace)
-map("n", "<leader>zs", ':%s#<C-r>=expand("<cword>")<cr>#')
+map("n", "<leader>zs", '<cmd>%s#<C-r>=expand("<cword>")<cr>#')
 
 -- wordwise yank from line above
 vim.cmd([[

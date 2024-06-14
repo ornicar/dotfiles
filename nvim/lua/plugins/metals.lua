@@ -3,9 +3,6 @@ return {
   -- scala lsp
   {
     "scalameta/nvim-metals",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     ft = { "scala", "sbt", "java" },
     -- stylua: ignore
     keys = {

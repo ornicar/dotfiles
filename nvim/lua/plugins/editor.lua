@@ -59,17 +59,17 @@ return {
       auto_preview = true, -- automatically open preview when on an item
       auto_refresh = true, -- auto refresh when open
       modes = {
-        errors = {
-          mode = "diagnostics", -- inherit from diagnostics mode
-          auto_open = true, -- auto open when there are items
-          filter = {
-            any = {
-              {
-                severity = vim.diagnostic.severity.ERROR, -- errors only
-              },
-            },
-          },
-        },
+        -- errors = {
+        --   mode = "diagnostics", -- inherit from diagnostics mode
+        --   auto_open = false, -- auto open when there are items
+        --   filter = {
+        --     any = {
+        --       {
+        --         severity = vim.diagnostic.severity.ERROR, -- errors only
+        --       },
+        --     },
+        --   },
+        -- },
         mydiags = {
           mode = "diagnostics", -- inherit from diagnostics mode
           auto_open = true, -- auto open when there are items

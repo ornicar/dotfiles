@@ -5,6 +5,7 @@
     ./modules/git.nix
     ./modules/kitty.nix
     ./modules/lazygit.nix
+    ./modules/mongodb.nix
     ./modules/neovim.nix
     ./modules/ssh.nix
     ./modules/sway.nix

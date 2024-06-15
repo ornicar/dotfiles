@@ -137,6 +137,11 @@
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";
       "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
+      # deploy
+      "stage-assets" = "cd lila; python bin/deploy snafu-assets";
+      "stage-server" = "cd lila; python bin/deploy snafu-server";
+      "prod-assets" = "cd lila; python bin/deploy manta-assets";
+      "prod-server" = "cd lila; python bin/deploy manta-server";
       # Stuff
       "st" = "_ systemctl-tui";
       "on" = ''swaymsg " output * power on"'';

@@ -14,7 +14,13 @@ return {
           end,
           desc = "Find Files (Buffer dir)",
         },
-        { "<leader><space>r", LazyVim.pick("live_grep"), { root = false }, desc = "Grep (Root Dir)" },
+        {
+          "<leader><space>r",
+          function()
+            require("telescope.builtin").live_grep()
+          end,
+          desc = "Grep (Root Dir)",
+        },
         { "<leader><space>s", LazyVim.pick("live_grep", { root = true }), desc = "Grep (cwd)" },
         {
           "<leader><space>t",
@@ -23,7 +29,13 @@ return {
           end,
           desc = "Grep (Buffer dir)",
         },
-        { "<leader>R", LazyVim.pick("grep_string", { root = false, word_match = "-w" }), desc = "Word (Root Dir)" },
+        {
+          "<leader>R",
+          function()
+            require("telescope.builtin").grep_string({ word_match = "-w" })
+          end,
+          desc = "Word (Root Dir)",
+        },
         { "<leader>S", LazyVim.pick("grep_string", { root = true, word_match = "-w" }), desc = "Word (cwd)" },
         {
           "<leader>T",

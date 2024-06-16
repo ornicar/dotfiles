@@ -10,7 +10,7 @@ return {
         {
           "<leader>mt",
           function()
-            require("telescope.builtin").find_files({ cwd = require("telescope.utils").buffer_dir() })
+            require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
           end,
           desc = "Find Files (Buffer dir)",
         },
@@ -19,7 +19,7 @@ return {
         {
           "<leader><space>t",
           function()
-            require("telescope.builtin").live_grep({ cwd = require("telescope.utils").buffer_dir() })
+            require("telescope.builtin").live_grep({ cwd = vim.fn.expand("%:p:h") })
           end,
           desc = "Grep (Buffer dir)",
         },

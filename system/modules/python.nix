@@ -12,6 +12,8 @@
           websocket-client
           pymongo
           chess
+          networkx
+          pydot
         ]))
     ];
 }

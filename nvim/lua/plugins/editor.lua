@@ -116,7 +116,6 @@ return {
     "almo7aya/openingh.nvim",
     lazy = true,
     keys = {
-      { "<leader>gh", "<cmd>OpenInGHFile!<cr>", desc = "Open file in GitHub" },
       { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v", desc = "Open file in GitHub" },
     },
   },

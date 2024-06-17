@@ -11,7 +11,7 @@
       do
         rpm=$(${ectool} pwmgetfanrpm | ${sed} -rn 's/Fan 0 RPM: ([0-9]+)/\1/p')
         echo $rpm > /tmp/ectool-fan-rpm
-        sleep 1
+        sleep 2
       done
     '';
   };

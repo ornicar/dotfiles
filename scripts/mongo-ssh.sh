@@ -7,18 +7,28 @@ foreground="-NL"
 if [ "$server" = "sec" ]; then
 
 	host="rodan"
-	ssh $background 27117:$host.vrack.lichess.ovh:27017 root@$host.lichess.ovh
+	port=27117
 
 elif [ "$server" = "study" ]; then
 
 	host="study"
-	ssh $background 27118:$host.vrack.lichess.ovh:27017 root@$host.lichess.ovh
+	port=27118
 
 elif [ "$server" = "pri" ]; then
 
 	host="kaiju"
-	ssh $foreground 27917:$host.vrack.lichess.ovh:27017 root@$host.lichess.ovh
+	port=27119
 
+fi
+
+# if port is defined
+if [ -n "$port" ]; then
+	echo "Terminating previous connections to $port"
+	for pid in $(lsof -t -i:$port); do
+		kill -9 $pid
+	done
+	echo "Connecting $server to $host on port $port"
+	ssh $background $port:$host.vrack.lichess.ovh:27017 root@$host.lichess.ovh
 else
 	echo "Usage: $0 [sec|study|pri]"
 fi

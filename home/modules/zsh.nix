@@ -112,7 +112,9 @@
     initExtra = ''
       ${zshCompletion}
     '';
-    shellAliases = let dotfiles = "${config.home.homeDirectory}/dotfiles";
+    shellAliases = let
+      dotfiles = "${config.home.homeDirectory}/dotfiles";
+      lila-deploy = "cd lib/lila; python bin/deploy";
     in {
       "nswitch" = "nh os switch ${dotfiles}";
       "ntry" = "nh os test ${dotfiles}";
@@ -138,10 +140,10 @@
       "meteo" = "curl -4 http://wttr.in/44600";
       "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
       # deploy
-      "stage-assets" = "cd lila; python bin/deploy snafu-assets";
-      "stage-server" = "cd lila; python bin/deploy snafu-server";
-      "prod-assets" = "cd lila; python bin/deploy manta-assets";
-      "prod-server" = "cd lila; python bin/deploy manta-server";
+      "stage-assets" = "${lila-deploy} snafu-assets";
+      "stage-server" = "${lila-deploy} snafu-server";
+      "prod-assets" = "${lila-deploy} manta-assets";
+      "prod-server" = "${lila-deploy} manta-server";
       # Stuff
       "st" = "_ systemctl-tui";
       "on" = ''swaymsg " output * power on"'';

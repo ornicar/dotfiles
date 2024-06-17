@@ -32,6 +32,7 @@
     marksman # markdown language server
     http-server
     meld
+    ansible
   ];
 
   programs.java.enable = true;

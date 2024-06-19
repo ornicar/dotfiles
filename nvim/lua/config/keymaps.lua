@@ -28,10 +28,10 @@ map("n", "<leader>bD", "<cmd>!rm %<cr>:bd!<cr>", { desc = "Delete file" })
 map("n", "<leader>cp", "<cmd>let @*=@%<cr>:let @+=@%<cr>")
 
 -- Start a substitute
-map("n", "<leader>ss", "<cmd>%s/")
+map("n", "<leader>ss", ":%s/")
 
 -- Pull word under cursor into LHS of a substitute (for quick search and replace)
-map("n", "<leader>zs", '<cmd>%s#<C-r>=expand("<cword>")<cr>#')
+map("n", "<leader>zs", ':%s#<C-r>=expand("<cword>")<cr>#')
 
 -- wordwise yank from line above
 vim.cmd([[

@@ -28,7 +28,7 @@ elif [ "$server" = "pri" ]; then
 
 fi
 
-if [ -n "$as" ]; then
+if [ -z "$as" ]; then
 	as="$host.vrack.lichess.ovh"
 fi
 

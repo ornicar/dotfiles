@@ -19,4 +19,4 @@ vim.opt.virtualedit = "block" -- Allow going past the end of line in visual bloc
 -- To prevent this, set `splitkeep` to either `screen` or `topline`.
 vim.opt.splitkeep = "screen"
 
-vim.g.deprecation_warnings = false
+vim.g.deprecation_warnings = true

@@ -15,6 +15,7 @@
     tree-sitter
     jdk
     python3
+    ruby
     sbt
     coursier # required by metals
     scala-cli

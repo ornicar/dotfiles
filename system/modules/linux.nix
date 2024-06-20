@@ -9,6 +9,7 @@
     mosh
     dust
     psmisc # fuser
+    lsof
   ];
 
   # enable zsh completion for system packages

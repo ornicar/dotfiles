@@ -2,7 +2,8 @@
   description = "Thibs's NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = # revert to (2024-06-18)
+      "github:NixOS/nixpkgs/c00d587b1a1afbf200b1d8f0b0e4ba9deb1c7f0e";
 
     nixpkgs-mongodb.url =
       "github:NixOS/nixpkgs/e913ae340076bbb73d9f4d3d065c2bca7caafb16";

@@ -7,9 +7,7 @@
     nixpkgs-mongodb.url =
       "github:NixOS/nixpkgs/e913ae340076bbb73d9f4d3d065c2bca7caafb16";
 
-    # awaiting merge
-    # nixos-hardware.url = "github:NixOS/nixos-hardware";
-    nixos-hardware.url = "github:toastal/nixos-hardware?ref=remove-dri";
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {
       url = "github:nix-community/home-manager";

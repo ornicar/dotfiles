@@ -6,7 +6,7 @@
     lila = {
       Unit = {
         Description = "lila";
-        Wants = [ "bloop.service" "lila-ws.service" ];
+        Wants = [ "bloop.service" "lila-ws.service" "lila-watch.service" ];
       };
       Service = {
         ExecStart = "${bloop} run lila -m lila.app.Lila -c ${home}/lila/.bloop";

@@ -10,6 +10,7 @@
     dust
     psmisc # fuser
     lsof
+    bind
   ];
 
   # enable zsh completion for system packages

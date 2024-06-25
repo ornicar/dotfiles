@@ -10,7 +10,7 @@
     # ../modules/coolercontrol.nix
   ];
 
-  environment.systemPackages = with pkgs; [ powertop fw-ectool libinput ];
+  environment.systemPackages = with pkgs; [ powertop libinput acpi ];
 
   networking = {
     hostName = "fw";

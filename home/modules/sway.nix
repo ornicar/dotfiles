@@ -79,8 +79,8 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+q" = "kill";
         "${modifier}+shift+c" = "reload";
         "${modifier}+s" = "splith";
-        "${modifier}+f" = "layout tabbed";
-        "${modifier}+shift+f" = "layout toggle split";
+        "${modifier}+f" = "layout toggle tabbed split";
+        "${modifier}+shift+f" = "layout tabbed";
         "F11" = "fullscreen toggle";
         # Move the focused window with the same, but add Shift
         "${modifier}+shift+${left}" = "move left";

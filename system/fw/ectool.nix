@@ -9,8 +9,9 @@
     in ''
       while :
       do
-        rpm=$(${ectool} pwmgetfanrpm | ${sed} -rn 's/Fan 0 RPM: ([0-9]+)/\1/p')
-        echo $rpm > /tmp/ectool-fan-rpm
+        rpm1=$(${ectool} pwmgetfanrpm | ${sed} -rn 's/Fan 0 RPM: ([0-9]+)/\1/p')
+        rpm2=$(${ectool} pwmgetfanrpm | ${sed} -rn 's/Fan 1 RPM: ([0-9]+)/\1/p')
+        echo "$rpm1 $rpm2" > /tmp/ectool-fan-rpm
         sleep 2
       done
     '';

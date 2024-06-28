@@ -1,6 +1,11 @@
 { ... }: {
   home.file.".mongoshrc.js".text = # javascript
     ''
+      const fid = (coll, id, proj = {}) => db.getCollection(coll).findOne({ _id: id }, proj);
+      const find = (coll, query, proj = {}) => db.getCollection(coll).find(query, proj);
+
+      const upid = (coll, id, up) => db.getCollection(coll).updateOne({ _id: id },{ $set: up });
+
       const sec = () => connect('mongodb://localhost:27117/lichess');
 
       const secImportOne = (coll, id) => db.getCollection(coll).insertOne(sec().getCollection(coll).findOne({ _id: id }));

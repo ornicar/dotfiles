@@ -175,13 +175,11 @@ with config.lib.stylix.colors.withHashtag; {
       titlebar_padding 1 1
       focus_follows_mouse yes
 
-      # start major apps:
+      # start some apps:
       workspace number 1
       exec kitty -1
       workspace number 2
       exec google-chrome-stable
-      exec zulip
-      exec discord
     '';
   };
 

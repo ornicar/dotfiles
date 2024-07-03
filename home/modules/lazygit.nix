@@ -7,6 +7,7 @@
           colorArg = "always";
           pager = "diff-so-fancy";
         };
+        disableForcePushing = true;
       };
       gui = {
         language = "en";
@@ -38,6 +39,7 @@
           nextMatch = "j";
           prevMatch = "J";
           new = "<c-a>";
+          edit = "<c-r>";
         };
       };
       # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md

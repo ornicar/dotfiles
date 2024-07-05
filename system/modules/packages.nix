@@ -13,8 +13,6 @@
     google-chrome
     unzip
     dtrx
-    zulip
-    signal-desktop
     discord
     neofetch
     spotify

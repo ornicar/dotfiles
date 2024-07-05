@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs-mongodb.url =
+    nixpkgs-mongodb-pin.url =
       "github:NixOS/nixpkgs/e913ae340076bbb73d9f4d3d065c2bca7caafb16";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
@@ -25,17 +25,18 @@
     lan-mouse.url = "github:feschber/lan-mouse";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-mongodb, nixos-hardware, home-manager, ...
-    }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-mongodb-pin, nixos-hardware, home-manager
+    , ... }@inputs:
     let
+      system = "x86_64-linux";
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
-      specialArgs = {
-        inherit inputs outputs;
-        pkgs-mongodb = import nixpkgs-mongodb {
-          system = "x86_64-linux";
+      specialArgs = { inherit inputs outputs; };
+      overlay-mongodb-pin = self: super: {
+        mongodb-6_0 = (import nixpkgs-mongodb-pin {
+          inherit system;
           config.allowUnfree = true;
-        };
+        }).mongodb-6_0;
       };
     in {
       nixosConfigurations = {
@@ -47,6 +48,7 @@
               home-manager.users.thib = import ./home/fw;
               home-manager.extraSpecialArgs = specialArgs;
             }
+            ({ ... }: { nixpkgs.overlays = [ overlay-mongodb-pin ]; })
             ./system/fw
           ];
         };
@@ -58,6 +60,7 @@
               home-manager.users.thib = import ./home/crom;
               home-manager.extraSpecialArgs = specialArgs;
             }
+            ({ ... }: { nixpkgs.overlays = [ overlay-mongodb-pin ]; })
             ./system/crom
           ];
         };

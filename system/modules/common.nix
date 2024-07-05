@@ -12,7 +12,6 @@
     ./network.nix
     ./nginx.nix
     ./nix.nix
-    ./overlay.nix
     ./packages.nix
     ./python.nix
     ./shell.nix

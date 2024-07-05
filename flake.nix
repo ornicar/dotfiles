@@ -25,42 +25,35 @@
     lan-mouse.url = "github:feschber/lan-mouse";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-mongodb-pin, nixos-hardware, home-manager
-    , ... }@inputs:
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:
     let
-      system = "x86_64-linux";
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
       specialArgs = { inherit inputs outputs; };
-      overlay-mongodb-pin = self: super: {
-        mongodb-6_0 = (import nixpkgs-mongodb-pin {
-          inherit system;
-          config.allowUnfree = true;
-        }).mongodb-6_0;
-      };
+      overlays = import ./system/overlays.nix inputs;
     in {
       nixosConfigurations = {
         fw = nixosSystem {
           specialArgs = specialArgs;
           modules = [
+            overlays
             home-manager.nixosModules.home-manager
             {
               home-manager.users.thib = import ./home/fw;
               home-manager.extraSpecialArgs = specialArgs;
             }
-            ({ ... }: { nixpkgs.overlays = [ overlay-mongodb-pin ]; })
             ./system/fw
           ];
         };
         crom = nixosSystem {
           specialArgs = specialArgs;
           modules = [
+            overlays
             home-manager.nixosModules.home-manager
             {
               home-manager.users.thib = import ./home/crom;
               home-manager.extraSpecialArgs = specialArgs;
             }
-            ({ ... }: { nixpkgs.overlays = [ overlay-mongodb-pin ]; })
             ./system/crom
           ];
         };

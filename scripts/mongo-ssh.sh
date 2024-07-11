@@ -7,41 +7,46 @@ options=$background
 
 if [ "$server" = "sec" ]; then
 
-	host="rodan"
-	port=27117
+  host="rodan"
+  port=27117
 
 elif [ "$server" = "study" ]; then
 
-	host="study"
-	port=27118
+  host="study"
+  port=27118
 
 elif [ "$server" = "stage" ]; then
 
-	host="snafu"
-	port=27217
-	as="localhost"
+  host="snafu"
+  port=27217
+  as="localhost"
+
+elif [ "$server" = "puzzle" ]; then
+
+  host="rubik"
+  port=27317
 
 elif [ "$server" = "pri" ]; then
 
-	host="kaiju"
-	port=27917
+  host="kaiju"
+  port=27917
 
 fi
 
 if [ -z "$as" ]; then
-	as="$host.vrack.lichess.ovh"
+  as="$host.vrack.lichess.ovh"
 fi
 
 # if port is defined
 if [ -n "$port" ]; then
-	echo "Terminating previous connections to $port"
-	for pid in $(lsof -t -i:$port); do
-		kill -9 $pid
-	done
-	echo "Connecting $server to $host.$vrack on port $port"
-	command="ssh $options $port:$as:27017 root@$host.lichess.ovh"
-	echo $command
-	$command
+  echo "Terminating previous connections to $port"
+  for pid in $(lsof -t -i:$port); do
+    kill -9 $pid
+  done
+  echo "Connecting $server to $host.$vrack on port $port"
+  command="ssh $options $port:$as:27017 root@$host.lichess.ovh"
+  echo $command
+  $command
 else
-	echo "Usage: $0 [sec|study|stage|pri]"
+  echo "Usage: $0 [sec|study|stage|puzzle|pri]"
 fi

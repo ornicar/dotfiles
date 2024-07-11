@@ -17,7 +17,7 @@
     neofetch
     spotify
     playerctl
-    zeroad
+    # zeroad
     gimp
     gthumb
     feh

@@ -14,6 +14,8 @@
           chess
           networkx
           pydot
+          zstandard
+          urllib3
         ]))
     ];
 }

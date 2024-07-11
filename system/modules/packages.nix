@@ -13,7 +13,7 @@
     google-chrome
     unzip
     dtrx
-    discord
+    signal-desktop
     neofetch
     spotify
     playerctl

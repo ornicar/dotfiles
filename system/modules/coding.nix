@@ -23,7 +23,6 @@
     dart-sass
     delta
     redis
-    bloop
     ruff-lsp
     pyright
     cargo
@@ -34,6 +33,7 @@
     http-server
     meld
     ansible
+    (callPackage ../packages/thibloop { })
   ];
 
   programs.java.enable = true;

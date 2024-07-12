@@ -11,6 +11,7 @@
     psmisc # fuser
     lsof
     bind
+    gparted
   ];
 
   # enable zsh completion for system packages

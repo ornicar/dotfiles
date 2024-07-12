@@ -33,7 +33,6 @@
     http-server
     meld
     ansible
-    (callPackage ../packages/thibloop { })
   ];
 
   programs.java.enable = true;

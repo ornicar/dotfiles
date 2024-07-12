@@ -3,14 +3,9 @@
 
 stdenv.mkDerivation rec {
   pname = "thibloop";
-  version = "1.6.0";
+  version = "1.6.0-2";
 
-  platform = if stdenv.isLinux && stdenv.isx86_64 then
-    "x86_64-pc-linux"
-  else if stdenv.isDarwin && stdenv.isx86_64 then
-    "x86_64-apple-darwin"
-  else
-    throw "unsupported platform";
+  platform = "x86_64-pc-linux";
 
   # bloop-bash = fetchurl {
   #   url =
@@ -30,15 +25,9 @@ stdenv.mkDerivation rec {
   #   sha256 = "sha256-WNMsPwBfd5EjeRbRtc06lCEVI2FVoLfrqL82OR0G7/c=";
   # };
 
-  thibloop-binary = fetchurl rec {
-    url =
-      "https://github.com/scalacenter/bloop/releases/download/1.6.0/bloop-${platform}";
-    sha256 = if stdenv.isLinux && stdenv.isx86_64 then
-      "sha256-gfmsroHyr/xrbQ72x6LNRvIYaxgUjBOxYsyKqc0c9Oo="
-    else if stdenv.isDarwin && stdenv.isx86_64 then
-      "sha256-fluOkbpVy895YyWisfTaDP2yXbqF+gToc1KbVL8Mon8="
-    else
-      throw "unsupported platform";
+  thibloop-binary = fetchurl {
+    url = "http://192.168.1.3:8080/bloop-1.6.0-thib";
+    sha256 = "sha256-f7ZmjDO8L3hcYkaxiwf5BBD44hBiBhNovylM4B308bI=";
   };
 
   dontUnpack = true;
@@ -50,9 +39,9 @@ stdenv.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    install -D -m 0755 ${thibloop-binary} $out/.thibloop-wrapped
+    install -D -m 0755 ${thibloop-binary} $out/thibloop
 
-    makeWrapper $out/.thibloop-wrapped $out/bin/thibloop
+    makeWrapper $out/thibloop $out/bin/thibloop
 
     #Install completions
 
@@ -66,7 +55,7 @@ stdenv.mkDerivation rec {
     description =
       "Scala build server and command-line tool to make the compile and test developer workflows fast and productive in a build-tool-agnostic way";
     mainProgram = "thibloop";
-    platforms = [ "x86_64-linux" "x86_64-darwin" ];
+    platforms = [ "x86_64-linux" ];
     maintainers = with maintainers; [ kubukoz tomahna ];
   };
 }

@@ -19,7 +19,7 @@
     wrapperFeatures.gtk = true;
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # required for hm sway? https://nixos.wiki/wiki/Sway
   security.polkit.enable = true;

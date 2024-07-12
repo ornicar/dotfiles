@@ -22,7 +22,7 @@
     gthumb
     feh
     libnotify
-    gnome.nautilus
+    nautilus
     stockfish
     lm_sensors
     gping # ping with a graph

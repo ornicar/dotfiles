@@ -13,13 +13,13 @@
       config.allowUnfree = true;
     }).mongodb-6_0;
 
-    bloop = prev.bloop.overrideAttrs (previousAttrs: {
-      version = "1.6.0-3";
-      bloop-binary = prev.fetchurl {
-        url = "http://192.168.1.3:8080/bloop-1.6.0-thib";
-        sha256 = "sha256-f7ZmjDO8L3hcYkaxiwf5BBD44hBiBhNovylM4B308bI=";
-      };
-    });
+    # bloop = prev.bloop.overrideAttrs (previousAttrs: {
+    #   version = "1.6.0-3";
+    #   bloop-binary = prev.fetchurl {
+    #     url = "http://192.168.1.3:8080/bloop-1.6.0-thib";
+    #     sha256 = "sha256-f7ZmjDO8L3hcYkaxiwf5BBD44hBiBhNovylM4B308bI=";
+    #   };
+    # });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

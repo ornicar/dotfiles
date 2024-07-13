@@ -26,7 +26,8 @@ stdenv.mkDerivation rec {
   # };
 
   thibloop-binary = fetchurl {
-    url = "http://192.168.1.3:8080/bloop-1.6.0-thib";
+    url =
+      "https://github.com/scalacenter/bloop/releases/download/v1.6.0/bloop-x86_64-pc-linux";
     sha256 = "sha256-f7ZmjDO8L3hcYkaxiwf5BBD44hBiBhNovylM4B308bI=";
   };
 

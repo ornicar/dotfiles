@@ -12,6 +12,7 @@
     lsof
     bind
     gparted
+    dmidecode
   ];
 
   # enable zsh completion for system packages

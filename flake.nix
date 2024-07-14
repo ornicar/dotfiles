@@ -47,10 +47,9 @@
         crom = nixosSystem {
           specialArgs = specialArgs;
           modules = [
-            # overlays
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.thib = import ./home/fw;
+              home-manager.users.thib = import ./home/crom;
               home-manager.extraSpecialArgs = specialArgs;
             }
             ./system/crom

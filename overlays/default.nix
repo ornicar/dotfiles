@@ -13,6 +13,8 @@
       config.allowUnfree = true;
     }).mongodb-6_0;
 
+    bloop = (import inputs.nixpkgs-master { system = final.system; }).bloop;
+
     # bloop = prev.bloop.overrideAttrs (previousAttrs: {
     #   version = "1.6.0-3";
     #   bloop-binary = prev.fetchurl {

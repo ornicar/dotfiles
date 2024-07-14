@@ -4,7 +4,7 @@
     Service = {
       Environment =
         [ "PATH=${lib.makeBinPath [ config.programs.java.package ]}" ];
-      ExecStart = "${pkgs.thibloop}/bin/thibloop server";
+      ExecStart = "${pkgs.bloop}/bin/bloop server";
       ExecStop = "${pkgs.psmisc}/bin/fuser -k 8212/tcp -TERM";
     };
     Install = { WantedBy = [ "default.target" ]; };

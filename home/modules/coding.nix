@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  home.packages = with pkgs; [ thibloop ];
+  home.packages = with pkgs; [ bloop ];
 
   home.sessionVariables = {
     # for lila/ui/build to find the sass executable

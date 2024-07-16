@@ -95,15 +95,18 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>uf", function() Util.format.toggle() end, { desc = "Toggle auto format (global)" })
-map("n", "<leader>uF", function() Util.format.toggle(true) end, { desc = "Toggle auto format (buffer)" })
-map("n", "<leader>us", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
-map("n", "<leader>uw", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
-map("n", "<leader>ul", function() Util.toggle.number() end, { desc = "Toggle Line Numbers" })
-map("n", "<leader>ud", Util.toggle.diagnostics, { desc = "Toggle Diagnostics" })
-local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-map("n", "<leader>uc", function() Util.toggle("conceallevel", false, { 0, conceallevel }) end,
-  { desc = "Toggle Conceal" })
+LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
+LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
+LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
+LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
+LazyVim.toggle.map("<leader>uL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
+LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
+LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
+LazyVim.toggle.map("<leader>uc", LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } }))
+LazyVim.toggle.map("<leader>uT", LazyVim.toggle.treesitter)
+LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
+if vim.lsp.inlay_hint then LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints) end
+
 map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
   map("n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })

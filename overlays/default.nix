@@ -13,15 +13,7 @@
       config.allowUnfree = true;
     }).mongodb-6_0;
 
-    bloop = (import inputs.nixpkgs-master { system = final.system; }).bloop;
-
-    # bloop = prev.bloop.overrideAttrs (previousAttrs: {
-    #   version = "1.6.0-3";
-    #   bloop-binary = prev.fetchurl {
-    #     url = "http://192.168.1.3:8080/bloop-1.6.0-thib";
-    #     sha256 = "sha256-f7ZmjDO8L3hcYkaxiwf5BBD44hBiBhNovylM4B308bI=";
-    #   };
-    # });
+    # bloop = (import inputs.nixpkgs-master { system = final.system; }).bloop;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

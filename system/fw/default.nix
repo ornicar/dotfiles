@@ -26,8 +26,6 @@
   # as per https://github.com/NixOS/nixos-hardware/tree/master/framework
   services.fwupd.enable = true;
 
-  sound.mediaKeys.enable = true;
-
   # Enable touchpad support
   services.libinput.enable = true;
 

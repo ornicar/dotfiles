@@ -70,22 +70,22 @@ return {
         --     },
         --   },
         -- },
-        mydiags = {
-          mode = "diagnostics", -- inherit from diagnostics mode
-          auto_open = true, -- auto open when there are items
-          filter = {
-            any = {
-              buf = 0, -- current buffer
-              {
-                severity = vim.diagnostic.severity.ERROR, -- errors only
-                -- limit to files in the current project
-                function(item)
-                  return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
-                end,
-              },
-            },
-          },
-        },
+        -- mydiags = {
+        --   mode = "diagnostics", -- inherit from diagnostics mode
+        --   auto_open = true, -- auto open when there are items
+        --   filter = {
+        --     any = {
+        --       buf = 0, -- current buffer
+        --       {
+        --         severity = vim.diagnostic.severity.ERROR, -- errors only
+        --         -- limit to files in the current project
+        --         function(item)
+        --           return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
+        --         end,
+        --       },
+        --     },
+        --   },
+        -- },
         cascade = {
           mode = "diagnostics", -- inherit from diagnostics mode
           auto_open = false, -- auto open when there are items
@@ -102,10 +102,10 @@ return {
       },
     },
     keys = {
-      { "<space>d", "<cmd>Trouble mydiags toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<space>d", "<cmd>Trouble cascade toggle<cr>", desc = "Diagnostics (Trouble)" },
       {
         "<space><space>",
-        "<cmd>Trouble mydiags open focus=true<cr>",
+        "<cmd>Trouble cascade open focus=true<cr>",
         desc = "Diagnostics (Trouble)",
       },
     },

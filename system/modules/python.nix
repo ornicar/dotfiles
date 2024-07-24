@@ -16,6 +16,7 @@
           pydot
           zstandard
           urllib3
+          numpy
         ]))
     ];
 }

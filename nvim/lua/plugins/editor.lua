@@ -127,19 +127,4 @@ return {
       { "<leader>qr", ':lua require("replacer").run()<cr>', desc = "QuickFix Replacer" },
     },
   },
-
-  -- search/replace in multiple files
-  {
-    "nvim-pack/nvim-spectre",
-    lazy = true,
-    keys = {
-      {
-        "<leader>sr",
-        function()
-          require("spectre").open_visual({ select_word = true })
-        end,
-        desc = "Replace current word in files (Spectre)",
-      },
-    },
-  },
 }

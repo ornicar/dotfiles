@@ -6,6 +6,7 @@
     ../modules/wine.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
+    ../services/temp-light.nix
 
     ./sway.nix
     ./waybar.nix

@@ -13,6 +13,7 @@
     bind
     gparted
     dmidecode
+    unixtools.xxd
   ];
 
   # enable zsh completion for system packages

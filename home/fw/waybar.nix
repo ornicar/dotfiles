@@ -65,7 +65,7 @@
             Driver: {driver}'';
           tooltip = true;
           format-icons = {
-            default = "";
+            default = "-";
             performance = "";
             balanced = "";
             "power-saver" = "";

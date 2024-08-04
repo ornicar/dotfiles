@@ -104,6 +104,9 @@
             root /home/thib/lila/public/;
           }
 
+          location = /favicon.ico {
+            alias /home/thib/lila/public/favicon.ico;
+          }
           location /assets/lifat/ {
             autoindex on;
             access_log /var/log/nginx/access.log;
@@ -112,7 +115,6 @@
             add_header Cross-Origin-Resource-Policy "cross-origin" always;
             alias /home/thib/lifat/;
           }
-
           location /assets/ {
             rewrite "^/assets/_\w{6}/(.+)$" /assets/$1;
             add_header "Access-Control-Allow-Origin" "*";

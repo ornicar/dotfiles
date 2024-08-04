@@ -114,8 +114,9 @@
       ${zshCompletion}
     '';
     shellAliases = let
-      dotfiles = "${config.home.homeDirectory}/dotfiles";
-      lila-deploy = "cd lib/lila; python bin/deploy";
+      home = config.home.homeDirectory;
+      dotfiles = "${home}/dotfiles";
+      lila-deploy = "cd ${home}/lila; python bin/deploy";
     in {
       "nswitch" = "nh os switch ${dotfiles}";
       "ntry" = "nh os test ${dotfiles}";

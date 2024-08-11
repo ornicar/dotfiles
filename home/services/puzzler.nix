@@ -15,6 +15,8 @@
         StandardOutput = "journal";
         StandardError = "journal";
         SyslogIdentifier = "puzzler";
+        Restart = "on-failure";
+        RestartSec = 5;
       };
     };
 

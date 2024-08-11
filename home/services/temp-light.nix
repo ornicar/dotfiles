@@ -12,6 +12,8 @@
       ExecStart =
         let python = pkgs.python3.withPackages (ps: with ps; [ requests ]);
         in "${python.interpreter} ${script}";
+      Restart = "on-failure";
+      RestartSec = 5;
     };
     Install = { WantedBy = [ "multi-user.target" ]; };
   };

@@ -14,11 +14,13 @@ s.auth = ('CCAdmin', 'coolAdmin')
 s.post(f"{api_url}/login", auth=("CCAdmin", "coolAdmin"))
 s.headers.update({'content-type': 'application/json'})
 
+ambient = 25
 
-# 40 -> 0
-# 62 -> 1
 def temp_to_factor(temp):
-    return max(0, min(1, (temp - 40) / 22))
+    min_temp = ambient + 20
+    max_temp = ambient + 40
+    diff_temp = max_temp - min_temp
+    return max(0, min(1, (temp - min_temp) / diff_temp))
 
 def bezier_blend(f):
     return f * f * (3.0 - 2.0 * f)
@@ -29,7 +31,7 @@ def ease_in_out_quad(x):
 def ease_in_out_cubic(x):
     return 4 * x * x * x if x < 0.5 else 1 - pow(-2 * x + 2, 3) / 2
 
-def temp_to_rgb(temp):
+def temp_to_rgb_white(temp):
     f = temp_to_factor(int(temp * 10) / 10)
     hue = (1-f) * 60
     saturation = ease_in_out_cubic(f)
@@ -39,6 +41,18 @@ def temp_to_rgb(temp):
     # print(f"temp: {int(temp * 10)}, {int(f * 100)}%, {int(hue)} {int(saturation * 100)} {int(value * 100)} rgb: {rgb}")
     return rgb
 
+# nice cool rgb(179, 0, 255) = hsv(282, 100, 100)
+def temp_to_rgb_purple(temp):
+    f = temp_to_factor(int(temp * 10) / 10)
+    hue = 250 + f * 110
+    saturation = 1
+    value = min(1, 0.2 + ease_in_out_quad(f))
+    r, g, b = colorsys.hsv_to_rgb(hue / 360, saturation, value)
+    rgb = [int(x * 255) for x in [r, g, b]]
+    # print(f"temp: {int(temp * 10)}, {int(f * 100)}%, {int(hue)} {int(saturation * 100)} {int(value * 100)} rgb: {rgb}")
+    return rgb
+
+temp_to_rgb = temp_to_rgb_purple
 
 prev_color_mode = None
 

@@ -17,7 +17,9 @@
 
   networking = {
     hostName = "crom";
-    extraHosts = "192.168.1.3 fw";
+    extraHosts = ''
+      192.168.1.3 fw
+    '';
     firewall.allowedTCPPorts = [
       80
       443

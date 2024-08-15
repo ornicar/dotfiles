@@ -14,6 +14,8 @@
     gparted
     dmidecode
     unixtools.xxd
+    iprange
+    ps_mem
   ];
 
   # enable zsh completion for system packages

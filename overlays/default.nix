@@ -8,10 +8,39 @@
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
 
+    # Because mongod takes one hour to recompile on each minor version upgrade
     mongodb-6_0 = (import inputs.nixpkgs-mongodb-pin {
       system = final.system;
       config.allowUnfree = true;
     }).mongodb-6_0;
+
+    bloop = prev.bloop.overrideAttrs (oldAttrs: rec {
+      version = "2.0.0";
+      bloop-binary = prev.fetchurl {
+        url =
+          "https://github.com/scalacenter/bloop/releases/download/v${version}/bloop-${oldAttrs.platform}";
+        sha256 = if prev.stdenv.isLinux && prev.stdenv.isx86_64 then
+          "sha256-SnDXAkNu//Dn24FaQcACEBEJODlrhvpQ8uNbge99nGA="
+        else if prev.stdenv.isDarwin && prev.stdenv.isx86_64 then
+          "sha256-MfenrNbL1UBC4t/0w9MTDI+kz2HKv7xJcmA57qBbMFw="
+        else
+          throw "unsupported platform";
+      };
+      installPhase = ''
+        runHook preInstall
+
+        install -D -m 0755 ${bloop-binary} $out/.bloop-wrapped
+
+        makeWrapper $out/.bloop-wrapped $out/bin/bloop
+
+        #Install completions
+        installShellCompletion --name bloop --bash ${oldAttrs.bloop-bash}
+        installShellCompletion --name _bloop --zsh ${oldAttrs.bloop-zsh}
+        installShellCompletion --name bloop.fish --fish ${oldAttrs.bloop-fish}
+
+        runHook postInstall
+      '';
+    });
 
     #   stockfish = let
     #     arch = "x86-64-bmi2";

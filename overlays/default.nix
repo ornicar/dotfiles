@@ -14,6 +14,12 @@
       config.allowUnfree = true;
     }).mongodb-6_0;
 
+    # latest doesn't build
+    delta = (import inputs.nixpkgs-stable {
+      system = final.system;
+      config.allowUnfree = true;
+    }).delta;
+
     bloop = prev.bloop.overrideAttrs (oldAttrs: rec {
       version = "2.0.0";
       bloop-binary = prev.fetchurl {

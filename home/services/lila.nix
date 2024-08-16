@@ -9,7 +9,8 @@
         Wants = [ "bloop.service" "lila-ws.service" "lila-watch.service" ];
       };
       Service = {
-        ExecStart = "${bloop} run lila -m lila.app.Lila -c ${home}/lila/.bloop";
+        WorkingDirectory = "${home}/lila";
+        ExecStart = "${bloop} run lila";
         ExecStop = "${pkgs.psmisc}/bin/fuser -k 9663/tcp -TERM";
       };
       Install = { WantedBy = [ "multi-user.target" ]; };

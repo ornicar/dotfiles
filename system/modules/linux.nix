@@ -21,9 +21,10 @@
   # enable zsh completion for system packages
   environment.pathsToLink = [ "/share/zsh" ];
 
-  services.logind.extraConfig = ''
-    HandlePowerKey=suspend
-  '';
+  services.logind = {
+    powerKey = "suspend";
+    lidSwitch = "hibernate";
+  };
 
   # automount removable media
   services.devmon.enable = true;

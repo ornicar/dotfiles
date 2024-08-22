@@ -31,8 +31,8 @@ with config.lib.stylix.colors.withHashtag; {
         "type:keyboard" = {
           xkb_layout = "us,us";
           xkb_variant = "colemak,";
-          repeat_rate = "56";
-          repeat_delay = "200";
+          repeat_rate = "64";
+          repeat_delay = "180";
         };
       };
       colors = let

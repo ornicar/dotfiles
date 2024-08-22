@@ -13,7 +13,7 @@
 
   # the glove is a bit too repeaty
   wayland.windowManager.sway.config.input."type:keyboard".repeat_delay =
-    lib.mkForce "250";
+    lib.mkForce "230";
 
   services.swayidle = {
     enable = true;

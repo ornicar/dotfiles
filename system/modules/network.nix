@@ -2,7 +2,10 @@
 
   environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 
-  networking.networkmanager.enable = true;
-
-  networking.stevenblack.enable = true;
+  networking = {
+    firewall = { enable = true; };
+    nftables.enable = true; # the new iptables
+    networkmanager.enable = true;
+    stevenblack.enable = true;
+  };
 }

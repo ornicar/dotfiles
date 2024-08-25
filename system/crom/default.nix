@@ -24,7 +24,7 @@
       80
       443
       9371 # puzzler
-      # 11987 # coolercontrol
+      11987 # coolercontrol
     ];
   };
 

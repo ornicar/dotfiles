@@ -10,7 +10,7 @@ cpu_temp_file = "/sys/class/hwmon/hwmon2/temp1_input"
 mode_req_file = "/tmp/coolercontrol-mode"
 
 s = requests.Session()
-s.auth = ('CCAdmin', 'coolAdmin')
+s.auth = ('CCAdmin', 'ygNa96IfIBx5EbCT')
 s.post(f"{api_url}/login", auth=("CCAdmin", "coolAdmin"))
 s.headers.update({'content-type': 'application/json'})
 
@@ -46,7 +46,7 @@ def temp_to_rgb_purple(temp):
     f = temp_to_factor(int(temp * 10) / 10)
     hue = 250 + f * 110
     saturation = 1
-    value = min(1, 0.2 + ease_in_out_quad(f))
+    value = min(1, 0.1 + ease_in_out_quad(f))
     r, g, b = colorsys.hsv_to_rgb(hue / 360, saturation, value)
     rgb = [int(x * 255) for x in [r, g, b]]
     # print(f"temp: {int(temp * 10)}, {int(f * 100)}%, {int(hue)} {int(saturation * 100)} {int(value * 100)} rgb: {rgb}")
@@ -58,10 +58,12 @@ prev_color_mode = None
 
 def set_color_mode(color_mode):
     global prev_color_mode
-    if color_mode != prev_color_mode:
-        # print(color_mode)
+    changed = prev_color_mode != color_mode
+    if changed:
+        print(color_mode['colors'][0])
         s.put(set_color_url, json=color_mode)
         prev_color_mode = color_mode
+    return changed
 
 def set_color(rgb):
     set_color_mode({"mode": "static", "colors": [rgb]})
@@ -93,7 +95,9 @@ def ensure_mode():
 
 while True:
     ensure_mode()
-    if req_mode_name != "sleep":
-        set_color(temp_to_rgb(read_temp()))
-    time.sleep(0.3)
-    # time.sleep(0.5)
+    if req_mode_name == "sleep":
+        time.sleep(1)
+    elif not set_color(temp_to_rgb(read_temp())):
+        time.sleep(0.5) # extra sleep when temp is constant
+    else:
+        time.sleep(0.3)

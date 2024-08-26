@@ -5,31 +5,43 @@ background="-fNL"
 foreground="-NL"
 options=$background
 
+rodan=27117
+study=27118
+achoo=27119
+snafu=27217
+rubik=27317
+kaiju=27917
+
 if [ "$server" = "sec" ]; then
 
   host="rodan"
-  port=27117
+  port=rodan
 
 elif [ "$server" = "study" ]; then
 
   host="study"
-  port=27118
+  port=study
+
+elif [ "$server" = "achoo" ]; then
+
+  host="achoo"
+  port=achoo
 
 elif [ "$server" = "stage" ]; then
 
   host="snafu"
-  port=27217
+  port=snafu
   as="localhost"
 
 elif [ "$server" = "puzzle" ]; then
 
   host="rubik"
-  port=27317
+  port=rubik
 
 elif [ "$server" = "pri" ]; then
 
   host="kaiju"
-  port=27917
+  port=kaiju
 
 fi
 

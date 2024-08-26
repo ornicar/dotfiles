@@ -2,7 +2,7 @@ import requests
 import time
 import colorsys
 
-api_url = "http://localhost:11987"
+api_url = "http://127.0.0.1:11987"
 asus_aura = "f226946857a3141b80fefa0bae8de91cdba1c6eedf91d96ea7bef76ce88b4e90"
 fans_name = "led2"
 set_color_url = f"{api_url}/devices/{asus_aura}/settings/{fans_name}/lighting"
@@ -11,7 +11,7 @@ mode_req_file = "/tmp/coolercontrol-mode"
 
 s = requests.Session()
 s.auth = ('CCAdmin', 'ygNa96IfIBx5EbCT')
-s.post(f"{api_url}/login", auth=("CCAdmin", "coolAdmin"))
+s.post(f"{api_url}/login")
 s.headers.update({'content-type': 'application/json'})
 
 ambient = 25

@@ -28,5 +28,5 @@ const secImportMany = (coll, query, port, db = 'lichess') => {
       dup++;
     }
   });
-  console.log(`Inserted: ''${ins}, Duplicates: ''${dup}`);
+  console.log(`Inserted: ${ins}, Duplicates: ${dup}`);
 }

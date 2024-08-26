@@ -15,33 +15,33 @@ kaiju=27917
 if [ "$server" = "sec" ]; then
 
   host="rodan"
-  port=rodan
+  port=$rodan
 
 elif [ "$server" = "study" ]; then
 
   host="study"
-  port=study
+  port=$study
 
 elif [ "$server" = "achoo" ]; then
 
   host="achoo"
-  port=achoo
+  port=$achoo
 
 elif [ "$server" = "stage" ]; then
 
   host="snafu"
-  port=snafu
+  port=$snafu
   as="localhost"
 
 elif [ "$server" = "puzzle" ]; then
 
   host="rubik"
-  port=rubik
+  port=$rubik
 
 elif [ "$server" = "pri" ]; then
 
   host="kaiju"
-  port=kaiju
+  port=$kaiju
 
 fi
 
@@ -49,8 +49,14 @@ if [ -z "$as" ]; then
   as="$host.vrack.lichess.ovh"
 fi
 
+if [ "$server" = "all" ]; then
+  echo "Connecting all servers"
+  for server in sec study achoo stage puzzle; do
+    echo "$0 $server"
+    $0 $server
+  done
 # if port is defined
-if [ -n "$port" ]; then
+elif [ -n "$port" ]; then
   echo "Terminating previous connections to $port"
   for pid in $(lsof -t -i:$port); do
     kill -9 $pid
@@ -60,5 +66,5 @@ if [ -n "$port" ]; then
   echo $command
   $command
 else
-  echo "Usage: $0 [sec|study|stage|puzzle|pri]"
+  echo "Usage: $0 [all|sec|study|achoo|stage|puzzle|pri]"
 fi

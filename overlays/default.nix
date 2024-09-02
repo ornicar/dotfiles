@@ -1,5 +1,14 @@
 { inputs, ... }: {
 
+  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
+  # be accessible through 'pkgs.unstable'
+  unstable-packages = final: _prev: {
+    unstable = import inputs.nixpkgs-unstable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
+
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
@@ -13,6 +22,12 @@
       system = final.system;
       config.allowUnfree = true;
     }).mongodb-6_0;
+
+    # hyprpaper build is broken
+    hyprpaper = (import inputs.nixpkgs-master {
+      system = final.system;
+      config.allowUnfree = true;
+    }).hyprpaper;
 
     bloop = prev.bloop.overrideAttrs (oldAttrs: rec {
       version = "2.0.0";
@@ -79,14 +94,5 @@
     #     ];
     #     buildFlags = [ "profile-build" ];
     #   });
-  };
-
-  # When applied, the unstable nixpkgs set (declared in the flake inputs) will
-  # be accessible through 'pkgs.unstable'
-  unstable-packages = final: _prev: {
-    unstable = import inputs.nixpkgs-unstable {
-      system = final.system;
-      config.allowUnfree = true;
-    };
   };
 }

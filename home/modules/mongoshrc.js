@@ -18,9 +18,9 @@ const sec = () => prod(ports.rodan);
 const secImportOne = (coll, id, port, db = 'lichess') =>
   prod(port || ports.rodan, db).getCollection(coll).insertOne(sec().getCollection(coll).findOne({ _id: id }));
 
-const secImportMany = (coll, query, port, db = 'lichess') => {
+const secImportMany = (coll, query, port, dbName = 'lichess') => {
   let ins = 0, dup = 0;
-  prod(port || ports.rodan, db).getCollection(coll).find(query).forEach(doc => {
+  prod(port || ports.rodan, dbName).getCollection(coll).find(query).forEach(doc => {
     try {
       db.getCollection(coll).insertOne(doc);
       ins++;

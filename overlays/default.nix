@@ -23,12 +23,6 @@
       config.allowUnfree = true;
     }).mongodb-6_0;
 
-    # hyprpaper build is broken
-    hyprpaper = (import inputs.nixpkgs-master {
-      system = final.system;
-      config.allowUnfree = true;
-    }).hyprpaper;
-
     bloop = prev.bloop.overrideAttrs (oldAttrs: rec {
       version = "2.0.0";
       bloop-binary = prev.fetchurl {

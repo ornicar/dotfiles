@@ -8,10 +8,11 @@
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lang.yaml",
+    "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.ui.edgy"
   ],
   "news": {
-    "NEWS.md": "6077"
+    "NEWS.md": "6520"
   },
   "version": 6
 }

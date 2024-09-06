@@ -33,6 +33,8 @@
     http-server
     meld
     ansible
+    eslint
+    eslint_d
   ];
 
   programs.java.enable = true;

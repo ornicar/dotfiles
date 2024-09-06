@@ -58,7 +58,7 @@ return {
         nix = { "nixfmt" },
         scss = { "prettierd" },
         typescript = { "eslint_d" },
-        ["markdown"] = { "prettierd" },
+        markdown = { "prettierd" },
         ["markdown.mdx"] = { "prettierd" },
       },
     },

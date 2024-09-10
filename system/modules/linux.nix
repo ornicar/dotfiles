@@ -16,6 +16,7 @@
     unixtools.xxd
     iprange
     ps_mem
+    bc # calculator
   ];
 
   # enable zsh completion for system packages

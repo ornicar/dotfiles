@@ -88,6 +88,7 @@
         function generate-password() { strings /dev/urandom | grep -o '[[:alnum:]]' | head -n $1 | tr -d '\n'; echo }
         function where-from() { readlink -f $(which $1) }
         function url-sha256() { curl -sL $1 | sha256sum | cut -d ' ' -f 1 | xxd -r -p | base64 }
+        function c() { printf "%s\n" "$@" | bc -l; }
       '';
   in {
     enable = true;

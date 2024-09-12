@@ -15,14 +15,14 @@ const upid = (coll, id, up) => db.getCollection(coll).updateOne({ _id: id }, { $
 const prod = (port, db = 'lichess') => connect(`mongodb://localhost:${port}/${db}`);
 const sec = () => prod(ports.rodan);
 
-const secImportOne = (coll, id, port, db = 'lichess') =>
-  prod(port || ports.rodan, db).getCollection(coll).insertOne(sec().getCollection(coll).findOne({ _id: id }));
+const secImportOne = (coll, id, port, dbName = 'lichess') =>
+  db[coll].insertOne(prod(port || ports.rodan, dbName).getCollection(coll).findOne({ _id: id }));
 
 const secImportMany = (coll, query, port, dbName = 'lichess') => {
   let ins = 0, dup = 0;
   prod(port || ports.rodan, dbName).getCollection(coll).find(query).forEach(doc => {
     try {
-      db.getCollection(coll).insertOne(doc);
+      db[coll].insertOne(doc);
       ins++;
     } catch (e) {
       dup++;

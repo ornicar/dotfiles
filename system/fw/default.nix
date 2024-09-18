@@ -33,9 +33,6 @@
   programs.light.enable = true;
   hardware.sensor.iio.enable = true;
 
-  # fingerprint sensor
-  services.fprintd.enable = true;
-
   hardware.keyboard.qmk.enable = false; # am using keyd instead
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

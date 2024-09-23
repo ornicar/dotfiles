@@ -5,7 +5,7 @@ background="-fNL"
 foreground="-NL"
 options=$background
 
-rodan=27117
+gappa=27117
 study=27118
 achoo=27119
 snafu=27217
@@ -14,8 +14,8 @@ kaiju=27917
 
 if [ "$server" = "sec" ]; then
 
-  host="rodan"
-  port=$rodan
+  host="gappa"
+  port=$gappa
 
 elif [ "$server" = "study" ]; then
 

@@ -5,7 +5,7 @@
     keyboards = {
       default = {
         # 32ac:0012 Framework Laptop 16 Keyboard Module
-        ids = [ "32ac:012" ];
+        ids = [ "32ac:0012" ];
         settings = {
           # to view key names:
           # sudo keyd -m

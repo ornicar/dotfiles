@@ -7,7 +7,7 @@
     gh
     gcc
     gnumake
-    nodejs
+    nodejs_22
     go
     cargo
     luarocks
@@ -33,8 +33,6 @@
     http-server
     meld
     ansible
-    eslint
-    eslint_d
   ];
 
   programs.java.enable = true;

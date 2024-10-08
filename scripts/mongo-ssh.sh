@@ -10,6 +10,7 @@ study=27118
 achoo=27119
 snafu=27217
 rubik=27317
+insight=27318
 kaiju=27917
 
 if [ "$server" = "sec" ]; then
@@ -37,6 +38,11 @@ elif [ "$server" = "puzzle" ]; then
 
   host="rubik"
   port=$rubik
+
+elif [ "$server" = "insight" ]; then
+
+  host="rubik"
+  port=$insight
 
 elif [ "$server" = "pri" ]; then
 

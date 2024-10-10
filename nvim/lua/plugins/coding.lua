@@ -57,7 +57,7 @@ return {
       formatters_by_ft = {
         nix = { "nixfmt" },
         scss = { "prettierd" },
-        typescript = { "eslint_d" },
+        typescript = { "prettierd" },
         markdown = { "prettierd" },
         ["markdown.mdx"] = { "prettierd" },
       },

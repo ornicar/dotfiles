@@ -18,10 +18,10 @@
   modifications = final: prev: {
 
     # Because mongod takes one hour to recompile on each minor version upgrade
-    mongodb-6_0 = (import inputs.nixpkgs-mongodb-pin {
+    mongodb-7_0 = (import inputs.nixpkgs-mongodb-pin {
       system = final.system;
       config.allowUnfree = true;
-    }).mongodb-6_0;
+    }).mongodb-7_0;
 
     #   stockfish = let
     #     arch = "x86-64-bmi2";

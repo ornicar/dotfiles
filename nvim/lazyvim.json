@@ -8,7 +8,6 @@
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lang.yaml",
-    "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.ui.edgy"
   ],
   "news": {

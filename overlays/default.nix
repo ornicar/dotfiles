@@ -23,6 +23,12 @@
       config.allowUnfree = true;
     }).mongodb-7_0;
 
+    # Get latest bloop
+    bloop = (import inputs.nixpkgs-master {
+      system = final.system;
+      config.allowUnfree = true;
+    }).bloop;
+
     #   stockfish = let
     #     arch = "x86-64-bmi2";
     #     # see src/evaluate.h for nnue names

@@ -4,7 +4,7 @@
     config = {
       input = lib.mkAfter {
         # the glove is a bit too repeaty
-        "type:keyboard".repeat_delay = lib.mkForce "230";
+        "type:keyboard".repeat_delay = lib.mkForce "250";
         # flat profile, no acceleration
         "type:mouse" = { accel_profile = "flat"; };
       };

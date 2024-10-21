@@ -21,4 +21,15 @@ return {
       },
     },
   },
+  {
+    "nvchad/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      timeout = 2,
+      maxkeys = 7,
+      position = "top-right",
+      show_count = true,
+      -- more opts
+    },
+  },
 }

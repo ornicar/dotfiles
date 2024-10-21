@@ -24,7 +24,7 @@
 
   services.logind = {
     powerKey = "suspend";
-    lidSwitch = "hibernate";
+    lidSwitch = "suspend";
   };
 
   # automount removable media

@@ -6,7 +6,7 @@
     lila = {
       Unit = {
         Description = "lila";
-        Wants = [ "bloop.service" "lila-ws.service" "lila-watch.service" ];
+        Wants = [ "lila-ws.service" "lila-watch.service" ];
       };
       Service = {
         WorkingDirectory = "${home}/lila";
@@ -28,10 +28,7 @@
       Install = { WantedBy = [ "multi-user.target" ]; };
     };
     lila-ws = {
-      Unit = {
-        Description = "lila-ws";
-        Requires = [ "bloop.service" ];
-      };
+      Unit = { Description = "lila-ws"; };
       Service = {
         WorkingDirectory = "${home}/lila-ws";
         ExecStart =
@@ -41,10 +38,7 @@
       Install = { WantedBy = [ "lila.target" ]; };
     };
     lila-fishnet = {
-      Unit = {
-        Description = "lila-fishnet";
-        Requires = [ "bloop.service" ];
-      };
+      Unit = { Description = "lila-fishnet"; };
       Service = {
         ExecStart =
           "${bloop} run lila-fishnet -m play.core.server.ProdServerStart -c ${home}/lila-fishnet/.bloop";
@@ -55,7 +49,6 @@
     # lila-search = {
     #   Unit = {
     #     Description = "lila-search";
-    #     Requires = [ "bloop.service" ];
     #   };
     #   Service = {
     #     ExecStart = "${bloop} run lila-search -m play.core.server.ProdServerStart -c ${home}/lila-search/.bloop";

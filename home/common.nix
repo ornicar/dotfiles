@@ -14,7 +14,6 @@
     ./modules/zsh.nix
     # ./modules/lan-mouse.nix
 
-    ./services/bloop.nix
     ./services/lila.nix
     # ./services/gammarelay.nix
   ];

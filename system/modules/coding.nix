@@ -17,6 +17,7 @@
     python3
     ruby
     sbt
+    bloop
     coursier # required by metals
     scala-cli
     corepack

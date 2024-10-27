@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [ networkmanagerapplet iw ];
 
   networking = {
     firewall = { enable = true; };

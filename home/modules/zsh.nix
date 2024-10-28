@@ -123,6 +123,8 @@
       "ntry" = "nh os test ${dotfiles}";
       "ndry" = "nh os test ${dotfiles} --dry";
       "nup" = "nh os switch --update ${dotfiles}";
+      "locks" = ''
+        git add flake.lock nvim/lazy-lock.json && git commit -m "locks" && git push'';
       "su" = "systemctl --user";
       "sr" = "sudo systemctl";
       "ju" = "journalctl --user -u";

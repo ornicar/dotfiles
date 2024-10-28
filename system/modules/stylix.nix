@@ -8,10 +8,7 @@
     base16Scheme = let theme = "catppuccin-mocha";
     in "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
-    override = {
-      base00 = "#1f1e22";
-      base01 = "#232224";
-    };
+    override = { base00 = "#1f1e22"; };
 
     image = ../../home/wallpaper.jpg;
 

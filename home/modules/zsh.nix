@@ -89,6 +89,7 @@
         function where-from() { readlink -f $(which $1) }
         function url-sha256() { curl -sL $1 | sha256sum | cut -d ' ' -f 1 | xxd -r -p | base64 }
         function c() { printf "%s\n" "$@" | bc -l; }
+        function kitty-reload() { kill -SIGUSR1 $(pidof kitty) }
       '';
   in {
     enable = true;

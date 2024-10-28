@@ -54,25 +54,15 @@
         map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
       '';
       theme = ''
-        # vim:ft=kitty
-
-        ## name:     Catppuccin Kitty Mocha
-        ## author:   Catppuccin Org
-        ## license:  MIT
-        ## upstream: https://github.com/catppuccin/kitty/blob/main/themes/mocha.conf
-        ## blurb:    Soothing pastel theme for the high-spirited!
-
-
-
         # The basic colors
         foreground              #cdd6f4
-        background              #1e1e2e
-        selection_foreground    #1e1e2e
+        background              #1f1e22
+        selection_foreground    #1f1e22
         selection_background    #f5e0dc
 
         # Cursor colors
         cursor                  #f5e0dc
-        cursor_text_color       #1e1e2e
+        cursor_text_color       #1f1e22
 
         # URL underline color when hovering with mouse
         url_color               #f5e0dc
@@ -94,11 +84,11 @@
         tab_bar_background      #11111b
 
         # Colors for marks (marked text in the terminal)
-        mark1_foreground #1e1e2e
+        mark1_foreground #1f1e22
         mark1_background #b4befe
-        mark2_foreground #1e1e2e
+        mark2_foreground #1f1e22
         mark2_background #cba6f7
-        mark3_foreground #1e1e2e
+        mark3_foreground #1f1e22
         mark3_background #74c7ec
 
         # The 16 terminal colors
@@ -135,13 +125,12 @@
         color7  #bac2de
         color15 #a6adc8
       '';
-      theme-include = "include /home/thib/dotfiles/kitty-theme.conf";
     in ''
       ${scrollback}
 
       ${remote}
 
-      ${theme-include}
+      ${theme}
     '';
   };
 }

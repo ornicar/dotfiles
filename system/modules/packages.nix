@@ -9,6 +9,7 @@
     glib
     ffmpeg
     btop
+    htop
     firefox
     google-chrome
     unzip
@@ -28,6 +29,7 @@
     gping # ping with a graph
     trippy # network diagnostic https://github.com/fujiapple852/trippy
     mpv
+    vlc
     evince # pdf viewer
   ];
 }

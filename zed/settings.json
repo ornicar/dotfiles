@@ -1,0 +1,13 @@
+{
+  "telemetry": {
+    "metrics": true
+  },
+  "vim_mode": true,
+  "ui_font_size": 18,
+  "buffer_font_size": 22,
+  "theme": {
+    "mode": "system",
+    "light": "Atelier Cave Dark",
+    "dark": "One Dark"
+  }
+}

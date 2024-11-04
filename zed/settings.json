@@ -1,9 +1,16 @@
 {
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
   "telemetry": {
     "metrics": true
   },
   "vim_mode": true,
-  "ui_font_size": 18,
+  "ui_font_size": 22,
   "buffer_font_size": 22,
   "theme": {
     "mode": "system",

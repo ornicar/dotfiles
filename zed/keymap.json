@@ -1,0 +1,17 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {}
+  },
+  {
+    "context": "Editor",
+    "bindings": {}
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "e": "editor::MoveUp",
+      "n": "editor::MoveDown"
+    }
+  }
+]

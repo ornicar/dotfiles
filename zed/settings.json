@@ -10,11 +10,16 @@
     "metrics": true
   },
   "vim_mode": true,
+  "cursor_blink": false,
+  "vertical_scroll_margin": 5,
   "ui_font_size": 22,
   "buffer_font_size": 22,
   "theme": {
-    "mode": "system",
-    "light": "Atelier Cave Dark",
-    "dark": "One Dark"
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "theme_overrides": {
+    "editor.background": "#1f1e22000"
   }
 }

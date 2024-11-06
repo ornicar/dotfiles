@@ -10,8 +10,8 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "e": "editor::MoveUp",
-      "n": "editor::MoveDown"
+      "e": "vim::Up",
+      "n": "vim::Down"
     }
   }
 ]

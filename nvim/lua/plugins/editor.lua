@@ -127,4 +127,6 @@ return {
       { "<leader>qr", ':lua require("replacer").run()<cr>', desc = "QuickFix Replacer" },
     },
   },
+
+  { "meznaric/key-analyzer.nvim", opts = {} },
 }

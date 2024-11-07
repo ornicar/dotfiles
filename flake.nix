@@ -33,17 +33,17 @@
       inherit (nixpkgs.lib) nixosSystem;
       specialArgs = { inherit inputs outputs; };
     in {
-      overlays = import ./overlays { inherit inputs; };
+      overlays = import ./nix/overlays { inherit inputs; };
       nixosConfigurations = {
         fw = nixosSystem {
           specialArgs = specialArgs;
           modules = [
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.thib = import ./home/fw;
+              home-manager.users.thib = import ./nix/home/fw;
               home-manager.extraSpecialArgs = specialArgs;
             }
-            ./system/fw
+            ./nix/system/fw
           ];
         };
         crom = nixosSystem {
@@ -51,10 +51,10 @@
           modules = [
             home-manager.nixosModules.home-manager
             {
-              home-manager.users.thib = import ./home/crom;
+              home-manager.users.thib = import ./nix/home/crom;
               home-manager.extraSpecialArgs = specialArgs;
             }
-            ./system/crom
+            ./nix/system/crom
           ];
         };
       };

@@ -26,7 +26,9 @@ map("n", "<leader>h", "<C-w>j", { desc = "Go to lower window" })
 map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 map("n", "<leader>md", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>wd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
+map("n", "<leader>wd", function()
+  Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -95,35 +97,39 @@ map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 -- stylua: ignore start
 
 -- toggle options
-LazyVim.toggle.map("<leader>uf", LazyVim.toggle.format())
-LazyVim.toggle.map("<leader>uF", LazyVim.toggle.format(true))
-LazyVim.toggle.map("<leader>us", LazyVim.toggle("spell", { name = "Spelling" }))
-LazyVim.toggle.map("<leader>uw", LazyVim.toggle("wrap", { name = "Wrap" }))
-LazyVim.toggle.map("<leader>uL", LazyVim.toggle("relativenumber", { name = "Relative Number" }))
-LazyVim.toggle.map("<leader>ud", LazyVim.toggle.diagnostics)
-LazyVim.toggle.map("<leader>ul", LazyVim.toggle.number)
-LazyVim.toggle.map("<leader>uc", LazyVim.toggle("conceallevel", { values = { 0, vim.o.conceallevel > 0 and vim.o.conceallevel or 2 } }))
-LazyVim.toggle.map("<leader>uT", LazyVim.toggle.treesitter)
-LazyVim.toggle.map("<leader>ub", LazyVim.toggle("background", { values = { "light", "dark" }, name = "Background" }))
-if vim.lsp.inlay_hint then LazyVim.toggle.map("<leader>uh", LazyVim.toggle.inlay_hints) end
-
-map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
-if vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint then
-  map("n", "<leader>uh", function() Util.toggle.inlay_hints() end, { desc = "Toggle Inlay Hints" })
+LazyVim.format.snacks_toggle():map("<leader>uf")
+Snacks.toggle.option("spell", { name = "Spelling"}):map("<leader>us")
+Snacks.toggle.option("wrap", {name = "Wrap"}):map("<leader>uw")
+Snacks.toggle.option("relativenumber", { name = "Relative Number"}):map("<leader>uL")
+Snacks.toggle.diagnostics():map("<leader>ud")
+Snacks.toggle.line_number():map("<leader>ul")
+Snacks.toggle.option("conceallevel", {off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2}):map("<leader>uc")
+Snacks.toggle.treesitter():map("<leader>uT")
+Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background"}):map("<leader>ub")
+if vim.lsp.inlay_hint then
+  Snacks.toggle.inlay_hints():map("<leader>uh")
 end
+map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 
 -- lazygit
-local full_size = { width = 1, height = 1 }
-map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git(), size = full_size }) end, { desc = "Lazygit (Root Dir)" })
-map("n", "<leader>gf", function()
-  local git_path = vim.api.nvim_buf_get_name(0)
-  LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
-end, { desc = "Lazygit Current File History" })
-map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
-map("n", "<leader>gl", function()
-  LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
-end, { desc = "Lazygit Log" })
-map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
+map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
+map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
+map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
+map("n", "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
+map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
+map("n", "<leader>gl", function() Snacks.lazygit.log({ cwd = LazyVim.root.git() }) end, { desc = "Lazygit Log" })
+map("n", "<leader>gL", function() Snacks.lazygit.log() end, { desc = "Lazygit Log (cwd)" })
+-- local full_size = { width = 1, height = 1 }
+-- map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git(), size = full_size }) end, { desc = "Lazygit (Root Dir)" })
+-- map("n", "<leader>gf", function()
+--   local git_path = vim.api.nvim_buf_get_name(0)
+--   LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
+-- end, { desc = "Lazygit Current File History" })
+-- map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
+-- map("n", "<leader>gl", function()
+--   LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
+-- end, { desc = "Lazygit Log" })
+-- map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })

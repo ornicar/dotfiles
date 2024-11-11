@@ -17,7 +17,7 @@
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "dark": "JetBrains New Dark"
   },
   "theme_overrides": {
     "editor.background": "#1f1e22000"

@@ -11,7 +11,10 @@
     "context": "VimControl && !menu",
     "bindings": {
       "e": "vim::Up",
-      "n": "vim::Down"
+      "n": "vim::Down",
+      "shift-n": ["vim::Down", 3],
+      "j": "vim::MoveToNextMatch",
+      "J": "vim::MoveToPrevMatch"
     }
   }
 ]

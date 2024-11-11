@@ -141,6 +141,7 @@
       # Add suffix alias for less
       "-g L" = "| less";
       "v" = "nvim";
+      "z" = "zeditor";
       "x" = "dtrx";
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";

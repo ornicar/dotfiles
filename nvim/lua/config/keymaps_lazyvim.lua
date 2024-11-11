@@ -112,7 +112,7 @@ end
 map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 
 -- lazygit
-map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
+map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git(), size = {width=1,height=1} }) end, { desc = "Lazygit (Root Dir)" })
 map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
 map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
 map("n", "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
@@ -121,15 +121,6 @@ map("n", "<leader>gl", function() Snacks.lazygit.log({ cwd = LazyVim.root.git() 
 map("n", "<leader>gL", function() Snacks.lazygit.log() end, { desc = "Lazygit Log (cwd)" })
 -- local full_size = { width = 1, height = 1 }
 -- map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git(), size = full_size }) end, { desc = "Lazygit (Root Dir)" })
--- map("n", "<leader>gf", function()
---   local git_path = vim.api.nvim_buf_get_name(0)
---   LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
--- end, { desc = "Lazygit Current File History" })
--- map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
--- map("n", "<leader>gl", function()
---   LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
--- end, { desc = "Lazygit Log" })
--- map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })

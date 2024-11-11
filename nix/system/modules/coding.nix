@@ -19,6 +19,7 @@
     sbt
     bloop
     coursier # required by metals
+    metals
     scala-cli
     corepack
     dart-sass

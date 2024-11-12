@@ -6,8 +6,8 @@ local map = Util.safe_keymap_set
 -- Move in windows using <ctrl> arrow keys
 map("n", "<leader>n", "<C-w>h", { desc = "Go to left window" })
 map("n", "<leader>e", "<C-w>l", { desc = "Go to right window" })
-map("n", "<leader>l", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<leader>h", "<C-w>j", { desc = "Go to lower window" })
+-- map("n", "<leader>l", "<C-w>k", { desc = "Go to upper window" })
+-- map("n", "<leader>h", "<C-w>j", { desc = "Go to lower window" })
 -- Resize window using <ctrl><shift> arrow keys
 -- map("n", "<C-S-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 -- map("n", "<C-S-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })

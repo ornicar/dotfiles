@@ -4,7 +4,7 @@
     enableZshIntegration = true;
     # defaultCommand = "fd --type f'";
     defaultCommand = "rg --files --hidden";
-    defaultOptions = [ "--bind=ctrl-e:up" ];
+    # defaultOptions = [ "--bind=ctrl-e:up" ];
   };
   programs.zoxide = {
     enable = true;
@@ -38,6 +38,7 @@
         error_symbol = "[›](bold red)";
       };
 
+      scala = { symbol = ""; };
       git_status = {
         deleted = "✗";
         modified = "✶";

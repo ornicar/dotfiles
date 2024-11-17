@@ -7,7 +7,7 @@
     ./modules/lazygit.nix
     ./modules/mongodb.nix
     ./modules/neovim.nix
-    ./modules/zed.nix
+    # ./modules/zed.nix
     ./modules/ssh.nix
     ./modules/sway.nix
     ./modules/waybar.nix

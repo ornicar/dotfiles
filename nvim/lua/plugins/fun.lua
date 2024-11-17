@@ -32,4 +32,5 @@ return {
       -- more opts
     },
   },
+  { "nvzone/timerly", cmd = "TimerlyToggle", dependencies = { "nvzone/volt" } },
 }

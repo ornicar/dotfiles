@@ -189,11 +189,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1731912056,
-        "narHash": "sha256-1icSuV0/AtuA3CSFKs3PE2Q/BOMUgITRjQGcZzan3sI=",
+        "lastModified": 1731955258,
+        "narHash": "sha256-3p5dNocIBvqugZyMLnT7gjE9DF2WV5kVbVlLTbYI+eQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fbc12b07e2ca85b424d6d7877ac711254d2d160b",
+        "rev": "2b552e98ea099d6b7d1a809e32a478f1f6258dd1",
         "type": "github"
       },
       "original": {
@@ -250,11 +250,11 @@
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1731861652,
-        "narHash": "sha256-71iRk7zLR+r9urKPEoutLqPm3Tex6gLbZyWPI4VoHIs=",
+        "lastModified": 1731920923,
+        "narHash": "sha256-Pqe38TdvfyywhlhpR1WLJlD7uTOGXRRuzpHIh2edOz0=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "9b61cc39b2c82f01b63bb0ae85865d7372697fc4",
+        "rev": "f8699483e46972f64b0dee5d5e41bf4bb142629b",
         "type": "github"
       },
       "original": {

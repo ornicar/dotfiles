@@ -100,9 +100,11 @@ return {
 
   -- dashboard
   {
-    "nvimdev/dashboard-nvim",
-    opts = function(_, opts)
-      local logo = [[
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = [[
         =================     ===============     ===============   ========  ========
         \\ . . . . . . .\\   //. . . . . . .\\   //. . . . . . .\\  \\. . .\\// . . //
         ||. . ._____. . .|| ||. . ._____. . .|| ||. . ._____. . .|| || . . .\/ . . .||
@@ -122,24 +124,9 @@ return {
         =='    _-'                        N E O V I M                         \/   `==
         \   _-'                                                                `-_   /
          `''                                                                      ``'
-]]
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
-      -- stylua: ignore
-      opts.config.center = {
-        { action = 'lua LazyVim.pick()()',                            desc = " Find File",       icon = " ", key = "f" },
-        { action = "ene | startinsert",                               desc = " New File",        icon = " ", key = "n" },
-        { action = 'lua LazyVim.pick("oldfiles")()',                  desc = " Recent Files",    icon = " ", key = "r" },
-        { action = 'lua LazyVim.lazygit({cwd=LazyVim.root.git()})',   desc = " LazyGit",         icon = "󰘬 ", key = "g" },
-        { action = 'lua require("persistence").load()',               desc = " Restore Session", icon = " ", key = "s" },
-        { action = "LazyExtras",                                      desc = " Lazy Extras",     icon = " ", key = "x" },
-        { action = "Lazy",                                            desc = " Lazy",            icon = "󰒲 ", key = "l" },
-        { action = function() vim.api.nvim_input("<cmd>qa<cr>") end,  desc = " Quit",            icon = " ", key = "q" },
-      }
-      for _, button in ipairs(opts.config.center) do
-        button.desc = button.desc .. string.rep(" ", 40 - #button.desc)
-        button.key_format = "  %s"
-      end
-    end,
+ ]],
+        },
+      },
+    },
   },
 }

@@ -113,7 +113,7 @@ map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "
 
 -- lazygit
 map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git(), size = {width=1,height=1} }) end, { desc = "Lazygit (Root Dir)" })
-map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
+-- map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
 map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
 map("n", "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
 map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })

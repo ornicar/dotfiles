@@ -17,7 +17,7 @@ return {
       config.settings = {
         showImplicitArguments = true,
         excludedPackages = { "akka.actor.typed.javadsl" },
-        serverProperties = { "-Xmx2g" },
+        serverProperties = { "-Xmx2g", "-Dmetals.enable-best-effort=true" },
         serverVersion = "latest.snapshot",
       }
 

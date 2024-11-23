@@ -28,6 +28,7 @@
     ./stylix.nix
     ./sway.nix
     ./users.nix
+    ./zeroad.nix
   ];
 
   services.dbus.enable = true;

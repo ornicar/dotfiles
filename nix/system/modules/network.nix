@@ -5,7 +5,8 @@
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 20595 52768 ];
+      allowedTCPPorts = [ 20595 33033 ];
+      allowedUDPPorts = [ 20595 33033 ];
     };
     nftables.enable = true; # the new iptables
     networkmanager.enable = true;

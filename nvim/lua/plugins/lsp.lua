@@ -23,7 +23,7 @@ return {
         vtsls = {
           enabled = false,
         },
-        tsserver = {
+        ts_ls = {
           enabled = true,
           settings = {
             typescript = {},

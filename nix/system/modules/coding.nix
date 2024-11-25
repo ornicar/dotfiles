@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -35,6 +35,7 @@
     http-server
     meld
     ansible
+    inputs.bbpPairings.defaultPackage.x86_64-linux
   ];
 
   programs.java.enable = true;

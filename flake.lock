@@ -66,6 +66,24 @@
         "type": "github"
       }
     },
+    "bbpPairings": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1732550736,
+        "narHash": "sha256-GOWdRMhLzHnuQNT76TyVZIJkT6dmmpgK6LZJq6A8aVw=",
+        "owner": "ornicar",
+        "repo": "bbpPairings",
+        "rev": "8cb246a620f42339791def8efda79831e5581b43",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ornicar",
+        "repo": "bbpPairings",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -173,16 +191,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732014248,
-        "narHash": "sha256-y/MEyuJ5oBWrWAic/14LaIr/u5E0wRVzyYsouYY3W6w=",
+        "lastModified": 1732549392,
+        "narHash": "sha256-muNzem25togwjoGlHhm64M4Sbo3pFPHz2Yp6pEvzyuo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "23e89b7da85c3640bbc2173fe04f4bd114342367",
+        "rev": "091621ce37dad208abd687b58ebfb848a24be463",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -219,11 +236,28 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1732014248,
+        "narHash": "sha256-y/MEyuJ5oBWrWAic/14LaIr/u5E0wRVzyYsouYY3W6w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "23e89b7da85c3640bbc2173fe04f4bd114342367",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "bbpPairings": "bbpPairings",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-mongodb-pin": "nixpkgs-mongodb-pin",
         "stylix": "stylix"

@@ -24,6 +24,8 @@
       };
     };
 
+    bbpPairings.url = "github:ornicar/bbpPairings";
+
     # lan-mouse.url = "github:feschber/lan-mouse";
   };
 

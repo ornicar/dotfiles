@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -7,24 +7,16 @@
     gh
     gcc
     gnumake
-    nodejs_22
     go
     cargo
     luarocks
     stylua
     tree-sitter
-    jdk
     python3
     ruby
-    sbt
-    bloop
-    coursier # required by metals
-    metals
     scala-cli
     corepack
-    dart-sass
     delta
-    redis
     ruff-lsp
     pyright
     cargo
@@ -35,10 +27,5 @@
     http-server
     meld
     ansible
-    inputs.bbpPairings.defaultPackage.x86_64-linux
   ];
-
-  programs.java.enable = true;
-
-  services.redis.servers."".enable = true;
 }

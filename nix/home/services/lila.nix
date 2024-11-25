@@ -1,7 +1,8 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, inputs, ... }: {
   systemd.user.services = let
     home = config.home.homeDirectory;
     bloop = "${pkgs.bloop}/bin/bloop";
+    picfit = "${inputs.picfit.defaultPackage.x86_64-linux}/bin/picfit";
   in {
     lila = {
       Unit = {
@@ -61,7 +62,7 @@
     picfit = {
       Unit = { Description = "Picfit lila image server"; };
       Service = {
-        ExecStart = "${home}/picfit/bin/picfit -c ${home}/picfit/config.json";
+        ExecStart = "${picfit} -c ${home}/picfit/config.json";
         StandardOutput = "journal";
         StandardError = "journal";
         SyslogIdentifier = "picfit";

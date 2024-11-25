@@ -252,6 +252,40 @@
         "type": "github"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1732567409,
+        "narHash": "sha256-k4ZnULVI+Us3zRGZL7l3jAU8Z7bNnJfFjqVuPUMlcpM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "203401241d7af1d353ae688506767f7f16d436df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "picfit": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1732571796,
+        "narHash": "sha256-pSMT5hxGdgivmaCACSvtYop3qulzWZSqFZWgb2QtgU4=",
+        "owner": "ornicar",
+        "repo": "picfit",
+        "rev": "e64ee4fb03f65742ed2ff84b1c4b9f385a6a723c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ornicar",
+        "repo": "picfit",
+        "rev": "e64ee4fb03f65742ed2ff84b1c4b9f385a6a723c",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "bbpPairings": "bbpPairings",
@@ -260,6 +294,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-mongodb-pin": "nixpkgs-mongodb-pin",
+        "picfit": "picfit",
         "stylix": "stylix"
       }
     },

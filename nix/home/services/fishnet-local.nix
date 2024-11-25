@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   systemd.user.services.fishnet-local = let
     fishnet = "${config.home.homeDirectory}/fishnet";
     release = "${fishnet}/target/release";

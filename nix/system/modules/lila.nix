@@ -10,6 +10,7 @@
     dart-sass
     redis
     inputs.bbpPairings.defaultPackage.x86_64-linux
+    inputs.picfit.defaultPackage.x86_64-linux
   ];
 
   programs.java.enable = true;

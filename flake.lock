@@ -71,15 +71,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1732550736,
-        "narHash": "sha256-GOWdRMhLzHnuQNT76TyVZIJkT6dmmpgK6LZJq6A8aVw=",
+        "lastModified": 1732569077,
+        "narHash": "sha256-rMMIr7rofcDWZz8DTx4CQpHZNa0FOSPWLVJ8esoAogQ=",
         "owner": "ornicar",
         "repo": "bbpPairings",
-        "rev": "8cb246a620f42339791def8efda79831e5581b43",
+        "rev": "2b01f2c1e2b839d265f3ef665f3220c92af67c6f",
         "type": "github"
       },
       "original": {
         "owner": "ornicar",
+        "ref": "2b01f2c1e2b839d2",
         "repo": "bbpPairings",
         "type": "github"
       }
@@ -206,11 +207,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1732547220,
-        "narHash": "sha256-Atj2F6Ljlwu5+bmax2KvPdMq7frnNnEE96ZsAClsoZU=",
+        "lastModified": 1732604498,
+        "narHash": "sha256-jLSaysOTd7nj4sR0FG5ruTz2QBBPR/dInANBIDtJLog=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ba4c0e502ac93b33e0a3d4ad662fe02c3a51ea3d",
+        "rev": "096ede7f2b180f03d53fae3d69e4f0d84e199825",
         "type": "github"
       },
       "original": {
@@ -281,8 +282,8 @@
       },
       "original": {
         "owner": "ornicar",
+        "ref": "e64ee4fb03f65742ed2ff",
         "repo": "picfit",
-        "rev": "e64ee4fb03f65742ed2ff84b1c4b9f385a6a723c",
         "type": "github"
       }
     },

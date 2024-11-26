@@ -9,7 +9,7 @@
     metals
     dart-sass
     redis
-    inputs.bbpPairings.defaultPackage.x86_64-linux
+    inputs.bbpPairings.packages.x86_64-linux.default
     inputs.picfit.defaultPackage.x86_64-linux
   ];
 

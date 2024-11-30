@@ -1,7 +1,8 @@
 { config, ... }: {
   imports = [
     ./modules/cli.nix
-    ./modules/coding.nix
+    ./modules/scala.nix
+    ./modules/lila.nix
     ./modules/git.nix
     ./modules/kitty.nix
     ./modules/lazygit.nix

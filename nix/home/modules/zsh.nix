@@ -118,7 +118,6 @@
     shellAliases = let
       home = config.home.homeDirectory;
       dotfiles = "${home}/dotfiles";
-      lila-deploy = "cd ${home}/lila; python bin/deploy";
     in {
       "nswitch" = "nh os switch ${dotfiles}";
       "ntry" = "nh os test ${dotfiles}";
@@ -146,11 +145,6 @@
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";
       "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
-      # deploy
-      "stage-assets" = "${lila-deploy} snafu-assets";
-      "stage-server" = "${lila-deploy} snafu-server";
-      "prod-assets" = "${lila-deploy} manta-assets";
-      "prod-server" = "${lila-deploy} manta-server";
       # Stuff
       "st" = "_ systemctl-tui";
       "on" = ''swaymsg " output * power on"'';

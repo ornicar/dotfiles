@@ -2,7 +2,7 @@
 
   environment.systemPackages = with pkgs; [
     jdk
-    nodejs_22
+    nodejs_23
     sbt
     bloop
     coursier # required by metals

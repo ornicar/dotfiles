@@ -40,17 +40,17 @@
       resumeCommand = ''${swayMsg} "output * power on"'';
     in [
       {
-        timeout = 600;
+        timeout = 900;
         command = "${light} -O; ${light} -T 0.2";
         resumeCommand = "${light} -I";
       }
       {
-        timeout = 900;
+        timeout = 1200;
         command = ''${swayMsg} "output * power off"'';
         inherit resumeCommand;
       }
       {
-        timeout = 1200;
+        timeout = 1500;
         command = "${pkgs.systemd}/bin/systemctl suspend";
         inherit resumeCommand;
       }

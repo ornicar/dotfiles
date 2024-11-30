@@ -3,6 +3,8 @@
   environment.systemPackages = [ pkgs.fw-ectool ];
 
   systemd.services.thib-ectool-monitor = {
+    description = "Read fan RPM from ectool and write to /tmp/ectool-fan-rpm";
+    wantedBy = [ "multi-user.target" ];
     script = let
       sed = "${pkgs.gnused}/bin/sed";
       ectool = "${pkgs.fw-ectool}/bin/ectool";

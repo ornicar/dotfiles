@@ -51,7 +51,7 @@
     gitCredentialHelper.enable = true;
   };
 
-  programs.zsh.shellAliases = lib.mkAfter {
+  programs.zsh.shellAliases = {
     "t" = "lazygit";
     "g" = "git";
     "gs" = "git status";

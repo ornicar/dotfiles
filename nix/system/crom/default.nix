@@ -7,6 +7,7 @@
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     ./amdgpu.nix
     ./keyd.nix
+    ../lichess
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/coolercontrol.nix

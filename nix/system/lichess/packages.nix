@@ -8,12 +8,10 @@
     coursier # required by metals
     metals
     dart-sass
+    mongodb
     redis
     inputs.bbpPairings.packages.x86_64-linux.default
     inputs.picfit.defaultPackage.x86_64-linux
   ];
 
-  programs.java.enable = true;
-
-  services.redis.servers."".enable = true;
 }

@@ -5,6 +5,7 @@
     inputs.nixos-hardware.nixosModules.framework-16-7040-amd
     ./ectool.nix
     ./keyd.nix
+    ../lichess
     ../modules/common.nix
     ../modules/bluetooth.nix
     # ../modules/coolercontrol.nix

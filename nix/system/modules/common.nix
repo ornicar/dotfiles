@@ -15,7 +15,6 @@
     ./coding.nix
     ./fonts.nix
     ./keyboard.nix
-    ./lila.nix
     ./linux.nix
     ./locale.nix
     ./mongodb.nix

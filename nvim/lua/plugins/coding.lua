@@ -11,26 +11,27 @@ return {
     },
   },
 
-  -- auto completion
+  -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {
-    "hrsh7th/nvim-cmp",
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.mapping = cmp.mapping.preset.insert({
-        ["<C-Space>"] = function()
-          if cmp.visible() then
-            cmp.confirm({ select = true })
-          else
-            cmp.complete()
-          end
-        end,
-        ["<C-c>"] = cmp.mapping.abort(),
-      })
-    end,
+    "saghen/blink.cmp",
+    opts = {
+      sources = {
+        completion = {
+          enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
+        },
+      },
+      keymap = {
+        preset = "enter",
+        ["<C-Space>"] = {
+          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        },
+      },
+    },
   },
 
   -- 30ms of load time for not much use
-  { "rafa madriz/friendly-snippets", enabled = false },
+  { "rafamadriz/friendly-snippets", enabled = false },
   { "garymjr/nvim-snippets", enabled = false },
 
   { "echasnovski/mini.pairs", enabled = false },

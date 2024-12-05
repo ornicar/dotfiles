@@ -17,8 +17,8 @@
         spotify = "${pkgs.playerctl}/bin/playerctl -p spotify";
       in lib.mkAfter {
         "${modifier}+equal" = "exec ${menu}";
-        "XF86MonBrightnessDown" = "exec 'light -U 15'";
-        "XF86MonBrightnessUp" = "exec 'light -A 15'";
+        "XF86MonBrightnessDown" = "exec 'light -U 5'";
+        "XF86MonBrightnessUp" = "exec 'light -A 5'";
         "XF86AudioRaiseVolume" =
           "exec 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0'";
         "XF86AudioLowerVolume" =

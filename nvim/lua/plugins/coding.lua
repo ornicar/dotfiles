@@ -14,20 +14,21 @@ return {
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {
     "saghen/blink.cmp",
-    opts = {
-      sources = {
-        completion = {
-          enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
-        },
-      },
-      keymap = {
-        preset = "enter",
-        ["<C-Space>"] = {
-          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
-          "fallback",
-        },
-      },
-    },
+    opts = function(_, opts)
+      opts.sources.completion.enabled_providers = { "lsp", "path", "buffer", "copilot" }
+      opts.keymap = {
+        preset = nil,
+        ["<C-h>"] = { "select_and_accept" },
+        ["<C-space>"] = { "accept" },
+        ["<C-c>"] = { "hide" },
+
+        ["<C-e>"] = { "select_prev" },
+        ["<C-n>"] = { "select_next" },
+
+        ["<up>"] = { "scroll_documentation_up" },
+        ["<down>"] = { "scroll_documentation_down" },
+      }
+    end,
   },
 
   -- 30ms of load time for not much use

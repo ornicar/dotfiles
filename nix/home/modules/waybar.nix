@@ -35,7 +35,7 @@
           format-alt = "{:%Y-%m-%d}";
         };
         "memory" = {
-          format = " {percentage}%  {swapPercentage}%";
+          format = "  {percentage}%   {swapPercentage}%";
           states = {
             warning = 70;
             critical = 85;

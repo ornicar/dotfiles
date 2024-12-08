@@ -28,6 +28,7 @@ return {
         ["<up>"] = { "scroll_documentation_up" },
         ["<down>"] = { "scroll_documentation_down" },
       }
+      opts.completion.accept.auto_brackets.enabled = false
     end,
   },
 

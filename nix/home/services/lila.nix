@@ -41,9 +41,8 @@
     lila-fishnet = {
       Unit = { Description = "lila-fishnet"; };
       Service = {
-        ExecStart =
-          "${bloop} run lila-fishnet -m play.core.server.ProdServerStart -c ${home}/lila-fishnet/.bloop";
-        ExecStop = "rm ${home}/lila-fishnet/RUNNING_PID";
+        WorkingDirectory = "${home}/lila-fishnet";
+        ExecStart = "${bloop} run app";
       };
       Install = { WantedBy = [ "lila.target" ]; };
     };

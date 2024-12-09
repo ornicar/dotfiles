@@ -21,12 +21,8 @@ return {
         ["<C-h>"] = { "select_and_accept" },
         ["<C-space>"] = { "accept" },
         ["<C-c>"] = { "hide" },
-
-        ["<C-e>"] = { "select_prev" },
-        ["<C-n>"] = { "select_next" },
-
-        ["<up>"] = { "scroll_documentation_up" },
-        ["<down>"] = { "scroll_documentation_down" },
+        ["<up>"] = { "select_prev" },
+        ["<down>"] = { "select_next" },
       }
       opts.completion.accept.auto_brackets.enabled = false
     end,

@@ -102,6 +102,7 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      input = { enabled = true }, -- temp workaround snacks bug (?)
       dashboard = {
         preset = {
           keys = {

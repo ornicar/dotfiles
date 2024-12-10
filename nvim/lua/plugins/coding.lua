@@ -19,12 +19,21 @@ return {
       opts.keymap = {
         preset = nil,
         ["<C-h>"] = { "select_and_accept" },
-        ["<C-space>"] = { "accept" },
+        ["<C-space>"] = { "show", "accept" },
         ["<C-c>"] = { "hide" },
         ["<up>"] = { "select_prev" },
         ["<down>"] = { "select_next" },
       }
       opts.completion.accept.auto_brackets.enabled = false
+      opts.completion.documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 50,
+        update_delay_ms = 50,
+      }
+      -- Displays a preview of the selected item on the current line
+      opts.completion.ghost_text = {
+        enabled = true,
+      }
     end,
   },
 

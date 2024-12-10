@@ -10,6 +10,7 @@
     dart-sass
     mongodb
     redis
+    fishnet
     inputs.bbpPairings.packages.x86_64-linux.default
     inputs.picfit.defaultPackage.x86_64-linux
   ];

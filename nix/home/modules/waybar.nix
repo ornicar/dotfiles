@@ -16,8 +16,8 @@
         idle_inhibitor = {
           format = "{icon}";
           format-icons = {
-            activated = "";
-            deactivated = "";
+            activated = " ";
+            deactivated = " ";
           };
         };
         # "sway/language" = {

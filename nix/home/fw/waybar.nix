@@ -43,7 +43,7 @@
         };
         "backlight" = {
           format = "{icon} {percent}%";
-          format-icons = [ "" "" "" "" "" "" "" "" "" ];
+          format-icons = [ " " " " " " " " " " " " " " " " " " ];
         };
         "battery" = {
           interval = 5;
@@ -56,7 +56,7 @@
           format-charging = " {capacity}% {power:2.1f}W";
           format-plugged = " {capacity}% {power:2.1f}W";
           format-alt = "{icon} {time}";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [ " " " " " " " " " " ];
         };
         "power-profiles-daemon" = {
           format = "{icon}";
@@ -66,9 +66,9 @@
           tooltip = true;
           format-icons = {
             default = "-";
-            performance = "";
-            balanced = "";
-            "power-saver" = "";
+            performance = " ";
+            balanced = " ";
+            "power-saver" = " ";
           };
         };
       };

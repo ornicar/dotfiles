@@ -94,6 +94,7 @@ with config.lib.stylix.colors.withHashtag; {
         "${modifier}+shift+Right" = "move right";
 
         "F2" = "exec 'systemctl --user restart lila'";
+        "F3" = "exec 'systemctl --user restart lila-ws'";
 
         "${modifier}+${left}" = "focus left";
         "${modifier}+${right}" = "focus right";

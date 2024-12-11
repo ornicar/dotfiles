@@ -15,7 +15,7 @@ return {
   {
     "saghen/blink.cmp",
     opts = function(_, opts)
-      opts.sources.completion.enabled_providers = { "lsp", "path", "buffer", "copilot" }
+      opts.sources.completion.enabled_providers = { "copilot", "lsp", "buffer", "path" }
       opts.keymap = {
         preset = nil,
         ["<C-h>"] = { "select_and_accept" },

@@ -15,8 +15,7 @@
     python3
     ruby
     scala-cli
-    # corepack
-    pnpm
+    nodejs_23
     delta
     ruff-lsp
     pyright

@@ -30,3 +30,6 @@ const secImportMany = (coll, query, port, dbName = 'lichess') => {
   });
   console.log(`Inserted: ${ins}, Duplicates: ${dup}`);
 }
+
+const uploadOne = (coll, id, port, dbName = 'lichess') =>
+  prod(port || ports.kaiju, dbName).getCollection(coll).insertOne(db[coll].findOne({ _id: id }));

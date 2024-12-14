@@ -6,7 +6,6 @@ return {
     ft = { "scala", "sbt", "java" },
     -- stylua: ignore
     keys = {
-      {'<leader>me', function() require "telescope".extensions.metals.commands() end, desc="Metals commands"},
       {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
     },
     config = function()

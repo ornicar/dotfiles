@@ -24,10 +24,10 @@
     }).mongodb-7_0;
 
     # Get latest bloop
-    # bloop = (import inputs.nixpkgs-master {
-    #   system = final.system;
-    #   config.allowunfree = true;
-    # }).bloop;
+    bloop = (import inputs.bloop {
+      system = final.system;
+      config.allowunfree = true;
+    }).bloop;
 
     #   stockfish = let
     #     arch = "x86-64-bmi2";

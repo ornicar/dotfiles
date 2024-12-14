@@ -20,3 +20,4 @@ vim.opt.virtualedit = "block" -- Allow going past the end of line in visual bloc
 vim.opt.splitkeep = "screen"
 
 vim.g.deprecation_warnings = true
+vim.g.snacks_animate = false

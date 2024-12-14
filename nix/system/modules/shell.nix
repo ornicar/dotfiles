@@ -35,6 +35,7 @@
     cmatrix
     sysz
     systemctl-tui
+    chafa # terminal image viewer
   ];
 
   programs.gnupg.agent = {

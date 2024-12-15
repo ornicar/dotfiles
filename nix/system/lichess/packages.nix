@@ -5,7 +5,7 @@
     corepack_23 # gives a pnpm bundled with node23
     sbt
     bloop
-    # coursier # required by metals
+    coursier # required by metals
     metals
     dart-sass
     mongodb

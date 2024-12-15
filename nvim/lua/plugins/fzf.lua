@@ -32,7 +32,7 @@ return {
         {
           "<leader>mt",
           function()
-            LazyVim.pick("files", { cmd = "ls", cwd = vim.fn.expand("%:p:h") })
+            LazyVim.pick("files", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Find Files (Buffer dir)",
         },
@@ -42,7 +42,7 @@ return {
         {
           "<leader><space>t",
           function()
-            require("telescope.builtin").live_grep({ cwd = vim.fn.expand("%:p:h") })
+            LazyVim.pick("live_grep", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Grep (Buffer dir)",
         },
@@ -51,10 +51,7 @@ return {
         {
           "<leader>T",
           function()
-            require("telescope.builtin").grep_string({
-              word_match = "-w",
-              cwd = require("telescope.utils").buffer_dir(),
-            })
+            LazyVim.pick("grep_cword", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Word (Buffer dir)",
         },

@@ -10,18 +10,18 @@ end
 
 return {
   -- metals still needs telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      {
-        "<leader>me",
-        function()
-          require("telescope").extensions.metals.commands()
-        end,
-        desc = "Metals commands",
-      },
-    },
-  },
+  -- {
+  --   "nvim-telescope/telescope.nvim",
+  --   keys = {
+  --     {
+  --       "<leader>me",
+  --       function()
+  --         require("telescope").extensions.metals.commands()
+  --       end,
+  --       desc = "Metals commands",
+  --     },
+  --   },
+  -- },
   {
     "ibhagwan/fzf-lua",
     opts = {

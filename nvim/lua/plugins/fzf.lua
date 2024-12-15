@@ -26,10 +26,11 @@ return {
     "ibhagwan/fzf-lua",
     opts = {
       fzf_colors = true,
+      hls = { border = "Constant" },
       winopts = {
-        width = 0.95,
-        height = 0.9,
-        border = false,
+        width = 0.85,
+        height = 0.8,
+        border = true,
         fullscreen = true,
         preview = {
           scrollchars = { "┃", "" },

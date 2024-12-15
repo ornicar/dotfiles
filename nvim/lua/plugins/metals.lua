@@ -2,11 +2,12 @@ return {
 
   -- scala lsp
   {
-    "scalameta/nvim-metals",
+    dir = "~/nvim-metals",
     ft = { "scala", "sbt", "java" },
     -- stylua: ignore
     keys = {
       {'<leader>mc', function() require "metals".compile_cascade() end, desc="Metals compile cascade"},
+      {'<leader>me', function() require "metals".fzf_menu() end, desc="Metals menu"},
     },
     config = function()
       local metals = require("metals")

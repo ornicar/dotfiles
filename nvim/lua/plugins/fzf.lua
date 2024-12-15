@@ -33,7 +33,7 @@ return {
         fullscreen = true,
         preview = {
           scrollchars = { "┃", "" },
-          delay = 0,
+          delay = 20,
         },
       },
     },
@@ -86,7 +86,7 @@ return {
         -- { "<leader>mo", "<cmd>Telescope notify<cr>", desc = "Notifications" },
         -- lsp
         {
-          "<leader>o",
+          "<space>o",
           function()
             require("fzf-lua").lsp_document_symbols({
               regex_filter = symbols_filter,
@@ -95,7 +95,7 @@ return {
           desc = "Goto Symbol",
         },
         {
-          "<leader>O",
+          "<space>O",
           function()
             require("fzf-lua").lsp_live_workspace_symbols({
               regex_filter = symbols_filter,

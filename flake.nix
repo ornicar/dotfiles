@@ -26,8 +26,6 @@
 
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";
-    bloop.url =
-      "github:DevInsideYou/nixpkgs/8e34f54588fc570c79976acc744ba2e58c1dd272";
 
     # lan-mouse.url = "github:feschber/lan-mouse";
   };

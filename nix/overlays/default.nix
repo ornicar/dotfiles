@@ -24,7 +24,7 @@
     }).mongodb-7_0;
 
     # Get latest bloop
-    bloop = (import inputs.bloop {
+    bloop = (import inputs.nixpkgs-master {
       system = final.system;
       config.allowunfree = true;
     }).bloop;

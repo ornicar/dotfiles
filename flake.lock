@@ -85,22 +85,6 @@
         "type": "github"
       }
     },
-    "bloop": {
-      "locked": {
-        "lastModified": 1734104804,
-        "narHash": "sha256-ba1skRJv5/55o2cSgWNzkZN6Fwmde9sYAlM0mGY0Ir4=",
-        "owner": "DevInsideYou",
-        "repo": "nixpkgs",
-        "rev": "8e34f54588fc570c79976acc744ba2e58c1dd272",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DevInsideYou",
-        "repo": "nixpkgs",
-        "rev": "8e34f54588fc570c79976acc744ba2e58c1dd272",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -306,7 +290,6 @@
     "root": {
       "inputs": {
         "bbpPairings": "bbpPairings",
-        "bloop": "bloop",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",

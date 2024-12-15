@@ -21,7 +21,7 @@ return {
     "ibhagwan/fzf-lua",
     opts = {
       fzf_colors = true,
-      hls = { border = "Constant" },
+      hls = { border = "Function" },
       winopts = {
         -- width = 0.75,
         -- height = 0.7,

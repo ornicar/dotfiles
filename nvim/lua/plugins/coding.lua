@@ -16,7 +16,6 @@ return {
     "saghen/blink.cmp",
     opts = function(_, opts)
       opts.sources.default = { "copilot", "lsp", "buffer", "path" }
-      opts.sources.providers.copilot.score_offset = 5
       opts.keymap = {
         preset = nil,
         ["<C-h>"] = { "select_and_accept" },

@@ -8,6 +8,14 @@ local function symbols_filter(entry, ctx)
   return vim.tbl_contains(ctx.symbols_filter, entry.kind)
 end
 
+local function pick(command, opts)
+  opts = opts or {}
+  if not opts.winopts then
+    opts.winopts = { fullscreen = true, border = false }
+  end
+  return LazyVim.pick(command, opts)
+end
+
 return {
   {
     "ibhagwan/fzf-lua",
@@ -15,10 +23,10 @@ return {
       fzf_colors = true,
       hls = { border = "Constant" },
       winopts = {
-        width = 0.85,
-        height = 0.8,
+        -- width = 0.75,
+        -- height = 0.7,
         border = true,
-        fullscreen = true,
+        fullscreen = false,
         preview = {
           scrollchars = { "┃", "" },
           delay = 20,
@@ -27,31 +35,35 @@ return {
     },
     keys = function()
       return {
-        { "<leader>mr", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
-        { "<leader>ms", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+        {
+          "<leader>mr",
+          pick("files", { root = false }),
+          desc = "Find Files (cwd)",
+        },
+        { "<leader>ms", pick("files"), desc = "Find Files (Root Dir)" },
         {
           "<leader>mt",
           function()
-            LazyVim.pick("files", { cwd = vim.fn.expand("%:p:h") })()
+            pick("files", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Find Files (Buffer dir)",
         },
 
-        { "<leader><space>r", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
-        { "<leader><space>s", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
+        { "<leader><space>r", pick("live_grep", { root = false }), desc = "Grep (cwd)" },
+        { "<leader><space>s", pick("live_grep"), desc = "Grep (Root Dir)" },
         {
           "<leader><space>t",
           function()
-            LazyVim.pick("live_grep", { cwd = vim.fn.expand("%:p:h") })()
+            pick("live_grep", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Grep (Buffer dir)",
         },
-        { "<leader>R", LazyVim.pick("grep_cword", { root = false }), desc = "Word (cwd)" },
-        { "<leader>S", LazyVim.pick("grep_cword"), desc = "Word (Root Dir)" },
+        { "<leader>R", pick("grep_cword", { root = false }), desc = "Word (cwd)" },
+        { "<leader>S", pick("grep_cword"), desc = "Word (Root Dir)" },
         {
           "<leader>T",
           function()
-            LazyVim.pick("grep_cword", { cwd = vim.fn.expand("%:p:h") })()
+            pick("grep_cword", { cwd = vim.fn.expand("%:p:h") })()
           end,
           desc = "Word (Buffer dir)",
         },

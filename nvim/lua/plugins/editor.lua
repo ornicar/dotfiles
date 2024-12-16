@@ -1,10 +1,8 @@
 return {
   -- sudo with password prompt
-  {
-    "lambdalisue/suda.vim",
-    cmd = "SudaWrite",
-  },
-
+  -- {
+  --   "lambdalisue/suda.vim",
+  -- },
   -- yank ring
   {
     "gbprod/yanky.nvim",

@@ -36,13 +36,4 @@ return {
       },
     },
   },
-
-  -- scala lsp
-  {
-    "scalameta/nvim-metals",
-    -- stylua: ignore
-    keys = {
-      { '<leader>mc', function() require "metals".compile_cascade() end,               desc = "Metals compile cascade" },
-    },
-  },
 }

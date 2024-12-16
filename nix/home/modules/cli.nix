@@ -1,11 +1,13 @@
 { config, ... }: {
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
     # defaultCommand = "fd --type f'";
     defaultCommand = "rg --files --hidden";
-    # defaultOptions = [ "--bind=ctrl-e:up" ];
+    defaultOptions = [ "--no-mouse" "--info=inline-right" ];
   };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;

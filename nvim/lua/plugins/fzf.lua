@@ -89,12 +89,12 @@ return {
         },
         { "<leader>H", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
         { "<leader>mq", "<cmd>FzfLua commands<cr>", desc = "Commands" },
+        { "<leader>my", "<cmd>YankyRingHistory<cr>", desc = "Yank History" },
         { "qq", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
         -- { "q/", "<cmd>Telescope search_history<cr>", desc = "Command History" },
         { "<leader>mn", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
         { "<leader>qf", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
         { "<leader>mm", "<cmd>FzfLua resume<cr>", desc = "Resume" },
-        -- { "<leader>mo", "<cmd>Telescope notify<cr>", desc = "Notifications" },
         -- lsp
         {
           "<space>o",

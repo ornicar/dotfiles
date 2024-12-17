@@ -28,15 +28,22 @@ return {
     "ibhagwan/fzf-lua",
     opts = {
       fzf_colors = true,
-      hls = { border = "Function" },
+      fzf_opts = {
+        ["--no-scrollbar"] = true,
+        ["--border"] = "none",
+      },
+      hls = {
+        border = "Function",
+        preview_border = "Function",
+      },
       winopts = {
-        -- width = 0.75,
-        -- height = 0.7,
+        -- width = 0.85,
+        -- height = 0.8,
         border = true,
         fullscreen = false,
         preview = {
+          default = "bat", -- faster, no delay required
           scrollchars = { "┃", "" },
-          delay = 20,
         },
       },
     },
@@ -82,7 +89,7 @@ return {
         },
         { "<leader>H", "<cmd>FzfLua help_tags<cr>", desc = "Help Pages" },
         { "<leader>mq", "<cmd>FzfLua commands<cr>", desc = "Commands" },
-        -- { "qq", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+        { "qq", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
         -- { "q/", "<cmd>Telescope search_history<cr>", desc = "Command History" },
         { "<leader>mn", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
         { "<leader>qf", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },

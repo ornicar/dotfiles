@@ -8,10 +8,17 @@ local function symbols_filter(entry, ctx)
   return vim.tbl_contains(ctx.symbols_filter, entry.kind)
 end
 
+local fullscreen = { fullscreen = true, border = false }
+
+local lsp_symbols_opts = {
+  regex_filter = symbols_filter,
+  winopts = fullscreen,
+}
+
 local function pick(command, opts)
   opts = opts or {}
   if not opts.winopts then
-    opts.winopts = { fullscreen = true, border = false }
+    opts.winopts = fullscreen
   end
   return LazyVim.pick(command, opts)
 end
@@ -85,18 +92,14 @@ return {
         {
           "<space>o",
           function()
-            require("fzf-lua").lsp_document_symbols({
-              regex_filter = symbols_filter,
-            })
+            require("fzf-lua").lsp_document_symbols(lsp_symbols_opts)
           end,
           desc = "Goto Symbol",
         },
         {
           "<space>O",
           function()
-            require("fzf-lua").lsp_live_workspace_symbols({
-              regex_filter = symbols_filter,
-            })
+            require("fzf-lua").lsp_live_workspace_symbols(lsp_symbols_opts)
           end,
           desc = "Goto Symbol (Workspace)",
         },

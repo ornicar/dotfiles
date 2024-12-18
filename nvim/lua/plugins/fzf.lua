@@ -110,8 +110,8 @@ return {
           end,
           desc = "Goto Symbol (Workspace)",
         },
-        { "<leader>i", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics" },
-        { "<leader>I", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "Workspace Diagnostics" },
+        { "<space>i", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics" },
+        { "<space>I", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "Workspace Diagnostics" },
         { "<leader>mk", "<cmd>FzfLua keymaps<cr>", desc = "Key Maps" },
         -- git
         { "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },

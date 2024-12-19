@@ -82,7 +82,7 @@ return {
           end,
           desc = "Word (Buffer dir)",
         },
-        { "<leader>mv", "<cmd>FzfLua oldfiles<cr>", desc = "Recent files" },
+        { "<leader>mv", pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent files" },
         {
           "<leader>mb",
           "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",

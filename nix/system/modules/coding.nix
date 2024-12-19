@@ -5,6 +5,7 @@
     git
     lazygit
     gh
+    gh-copilot
     gcc
     gnumake
     go

@@ -29,6 +29,8 @@ return {
     opts = {
       fzf_colors = true,
       fzf_opts = {
+        ["--layout"] = "default",
+        -- ["--no-scrollbar"] = false,
         ["--border"] = "none",
       },
       hls = {
@@ -38,7 +40,7 @@ return {
       winopts = {
         -- width = 0.85,
         -- height = 0.8,
-        border = true,
+        border = "none",
         fullscreen = false,
         preview = {
           default = "bat", -- faster, no delay required

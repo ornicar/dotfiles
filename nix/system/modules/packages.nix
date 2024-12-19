@@ -12,6 +12,7 @@
     htop
     firefox
     google-chrome
+    zip
     unzip
     dtrx
     signal-desktop

@@ -9,6 +9,7 @@ local function symbols_filter(entry, ctx)
 end
 
 local fullscreen = { fullscreen = true, border = false }
+local large = { width = 0.85, height = 0.8 }
 
 local lsp_symbols_opts = {
   regex_filter = symbols_filter,
@@ -38,14 +39,18 @@ return {
         preview_border = "Function",
       },
       winopts = {
-        -- width = 0.85,
-        -- height = 0.8,
-        border = "none",
         fullscreen = false,
         preview = {
+          delay = 0,
           default = "bat", -- faster, no delay required
-          scrollchars = { "┃", "" },
+          border = "noborder",
         },
+      },
+      buffers = {
+        winopts = large,
+      },
+      lsp = {
+        winopts = large,
       },
     },
     keys = function()

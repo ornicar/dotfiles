@@ -31,12 +31,10 @@ return {
       fzf_colors = true,
       fzf_opts = {
         ["--layout"] = "default",
-        -- ["--no-scrollbar"] = false,
-        ["--border"] = "none",
       },
       hls = {
-        border = "Function",
-        preview_border = "Function",
+        border = "Argument",
+        preview_border = "Argument",
       },
       winopts = {
         fullscreen = false,

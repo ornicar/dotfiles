@@ -30,17 +30,14 @@ return {
       fzf_colors = true,
       fzf_opts = {
         ["--layout"] = "default",
-        -- ["--no-scrollbar"] = false,
-        ["--border"] = "none",
       },
       hls = {
-        border = "Function",
-        preview_border = "Function",
+        border = "Argument",
+        preview_border = "Argument",
       },
       winopts = {
         -- width = 0.85,
         -- height = 0.8,
-        border = "none",
         fullscreen = false,
         preview = {
           default = "bat", -- faster, no delay required

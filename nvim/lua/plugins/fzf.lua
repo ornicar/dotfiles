@@ -48,7 +48,7 @@ return {
         winopts = large,
       },
       lsp = {
-        winopts = large,
+        winopts = fullscreen,
       },
     },
     keys = function()

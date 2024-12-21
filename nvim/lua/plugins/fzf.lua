@@ -9,7 +9,7 @@ local function symbols_filter(entry, ctx)
 end
 
 local fullscreen = { fullscreen = true, border = false }
-local large = { width = 0.85, height = 0.8 }
+local large = { width = 0.9, height = 0.85 }
 
 local lsp_symbols_opts = {
   regex_filter = symbols_filter,
@@ -31,10 +31,6 @@ return {
       fzf_colors = true,
       fzf_opts = {
         ["--layout"] = "default",
-      },
-      hls = {
-        border = "Argument",
-        preview_border = "Argument",
       },
       winopts = {
         fullscreen = false,

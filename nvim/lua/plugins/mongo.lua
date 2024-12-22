@@ -1,0 +1,3 @@
+return {
+  { "jrop/mongo.nvim" },
+}

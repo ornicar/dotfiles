@@ -9,6 +9,8 @@
           "leftcontrol:C" = {
             j = "down";
             k = "up";
+            comma = "tab";
+            m = "S-tab";
             # h = "left";
             # u = "right"; ctrl+l focuses the address bar
           };

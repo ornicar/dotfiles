@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -16,7 +16,7 @@
         options = { "navigate" = true; };
       };
       diff.tool = "meld";
-      web.browser = "google-chrome-stable";
+      web.browser = "firefox";
       push.default = "tracking";
       push.autoSetupRemote = true;
       pull.rebase = false;

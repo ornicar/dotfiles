@@ -13,7 +13,7 @@
     settings = {
       enable_audio_bell = false;
       cursor_blink_interval = 0;
-      open_url_with = "google-chrome-stable";
+      open_url_with = "firefox";
     };
     shellIntegration.enableZshIntegration = true;
     keybindings = {
@@ -35,7 +35,7 @@
       #   background_opacity 1.000000
       #   cursor_blink_interval 0
       #   enable_audio_bell no
-      #   open_url_with google-chrome-stable
+      #   open_url_with firefox
       # '';
       scrollback = ''
         scrollback_lines 9000

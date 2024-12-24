@@ -28,6 +28,7 @@
     ./stylix.nix
     ./sway.nix
     ./users.nix
+    ./firefox.nix
     ./zeroad.nix
   ];
 

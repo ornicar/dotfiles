@@ -180,7 +180,7 @@ with config.lib.stylix.colors.withHashtag; {
       workspace number 1
       exec kitty -1
       workspace number 2
-      exec google-chrome-stable
+      exec firefox
     '';
   };
 

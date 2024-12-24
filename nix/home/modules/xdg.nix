@@ -1,10 +1,10 @@
 { ... }: {
   # for electron apps
-  # home.sessionVariables.DEFAULT_BROWSER = "google-chrome-stable";
+  # home.sessionVariables.DEFAULT_BROWSER = "firefox";
 
   xdg.mimeApps = {
     enable = true;
-    defaultApplications = let browser = "google-chrome.desktop";
+    defaultApplications = let browser = "firefox";
     in {
       "text/html" = browser;
       "x-scheme-handler/http" = browser;

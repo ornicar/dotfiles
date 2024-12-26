@@ -23,8 +23,8 @@ map("n", "<leader>e", "<C-w>l", { desc = "Go to right window" })
 -- map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- buffers
-map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<C-tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Prev buffer" })
+map("n", "<C-S-tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Next buffer" })
 map("n", "<leader>md", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>wd", function()
   Snacks.bufdelete()

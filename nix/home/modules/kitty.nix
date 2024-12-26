@@ -53,6 +53,14 @@
         # Browse output of the last shell command in nvim
         map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
       '';
+      forwardMaps = ''
+        # Instead of handling these at the kitty level,
+        # we rewrite these events so that the shell program,
+        # probably neovim, can use them.
+        # https://www.reddit.com/r/neovim/comments/12hyi9t/make_scr_cscr_stab_ctab_work_in_neovim_kitty/
+        map ctrl+tab                 send_text all \x1b[9;5u
+        map ctrl+shift+tab           send_text all \x1b[9;6u
+      '';
       theme = ''
         # The basic colors
         foreground              #cdd6f4
@@ -127,9 +135,8 @@
       '';
     in ''
       ${scrollback}
-
       ${remote}
-
+      ${forwardMaps}
       ${theme}
     '';
   };

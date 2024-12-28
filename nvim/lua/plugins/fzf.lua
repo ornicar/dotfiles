@@ -43,6 +43,9 @@ return {
       buffers = {
         winopts = large,
       },
+      diagnostics = {
+        winopts = fullscreen,
+      },
       lsp = {
         winopts = fullscreen,
       },

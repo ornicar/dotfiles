@@ -29,7 +29,7 @@
     ./sway.nix
     ./users.nix
     ./firefox.nix
-    ./zeroad.nix
+    # ./zeroad.nix
   ];
 
   services.dbus.enable = true;

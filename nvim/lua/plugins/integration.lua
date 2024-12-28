@@ -35,8 +35,4 @@ return {
   },
   { "noice.nvim", cond = not vim.g.started_by_firenvim },
   { "lualine.nvim", cond = not vim.g.started_by_firenvim },
-  -- {
-  --   "folke/noice.nvim",
-  --   enabled = not vim.g.started_by_firenvim,
-  -- },
 }

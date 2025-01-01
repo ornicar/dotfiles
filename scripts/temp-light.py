@@ -14,7 +14,7 @@ s.auth = ('CCAdmin', 'ygNa96IfIBx5EbCT')
 s.post(f"{api_url}/login")
 s.headers.update({'content-type': 'application/json'})
 
-ambient = 25
+ambient = 20
 
 def temp_to_factor(temp):
     min_temp = ambient + 20

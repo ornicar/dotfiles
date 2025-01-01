@@ -33,7 +33,7 @@
       Service = {
         WorkingDirectory = "${home}/lila-ws";
         ExecStart =
-          "${bloop} run lila-ws -- -J-Dcsrf.origin=http://l.org -J-Dlogback.configurationFile=logback.dev.xml";
+          "${bloop} run lila-ws -- -J-Dcsrf.origin=http://l.org -J-Dlogback.configurationFile=logback.dev.xml -J-Dkamon.influxdb.hostname=monitor.lichess.ovh";
         ExecStop = "${pkgs.psmisc}/bin/fuser -k 9664/tcp -TERM";
       };
       Install = { WantedBy = [ "lila.target" ]; };

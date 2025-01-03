@@ -11,6 +11,7 @@
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/coolercontrol.nix
+    ../modules/steam.nix
   ];
 
   # Open ports in the firewall.

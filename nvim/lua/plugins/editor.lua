@@ -16,10 +16,10 @@ return {
       { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Cursor", },
       { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, desc = "Put Yanked Text Before Cursor", },
       { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" }, desc = "Put Yanked Text After Selection", },
-      { "<c-,>", "<Plug>(YankyCycleForward)" },
-      { "<c-.>", "<Plug>(YankyCycleBackward)" },
       { "]p", "<Plug>(YankyPutIndentAfterLinewise)", desc = "Put Indented After Cursor (Linewise)" },
       { "[p", "<Plug>(YankyPutIndentBeforeLinewise)", desc = "Put Indented Before Cursor (Linewise)" },
+      { "]g", "<Plug>(YankyCycleForward)" },
+      { "[g", "<Plug>(YankyCycleBackward)" },
     },
   },
 

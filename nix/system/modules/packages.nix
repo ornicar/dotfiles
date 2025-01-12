@@ -31,5 +31,6 @@
     mpv
     vlc
     evince # pdf viewer
+    libreoffice-qt
   ];
 }

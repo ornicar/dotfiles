@@ -46,7 +46,7 @@ def temp_to_rgb_purple(temp):
     f = temp_to_factor(int(temp * 10) / 10)
     hue = 250 + f * 110
     saturation = 1
-    value = min(1, 0.1 + ease_in_out_quad(f))
+    value = min(1, 0.2 + ease_in_out_quad(f))
     r, g, b = colorsys.hsv_to_rgb(hue / 360, saturation, value)
     rgb = [int(x * 255) for x in [r, g, b]]
     # print(f"temp: {int(temp * 10)}, {int(f * 100)}%, {int(hue)} {int(saturation * 100)} {int(value * 100)} rgb: {rgb}")

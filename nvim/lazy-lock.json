@@ -46,7 +46,7 @@
   "replacer.nvim": { "branch": "master", "commit": "32e1713230844fa52f7f0598c59295de3c90dc95" },
   "rustaceanvim": { "branch": "master", "commit": "ff10ab2bdcdbd55fdd9651d147a879bad7900647" },
   "showkeys": { "branch": "main", "commit": "891f95ef94ac80bc7690a0df09c6112b4b822cac" },
-  "snacks.nvim": { "branch": "main", "commit": "2cd3c13ad791d77a55b2ad7744b68c565f3efe31" },
+  "snacks.nvim": { "branch": "main", "commit": "270cff8b6cc66a7ea325cfe13b6c41fd9fbb5b3e" },
   "timerly": { "branch": "main", "commit": "6207e6afdb1068aa97f525e311c8960d91523732" },
   "trouble.nvim": { "branch": "main", "commit": "4d36b8979287f5facc03fd6d955ace67db667e1d" },
   "ts-comments.nvim": { "branch": "main", "commit": "872dcfa0418f4a33b7437fb4d9f4e89f2f000d74" },

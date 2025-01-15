@@ -44,7 +44,7 @@
         "network" = {
           interval = 1;
           # "format-wifi" = " {essid} {signalStrength}% {bandwidthTotalBytes}";
-          "format-wifi" = " {essid} {signalStrength}%";
+          "format-wifi" = "  {essid} {signalStrength}%";
           "tooltip-format" = "{bandwidthTotalBytes} {ifname} via {gwaddr}";
           "format-linked" = " {ifname} (No IP)";
           "format-disconnected" = "Disconnected ⚠ {ifname}";
@@ -70,6 +70,9 @@
     };
     style = # css
       ''
+        window#waybar {
+          margin: 0;
+        }
         window#waybar > box {
           opacity: 0.9;
         }

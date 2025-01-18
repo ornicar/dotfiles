@@ -70,9 +70,6 @@
     };
     style = # css
       ''
-        window#waybar {
-          margin: 0;
-        }
         window#waybar > box {
           opacity: 0.9;
         }

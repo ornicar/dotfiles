@@ -11,6 +11,7 @@ return {
         blame_line = large,
         notification_history = large,
       },
+      layout = {},
       dashboard = {
         preset = {
           keys = {

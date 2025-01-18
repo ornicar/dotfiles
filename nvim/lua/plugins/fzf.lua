@@ -27,6 +27,7 @@ end
 return {
   {
     "ibhagwan/fzf-lua",
+    enabled = false,
     opts = {
       fzf_colors = true,
       fzf_opts = {

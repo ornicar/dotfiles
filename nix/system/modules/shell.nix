@@ -29,8 +29,8 @@
     pass
     gnupg
     pinentry-tty
-    # bat-extras.batman
-    # bat-extras.batwatch
+    bat-extras.batman
+    bat-extras.batwatch
     tmux
     cmatrix
     sysz

@@ -94,7 +94,7 @@ return {
         { "<leader>mm", function() Snacks.picker.resume() end, desc = "Resume" },
         { "<leader>mm", function() Snacks.picker.undo() end, desc = "Undo tree" },
         -- lsp
-        -- { "<space>o", function() Snacks.picker.lsp_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Symbols", has = "documentSymbol" },
+        { "<space>o", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
         -- {
         --   "<space>O",
         --   function()

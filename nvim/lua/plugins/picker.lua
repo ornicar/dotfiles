@@ -82,7 +82,7 @@ return {
         { "<leader>S", pick("grep_word"), desc = "Visual selection or word (Root Dir)", mode = { "n", "x" } },
         { "<leader>T", function() pick("grep_word", { cwd = vim.fn.expand("%:p:h") })() end, desc = "Word (Buffer dir)" },
 
-        { "<leader>mv", pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent files" },
+        { "<leader>mv", function() Snacks.picker.smart() end, desc = "Smart picker" },
         { "<leader>mb", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>H", function() Snacks.picker.help() end, desc = "Help Pages" },
         { "<leader>mq", function() Snacks.picker.commands() end, desc = "Commands" },
@@ -92,6 +92,7 @@ return {
         { "<leader>mn", function() Snacks.picker.man() end, desc = "Man Pages" },
         { "<leader>qf", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
         { "<leader>mm", function() Snacks.picker.resume() end, desc = "Resume" },
+        { "<leader>mm", function() Snacks.picker.undo() end, desc = "Undo tree" },
         -- lsp
         -- { "<space>o", function() Snacks.picker.lsp_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Symbols", has = "documentSymbol" },
         -- {

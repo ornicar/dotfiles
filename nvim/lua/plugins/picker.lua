@@ -1,3 +1,6 @@
+-- Not using `:LazyExtras` to avoid the default mappings
+vim.g.lazyvim_picker = "snacks"
+
 local function pick(command, opts)
   opts = opts or {}
   -- if not opts.winopts then
@@ -59,14 +62,25 @@ return {
             keys = {
               ["<Esc>"] = { "close", mode = "i" },
               ["<C-w>"] = { "<c-s-w>", mode = { "i" }, expr = true, desc = "delete word" },
+              ["<a-c>"] = { "toggle_cwd", mode = { "n", "i" } }, -- ??!! try
+              ["<c-t>"] = { "trouble_open", mode = { "n", "i" } },
             },
           },
+        },
+        actions = {
+          ---@param p snacks.Picker
+          toggle_cwd = function(p)
+            local root = LazyVim.root({ buf = p.input.filter.current_buf, normalize = true })
+            local cwd = vim.fs.normalize((vim.uv or vim.loop).cwd() or ".")
+            local current = p:cwd()
+            p:set_cwd(current == root and cwd or root)
+            p:find()
+          end,
         },
       },
     },
     -- stylua: ignore
-    keys = function()
-      return {
+    keys = {
         { "<leader>mr", pick("files", { root = false }), desc = "Find Files (cwd)" },
         { "<leader>ms", pick("files"), desc = "Find Files (Root Dir)" },
         { "<leader>mt", function() pick("files", { cwd = vim.fn.expand("%:p:h") })() end, desc = "Find Files (Buffer dir)" },
@@ -109,7 +123,6 @@ return {
         { "<leader>gc", function() Snacks.picker.git_log() end, desc = "Git Log" },
         { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
         { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
-      }
-    end,
+      },
   },
 }

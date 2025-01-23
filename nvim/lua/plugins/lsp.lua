@@ -6,13 +6,15 @@ return {
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- replace `{ "K", vim.lsp.buf.hover, desc = "Hover" }`
       keys[2] = {
-        "gn",
+        "ge",
         function()
           Snacks.picker.lsp_definitions()
         end,
         desc = "Goto Definition",
         has = "definition",
       }
+      keys[3] = { "gn", vim.lsp.buf.references, desc = "References", nowait = true }
+      keys[6] = { "gE", vim.lsp.buf.declaration, desc = "Goto Declaration" }
       keys[7] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
       keys[#keys + 1] = { "<leader>cd", ":LspRestart<cr>", desc = "LSP restart" }
       keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }

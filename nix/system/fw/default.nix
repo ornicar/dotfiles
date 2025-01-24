@@ -1,5 +1,5 @@
 # fw is my frame.work 16
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, lib, ... }: {
   imports = [
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.framework-16-7040-amd
@@ -10,6 +10,9 @@
     ../modules/bluetooth.nix
     # ../modules/coolercontrol.nix
   ];
+
+  # 6.13 doesn't work with fw module atm
+  boot.kernelPackages = lib.mkForce (pkgs.linuxPackagesFor (pkgs.linux_6_12));
 
   environment.systemPackages = with pkgs; [ powertop libinput acpi ];
 

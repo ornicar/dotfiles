@@ -2,31 +2,11 @@ return {
   -- language servers
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- replace `{ "K", vim.lsp.buf.hover, desc = "Hover" }`
-      keys[2] = {
-        "ge",
-        function()
-          Snacks.picker.lsp_definitions()
-        end,
-        desc = "Goto Definition",
-        has = "definition",
-      }
-      keys[3] = { "gn", vim.lsp.buf.references, desc = "References", nowait = true }
-      keys[6] = { "gE", vim.lsp.buf.declaration, desc = "Goto Declaration" }
-      keys[7] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
-      keys[#keys + 1] = { "<leader>cd", ":LspRestart<cr>", desc = "LSP restart" }
-      keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }
-      keys[#keys + 1] = { "<space>cq", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
-      keys[#keys + 1] = { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" }
-    end,
-    ---@class PluginLspOpts
-    opts = {
-      inlay_hints = {
+    opts = function(_, opts)
+      opts.inlay_hints = {
         enabled = false,
-      },
-      servers = {
+      }
+      opts.servers = {
         lua_ls = {},
         nil_ls = {},
         cssls = {},
@@ -43,7 +23,26 @@ return {
             },
           },
         },
-      },
-    },
+      }
+
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      -- disable lua/lazyvim/plugins/extras/editor/snacks_picker.lua and lazyvim/plugins/lsp/keymaps.lua
+      keys[#keys + 1] = { "gd", false }
+      keys[#keys + 1] = { "gD", false }
+      keys[#keys + 1] = { "gr", false }
+      keys[#keys + 1] = { "<leader>ss", false }
+      keys[#keys + 1] = { "<leader>sS", false }
+      keys[#keys + 1] = { "K", false }
+      keys[#keys + 1] = { "<a-n>", false }
+      keys[#keys + 1] = { "<a-p>", false }
+      -- stylua: ignore
+      keys[#keys + 1] = { "ge", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", has = "definition" }
+      keys[#keys + 1] = { "gn", vim.lsp.buf.references, desc = "References", nowait = true }
+      keys[#keys + 1] = { "gE", vim.lsp.buf.declaration, desc = "Goto Declaration" }
+      keys[#keys + 1] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
+      keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }
+      keys[#keys + 1] = { "<space>cq", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" }
+      keys[#keys + 1] = { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" }
+    end,
   },
 }

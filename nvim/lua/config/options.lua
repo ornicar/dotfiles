@@ -5,7 +5,7 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
-vim.opt.mouse = "" -- Enable mouse mode
+vim.opt.mouse = "" -- Disable mouse mode
 vim.opt.relativenumber = false -- Relative line numbers
 vim.opt.scrolloff = 9 -- Lines of context
 

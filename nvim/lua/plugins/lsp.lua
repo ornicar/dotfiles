@@ -36,8 +36,14 @@ return {
       keys[#keys + 1] = { "<a-n>", false }
       keys[#keys + 1] = { "<a-p>", false }
       -- stylua: ignore
-      keys[#keys + 1] = { "ge", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", has = "definition" }
-      keys[#keys + 1] = { "gn", vim.lsp.buf.references, desc = "References", nowait = true }
+      keys[#keys + 1] = { "ge", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition", has = "definition", }
+      keys[#keys + 1] = {
+        "gn",
+        function()
+          Snacks.picker.lsp_references()
+        end,
+        desc = "References",
+      }
       keys[#keys + 1] = { "gE", vim.lsp.buf.declaration, desc = "Goto Declaration" }
       keys[#keys + 1] = { "gh", vim.lsp.buf.hover, desc = "Hover" }
       keys[#keys + 1] = { "<leader>cl", vim.lsp.codelens.run, desc = "LSP code lens" }

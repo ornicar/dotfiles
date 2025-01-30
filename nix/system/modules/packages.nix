@@ -32,5 +32,6 @@
     vlc
     evince # pdf viewer
     libreoffice-qt
+    mindustry
   ];
 }

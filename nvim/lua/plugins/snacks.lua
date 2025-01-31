@@ -11,6 +11,23 @@ return {
         blame_line = large,
         notification_history = large,
       },
+      explorer = {},
+    },
+    keys = {
+      {
+        "<space>e",
+        function()
+          Snacks.explorer({ cwd = LazyVim.root() })
+        end,
+        desc = "Explorer Snacks (root dir)",
+      },
+      {
+        "<space>E",
+        function()
+          Snacks.explorer()
+        end,
+        desc = "Explorer Snacks (cwd)",
+      },
     },
   },
 }

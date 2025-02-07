@@ -29,6 +29,7 @@
     ./sway.nix
     ./users.nix
     ./firefox.nix
+    ./visualvm.nix
     # ./zeroad.nix
   ];
 

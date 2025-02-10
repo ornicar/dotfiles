@@ -12,6 +12,7 @@ return {
         notification_history = large,
       },
       explorer = {},
+      image = {},
     },
     keys = {
       {

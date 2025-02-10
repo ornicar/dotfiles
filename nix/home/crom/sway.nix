@@ -32,6 +32,12 @@
 
         [[ $mode = "on" ]] && cc="default" || cc="sleep"
         echo $cc > /tmp/coolercontrol-mode
+
+        # pause/resume puzzle generation
+        [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"
+        for pid in $(pidof python); do
+          kill -$SIG $pid;
+        done
       '';
     in [{
       timeout = 600;

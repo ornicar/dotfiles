@@ -35,12 +35,14 @@
 
         # pause/resume puzzle generation
         [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"
-        for pid in $(pidof python); do
-          kill -$SIG $pid;
+        echo "Puzzle generation: $SIG"
+        for pid in $(${pkgs.procps}/bin/pgrep -u thib --full "generator.py"); do
+          echo "kill -$SIG $pid"
+          kill -$SIG $pid
         done
       '';
     in [{
-      timeout = 600;
+      timeout = 420;
       command = "${crom-mode} off";
       resumeCommand = "${crom-mode} on";
     }];

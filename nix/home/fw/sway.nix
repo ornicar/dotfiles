@@ -15,6 +15,7 @@
       keybindings = let
         inherit (config.wayland.windowManager.sway.config) modifier menu;
         spotify = "${pkgs.playerctl}/bin/playerctl -p spotify";
+        home = config.home.homeDirectory;
       in lib.mkAfter {
         "${modifier}+equal" = "exec ${menu}";
         "XF86MonBrightnessDown" = "exec 'light -U 5'";
@@ -28,6 +29,8 @@
         "XF86AudioNext" = "exec '${spotify} next'";
         "XF86AudioPrev" = "exec '${spotify} previous'";
         "Print" = "exec 'screenshot.sh clipboard'";
+        "F4" =
+          "exec '${home}/dotfiles/scripts/systemctl-toggle.sh easyeffects'";
       };
     };
   };

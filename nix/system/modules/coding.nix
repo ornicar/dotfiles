@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -28,6 +28,5 @@
     http-server
     meld
     ansible
-    config.boot.kernelPackages.perf
   ];
 }

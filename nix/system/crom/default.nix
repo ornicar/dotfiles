@@ -33,8 +33,8 @@
   stylix.fonts.sizes = lib.mkForce {
     applications = 14;
     desktop = 14;
-    popups = 15;
-    terminal = 15;
+    popups = 14;
+    terminal = 14;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

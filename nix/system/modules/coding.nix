@@ -28,5 +28,6 @@
     http-server
     meld
     ansible
+    openssl
   ];
 }

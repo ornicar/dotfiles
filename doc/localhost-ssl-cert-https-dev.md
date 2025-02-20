@@ -1,4 +1,4 @@
-## localhost ssl cert
+## localhost ssl cert for https dev
 
 https://medium.com/@eng.fadishaar/step-by-step-guide-configuring-nginx-with-https-on-localhost-for-secure-web-application-testing-c78febc26c78
 
@@ -29,6 +29,12 @@ openssl x509 -req -in cert.csr -CA rootCert.pem -CAkey rootCA.key -CAcreateseria
 openssl verify -CAfile rootCert.pem -verify_hostname l.org cert.crt
 ```
 
+### firefox
+
+settings > privacy/security > certificates > authorities > import
+
+### chrome
+
 chrome://settings/certificates
 Authorities
 Import rootCert.pem
@@ -37,6 +43,7 @@ trust for identifying websites
 ```sh
 sudo ln -s /home/thib/localhost-ssl/l.org/cert.crt /etc/ssl/certs/l.org.crt
 sudo ln -s /home/thib/localhost-ssl/l.org/cert.key /etc/ssl/private/l.org.key
+sudo chown nginx /etc/ssl/private/l.org.key
 ```
 
 nginx.conf
@@ -46,8 +53,8 @@ nginx.conf
     server {
       server_name localhost;
       listen 443 ssl;
-      ssl_certificate /etc/ssl/certs/cert.crt;
-      ssl_certificate_key /etc/ssl/private/cert.key;
+      ssl_certificate /etc/ssl/certs/l.org.crt;
+      ssl_certificate_key /etc/ssl/private/l.org.key;
     }
 ```
 

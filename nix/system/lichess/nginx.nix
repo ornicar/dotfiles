@@ -55,10 +55,16 @@
     '';
 
     virtualHosts = let
-      listenLocal = [{
+      # listenLocal80 = [{
+      #   addr = "0.0.0.0";
+      #   port = 80;
+      # }];
+      listenLocal443 = [{
         addr = "0.0.0.0";
-        port = 80;
-      }]; # { addr = "0.0.0.0"; port = 443; ssl = true; } ];
+        port = 443;
+        ssl = true;
+      }];
+      listenLocal = listenLocal443;
     in {
       #       "lichess-assets.local" = {
       #         listen = [ { addr = "0.0.0.0"; port = 80; } { addr = "0.0.0.0"; port = 443; ssl = true; } ];
@@ -80,6 +86,10 @@
         enableACME = false;
         forceSSL = false;
         extraConfig = ''
+
+          ssl_certificate /etc/ssl/certs/l.org.crt;
+          ssl_certificate_key /etc/ssl/private/l.org.key;
+
           error_log /var/log/nginx/lila.error.log;
           access_log /var/log/nginx/lila.access.log log_format_sample if=$log_sample_access;
 
@@ -186,6 +196,10 @@
         forceSSL = false;
         listen = listenLocal;
         extraConfig = ''
+
+          ssl_certificate /etc/ssl/certs/socket.l.org.crt;
+          ssl_certificate_key /etc/ssl/private/socket.l.org.key;
+
           if ( $request_method !~ GET ) {
             return 405;
           }

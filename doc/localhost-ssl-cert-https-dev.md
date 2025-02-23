@@ -42,6 +42,7 @@ trust for identifying websites
 
 ```sh
 sudo ln -s /home/thib/localhost-ssl/l.org/cert.crt /etc/ssl/certs/l.org.crt
+sudo mkdir -p /etc/ssl/private
 sudo ln -s /home/thib/localhost-ssl/l.org/cert.key /etc/ssl/private/l.org.key
 sudo chown nginx /etc/ssl/private/l.org.key
 ```

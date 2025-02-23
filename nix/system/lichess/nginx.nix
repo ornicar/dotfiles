@@ -117,8 +117,8 @@
           }
           location /assets/ {
             rewrite "^/assets/_\w{6}/(.+)$" /assets/$1;
-            add_header "Access-Control-Allow-Origin" "*";
-            add_header "Cross-Origin-Resource-Policy" "cross-origin";
+            add_header Service-Worker-Allowed "/";
+            add_header Cross-Origin-Embedder-Policy "require-corp"; # for stockfish
             alias /home/thib/lila/public/;
           # proxy_pass http://lila;  # no trailing /
           }

@@ -14,8 +14,4 @@
   # Use the external dotfiles nvim config for quicker hacking
   home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/dotfiles/nvim";
-
-  home.file.".config/neovide/config.toml".source =
-    config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/dotfiles/nvim/neovide.toml";
 }

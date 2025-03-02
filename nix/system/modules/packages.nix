@@ -31,6 +31,7 @@
     mpv
     vlc
     evince # pdf viewer
+    ghostscript
     libreoffice-qt
     mindustry
   ];

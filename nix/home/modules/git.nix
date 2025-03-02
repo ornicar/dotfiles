@@ -8,7 +8,7 @@
 
     extraConfig = {
       core = {
-        editor = "nvim";
+        editor = "neovide";
         whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
       };
       delta = {

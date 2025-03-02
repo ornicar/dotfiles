@@ -1,6 +1,6 @@
 local large = {
-  width = 0.97,
-  height = 0.95,
+  width = 0.9,
+  height = 0.9,
 }
 return {
   {

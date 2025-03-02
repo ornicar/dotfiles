@@ -2,6 +2,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    neovide
     git
     lazygit
     gh

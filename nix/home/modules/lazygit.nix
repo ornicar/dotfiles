@@ -24,7 +24,7 @@
       disableStartupPopups = true;
       promptToReturnFromSubprocess = false;
       os = {
-        edit = "nvim";
+        edit = "neovide";
         editAtLine = "{{editor}} +{{line}} {{filename}}";
       };
       keybinding = {

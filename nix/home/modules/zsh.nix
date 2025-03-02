@@ -139,7 +139,7 @@
       "man" = "batman";
       # Add suffix alias for less
       "-g L" = "| less";
-      "v" = "nvim";
+      "v" = "neovide";
       "z" = "zeditor";
       "x" = "dtrx";
       "reload" = ". ~/.zshrc";

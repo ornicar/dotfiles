@@ -21,3 +21,6 @@ vim.opt.splitkeep = "screen"
 
 vim.g.deprecation_warnings = true
 vim.g.snacks_animate = false
+
+vim.g.neovide_floating_corner_radius = 0.7
+vim.g.neovide_normal_opacity = 0.95

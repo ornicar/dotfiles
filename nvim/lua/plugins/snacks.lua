@@ -1,5 +1,5 @@
 local large = {
-  width = 0.9,
+  width = 0.95,
   height = 0.9,
 }
 return {
@@ -11,14 +11,19 @@ return {
         blame_line = large,
         notification_history = large,
       },
-      explorer = {},
+      picker = {
+        sources = {
+          explorer = {},
+        },
+      },
       image = {},
+      lazygit = { configure = true },
     },
     keys = {
       {
         "<space>e",
         function()
-          Snacks.explorer({ cwd = LazyVim.root() })
+          Snacks.explorer.open({ cwd = LazyVim.root() })
         end,
         desc = "Explorer Snacks (root dir)",
       },

@@ -22,6 +22,7 @@
       "ctrl+pageup" = "change_font_size current +1.0";
       "ctrl+f5" = "load_config_file";
       "kitty_mod+Enter" = "launch --type=os-window --cwd=current";
+      "kitty_mod+\\" = "launch --type=background --cwd=current neovide";
     };
     extraConfig = let
       # stylix-generated = ''

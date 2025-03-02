@@ -22,5 +22,16 @@ vim.opt.splitkeep = "screen"
 vim.g.deprecation_warnings = true
 vim.g.snacks_animate = false
 
-vim.g.neovide_floating_corner_radius = 0.7
-vim.g.neovide_normal_opacity = 0.95
+if vim.g.neovide then
+  -- https://neovide.dev/configuration.html
+  vim.g.neovide_floating_corner_radius = 0.7
+  vim.g.neovide_normal_opacity = 0.95
+  vim.o.guifont = "JetBrains Mono:h15.5"
+  vim.g.neovide_position_animation_length = 0.15
+  vim.g.neovide_scroll_animation_length = 0.2
+  vim.g.neovide_cursor_animation_length = 0.05
+  vim.g.neovide_cursor_trail_size = 0.2
+  vim.g.neovide_hide_mouse_when_typing = true
+  vim.g.neovide_cursor_unfocused_outline_width = 0.125
+  vim.g.neovide_cursor_vfx_mode = "sonicboom"
+end

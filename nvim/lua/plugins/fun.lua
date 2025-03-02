@@ -32,7 +32,6 @@ return {
       maxkeys = 7,
       position = "top-right",
       show_count = true,
-      -- more opts
     },
   },
   -- { "nvzone/timerly", cmd = "TimerlyToggle", dependencies = { "nvzone/volt" } },

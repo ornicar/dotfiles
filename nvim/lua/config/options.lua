@@ -29,11 +29,16 @@ if vim.g.neovide then
   vim.o.guifont = "JetBrains Mono:h15.5"
   vim.g.neovide_position_animation_length = 0.15
   vim.g.neovide_scroll_animation_length = 0.15
-  vim.g.neovide_cursor_animation_length = 0.08
-  vim.g.neovide_cursor_trail_size = 0.2
+  vim.g.neovide_cursor_animation_length = 0.07
+  vim.g.neovide_cursor_trail_size = 0.3
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_cursor_unfocused_outline_width = 0.125
   vim.g.neovide_cursor_vfx_mode = "sonicboom"
+  vim.opt.guicursor = {
+    "n-v-c-sm:block-Cursor", -- Use 'Cursor' highlight for normal, visual, and command modes
+    "i-ci-ve:ver25-lCursor", -- Use 'lCursor' highlight for insert and visual-exclusive modes
+    "r-cr:hor20-CursorIM", -- Use 'CursorIM' for replace mode
+  }
   -- ugh. stylix save me
   -- https://github.com/neovide/neovide/issues/2050#issuecomment-2571258610
   vim.g.terminal_color_0 = "#45475a"

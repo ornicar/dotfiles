@@ -23,10 +23,7 @@
       quitOnTopLevelReturn = true;
       disableStartupPopups = true;
       promptToReturnFromSubprocess = false;
-      os = {
-        edit = "neovide";
-        editAtLine = "{{editor}} +{{line}} {{filename}}";
-      };
+      os = { editPreset = "nvim"; };
       keybinding = {
         files = {
           stashAllChanges = "<c-a>"; # instead of just 's' which I typod for 'c'

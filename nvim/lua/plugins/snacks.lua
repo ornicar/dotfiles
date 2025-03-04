@@ -17,7 +17,12 @@ return {
         },
       },
       image = {},
-      lazygit = { configure = true },
+      lazygit = {
+        configure = true,
+        config = {
+          os = { editPreset = "nvim-remote" },
+        },
+      },
     },
     keys = {
       {

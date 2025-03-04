@@ -96,6 +96,7 @@ return {
       { "<leader>mu", function() Snacks.picker.undo() end, desc = "Undo tree" },
       { "<leader>ml", function() Snacks.picker.loclist() end, desc = "Location List" },
       { "<leader>mi", function() Snacks.picker.icons() end, desc = "Icons" },
+      { "<leader>mp", function() Snacks.picker.projects() end, desc = "Projects" },
       -- lsp
       { "<space>o", function() Snacks.picker.lsp_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Symbols" },
       { "<space>O", function() Snacks.picker.lsp_workspace_symbols({ filter = LazyVim.config.kind_filter }) end, desc = "LSP Workspace Symbols" },

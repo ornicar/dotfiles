@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     wayland
     wlr-randr
+    wdisplays # visual monitor manager
     wget
     tldr
     xdg-utils

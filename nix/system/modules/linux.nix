@@ -13,6 +13,8 @@
     bind
     gparted
     dmidecode
+    pciutils
+    usbutils
     unixtools.xxd
     iprange
     ps_mem

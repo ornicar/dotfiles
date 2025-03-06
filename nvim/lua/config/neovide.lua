@@ -9,6 +9,10 @@ vim.g.neovide_cursor_trail_size = 0.3
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_cursor_unfocused_outline_width = 0.125
 vim.g.neovide_cursor_vfx_mode = "sonicboom"
+
+-- https://github.com/neovide/neovide/issues/1282#issuecomment-2496204257
+vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
+
 -- vim.opt.guicursor = {
 --   "n-v-c-sm:block-Cursor", -- Use 'Cursor' highlight for normal, visual, and command modes
 --   "i-ci-ve:ver25-lCursor", -- Use 'lCursor' highlight for insert and visual-exclusive modes

@@ -29,7 +29,7 @@
         "XF86AudioNext" = "exec '${spotify} next'";
         "XF86AudioPrev" = "exec '${spotify} previous'";
         "Print" = "exec 'screenshot.sh clipboard'";
-        "F4" =
+        "F10" =
           "exec '${home}/dotfiles/scripts/systemctl-toggle.sh easyeffects'";
       };
     };

@@ -1,7 +1,5 @@
 -- This file replaces LazyVim/lua/lazyvim/config/keymaps.lua
-local Util = require("lazyvim.util")
-
-local map = Util.safe_keymap_set
+local map = LazyVim.safe_keymap_set
 
 -- Move in windows using <ctrl> arrow keys
 map("n", "<leader>n", "<C-w>h", { desc = "Go to left window" })
@@ -75,7 +73,7 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 -- formatting
 map({ "n", "v" }, "<leader>cf", function()
-  Util.format({ force = true })
+  LazyVim.format({ force = true })
 end, { desc = "Format" })
 
 -- diagnostic
@@ -112,12 +110,12 @@ end
 map("n", "<leader>ug", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle Git blame" })
 
 -- lazygit
-map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git(), size = {width=1,height=1} }) end, { desc = "Lazygit (Root Dir)" })
+map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
 -- map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
 map("n", "<leader>gb", function() Snacks.git.blame_line() end, { desc = "Git Blame Line" })
 map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
 map({"n", "x" }, "<leader>gY", function()
-  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end })
+  Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
 map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
 map("n", "<leader>gl", function() Snacks.lazygit.log({ cwd = LazyVim.root.git() }) end, { desc = "Lazygit Log" })
@@ -132,7 +130,7 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- floating terminal
-map("n", "<leader>ft", function() Snacks.terminal(nil, { cwd = Util.root.get(), }) end, { desc = "Terminal (root dir)" })
+map("n", "<leader>ft", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
 map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 map("t", "<c-t>", "<c-\\><c-n><c-w>k", { desc = "Switch away from the terminal to top window." })

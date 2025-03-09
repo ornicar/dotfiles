@@ -6,6 +6,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     ./amdgpu.nix
+    ./nuvoton.nix
     ./keyd.nix
     ../lichess
     ../modules/common.nix

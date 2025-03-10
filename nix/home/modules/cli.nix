@@ -28,6 +28,7 @@
     settings = {
       proc_per_core = true;
       update_ms = 1000;
+      cpu_single_graph = true;
     };
   };
 

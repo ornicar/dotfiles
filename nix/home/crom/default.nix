@@ -12,6 +12,15 @@
     ./waybar.nix
   ];
 
+  programs.btop = {
+    enable = true;
+    settings = {
+      show_battery = false;
+      cpu_sensor = "k10temp/Tctl";
+      custom_cpu_name = "Fuck Trump";
+    };
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
 }

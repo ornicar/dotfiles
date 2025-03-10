@@ -10,6 +10,7 @@
 
     ./sway.nix
     ./waybar.nix
+    ./s-tui.nix
   ];
 
   programs.btop = {

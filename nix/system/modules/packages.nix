@@ -11,7 +11,6 @@
     ffmpeg
     btop
     htop
-    s-tui # sensors tui
     firefox
     google-chrome
     zip

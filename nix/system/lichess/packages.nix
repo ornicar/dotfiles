@@ -1,5 +1,7 @@
 { pkgs, inputs, ... }: {
 
+  imports = [ ../modules/mongodb.nix ];
+
   environment.systemPackages = with pkgs; [
     jdk
     corepack_23 # gives a pnpm bundled with node23
@@ -8,7 +10,6 @@
     coursier # required by metals
     metals
     dart-sass
-    mongodb
     redis
     fishnet
     inputs.bbpPairings.packages.x86_64-linux.default

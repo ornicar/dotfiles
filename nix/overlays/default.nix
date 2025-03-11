@@ -17,12 +17,6 @@
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
 
-    # Because mongod takes one hour to recompile on each minor version upgrade
-    mongodb-7_0 = (import inputs.nixpkgs-mongodb-pin {
-      system = final.system;
-      config.allowUnfree = true;
-    }).mongodb-7_0;
-
     # Get latest bloop
     # bloop = (import inputs.nixpkgs-master {
     #   system = final.system;

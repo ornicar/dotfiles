@@ -30,11 +30,13 @@
         export SWAYSOCK=$XDG_RUNTIME_DIR/sway-ipc.$UID.$(${pkgs.procps}/bin/pgrep -x sway).sock
         ${pkgs.sway}/bin/swaymsg "output * power $mode" 
 
-        [[ $mode = "on" ]] && cc="default" || cc="sleep"
-        echo $cc > /tmp/coolercontrol-mode
+        # [[ $mode = "on" ]] && cc="default" || cc="sleep"
+        # echo $cc > /tmp/coolercontrol-mode
 
         # pause/resume puzzle generation
         [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"
+        # only resume between 10pm and 6am
+        [[ $SIG = "CONT" ]] && [[ $(date +%H) -gt 6 && $(date +%H) -lt 22 ]] && SIG="STOP"
         echo "Puzzle generation: $SIG"
         for pid in $(${pkgs.procps}/bin/pgrep -u thib --full "generator.py"); do
           echo "kill -$SIG $pid"

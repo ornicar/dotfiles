@@ -36,8 +36,11 @@
         # pause/resume puzzle generation
         [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"
         # only resume between 10pm and 6am
-        [[ $SIG = "CONT" ]] && [[ $(date +%H) -gt 6 && $(date +%H) -lt 22 ]] && SIG="STOP"
-        echo "Puzzle generation: $SIG"
+        night="yes"
+        hour=$(${pkgs.coreutils}/bin/date +%H)
+        [[ $hour -gt 6 && $hour -lt 22 ]] && night="no"
+        [[ $SIG = "CONT" && $night = "no" ]] && SIG="STOP"
+        echo "Puzzle generation: hour=$hour, night=$night, sending $SIG"
         for pid in $(${pkgs.procps}/bin/pgrep -u thib --full "generator.py"); do
           echo "kill -$SIG $pid"
           kill -$SIG $pid

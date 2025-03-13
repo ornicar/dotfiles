@@ -139,8 +139,7 @@
       "man" = "batman";
       # Add suffix alias for less
       "-g L" = "| less";
-      "v" = "neovide";
-      "z" = "zeditor";
+      "v" = "nvim";
       "x" = "dtrx";
       "reload" = ". ~/.zshrc";
       "meteo" = "curl -4 http://wttr.in/44600";

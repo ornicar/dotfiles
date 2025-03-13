@@ -8,6 +8,7 @@
           "temperature#cpu"
           "custom/amdgpu"
           "memory"
+          "custom/files"
           "network"
           "pulseaudio"
           # "custom/lan-mouse"
@@ -48,6 +49,13 @@
           format = "♫ {}";
           max-length = 70;
           on-click = "${pkgs.playerctl}/bin/playerctl -p spotify play-pause";
+        };
+        "custom/files" = {
+          interval = 1;
+          format = " {}";
+          exec = ''
+            awk '{print $1}' /proc/sys/fs/file-nr
+          '';
         };
       };
     };

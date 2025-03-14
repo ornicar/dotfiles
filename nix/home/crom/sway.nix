@@ -30,8 +30,8 @@
         export SWAYSOCK=$XDG_RUNTIME_DIR/sway-ipc.$UID.$(${pkgs.procps}/bin/pgrep -x sway).sock
         ${pkgs.sway}/bin/swaymsg "output * power $mode" 
 
-        # [[ $mode = "on" ]] && cc="default" || cc="sleep"
-        # echo $cc > /tmp/coolercontrol-mode
+        [[ $mode = "on" ]] && brightness="100" || brightness="0"
+        ${pkgs.openrgb}/bin/openrgb -b $brightness
 
         # pause/resume puzzle generation
         [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"

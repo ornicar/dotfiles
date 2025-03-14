@@ -18,7 +18,7 @@
     settings = {
       show_battery = false;
       cpu_sensor = "k10temp/Tctl";
-      custom_cpu_name = "All Cats Are Beautiful";
+      custom_cpu_name = "He Boiled For Your Sins";
     };
   };
 

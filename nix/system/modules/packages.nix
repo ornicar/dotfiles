@@ -34,6 +34,5 @@
     evince # pdf viewer
     ghostscript
     libreoffice-qt
-    mindustry
   ];
 }

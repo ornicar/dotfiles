@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ ... }: {
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -22,6 +22,25 @@
     #   system = final.system;
     #   config.allowunfree = true;
     # }).bloop;
+
+    openrgb = let version = "candidate_1.0rc1.thib";
+    in prev.openrgb.overrideAttrs (previousAttrs: {
+      version = version;
+      src = prev.fetchFromGitHub {
+        owner = "ornicar";
+        repo = "OpenRGB";
+        rev = "148e0b945a3dd4a4e36b264e2fc2bdf5b0d4979e";
+        hash = "sha256-qp2bsQw9sfv6o+qYTe9VerX98GkxRSTaHsAgMvjfZSg=";
+      };
+
+      postPatch = ''
+        patchShebangs scripts/build-udev-rules.sh
+        substituteInPlace scripts/build-udev-rules.sh \
+          --replace /bin/chmod "${prev.coreutils}/bin/chmod"
+        substituteInPlace scripts/build-udev-rules.sh \
+          --replace /usr/bin/env "${prev.coreutils}/bin/env"
+      '';
+    });
 
     stockfish = let
       version = "17";

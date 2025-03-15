@@ -6,8 +6,8 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     ./amdgpu.nix
-    ./nuvoton.nix
     ./keyd.nix
+    ./motherboard.nix
     ../lichess
     ../modules/common.nix
     ../modules/bluetooth.nix
@@ -17,11 +17,6 @@
 
   # Open ports in the firewall.
   programs.mosh.enable = true;
-
-  services.hardware.openrgb = {
-    enable = true;
-    motherboard = "amd";
-  };
 
   networking = {
     hostName = "crom";

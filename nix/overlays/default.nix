@@ -40,23 +40,6 @@
           --replace /usr/bin/env "${prev.coreutils}/bin/env"
       '';
     });
-    openrgb-plugin-hardwaresync = prev.openrgb-plugin-hardwaresync.overrideAttrs
-      (previousAttrs: {
-        version = "1.0rc1.thib";
-        src = prev.fetchFromGitHub {
-          owner = "ornicar";
-          repo = "OpenRGBHardwareSyncPlugin";
-          rev = "d975d753a3322fcd8b85a61b8ebb75ef60a9d954";
-          hash = "sha256-da5ZluzKvPqg34bAc4lDK7pbbaBt/yHdub7vmU4CxW4=";
-        };
-        postPatch = ''
-          # Use the source of openrgb from nixpkgs instead of the submodule
-          rmdir OpenRGB
-          ln -s ${final.openrgb.src} OpenRGB
-          # Remove prebuilt stuff
-          rm -r dependencies/lhwm-cpp-wrapper
-        '';
-      });
 
     stockfish = let
       version = "17";

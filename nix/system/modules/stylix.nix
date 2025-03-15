@@ -53,5 +53,11 @@
       desktop = 0.9;
       applications = 0.9;
     };
+
+    cursor = {
+      name = "Vanilla-DMZ";
+      package = pkgs.vanilla-dmz;
+      size = 32;
+    };
   };
 }

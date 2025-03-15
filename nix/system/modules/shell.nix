@@ -36,6 +36,7 @@
     sysz
     systemctl-tui
     chafa # terminal image viewer
+    direnv
   ];
 
   programs.gnupg.agent = {

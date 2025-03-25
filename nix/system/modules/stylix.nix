@@ -10,7 +10,7 @@
 
     override = { base00 = "#1f1e22"; };
 
-    image = ../../home/wallpaper/fsm1.jpg;
+    image = ../../home/wallpaper/xp.jpg;
 
     fonts = rec {
       sansSerif = {

@@ -55,16 +55,16 @@
     '';
 
     virtualHosts = let
-      # listenLocal80 = [{
-      #   addr = "0.0.0.0";
-      #   port = 80;
-      # }];
-      listenLocal443 = [{
+      listenLocal80 = {
+        addr = "0.0.0.0";
+        port = 80;
+      };
+      listenLocal443 = {
         addr = "0.0.0.0";
         port = 443;
         ssl = true;
-      }];
-      listenLocal = listenLocal443;
+      };
+      listenLocal = [ listenLocal443 listenLocal80 ];
     in {
       #       "lichess-assets.local" = {
       #         listen = [ { addr = "0.0.0.0"; port = 80; } { addr = "0.0.0.0"; port = 443; ssl = true; } ];

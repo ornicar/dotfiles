@@ -26,7 +26,7 @@
   };
 
   home-manager = {
-    useGlobalPkgs = false;
+    useGlobalPkgs = true;
     useUserPackages = true;
   };
 

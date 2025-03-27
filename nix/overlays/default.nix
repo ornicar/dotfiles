@@ -1,4 +1,4 @@
-{ ... }: {
+{ inputs, ... }: {
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -20,8 +20,13 @@
     # Get latest bloop
     # bloop = (import inputs.nixpkgs-master {
     #   system = final.system;
-    #   config.allowunfree = true;
+    #   config.allowUnfree = true;
     # }).bloop;
+
+    copilot-language-server-fhs = (import inputs.nixpkgs-copilot {
+      system = final.system;
+      config.allowUnfree = true;
+    }).copilot-language-server-fhs;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc1.thib";

@@ -11,7 +11,7 @@ return {
     },
   },
 
-  { "copilot.lua", commit = "0e004a200537fe905a9a4ad7eb0ed1a2f1bb015d" },
+  { "copilot.lua", opts = { lsp_binary = "/etc/profiles/per-user/thib/bin/copilot-language-server" } },
 
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {

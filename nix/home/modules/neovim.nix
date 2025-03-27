@@ -6,6 +6,7 @@
     lua-language-server
     yaml-language-server
     vscode-langservers-extracted
+    copilot-language-server-fhs
     prettierd
     shfmt
     nodePackages_latest.typescript-language-server

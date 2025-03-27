@@ -30,5 +30,6 @@
     meld
     ansible
     openssl
+    # copilot-language-server-fhs # for nvim copilot.lua
   ];
 }

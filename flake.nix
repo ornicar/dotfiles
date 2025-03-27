@@ -5,6 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-copilot.url =
+      "github:NixOs/nixpkgs/05a75f2097ed97c121f149e5bbfc1f04884d9d21";
 
     nixpkgs-mongodb-pin.url =
       "github:NixOS/nixpkgs/fd4f8ce9fc5a4a1140b6648d576c42ce41caf8fe";

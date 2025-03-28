@@ -3,9 +3,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     neovide
-    git
-    git-lfs
-    lazygit
     gh
     gh-copilot
     gcc

@@ -1,10 +1,11 @@
-{ ... }:
+{ ... }: {
 
-{
   programs.git = {
     enable = true;
     userName = "Thibault Duplessis";
     userEmail = "t@lichess.org";
+
+    lfs.enable = true;
 
     extraConfig = {
       core = {

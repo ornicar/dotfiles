@@ -1,4 +1,4 @@
-{ ... }: {
+{ inputs, ... }: {
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -22,6 +22,11 @@
     #   system = final.system;
     #   config.allowunfree = true;
     # }).bloop;
+
+    neovim = (import inputs.nixpkgs-master {
+      system = final.system;
+      config.allowunfree = true;
+    }).neovim;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc1.thib";

@@ -4,6 +4,7 @@
     neovim
     neovide
     git
+    git-lfs
     lazygit
     gh
     gh-copilot

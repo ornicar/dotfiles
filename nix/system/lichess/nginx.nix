@@ -52,6 +52,11 @@
       }
 
       limit_req_zone $limit zone=all:4m rate=5000r/m;
+
+      map "$scheme $http_user_agent" $redirect_browser {
+        default 0;
+        "~*^http Mozilla" 1;
+      }
     '';
 
     virtualHosts = let
@@ -86,6 +91,9 @@
         enableACME = false;
         forceSSL = false;
         extraConfig = ''
+          if ($redirect_browser = 1) {
+            rewrite ^/(.*)$ https://l.org/$1;
+          }
 
           ssl_certificate /etc/ssl/certs/l.org.crt;
           ssl_certificate_key /etc/ssl/private/l.org.key;

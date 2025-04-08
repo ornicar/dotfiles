@@ -26,9 +26,12 @@
   programs.btop = {
     enable = true;
     settings = {
-      proc_per_core = true;
-      update_ms = 1000;
+      show_battery = false;
+      cpu_sensor = "k10temp/Tctl";
+      custom_cpu_name = "He Boiled For Your Sins";
+      update_ms = 800;
       cpu_single_graph = true;
+      proc_per_core = false;
     };
   };
 

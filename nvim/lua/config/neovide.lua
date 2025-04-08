@@ -2,13 +2,23 @@
 vim.g.neovide_floating_corner_radius = 0.7
 vim.g.neovide_normal_opacity = 0.93
 vim.o.guifont = "JetBrains Mono:h15.5"
-vim.g.neovide_position_animation_length = 0.15
-vim.g.neovide_scroll_animation_length = 0.15
-vim.g.neovide_cursor_animation_length = 0.1
-vim.g.neovide_cursor_trail_size = 0.4
+
+-- vim.g.neovide_position_animation_length = 0.15
+
+vim.g.neovide_scroll_animation_length = 0.3
+vim.g.neovide_scroll_animation_far_lines = 5
+
+vim.g.neovide_cursor_animation_length = 0.15
+vim.g.neovide_cursor_trail_size = 0.9
+
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_cursor_unfocused_outline_width = 0.125
-vim.g.neovide_cursor_vfx_mode = "sonicboom"
+
+-- vim.g.neovide_cursor_vfx_mode = "sonicboom"
+-- vim.g.neovide_cursor_vfx_mode = { "railgun", "pixiedust", "sonicboom" }
+vim.g.neovide_cursor_vfx_mode = { "railgun", "pixiedust" }
+-- vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.1 -- sonicboom
+vim.g.neovide_cursor_vfx_particle_lifetime = 0.7 -- railgun
 
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-2496204257
 vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })

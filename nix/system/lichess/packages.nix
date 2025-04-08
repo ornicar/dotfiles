@@ -3,7 +3,7 @@
   imports = [ ../modules/mongodb.nix ];
 
   environment.systemPackages = with pkgs; [
-    jdk
+    jdk23
     corepack_23 # gives a pnpm bundled with node23
     sbt
     bloop

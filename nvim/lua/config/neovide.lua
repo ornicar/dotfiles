@@ -28,6 +28,10 @@ vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
 --   "i-ci-ve:ver25-lCursor", -- Use 'lCursor' highlight for insert and visual-exclusive modes
 --   "r-cr:hor20-CursorIM", -- Use 'CursorIM' for replace mode
 -- }
+
+vim.keymap.set({ "n" }, "<C-ScrollWheelUp>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+vim.keymap.set({ "n" }, "<C-ScrollWheelDown>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+
 -- ugh. stylix save me
 -- https://github.com/neovide/neovide/issues/2050#issuecomment-2571258610
 vim.g.terminal_color_0 = "#45475a"

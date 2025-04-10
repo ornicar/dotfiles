@@ -31,7 +31,7 @@
       custom_cpu_name = "He Boiled For Your Sins";
       update_ms = 800;
       cpu_single_graph = true;
-      proc_per_core = false;
+      proc_per_core = true;
     };
   };
 

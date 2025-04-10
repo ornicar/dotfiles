@@ -45,3 +45,9 @@ const uploadOne = (coll, id, opts = {}) => {
   opts = { ...defaultOpts, port: ports.kaiju, ...opts };
   prod(opts.port, opts.db).getCollection(coll).insertOne(db[coll].findOne({ _id: id }));
 }
+
+const uploadMany = (coll, query, opts = {}) => {
+  opts = { ...defaultOpts, port: ports.kaiju, ...opts };
+  const prodColl = prod(opts.port, opts.db).getCollection(coll);
+  db[coll].find(query).forEach(doc => prodColl.insertOne(doc));
+}

@@ -19,7 +19,7 @@
   "iswap.nvim": { "branch": "master", "commit": "e02cc91f2a8feb5c5a595767d208c54b6e3258ec" },
   "key-analyzer.nvim": { "branch": "main", "commit": "72d301fb8843c19d8e69e16e0a0b42256edc25cc" },
   "kitty-scrollback.nvim": { "branch": "main", "commit": "2ca6956b9c99cc2d5df0ef1be537b54ccbb7b3d9" },
-  "kulala.nvim": { "branch": "main", "commit": "bb8ae11e8122d50c80f4b71a01391df963d932bf" },
+  "kulala.nvim": { "branch": "main", "commit": "068b56a210f0dba9ae3c8ecbfdb5d482e308de84" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
   "lsp-format.nvim": { "branch": "master", "commit": "f336cfd6572bf644d26b5cdec7e5e2c6b8f45135" },

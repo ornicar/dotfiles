@@ -6,6 +6,7 @@
     ../modules/wine.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
+    ../services/cooklang-chef.nix
     # ../services/fishnet-prod.nix
 
     ./sway.nix

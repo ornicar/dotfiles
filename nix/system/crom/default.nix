@@ -27,7 +27,7 @@
       80
       443
       9371 # puzzler
-      11987 # coolercontrol
+      9800 # cook
     ];
   };
 

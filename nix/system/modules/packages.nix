@@ -34,5 +34,6 @@
     evince # pdf viewer
     ghostscript
     libreoffice-qt
+    cook-cli
   ];
 }

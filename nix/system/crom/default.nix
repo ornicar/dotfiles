@@ -12,7 +12,8 @@
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/coolercontrol.nix
-    ../modules/steam.nix
+    # ../modules/steam.nix
+    ../modules/cooklang-chef-nginx.nix
   ];
 
   # Open ports in the firewall.

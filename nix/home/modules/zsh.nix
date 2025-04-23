@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, lib, ... }: {
   programs.zsh = let
 
     stty = # sh
@@ -91,6 +91,18 @@
         function c() { printf "%s\n" "$@" | bc -l; }
         function kitty-reload() { kill -SIGUSR1 $(pidof kitty) }
       '';
+    beforeCompInit = lib.mkOrder 550 ''
+      ${stty}
+      ${constants}
+      ${fzfCompletion}
+      ${keychain}
+      ${editCommandLine}
+      ${keyMappings}
+      ${functions}
+    '';
+    afterCompInit = lib.mkOrder 1000 ''
+      ${zshCompletion}
+    '';
   in {
     enable = true;
     enableCompletion = true;
@@ -103,18 +115,7 @@
       size = 100000;
       save = 100000;
     };
-    initExtraBeforeCompInit = ''
-      ${stty}
-      ${constants}
-      ${fzfCompletion}
-      ${keychain}
-      ${editCommandLine}
-      ${keyMappings}
-      ${functions}
-    '';
-    initExtra = ''
-      ${zshCompletion}
-    '';
+    initContent = lib.mkMerge [ beforeCompInit afterCompInit ];
     shellAliases = let
       home = config.home.homeDirectory;
       dotfiles = "${home}/dotfiles";

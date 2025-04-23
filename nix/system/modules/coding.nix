@@ -18,7 +18,6 @@
     scala-cli
     nodejs_23
     delta
-    ruff-lsp
     pyright
     cargo
     rustc

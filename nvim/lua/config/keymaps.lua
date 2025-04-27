@@ -54,6 +54,9 @@ map("n", "'", "`")
 map("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 map("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
 
+-- Duplicate line and comment the first line
+map("n", "ycc", "yygccp", { remap = true })
+
 -- Reselect latest changed, put, or yanked text
 map(
   "n",

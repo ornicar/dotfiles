@@ -16,7 +16,7 @@
     python3
     ruby
     scala-cli
-    nodejs_23
+    nodejs
     delta
     pyright
     cargo

@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     jdk23
-    corepack_23 # gives a pnpm bundled with node23
+    corepack
     sbt
     bloop
     coursier # required by metals

@@ -8,6 +8,7 @@ vim.filetype.add({
 return {
   {
     "mistweaverco/kulala.nvim",
+    enabled = false,
     ft = "http",
     keys = {
       { "<leader>oh", "<cmd>lua require('kulala').scratchpad()<cr>", desc = "HTTP scratchpad" },
@@ -32,10 +33,11 @@ return {
     },
     opts = {},
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = { "http", "graphql" },
-    },
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   enabled = false,
+  --   opts = {
+  --     ensure_installed = { "http", "graphql" },
+  --   },
+  -- },
 }

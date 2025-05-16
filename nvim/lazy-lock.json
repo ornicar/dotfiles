@@ -1,7 +1,7 @@
 {
   "CopilotChat.nvim": { "branch": "main", "commit": "16d897fd43d07e3b54478ccdb2f8a16e4df4f45a" },
   "LazyVim": { "branch": "main", "commit": "25abbf546d564dc484cf903804661ba12de45507" },
-  "SchemaStore.nvim": { "branch": "main", "commit": "b20f287e59a5376ca0de23140c6d94563d64695d" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "ba7bad63cb96dae5a82e48310beada18e8eeafe5" },
   "blink-cmp-copilot": { "branch": "main", "commit": "439cff78780c033aa23cf061d7315314b347e3c1" },
   "blink.cmp": { "branch": "main", "commit": "022521a8910a5543b0251b21c9e1a1e989745796" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
@@ -14,7 +14,7 @@
   "firenvim": { "branch": "master", "commit": "c4ab7d2aeb145cd93db8660cb134f771722f2b5e" },
   "flash.nvim": { "branch": "main", "commit": "3c942666f115e2811e959eabbdd361a025db8b63" },
   "gitsigns.nvim": { "branch": "main", "commit": "e399f9748d7cfd8859747c8d6c4e9c8b4d50a1bd" },
-  "grug-far.nvim": { "branch": "main", "commit": "c95861d894c33243c1fe4d6d527800af760c2c1c" },
+  "grug-far.nvim": { "branch": "main", "commit": "176ba4c42924f4d84ee7d19c9f0081c538f84a88" },
   "inc-rename.nvim": { "branch": "main", "commit": "2eaff20526ff6101337b84f4b0d238c11f47d7f4" },
   "iswap.nvim": { "branch": "master", "commit": "e02cc91f2a8feb5c5a595767d208c54b6e3258ec" },
   "key-analyzer.nvim": { "branch": "main", "commit": "4e4bef34498e821bcbd5203f44db8b67e4f10e04" },

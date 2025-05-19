@@ -129,4 +129,11 @@ return {
   },
 
   { "meznaric/key-analyzer.nvim", opts = {}, cmd = "KeyAnalyzer" },
+
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
 }

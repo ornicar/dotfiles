@@ -8,6 +8,7 @@ with config.lib.stylix.colors.withHashtag; {
   # '';
 
   programs.bemenu = { enable = true; };
+  stylix.targets.bemenu.enable = false;
 
   gtk = { enable = true; };
 

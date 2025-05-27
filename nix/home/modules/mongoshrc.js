@@ -34,6 +34,7 @@ const secImportMany = (coll, query, opts = {}) => {
     try {
       db[coll].insertOne(doc);
       ins++;
+      if ((ins + dup) % 1000 === 0) console.log(`Inserted: ${ins}, Duplicates: ${dup}`);
     } catch (e) {
       dup++;
     }

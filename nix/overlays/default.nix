@@ -42,15 +42,15 @@
     });
 
     stockfish = let
-      version = "17";
+      version = "17.1";
       arch = "x86-64-avx512";
       # see src/evaluate.h for nnue names
-      nnueBigFile = "nn-1111cefa1111.nnue";
+      nnueBigFile = "nn-1c0000000000.nnue";
       nnueSmallFile = "nn-37f18f62d772.nnue";
       nnueBig = prev.fetchurl {
         name = nnueBigFile;
         url = "https://tests.stockfishchess.org/api/nn/${nnueBigFile}";
-        sha256 = "sha256-ERHO+hERa3cWG9SxTatMUPJuWSDHVvSGFZK+Pc1t4XQ=";
+        sha256 = "sha256-HAAAAAAApn1imZnZMtDDc/dFDOQ80S0FYoaPTq+a4q0=";
       };
       nnueSmall = prev.fetchurl {
         name = nnueSmallFile;
@@ -63,7 +63,7 @@
         owner = "official-stockfish";
         repo = "Stockfish";
         rev = "sf_${version}";
-        sha256 = "sha256-oXvLaC5TEUPlHjhm7tOxpNPY88QxYHFw+Cev3Q8NEeQ=";
+        sha256 = "sha256-c8o1d7/yPnF3Eo7M/MSzYuYQr2qt2tIwyu7WfuKMAzg=";
       };
       postUnpack = ''
         sourceRoot+=/src

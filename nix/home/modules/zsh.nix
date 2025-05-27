@@ -23,7 +23,7 @@
       ''
 
         # Unlock the ssh private key
-        eval `keychain --eval --agents ssh --nogui -Q -q id_ed25519`
+        eval `keychain --eval --nogui -Q -q id_ed25519`
       '';
 
     fzfCompletion = # sh

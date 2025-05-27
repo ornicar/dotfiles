@@ -55,8 +55,8 @@
     };
 
     cursor = {
-      name = "Vanilla-DMZ";
-      package = pkgs.vanilla-dmz;
+      name = "Numix-Cursor";
+      package = pkgs.numix-cursor-theme;
       size = 32;
     };
   };

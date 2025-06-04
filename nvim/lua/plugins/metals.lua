@@ -26,10 +26,10 @@ return {
 
       config.init_options.statusBarProvider = "on"
       config.settings = {
-        showImplicitArguments = true,
+        -- showImplicitArguments = true,
         excludedPackages = { "akka.actor.typed.javadsl" },
         serverProperties = { "-Xmx2g" },
-        serverVersion = "latest.snapshot",
+        -- serverVersion = "latest.snapshot",
       }
 
       config.capabilities = require("blink.cmp").get_lsp_capabilities()

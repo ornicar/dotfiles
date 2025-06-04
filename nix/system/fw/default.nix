@@ -7,6 +7,7 @@
     ./keyd.nix
     ../lichess
     ../modules/common.nix
+    ../modules/bafang.nix
     ../modules/bluetooth.nix
     # ../modules/coolercontrol.nix
   ];

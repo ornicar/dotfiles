@@ -58,7 +58,7 @@
         sha256 = "sha256-N/GPYtdy8xB+HWqso4mMEww8hvKrY+ZVX7vKIGNaiZ0=";
       };
     in prev.stockfish.overrideAttrs (previousAttrs: {
-      version = "${version}-thib";
+      version = "${version}";
       src = prev.fetchFromGitHub {
         owner = "official-stockfish";
         repo = "Stockfish";

@@ -54,10 +54,16 @@
       applications = 0.9;
     };
 
+    # cursor = {
+    #   name = "Numix-Cursor";
+    #   package = pkgs.numix-cursor-theme;
+    #   size = 32;
+    # };
+
     cursor = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
-      size = 32;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
     };
   };
 }

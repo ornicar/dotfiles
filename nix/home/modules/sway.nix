@@ -189,8 +189,8 @@ with config.lib.stylix.colors.withHashtag; {
   services.mako = {
     enable = true;
     settings = {
-      defaultTimeout = 5000;
-      ignoreTimeout = false;
+      default-timeout = 5000;
+      ignore-timeout = false;
     };
   };
 

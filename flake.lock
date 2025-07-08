@@ -102,21 +102,6 @@
         "type": "github"
       }
     },
-    "flake-compat": {
-      "locked": {
-        "lastModified": 1747046372,
-        "narHash": "sha256-CIVLLkVgvHYbgI2UpXvIIBJ12HWgX+fjA8Xf8PUmqCY=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "9100a0f413b0c601e0533d1d94ffd501ce2e7885",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -154,67 +139,19 @@
         "type": "github"
       }
     },
-    "git-hooks": {
-      "inputs": {
-        "flake-compat": [
-          "stylix",
-          "flake-compat"
-        ],
-        "gitignore": "gitignore",
-        "nixpkgs": [
-          "stylix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1747372754,
-        "narHash": "sha256-2Y53NGIX2vxfie1rOW0Qb86vjRZ7ngizoo+bnXU9D9k=",
-        "owner": "cachix",
-        "repo": "git-hooks.nix",
-        "rev": "80479b6ec16fefd9c1db3ea13aeb038c60530f46",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "git-hooks.nix",
-        "type": "github"
-      }
-    },
-    "gitignore": {
-      "inputs": {
-        "nixpkgs": [
-          "stylix",
-          "git-hooks",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1709087332,
-        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
-        "owner": "hercules-ci",
-        "repo": "gitignore.nix",
-        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "gitignore.nix",
-        "type": "github"
-      }
-    },
     "gnome-shell": {
       "flake": false,
       "locked": {
-        "lastModified": 1744584021,
-        "narHash": "sha256-0RJ4mJzf+klKF4Fuoc8VN8dpQQtZnKksFmR2jhWE1Ew=",
+        "lastModified": 1748186689,
+        "narHash": "sha256-UaD7Y9f8iuLBMGHXeJlRu6U1Ggw5B9JnkFs3enZlap0=",
         "owner": "GNOME",
         "repo": "gnome-shell",
-        "rev": "52c517c8f6c199a1d6f5118fae500ef69ea845ae",
+        "rev": "8c88f917db0f1f0d80fa55206c863d3746fa18d0",
         "type": "github"
       },
       "original": {
         "owner": "GNOME",
-        "ref": "48.1",
+        "ref": "48.2",
         "repo": "gnome-shell",
         "type": "github"
       }
@@ -379,13 +316,8 @@
         "base16-helix": "base16-helix",
         "base16-vim": "base16-vim",
         "firefox-gnome-theme": "firefox-gnome-theme",
-        "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
-        "git-hooks": "git-hooks",
         "gnome-shell": "gnome-shell",
-        "home-manager": [
-          "home-manager"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -398,16 +330,15 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1750774546,
-        "narHash": "sha256-fLwoiW7goj6eqUhi6RRxsuGDwvQfjnq9G3OKdVsuSew=",
+        "lastModified": 1751914048,
+        "narHash": "sha256-xHO3xlw35tCC0f3pN3osPNjgwwwAgusTuZk5iC8oDiE=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "79e816c2e63df5024e28292fee0d92dc106ff66c",
+        "rev": "bf0ef81c8fcc30c32db9dab32d379f8d9db835e4",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "79e816c2e63df5024e2",
         "repo": "stylix",
         "type": "github"
       }

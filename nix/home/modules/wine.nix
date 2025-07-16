@@ -6,5 +6,6 @@
       mingwSupport = true;
     })
     winetricks
+    protontricks
   ];
 }

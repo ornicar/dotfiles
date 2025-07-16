@@ -4,6 +4,7 @@
     ../common.nix
     ../modules/stream.nix
     ../modules/wine.nix
+    ../modules/skyrim.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
     ../services/cooklang-chef.nix

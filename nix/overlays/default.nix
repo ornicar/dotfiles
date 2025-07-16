@@ -1,4 +1,4 @@
-{ ... }: {
+{ inputs, ... }: {
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -22,6 +22,12 @@
     #   system = final.system;
     #   config.allowunfree = true;
     # }).bloop;
+
+    # stable gimp
+    gimp = (import inputs.nixpkgs-stable {
+      system = final.system;
+      config.allowunfree = true;
+    }).gimp;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc1.thib";

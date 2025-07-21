@@ -51,6 +51,7 @@
     enable = true;
     gitCredentialHelper.enable = true;
   };
+  programs.mergiraf = { enable = true; };
 
   programs.zsh.shellAliases = {
     "t" = "lazygit";

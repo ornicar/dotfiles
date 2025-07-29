@@ -29,6 +29,12 @@
       config.allowunfree = true;
     }).gimp;
 
+    # stable neovim
+    # neovim = (import inputs.nixpkgs-stable {
+    #   system = final.system;
+    #   config.allowunfree = true;
+    # }).neovim;
+
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc1.thib";
       src = prev.fetchFromGitHub {

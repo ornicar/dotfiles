@@ -19,6 +19,7 @@
     iprange
     ps_mem
     bc # calculator
+    unixtools.netstat
   ];
 
   # enable zsh completion for system packages

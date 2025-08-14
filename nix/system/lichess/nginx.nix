@@ -60,6 +60,7 @@
     '';
 
     virtualHosts = let
+      listenParams = [ "so_keepalive=15:5:3" ];
       listenLocal80 = {
         addr = "0.0.0.0";
         port = 80;
@@ -69,7 +70,15 @@
         port = 443;
         ssl = true;
       };
+      listenLocal80WithKeepalive = listenLocal80 // {
+        extraParameters = listenParams;
+      };
+      listenLocal443WithKeepalive = listenLocal443 // {
+        extraParameters = listenParams;
+      };
       listenLocal = [ listenLocal443 listenLocal80 ];
+      listenLocalWithKeepalive =
+        [ listenLocal443WithKeepalive listenLocal80WithKeepalive ];
     in {
       #       "lichess-assets.local" = {
       #         listen = [ { addr = "0.0.0.0"; port = 80; } { addr = "0.0.0.0"; port = 443; ssl = true; } ];
@@ -87,7 +96,7 @@
           proxy_set_header X-Forwarded-Proto $scheme;
           proxy_http_version 1.1;'';
       in {
-        listen = listenLocal;
+        listen = listenLocalWithKeepalive;
         enableACME = false;
         forceSSL = false;
         extraConfig = ''
@@ -160,6 +169,8 @@
             ${lichessProxyConf}
             access_log /var/log/nginx/lila.stream.log;
             proxy_read_timeout 3h;
+            proxy_send_timeout 5s;
+            send_timeout 5s;
             proxy_pass http://lila/api/stream;
           }
 

@@ -28,5 +28,7 @@
     meld
     ansible
     openssl
+    fx # tui json viewer
+    android-studio
   ];
 }

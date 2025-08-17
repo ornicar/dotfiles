@@ -21,7 +21,6 @@
     pyright
     cargo
     rustc
-    rust-analyzer
     taplo # TOML language server
     marksman # markdown language server
     http-server

@@ -2,6 +2,7 @@ return {
   {
     "catppuccin",
     opts = {
+      term_colors = true,
       color_overrides = {
         mocha = {
           -- base = "1e1e2e",

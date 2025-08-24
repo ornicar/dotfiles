@@ -36,6 +36,14 @@ return {
   -- bufferline
   {
     "akinsho/bufferline.nvim",
+    -- tmp hotfix LazyVim
+    -- https://github.com/LazyVim/LazyVim/pull/6354#issuecomment-3202799735
+    init = function()
+      local bufline = require("catppuccin.groups.integrations.bufferline")
+      function bufline.get()
+        return bufline.get_theme()
+      end
+    end,
     opts = {
       options = {
         show_buffer_close_icons = false,

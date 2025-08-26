@@ -25,9 +25,9 @@
   # enable zsh completion for system packages
   environment.pathsToLink = [ "/share/zsh" ];
 
-  services.logind = {
-    powerKey = "suspend";
-    lidSwitch = "suspend";
+  services.logind.settings.Login = {
+    HandlePowerKey = "suspend";
+    HandleLidSwitch = "suspend";
   };
 
   # automount removable media

@@ -3,6 +3,7 @@
 {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     forwardAgent = true;
     extraConfig = ''
       Host fw

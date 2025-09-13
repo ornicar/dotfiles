@@ -1,4 +1,4 @@
 { pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [ transmission ];
+  environment.systemPackages = with pkgs; [ transmission_4-gtk ];
 }

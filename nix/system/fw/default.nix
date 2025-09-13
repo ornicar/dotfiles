@@ -8,6 +8,7 @@
     ../lichess
     ../modules/common.nix
     ../modules/bluetooth.nix
+    ../modules/torrent.nix
     # ../modules/coolercontrol.nix
   ];
 

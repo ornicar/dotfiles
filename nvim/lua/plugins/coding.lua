@@ -11,7 +11,7 @@ return {
     },
   },
 
-  { "copilot.lua", commit = "0e004a200537fe905a9a4ad7eb0ed1a2f1bb015d" },
+  { "copilot.lua" },
 
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {

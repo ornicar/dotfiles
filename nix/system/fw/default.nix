@@ -9,6 +9,7 @@
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/torrent.nix
+    ../modules/steam.nix
     # ../modules/coolercontrol.nix
   ];
 

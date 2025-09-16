@@ -41,19 +41,6 @@
 
         [[ $mode = "on" ]] && brightness="100" || brightness="0"
         ${pkgs.openrgb}/bin/openrgb -b $brightness
-
-        # pause/resume puzzle generation
-        [[ $mode = "on" ]] && SIG="STOP" || SIG="CONT"
-        # only resume between 9pm and 6am
-        night="yes"
-        hour=$(${pkgs.coreutils}/bin/date +%H)
-        [[ $''${hour#0} -gt 6 && $''${hour#0} -lt 22 ]] && night="no"
-        [[ $SIG = "CONT" && $night = "no" ]] && SIG="STOP"
-        echo "Puzzle generation: hour=$hour, night=$night, sending $SIG"
-        for pid in $(${pkgs.procps}/bin/pgrep -u thib --full "generator.py"); do
-          echo "kill -$SIG $pid"
-          kill -$SIG $pid
-        done
       '';
     in [{
       timeout = 420;

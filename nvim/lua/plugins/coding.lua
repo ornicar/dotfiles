@@ -43,11 +43,11 @@ return {
   { "rafamadriz/friendly-snippets", enabled = false },
   { "garymjr/nvim-snippets", enabled = false },
 
-  { "echasnovski/mini.pairs", enabled = false },
+  { "nvim-mini/mini.pairs", enabled = false },
 
   -- surround
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     opts = {
       mappings = {
         add = "<space>sa", -- Add surrounding in Normal and Visual modes

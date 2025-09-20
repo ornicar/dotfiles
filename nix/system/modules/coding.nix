@@ -28,6 +28,6 @@
     ansible
     openssl
     fx # tui json viewer
-    android-studio
+    # android-studio
   ];
 }

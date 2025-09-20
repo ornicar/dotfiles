@@ -22,6 +22,7 @@
     zsh
     zsh-syntax-highlighting
     ripgrep
+    ast-grep
     eza
     keychain
     zoxide

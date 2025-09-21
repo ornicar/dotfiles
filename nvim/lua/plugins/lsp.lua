@@ -23,6 +23,7 @@ return {
             },
           },
         },
+        rust_analyzer = {},
       }
 
       local keys = require("lazyvim.plugins.lsp.keymaps").get()

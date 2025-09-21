@@ -9,7 +9,6 @@
     gcc
     gnumake
     go
-    cargo
     luarocks
     stylua
     tree-sitter
@@ -19,8 +18,6 @@
     nodejs_24
     delta
     pyright
-    cargo
-    rustc
     taplo # TOML language server
     marksman # markdown language server
     http-server
@@ -29,5 +26,6 @@
     openssl
     fx # tui json viewer
     # android-studio
+    tailwindcss
   ];
 }

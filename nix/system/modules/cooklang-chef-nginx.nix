@@ -37,7 +37,6 @@
         listen = listenLocal;
         enableACME = false;
         forceSSL = false;
-        basicAuth = { vegan = "miam"; };
         extraConfig = ''
 
           # ssl_certificate /etc/ssl/certs/l.org.crt;

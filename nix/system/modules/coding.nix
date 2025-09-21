@@ -27,5 +27,6 @@
     fx # tui json viewer
     # android-studio
     tailwindcss
+    goaccess
   ];
 }

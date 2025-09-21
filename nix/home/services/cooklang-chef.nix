@@ -2,7 +2,7 @@
 
   systemd.user.services.cooklang-chef = let
     recipes = "${config.home.homeDirectory}/recipes";
-    chef = "${config.home.homeDirectory}/.cargo/bin/chef";
+    chef = "${config.home.homeDirectory}/cooklang-chef/target/release/chef";
     port = "9801";
   in {
     Unit = {

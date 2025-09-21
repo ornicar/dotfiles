@@ -13,6 +13,7 @@
   imports = [
     ./boot.nix
     ./coding.nix
+    ./rust.nix
     ./fonts.nix
     ./keyboard.nix
     ./linux.nix

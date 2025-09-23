@@ -45,6 +45,11 @@
           error_log /var/log/nginx/chef.error.log;
           access_log /var/log/nginx/chef.access.log;
 
+          location = /robots.txt {
+            add_header Content-Type text/plain;
+            return 200 "User-agent: *\nDisallow: /\n";
+          }
+
           location / {
             ${proxyConf}
             proxy_pass http://chef;  # no trailing /

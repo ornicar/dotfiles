@@ -59,6 +59,8 @@ return {
             keys = {
               ["<Esc>"] = { "close", mode = "i" },
               ["<C-w>"] = { "<c-s-w>", mode = { "i" }, expr = true, desc = "delete word" },
+              ["<C-i>"] = { "toggle_ignored", mode = { "i", "n" } },
+              ["<C-h>"] = { "toggle_hidden", mode = { "i", "n" } },
             },
           },
         },

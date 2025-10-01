@@ -23,7 +23,10 @@ const sec = () => prod(ports.gappa);
 const secImportOne = (coll, id, opts = {}) => {
   opts = { ...defaultOpts, ...opts };
   if (opts.deleteFirst) db[coll].deleteOne({ _id: id });
-  db[coll].insertOne(prod(opts.port, opts.db).getCollection(coll).findOne({ _id: id }));
+  const doc = prod(opts.port, opts.db).getCollection(coll).findOne({ _id: id });
+  const debug = `${coll}:${id}`;
+  console.log(doc ? `Importing document ${debug}` : `Document ${debug} not found`);
+  db[coll].insertOne(doc);
 }
 
 const secImportMany = (coll, query, opts = {}) => {

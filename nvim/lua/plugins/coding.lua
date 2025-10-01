@@ -11,8 +11,6 @@ return {
     },
   },
 
-  { "copilot.lua" },
-
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {
     "saghen/blink.cmp",

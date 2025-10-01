@@ -28,5 +28,6 @@
     # android-studio
     tailwindcss
     goaccess
+    copilot-cli
   ];
 }

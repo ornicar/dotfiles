@@ -29,7 +29,7 @@
     ./stylix.nix
     ./sway.nix
     ./users.nix
-    ./firefox.nix
+    ./browser.nix
     ./visualvm.nix
     # ./zeroad.nix
   ];

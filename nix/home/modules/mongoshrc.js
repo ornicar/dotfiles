@@ -55,3 +55,19 @@ const uploadMany = (coll, query, opts = {}) => {
   const prodColl = prod(opts.port, opts.db).getCollection(coll);
   db[coll].find(query).forEach(doc => prodColl.insertOne(doc));
 }
+
+const changeId = (coll, oldId, newId) => {
+  const doc = db[coll].findOne({ _id: oldId });
+  if (!doc) {
+    console.log(`Document ${coll}:${oldId} not found`);
+    return;
+  }
+  doc._id = newId;
+  try {
+    db[coll].insertOne(doc);
+    db[coll].deleteOne({ _id: oldId });
+    console.log(`Changed id ${coll}:${oldId} -> ${newId}`);
+  } catch (e) {
+    console.error(`Error updating id ${coll}:${oldId} -> ${newId}:`, e);
+  }
+}

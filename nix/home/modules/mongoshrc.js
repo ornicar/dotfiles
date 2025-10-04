@@ -5,6 +5,8 @@ const ports = {
   snafu: 27217,
   rubik: 27317,
   kaiju: 27917,
+  fw: 27417,
+  crom: 27418
 };
 const defaultOpts = {
   port: ports.gappa,

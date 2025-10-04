@@ -13,6 +13,9 @@ rubik=27317
 insight=27318
 kaiju=27917
 
+fw=27417
+crom=27418
+
 if [ "$server" = "sec" ]; then
 
   host="gappa"
@@ -49,10 +52,40 @@ elif [ "$server" = "pri" ]; then
   host="kaiju"
   port=$kaiju
 
+elif [ "$server" = "fw" ]; then
+
+  host="fw"
+  fullHost="fw"
+  port=$fw
+  as="localhost"
+  user="thib"
+
+elif [ "$server" = "crom" ]; then
+
+  host="crom"
+  fullHost="crom"
+  port=$crom
+  as="localhost"
+  user="thib"
+
+elif [ "$server" = "stage" ]; then
+
+  host="snafu"
+  port=$snafu
+  as="localhost"
+
 fi
 
 if [ -z "$as" ]; then
   as="$host.vrack.lichess.ovh"
+fi
+
+if [ -z "$user" ]; then
+  user="root"
+fi
+
+if [ -z "$fullHost" ]; then
+  fullHost="$host.lichess.ovh"
 fi
 
 if [ "$server" = "all" ]; then
@@ -67,10 +100,10 @@ elif [ -n "$port" ]; then
   for pid in $(lsof -t -i:$port); do
     kill -9 $pid
   done
-  echo "Connecting $server to $host.$vrack on port $port"
-  command="ssh $options $port:$as:27017 root@$host.lichess.ovh"
+  echo "Connecting $server to $fullHost on port $port"
+  command="ssh $options $port:$as:27017 $user@$fullHost"
   echo $command
   $command
 else
-  echo "Usage: $0 [all|sec|study|achoo|stage|puzzle|pri]"
+  echo "Usage: $0 [all|sec|study|achoo|stage|puzzle|pri|insight|fw|crom]"
 fi

@@ -4,6 +4,7 @@ const ports = {
   achoo: 27119,
   snafu: 27217,
   rubik: 27317,
+  feck1: 27417,
   kaiju: 27917,
   fw: 27417,
   crom: 27418
@@ -55,7 +56,13 @@ const uploadOne = (coll, id, opts = {}) => {
 const uploadMany = (coll, query, opts = {}) => {
   opts = { ...defaultOpts, port: ports.kaiju, ...opts };
   const prodColl = prod(opts.port, opts.db).getCollection(coll);
-  db[coll].find(query).forEach(doc => prodColl.insertOne(doc));
+  db[coll].find(query).forEach(doc => {
+    try {
+      prodColl.insertOne(doc)
+    } catch (e) {
+      console.error(`Error uploading ${coll}:${doc._id} ${e.code}`)
+    }
+  });
 }
 
 const changeId = (coll, oldId, newId) => {

@@ -11,6 +11,7 @@ achoo=27119
 snafu=27217
 rubik=27317
 insight=27318
+feck1=27417
 kaiju=27917
 
 fw=27417
@@ -51,6 +52,11 @@ elif [ "$server" = "pri" ]; then
 
   host="kaiju"
   port=$kaiju
+
+elif [ "$server" = "late1" ]; then
+
+  host="feck1"
+  port=$feck1
 
 elif [ "$server" = "fw" ]; then
 
@@ -105,5 +111,5 @@ elif [ -n "$port" ]; then
   echo $command
   $command
 else
-  echo "Usage: $0 [all|sec|study|achoo|stage|puzzle|pri|insight|fw|crom]"
+  echo "Usage: $0 [all|sec|feck1|study|achoo|stage|puzzle|pri|insight|fw|crom]"
 fi

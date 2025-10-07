@@ -5,7 +5,7 @@
         modules-right = [
           "cpu"
           "temperature#cpu"
-          "custom/ectool-fan"
+          # "custom/ectool-fan"
           "memory"
           "network"
           "pulseaudio"
@@ -35,12 +35,12 @@
           format = "{icon} {temperatureC}°";
           format-icons = [ "" ];
         };
-        "custom/ectool-fan" = {
-          interval = 1;
-          format = "󰈐 {}";
-          exec = "cat /tmp/ectool-fan-rpm";
-          tooltip = "Fan speed";
-        };
+        # "custom/ectool-fan" = {
+        #   interval = 1;
+        #   format = "󰈐 {}";
+        #   exec = "cat /tmp/ectool-fan-rpm";
+        #   tooltip = "Fan speed";
+        # };
         "backlight" = {
           format = "{icon} {percent}%";
           format-icons = [ " " " " " " " " " " " " " " " " " " ];

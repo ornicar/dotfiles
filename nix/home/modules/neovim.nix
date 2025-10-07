@@ -9,6 +9,7 @@
     prettierd
     shfmt
     nodePackages_latest.typescript-language-server
+    copilot-language-server
   ];
 
   # Use the external dotfiles nvim config for quicker hacking

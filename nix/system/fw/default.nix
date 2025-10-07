@@ -3,7 +3,7 @@
   imports = [
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.framework-16-7040-amd
-    ./ectool.nix
+    # ./ectool.nix
     ./keyd.nix
     ../lichess
     ../modules/common.nix

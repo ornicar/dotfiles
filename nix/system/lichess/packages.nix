@@ -3,7 +3,8 @@
   imports = [ ../modules/mongodb.nix ];
 
   environment.systemPackages = with pkgs; [
-    jdk24
+    # jdk24
+    jdk25
     corepack
     sbt
     bloop

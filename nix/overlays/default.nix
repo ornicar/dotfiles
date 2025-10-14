@@ -36,13 +36,14 @@
     # }).neovim;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
-      version = "candidate_1.0rc1.thib";
+      version = "candidate_1.0rc2";
       src = prev.fetchFromGitHub {
-        owner = "ornicar";
+        owner = "CalcProgrammer1";
         repo = "OpenRGB";
-        rev = "148e0b945a3dd4a4e36b264e2fc2bdf5b0d4979e";
+        rev = "a589a0f0b863450aa8cfac9d46f8eac808eab374";
         hash = "sha256-qp2bsQw9sfv6o+qYTe9VerX98GkxRSTaHsAgMvjfZSg=";
       };
+      patches = [ ];
 
       postPatch = ''
         patchShebangs scripts/build-udev-rules.sh

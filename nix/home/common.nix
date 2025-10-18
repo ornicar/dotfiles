@@ -17,6 +17,7 @@
     # ./modules/lan-mouse.nix
 
     ./services/lila.nix
+    # ./services/lila-http.nix
     # ./services/fishnet-local.nix
     # ./services/gammarelay.nix
   ];

@@ -2,20 +2,20 @@
 
   programs.git = {
     enable = true;
-    userName = "Thibault Duplessis";
-    userEmail = "t@lichess.org";
+    settings = {
+      user.name = "Thibault Duplessis";
+      user.email = "t@lichess.org";
 
-    lfs.enable = true;
+      alias = {
+        l = let format = "%Cred%h%Creset %Cblue%ad%Creset %Cgreen%an%Creset %s";
+        in ''log --pretty=format:"${format}"'';
+      };
 
-    extraConfig = {
       core = {
         editor = "neovide";
         whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
       };
-      delta = {
-        enable = true;
-        options = { "navigate" = true; };
-      };
+      merge.conflictStyle = "zdiff3";
       diff.tool = "meld";
       web.browser = "firefox";
       push.default = "tracking";
@@ -27,14 +27,10 @@
       rerere.enabled = true;
       color.ui = true;
       blame.date = "relative";
+      paging.colorArg = "never";
     };
 
-    aliases.l =
-      let format = "%Cred%h%Creset %Cblue%ad%Creset %Cgreen%an%Creset %s";
-      in ''log --pretty=format:"${format}"'';
-
-    diff-so-fancy.enable = true;
-    # difftastic.enable = true;
+    lfs.enable = true;
 
     ignores = [
       ".idea"
@@ -47,11 +43,42 @@
       "**/*.worksheet.sc"
     ];
   };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = false;
+      features = "catppuccin-mocha";
+      true-color = "always";
+      catppuccin-mocha = {
+        blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a";
+        commit-decoration-style = "#6c7086 bold box ul";
+        dark = true;
+        file-decoration-style = "#6c7086";
+        file-style = "#cdd6f4";
+        hunk-header-decoration-style = "#6c7086 box ul";
+        hunk-header-file-style = "bold";
+        hunk-header-line-number-style = "bold #a6adc8";
+        hunk-header-style = "file line-number syntax";
+        minus-emph-style = "bold syntax #694559";
+        minus-style = "syntax #493447";
+        plus-emph-style = "bold syntax #4e6356";
+        plus-style = "syntax #394545";
+        map-styles = ''
+          bold purple => syntax "#5b4e74",
+          bold blue => syntax "#445375",
+          bold cyan => syntax "#446170",
+          bold yellow => syntax "#6b635b"'';
+        syntax-theme = "Catppuccin Mocha";
+      };
+    };
+  };
+
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;
   };
-  programs.mergiraf = { enable = true; };
 
   programs.zsh.shellAliases = {
     "t" = "lazygit";

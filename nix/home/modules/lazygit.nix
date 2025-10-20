@@ -5,8 +5,8 @@
     settings = {
       git = {
         paging = {
-          colorArg = "always";
-          pager = "diff-so-fancy";
+          colorArg = "never";
+          pager = "delta --paging=never";
         };
         disableForcePushing = true;
       };

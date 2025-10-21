@@ -49,6 +49,7 @@
     enableGitIntegration = true;
     options = {
       navigate = false;
+      syntax-theme = "none";
       features = "catppuccin-mocha";
       true-color = "always";
       catppuccin-mocha = {
@@ -70,7 +71,6 @@
           bold blue => syntax "#445375",
           bold cyan => syntax "#446170",
           bold yellow => syntax "#6b635b"'';
-        syntax-theme = "Catppuccin Mocha";
       };
     };
   };

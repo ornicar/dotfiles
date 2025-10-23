@@ -38,9 +38,6 @@
         # hack to get the current sway socket as I've seen it be wrong once.
         export SWAYSOCK=$XDG_RUNTIME_DIR/sway-ipc.$UID.$(${pkgs.procps}/bin/pgrep -x sway).sock
         ${pkgs.sway}/bin/swaymsg "output * power $mode" 
-
-        [[ $mode = "on" ]] && brightness="100" || brightness="0"
-        ${pkgs.openrgb}/bin/openrgb -b $brightness
       '';
     in [{
       timeout = 420;

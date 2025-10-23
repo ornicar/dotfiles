@@ -29,5 +29,7 @@
     tailwindcss
     goaccess
     copilot-cli
+    pnpm
+    esbuild
   ];
 }

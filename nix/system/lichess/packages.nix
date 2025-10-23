@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     # jdk24
     jdk25
-    corepack
     sbt
     bloop
     coursier # required by metals

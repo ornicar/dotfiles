@@ -4,7 +4,7 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    forwardAgent = true;
+    matchBlocks = { "*" = { forwardAgent = true; }; };
     extraConfig = ''
       Host fw
         HostName 192.168.1.3

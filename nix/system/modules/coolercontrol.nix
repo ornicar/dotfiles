@@ -5,8 +5,5 @@
     coolercontrol.coolercontrol-gui
   ];
 
-  programs.coolercontrol = {
-    enable = true;
-    nvidiaSupport = false;
-  };
+  programs.coolercontrol = { enable = true; };
 }

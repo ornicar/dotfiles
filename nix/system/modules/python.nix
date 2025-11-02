@@ -6,7 +6,7 @@
           requests
           gitpython
           tldextract
-          dns
+          dnspython
           httpx
           h2
           websocket-client

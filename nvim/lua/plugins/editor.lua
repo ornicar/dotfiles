@@ -111,15 +111,6 @@ return {
     },
   },
 
-  -- open file in GitHub
-  {
-    "almo7aya/openingh.nvim",
-    lazy = true,
-    keys = {
-      { "<leader>gH", "<cmd>OpenInGHFileLines!<cr>", mode = "v", desc = "Open file in GitHub" },
-    },
-  },
-
   {
     "gabrielpoca/replacer.nvim",
     lazy = true,

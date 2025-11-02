@@ -3,7 +3,10 @@
   environment.systemPackages = with pkgs; [ networkmanagerapplet iw ];
 
   networking = {
-    firewall = { enable = true; };
+    firewall = {
+      enable = true;
+      extraPackages = with pkgs; [ ipset ];
+    };
     nftables.enable = true; # the new iptables
     networkmanager.enable = true;
     stevenblack.enable = true;

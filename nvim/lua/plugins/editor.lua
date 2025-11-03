@@ -119,5 +119,5 @@ return {
     },
   },
 
-  { "meznaric/key-analyzer.nvim", lazy = true, opts = {}, cmd = "KeyAnalyzer" },
+  { "meznaric/key-analyzer.nvim", lazy = true, opts = { layout = "colemak" }, cmd = "KeyAnalyzer" },
 }

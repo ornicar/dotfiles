@@ -9,9 +9,7 @@
     "lazyvim.plugins.extras.editor.snacks_explorer",
     "lazyvim.plugins.extras.editor.snacks_picker",
     "lazyvim.plugins.extras.lang.json",
-    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
-    "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.ui.edgy"
   ],

@@ -124,6 +124,7 @@
       "ntry" = "nh os test ${dotfiles}";
       "ndry" = "nh os test ${dotfiles} --dry";
       "nup" = "nh os switch --update ${dotfiles}";
+      "ndev" = "nix develop --command zsh";
       "locks" = ''
         git add flake.lock nvim/lazy-lock.json && git commit -m "locks" && git push'';
       "su" = "systemctl --user";

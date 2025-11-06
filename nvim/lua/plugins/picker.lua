@@ -11,7 +11,7 @@ layouts.full_horiz = {
   reverse = true,
   layout = {
     box = "horizontal",
-    width = 0.9,
+    width = 0.95,
     height = 0.9,
     border = "none",
     {
@@ -22,7 +22,7 @@ layouts.full_horiz = {
     {
       win = "preview",
       title = "{preview:Preview}",
-      width = 0.45,
+      width = 0.6,
       border = "none",
       title_pos = "center",
     },

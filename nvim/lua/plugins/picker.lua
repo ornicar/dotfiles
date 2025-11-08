@@ -61,6 +61,8 @@ return {
               ["<C-w>"] = { "<c-s-w>", mode = { "i" }, expr = true, desc = "delete word" },
               ["<C-i>"] = { "toggle_ignored", mode = { "i", "n" } },
               ["<C-h>"] = { "toggle_hidden", mode = { "i", "n" } },
+              ["<C-k>"] = { "preview_scroll_up", mode = { "i", "n" } },
+              ["<C-j>"] = { "preview_scroll_down", mode = { "i", "n" } },
             },
           },
         },

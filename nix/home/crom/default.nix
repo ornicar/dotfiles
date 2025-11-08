@@ -7,7 +7,7 @@
     # ../modules/skyrim.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
-    ../services/lichess-mod-auth-log-stream.nix
+    ../services/lichess-mod-auth-stream.nix
     ../services/cooklang-chef.nix
     # ../services/fishnet-prod.nix
 

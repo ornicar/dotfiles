@@ -10,7 +10,7 @@
       Install = { WantedBy = [ "default.target" ]; };
       Service = {
         WorkingDirectory = "${config.home.homeDirectory}/lichess-mod";
-        ExecStart = "${scala-cli} auth-stream.sc";
+        ExecStart = "${scala-cli} auth-http-stream.sc";
         StandardOutput = "journal";
         StandardError = "journal";
         SyslogIdentifier = "lichess-mod-auth-stream";

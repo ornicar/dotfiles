@@ -3,10 +3,11 @@
   imports = [
     ../common.nix
     ../modules/stream.nix
-    ../modules/wine.nix
-    ../modules/skyrim.nix
+    # ../modules/wine.nix
+    # ../modules/skyrim.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
+    ../services/lichess-mod-auth-log-stream.nix
     ../services/cooklang-chef.nix
     # ../services/fishnet-prod.nix
 

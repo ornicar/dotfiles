@@ -27,6 +27,9 @@ map("n", "<leader>md", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>wd", function()
   Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
+map("n", "<leader>wO", function()
+  Snacks.bufdelete.other()
+end, { desc = "Delete other buffers" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })

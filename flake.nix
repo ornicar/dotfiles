@@ -6,9 +6,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
-    nixpkgs-mongodb-pin.url =
-      "github:NixOS/nixpkgs/fd4f8ce9fc5a4a1140b6648d576c42ce41caf8fe";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {

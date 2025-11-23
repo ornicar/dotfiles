@@ -26,6 +26,7 @@ return {
         },
       },
       gh = {},
+      bigfile = {},
     },
     keys = {
       {

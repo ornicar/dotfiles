@@ -54,15 +54,20 @@
       '';
     });
 
-    esbuild = prev.esbuild.overrideAttrs (previousAttrs: rec {
-      version = "0.25.9";
-      src = prev.fetchFromGitHub {
-        owner = "evanw";
-        repo = "esbuild";
-        rev = "v${version}";
-        hash = "sha256-eaYDUKtTEisSNyb5KN+32JX1yY/UJ4/UDQwzToEMAkw=";
-      };
-    });
+    easyeffects = (import inputs.nixpkgs-stable {
+      system = final.system;
+      config.allowunfree = true;
+    }).easyeffects;
+
+    # esbuild = prev.esbuild.overrideAttrs (previousAttrs: rec {
+    #   version = "0.25.9";
+    #   src = prev.fetchFromGitHub {
+    #     owner = "evanw";
+    #     repo = "esbuild";
+    #     rev = "v${version}";
+    #     hash = "sha256-eaYDUKtTEisSNyb5KN+32JX1yY/UJ4/UDQwzToEMAkw=";
+    #   };
+    # });
 
     stockfish = let
       version = "17.1";

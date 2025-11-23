@@ -209,22 +209,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-mongodb-pin": {
-      "locked": {
-        "lastModified": 1728251262,
-        "narHash": "sha256-jfoyQh4fuFNPZY6qlBA3FPA6S8wFFoPd86ZWw62RarE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "fd4f8ce9fc5a4a1140b6648d576c42ce41caf8fe",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "fd4f8ce9fc5a4a1140b6648d576c42ce41caf8fe",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1763622513,
@@ -322,7 +306,6 @@
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-mongodb-pin": "nixpkgs-mongodb-pin",
         "nixpkgs-stable": "nixpkgs-stable",
         "picfit": "picfit",
         "stylix": "stylix"

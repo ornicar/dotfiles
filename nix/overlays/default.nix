@@ -18,10 +18,10 @@
   modifications = final: prev: {
 
     # Get latest bloop
-    # bloop = (import inputs.nixpkgs-master {
-    #   system = final.system;
-    #   config.allowunfree = true;
-    # }).bloop;
+    bloop = (import inputs.nixpkgs-master {
+      system = final.system;
+      config.allowunfree = true;
+    }).bloop;
 
     # stable gimp
     gimp = (import inputs.nixpkgs-stable {

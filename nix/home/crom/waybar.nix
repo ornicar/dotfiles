@@ -8,7 +8,7 @@
           "temperature#cpu"
           "custom/amdgpu"
           "memory"
-          "custom/files"
+          # "custom/files"
           "network"
           "pulseaudio"
           # "custom/lan-mouse"

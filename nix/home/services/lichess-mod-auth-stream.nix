@@ -14,7 +14,7 @@
         StandardOutput = "journal";
         StandardError = "journal";
         SyslogIdentifier = "lichess-mod-auth-stream";
-        Restart = "on-failure";
+        Restart = "always";
         RestartSec = 5;
       };
     };

@@ -211,11 +211,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1765374845,
-        "narHash": "sha256-H/Eq9gb3+9Q5LstViD5fIOakxc6zc1+/aNd6Rhvz2X4=",
+        "lastModified": 1765438979,
+        "narHash": "sha256-JhvoqrTua8UBiDagDi4RCY/FPs5XQM57KLPqGgpPgFA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d0825c2c9eefe810d5ddf2fca8bc90fc06db633f",
+        "rev": "5b219581ae96a4201ac189ce8f1671db863f3621",
         "type": "github"
       },
       "original": {
@@ -349,11 +349,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1765047449,
-        "narHash": "sha256-VQcqjJ2g0kT9TW4ENwA2HBQJzfbCUd5s1Wm3K+R2QZY=",
+        "lastModified": 1765386911,
+        "narHash": "sha256-YLjQpnTZCMjCho7ZDs5O1yFVw+fDlXq4lSJDuLWHHeA=",
         "owner": "nix-community",
         "repo": "stylix",
-        "rev": "bd00e01aab676aee88e6cc5c9238b4a5a7d6639a",
+        "rev": "cb6bbed75eaca21deb8950c2ec0036ae5cde18ca",
         "type": "github"
       },
       "original": {

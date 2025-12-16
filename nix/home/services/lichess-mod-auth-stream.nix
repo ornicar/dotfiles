@@ -16,6 +16,7 @@
         SyslogIdentifier = "lichess-mod-auth-stream";
         Restart = "always";
         RestartSec = 5;
+        RuntimeMaxSec = 900;
       };
     };
   };

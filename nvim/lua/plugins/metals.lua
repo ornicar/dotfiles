@@ -28,7 +28,7 @@ return {
       config.settings = {
         -- showImplicitArguments = true,
         excludedPackages = { "akka.actor.typed.javadsl" },
-        serverProperties = { "-Xmx2g" },
+        serverProperties = { "-Xmx3g" },
         -- serverVersion = "latest.snapshot",
       }
 

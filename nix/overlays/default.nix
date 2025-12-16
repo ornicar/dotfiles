@@ -36,12 +36,12 @@
     # }).neovim;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
-      version = "candidate_1.0rc2";
+      version = "candidate_1.0rc2-dev";
       src = prev.fetchFromGitHub {
         owner = "CalcProgrammer1";
         repo = "OpenRGB";
-        rev = "a589a0f0b863450aa8cfac9d46f8eac808eab374";
-        hash = "sha256-qp2bsQw9sfv6o+qYTe9VerX98GkxRSTaHsAgMvjfZSg=";
+        rev = "56b75aaffc730f1e28c77d576d94d70983bb1db7";
+        hash = "sha256-/jbwP8urk0wgj3KCGuUSwJfbKqSV9GQO/dc5d3ZJiT0=";
       };
       patches = [ ];
 

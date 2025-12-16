@@ -11,8 +11,6 @@
     ffmpeg
     btop
     htop
-    firefox
-    google-chrome
     zip
     unzip
     dtrx

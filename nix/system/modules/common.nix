@@ -32,7 +32,6 @@
     ./browser.nix
     ./visualvm.nix
     # ../modules/telegram.nix
-    # ./android.nix
     # ./zeroad.nix
   ];
 

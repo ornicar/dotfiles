@@ -15,6 +15,7 @@
     ../modules/steam.nix
     ../modules/cooklang-chef-nginx.nix
     ../modules/telegram.nix
+    ../modules/android.nix
   ];
 
   # Open ports in the firewall.

@@ -25,8 +25,6 @@
     ansible
     openssl
     fx # tui json viewer
-    # android-studio
-    tailwindcss
     goaccess
     copilot-cli
     pnpm

@@ -7,6 +7,7 @@
     yaml-language-server
     vscode-langservers-extracted
     prettierd
+    js-beautify
     shfmt
     nodePackages_latest.typescript-language-server
     copilot-language-server

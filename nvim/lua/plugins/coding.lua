@@ -66,6 +66,7 @@ return {
         nix = { "nixfmt" },
         scss = { "prettierd" },
         typescript = { "prettierd" },
+        javascript = { "js-beautify" },
         markdown = { "prettierd" },
         ["markdown.mdx"] = { "prettierd" },
       },

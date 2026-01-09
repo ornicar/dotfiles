@@ -1,7 +1,7 @@
 { config, ... }: {
 
   systemd.user.services.cooklang-chef = let
-    recipes = "${config.home.homeDirectory}/recipes";
+    recipes = "${config.home.homeDirectory}/recipes/cook";
     chef = "${config.home.homeDirectory}/cooklang-chef/target/release/chef";
     port = "9801";
   in {

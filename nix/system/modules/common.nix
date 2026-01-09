@@ -31,6 +31,7 @@
     ./users.nix
     ./browser.nix
     ./visualvm.nix
+    ./recipes-local-nginx.nix
     # ../modules/telegram.nix
     # ./zeroad.nix
   ];

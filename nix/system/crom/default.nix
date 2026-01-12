@@ -37,7 +37,7 @@
     applications = 14;
     desktop = 14;
     popups = 14;
-    terminal = 14;
+    terminal = 13;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

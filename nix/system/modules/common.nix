@@ -30,7 +30,8 @@
     ./sway.nix
     ./users.nix
     ./browser.nix
-    ./visualvm.nix
+    # ./visualvm.nix
+    # ./wireshark.nix
     ./recipes-local-nginx.nix
     # ../modules/telegram.nix
     # ./zeroad.nix

@@ -4,6 +4,7 @@ server=$1
 background="-fNL"
 foreground="-NL"
 options=$background
+destPort=27017
 
 gappa=27117
 study=27118
@@ -47,6 +48,7 @@ elif [ "$server" = "insight" ]; then
 
   host="rubik"
   port=$insight
+  destPort=27018
 
 elif [ "$server" = "pri" ]; then
 
@@ -107,7 +109,7 @@ elif [ -n "$port" ]; then
     kill -9 $pid
   done
   echo "Connecting $server to $fullHost on port $port"
-  command="ssh $options $port:$as:27017 $user@$fullHost"
+  command="ssh $options $port:$as:$destPort $user@$fullHost"
   echo $command
   $command
 else

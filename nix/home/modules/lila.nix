@@ -1,8 +1,18 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
   home = config.home.homeDirectory;
   lila-deploy = "cd ${home}/lila; python bin/deploy";
-in {
+in
+{
+  home.packages = with pkgs; [
+    oxlint
+    oxfmt
+  ];
 
   home.sessionVariables = {
     # for lila/ui/build to find the sass executable

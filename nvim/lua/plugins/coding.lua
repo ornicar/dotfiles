@@ -37,9 +37,8 @@ return {
     end,
   },
 
-  -- 30ms of load time for not much use
+  -- brought by blink.cmp
   { "rafamadriz/friendly-snippets", enabled = false },
-  { "garymjr/nvim-snippets", enabled = false },
 
   { "nvim-mini/mini.pairs", enabled = false },
 

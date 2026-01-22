@@ -5,7 +5,7 @@ vim.g.neovide_normal_opacity = 0.94
 
 -- vim.g.neovide_position_animation_length = 0.15
 
-vim.g.neovide_scroll_animation_length = 0.22
+vim.g.neovide_scroll_animation_length = 0
 vim.g.neovide_scroll_animation_far_lines = 5
 
 vim.g.neovide_cursor_animation_length = 0.15

@@ -65,7 +65,7 @@ return {
         nix = { "nixfmt" },
         scss = { "oxfmt" },
         typescript = { "oxfmt" },
-        javascript = { "js-boxfmt" },
+        javascript = { "oxfmt" },
         markdown = { "oxfmt" },
         ["markdown.mdx"] = { "oxfmt" },
       },

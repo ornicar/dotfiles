@@ -12,7 +12,7 @@
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/coolercontrol.nix
-    ../modules/steam.nix
+    # ../modules/steam.nix
     ../modules/telegram.nix
     # ../modules/android.nix
   ];

@@ -11,8 +11,6 @@
       "google-chrome-stable --user-data-dir=/home/thib/stream-voice/chrome-tv-data-dir --app=https://youtube.com &";
   };
 
-  home.packages = [ pkgs.showmethekey ];
-
   wayland.windowManager.sway.extraConfig = lib.mkAfter ''
     for_window [title="Floating Window - Show Me The Key"] floating enable, sticky enable, resize set width 400px height 100px, move position 2000px 1000px
 

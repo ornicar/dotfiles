@@ -1,5 +1,6 @@
 # fw is my frame.work 16
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.framework-16-7040-amd
@@ -9,11 +10,15 @@
     ../modules/common.nix
     ../modules/bluetooth.nix
     ../modules/torrent.nix
-    ../modules/steam.nix
+    # ../modules/steam.nix
     # ../modules/coolercontrol.nix
   ];
 
-  environment.systemPackages = with pkgs; [ powertop libinput acpi ];
+  environment.systemPackages = with pkgs; [
+    powertop
+    libinput
+    acpi
+  ];
 
   networking = {
     hostName = "fw";

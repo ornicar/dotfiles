@@ -1,11 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [
     git
     neovim
     neovide
     gh
-    gh-copilot
+    github-copilot-cli
     gcc
     gnumake
     go

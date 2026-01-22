@@ -1,4 +1,5 @@
-{ outputs, ... }: {
+{ outputs, ... }:
+{
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs = {
@@ -30,6 +31,7 @@
     ./sway.nix
     ./users.nix
     ./browser.nix
+    ./docker.nix
     # ./visualvm.nix
     # ./wireshark.nix
     ./recipes-local-nginx.nix

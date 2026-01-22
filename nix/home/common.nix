@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   imports = [
     ./modules/cli.nix
     ./modules/scala.nix
@@ -25,8 +26,7 @@
   home = rec {
     username = "thib";
     homeDirectory = "/home/${username}";
-    file.".local/bin".source =
-      config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
+    file.".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
   };
 
   programs.home-manager.enable = true;

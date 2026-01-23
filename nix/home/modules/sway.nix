@@ -1,5 +1,6 @@
 { config, lib, ... }:
-with config.lib.stylix.colors.withHashtag; {
+with config.lib.stylix.colors.withHashtag;
+{
   # auto start
   # programs.zsh.profileExtra = ''
   #   if [ -z "$DISPLAY" ] && [ "''${XDG_VTNR:-0}" -eq 1 ]; then
@@ -7,10 +8,14 @@ with config.lib.stylix.colors.withHashtag; {
   #   fi
   # '';
 
-  programs.bemenu = { enable = true; };
+  programs.bemenu = {
+    enable = true;
+  };
   stylix.targets.bemenu.enable = false;
 
-  gtk = { enable = true; };
+  gtk = {
+    enable = true;
+  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -36,43 +41,45 @@ with config.lib.stylix.colors.withHashtag; {
           repeat_delay = "180";
         };
       };
-      colors = let
-        text = base04;
-        urgent = base09;
-        focused = base04;
-        unfocused = base00;
-        background = base00;
-        indicator = base0C;
-      in lib.mkForce {
-        inherit background;
-        urgent = {
-          inherit background indicator text;
-          border = urgent;
-          childBorder = urgent;
+      colors =
+        let
+          text = base04;
+          urgent = base09;
+          focused = base04;
+          unfocused = base00;
+          background = base00;
+          indicator = base0C;
+        in
+        lib.mkForce {
+          inherit background;
+          urgent = {
+            inherit background indicator text;
+            border = urgent;
+            childBorder = urgent;
+          };
+          focused = {
+            border = focused;
+            childBorder = focused;
+            background = focused;
+            indicator = focused;
+            text = focused;
+          };
+          focusedInactive = {
+            inherit background indicator text;
+            border = unfocused;
+            childBorder = unfocused;
+          };
+          unfocused = {
+            inherit background indicator text;
+            border = unfocused;
+            childBorder = unfocused;
+          };
+          placeholder = {
+            inherit background indicator text;
+            border = unfocused;
+            childBorder = unfocused;
+          };
         };
-        focused = {
-          border = focused;
-          childBorder = focused;
-          background = focused;
-          indicator = focused;
-          text = focused;
-        };
-        focusedInactive = {
-          inherit background indicator text;
-          border = unfocused;
-          childBorder = unfocused;
-        };
-        unfocused = {
-          inherit background indicator text;
-          border = unfocused;
-          childBorder = unfocused;
-        };
-        placeholder = {
-          inherit background indicator text;
-          border = unfocused;
-          childBorder = unfocused;
-        };
-      };
       focus.followMouse = false;
       floating.modifier = modifier;
       keybindings = {
@@ -166,10 +173,12 @@ with config.lib.stylix.colors.withHashtag; {
           "${modifier}+0" = "workspace number 10";
         };
       };
-      bars = [{
-        position = "top";
-        command = "waybar";
-      }];
+      bars = [
+        {
+          position = "top";
+          command = "waybar";
+        }
+      ];
     };
     extraConfig = ''
       default_border pixel 1
@@ -196,6 +205,5 @@ with config.lib.stylix.colors.withHashtag; {
 
   # fixes:
   # Unable to connect to the compositor. If your compositor is running, check or set the WAYLAND_DISPLAY environment variable.
-  systemd.user.services.swayidle.Service.Environment =
-    lib.mkAfter [ "WAYLAND_DISPLAY='wayland-1'" ];
+  systemd.user.services.swayidle.Service.Environment = lib.mkAfter [ "WAYLAND_DISPLAY='wayland-1'" ];
 }

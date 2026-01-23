@@ -1,0 +1,5 @@
+{
+  "singleQuote": true,
+  "printWidth": 110,
+  "ignorePatterns": ["lazy-lock.json"]
+}

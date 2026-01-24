@@ -1,5 +1,6 @@
 # frame.work 16 home config
-{ ... }: {
+{ ... }:
+{
   imports = [
     ../common.nix
     ../modules/easyeffects.nix

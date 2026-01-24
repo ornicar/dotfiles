@@ -14,27 +14,47 @@ return {
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {
     "saghen/blink.cmp",
-    opts = function(_, opts)
-      opts.sources.default = { "copilot", "lsp", "buffer", "path" }
-      opts.keymap = {
+    dependencies = {
+      {
+        -- autocomplete issues and PRs from GitHub
+        "Kaiser-Yang/blink-cmp-git",
+      },
+    },
+    opts = {
+      sources = {
+        default = { "git", "copilot", "lsp", "buffer", "path" },
+        providers = {
+          git = {
+            module = "blink-cmp-git",
+            name = "Git",
+            opts = {},
+          },
+        },
+      },
+      keymap = {
         preset = nil,
         ["<C-h>"] = { "select_and_accept" },
         ["<C-space>"] = { "show", "accept" },
         ["<C-c>"] = { "hide" },
         ["<up>"] = { "select_prev" },
         ["<down>"] = { "select_next" },
-      }
-      opts.completion.accept.auto_brackets.enabled = false
-      opts.completion.documentation = {
-        auto_show = true,
-        auto_show_delay_ms = 50,
-        update_delay_ms = 50,
-      }
-      -- Displays a preview of the selected item on the current line
-      opts.completion.ghost_text = {
-        enabled = true,
-      }
-    end,
+      },
+      completion = {
+        accept = {
+          auto_brackets = {
+            enabled = false,
+          },
+        },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 50,
+          update_delay_ms = 50,
+        },
+        ghost_text = {
+          enabled = true,
+        },
+      },
+    },
   },
 
   -- brought by blink.cmp

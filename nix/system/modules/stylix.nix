@@ -1,16 +1,22 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
 
     enable = true;
 
     # https://tinted-theming.github.io/base16-gallery/
-    base16Scheme = let theme = "catppuccin-mocha";
-    in "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
+    base16Scheme =
+      let
+        theme = "catppuccin-mocha";
+      in
+      "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
-    override = { base00 = "#1f1e22"; };
+    override = {
+      base00 = "#1f1e22";
+    };
 
-    image = ../../home/wallpaper/xp.jpg;
+    image = ../../home/wallpaper/horizon.jpg;
 
     fonts = rec {
       sansSerif = {

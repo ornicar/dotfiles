@@ -10,6 +10,7 @@
     ../services/lichess-mod-auth-stream.nix
     ../services/cooklang-chef.nix
     # ../services/fishnet-prod.nix
+    # ../services/fishnet-local.nix
 
     ./sway.nix
     ./waybar.nix

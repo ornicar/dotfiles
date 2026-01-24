@@ -45,7 +45,7 @@ with config.lib.stylix.colors.withHashtag;
         let
           text = base04;
           urgent = base09;
-          focused = base04;
+          focused = base03;
           unfocused = base00;
           background = base00;
           indicator = base0C;
@@ -181,7 +181,7 @@ with config.lib.stylix.colors.withHashtag;
       ];
     };
     extraConfig = ''
-      default_border pixel 1
+      default_border none
       # borders, lol
       hide_edge_borders both
       titlebar_padding 1 1

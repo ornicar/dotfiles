@@ -5,8 +5,9 @@
     ../common.nix
     ../modules/easyeffects.nix
     ./sway.nix
+    ./hyprland.nix
     ./waybar.nix
-    ../modules/wine.nix
+    # ../modules/wine.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

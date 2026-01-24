@@ -1,4 +1,8 @@
-{ ... }: {
+{ ... }:
+{
+  imports = [
+    ../modules/waybar.nix
+  ];
   programs.waybar = {
     settings = {
       mainBar = {
@@ -20,9 +24,18 @@
         ];
         "cpu" = {
           interval = 1;
-          format =
-            "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
-          format-icons = [ "" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}";
+          format-icons = [
+            ""
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
           states = {
             warning = 20;
             critical = 50;
@@ -43,7 +56,17 @@
         # };
         "backlight" = {
           format = "{icon} {percent}%";
-          format-icons = [ " " " " " " " " " " " " " " " " " " ];
+          format-icons = [
+            " "
+            " "
+            " "
+            " "
+            " "
+            " "
+            " "
+            " "
+            " "
+          ];
         };
         "battery" = {
           interval = 5;
@@ -56,7 +79,13 @@
           format-charging = " {capacity}% {power:2.1f}W";
           format-plugged = " {capacity}% {power:2.1f}W";
           format-alt = "{icon} {time}";
-          format-icons = [ " " " " " " " " " " ];
+          format-icons = [
+            " "
+            " "
+            " "
+            " "
+            " "
+          ];
         };
         "power-profiles-daemon" = {
           format = "{icon}";

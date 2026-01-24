@@ -8,10 +8,7 @@ with config.lib.stylix.colors.withHashtag;
   #   fi
   # '';
 
-  programs.bemenu = {
-    enable = true;
-  };
-  stylix.targets.bemenu.enable = false;
+  imports = [ ./wayland.nix ];
 
   gtk = {
     enable = true;

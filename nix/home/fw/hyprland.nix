@@ -1,0 +1,6 @@
+{ ... }:
+{
+  imports = [
+    ../modules/hyprland.nix
+  ];
+}

@@ -11,9 +11,6 @@
     ./modules/neovim.nix
     # ./modules/zed.nix
     ./modules/ssh.nix
-    ./modules/sway.nix
-    ./modules/hyprland.nix
-    ./modules/waybar.nix
     ./modules/xdg.nix
     ./modules/zsh.nix
     # ./modules/lan-mouse.nix

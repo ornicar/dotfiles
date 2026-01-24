@@ -1,18 +1,24 @@
-{ ... }: {
+{ ... }:
+{
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         layer = "top";
         position = "bottom";
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [
+          "sway/workspaces"
+          "sway/mode"
+        ];
         modules-center = [ "sway/window" ];
         "sway/workspaces" = {
           disable-scroll = true;
           all-outputs = true;
           window-rewrite = { }; # just to get rid of the warning
         };
-        "sway/mode" = { "format" = " {}"; };
+        "sway/mode" = {
+          "format" = " {}";
+        };
         idle_inhibitor = {
           format = "{icon}";
           format-icons = {
@@ -62,7 +68,10 @@
             "phone" = "";
             "portable" = "";
             "car" = "";
-            "default" = [ "" "" ];
+            "default" = [
+              ""
+              ""
+            ];
           };
           "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         };
@@ -70,9 +79,6 @@
     };
     style = # css
       ''
-        window#waybar > box {
-          opacity: 0.9;
-        }
         #workspaces {
           opacity: 0.6;
         }

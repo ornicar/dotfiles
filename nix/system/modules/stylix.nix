@@ -13,7 +13,7 @@
       "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
     override = {
-      base00 = "#101010";
+      base00 = "#000000";
     };
 
     image = ../../home/wallpaper/horizon.jpg;

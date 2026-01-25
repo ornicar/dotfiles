@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   programs.git = {
     enable = true;
@@ -7,8 +8,11 @@
       user.email = "t@lichess.org";
 
       alias = {
-        l = let format = "%Cred%h%Creset %Cblue%ad%Creset %Cgreen%an%Creset %s";
-        in ''log --pretty=format:"${format}"'';
+        l =
+          let
+            format = "%Cred%h%Creset %Cblue%ad%Creset %Cgreen%an%Creset %s";
+          in
+          ''log --pretty=format:"${format}"'';
       };
 
       core = {

@@ -1,5 +1,6 @@
 # crom is my desktop PC
-{ inputs, lib, ... }: {
+{ inputs, lib, ... }:
+{
   imports = [
     ./hardware.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate

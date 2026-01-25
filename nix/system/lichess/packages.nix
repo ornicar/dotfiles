@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
 
   imports = [ ../modules/mongodb.nix ];
 

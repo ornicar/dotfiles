@@ -1,20 +1,23 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   systemd.services.thib-amdgpu-monitor = {
-    script = let
-      device = "amdgpu-pci-0300";
-      sensors = "${pkgs.lm_sensors}/bin/sensors";
-      sed = "${pkgs.gnused}/bin/sed";
-    in ''
-      while :
-      do
-        sens=$(${sensors} ${device})
-        power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
-        echo $power > /tmp/gpu-power
-        echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p' > /tmp/gpu-temp
-        sleep 1
-      done
-    '';
+    script =
+      let
+        device = "amdgpu-pci-0300";
+        sensors = "${pkgs.lm_sensors}/bin/sensors";
+        sed = "${pkgs.gnused}/bin/sed";
+      in
+      ''
+        while :
+        do
+          sens=$(${sensors} ${device})
+          power=$(echo $sens | ${sed} -rn 's/.*PPT:\s+([0-9]+).*/\1/p')
+          echo $power > /tmp/gpu-power
+          echo $sens | ${sed} -rn 's/.*edge:\s+.([0-9]+).*/\1/p' > /tmp/gpu-temp
+          sleep 1
+        done
+      '';
   };
 
   # https://wiki.archlinux.org/title/AMDGPU#Boot_parameter

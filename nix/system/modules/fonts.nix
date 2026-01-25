@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # more in stylix.nix
   fonts.packages = with pkgs; [
     font-awesome # installed for waybar icons

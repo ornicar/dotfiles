@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [
     fzf
@@ -37,6 +38,8 @@
 
   services.openssh = {
     enable = true;
-    settings = { PasswordAuthentication = false; };
+    settings = {
+      PasswordAuthentication = false;
+    };
   };
 }

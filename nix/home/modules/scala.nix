@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   # https://scalacenter.github.io/bloop/docs/server-reference#custom-java-options
 

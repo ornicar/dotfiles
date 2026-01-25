@@ -1,1 +1,4 @@
-{ ... }: { home.file.".mongoshrc.js".source = ./mongoshrc.js; }
+{ ... }:
+{
+  home.file.".mongoshrc.js".source = ./mongoshrc.js;
+}

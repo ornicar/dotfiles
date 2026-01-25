@@ -1,18 +1,18 @@
-{ ... }: {
+{ ... }:
+{
 
   programs.lazygit = {
     enable = true;
     settings = {
       git = {
-        pagers = [{ pager = "delta --paging=never"; }];
+        pagers = [ { pager = "delta --paging=never"; } ];
         disableForcePushing = true;
       };
       gui = {
         language = "en";
         mouseEvents = false;
         sidePanelWidth = 0.3;
-        mainPanelSplitMode =
-          "flexible"; # one of "horizontal" | "flexible" | "vertical"
+        mainPanelSplitMode = "flexible"; # one of "horizontal" | "flexible" | "vertical"
         showFileTree = false; # ` to toggle
         nerdFontsVersion = "3";
         commitHashLength = 6;
@@ -21,7 +21,9 @@
       quitOnTopLevelReturn = true;
       disableStartupPopups = true;
       promptToReturnFromSubprocess = false;
-      os = { editPreset = "nvim"; };
+      os = {
+        editPreset = "nvim";
+      };
       keybinding = {
         files = {
           stashAllChanges = "<c-a>"; # instead of just 's' which I typod for 'c'
@@ -38,12 +40,14 @@
         };
       };
       # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
-      customCommands = [{
-        key = "H";
-        context = "commits";
-        # or use "y u" to copy the url
-        command = "gh browse {{.SelectedLocalCommit.Hash}}";
-      }];
+      customCommands = [
+        {
+          key = "H";
+          context = "commits";
+          # or use "y u" to copy the url
+          command = "gh browse {{.SelectedLocalCommit.Hash}}";
+        }
+      ];
     };
   };
 }

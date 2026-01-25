@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -18,16 +19,18 @@
   modifications = final: prev: {
 
     # Get latest bloop
-    bloop = (import inputs.nixpkgs-master {
-      system = final.system;
-      config.allowunfree = true;
-    }).bloop;
+    bloop =
+      (import inputs.nixpkgs-master {
+        system = final.system;
+        config.allowunfree = true;
+      }).bloop;
 
     # stable gimp
-    gimp = (import inputs.nixpkgs-stable {
-      system = final.system;
-      config.allowunfree = true;
-    }).gimp;
+    gimp =
+      (import inputs.nixpkgs-stable {
+        system = final.system;
+        config.allowunfree = true;
+      }).gimp;
 
     # stable neovim
     # neovim = (import inputs.nixpkgs-stable {
@@ -54,10 +57,11 @@
       '';
     });
 
-    easyeffects = (import inputs.nixpkgs-stable {
-      system = final.system;
-      config.allowunfree = true;
-    }).easyeffects;
+    easyeffects =
+      (import inputs.nixpkgs-stable {
+        system = final.system;
+        config.allowunfree = true;
+      }).easyeffects;
 
     # esbuild = prev.esbuild.overrideAttrs (previousAttrs: rec {
     #   version = "0.25.9";

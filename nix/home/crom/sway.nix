@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ ../modules/sway.nix ];
+  imports = [
+    ../modules/sway.nix
+    ./waybar.nix
+  ];
 
   wayland.windowManager.sway = {
     config =

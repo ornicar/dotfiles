@@ -1,0 +1,6 @@
+{ ... }:
+{
+  programs.ashell = {
+    enable = true;
+  };
+}

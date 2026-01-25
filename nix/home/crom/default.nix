@@ -13,7 +13,6 @@
 
     ./sway.nix
     ./hyprland.nix
-    ./waybar.nix
     ./s-tui.nix
   ];
 

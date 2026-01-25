@@ -4,8 +4,6 @@
   imports = [
     ../common.nix
     ../modules/stream.nix
-    # ../modules/wine.nix
-    # ../modules/skyrim.nix
     ../services/disposable-email.nix
     ../services/puzzler.nix
     ../services/lichess-mod-auth-stream.nix
@@ -14,6 +12,7 @@
     # ../services/fishnet-local.nix
 
     ./sway.nix
+    ./hyprland.nix
     ./waybar.nix
     ./s-tui.nix
   ];

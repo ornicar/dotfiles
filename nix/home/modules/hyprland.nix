@@ -42,10 +42,8 @@
 
       "$mod" = "ALT";
 
-      # Keybindings
       bind = [
         "$mod, Return, exec, kitty -1"
-        "$mod, equal, exec, bemenu-run -H 40"
         "$mod, V, exec, neovide"
         "$mod, Q, killactive"
         # "$mod, S, split:horizontal"

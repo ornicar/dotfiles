@@ -5,7 +5,7 @@
   ];
   wayland.windowManager.hyprland = {
     bind = [
-      "$mod, equal, exec, bemenu-run -H 40"
+      "$mod, space, exec, bemenu-run -H 40"
     ];
   };
 }

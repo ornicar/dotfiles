@@ -24,6 +24,8 @@
           ", XF86AudioPlay, exec, ${spotify} play-pause"
           ", XF86AudioNext, exec, ${spotify} next"
           ", XF86AudioPrev, exec, ${spotify} previous"
+          ", Print, exec, ${home}/dotfiles/scripts/screenshot.sh clipboard"
+          ", F10, exec, ${home}/dotfiles/scripts/systemctl-toggle.sh easyeffects"
         ];
         binde = [
           ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.5"

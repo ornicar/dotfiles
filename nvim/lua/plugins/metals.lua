@@ -29,7 +29,7 @@ return {
         -- showImplicitArguments = true,
         excludedPackages = { "akka.actor.typed.javadsl" },
         serverProperties = { "-Xms256m", "-Xmx4g" },
-        -- serverVersion = "latest.snapshot",
+        serverVersion = "latest.snapshot",
       }
 
       config.capabilities = require("blink.cmp").get_lsp_capabilities()

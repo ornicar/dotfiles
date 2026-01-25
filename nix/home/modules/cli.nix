@@ -1,11 +1,15 @@
-{ config, ... }: {
+{ config, ... }:
+{
 
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
     # defaultCommand = "fd --type f'";
     defaultCommand = "rg --files --hidden";
-    defaultOptions = [ "--no-mouse" "--info=inline-right" ];
+    defaultOptions = [
+      "--no-mouse"
+      "--info=inline-right"
+    ];
   };
 
   programs.zoxide = {
@@ -16,13 +20,17 @@
     enable = true;
     enableZshIntegration = true;
   };
-  programs.bat = { enable = true; };
+  programs.bat = {
+    enable = true;
+  };
   # man with bat
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
   };
-  programs.ripgrep = { enable = true; };
+  programs.ripgrep = {
+    enable = true;
+  };
   programs.btop = {
     enable = true;
     settings = {
@@ -44,7 +52,9 @@
         error_symbol = "[›](bold red)";
       };
 
-      scala = { symbol = ""; };
+      scala = {
+        symbol = "";
+      };
       git_status = {
         deleted = "✗";
         modified = "✶";

@@ -1,5 +1,6 @@
 # desktop PC home config
-{ ... }: {
+{ ... }:
+{
   imports = [
     ../common.nix
     ../modules/stream.nix

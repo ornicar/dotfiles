@@ -1,11 +1,14 @@
-{ ... }: {
+{ ... }:
+{
   services.keyd = {
     enable = true;
     keyboards = {
       glove = {
         ids = [ "16c0:27db" ];
         settings = {
-          main = { leftcontrol = "layer(leftcontrol)"; };
+          main = {
+            leftcontrol = "layer(leftcontrol)";
+          };
           "leftcontrol:C" = {
             j = "down";
             k = "up";

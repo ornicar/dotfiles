@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [
     firefox
     google-chrome
-    # brave 
+    # brave
   ];
 
   programs.firefox = {

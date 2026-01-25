@@ -27,12 +27,20 @@
     # lan-mouse.url = "github:feschber/lan-mouse";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixos-hardware,
+      home-manager,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       inherit (nixpkgs.lib) nixosSystem;
       specialArgs = { inherit inputs outputs; };
-    in {
+    in
+    {
       overlays = import ./nix/overlays { inherit inputs; };
       nixosConfigurations = {
         fw = nixosSystem {

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # very personal configuration for colemak and weak pinkies
   services.keyd = {
     enable = true;
@@ -36,9 +37,13 @@
             space = "tab";
           };
           # left alt combines with space for enter
-          "leftalt:A" = { space = "enter"; };
+          "leftalt:A" = {
+            space = "enter";
+          };
           # right alt acts as shift
-          "rightaltMaj:S" = { space = "S-tab"; };
+          "rightaltMaj:S" = {
+            space = "S-tab";
+          };
         };
       };
     };

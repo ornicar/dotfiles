@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   programs.java.enable = true;
 

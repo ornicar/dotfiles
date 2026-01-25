@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
 
   # fan controller
   boot.kernelModules = [ "nct6687" ];

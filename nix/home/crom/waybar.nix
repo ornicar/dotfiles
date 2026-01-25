@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   programs.waybar = {
     settings = {
       mainBar = {
@@ -18,9 +19,18 @@
         ];
         "cpu" = {
           interval = 1;
-          format =
-            "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}";
-          format-icons = [ "" "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          format = "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}";
+          format-icons = [
+            ""
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
           states = {
             warning = 20;
             critical = 50;
@@ -44,8 +54,7 @@
         };
         "custom/spotify" = {
           interval = 5;
-          exec = ''
-            ${pkgs.playerctl}/bin/playerctl -p spotify metadata --format "{{xesam:artist}} - {{xesam:album}}"'';
+          exec = ''${pkgs.playerctl}/bin/playerctl -p spotify metadata --format "{{xesam:artist}} - {{xesam:album}}"'';
           format = "♫ {}";
           max-length = 70;
           on-click = "${pkgs.playerctl}/bin/playerctl -p spotify play-pause";

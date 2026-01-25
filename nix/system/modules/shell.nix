@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
@@ -14,7 +15,10 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
     XDG_BIN_HOME = "$HOME/.local/bin";
-    PATH = [ "${XDG_BIN_HOME}" "$HOME/.cargo/bin" ];
+    PATH = [
+      "${XDG_BIN_HOME}"
+      "$HOME/.cargo/bin"
+    ];
     BLOOP_JAVA_OPTS = "-Xmx16G";
   };
   environment.systemPackages = with pkgs; [

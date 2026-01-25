@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ ./wayland.nix, ./ashell.nix ];
+  imports = [
+    ./wayland.nix
+    ./ashell.nix
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;

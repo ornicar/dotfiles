@@ -4,7 +4,7 @@
   imports = [
     ../common.nix
     ../modules/easyeffects.nix
-    ./sway.nix
+    # ./sway.nix
     ./hyprland.nix
     # ../modules/wine.nix
   ];

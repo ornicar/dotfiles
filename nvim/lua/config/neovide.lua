@@ -1,6 +1,6 @@
 -- https://neovide.dev/configuration.html
 vim.g.neovide_floating_corner_radius = 0.7
-vim.g.neovide_normal_opacity = 0.87
+vim.g.neovide_normal_opacity = 0.8
 -- vim.o.guifont = "JetBrains Mono:h15.5"
 
 -- vim.g.neovide_position_animation_length = 0.15

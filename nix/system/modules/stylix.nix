@@ -13,7 +13,7 @@
       "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
     override = {
-      base00 = "#1f1e22";
+      base00 = "#000000";
     };
 
     image = ../../home/wallpaper/horizon.jpg;
@@ -54,10 +54,10 @@
     };
 
     opacity = {
-      terminal = 0.85;
-      popups = 0.8;
-      desktop = 0.8;
-      applications = 0.8;
+      terminal = 0.8;
+      popups = 0.7;
+      desktop = 0.2;
+      applications = 0.7;
     };
 
     # cursor = {

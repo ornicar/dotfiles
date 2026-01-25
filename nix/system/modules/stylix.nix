@@ -47,17 +47,17 @@
 
       sizes = {
         applications = 13;
-        desktop = 13;
-        popups = 13;
+        desktop = 16;
+        popups = 14;
         terminal = 13;
       };
     };
 
     opacity = {
-      terminal = 0.8;
+      terminal = 0.85;
       popups = 0.7;
-      desktop = 0.2;
-      applications = 0.7;
+      desktop = 0.5;
+      applications = 0.8;
     };
 
     # cursor = {

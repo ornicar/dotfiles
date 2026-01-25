@@ -22,31 +22,53 @@
         right = "E";
         down = "H";
         up = "L";
-        menu = "bemenu-run -H 40 | xargs swaymsg exec --";
+        terminal = "kitty -1";
+        editor = "neovide";
+        menu = "bemenu-run -H 40 -p 'Run:'";
         workspaces = lib.range 1 10;
         workspaceKey = (i: toString (if i == 10 then 0 else i));
       in
       {
         # Appearance
         general = {
-          gaps_in = 8;
-          gaps_out = 8;
+          gaps_in = 5;
+          gaps_out = "8, 8, 2, 8";
           border_size = 2;
-          # col.active_border = "rgba(${config.lib.stylix.colors.base03}ff)";
-          # col.inactive_border = "rgba(${config.lib.stylix.colors.base00}ff)";
+          layout = "master";
         };
 
+        master = {
+          allow_small_split = true;
+          mfact = 0.63;
+          orientation = "right";
+          new_on_active = "after";
+          # new_status = "inherit";
+          special_scale_factor = 0.95;
+        };
+
+        # Workspace rules
+        workspace = [
+          # Full screen single visible tiled window, except special workspace
+          "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"
+        ];
+        windowrule = [
+          # "match:class firefox, no_blur on, border_size 0"
+        ];
+
         decoration = {
-          rounding = 8;
+          rounding = 30;
+          rounding_power = 1;
           blur = {
             enabled = true;
-            size = 5;
-            passes = 1;
+            size = 3;
+            passes = 2;
           };
           shadow = {
             enabled = true;
-            range = 4;
-            render_power = 3;
+            range = 15;
+            render_power = 4;
+            color = lib.mkForce "rgba(0,0,0,0.9)";
+            color_inactive = lib.mkForce "rgba(0,0,0,0.5)";
           };
         };
 
@@ -56,20 +78,7 @@
           kb_variant = "colemak,";
           repeat_rate = 64;
           repeat_delay = 180;
-        };
-
-        animations = {
-          enabled = true;
-          bezier = [
-            "overshot,0.05,0.9,0.1,1.1"
-            "overshot,0.13,0.99,0.29,1.0"
-          ];
-          animation = [
-            "windows,1,7,overshot,slide"
-            "border,1,10,default"
-            "fade,1,10,default"
-            "workspaces,1,7,overshot,slide"
-          ];
+          follow_mouse = 0;
         };
 
         monitor = [
@@ -79,23 +88,26 @@
         "$mod" = "ALT";
 
         bind = [
-          "$mod, Return, exec, kitty -1"
+          "$mod, Return, exec, ${terminal}"
           "$mod, V, exec, neovide"
           "$mod, Q, killactive"
           # "$mod, S, split:horizontal"
-          "$mod, F, fullscreen"
-          "$mod SHIFT, ${left}, movewindow, l"
-          "$mod SHIFT, ${down}, movewindow, d"
-          "$mod SHIFT, ${up}, movewindow, u"
-          "$mod SHIFT, ${right}, movewindow, r"
+          # "$mod, F, fullscreen"
+          "$mod, F, fullscreenstate, 1 1"
+          "$mod SHIFT, F, fullscreenstate, 3 3"
           # "F2, exec, systemctl --user restart lila"
           # "F3, exec, systemctl --user restart lila-ws"
-          "$mod, ${left}, movefocus, l"
-          "$mod, ${right}, movefocus, r"
-          "$mod, ${down}, movefocus, d"
-          "$mod, ${up}, movefocus, u"
-          # "$mod, O, focusparent"
-          # "$mod, I, focuschild"
+          "$mod, ${up}, layoutmsg, swapprev noloop"
+          "$mod, ${down}, layoutmsg, swapnext noloop"
+          "$mod SHIFT, M, layoutmsg, swapwithmaster"
+          # "$mod, ${left}, movefocus, l"
+          # "$mod, ${right}, movefocus, r"
+          # "$mod, ${down}, movefocus, d"
+          # "$mod, ${up}, movefocus, u"
+          # "$mod SHIFT, ${left}, movewindow, l"
+          # "$mod SHIFT, ${down}, movewindow, d"
+          # "$mod SHIFT, ${up}, movewindow, u"
+          # "$mod SHIFT, ${right}, movewindow, r"
           "$mod SHIFT, minus, movetoworkspace, special"
           "$mod, minus, togglespecialworkspace"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)
@@ -104,15 +116,15 @@
           "CTRL, F6, exec, hyprctl dispatch workspace back_and_forth"
           # Menu (bemenu-run)
           "$mod, M, exec, ${menu}"
-          # Submaps
-          "$mod SHIFT, R, submap, resize"
         ];
 
         binde = [
-          "$mod, Left, resizeactive, -10 0"
-          "$mod, Right, resizeactive, 10 0"
-          "$mod, Down, resizeactive, 0 10"
-          "$mod, Up, resizeactive, 0 -10"
+          "$mod, ${right}, layoutmsg, cycleprev noloop"
+          "$mod, ${left}, layoutmsg, cyclenext noloop"
+          "$mod SHIFT, Left, resizeactive, -20 0"
+          "$mod SHIFT, Right, resizeactive, 20 0"
+          "$mod SHIFT, Down, resizeactive, 0 20"
+          "$mod SHIFT, Up, resizeactive, 0 -20"
         ];
 
         submaps = {
@@ -137,10 +149,45 @@
         # Bar (Waybar)
         # exec-once = [ "waybar", "mako" ];
         exec-once = [
-          # "kitty -1"
+          "[workspace 1 silent] ${editor}"
+          "[workspace 1 silent] ${terminal}"
           "[workspace 2 silent] firefox"
-          "kitty"
+          "[workspace 3 silent] ${editor}"
+          "[workspace 3 silent] ${terminal}"
+          "[workspace 7 silent] spotify"
         ];
+
+        animations = {
+          enabled = true;
+          bezier = [
+            # NAME,          X0,   Y0,   X1,   Y1
+            "easeOutQuint,   0.23, 1,    0.32, 1"
+            "easeInOutCubic, 0.65, 0.05, 0.36, 1"
+            "linear,         0,    0,    1,    1"
+            "almostLinear,   0.5,  0.5,  0.75, 1"
+            "quick,          0.15, 0,    0.1,  1"
+          ];
+          animation = [
+            # NAME,         ONOFF, SPEED, CURVE        [STYLE]
+            "global,        1,     10,    default"
+            "border,        1,     5.39,  easeOutQuint"
+            "windows,       1,     4.79,  easeOutQuint"
+            "windowsIn,     1,     4.1,   easeOutQuint, popin 80%"
+            "windowsOut,    1,     1.49,  linear,       popin 80%"
+            "fadeIn,        1,     1.73,  almostLinear"
+            "fadeOut,       1,     1.46,  almostLinear"
+            "fade,          1,     3.03,  quick"
+            "layers,        1,     3.81,  easeOutQuint"
+            "layersIn,      1,     4,     easeOutQuint, fade"
+            "layersOut,     1,     1.5,   linear,       fade"
+            "fadeLayersIn,  1,     1.79,  almostLinear"
+            "fadeLayersOut, 1,     1.39,  almostLinear"
+            "workspaces,    0,     1.94,  almostLinear, fade"
+            "workspacesIn,  0,     1.21,  almostLinear, fade"
+            "workspacesOut, 0,     1.94,  almostLinear, fade"
+            "zoomFactor,    1,     7,     quick"
+          ];
+        };
 
         misc = {
           disable_hyprland_logo = true;

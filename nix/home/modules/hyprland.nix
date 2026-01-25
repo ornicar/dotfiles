@@ -21,11 +21,17 @@
       };
 
       decoration = {
-        rounding = 6;
+        rounding = 8;
         blur = {
-          enabled = false;
+          enabled = true;
+          size = 5;
+          passes = 1;
         };
-        # drop_shadow = false;
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+        };
       };
 
       # Input
@@ -48,8 +54,6 @@
         "$mod, Q, killactive"
         # "$mod, S, split:horizontal"
         "$mod, F, fullscreen"
-        "$mod SHIFT, F, fullscreen"
-        # "F11, fullscreen"
         "$mod SHIFT, N, movewindow, l"
         "$mod SHIFT, H, movewindow, d"
         "$mod SHIFT, L, movewindow, u"
@@ -101,15 +105,12 @@
         # "kitty -1"
         "[workspace 2 silent] firefox"
         "kitty"
-        "waybar"
       ];
-    };
-  };
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "${/. + ../wallpaper/horizon.jpg}" ];
-      wallpaper = [ ", ${/. + ../wallpaper/horizon.jpg}" ];
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+      };
     };
   };
 
@@ -126,9 +127,6 @@
   # gtk = {
   #   enable = true;
   # };
-
-  # bemenu
-  # programs.bemenu.enable = true;
 
   # hypridle (for idle management, similar to swayidle)
   # services.hypridle = {

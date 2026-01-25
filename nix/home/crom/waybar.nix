@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   programs.waybar = {
+    enable = true;
     settings = {
       mainBar = {
         modules-left = lib.mkAfter [ "custom/spotify" ];

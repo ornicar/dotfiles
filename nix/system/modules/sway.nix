@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     swaylock
     swayidle
+    wdisplays # visual monitor manager
   ];
 
   programs.sway = {

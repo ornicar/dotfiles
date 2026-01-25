@@ -2,23 +2,15 @@
 {
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     settings = {
       mainBar = {
         layer = "top";
         position = "bottom";
         modules-left = [
-          "sway/workspaces"
-          "sway/mode"
+          "hyprland/workspaces"
         ];
-        modules-center = [ "sway/window" ];
-        "sway/workspaces" = {
-          disable-scroll = true;
-          all-outputs = true;
-          window-rewrite = { }; # just to get rid of the warning
-        };
-        "sway/mode" = {
-          "format" = " {}";
-        };
+        modules-center = [ "hyprland/window" ];
         idle_inhibitor = {
           format = "{icon}";
           format-icons = {
@@ -30,6 +22,16 @@
         #   "tooltip-format" = "{long}";
         #   "format" = " {variant}";
         # };
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+          sort-by-number = true;
+          format-icons = {
+            "default" = "";
+            "active" = "";
+          };
+        };
+
         "clock#local" = {
           tooltip-format = ''
             <big>{:%Y %B}</big>

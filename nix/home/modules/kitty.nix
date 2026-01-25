@@ -66,7 +66,7 @@
         theme = ''
           # The basic colors
           foreground              #cdd6f4
-          background              #1f1f1f
+          background              #1f1e22
           selection_foreground    #1f1e22
           selection_background    #f5e0dc
 

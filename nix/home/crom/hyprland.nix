@@ -4,8 +4,10 @@
     ../modules/hyprland.nix
   ];
   wayland.windowManager.hyprland = {
-    bind = [
-      "$mod, space, exec, bemenu-run -H 40"
-    ];
+    settings = {
+      bind = [
+        "$mod, space, exec, bemenu-run -H 40"
+      ];
+    };
   };
 }

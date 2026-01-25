@@ -141,11 +141,6 @@
                 alias /home/thib/lila/public/;
               # proxy_pass http://lila;  # no trailing /
               }
-              location /game/export/ {
-                access_log /var/log/nginx/lichess.image.log;
-                proxy_http_version 1.1;
-                proxy_pass http://lila/game/export/;
-              }
               location /image/ {
                 expires 6M;
                 access_log /var/log/nginx/lichess.image.log;

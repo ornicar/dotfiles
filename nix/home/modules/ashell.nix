@@ -13,6 +13,17 @@
           backdrop = 0.2;
         };
       };
+      settings = {
+        remove_airplane_btn = true;
+        indicators = [
+          "IdleInhibitor"
+          "PowerProfile"
+          "Audio"
+          "Bluetooth"
+          "Network"
+          "Battery"
+        ];
+      };
       modules = {
         left = [
           "Workspaces"

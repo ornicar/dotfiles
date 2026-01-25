@@ -91,30 +91,19 @@
           "$mod, Return, exec, ${terminal}"
           "$mod, V, exec, neovide"
           "$mod, Q, killactive"
-          # "$mod, S, split:horizontal"
-          # "$mod, F, fullscreen"
           "$mod, F, fullscreenstate, 1 1"
           "$mod SHIFT, F, fullscreenstate, 3 3"
-          # "F2, exec, systemctl --user restart lila"
-          # "F3, exec, systemctl --user restart lila-ws"
+          ", F2, exec, systemctl --user restart lila"
+          ", F3, exec, systemctl --user restart lila-ws"
           "$mod, ${up}, layoutmsg, swapprev noloop"
           "$mod, ${down}, layoutmsg, swapnext noloop"
           "$mod SHIFT, M, layoutmsg, swapwithmaster"
-          # "$mod, ${left}, movefocus, l"
-          # "$mod, ${right}, movefocus, r"
-          # "$mod, ${down}, movefocus, d"
-          # "$mod, ${up}, movefocus, u"
-          # "$mod SHIFT, ${left}, movewindow, l"
-          # "$mod SHIFT, ${down}, movewindow, d"
-          # "$mod SHIFT, ${up}, movewindow, u"
-          # "$mod SHIFT, ${right}, movewindow, r"
           "$mod SHIFT, minus, movetoworkspace, special"
           "$mod, minus, togglespecialworkspace"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)
           (map (i: "$mod SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
           "CTRL, F1, exec, keyboard-switch-notify.sh"
           "CTRL, F6, exec, hyprctl dispatch workspace back_and_forth"
-          # Menu (bemenu-run)
           "$mod, M, exec, ${menu}"
         ];
 
@@ -127,27 +116,6 @@
           "$mod SHIFT, Up, resizeactive, 0 -20"
         ];
 
-        submaps = {
-          "resize" = {
-            settings = {
-              bind = [
-                "$mod SHIFT, R, submap, reset"
-                # ", escape, submap, reset"
-                # ", ${left}, resizeactive -10 0"
-                # ", ${right}, resizeactive 10 0"
-                # ", ${down}, resizeactive 0 10"
-                # ", ${up}, resizeactive 0 -10"
-                # ", SHIFT+${left}, resizeactive -300 0"
-                # ", SHIFT+${right}, resizeactive 300 0"
-                # ", SHIFT+${down}, resizeactive 0 300"
-                # ", SHIFT+${up}, resizeactive 0 -300"
-              ];
-            };
-          };
-        };
-
-        # Bar (Waybar)
-        # exec-once = [ "waybar", "mako" ];
         exec-once = [
           "[workspace 1 silent] ${editor}"
           "[workspace 1 silent] ${terminal}"
@@ -207,7 +175,6 @@
     settings = {
       general = {
         after_sleep_cmd = "hyprctl dispatch dpms on";
-        # ignore_dbus_inhibit = false;
         lock_cmd = "hyprlock";
       };
       listener = [

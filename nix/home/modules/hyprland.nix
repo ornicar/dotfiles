@@ -102,8 +102,7 @@
           "$mod, minus, togglespecialworkspace"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)
           (map (i: "$mod SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
-          "CTRL, F1, exec, keyboard-switch-notify.sh"
-          "CTRL, F6, exec, hyprctl dispatch workspace back_and_forth"
+          "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"
           "$mod, M, exec, ${menu}"
         ];
 
@@ -160,6 +159,7 @@
         misc = {
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
+          key_press_enables_dpms = true;
         };
       };
   };

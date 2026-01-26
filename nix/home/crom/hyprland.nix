@@ -23,6 +23,8 @@
           ", F9, exec, ${volumeDec}"
           ", F10, exec, ${volumeInc}"
           "$mod, F10, exec, screenshot.sh clipboard"
+          "$mod, B, togglespecialworkspace, mic"
+          "$mod SHIFT, B, movetoworkspace, special:mic"
         ];
       };
   };

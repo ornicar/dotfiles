@@ -98,8 +98,8 @@
           "$mod, ${up}, layoutmsg, swapprev noloop"
           "$mod, ${down}, layoutmsg, swapnext noloop"
           "$mod, M, layoutmsg, swapwithmaster"
-          "$mod SHIFT, minus, movetoworkspace, special"
           "$mod, minus, togglespecialworkspace"
+          "$mod SHIFT, minus, movetoworkspace, special"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)
           (map (i: "$mod SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
           "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"

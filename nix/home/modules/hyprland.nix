@@ -130,6 +130,24 @@
           "[workspace 3 silent] ${terminal}"
           "[workspace 7 silent] spotify"
         ];
+        exec = [
+          "systemctl --user start hyprpaper"
+          "systemctl --user start ashell"
+          "systemctl --user start hypridle"
+        ];
+
+        plugin = {
+          hyprfocus = {
+            enabled = true;
+            animate_workspacechange = false;
+            focus_animation = "flash";
+            flash = {
+              flash_opacity = 0.8;
+              in_speed = 4;
+              out_speed = 8;
+            };
+          };
+        };
 
         animations = {
           enabled = true;

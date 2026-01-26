@@ -175,32 +175,4 @@
   # gtk = {
   #   enable = true;
   # };
-
-  # hypridle (for idle management, similar to swayidle)
-  services.hypridle = {
-    enable = true;
-    settings = {
-      general = {
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        lock_cmd = "hyprlock";
-      };
-      listener = [
-        {
-          timeout = 900;
-          on-timeout = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -T 0.2";
-          on-resume = "${pkgs.light}/bin/light -I";
-        }
-        {
-          timeout = 1200;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 1500;
-          on-timeout = "systemctl suspend";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-      ];
-    };
-  };
 }

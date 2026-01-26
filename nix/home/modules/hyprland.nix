@@ -16,10 +16,6 @@
 
   gtk.enable = true;
 
-  wayland.windowManager.hyprland.plugins = [
-    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -135,19 +131,6 @@
           "systemctl --user start ashell"
           "systemctl --user start hypridle"
         ];
-
-        plugin = {
-          hyprfocus = {
-            enabled = true;
-            animate_workspacechange = false;
-            focus_animation = "flash";
-            flash = {
-              flash_opacity = 0.8;
-              in_speed = 4;
-              out_speed = 8;
-            };
-          };
-        };
 
         animations = {
           enabled = true;

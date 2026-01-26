@@ -22,7 +22,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    systemd.enable = false; # https://wiki.nixos.org/wiki/Hyprland
     settings =
       let
         left = "N";

@@ -34,10 +34,10 @@
         ];
         right = [
           "SystemInfo"
-          "KeyboardLayout"
-          "Tray"
+          # "KeyboardLayout"
           [
             "Clock"
+            "Tray"
             "Privacy"
             "Settings"
           ]

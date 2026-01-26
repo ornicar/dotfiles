@@ -5,9 +5,8 @@
   ...
 }:
 {
-  imports = [
-    ../modules/hyprland.nix
-  ];
+  imports = [ ../modules/hyprland.nix ];
+
   wayland.windowManager.hyprland = {
     settings =
       let

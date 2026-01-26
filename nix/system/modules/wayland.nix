@@ -4,13 +4,10 @@
     wayland
     wlr-randr
     libnotify
-    glib # gsettings
-    grim
-    slurp
-    mako # notification daemon
+    grim # screenshot
+    slurp # visual region selection
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     xdg-utils
-    waybar
   ];
 
   hardware.graphics.enable = true;

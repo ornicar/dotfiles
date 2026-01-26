@@ -13,6 +13,8 @@
   services.hyprpaper.enable = true;
   stylix.targets.hyprland.hyprpaper.enable = true;
 
+  gtk.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -49,7 +51,7 @@
         # Workspace rules
         workspace = [
           # Full screen single visible tiled window, except special workspace
-          "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"
+          # "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"
         ];
         windowrule = [
           # "match:class firefox, no_blur on, border_size 0"

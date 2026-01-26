@@ -5,7 +5,6 @@
     wget
     tldr
     xdg-utils
-    glib
     ffmpeg
     btop
     htop

@@ -10,6 +10,10 @@
     settings = {
       default-timeout = 5000;
       ignore-timeout = false;
+      outer-margin = 30;
+      padding = "15 20 15 20";
+      border-size = 2;
+      border-radius = 10;
     };
   };
 }

@@ -26,6 +26,10 @@
           "$mod, B, togglespecialworkspace, mic"
           "$mod SHIFT, B, movetoworkspace, special:mic"
         ];
+        input = {
+          repeat_delay = lib.mkForce "250";
+          # accel_profile = lib.mkForce "flat";
+        };
       };
   };
 }

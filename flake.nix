@@ -21,6 +21,12 @@
       };
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";
 

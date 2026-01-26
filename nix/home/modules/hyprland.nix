@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -14,6 +15,10 @@
   stylix.targets.hyprland.hyprpaper.enable = true;
 
   gtk.enable = true;
+
+  wayland.windowManager.hyprland.plugins = [
+    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -31,7 +36,6 @@
         workspaceKey = (i: toString (if i == 10 then 0 else i));
       in
       {
-        # Appearance
         general = {
           gaps_in = 5;
           gaps_out = "8, 8, 2, 8";

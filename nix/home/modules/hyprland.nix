@@ -44,7 +44,8 @@
           allow_small_split = true;
           mfact = 0.63;
           orientation = "right";
-          new_on_active = "after";
+          new_on_top = true;
+          # new_on_active = "before";
           # new_status = "inherit";
           special_scale_factor = 0.95;
         };

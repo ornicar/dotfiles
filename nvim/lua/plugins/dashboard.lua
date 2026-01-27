@@ -1,5 +1,18 @@
 return {
   {
+    "folke/persistence.nvim",
+    config = function(_, opts)
+      require("persistence").setup(opts)
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "PersistenceLoadPost",
+        callback = function()
+          vim.opt.title = true
+          vim.opt.titlestring = "VIM " .. vim.fs.basename(vim.fn.getcwd())
+        end,
+      })
+    end,
+  },
+  {
     "folke/snacks.nvim",
     opts = {
       dashboard = {

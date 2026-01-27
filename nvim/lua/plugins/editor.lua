@@ -88,7 +88,7 @@ return {
         -- },
         cascade = {
           mode = "diagnostics", -- inherit from diagnostics mode
-          auto_open = false, -- auto open when there are items
+          auto_open = true, -- auto open when there are items
           filter = function(items)
             local severity = vim.diagnostic.severity.HINT
             for _, item in ipairs(items) do
@@ -107,6 +107,13 @@ return {
         "<space><space>",
         "<cmd>Trouble cascade open focus=true<cr>",
         desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<space>n",
+        function()
+          require("trouble").first({ skip_groups = true, jump = true })
+        end,
+        desc = "First quickfix",
       },
     },
   },

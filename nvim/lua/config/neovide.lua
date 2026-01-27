@@ -31,8 +31,15 @@ vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
 --   "r-cr:hor20-CursorIM", -- Use 'CursorIM' for replace mode
 -- }
 
-vim.keymap.set({ "n" }, "<C-ScrollWheelUp>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-vim.keymap.set({ "n" }, "<C-ScrollWheelDown>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+local change_scale_factor = function(delta)
+  vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
+end
+vim.keymap.set({ "n" }, "<C-ScrollWheelUp>", function()
+  change_scale_factor(0.05)
+end)
+vim.keymap.set({ "n" }, "<C-ScrollWheelDown>", function()
+  change_scale_factor(-0.05)
+end)
 
 local function paste()
   vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)

@@ -4,7 +4,7 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
   environment.variables = {
-    EDITOR = "neovide";
+    EDITOR = "nvim";
     TERMINAL = "kitty -1";
     TERM = "xterm-kitty";
   };

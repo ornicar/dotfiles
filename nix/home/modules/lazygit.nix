@@ -17,6 +17,7 @@
         nerdFontsVersion = "3";
         commitHashLength = 6;
         showDivergenceFromBaseBranch = "arrowAndNumber";
+        skipRewordInEditorWarning = true;
       };
       quitOnTopLevelReturn = true;
       disableStartupPopups = true;

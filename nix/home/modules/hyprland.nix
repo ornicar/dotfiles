@@ -50,11 +50,6 @@
           special_scale_factor = 0.95;
         };
 
-        # Workspace rules
-        workspace = [
-          # Full screen single visible tiled window, except special workspace
-          # "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"
-        ];
         windowrule = [
           # "match:class firefox, no_blur on, border_size 0"
         ];
@@ -82,7 +77,7 @@
           kb_variant = "colemak,";
           repeat_rate = 64;
           repeat_delay = 180;
-          follow_mouse = 1;
+          follow_mouse = 2;
         };
 
         monitor = [

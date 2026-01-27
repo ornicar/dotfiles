@@ -18,6 +18,15 @@
         voltoggle = "audioctl sink toggle";
       in
       lib.mkAfter {
+        input = {
+          touchpad = {
+            disable_while_typing = true; # doesn't work
+          };
+        };
+        workspace = [
+          # Full screen single visible tiled window, except special workspace
+          "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"
+        ];
         bind = [
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
           ", XF86AudioPlay, exec, ${spotify} play-pause"
@@ -44,12 +53,12 @@
       };
       listener = [
         {
-          timeout = 900;
+          timeout = 120;
           on-timeout = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -T 0.2";
           on-resume = "${pkgs.light}/bin/light -I";
         }
         {
-          timeout = 1200;
+          timeout = 600;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
         }

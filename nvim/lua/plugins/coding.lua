@@ -14,9 +14,22 @@ return {
   -- autocompletion https://www.lazyvim.org/extras/coding/blink
   {
     "saghen/blink.cmp",
+    dependencies = {
+      {
+        -- autocomplete issues and PRs from GitHub
+        "Kaiser-Yang/blink-cmp-git",
+      },
+    },
     opts = {
       sources = {
-        default = { "copilot", "lsp", "buffer", "path" },
+        default = { "git", "copilot", "lsp", "buffer", "path" },
+        providers = {
+          git = {
+            module = "blink-cmp-git",
+            name = "Git",
+            opts = {},
+          },
+        },
       },
       keymap = {
         preset = nil,

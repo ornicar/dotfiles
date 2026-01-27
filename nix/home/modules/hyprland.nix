@@ -76,7 +76,7 @@
           kb_variant = "colemak,";
           repeat_rate = 64;
           repeat_delay = 180;
-          follow_mouse = 1;
+          follow_mouse = 2;
         };
 
         monitor = [

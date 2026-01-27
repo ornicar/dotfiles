@@ -7,6 +7,9 @@
           sensor = "k10temp Tctl";
         };
       };
+      media_player = {
+        max_title_length = 80;
+      };
     };
   };
 }

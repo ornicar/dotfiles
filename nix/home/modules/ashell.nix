@@ -24,6 +24,13 @@
           "Battery"
         ];
       };
+      system_info = {
+        indicators = [
+          "Memory"
+          "Cpu"
+          "Temperature"
+        ];
+      };
       modules = {
         left = [
           "Workspaces"

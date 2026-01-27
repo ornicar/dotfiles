@@ -18,6 +18,11 @@
         voltoggle = "audioctl sink toggle";
       in
       lib.mkAfter {
+        input = {
+          touchpad = {
+            disable_while_typing = true; # doesn't work
+          };
+        };
         workspace = [
           # Full screen single visible tiled window, except special workspace
           "w[tv1] s[false], gapsout:0, gapsin:0, decorate:false, rounding:false, shadow:false"

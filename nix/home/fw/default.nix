@@ -6,6 +6,7 @@
     ../modules/easyeffects.nix
     # ./sway.nix
     ./hyprland.nix
+    ./ashell.nix
     # ../modules/wine.nix
   ];
 

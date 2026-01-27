@@ -18,6 +18,10 @@
         voltoggle = "audioctl sink toggle";
       in
       lib.mkAfter {
+        general = {
+          gaps_in = 7;
+          gaps_out = "10, 10, 3, 10";
+        };
         bind = [
           ", F8, exec, ${pkgs.playerctl}/bin/playerctl -p spotify play-pause"
           ", F9, exec, ${volumeDec}"

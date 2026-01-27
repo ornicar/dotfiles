@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ ./wayland.nix ];
 
@@ -9,5 +9,6 @@
   };
 
   environment.systemPackages = with pkgs; [
+    inputs.ashell.packages.${pkgs.system}.default
   ];
 }

@@ -21,11 +21,12 @@
       };
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
     # };
+    # hyprfocus.url = "github:ornicar/hyprfocus";
     ashell.url = "github:MalpenZibo/ashell";
 
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";

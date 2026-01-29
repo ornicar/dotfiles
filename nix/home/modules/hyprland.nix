@@ -9,6 +9,7 @@
   imports = [
     ./wayland.nix
     ./ashell.nix
+    # ./hyprshell.nix
   ];
 
   services.hyprpaper.enable = true;
@@ -97,6 +98,7 @@
           "$mod, ${up}, layoutmsg, swapprev noloop"
           "$mod, ${down}, layoutmsg, swapnext noloop"
           "$mod, M, layoutmsg, swapwithmaster"
+          "$mod, M, layoutmsg, focusmaster"
           "$mod, minus, togglespecialworkspace"
           "$mod SHIFT, minus, movetoworkspace, special"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)

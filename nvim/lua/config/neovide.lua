@@ -44,4 +44,4 @@ end)
 local function paste()
   vim.api.nvim_paste(vim.fn.getreg("+"), true, -1)
 end
-vim.keymap.set({ "n", "i", "v", "c", "t" }, "<C-v>", paste, { silent = true, desc = "Paste" })
+vim.keymap.set({ "v", "c", "t" }, "<C-v>", paste, { silent = true, desc = "Paste" })

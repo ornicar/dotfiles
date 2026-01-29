@@ -16,7 +16,7 @@
       };
 
       core = {
-        editor = "neovide";
+        editor = "nvim";
         whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
       };
       merge.conflictStyle = "zdiff3";

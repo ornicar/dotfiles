@@ -53,7 +53,7 @@
       };
       listener = [
         {
-          timeout = 120;
+          timeout = 300;
           on-timeout = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -T 0.2";
           on-resume = "${pkgs.light}/bin/light -I";
         }

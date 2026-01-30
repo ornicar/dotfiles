@@ -86,6 +86,8 @@
           wayland_titlebar_color system
           macos_titlebar_color system
 
+          window_padding_width 8
+
           # Tab bar colors
           active_tab_foreground   #11111b
           active_tab_background   #cba6f7

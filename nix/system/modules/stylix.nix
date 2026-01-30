@@ -16,7 +16,7 @@
       base00 = "#000000";
     };
 
-    image = ../../home/wallpaper/horizon.jpg;
+    image = ../../home/wallpaper/cammy-beach.jpg;
 
     fonts = rec {
       sansSerif = {

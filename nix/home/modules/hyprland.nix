@@ -8,7 +8,7 @@
 {
   imports = [
     ./wayland.nix
-    ./ashell.nix
+    ./ashell.nix # status bar
     # ./hyprshell.nix
   ];
 
@@ -29,7 +29,8 @@
         up = "L";
         terminal = "kitty -1";
         editor = "neovide";
-        menu = "bemenu-run -H 40 -p 'Run:'";
+        menu = "rofi -show run";
+        windowSwitcher = "rofi -show window";
         workspaces = lib.range 1 10;
         workspaceKey = (i: toString (if i == 10 then 0 else i));
       in
@@ -105,6 +106,7 @@
           (map (i: "$mod SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
           "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"
           "$mod, EQUAL, exec, ${menu}"
+          "$mod, W, exec, ${windowSwitcher}"
         ];
 
         binde = [

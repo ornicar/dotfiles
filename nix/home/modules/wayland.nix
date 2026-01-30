@@ -1,10 +1,8 @@
 { ... }:
 {
-  programs.bemenu = {
-    enable = true;
-  };
-  stylix.targets.bemenu.enable = false;
-
+  imports = [
+    ./rofi.nix
+  ];
   services.mako = {
     enable = true;
     settings = {
@@ -16,4 +14,5 @@
       border-radius = 10;
     };
   };
+  stylix.targets.mako.enable = true;
 }

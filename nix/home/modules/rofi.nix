@@ -3,6 +3,7 @@
 
   programs.rofi = {
     enable = true;
+    theme = "material";
   };
-  stylix.targets.rofi.enable = true;
+  stylix.targets.rofi.enable = false;
 }

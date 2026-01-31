@@ -55,6 +55,10 @@
         windowrule = [
           # "match:class firefox, no_blur on, border_size 0"
         ];
+        layerrule = [
+          "blur on, match:namespace rofi"
+          "blur on, match:namespace notifications"
+        ];
 
         decoration = {
           rounding = 30;
@@ -99,7 +103,7 @@
           "$mod, ${up}, layoutmsg, swapprev noloop"
           "$mod, ${down}, layoutmsg, swapnext noloop"
           "$mod, M, layoutmsg, swapwithmaster"
-          "$mod, M, layoutmsg, focusmaster"
+          "$mod, M, layoutmsg, focusmaster master"
           "$mod, minus, togglespecialworkspace"
           "$mod SHIFT, minus, movetoworkspace, special"
           (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)

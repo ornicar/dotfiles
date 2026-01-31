@@ -55,6 +55,10 @@
         windowrule = [
           # "match:class firefox, no_blur on, border_size 0"
         ];
+        layerrule = [
+          "blur on, match:namespace rofi"
+          "blur on, match:namespace notifications"
+        ];
 
         decoration = {
           rounding = 30;

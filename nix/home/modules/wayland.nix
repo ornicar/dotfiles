@@ -3,6 +3,10 @@
   imports = [
     ./rofi.nix
   ];
+  services.cliphist = {
+    enable = true;
+  };
+
   services.mako = {
     enable = true;
     settings = {

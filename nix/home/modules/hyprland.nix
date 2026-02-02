@@ -31,6 +31,7 @@
         editor = "neovide";
         menu = "rofi -show run";
         windowSwitcher = "rofi -show window";
+        clipboardManager = "rofi -modi clipboard:cliphist-rofi -show clipboard";
         workspaces = lib.range 1 10;
         workspaceKey = (i: toString (if i == 10 then 0 else i));
       in
@@ -111,6 +112,7 @@
           "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"
           "$mod, EQUAL, exec, ${menu}"
           "$mod, W, exec, ${windowSwitcher}"
+          "$mod, Y, exec, ${clipboardManager}"
         ];
 
         binde = [

@@ -7,7 +7,7 @@
       position = "Bottom";
       appearance = {
         scale_factor = 1.3;
-        opacity = lib.mkForce 0.4;
+        opacity = lib.mkForce 0.5;
         menu = {
           opacity = lib.mkForce 0.7;
           backdrop = 0.2;

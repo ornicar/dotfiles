@@ -14,6 +14,7 @@
       "emoji"
       "calc"
     ];
+    font = "JetBrains Mono 17";
   };
   stylix.targets.rofi.enable = false;
 }

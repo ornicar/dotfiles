@@ -54,7 +54,6 @@
         };
 
         windowrule = [
-          # "match:class firefox, no_blur on, border_size 0"
         ];
         layerrule = [
           "blur on, match:namespace rofi"
@@ -62,7 +61,7 @@
         ];
 
         decoration = {
-          rounding = 40;
+          rounding = 50;
           rounding_power = 1;
           blur = {
             enabled = true;

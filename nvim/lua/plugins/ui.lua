@@ -3,6 +3,7 @@ return {
     "catppuccin",
     opts = {
       term_colors = true,
+
       -- background = { -- :h background
       --   light = "latte",
       --   dark = "mocha",
@@ -12,12 +13,11 @@ return {
         transparent = true, -- enable transparent floating windows
         -- solid = true, -- use solid styling for floating windows, see |winborder|
       },
-      custom_highlights = function(colors)
-        return {
-          NormalFloat = { bg = colors.none },
-          SnacksNormal = { bg = colors.none },
-        }
-      end,
+      -- custom_highlights = function(colors)
+      --   return {
+      --     Normal = { bg = colors.none },
+      --   }
+      -- end,
       -- color_overrides = {
       --   mocha = {
       --     -- base = "1e1e2e",

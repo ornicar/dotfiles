@@ -17,6 +17,14 @@ return {
           gh_issue = {},
           gh_pr = {},
         },
+        -- wo = {
+        --   winhighlight = "Normal:Normal,NormalFloat:NormalFloat",
+        -- },
+      },
+      terminal = {
+        wo = {
+          winhighlight = "Normal:Normal",
+        },
       },
       image = {},
       lazygit = {
@@ -25,7 +33,11 @@ return {
           os = { editPreset = "nvim-remote" },
         },
       },
-      gh = {},
+      gh = {
+        wo = {
+          winhighlight = "Normal:Normal",
+        },
+      },
       bigfile = {},
     },
     keys = {

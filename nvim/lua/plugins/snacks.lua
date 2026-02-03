@@ -13,9 +13,15 @@ return {
       },
       picker = {
         sources = {
-          explorer = {},
           gh_issue = {},
           gh_pr = {},
+          explorer = {
+            layout = {
+              layout = {
+                position = "right",
+              },
+            },
+          },
         },
         -- wo = {
         --   winhighlight = "Normal:Normal,NormalFloat:NormalFloat",

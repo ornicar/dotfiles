@@ -10,9 +10,9 @@ gappa=27117
 study=27118
 achoo=27119
 snafu=27217
-rubik=27317
-insight=27318
+lucid=27317
 feck1=27417
+thonk=27517
 kaiju=27917
 
 fw=27417
@@ -39,16 +39,15 @@ elif [ "$server" = "stage" ]; then
   port=$snafu
   as="localhost"
 
-elif [ "$server" = "puzzle" ]; then
+elif [ "$server" = "lucid" ]; then
 
-  host="rubik"
-  port=$rubik
+  host="lucid"
+  port=$lucid
 
-elif [ "$server" = "insight" ]; then
+elif [ "$server" = "thonk" ]; then
 
-  host="rubik"
-  port=$insight
-  destPort=27018
+  host="thonk"
+  port=$thonk
 
 elif [ "$server" = "pri" ]; then
 
@@ -98,7 +97,7 @@ fi
 
 if [ "$server" = "all" ]; then
   echo "Connecting all servers"
-  for server in sec study achoo stage puzzle; do
+  for server in sec study achoo stage thonk; do
     echo "$0 $server"
     $0 $server
   done
@@ -113,5 +112,5 @@ elif [ -n "$port" ]; then
   echo $command
   $command
 else
-  echo "Usage: $0 [all|sec|feck1|study|achoo|stage|puzzle|pri|insight|fw|crom]"
+  echo "Usage: $0 [all|sec|feck1|study|achoo|stage|thonk|pri|lucid|fw|crom]"
 fi

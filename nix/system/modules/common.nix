@@ -38,6 +38,7 @@
     ./recipes-local-nginx.nix
     # ../modules/telegram.nix
     # ./zeroad.nix
+    ./beyond-all-reason.nix
   ];
 
   services.dbus.enable = true;

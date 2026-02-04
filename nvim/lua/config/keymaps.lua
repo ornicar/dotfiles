@@ -4,6 +4,7 @@
 
 require("config.keymaps_colemak")
 require("config.keymaps_lazyvim")
+require("config.keymaps_comment")
 
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
@@ -53,9 +54,6 @@ map("n", "'", "`")
 -- Add empty lines before and after cursor line
 map("n", "[<space>", "<Cmd>call append(line('.') - 1, repeat([''], v:count1))<CR>", { desc = "Put empty line above" })
 map("n", "]<space>", "<Cmd>call append(line('.'),     repeat([''], v:count1))<CR>", { desc = "Put empty line below" })
-
--- Duplicate line and comment the first line
-map("n", "ycc", '"yy" . v:count1 . "gcc\']p"', { remap = true, expr = true })
 
 -- Reselect latest changed, put, or yanked text
 map(

@@ -13,6 +13,7 @@
     ./modules/ssh.nix
     ./modules/xdg.nix
     ./modules/zsh.nix
+    ./modules/mpv.nix
     # ./modules/lan-mouse.nix
 
     ./services/lila.nix

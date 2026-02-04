@@ -23,7 +23,6 @@
     lm_sensors
     gping # ping with a graph
     trippy # network diagnostic https://github.com/fujiapple852/trippy
-    mpv-unwrapped
     vlc
     evince # pdf viewer
     ghostscript

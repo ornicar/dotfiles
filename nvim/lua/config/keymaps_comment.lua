@@ -1,19 +1,21 @@
-vim.keymap.set("v", "'", function()
+local map = vim.keymap.set
+
+map("v", "'", function()
   local count = vim.v.count
   vim.cmd.norm((count > 0 and count or "") .. "gcc")
 end)
 
-vim.keymap.set("n", "'", function()
+map("n", "'", function()
   local count = vim.v.count
   vim.cmd.norm((count > 0 and count or "") .. "gcc")
 end)
 
-vim.keymap.set("o", "'", function()
+map("o", "'", function()
   local count = vim.v.count
   vim.cmd.norm((count > 0 and count or "") .. "gcc")
 end)
 
-vim.keymap.set("x", "'", function()
+map("x", "'", function()
   local count = vim.v.count
   vim.cmd.norm((count > 0 and count or "") .. "gcc")
 end)

@@ -50,6 +50,7 @@
       "original": {
         "owner": "MalpenZibo",
         "repo": "ashell",
+        "rev": "845ca24797d5acc313ec38aafe4ec2efb2c67458",
         "type": "github"
       }
     },
@@ -637,11 +638,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1770361607,
-        "narHash": "sha256-jxdP1Uh4dPXbb/pwZq7Y7NM8VTBPGvx/G1G1LSL2j28=",
+        "lastModified": 1770376959,
+        "narHash": "sha256-+63noQN/2bmDUQ+xS2WwLVnkVj2x/TQMtk8Fj3JGSS8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cfcec97612252a49c71fdb69b5e051fc6c7c188b",
+        "rev": "04691f35dde9e0cc0f627a57f2b3ea3aa8b720dc",
         "type": "github"
       },
       "original": {

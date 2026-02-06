@@ -27,7 +27,9 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
     # hyprfocus.url = "github:ornicar/hyprfocus";
-    ashell.url = "github:MalpenZibo/ashell";
+
+    # locked commit to avoid recompiling every day 🤷‍♂️
+    ashell.url = "github:MalpenZibo/ashell/845ca24797d5acc313ec38aafe4ec2efb2c67458";
 
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";

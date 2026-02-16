@@ -1,9 +1,14 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    fishnet
+  ];
+
   systemd.user.services.fishnet-prod =
     let
-      fishnet = "${config.home.homeDirectory}/fishnet";
-      release = "${fishnet}/target/release";
+      dir = "${config.home.homeDirectory}/fishnet";
+      conf = "${dir}/fishnet.ini";
+      binary = "${pkgs.fishnet}/bin/fishnet";
     in
     {
       Unit = {
@@ -11,10 +16,10 @@
         After = [ "network-online.target" ];
       };
       Service = {
-        ExecStart = "${release}/fishnet --conf ${fishnet}/fishnet.ini --auto-update";
+        ExecStart = "${binary} --conf ${conf}";
         KillMode = "mixed";
-        WorkingDirectory = release;
-        ReadWriteDirectories = release;
+        WorkingDirectory = dir;
+        ReadWriteDirectories = dir;
         Nice = 19;
         PrivateTmp = true;
         DevicePolicy = "closed";

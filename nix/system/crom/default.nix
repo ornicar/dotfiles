@@ -14,8 +14,9 @@
     ../modules/bluetooth.nix
     ../modules/coolercontrol.nix
     # ../modules/steam.nix
-    ../modules/telegram.nix
+    # ../modules/telegram.nix
     # ../modules/android.nix
+    # ../modules/beyond-all-reason.nix
   ];
 
   # Open ports in the firewall.

@@ -16,7 +16,7 @@
       base00 = "#000000";
     };
 
-    image = ../../home/wallpaper/cammy-beach.jpg;
+    image = ../../home/wallpaper/niko-photos-1.jpg;
 
     fonts = rec {
       sansSerif = {

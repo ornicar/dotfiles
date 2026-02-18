@@ -16,7 +16,7 @@
         After = [ "network-online.target" ];
       };
       Service = {
-        ExecStart = "${binary} --conf ${conf}";
+        ExecStart = "${binary} --conf ${conf} --max-backoff 3";
         KillMode = "mixed";
         WorkingDirectory = dir;
         ReadWriteDirectories = dir;

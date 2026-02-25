@@ -18,6 +18,7 @@
     gimp
     gthumb
     feh
+    qimgv # image viewer
     nautilus
     stockfish
     lm_sensors

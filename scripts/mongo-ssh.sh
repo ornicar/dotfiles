@@ -13,7 +13,7 @@ snafu=27217
 lucid=27317
 feck1=27417
 thonk=27517
-kaiju=27917
+prod=27917
 
 fw=27417
 crom=27418
@@ -51,8 +51,8 @@ elif [ "$server" = "thonk" ]; then
 
 elif [ "$server" = "pri" ]; then
 
-  host="kaiju"
-  port=$kaiju
+  host="krakn"
+  port=$prod
 
 elif [ "$server" = "late1" ]; then
 
@@ -108,7 +108,7 @@ elif [ -n "$port" ]; then
     kill -9 $pid
   done
   echo "Connecting $server to $fullHost on port $port"
-  command="ssh $options $port:$as:$destPort $user@$fullHost"
+  command="ssh -4 $options $port:$as:$destPort $user@$fullHost"
   echo $command
   $command
 else

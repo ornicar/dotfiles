@@ -30,5 +30,6 @@
     copilot-cli
     pnpm
     esbuild
+    devenv
   ];
 }

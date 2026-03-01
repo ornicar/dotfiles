@@ -27,7 +27,7 @@
     vlc
     evince # pdf viewer
     ghostscript
-    libreoffice-qt
+    # libreoffice-qt
     imagemagick
   ];
 }

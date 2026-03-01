@@ -26,11 +26,11 @@
       }).bloop;
 
     # stable gimp
-    gimp =
-      (import inputs.nixpkgs-stable {
-        system = final.system;
-        config.allowunfree = true;
-      }).gimp;
+    # gimp =
+    #   (import inputs.nixpkgs-stable {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).gimp;
 
     # stable neovim
     # neovim = (import inputs.nixpkgs-stable {

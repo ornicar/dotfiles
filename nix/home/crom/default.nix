@@ -11,7 +11,6 @@
     # ../services/fishnet-prod.nix
     # ../services/fishnet-local.nix
 
-    # ./sway.nix
     ./hyprland.nix
     ./ashell.nix
     ./s-tui.nix

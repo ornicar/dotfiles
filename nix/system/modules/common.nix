@@ -28,7 +28,6 @@
     ./shell.nix
     ./sound.nix
     ./stylix.nix
-    ./sway.nix
     ./hyprland.nix
     ./users.nix
     ./browser.nix

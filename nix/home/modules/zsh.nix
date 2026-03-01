@@ -155,7 +155,6 @@
           "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";
           # Stuff
           "st" = "_ systemctl-tui";
-          "on" = ''swaymsg " output * power on"'';
         };
     };
 }

@@ -45,7 +45,7 @@
 
         master = {
           allow_small_split = true;
-          mfact = 0.7;
+          mfact = 0.66;
           orientation = "right";
           new_on_top = true;
           # new_on_active = "before";

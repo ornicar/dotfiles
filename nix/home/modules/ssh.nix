@@ -10,6 +10,8 @@
       };
     };
     extraConfig = ''
+      Host talos
+        HostName talos.lichess.ovh
       Host fw
         HostName 192.168.1.3
         User thib

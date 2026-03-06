@@ -12,7 +12,6 @@
     unzip
     dtrx
     signal-desktop
-    neofetch
     spotify
     playerctl
     gimp

@@ -7,6 +7,10 @@
 {
   imports = [ ../modules/hyprland.nix ];
 
+  home.packages = with pkgs; [
+    brightnessctl
+  ];
+
   wayland.windowManager.hyprland = {
     settings =
       let
@@ -16,6 +20,7 @@
         volup = "audioctl sink inc";
         voldown = "audioctl sink dec";
         voltoggle = "audioctl sink toggle";
+        light = "${pkgs.brightnessctl}/bin/brightnessctl";
       in
       lib.mkAfter {
         input = {
@@ -38,36 +43,40 @@
         binde = [
           ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.5"
           ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 0.0"
-          ", XF86MonBrightnessDown, exec, light -U 10"
-          ", XF86MonBrightnessUp, exec, light -A 10"
+          ", XF86MonBrightnessDown, exec, ${light} set 10%-"
+          ", XF86MonBrightnessUp, exec, ${light} set +10%"
         ];
       };
   };
 
   services.hypridle = {
     enable = true;
-    settings = {
-      general = {
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        lock_cmd = "hyprlock";
+    settings =
+      let
+        light = "${pkgs.brightnessctl}/bin/brightnessctl";
+      in
+      {
+        general = {
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+          lock_cmd = "hyprlock";
+        };
+        listener = [
+          {
+            timeout = 300;
+            on-timeout = "${light} --save; ${light} --min-value";
+            on-resume = "${light} --restore";
+          }
+          {
+            timeout = 600;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+          {
+            timeout = 1500;
+            on-timeout = "systemctl suspend";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+        ];
       };
-      listener = [
-        {
-          timeout = 300;
-          on-timeout = "${pkgs.light}/bin/light -O; ${pkgs.light}/bin/light -T 0.2";
-          on-resume = "${pkgs.light}/bin/light -I";
-        }
-        {
-          timeout = 600;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 1500;
-          on-timeout = "systemctl suspend";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-      ];
-    };
   };
 }

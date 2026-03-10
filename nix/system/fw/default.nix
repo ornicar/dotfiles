@@ -18,6 +18,7 @@
     powertop
     libinput
     acpi
+    brightnessctl
   ];
 
   networking = {
@@ -38,8 +39,6 @@
   # Enable touchpad support
   services.libinput.enable = true;
 
-  # Display backlight
-  programs.light.enable = true;
   hardware.sensor.iio.enable = true;
 
   hardware.keyboard.qmk.enable = false; # am using keyd instead

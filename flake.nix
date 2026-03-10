@@ -6,6 +6,8 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
 
+    oxfmt.url = "github:macalinao/nixpkgs/update-oxfmt";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     home-manager = {

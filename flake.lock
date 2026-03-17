@@ -248,11 +248,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1773732199,
-        "narHash": "sha256-rK70/sZ2LIA4HoQifH6r3VGtXjGIgZzi2+pI7jUbkSA=",
+        "lastModified": 1773770992,
+        "narHash": "sha256-i19ThFtngIe5e/15HIOCCsnZBXwuDuMfmL72+0GpzQU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1896e04b43bd8f9519afe32f57c6cb3abfbfcb81",
+        "rev": "f84c6d42566835e4701afeef7644a3fd4281d0bd",
         "type": "github"
       },
       "original": {
@@ -349,22 +349,6 @@
         "type": "github"
       }
     },
-    "oxfmt": {
-      "locked": {
-        "lastModified": 1772883293,
-        "narHash": "sha256-Ik9wtklr6/8YxGBHVZ5V2qH4YwATU0AsttVtjQpjQ54=",
-        "owner": "macalinao",
-        "repo": "nixpkgs",
-        "rev": "497edc2ceea94a37d06fa32060baf846309742e6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "macalinao",
-        "ref": "update-oxfmt",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "picfit": {
       "inputs": {
         "nixpkgs": "nixpkgs_4"
@@ -393,7 +377,6 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
-        "oxfmt": "oxfmt",
         "picfit": "picfit",
         "stylix": "stylix"
       }

@@ -27,7 +27,7 @@
 
     # latest oxfmt
     oxfmt =
-      (import inputs.oxfmt {
+      (import inputs.nixpkgs-master {
         system = final.system;
         config.allowunfree = true;
       }).oxfmt;

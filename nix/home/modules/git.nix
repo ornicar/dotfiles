@@ -46,6 +46,8 @@
       "project/project"
       "**/*.worksheet.sc"
     ];
+
+    signing.format = null;
   };
 
   programs.delta = {

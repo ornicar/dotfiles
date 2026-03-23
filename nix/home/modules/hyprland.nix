@@ -178,7 +178,5 @@
   };
 
   # GTK theme
-  # gtk = {
-  #   enable = true;
-  # };
+  gtk.gtk4.theme = null;
 }

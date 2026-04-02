@@ -52,10 +52,6 @@
           # new_status = "inherit";
           special_scale_factor = 0.95;
         };
-        workspace = [
-          # "4, layout:scrolling, wrap_swapcol=false, wrap_focus=false"
-          "5, layout:scrolling, wrap_swapcol=false, wrap_focus=false"
-        ];
 
         windowrule = [
         ];
@@ -106,8 +102,6 @@
           ", F3, exec, systemctl --user restart lila-ws"
           "$mod, ${up}, layoutmsg, swapprev noloop"
           "$mod, ${down}, layoutmsg, swapnext noloop"
-          "$mod, ${up}, layoutmsg, swapcol r"
-          "$mod, ${down}, layoutmsg, swapcol l"
           "$mod, M, layoutmsg, swapwithmaster"
           "$mod, M, layoutmsg, focusmaster master"
           "$mod, minus, togglespecialworkspace"
@@ -123,8 +117,6 @@
         binde = [
           "$mod, ${right}, layoutmsg, cycleprev noloop"
           "$mod, ${left}, layoutmsg, cyclenext noloop"
-          "$mod, ${right}, layoutmsg, move +col"
-          "$mod, ${left}, layoutmsg, move -col"
           "$mod SHIFT, Left, resizeactive, -20 0"
           "$mod SHIFT, Right, resizeactive, 20 0"
           "$mod SHIFT, Down, resizeactive, 0 20"

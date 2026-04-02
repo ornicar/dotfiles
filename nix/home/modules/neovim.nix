@@ -4,12 +4,12 @@
 {
 
   home.packages = with pkgs; [
+    typescript-language-server
     lua-language-server
     yaml-language-server
     vscode-langservers-extracted
     oxfmt
     shfmt
-    nodePackages_latest.typescript-language-server
     copilot-language-server
   ];
 

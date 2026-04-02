@@ -28,7 +28,7 @@
     fx # tui json viewer
     goaccess
     copilot-cli
-    # pnpm
+    pnpm
     # esbuild
     devenv
   ];

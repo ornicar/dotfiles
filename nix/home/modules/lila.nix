@@ -9,10 +9,6 @@ let
   lila-deploy = "cd ${home}/lila; python bin/deploy";
 in
 {
-  home.packages = with pkgs; [
-    oxlint
-    oxfmt
-  ];
 
   home.sessionVariables = {
     # for lila/ui/build to find the sass executable

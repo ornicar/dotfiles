@@ -20,24 +20,11 @@
 
     # Get latest bloop
     # bloop =
-    #   (import inputs.nixpkgs-master {
-    #     system = final.system;
-    #     config.allowunfree = true;
-    #   }).bloop;
+    #   (import inputs.nixpkgs-master opts).bloop;
 
     # stable gimp
     # gimp =
-    #   (import inputs.nixpkgs-stable {
-    #     system = final.system;
-    #     config.allowunfree = true;
-    #   }).gimp;
-
-    # stable neovim
-    neovim =
-      (import inputs.nixpkgs-stable {
-        system = final.system;
-        config.allowunfree = true;
-      }).neovim;
+    #   (import inputs.nixpkgs-stable opts).gimp;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc2-dev";
@@ -57,12 +44,6 @@
           --replace /usr/bin/env "${prev.coreutils}/bin/env"
       '';
     });
-
-    easyeffects =
-      (import inputs.nixpkgs-stable {
-        system = final.system;
-        config.allowunfree = true;
-      }).easyeffects;
 
     # esbuild = prev.esbuild.overrideAttrs (previousAttrs: rec {
     #   version = "0.25.9";

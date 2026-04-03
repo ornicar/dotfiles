@@ -25,13 +25,6 @@
     #     config.allowunfree = true;
     #   }).bloop;
 
-    # latest oxfmt
-    oxfmt =
-      (import inputs.nixpkgs-master {
-        system = final.system;
-        config.allowunfree = true;
-      }).oxfmt;
-
     # stable gimp
     # gimp =
     #   (import inputs.nixpkgs-stable {

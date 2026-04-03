@@ -40,10 +40,11 @@
     #   }).gimp;
 
     # stable neovim
-    # neovim = (import inputs.nixpkgs-stable {
-    #   system = final.system;
-    #   config.allowunfree = true;
-    # }).neovim;
+    neovim =
+      (import inputs.nixpkgs-stable {
+        system = final.system;
+        config.allowunfree = true;
+      }).neovim;
 
     openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
       version = "candidate_1.0rc2-dev";

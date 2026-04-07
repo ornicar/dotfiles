@@ -5,7 +5,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     git
-    pkgs-stable.neovim
+    neovim
     neovide
     gh
     github-copilot-cli

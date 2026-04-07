@@ -20,8 +20,8 @@ crom=27418
 
 if [ "$server" = "sec" ]; then
 
-  host="gappa"
-  port=$gappa
+  host="krakn"
+  port=$krakn
 
 elif [ "$server" = "study" ]; then
 
@@ -51,7 +51,7 @@ elif [ "$server" = "thonk" ]; then
 
 elif [ "$server" = "pri" ]; then
 
-  host="krakn"
+  host="kaiju"
   port=$prod
 
 elif [ "$server" = "late1" ]; then

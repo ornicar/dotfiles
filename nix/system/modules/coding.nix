@@ -18,7 +18,7 @@ in
     python3
     ruby
     scala-cli
-    nodejs_24
+    nodejs_25
     delta
     pyright
     taplo # TOML language server

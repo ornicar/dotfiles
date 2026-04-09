@@ -1,0 +1,52 @@
+{
+    "output": {
+        "blocklist": [],
+        "convolver#0": {
+            "autogain": false,
+            "bypass": false,
+            "input-gain": 0.0,
+            "ir-width": 100,
+            "kernel-name": "Linux10-48k",
+            "output-gain": 3.0
+        },
+        "filter#0": {
+            "balance": 0.0,
+            "bypass": false,
+            "equal-mode": "IIR",
+            "frequency": 100.0,
+            "gain": 0.0,
+            "input-gain": 0.0,
+            "mode": "BWC (BT)",
+            "output-gain": 0.0,
+            "quality": 0.0,
+            "slope": "x4",
+            "type": "High-pass",
+            "width": 0.0
+        },
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 8.0,
+            "bypass": false,
+            "dithering": "24bit",
+            "external-sidechain": false,
+            "gain-boost": false,
+            "input-gain": 0.0,
+            "lookahead": 7.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "Half x2(3L)",
+            "release": 0.25,
+            "sidechain-preamp": -2.7755575615628914e-17,
+            "stereo-link": 100.0,
+            "threshold": 0.0
+        },
+        "plugins_order": [
+            "filter#0",
+            "convolver#0",
+            "limiter#0"
+        ]
+    }
+}

@@ -6,7 +6,7 @@ foreground="-NL"
 options=$background
 destPort=27017
 
-gappa=27117
+krakn=27117
 study=27118
 achoo=27119
 snafu=27217

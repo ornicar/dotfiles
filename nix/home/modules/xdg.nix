@@ -24,11 +24,11 @@
         "image/jpeg" = [ "gthumb.desktop" ];
         "image/gif" = [ "gthumb.desktop" ];
 
-        "audio/mpeg" = [ "vlc.desktop" ];
-        "audio/flac" = [ "vlc.desktop" ];
+        "audio/mpeg" = [ "mpv.desktop" ];
+        "audio/flac" = [ "mpv.desktop" ];
 
-        "video/mp4" = [ "vlc.desktop" ];
-        "video/quicktime" = [ "vlc.desktop" ];
+        "video/mp4" = [ "mpv.desktop" ];
+        "video/quicktime" = [ "mpv.desktop" ];
 
         "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 

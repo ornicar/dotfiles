@@ -7,7 +7,7 @@
       position = "Bottom";
       appearance = {
         scale_factor = 1.3;
-        opacity = lib.mkForce 0.5;
+        opacity = lib.mkForce 0.6;
         menu = {
           opacity = lib.mkForce 0.7;
           backdrop = 0.2;
@@ -31,6 +31,16 @@
           "Temperature"
         ];
       };
+      tempo = {
+        clock_format = "%a %d %b %R %Z";
+        timezones = [
+          "Europe/Paris"
+          "UTC"
+        ];
+        weather_location = {
+          City = "Saint-Nazaire";
+        };
+      };
       modules = {
         left = [
           "Workspaces"
@@ -43,7 +53,7 @@
           "SystemInfo"
           # "KeyboardLayout"
           [
-            "Clock"
+            "Tempo"
             "Tray"
             "Privacy"
             "Settings"

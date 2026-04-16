@@ -16,7 +16,7 @@
       base00 = "#000000";
     };
 
-    image = ../../home/wallpaper/niko-photos-1.jpg;
+    image = ../../home/wallpaper/octopus2.jpg;
 
     fonts = rec {
       sansSerif = {

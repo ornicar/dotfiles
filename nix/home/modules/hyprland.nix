@@ -61,8 +61,8 @@
         ];
 
         decoration = {
-          rounding = 50;
-          rounding_power = 1;
+          rounding = 30;
+          rounding_power = 2;
           blur = {
             enabled = true;
             size = 3;

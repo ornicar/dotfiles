@@ -15,7 +15,7 @@
       Service = {
         ExecStart = pkgs.writeShellScript "disposable-update.sh" ''
           git pull origin master
-          python .generate
+          uv run python disposable.py --debug
           git add .
           git commit -m "auto update domains"
           git push publish-nokey publish

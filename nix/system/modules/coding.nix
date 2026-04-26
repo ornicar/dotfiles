@@ -1,7 +1,4 @@
 { pkgs, inputs, ... }:
-let
-  pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.stdenv.system; };
-in
 {
   environment.systemPackages = with pkgs; [
     git

@@ -1,4 +1,7 @@
 { pkgs, inputs, ... }:
+let
+  pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.stdenv.system; };
+in
 {
 
   imports = [ ../modules/mongodb.nix ];
@@ -14,7 +17,7 @@
     redis
     fishnet
     # fontforge-gtk # icon font editor
-    inkscape
+    pkgs-stable.inkscape
     inputs.bbpPairings.packages.x86_64-linux.default
     inputs.picfit.defaultPackage.x86_64-linux
   ];

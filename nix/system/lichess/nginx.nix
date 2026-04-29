@@ -22,6 +22,8 @@
 
       log_format log_format_rate_limit '$remote_addr'; # extremely simplified ratelimit log lines
 
+      log_format log_format_stat '$remote_addr $time_local $request_body $http_referer "$http_user_agent"';
+
       geo $limited {
         default 0;
         127.0.0.1 0;
@@ -153,8 +155,8 @@
               #}
 
               location /statlog {
-                access_log /var/log/nginx/lila.stat.log;
-                return 204;
+                access_log /var/log/nginx/lila.stat.log log_format_stat;
+                proxy_pass http://lila;
               }
               location = /manifest.json {
                 proxy_cache static_pages;

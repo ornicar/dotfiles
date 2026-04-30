@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+let
+  pkgs-stable = import inputs.nixpkgs-stable { system = pkgs.stdenv.system; };
+in
 {
 
   environment.systemPackages = with pkgs; [
@@ -17,7 +20,7 @@
     gimp
     gthumb
     feh
-    qimgv # image viewer
+    pkgs-stable.qimgv # image viewer
     nautilus
     stockfish
     lm_sensors

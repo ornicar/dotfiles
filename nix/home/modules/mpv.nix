@@ -2,7 +2,7 @@
 {
 
   programs.mpv = {
-    enable = true;
+    enable = false;
     config = {
       target-colorspace-hint = false;
     };

@@ -16,7 +16,7 @@
       base00 = "#000000";
     };
 
-    image = ../../home/wallpaper/octopus2.jpg;
+    image = ../../home/wallpaper/planet-clouds.jpg;
 
     fonts = rec {
       sansSerif = {

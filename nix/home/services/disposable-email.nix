@@ -14,10 +14,9 @@
       };
       Service = {
         ExecStart = pkgs.writeShellScript "disposable-update.sh" ''
-          git pull origin master
-          uv run python disposable.py --debug
-          git add .
-          git commit -m "auto update domains"
+          ./compile.sh
+          git add domains.txt
+          git commit -m "auto update domains with compile.sh"
           git push publish-nokey publish
         '';
         Type = "oneshot";

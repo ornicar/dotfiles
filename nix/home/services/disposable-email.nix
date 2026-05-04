@@ -31,8 +31,8 @@
     };
     Timer = {
       Unit = "disposable.service";
-      # every night at 1am
-      OnCalendar = "*-*-* 01:00:00";
+      # every 3h
+      OnCalendar = "*-*-* *:00:00";
     };
     Install = {
       WantedBy = [ "timers.target" ];

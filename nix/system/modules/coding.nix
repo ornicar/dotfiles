@@ -13,7 +13,6 @@
     stylua
     tree-sitter
     python3
-    uv # python package manager
     ruby
     scala-cli
     nodejs_25

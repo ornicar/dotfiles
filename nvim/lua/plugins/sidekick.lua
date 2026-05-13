@@ -12,13 +12,13 @@ return {
     },
     keys = {
       {
-        "<tab>",
+        "<c-space>",
         function()
-          -- if there is a next edit, jump to it, otherwise apply it if any
           if not require("sidekick").nes_jump_or_apply() then
-            return "<Tab>" -- fallback to normal tab
+            return require("sidekick.nes").update()
           end
         end,
+        mode = { "i", "n" },
         expr = true,
         desc = "Goto/Apply Next Edit Suggestion",
       },

@@ -21,6 +21,7 @@
     enable = true;
     # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     systemd.enable = false; # https://wiki.nixos.org/wiki/Hyprland
+    configType = "hyprlang";
     settings =
       let
         left = "N";

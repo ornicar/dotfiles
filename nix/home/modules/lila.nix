@@ -28,9 +28,6 @@ in
     Host kaiju
       HostName kaiju.lichess.ovh
       User root
-    Host rodan
-      HostName rodan.lichess.ovh
-      User root
     Host snafu
       HostName 141.94.96.141
       User root

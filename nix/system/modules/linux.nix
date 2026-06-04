@@ -21,6 +21,7 @@
     ps_mem
     bc # calculator
     unixtools.netstat
+    fastfetch
   ];
 
   # enable zsh completion for system packages

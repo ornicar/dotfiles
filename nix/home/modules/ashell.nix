@@ -40,6 +40,7 @@
         weather_location = {
           City = "Saint-Nazaire";
         };
+        wind_speed_unit = "Kmh";
       };
       modules = {
         left = [

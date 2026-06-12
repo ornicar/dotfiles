@@ -175,6 +175,10 @@
           disable_splash_rendering = true;
           key_press_enables_dpms = true;
         };
+        ecosystem = {
+          no_update_news = true;
+          no_donation_nag = true;
+        };
       };
   };
 }

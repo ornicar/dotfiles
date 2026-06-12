@@ -150,8 +150,11 @@
           "-g L" = "| less";
           "v" = "nvim";
           "x" = "dtrx";
+          # devenv
           "d" = "devenv";
           "dr" = "devenv tasks run";
+          "ds" = "devenv shell";
+          "dp" = "devenv processes";
           "reload" = ". ~/.zshrc";
           "meteo" = "curl -4 http://wttr.in/44600";
           "lipass" = "PASSWORD_STORE_DIR=~/lichess-sysadmin/pass pass";

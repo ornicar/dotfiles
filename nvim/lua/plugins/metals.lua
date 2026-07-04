@@ -30,6 +30,14 @@ return {
         excludedPackages = { "akka.actor.typed.javadsl" },
         serverProperties = { "-Xms256m", "-Xmx4g" },
         serverVersion = "latest.snapshot",
+        inlayHints = {
+          byNameParameters = { enable = false },
+          hintsInPatternMatch = { enable = false },
+          implicitArguments = { enable = false },
+          implicitConversions = { enable = false },
+          inferredTypes = { enable = false },
+          typeParameters = { enable = false },
+        },
       }
 
       config.capabilities = require("blink.cmp").get_lsp_capabilities()

@@ -87,7 +87,7 @@ return {
       -- move metals status to the left
       opts.sections.lualine_z = opts.sections.lualine_y
       opts.sections.lualine_y = opts.sections.lualine_x
-      opts.sections.lualine_x = { "g:metals_status" }
+      opts.sections.lualine_x = { "g:metals_status", "searchcount" }
       -- remove dap:
       -- table.remove(opts.sections.lualine_y, 3)
     end,

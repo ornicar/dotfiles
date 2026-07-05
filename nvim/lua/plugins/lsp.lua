@@ -13,7 +13,8 @@ return {
             { "gh", vim.lsp.buf.hover, desc = "Hover" },
             { "<leader>cl", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "x" }, has = "codeLens" },
             { "<space>cq", vim.diagnostic.setqflist, desc = "Put diagnostics in quickfix" },
-            { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" }
+            { "<space>cz", vim.diagnostic.reset, desc = "Reset diagnostics" },
+            { "K", "E", desc = "End" }, -- override K to go to end of WORD instead of hover, since hover is mapped to gh
           },
         },
         ts_ls = {

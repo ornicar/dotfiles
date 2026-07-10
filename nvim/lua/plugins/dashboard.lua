@@ -8,6 +8,7 @@ return {
         callback = function()
           vim.opt.title = true
           vim.opt.titlestring = "VIM " .. vim.fs.basename(vim.fn.getcwd())
+          vim.system({ "git", "pull" }, { cwd = vim.fn.getcwd() })
         end,
       })
     end,

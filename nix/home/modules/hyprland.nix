@@ -38,9 +38,9 @@
       in
       {
         general = {
-          gaps_in = 5;
-          gaps_out = "8, 8, 2, 8";
-          border_size = 2;
+          gaps_in = 12;
+          gaps_out = "21, 21, 7, 21";
+          border_size = 4;
           layout = "master";
         };
 
@@ -62,8 +62,8 @@
         ];
 
         decoration = {
-          rounding = 50;
-          rounding_power = 1;
+          rounding = 35;
+          rounding_power = 2;
           blur = {
             enabled = true;
             size = 3;
@@ -71,11 +71,20 @@
           };
           shadow = {
             enabled = true;
-            range = 15;
-            render_power = 4;
-            color = lib.mkForce "rgba(0,0,0,0.9)";
-            color_inactive = lib.mkForce "rgba(0,0,0,0.5)";
+            range = 30;
+            render_power = 5;
+            # color = lib.mkForce "rgba(255,255,255,0.1)";
+            color = lib.mkForce "rgba(0,0,0,0.28)";
+            color_inactive = lib.mkForce "rgba(0,0,0,0.28)";
           };
+          glow = {
+            enabled = true;
+            range = 50;
+            color = lib.mkForce "rgba(255,255,255,0.3)";
+          };
+          inactive_opacity = 0.85;
+          dim_inactive = true;
+          dim_strength = 0.05;
         };
 
         # Input

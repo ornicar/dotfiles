@@ -27,6 +27,7 @@
     homeDirectory = "/home/${username}";
     file.".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
   };
+  home.pointerCursor.enable = true;
 
   programs.home-manager.enable = true;
 

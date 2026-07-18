@@ -55,11 +55,16 @@
     enableGitIntegration = true;
     options = {
       navigate = false;
-      syntax-theme = "none";
-      features = "catppuccin-mocha";
+      # features = "dark-catppuccin-mocha";
+      features = "light-github";
       true-color = "always";
-      catppuccin-mocha = {
-        blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a";
+      syntax-theme = "none";
+      light-github = {
+        dark = false;
+        light = true;
+      };
+      dark-catppuccin-mocha = {
+        # blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a";
         commit-decoration-style = "#6c7086 bold box ul";
         dark = true;
         file-decoration-style = "#6c7086";

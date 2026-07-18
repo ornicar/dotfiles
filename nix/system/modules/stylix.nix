@@ -8,15 +8,15 @@
     # https://tinted-theming.github.io/base16-gallery/
     base16Scheme =
       let
-        theme = "catppuccin-mocha";
+        theme = "catppuccin-latte";
       in
       "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
-    override = {
-      base00 = "#000000";
-    };
+    # override = {
+    #   base00 = "#000000";
+    # };
 
-    image = ../../home/wallpaper/planet-clouds.jpg;
+    image = ../../home/wallpaper/aperture.jpg;
 
     fonts = rec {
       sansSerif = {
@@ -54,10 +54,10 @@
     };
 
     opacity = {
-      terminal = 0.7;
+      terminal = 0.75;
       popups = 0.7;
       desktop = 0.5;
-      applications = 0.8;
+      applications = 0.9;
     };
 
     # cursor = {

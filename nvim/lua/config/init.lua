@@ -9,7 +9,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Configure LazyVim
 -- https://www.lazyvim.org/configuration/lazy.nvim
-local theme = "catppuccin-mocha"
+local theme = "catppuccin-latte"
 
 require("lazy").setup({
   spec = {

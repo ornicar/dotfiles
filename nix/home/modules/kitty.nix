@@ -1,14 +1,14 @@
 { config, ... }:
 {
   # stylix gets the bright color wrongs
-  stylix.targets.kitty.enable = false;
+  stylix.targets.kitty.enable = true;
 
   programs.kitty = {
     enable = true;
-    font = {
-      inherit (config.stylix.fonts.monospace) package name;
-      size = config.stylix.fonts.sizes.terminal;
-    };
+    # font = {
+    #   inherit (config.stylix.fonts.monospace) package name;
+    #   size = config.stylix.fonts.sizes.terminal;
+    # };
     settings.background_opacity = with config.stylix.opacity; "${builtins.toString terminal}";
     settings = {
       enable_audio_bell = false;
@@ -142,7 +142,6 @@
         ${scrollback}
         ${remote}
         ${forwardMaps}
-        ${theme}
       '';
   };
 }

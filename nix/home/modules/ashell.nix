@@ -1,15 +1,16 @@
 { lib, ... }:
 {
+  stylix.targets.ashell.enable = true;
   programs.ashell = {
     enable = true;
     systemd.enable = true;
     settings = {
       position = "Bottom";
       appearance = {
-        scale_factor = 1.3;
-        opacity = lib.mkForce 0.5;
+        scale_factor = 1.4;
+        opacity = lib.mkForce 0.4;
         menu = {
-          opacity = lib.mkForce 0.6;
+          opacity = lib.mkForce 0.4;
           backdrop = 0.2;
         };
       };

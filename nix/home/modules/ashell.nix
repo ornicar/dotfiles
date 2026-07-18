@@ -13,6 +13,18 @@
           backdrop = 0.2;
         };
       };
+      notifications = {
+        format = "%m/%d %H:%M";
+        show_timestamps = true;
+        show_bodies = false;
+        grouped = true;
+        toast = true;
+        toast_position = "top_right";
+        toast_timeout = 4000;
+        toast_limit = 5;
+        toast_max_height = 150;
+        blocklist = [ ];
+      };
       settings = {
         remove_airplane_btn = true;
         indicators = [

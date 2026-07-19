@@ -1,0 +1,27 @@
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    hyprshade
+  ];
+
+  wayland.windowManager.hyprland.settings.exec = [
+    "hyprshade auto"
+  ];
+
+  home.file.".config/hyprshade/config.toml".text = ''
+    [[shaders]]
+    name = "vibrance"
+    default = true
+
+    [[shaders]]
+    name = "blue-light-filter"
+    start_time = 19:00:00
+    end_time = 06:00:00
+
+    [[shaders]]
+    name = "color-filter"
+    [shaders.config]
+    type = "red-green" # "red-green", "green-red", "blue-yellow"
+    strength = 1.0     # 0.0 - 1.0
+  '';
+}

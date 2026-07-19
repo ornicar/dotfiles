@@ -9,6 +9,7 @@
   imports = [
     ./wayland.nix
     ./ashell.nix # status bar
+    ./hyprshade.nix # color temperature
     # ./hyprshell.nix
   ];
 
@@ -143,7 +144,6 @@
         ];
         exec = [
           "systemctl --user start hyprpaper"
-          "systemctl --user start ashell"
           "systemctl --user start hypridle"
         ];
 

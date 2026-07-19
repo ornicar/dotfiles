@@ -40,7 +40,7 @@
         general = {
           gaps_in = 12;
           gaps_out = "21, 21, 7, 21";
-          border_size = 4;
+          border_size = 0;
           layout = "master";
         };
 
@@ -82,7 +82,7 @@
             range = 50;
             color = lib.mkForce "rgba(255,255,255,0.3)";
           };
-          inactive_opacity = 0.85;
+          inactive_opacity = 0.9;
           dim_inactive = true;
           dim_strength = 0.05;
         };

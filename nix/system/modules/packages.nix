@@ -15,6 +15,7 @@ in
     unzip
     dtrx
     signal-desktop
+    telegram-desktop
     spotify
     playerctl
     gimp

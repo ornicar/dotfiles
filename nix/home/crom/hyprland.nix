@@ -19,8 +19,8 @@
       in
       lib.mkAfter {
         general = {
-          gaps_in = lib.mkForce 7;
-          gaps_out = lib.mkForce "10, 10, 2, 10";
+          gaps_in = lib.mkForce 15;
+          gaps_out = lib.mkForce "27, 27, 5, 27";
         };
         bind = [
           ", F8, exec, ${pkgs.playerctl}/bin/playerctl -p spotify play-pause"

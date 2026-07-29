@@ -42,7 +42,7 @@
     systemctl-tui
     chafa # terminal image viewer
     direnv
-    zellij # tmux alt
+    tree
   ];
 
   programs.gnupg.agent = {

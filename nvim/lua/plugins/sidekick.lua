@@ -1,5 +1,12 @@
 return {
-  { "copilot.lua" },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      filetypes = {
+        yaml = true,
+      },
+    },
+  },
   {
     "folke/sidekick.nvim",
     opts = {

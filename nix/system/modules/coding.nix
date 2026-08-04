@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }:
 {
+
   environment.systemPackages = with pkgs; [
     git
     neovim
@@ -29,5 +30,8 @@
     pnpm
     # esbuild
     devenv
+    oxlint
+    stylelint
+    stylelint-lsp
   ];
 }

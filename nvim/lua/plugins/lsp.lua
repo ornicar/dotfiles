@@ -17,6 +17,9 @@ return {
             { "K", "E", desc = "End" }, -- override K to go to end of WORD instead of hover, since hover is mapped to gh
           },
         },
+        stylelint_lsp = {
+          cmd = { "stylelint-lsp", "--stdio" },
+        },
         ts_ls = {
           enabled = true,
           settings = {

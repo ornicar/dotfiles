@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       git = {
-        pagers = [ { pager = "delta --paging=never"; } ];
+        diffRenderers = [ { command = "delta --paging=never --diff-args=\"--ignore-all-space\""; } ];
         disableForcePushing = true;
       };
       gui = {

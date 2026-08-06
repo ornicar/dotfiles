@@ -22,6 +22,13 @@
     # bloop =
     #   (import inputs.nixpkgs-master opts).bloop;
 
+    # latest oxfmt
+    oxfmt =
+      (import inputs.nixpkgs-master {
+        system = final.system;
+        config.allowunfree = true;
+      }).oxfmt;
+
     # stable gimp
     # gimp =
     #   (import inputs.nixpkgs-stable opts).gimp;

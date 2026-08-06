@@ -21,15 +21,7 @@
       };
     };
 
-    # hyprland.url = "github:hyprwm/Hyprland/e6ca1413648407c9a7b14f33673f67c31b296410";
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-    # hyprfocus.url = "github:ornicar/hyprfocus";
-
-    # locked commit to avoid recompiling every day
-    # ashell.url = "github:MalpenZibo/ashell/845ca24797d5acc313ec38aafe4ec2efb2c67458";
+    hyprland.url = "github:NixOS/nixpkgs/e0832b878323bd1236a6d2be42359f5741e0398b";
 
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";

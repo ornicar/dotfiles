@@ -22,12 +22,11 @@
     # bloop =
     #   (import inputs.nixpkgs-master opts).bloop;
 
-    # latest oxfmt
-    oxfmt =
-      (import inputs.nixpkgs-master {
+    hyprland =
+      (import inputs.hyprland {
         system = final.system;
         config.allowunfree = true;
-      }).oxfmt;
+      }).hyprland;
 
     # stable gimp
     # gimp =

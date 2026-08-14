@@ -22,34 +22,46 @@
     # bloop =
     #   (import inputs.nixpkgs-master opts).bloop;
 
-    hyprland =
-      (import inputs.hyprland {
+    nanoemoji =
+      (import inputs.nixpkgs-master {
         system = final.system;
         config.allowunfree = true;
-      }).hyprland;
+      }).nanoemoji;
+
+    jetbrains-mono =
+      (import inputs.nixpkgs-master {
+        system = final.system;
+        config.allowunfree = true;
+      }).jetbrains-mono;
+
+    # hyprland =
+    #   (import inputs.hyprland {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).hyprland;
 
     # stable gimp
     # gimp =
     #   (import inputs.nixpkgs-stable opts).gimp;
 
-    openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
-      version = "candidate_1.0rc2-dev";
-      src = prev.fetchFromGitHub {
-        owner = "CalcProgrammer1";
-        repo = "OpenRGB";
-        rev = "56b75aaffc730f1e28c77d576d94d70983bb1db7";
-        hash = "sha256-/jbwP8urk0wgj3KCGuUSwJfbKqSV9GQO/dc5d3ZJiT0=";
-      };
-      patches = [ ];
-
-      postPatch = ''
-        patchShebangs scripts/build-udev-rules.sh
-        substituteInPlace scripts/build-udev-rules.sh \
-          --replace /bin/chmod "${prev.coreutils}/bin/chmod"
-        substituteInPlace scripts/build-udev-rules.sh \
-          --replace /usr/bin/env "${prev.coreutils}/bin/env"
-      '';
-    });
+    # openrgb = prev.openrgb.overrideAttrs (previousAttrs: {
+    #   version = "candidate_1.0rc2-dev";
+    #   src = prev.fetchFromGitHub {
+    #     owner = "CalcProgrammer1";
+    #     repo = "OpenRGB";
+    #     rev = "56b75aaffc730f1e28c77d576d94d70983bb1db7";
+    #     hash = "sha256-/jbwP8urk0wgj3KCGuUSwJfbKqSV9GQO/dc5d3ZJiT0=";
+    #   };
+    #   patches = [ ];
+    #
+    #   postPatch = ''
+    #     patchShebangs scripts/build-udev-rules.sh
+    #     substituteInPlace scripts/build-udev-rules.sh \
+    #       --replace /bin/chmod "${prev.coreutils}/bin/chmod"
+    #     substituteInPlace scripts/build-udev-rules.sh \
+    #       --replace /usr/bin/env "${prev.coreutils}/bin/env"
+    #   '';
+    # });
 
     # esbuild = prev.esbuild.overrideAttrs (previousAttrs: rec {
     #   version = "0.25.9";

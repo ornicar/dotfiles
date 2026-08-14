@@ -43,6 +43,7 @@
     chafa # terminal image viewer
     direnv
     tree
+    figlet
   ];
 
   programs.gnupg.agent = {

@@ -83,7 +83,7 @@
             range = 50;
             color = lib.mkForce "rgba(255,255,255,0.3)";
           };
-          inactive_opacity = 0.9;
+          inactive_opacity = 0.95;
           dim_inactive = true;
           dim_strength = 0.05;
         };

@@ -164,32 +164,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1786887553,
-        "narHash": "sha256-0J8EwNSJ/2OeyuvXgfG+k5uBT1gkg0ww7VEo+14xl50=",
+        "lastModified": 1786999651,
+        "narHash": "sha256-MTGMFlLDTklsXhCp4r5GXB4VAVadPdalXLvUjd/K7h0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "5bd505963717a894b02a57cdbcc00db28d9b029f",
+        "rev": "353742587cbaf079b3caee743115d037bc51fea6",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "hyprland": {
-      "locked": {
-        "lastModified": 1785869831,
-        "narHash": "sha256-d5Tsn526F6DKf7WKja+KtrXUR6Hmft4gyt3UdAKzWGk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e0832b878323bd1236a6d2be42359f5741e0398b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e0832b878323bd1236a6d2be42359f5741e0398b",
         "type": "github"
       }
     },
@@ -228,11 +212,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1786893179,
-        "narHash": "sha256-0VMNq7h9PG+B9PuoIruL/xd4xMorT1Y0o9/CEpYxtis=",
+        "lastModified": 1787035415,
+        "narHash": "sha256-eaNHEfKxS+rHBYbRoxDrvxN5hjcesUYnv5YmhfOx9Tw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3d2f157b65f9495c358edac0f44efd8cb70529a8",
+        "rev": "f16ff2502386641c85e84a846bec39d08c4664cc",
         "type": "github"
       },
       "original": {
@@ -273,11 +257,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1786599213,
-        "narHash": "sha256-yNJd40f11EzXBjSByCB7IPpeFFAdeoSKKM67dGkfFoU=",
+        "lastModified": 1786862985,
+        "narHash": "sha256-FBJRXmbGXiSUDvYEbfLYRkckayyZ6SK1UEqhCrIZ2Cs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0e251e24a4f24e036a084b6b4b2d2491af4167f4",
+        "rev": "e5bdc4a41d4c072fe1e3787eaa0320a384741d44",
         "type": "github"
       },
       "original": {
@@ -350,7 +334,6 @@
       "inputs": {
         "bbpPairings": "bbpPairings",
         "home-manager": "home-manager",
-        "hyprland": "hyprland",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-master": "nixpkgs-master",

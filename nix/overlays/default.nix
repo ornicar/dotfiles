@@ -22,17 +22,17 @@
     # bloop =
     #   (import inputs.nixpkgs-master opts).bloop;
 
-    nanoemoji =
-      (import inputs.nixpkgs-master {
-        system = final.system;
-        config.allowunfree = true;
-      }).nanoemoji;
-
-    jetbrains-mono =
-      (import inputs.nixpkgs-master {
-        system = final.system;
-        config.allowunfree = true;
-      }).jetbrains-mono;
+    # nanoemoji =
+    #   (import inputs.nixpkgs-master {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).nanoemoji;
+    #
+    # jetbrains-mono =
+    #   (import inputs.nixpkgs-master {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).jetbrains-mono;
 
     # hyprland =
     #   (import inputs.hyprland {

@@ -23,8 +23,31 @@ return {
         ts_ls = {
           enabled = true,
           settings = {
-            typescript = {},
+            typescript = {
+              preferences = {
+                autoImportFileExcludePatterns = { "**/dist/**" },
+                autoImportSpecifierExcludeRegexes = { ".*dist.*" },
+              },
+              exclude = {
+                "node_modules",
+                "dist",
+                "*/dist/*",
+                "dist/*",
+                "dist/**",
+              },
+            },
             javascript = {},
+            preferences = {
+              autoImportFileExcludePatterns = { "**/dist/**" },
+              autoImportSpecifierExcludeRegexes = { ".*dist.*" },
+            },
+            exclude = {
+              "node_modules",
+              "dist",
+              "*/dist/*",
+              "dist/*",
+              "dist/**",
+            },
             completions = {
               completeFunctionCalls = true,
             },

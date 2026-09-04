@@ -7,7 +7,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       styles = {
-        lazygit = large,
+        lazygit = { width = 0, height = 0 },
         blame_line = large,
         notification_history = large,
       },

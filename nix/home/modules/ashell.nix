@@ -25,7 +25,7 @@
         show_bodies = false;
         grouped = true;
         toast = true;
-        toast_position = "top_right";
+        position = "top_right";
         toast_timeout = 4000;
         toast_limit = 5;
         toast_max_height = 150;

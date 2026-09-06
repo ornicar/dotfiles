@@ -10,6 +10,7 @@
     ../services/cooklang-chef.nix
     # ../services/fishnet-prod.nix
     # ../services/fishnet-local.nix
+    ../modules/wine.nix
 
     ./hyprland.nix
     ./ashell.nix

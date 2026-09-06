@@ -26,7 +26,7 @@ return {
             typescript = {
               preferences = {
                 autoImportFileExcludePatterns = { "**/dist/**" },
-                autoImportSpecifierExcludeRegexes = { ".*dist.*" },
+                autoImportSpecifierExcludeRegexes = { ".*dist.*", "dist" },
               },
               exclude = {
                 "node_modules",

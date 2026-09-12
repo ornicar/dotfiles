@@ -179,22 +179,6 @@
         "type": "github"
       }
     },
-    "hyprland": {
-      "locked": {
-        "lastModified": 1785869831,
-        "narHash": "sha256-d5Tsn526F6DKf7WKja+KtrXUR6Hmft4gyt3UdAKzWGk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e0832b878323bd1236a6d2be42359f5741e0398b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e0832b878323bd1236a6d2be42359f5741e0398b",
-        "type": "github"
-      }
-    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -230,11 +214,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1789195239,
-        "narHash": "sha256-PXAQ9/wsuX+6PECbVYweexUk/DV4d23ZppvKeWjusdk=",
+        "lastModified": 1789220610,
+        "narHash": "sha256-guIHtfX/SFD3zoW6CcOztVdqXDyU7XGb8A/12KtjPWk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f91ef05a18e509dad346aeb874c736763f604e30",
+        "rev": "e5fdb7e586eb743c4e36c8846910c8fd0b5c8290",
         "type": "github"
       },
       "original": {
@@ -352,7 +336,6 @@
       "inputs": {
         "bbpPairings": "bbpPairings",
         "home-manager": "home-manager",
-        "hyprland": "hyprland",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-master": "nixpkgs-master",

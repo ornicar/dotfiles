@@ -20,8 +20,6 @@
       };
     };
 
-    hyprland.url = "github:NixOS/nixpkgs/e0832b878323bd1236a6d2be42359f5741e0398b";
-
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";
 

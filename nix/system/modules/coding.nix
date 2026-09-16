@@ -27,7 +27,7 @@
     openssl
     fx # tui json viewer
     goaccess
-    pnpm
+    pnpm_12
     # esbuild
     devenv
     oxlint

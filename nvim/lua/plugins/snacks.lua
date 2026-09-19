@@ -2,14 +2,19 @@ local large = {
   width = 0.95,
   height = 0.9,
 }
+local full = {
+  width = 0,
+  height = 0,
+}
 return {
   {
     "folke/snacks.nvim",
     opts = {
       styles = {
-        lazygit = { width = 0, height = 0 },
+        lazygit = full,
         blame_line = large,
         notification_history = large,
+        gh = full,
       },
       picker = {
         sources = {

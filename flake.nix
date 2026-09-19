@@ -22,6 +22,7 @@
 
     bbpPairings.url = "github:ornicar/bbpPairings/2b01f2c1e2b839d2";
     picfit.url = "github:ornicar/picfit/e64ee4fb03f65742ed2ff";
+    sasso.url = "github:momiji-rs/sasso/v0.16.0";
 
     # lan-mouse.url = "github:feschber/lan-mouse";
   };

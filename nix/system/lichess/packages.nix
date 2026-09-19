@@ -7,7 +7,6 @@ in
   imports = [ ../modules/mongodb.nix ];
 
   environment.systemPackages = with pkgs; [
-    # jdk24
     jdk25
     sbt
     bloop

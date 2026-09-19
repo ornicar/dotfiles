@@ -7,7 +7,6 @@ in
   imports = [ ../modules/mongodb.nix ];
 
   environment.systemPackages = with pkgs; [
-    # jdk24
     jdk25
     sbt
     bloop
@@ -20,6 +19,7 @@ in
     pkgs-stable.inkscape
     inputs.bbpPairings.packages.x86_64-linux.default
     inputs.picfit.defaultPackage.x86_64-linux
+    inputs.sasso.packages.x86_64-linux.sasso
   ];
 
 }

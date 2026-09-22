@@ -22,6 +22,7 @@
     bc # calculator
     unixtools.netstat
     fastfetch
+    file
   ];
 
   # enable zsh completion for system packages

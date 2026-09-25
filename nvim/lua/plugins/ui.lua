@@ -18,13 +18,12 @@ return {
       --     Normal = { bg = colors.none },
       --   }
       -- end,
-      -- color_overrides = {
-      --   mocha = {
-      --     -- base = "1e1e2e",
-      --     base = "#1f1e22",
-      --     mantle = "#232224",
-      --   },
-      -- },
+      color_overrides = {
+        latte = {
+          -- base = "1e1e2e",
+          yellow = "#C9801D",
+        },
+      },
     },
   },
   {

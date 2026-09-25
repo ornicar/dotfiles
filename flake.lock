@@ -166,11 +166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790225410,
-        "narHash": "sha256-BOyZoliWfm/beS4m3FxFKlu5at6npZen1PsWtvzzihk=",
+        "lastModified": 1790292277,
+        "narHash": "sha256-z+knvdMItRrMonmG4RIsqKYIa/hwYUzKjotDTfC5DDc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4900baf1e219645e4a2acba35723852b2091bc20",
+        "rev": "4b9add8645d5e2b0f7de18f7a442d08fe2bdcc91",
         "type": "github"
       },
       "original": {
@@ -214,11 +214,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1790231963,
-        "narHash": "sha256-fRrqJA8QBYx5xnNjVp9xwNWaAVHKCZex3hlUS4i+Cfw=",
+        "lastModified": 1790313754,
+        "narHash": "sha256-FliavrSKQ6MepZt5euGrtGVgjl4UC8YauslgNxzmWAI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c8b9145337d0a79e03d934180416b1ce7aad0d6e",
+        "rev": "ffb2a6e0dff68963e611c93905c7758970c4dbdf",
         "type": "github"
       },
       "original": {
@@ -288,22 +288,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1789546076,
-        "narHash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -357,27 +341,7 @@
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "picfit": "picfit",
-        "sasso": "sasso",
         "stylix": "stylix"
-      }
-    },
-    "sasso": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1789707547,
-        "narHash": "sha256-u04LrUBL99g9g0Atri2+31kxVkt7komV8YF80cAofVY=",
-        "owner": "momiji-rs",
-        "repo": "sasso",
-        "rev": "3cec694ee68671f5a79c3e1ae45cbe1d52daa2ad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "momiji-rs",
-        "ref": "v0.16.0",
-        "repo": "sasso",
-        "type": "github"
       }
     },
     "stylix": {

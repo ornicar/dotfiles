@@ -8,7 +8,7 @@ local full = {
 }
 return {
   {
-    "folke/snacks.nvim",
+    "simek/snacks.nvim",
     opts = {
       styles = {
         lazygit = full,
@@ -77,9 +77,16 @@ return {
       {
         "<leader>gp",
         function()
+          Snacks.picker.gh_pr({ draft = false })
+        end,
+        desc = "GitHub Pull Requests (open, non-draft)",
+      },
+      {
+        "<leader>gP",
+        function()
           Snacks.picker.gh_pr()
         end,
-        desc = "GitHub Pull Requests (open)",
+        desc = "GitHub Pull Requests (open, with draft)",
       },
     },
   },

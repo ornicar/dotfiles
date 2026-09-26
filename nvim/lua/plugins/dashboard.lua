@@ -14,7 +14,7 @@ return {
     end,
   },
   {
-    "folke/snacks.nvim",
+    "simek/snacks.nvim",
     opts = {
       dashboard = {
         preset = {

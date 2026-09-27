@@ -44,7 +44,7 @@ layouts.full_vert = {
 
 return {
   {
-    "folke/snacks.nvim",
+    "simek/snacks.nvim",
     opts = {
       picker = {
         layout = {

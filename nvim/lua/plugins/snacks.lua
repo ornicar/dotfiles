@@ -21,7 +21,10 @@ return {
         sources = {
           gh_issue = layout_full,
           gh_pr = layout_full,
-          gh_diff = layout_full,
+          gh_diff = {
+            ignore_whitespace = true,
+            layout = { fullscreen = true },
+          },
           git_diff = layout_full,
           explorer = {
             layout = {

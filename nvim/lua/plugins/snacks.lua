@@ -6,6 +6,8 @@ local full = {
   width = 0,
   height = 0,
 }
+local layout_full = { layout = { fullscreen = true } }
+
 return {
   {
     "simek/snacks.nvim",
@@ -14,12 +16,13 @@ return {
         lazygit = full,
         blame_line = large,
         notification_history = large,
-        gh = full,
       },
       picker = {
         sources = {
-          gh_issue = {},
-          gh_pr = {},
+          gh_issue = layout_full,
+          gh_pr = layout_full,
+          gh_diff = layout_full,
+          git_diff = layout_full,
           explorer = {
             layout = {
               layout = {

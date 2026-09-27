@@ -14,7 +14,6 @@ return {
         lazygit = full,
         blame_line = large,
         notification_history = large,
-        gh = full,
       },
       picker = {
         sources = {
@@ -70,21 +69,21 @@ return {
       {
         "<leader>gi",
         function()
-          Snacks.picker.gh_issue()
+          Snacks.picker.gh_issue({ layout = { fullscreen = true } })
         end,
         desc = "GitHub Issues (open)",
       },
       {
         "<leader>gp",
         function()
-          Snacks.picker.gh_pr({ draft = false })
+          Snacks.picker.gh_pr({ draft = false, layout = { fullscreen = true } })
         end,
         desc = "GitHub Pull Requests (open, non-draft)",
       },
       {
         "<leader>gP",
         function()
-          Snacks.picker.gh_pr()
+          Snacks.picker.gh_pr({ layout = { fullscreen = true } })
         end,
         desc = "GitHub Pull Requests (open, with draft)",
       },

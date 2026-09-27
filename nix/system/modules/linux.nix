@@ -23,6 +23,7 @@
     unixtools.netstat
     fastfetch
     file
+    filezilla
   ];
 
   # enable zsh completion for system packages

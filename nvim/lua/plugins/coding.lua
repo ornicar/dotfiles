@@ -86,11 +86,17 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
+      formatters = {
+        oxlint = {
+          args = { "--fix", "$FILENAME" },
+          stdin = false,
+        },
+      },
       formatters_by_ft = {
         nix = { "nixfmt" },
         scss = { "oxfmt" },
-        typescript = { "oxfmt" },
-        javascript = { "oxfmt" },
+        typescript = { "oxlint", "oxfmt" },
+        javascript = { "oxlint", "oxfmt" },
         markdown = { "oxfmt" },
         ["markdown.mdx"] = { "oxfmt" },
       },

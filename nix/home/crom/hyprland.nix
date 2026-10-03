@@ -29,6 +29,9 @@
           "$mod, F10, exec, screenshot.sh clipboard"
           "$mod, B, togglespecialworkspace, mic"
           "$mod SHIFT, B, movetoworkspace, special:mic"
+          # my mouse middle-button is broken. Copy the primary selection to the secondary, so I can paste it.
+          "CTRL, Y, exec, wl-paste -p | wl-copy --trim-newline"
+
         ];
         input = {
           repeat_delay = lib.mkForce "250";

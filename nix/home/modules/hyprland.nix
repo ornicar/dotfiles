@@ -143,7 +143,7 @@
           "[workspace 7 silent] spotify"
         ];
         exec = [
-          "systemctl --user start hyprpaper"
+          # "systemctl --user start hyprpaper"
           "systemctl --user start hypridle"
         ];
 

@@ -18,9 +18,11 @@
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
 
-    # Get latest bloop
-    # bloop =
-    #   (import inputs.nixpkgs-master opts).bloop;
+    mosh =
+      (import inputs.nixpkgs-master {
+        system = final.system;
+        config.allowunfree = true;
+      }).mosh;
 
     # nanoemoji =
     #   (import inputs.nixpkgs-master {

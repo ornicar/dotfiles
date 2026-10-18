@@ -52,7 +52,6 @@
       tempo = {
         clock_format = "%a %d %b %R %Z";
         timezones = [
-          "Europe/Dublin"
           "Europe/Paris"
           "UTC"
         ];

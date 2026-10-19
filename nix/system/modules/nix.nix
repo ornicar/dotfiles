@@ -11,6 +11,7 @@
     nix-search-cli
     nixfmt
     nil
+    nixpkgs-review
   ];
 
   nix =

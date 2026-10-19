@@ -103,22 +103,6 @@
         "type": "github"
       }
     },
-    "fishnet": {
-      "locked": {
-        "lastModified": 1791573573,
-        "narHash": "sha256-yjW/rmEZkfhoWBsA8Ckb0qrAmWpV3d02plm7CKOWdJQ=",
-        "owner": "r-ryantm",
-        "repo": "nixpkgs",
-        "rev": "362c3b6b9fc7371084c492807a1e4f06bf123265",
-        "type": "github"
-      },
-      "original": {
-        "owner": "r-ryantm",
-        "ref": "auto-update/fishnet",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -230,11 +214,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1792341429,
-        "narHash": "sha256-afs72UuTsej+pr47rMnMGGSb6mzK0+VBn6Bu0wZ5s/g=",
+        "lastModified": 1792388373,
+        "narHash": "sha256-25qM088bENg6JW8OQR4YSVuSKdMtZinHJbTYT8Q0dsk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ee8ab3ffcefee70a67112c9eea9cdf21959fab37",
+        "rev": "f3a77a0c9b182bf55b71c8f22f99725f38b69a3e",
         "type": "github"
       },
       "original": {
@@ -351,7 +335,6 @@
     "root": {
       "inputs": {
         "bbpPairings": "bbpPairings",
-        "fishnet": "fishnet",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",

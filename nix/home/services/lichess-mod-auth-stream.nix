@@ -16,7 +16,7 @@
         };
         Service = {
           WorkingDirectory = "${config.home.homeDirectory}/lichess-mod";
-          ExecStart = "${scala-cli} auth-http-stream.sc";
+          ExecStart = "${scala-cli} authHttpStream.sc";
           StandardOutput = "journal";
           StandardError = "journal";
           SyslogIdentifier = "lichess-mod-auth-stream";

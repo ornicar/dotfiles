@@ -75,12 +75,16 @@
             range = 30;
             render_power = 5;
             # color = lib.mkForce "rgba(255,255,255,0.1)";
-            color = lib.mkForce "rgba(0,0,0,0.28)";
-            color_inactive = lib.mkForce "rgba(0,0,0,0.28)";
+            color = lib.mkForce (
+              if config.custom.darkTheme then "rgba(255,255,255,0.03)" else "rgba(0,0,0,0.28)"
+            );
+            color_inactive = lib.mkForce (
+              if config.custom.darkTheme then "rgba(0,0,0,0.6)" else "rgba(0,0,0,0.28)"
+            );
           };
           glow = {
             enabled = true;
-            range = 50;
+            range = if config.custom.darkTheme then 5 else 50;
             color = lib.mkForce "rgba(255,255,255,0.3)";
           };
           inactive_opacity = 0.95;

@@ -8,7 +8,7 @@
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
 
-  options.custom.stylix.darkTheme = lib.mkOption {
+  options.custom.darkTheme = lib.mkOption {
     type = lib.types.bool;
     default = false;
     description = "Toggle dark theme";
@@ -21,7 +21,7 @@
     # https://tinted-theming.github.io/base16-gallery/
     base16Scheme =
       let
-        theme = if config.custom.stylix.darkTheme then "catppuccin-mocha" else "catppuccin-latte";
+        theme = if config.custom.darkTheme then "catppuccin-mocha" else "catppuccin-latte";
       in
       "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
@@ -30,7 +30,7 @@
     # };
 
     image =
-      if config.custom.stylix.darkTheme then
+      if config.custom.darkTheme then
         ../../home/wallpaper/octopus2.jpg
       else
         ../../home/wallpaper/aperture.jpg;

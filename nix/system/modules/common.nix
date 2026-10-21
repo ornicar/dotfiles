@@ -2,7 +2,7 @@
 {
   nixpkgs.config.allowUnfree = true;
 
-  custom.stylix.darkTheme = true;
+  custom.darkTheme = true;
 
   nixpkgs = {
     # You can add overlays here

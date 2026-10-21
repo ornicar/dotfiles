@@ -49,6 +49,10 @@
       package = pkgs.adw-gtk3;
     };
 
+    dconf.settings."org/gnome/desktop/interface".color-scheme = lib.mkForce (
+      if config.custom.darkTheme then "prefer-dark" else "default"
+    );
+
     programs.home-manager.enable = true;
 
     # Nicely reload system units when changing configs

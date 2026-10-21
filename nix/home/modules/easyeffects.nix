@@ -2,7 +2,7 @@
 {
 
   services.easyeffects = {
-    enable = true;
+    enable = false;
     preset = "easyeffects-fw16";
   };
 }

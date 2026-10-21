@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
 
   programs.git = {
@@ -55,8 +55,7 @@
     enableGitIntegration = true;
     options = {
       navigate = false;
-      # features = "dark-catppuccin-mocha";
-      features = "light-github";
+      features = if config.custom.darkTheme then "dark-catppuccin-mocha" else "light-github";
       true-color = "always";
       syntax-theme = "none";
       light-github = {

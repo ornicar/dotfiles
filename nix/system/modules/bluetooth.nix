@@ -1,6 +1,6 @@
 { ... }:
 let
-  enable = false; # save energy until we need it
+  enable = true; # save energy until we need it
 in
 {
   hardware.bluetooth.enable = enable;

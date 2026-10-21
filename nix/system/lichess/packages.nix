@@ -15,7 +15,6 @@ in
     dart-sass
     redis
     fishnet
-    # fontforge-gtk # icon font editor
     lint-staged
     pkgs-stable.inkscape
     inputs.bbpPairings.packages.x86_64-linux.default

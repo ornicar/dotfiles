@@ -1,5 +1,17 @@
-{ config, ... }:
 {
+  config,
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
+{
+  options.custom.darkTheme = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Whether to use the dark theme";
+  };
+
   imports = [
     ./modules/cli.nix
     ./modules/scala.nix
@@ -22,15 +34,24 @@
     # ./services/gammarelay.nix
   ];
 
-  home = rec {
-    username = "thib";
-    homeDirectory = "/home/${username}";
-    file.".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
+  config = {
+    custom.darkTheme = osConfig.custom.darkTheme;
+
+    home = rec {
+      username = "thib";
+      homeDirectory = "/home/${username}";
+      file.".local/bin".source = config.lib.file.mkOutOfStoreSymlink "${homeDirectory}/dotfiles/scripts";
+    };
+    home.pointerCursor.enable = true;
+
+    gtk.theme = lib.mkForce {
+      name = if config.custom.darkTheme then "adw-gtk3-dark" else "adw-gtk3";
+      package = pkgs.adw-gtk3;
+    };
+
+    programs.home-manager.enable = true;
+
+    # Nicely reload system units when changing configs
+    systemd.user.startServices = "sd-switch";
   };
-  home.pointerCursor.enable = true;
-
-  programs.home-manager.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
 }

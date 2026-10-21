@@ -24,12 +24,12 @@
         config.allowunfree = true;
       }).mosh;
 
-    # nanoemoji =
-    #   (import inputs.nixpkgs-master {
-    #     system = final.system;
-    #     config.allowunfree = true;
-    #   }).nanoemoji;
-    #
+    fishnet =
+      (import inputs.fishnet {
+        system = final.system;
+        config.allowunfree = true;
+      }).fishnet;
+
     # jetbrains-mono =
     #   (import inputs.nixpkgs-master {
     #     system = final.system;

@@ -1,14 +1,27 @@
-{ pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
-  stylix = {
+
+  options.custom.stylix.darkTheme = lib.mkOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Toggle dark theme";
+  };
+
+  config.stylix = {
 
     enable = true;
 
     # https://tinted-theming.github.io/base16-gallery/
     base16Scheme =
       let
-        theme = "catppuccin-latte";
+        theme = if config.custom.stylix.darkTheme then "catppuccin-mocha" else "catppuccin-latte";
       in
       "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
@@ -16,7 +29,11 @@
     #   base00 = "#000000";
     # };
 
-    image = ../../home/wallpaper/aperture.jpg;
+    image =
+      if config.custom.stylix.darkTheme then
+        ../../home/wallpaper/octopus2.jpg
+      else
+        ../../home/wallpaper/aperture.jpg;
 
     fonts = rec {
       sansSerif = {

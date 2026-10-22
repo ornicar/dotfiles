@@ -63,6 +63,10 @@
           map ctrl+tab                 send_text all \x1b[9;5u
           map ctrl+shift+tab           send_text all \x1b[9;6u
         '';
+        ui = ''
+          # UI
+          window_padding_width 7 9
+        '';
         theme = ''
           # The basic colors
           foreground              #cdd6f4
@@ -85,8 +89,6 @@
           # OS Window titlebar colors
           wayland_titlebar_color system
           macos_titlebar_color system
-
-          window_padding_width 7 9
 
           # Tab bar colors
           active_tab_foreground   #11111b
@@ -142,6 +144,7 @@
         ${scrollback}
         ${remote}
         ${forwardMaps}
+        ${ui}
       '';
   };
 }

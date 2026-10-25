@@ -25,6 +25,7 @@
     kitty
     zsh
     zsh-syntax-highlighting
+    nushell
     ripgrep
     ast-grep
     eza

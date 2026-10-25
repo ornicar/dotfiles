@@ -26,6 +26,7 @@
     ./modules/xdg.nix
     ./modules/zsh.nix
     ./modules/mpv.nix
+    ./modules/keyring.nix
     # ./modules/lan-mouse.nix
 
     ./services/lila.nix

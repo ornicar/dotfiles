@@ -56,6 +56,7 @@
         };
 
         windowrule = [
+          "opacity 1.0 override, match:class firefox"
         ];
         layerrule = [
           "blur on, match:namespace rofi"

@@ -128,6 +128,15 @@ return {
 
   {
     "axkirillov/hbac.nvim",
-    config = true,
+    config = {
+      autoclose = false, -- set autoclose to false if you want to close buffers manually
+      autopin = true, -- set autopin to false if you want to pin buffers manually
+      autopin_events = { "InsertEnter", "BufModifiedSet" }, -- The vim events on which autopin will trigger, given that it is enabled
+      threshold = 10, -- hbac will start closing unedited buffers once that number is reached
+      count_pinned = true, -- whether pinned buffers will count towards the autoclose threshold
+    },
+    keys = {
+      { "<leader>bc", "<cmd>:lua require('hbac').close_unpinned()", desc = "Close Unpinned Buffers" },
+    },
   },
 }

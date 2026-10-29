@@ -31,7 +31,8 @@
 
     image =
       if config.custom.darkTheme then
-        ../../home/wallpaper/octopus2.jpg
+        # ../../home/wallpaper/octopus2.jpg
+        ../../home/wallpaper/planet-clouds.jpg
       else
         ../../home/wallpaper/aperture.jpg;
 

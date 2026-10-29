@@ -63,7 +63,7 @@
         ];
 
         decoration = {
-          rounding = 35;
+          rounding = 30;
           rounding_power = 2;
           blur = {
             enabled = true;
@@ -87,8 +87,9 @@
             range = if config.custom.darkTheme then 5 else 50;
             color = lib.mkForce "rgba(255,255,255,0.3)";
           };
-          inactive_opacity = 0.95;
-          dim_inactive = true;
+          active_opacity = 0.95;
+          inactive_opacity = 0.8;
+          dim_inactive = false;
           dim_strength = 0.05;
         };
 

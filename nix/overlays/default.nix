@@ -18,11 +18,17 @@
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
 
-    mosh =
+    bloop =
       (import inputs.nixpkgs-master {
         system = final.system;
         config.allowunfree = true;
-      }).mosh;
+      }).bloop;
+
+    # mosh =
+    #   (import inputs.nixpkgs-master {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).mosh;
 
     fishnet =
       (import inputs.fishnet {

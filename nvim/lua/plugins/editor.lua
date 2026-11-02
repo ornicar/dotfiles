@@ -136,7 +136,7 @@ return {
       count_pinned = true, -- whether pinned buffers will count towards the autoclose threshold
     },
     keys = {
-      { "<leader>bc", "<cmd>:lua require('hbac').close_unpinned()", desc = "Close Unpinned Buffers" },
+      { "<leader>bc", "<cmd>:lua require('hbac').close_unpinned()<cr>", desc = "Close Unpinned Buffers" },
     },
   },
 }

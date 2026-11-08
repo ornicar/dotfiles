@@ -25,7 +25,7 @@
     startup-message-capture = false # for nvim noice
 
     [font]
-    normal = [] # Will use the bundled Fira Code Nerd Font by default
-    size = 20.0
+    normal = ["JetBrains Mono"]
+    size = 18.0
   '';
 }

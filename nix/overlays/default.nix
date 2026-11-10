@@ -24,11 +24,11 @@
         config.allowunfree = true;
       }).bloop;
 
-    neovide =
+    ashell =
       (import inputs.nixpkgs-master {
         system = final.system;
         config.allowunfree = true;
-      }).neovide;
+      }).ashell;
 
     # mosh =
     #   (import inputs.nixpkgs-master {

@@ -23,9 +23,5 @@
     tabs = false
     fork = true
     startup-message-capture = false # for nvim noice
-
-    [font]
-    normal = ["JetBrains Mono"]
-    size = 18.0
   '';
 }

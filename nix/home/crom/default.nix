@@ -15,7 +15,7 @@
     ./hyprland.nix
     ./ashell.nix
     ./s-tui.nix
-    ./neovim.nix
+    ./tweaks.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

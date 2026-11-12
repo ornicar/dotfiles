@@ -8,36 +8,9 @@
   imports = [ ../modules/hyprland.nix ];
 
   wayland.windowManager.hyprland = {
-    settings =
-      let
-        inherit (config.wayland.windowManager.hyperland.config) "$mod";
-        spotify = "${pkgs.playerctl}/bin/playerctl -p spotify";
-        home = config.home.homeDirectory;
-        volumeDec = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- -l 1.0";
-        volumeInc = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0";
-        voltoggle = "audioctl sink toggle";
-      in
-      lib.mkAfter {
-        general = {
-          gaps_in = lib.mkForce 15;
-          gaps_out = lib.mkForce "27, 27, 5, 27";
-        };
-        bind = [
-          ", F8, exec, ${pkgs.playerctl}/bin/playerctl -p spotify play-pause"
-          ", F9, exec, ${volumeDec}"
-          ", F10, exec, ${volumeInc}"
-          "$mod, F10, exec, screenshot.sh clipboard"
-          "$mod, B, togglespecialworkspace, mic"
-          "$mod SHIFT, B, movetoworkspace, special:mic"
-          # my mouse middle-button is broken. Copy the primary selection to the secondary, so I can paste it.
-          "CTRL, Y, exec, wl-paste -p | wl-copy --trim-newline"
-
-        ];
-        input = {
-          repeat_delay = lib.mkForce "250";
-          # accel_profile = lib.mkForce "flat";
-        };
-      };
+    extraConfig = ''
+      require("~/dotfiles/nix/home/crom/hyprland.lua")
+    '';
   };
 
   services.hypridle = {

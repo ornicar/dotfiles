@@ -2,10 +2,6 @@
 {
   stylix.targets.ashell.enable = true;
 
-  wayland.windowManager.hyprland.settings.exec = [
-    "systemctl --user start ashell"
-  ];
-
   programs.ashell = {
     enable = true;
     systemd.enable = true;

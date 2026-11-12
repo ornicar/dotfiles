@@ -18,10 +18,4 @@
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
 
   stylix.targets.neovim.enable = false;
-
-  home.file.".config/neovide/config.toml".text = ''
-    tabs = false
-    fork = true
-    startup-message-capture = false # for nvim noice
-  '';
 }

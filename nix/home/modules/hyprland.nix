@@ -9,12 +9,12 @@
   imports = [
     ./wayland.nix
     ./ashell.nix # status bar
-    ./hyprshade.nix # color temperature
+    # ./hyprshade.nix # color temperature
     # ./hyprshell.nix
   ];
 
   services.hyprpaper.enable = true;
-  stylix.targets.hyprland.hyprpaper.enable = true;
+  stylix.targets.hyprland.hyprpaper.enable = false;
 
   gtk.enable = true;
 
@@ -22,179 +22,186 @@
     enable = true;
     # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     systemd.enable = false; # https://wiki.nixos.org/wiki/Hyprland
-    configType = "hyprlang";
-    settings =
-      let
-        left = "N";
-        right = "E";
-        down = "H";
-        up = "L";
-        terminal = "kitty -1";
-        editor = "neovide";
-        menu = "rofi -show run";
-        windowSwitcher = "rofi -show window";
-        clipboardManager = "rofi -modi clipboard:cliphist-rofi -show clipboard";
-        workspaces = lib.range 1 10;
-        workspaceKey = (i: toString (if i == 10 then 0 else i));
-      in
-      {
-        general = {
-          gaps_in = 12;
-          gaps_out = "21, 21, 7, 21";
-          border_size = 0;
-          layout = "master";
-        };
-
-        master = {
-          allow_small_split = true;
-          mfact = 0.66;
-          orientation = "right";
-          new_on_top = true;
-          # new_on_active = "before";
-          # new_status = "inherit";
-          special_scale_factor = 0.95;
-        };
-
-        windowrule = [
-          "opacity 1.0 override, match:class firefox"
-          "opacity 1.0 override, match:class mpv"
-        ];
-        layerrule = [
-          "blur on, match:namespace rofi"
-          "blur on, match:namespace notifications"
-        ];
-
-        decoration = {
-          rounding = 30;
-          rounding_power = 2;
-          blur = {
-            enabled = true;
-            size = 3;
-            passes = 2;
-          };
-          shadow = {
-            enabled = true;
-            range = 30;
-            render_power = 5;
-            # color = lib.mkForce "rgba(255,255,255,0.1)";
-            color = lib.mkForce (
-              if config.custom.darkTheme then "rgba(255,255,255,0.03)" else "rgba(0,0,0,0.28)"
-            );
-            color_inactive = lib.mkForce (
-              if config.custom.darkTheme then "rgba(0,0,0,0.6)" else "rgba(0,0,0,0.28)"
-            );
-          };
-          glow = {
-            enabled = true;
-            range = if config.custom.darkTheme then 5 else 50;
-            color = lib.mkForce "rgba(255,255,255,0.3)";
-          };
-          active_opacity = 0.95;
-          inactive_opacity = 0.8;
-          dim_inactive = false;
-          dim_strength = 0.05;
-        };
-
-        # Input
-        input = {
-          kb_layout = "us,us";
-          kb_variant = "colemak,";
-          repeat_rate = 64;
-          repeat_delay = 180;
-          follow_mouse = 2;
-        };
-
-        monitor = [
-          ",preferred,auto,1"
-        ];
-
-        "$mod" = "ALT";
-
-        bind = [
-          "$mod, Return, exec, ${terminal}"
-          "$mod, V, exec, neovide"
-          "$mod, Q, killactive"
-          "$mod, F, fullscreenstate, 1 1"
-          "$mod SHIFT, F, fullscreenstate, 3 3"
-          ", F2, exec, systemctl --user restart lila"
-          ", F3, exec, systemctl --user restart lila-ws"
-          "$mod, ${up}, layoutmsg, swapprev noloop"
-          "$mod, ${down}, layoutmsg, swapnext noloop"
-          "$mod, M, layoutmsg, swapwithmaster"
-          "$mod, M, layoutmsg, focusmaster master"
-          "$mod, minus, togglespecialworkspace"
-          "$mod SHIFT, minus, movetoworkspace, special"
-          (map (i: "$mod, ${workspaceKey i}, workspace, ${toString i}") workspaces)
-          (map (i: "$mod SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
-          "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"
-          "$mod, EQUAL, exec, ${menu}"
-          "$mod, W, exec, ${windowSwitcher}"
-          "$mod, Y, exec, ${clipboardManager}"
-        ];
-
-        binde = [
-          "$mod, ${right}, layoutmsg, cycleprev noloop"
-          "$mod, ${left}, layoutmsg, cyclenext noloop"
-          "$mod SHIFT, Left, resizeactive, -20 0"
-          "$mod SHIFT, Right, resizeactive, 20 0"
-          "$mod SHIFT, Down, resizeactive, 0 20"
-          "$mod SHIFT, Up, resizeactive, 0 -20"
-        ];
-
-        exec-once = [
-          "[workspace 1 silent] ${editor}"
-          "[workspace 1 silent] ${terminal}"
-          "[workspace 2 silent] firefox"
-          "[workspace 3 silent] ${editor}"
-          "[workspace 3 silent] ${terminal}"
-          "[workspace 7 silent] spotify"
-        ];
-        exec = [
-          # "systemctl --user start hyprpaper"
-          "systemctl --user start hypridle"
-        ];
-
-        animations = {
-          enabled = true;
-          bezier = [
-            # NAME,          X0,   Y0,   X1,   Y1
-            "easeOutQuint,   0.23, 1,    0.32, 1"
-            "easeInOutCubic, 0.65, 0.05, 0.36, 1"
-            "linear,         0,    0,    1,    1"
-            "almostLinear,   0.5,  0.5,  0.75, 1"
-            "quick,          0.15, 0,    0.1,  1"
-          ];
-          animation = [
-            # NAME,         ONOFF, SPEED, CURVE        [STYLE]
-            "global,        1,     10,    default"
-            "border,        1,     5.39,  easeOutQuint"
-            "windows,       1,     4.79,  easeOutQuint"
-            "windowsIn,     1,     4.1,   easeOutQuint, popin 80%"
-            "windowsOut,    1,     1.49,  linear,       popin 80%"
-            "fadeIn,        1,     1.73,  almostLinear"
-            "fadeOut,       1,     1.46,  almostLinear"
-            "fade,          1,     3.03,  quick"
-            "layers,        1,     3.81,  easeOutQuint"
-            "layersIn,      1,     4,     easeOutQuint, fade"
-            "layersOut,     1,     1.5,   linear,       fade"
-            "fadeLayersIn,  1,     1.79,  almostLinear"
-            "fadeLayersOut, 1,     1.39,  almostLinear"
-            "workspaces,    0,     1.94,  almostLinear, fade"
-            "workspacesIn,  0,     1.21,  almostLinear, fade"
-            "workspacesOut, 0,     1.94,  almostLinear, fade"
-            "zoomFactor,    1,     7,     quick"
-          ];
-        };
-
-        misc = {
-          disable_hyprland_logo = true;
-          disable_splash_rendering = true;
-          key_press_enables_dpms = true;
-        };
-        ecosystem = {
-          no_update_news = true;
-          no_donation_nag = true;
-        };
-      };
+    configType = "lua";
+    extraConfig = ''
+      require("~/dotfiles/nix/home/modules/hyprland.lua")
+    '';
+    # extraLuaFiles = {
+    #   "common" = {
+    #     content = ./hyprland.lua;
+    #     autoLoad = true;
+    #   };
+    # };
+    # settings =
+    #   let
+    #     left = "N";
+    #     right = "E";
+    #     down = "H";
+    #     up = "L";
+    #     terminal = "kitty -1";
+    #     editor = "neovide";
+    #     menu = "rofi -show run";
+    #     windowSwitcher = "rofi -show window";
+    #     clipboardManager = "rofi -modi clipboard:cliphist-rofi -show clipboard";
+    #     workspaces = lib.range 1 10;
+    #     workspaceKey = (i: toString (if i == 10 then 0 else i));
+    #   in
+    #   {
+    #     general = {
+    #       gaps_in = 12;
+    #       gaps_out = "21, 21, 7, 21";
+    #       border_size = 0;
+    #       layout = "master";
+    #     };
+    #
+    #     master = {
+    #       allow_small_split = true;
+    #       mfact = 0.66;
+    #       orientation = "right";
+    #       new_on_top = true;
+    #       # new_on_active = "before";
+    #       # new_status = "inherit";
+    #       special_scale_factor = 0.95;
+    #     };
+    #
+    #     windowrule = [
+    #       "opacity 1.0 override, match:class firefox"
+    #       "opacity 1.0 override, match:class mpv"
+    #     ];
+    #     layerrule = [
+    #       "blur on, match:namespace rofi"
+    #       "blur on, match:namespace notifications"
+    #     ];
+    #
+    #     decoration = {
+    #       rounding = 30;
+    #       rounding_power = 2;
+    #       blur = {
+    #         enabled = true;
+    #         size = 3;
+    #         passes = 2;
+    #       };
+    #       shadow = {
+    #         enabled = true;
+    #         range = 30;
+    #         render_power = 5;
+    #         # color = lib.mkForce "rgba(255,255,255,0.1)";
+    #         color = lib.mkForce (
+    #           if config.custom.darkTheme then "rgba(255,255,255,0.03)" else "rgba(0,0,0,0.28)"
+    #         );
+    #         color_inactive = lib.mkForce (
+    #           if config.custom.darkTheme then "rgba(0,0,0,0.6)" else "rgba(0,0,0,0.28)"
+    #         );
+    #       };
+    #       glow = {
+    #         enabled = true;
+    #         range = if config.custom.darkTheme then 5 else 50;
+    #         color = lib.mkForce "rgba(255,255,255,0.3)";
+    #       };
+    #       active_opacity = 0.95;
+    #       inactive_opacity = 0.8;
+    #       dim_inactive = false;
+    #       dim_strength = 0.05;
+    #     };
+    #
+    #     # Input
+    #     input = {
+    #       kb_layout = "us,us";
+    #       kb_variant = "colemak,";
+    #       repeat_rate = 64;
+    #       repeat_delay = 180;
+    #       follow_mouse = 2;
+    #     };
+    #
+    #     monitor = [
+    #       ",preferred,auto,1"
+    #     ];
+    #
+    #     bind = [
+    #       "ALT, Return, exec, ${terminal}"
+    #       "ALT, V, exec, neovide"
+    #       "ALT, Q, killactive"
+    #       "ALT, F, fullscreenstate, 1 1"
+    #       "ALT SHIFT, F, fullscreenstate, 3 3"
+    #       ", F2, exec, systemctl --user restart lila"
+    #       ", F3, exec, systemctl --user restart lila-ws"
+    #       "ALT, ${up}, layoutmsg, swapprev noloop"
+    #       "ALT, ${down}, layoutmsg, swapnext noloop"
+    #       "ALT, M, layoutmsg, swapwithmaster"
+    #       "ALT, M, layoutmsg, focusmaster master"
+    #       "ALT, minus, togglespecialworkspace"
+    #       "ALT SHIFT, minus, movetoworkspace, special"
+    #       (map (i: "ALT, ${workspaceKey i}, workspace, ${toString i}") workspaces)
+    #       (map (i: "ALT SHIFT, ${workspaceKey i}, movetoworkspace, ${toString i}") workspaces)
+    #       "CTRL, F9, exec, sleep 0.5; hyprctl dispatch dpms off"
+    #       "ALT, EQUAL, exec, ${menu}"
+    #       "ALT, W, exec, ${windowSwitcher}"
+    #       "ALT, Y, exec, ${clipboardManager}"
+    #     ];
+    #
+    #     binde = [
+    #       "ALT, ${right}, layoutmsg, cycleprev noloop"
+    #       "ALT, ${left}, layoutmsg, cyclenext noloop"
+    #       "ALT SHIFT, Left, resizeactive, -20 0"
+    #       "ALT SHIFT, Right, resizeactive, 20 0"
+    #       "ALT SHIFT, Down, resizeactive, 0 20"
+    #       "ALT SHIFT, Up, resizeactive, 0 -20"
+    #     ];
+    #
+    #     exec_cmd = [
+    #       "[workspace 1 silent] ${editor}"
+    #       "[workspace 1 silent] ${terminal}"
+    #       "[workspace 2 silent] firefox"
+    #       "[workspace 3 silent] ${editor}"
+    #       "[workspace 3 silent] ${terminal}"
+    #       "[workspace 7 silent] spotify"
+    #     ];
+    #     exec = [
+    #       # "systemctl --user start hyprpaper"
+    #       "systemctl --user start hypridle"
+    #     ];
+    #
+    #     animations = {
+    #       enabled = true;
+    #       bezier = [
+    #         # NAME,          X0,   Y0,   X1,   Y1
+    #         "easeOutQuint,   0.23, 1,    0.32, 1"
+    #         "easeInOutCubic, 0.65, 0.05, 0.36, 1"
+    #         "linear,         0,    0,    1,    1"
+    #         "almostLinear,   0.5,  0.5,  0.75, 1"
+    #         "quick,          0.15, 0,    0.1,  1"
+    #       ];
+    #       animation = [
+    #         # NAME,         ONOFF, SPEED, CURVE        [STYLE]
+    #         "global,        1,     10,    default"
+    #         "border,        1,     5.39,  easeOutQuint"
+    #         "windows,       1,     4.79,  easeOutQuint"
+    #         "windowsIn,     1,     4.1,   easeOutQuint, popin 80%"
+    #         "windowsOut,    1,     1.49,  linear,       popin 80%"
+    #         "fadeIn,        1,     1.73,  almostLinear"
+    #         "fadeOut,       1,     1.46,  almostLinear"
+    #         "fade,          1,     3.03,  quick"
+    #         "layers,        1,     3.81,  easeOutQuint"
+    #         "layersIn,      1,     4,     easeOutQuint, fade"
+    #         "layersOut,     1,     1.5,   linear,       fade"
+    #         "fadeLayersIn,  1,     1.79,  almostLinear"
+    #         "fadeLayersOut, 1,     1.39,  almostLinear"
+    #         "workspaces,    0,     1.94,  almostLinear, fade"
+    #         "workspacesIn,  0,     1.21,  almostLinear, fade"
+    #         "workspacesOut, 0,     1.94,  almostLinear, fade"
+    #         "zoomFactor,    1,     7,     quick"
+    #       ];
+    #     };
+    #
+    #     misc = {
+    #       disable_hyprland_logo = true;
+    #       disable_splash_rendering = true;
+    #       key_press_enables_dpms = true;
+    #     };
+    #     ecosystem = {
+    #       no_update_news = true;
+    #       no_donation_nag = true;
+    #     };
+    #   };
   };
 }

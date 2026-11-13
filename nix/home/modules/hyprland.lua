@@ -145,7 +145,7 @@ hl.config({
 		mfact = 0.660000,
 		new_on_top = true,
 		orientation = "right",
-		special_scale_factor = 0.950000,
+		-- special_scale_factor = 0.950000,
 	},
 	misc = {
 		background_color = "rgb(1e1e2e)",

@@ -9,6 +9,6 @@ hl.bind("CTRL + Y", hl.dsp.exec_cmd("wl-paste -p | wl-copy --trim-newline"))
 
 hl.config({
 	input = {
-		repeat_delay = 180,
+		repeat_delay = 200,
 	},
 })

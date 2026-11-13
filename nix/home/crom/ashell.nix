@@ -8,7 +8,7 @@
         };
       };
       media_player = {
-        max_title_length = 100;
+        max_title_length = 120;
       };
     };
   };

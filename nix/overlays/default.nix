@@ -36,11 +36,11 @@
     #     config.allowunfree = true;
     #   }).mosh;
 
-    fishnet =
-      (import inputs.fishnet {
-        system = final.system;
-        config.allowunfree = true;
-      }).fishnet;
+    # fishnet =
+    #   (import inputs.fishnet {
+    #     system = final.system;
+    #     config.allowunfree = true;
+    #   }).fishnet;
 
     # jetbrains-mono =
     #   (import inputs.nixpkgs-master {

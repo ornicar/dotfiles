@@ -74,6 +74,9 @@ hl.workspace_rule({
 	gaps_out = 0,
 	gaps_in = 0,
 	decorate = false,
+	no_rounding = true,
+	no_border = true,
+	no_shadow = true,
 })
 
 hl.config({

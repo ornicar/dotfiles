@@ -22,6 +22,8 @@ vim.g.neovide_cursor_vfx_mode = { "railgun", "pixiedust" }
 -- vim.g.neovide_cursor_vfx_particle_highlight_lifetime = 0.1 -- sonicboom
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.7 -- railgun
 
+vim.g.neovide_fill_bottom_background = true
+
 -- https://github.com/neovide/neovide/issues/1282#issuecomment-2496204257
 vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+Pi', { noremap = true })
 

@@ -15,6 +15,7 @@
 
   services.hyprpaper.enable = true;
   stylix.targets.hyprland.hyprpaper.enable = false;
+  stylix.targets.wayprompt.enable = false;
 
   gtk.enable = true;
 
